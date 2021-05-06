@@ -22,4 +22,4 @@ Planning to release it.
 
 ## License
 
-This library is CC BY 4.0 licensed.
+MIT License
