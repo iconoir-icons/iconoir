@@ -13,7 +13,7 @@
 
 ## Basic Usage
 
-You can download any icon of the pack directly from https://iconoir.com or access to the figma Source File.
+You can download any icon of the pack directly from https://iconoir.com or get them from the repository.
 
 ## React
 
