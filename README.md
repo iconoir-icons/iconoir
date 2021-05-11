@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A set of 910+ free CC-licensed high-quality SVG icons for you to use in your web projects.
+  Iconoir is an open source librariey with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters.
 <p>
 
 <p align="center">
