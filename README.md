@@ -15,13 +15,18 @@
 
 You can download any icon of the pack directly from https://iconoir.com or get them from the repository.
 
+## Font
+
+Iconoir is available in .EOT, .SVG, .TTF, and .WOFF. Get them in the /fonts folder.
+Here is an example in HTML:
+
+```shell
+<span class="iconoir-hand-brake"></span>
+```
+
 ## React
 
-Planning to release it.
-
-## Vue
-
-Planning to release it.
+Planning to release it. Your contribution would be more than appreciated.
 
 ## License
 
