@@ -1,0 +1,32 @@
+{
+  "name": "iconoir-react",
+  "version": "1.0.0",
+  "description": "React library for Iconoir icon set",
+  "main": "build/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "test": "echo Tests not currently set up",
+    "build": "rm -rf src/icons && node bin/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaburgio/iconoir.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucaburgio/iconoir/issues"
+  },
+  "homepage": "https://github.com/lucaburgio/iconoir#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17"
+  },
+  "devDependencies": {
+    "prettier-eslint": "^9.0.0",
+    "react": "^17.0.2",
+    "rollup": "^2.48.0",
+    "uppercamelcase": "^3.0.0"
+  }
+}
