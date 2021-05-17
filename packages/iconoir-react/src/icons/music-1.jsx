@@ -1,0 +1,43 @@
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+
+export const Music1 = forwardRef(
+  ({ color = 'currentColor', size = 24 }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        color={color}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 14V3L9 5V16M20 14V17C20 18.1046 19.1046 19 18 19H17C15.8954 19 15 18.1046 15 17V16C15 14.8954 15.8954 14 17 14H20ZM9 16V19C9 20.1046 8.10457 21 7 21H6C4.89543 21 4 20.1046 4 19V18C4 16.8954 4.89543 16 6 16H9Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </svg>
+    );
+  }
+);
+
+Music1.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+
+Music1.displayName = 'Music1';
+
+export default Music1;

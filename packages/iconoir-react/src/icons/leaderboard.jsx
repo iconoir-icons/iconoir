@@ -1,0 +1,43 @@
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+
+export const Leaderboard = forwardRef(
+  ({ color = 'currentColor', size = 24 }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        color={color}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 19H15M9 19V12.5M9 19H3.6C3.26863 19 3 18.7314 3 18.4V13.1C3 12.7686 3.26863 12.5 3.6 12.5H9M15 19H20.4C20.7314 19 21 18.7314 21 18.4V15.1C21 14.7686 20.7314 14.5 20.4 14.5H15M15 19V14.5M9 12.5V8.6C9 8.26863 9.26863 8 9.6 8H14.4C14.7314 8 15 8.26863 15 8.6V14.5M15 5H9"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </svg>
+    );
+  }
+);
+
+Leaderboard.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+
+Leaderboard.displayName = 'Leaderboard';
+
+export default Leaderboard;
