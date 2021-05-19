@@ -1,5 +1,8 @@
 ## React Iconoir Icons
 
+![npm](https://img.shields.io/npm/v/iconoir-react?style=flat-square)
+![npm](https://img.shields.io/npm/l/iconoir-react?style=flat-square)
+
 Iconoir is an open source library with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters. You can browse the full suite of icons at [iconoir.com](https://iconoir.com/).
 
 `iconoir-react` is an open source package that exports these icons as React.js components that can be used in all of your React projects.
