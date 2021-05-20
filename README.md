@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Iconoir is an open source librariey with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters.
+  Iconoir is an open source library with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters.
 <p>
 
 <p align="center">
