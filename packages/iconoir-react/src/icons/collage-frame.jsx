@@ -1,0 +1,41 @@
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+
+export const CollageFrame = forwardRef(
+  ({ color = 'currentColor', size = 24 }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        color={color}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 12V4.6C4 4.26863 4.26863 4 4.6 4H11M4 12V19.4C4 19.7314 4.26863 20 4.6 20H19.4C19.7314 20 20 19.7314 20 19.4V12M4 12H11M20 12V4.6C20 4.26863 19.7314 4 19.4 4H11M20 12H11M11 12V4"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        </svg>
+      </svg>
+    );
+  }
+);
+
+CollageFrame.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+
+CollageFrame.displayName = 'CollageFrame';
+
+export default CollageFrame;

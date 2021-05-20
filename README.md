@@ -26,7 +26,7 @@ Here is an example in HTML:
 
 ## React
 
-Planning to release it. Your contribution would be more than appreciated.
+A React library is available to install under the name `iconoir-react`. For more details, see the package [README](./packages/iconoir-react).
 
 ## License
 

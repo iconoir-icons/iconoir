@@ -1,0 +1,43 @@
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+
+export const Chocolate = forwardRef(
+  ({ color = 'currentColor', size = 24 }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        color={color}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 15L19 21L12 21M19 15H12M19 15V9M5 15L5 21H12M5 15L12 15M5 15L5 9M12 15L12 21M12 15L12 9M12 3L5 3L5 9M12 3V9M12 3C12 3 13.5 3 14.5 3C14.5 6 16 6.5 19 6.5C19 7.5 19 9 19 9M5 9H12M12 9L19 9"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </svg>
+    );
+  }
+);
+
+Chocolate.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+
+Chocolate.displayName = 'Chocolate';
+
+export default Chocolate;

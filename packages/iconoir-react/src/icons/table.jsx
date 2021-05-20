@@ -1,0 +1,43 @@
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+
+export const Table = forwardRef(
+  ({ color = 'currentColor', size = 24 }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        color={color}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.5 3H3V7.5M7.5 3V21M7.5 3H12M7.5 21H3V16.5M7.5 21H12M16.5 3H21V7.5M16.5 3V21M16.5 3H12M16.5 21H21V16.5M16.5 21H12M3 7.5H21M3 7.5V12M21 7.5V12M3 16.5H21M3 16.5V12M21 16.5V12M12 3V21M3 12H21"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </svg>
+    );
+  }
+);
+
+Table.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+
+Table.displayName = 'Table';
+
+export default Table;
