@@ -22,14 +22,14 @@ export const OpenInWindow = forwardRef(
         >
           <path
             d="M8 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H3.6C3.26863 3 3 3.26863 3 3.6V16"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M3.5 20.5L12 12M12 12V16M12 12H8"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"

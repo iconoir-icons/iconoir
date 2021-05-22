@@ -44,7 +44,14 @@ export const MicWarning = forwardRef(
             stroke-width="1.5"
           />
           <path
-            d="M3 10V11C3 14.866 6.13401 18 10 18V18M17 10V11C17 14.866 13.866 18 10 18V18M10 18V22M10 22H7M10 22H13"
+            d="M3 10V11C3 14.866 6.13401 18 10 18V18V18C13.866 18 17 14.866 17 11V10"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10 18V22M10 22H7M10 22H13"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

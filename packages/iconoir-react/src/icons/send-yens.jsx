@@ -22,28 +22,28 @@ export const SendYens = forwardRef(
         >
           <path
             d="M13 12H21M21 12L17.16 8M21 12L17.16 16"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M3 13H11"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M3 7L7 12.5M11 7L7 12.5M7 12.5V18"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M3 15H11"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"

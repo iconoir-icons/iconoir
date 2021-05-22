@@ -28,7 +28,14 @@ export const FacebookSquared = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M11 21V17.5C11 17.5 11 14.6385 11 13M15 8C11.5 8 11 9.8125 11 12C11 12.3096 11 12.6497 11 13M11 13H9M11 13H15"
+            d="M11 21C11 18 11 15 11 12C11 9.8125 11.5 8 15 8"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9 13H11H15"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

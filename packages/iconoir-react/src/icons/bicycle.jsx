@@ -28,7 +28,21 @@ export const Bicycle = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M5 15L8.5 7.5M8.5 7.5L12 14L15 14M8.5 7.5C8.16667 6.5 7 4.5 5 4.5M8.5 7.5L14.5 7.5M19 15L15 7.5L14.5 7.5M14.5 7.5L16.5 4.5M16.5 4.5L14 4.5M16.5 4.5L18.5 4.5"
+            d="M8.5 7.5L14.5 7.5M19 15L15 7.5L14.5 7.5M14.5 7.5L16.5 4.5M16.5 4.5L14 4.5M16.5 4.5L18.5 4.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5 15L8.5 7.5L12 14L15 14"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.5 7.5C8.16667 6.5 7 4.5 5 4.5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

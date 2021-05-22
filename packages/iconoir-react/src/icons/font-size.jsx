@@ -28,7 +28,14 @@ export const FontSize = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M9 5L9 17M9 5L3 5L3 7M9 5L15 5V7M9 17H7M9 17H11"
+            d="M9 5L9 17M9 17H7M9 17H11"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M15 7V5L3 5L3 7"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

@@ -21,7 +21,28 @@ export const Chocolate = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M19 15L19 21L12 21M19 15H12M19 15V9M5 15L5 21H12M5 15L12 15M5 15L5 9M12 15L12 21M12 15L12 9M12 3L5 3L5 9M12 3V9M12 3C12 3 13.5 3 14.5 3C14.5 6 16 6.5 19 6.5C19 7.5 19 9 19 9M5 9H12M12 9L19 9"
+            d="M19 6.5C16 6.5 14.5 6 14.5 3L5 3L5 21L19 21L19 6.5Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19 15L5 15"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5 9L19 9"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 21L12 3"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

@@ -31,10 +31,11 @@ export const GlassHalfAlt = forwardRef(
             stroke-width="1.5"
           />
           <path
-            d="M4 13C5.03151 14.2034 7.92505 14.8638 11 14.981C12.3455 15.0323 13.7258 14.9796 15 14.823M20 13C19.1972 13.9366 17.2664 14.5443 15 14.823M15 14.823V20.5"
+            d="M4 13C5.03151 14.2034 7.92505 14.8638 11 14.981C14.7388 15.1236 18.7458 14.4632 20 13"
             stroke="currentColor"
             stroke-width="1.5"
           />
+          <path d="M15 14.823V20.5" stroke="currentColor" stroke-width="1.5" />
           <path
             d="M4 13C6.28571 10.3333 17.7143 10.3334 20 13"
             stroke="currentColor"

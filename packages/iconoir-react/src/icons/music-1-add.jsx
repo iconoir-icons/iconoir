@@ -28,7 +28,28 @@ export const Music1Add = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M15 13.9999V16.9999C15 18.1045 14.1046 18.9999 13 18.9999H12C10.8954 18.9999 10 18.1045 10 16.9999V15.9999C10 14.8953 10.8954 13.9999 12 13.9999H15ZM15 13.9999V9.99992M6 15.9999V4.99992L14 4M6 15.9999V18.9999C6 20.1045 5.10457 20.9999 4 20.9999H3C1.89543 20.9999 1 20.1045 1 18.9999V17.9999C1 16.8953 1.89543 15.9999 3 15.9999H6Z"
+            d="M6 15.9999V4.99992L14 4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M15 14V10"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 19H13C14.1046 19 15 18.1046 15 17V14H12C10.8954 14 10 14.8954 10 16V17C10 18.1046 10.8954 19 12 19Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3 21H4C5.10457 21 6 20.1046 6 19V16H3C1.89543 16 1 16.8954 1 18V19C1 20.1046 1.89543 21 3 21Z"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

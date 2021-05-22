@@ -21,21 +21,28 @@ export const CropRotateTl = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M11.7461 5.75006H7.74609C5.53695 5.75006 3.74609 7.54092 3.74609 9.75006V10.7501M11.7461 5.75006L9.24609 3.25006M11.7461 5.75006L9.24609 8.25006"
+            d="M11.746 5.75006H7.74597C5.53683 5.75006 3.74597 7.54092 3.74597 9.75006V10.7501"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M19.7461 11.7501L11.7461 11.7501C11.1938 11.7501 10.7461 12.1978 10.7461 12.7501L10.7461 20.7501"
+            d="M9.24597 3.25006L11.746 5.75006L9.24597 8.25006"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M8.74609 18.7501L16.7461 18.7501C17.2984 18.7501 17.7461 18.3023 17.7461 17.7501L17.7461 9.75006"
+            d="M19.746 11.7501L11.746 11.7501C11.1937 11.7501 10.746 12.1978 10.746 12.7501L10.746 20.7501"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.74597 18.7501L16.746 18.7501C17.2983 18.7501 17.746 18.3023 17.746 17.7501L17.746 9.75006"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

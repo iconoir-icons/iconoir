@@ -21,7 +21,21 @@ export const Music1 = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M20 14V3L9 5V16M20 14V17C20 18.1046 19.1046 19 18 19H17C15.8954 19 15 18.1046 15 17V16C15 14.8954 15.8954 14 17 14H20ZM9 16V19C9 20.1046 8.10457 21 7 21H6C4.89543 21 4 20.1046 4 19V18C4 16.8954 4.89543 16 6 16H9Z"
+            d="M20 14V3L9 5V16"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M17 19H18C19.1046 19 20 18.1046 20 17V14H17C15.8954 14 15 14.8954 15 16V17C15 18.1046 15.8954 19 17 19Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6 21H7C8.10457 21 9 20.1046 9 19V16H6C4.89543 16 4 16.8954 4 18V19C4 20.1046 4.89543 21 6 21Z"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

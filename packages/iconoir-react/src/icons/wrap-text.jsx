@@ -35,7 +35,14 @@ export const WrapText = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M4 12H17.5C18.8807 12 20 13.1193 20 14.5V14.5C20 15.8807 18.8807 17 17.5 17H12.5M12.5 17L15 15.5V18.5L12.5 17Z"
+            d="M4 12H17.5C18.8807 12 20 13.1193 20 14.5V14.5C20 15.8807 18.8807 17 17.5 17H12.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M15 15.5L12.5 17L15 18.5V15.5Z"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

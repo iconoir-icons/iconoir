@@ -21,10 +21,12 @@ export const CollageFrame = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M4 12V4.6C4 4.26863 4.26863 4 4.6 4H11M4 12V19.4C4 19.7314 4.26863 20 4.6 20H19.4C19.7314 20 20 19.7314 20 19.4V12M4 12H11M20 12V4.6C20 4.26863 19.7314 4 19.4 4H11M20 12H11M11 12V4"
+            d="M19.4 20H4.6C4.26863 20 4 19.7314 4 19.4V4.6C4 4.26863 4.26863 4 4.6 4H19.4C19.7314 4 20 4.26863 20 4.6V19.4C20 19.7314 19.7314 20 19.4 20Z"
             stroke="currentColor"
             stroke-width="1.5"
           />
+          <path d="M11 12V4" stroke="currentColor" stroke-width="1.5" />
+          <path d="M4 12H20" stroke="currentColor" stroke-width="1.5" />
         </svg>
       </svg>
     );

@@ -51,10 +51,11 @@ export const NetworkLeft = forwardRef(
             stroke-width="1.5"
           />
           <path
-            d="M7 17.5H10.5C11.6046 17.5 12.5 16.6046 12.5 15.5V12M7 6.5H10.5C11.6046 6.5 12.5 7.39543 12.5 8.5V12M12.5 12H17"
+            d="M7 17.5H10.5C11.6046 17.5 12.5 16.6046 12.5 15.5V8.5C12.5 7.39543 11.6046 6.5 10.5 6.5H7"
             stroke="currentColor"
             stroke-width="1.5"
           />
+          <path d="M12.5 12H17" stroke="currentColor" stroke-width="1.5" />
         </svg>
       </svg>
     );

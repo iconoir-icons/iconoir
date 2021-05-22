@@ -28,7 +28,14 @@ export const TextAlt = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M12 7H7V9M12 7L17 7V9M12 7V17M12 17H10M12 17H14"
+            d="M7 9V7L17 7V9"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 7V17M12 17H10M12 17H14"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

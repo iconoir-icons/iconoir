@@ -21,7 +21,14 @@ export const BellOff = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M7.75736 3.87452C8.88258 2.67428 10.4087 2 12 2C13.5913 2 15.1174 2.67428 16.2426 3.87452C17.3679 5.07475 18 6.70261 18 8.4C18 15.8667 21 18 21 18M6.27049 6.5C6.09277 7.10971 6 7.74975 6 8.4C6 15.8667 3 18 3 18H18"
+            d="M6.27049 6.5C6.09277 7.10971 6 7.74975 6 8.4C6 15.8667 3 18 3 18H18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7.75732 3.87452C8.88254 2.67428 10.4087 2 12 2C13.5913 2 15.1174 2.67428 16.2426 3.87452C17.3678 5.07475 18 6.70261 18 8.4C18 15.8667 21 18 21 18"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

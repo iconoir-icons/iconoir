@@ -21,7 +21,35 @@ export const MoveRuler = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M16 7V2.6C16 2.26863 15.7314 2 15.4 2H8.6C8.26863 2 8 2.26863 8 2.6V12M16 7H13M16 7V12M16 12H13M16 12V17M16 12H21M16 17V21.4C16 21.7314 15.7314 22 15.4 22H8.6C8.26863 22 8 21.7314 8 21.4V12M16 17H13M21 12V14L23 12L21 10V12ZM3 12V10L1 12L3 14V12ZM3 12H8"
+            d="M15.4 22H8.6C8.26863 22 8 21.7314 8 21.4V2.6C8 2.26863 8.26863 2 8.6 2H15.4C15.7314 2 16 2.26863 16 2.6V21.4C16 21.7314 15.7314 22 15.4 22Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 17H13"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 7H13"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M13 12H23M23 12L21 14M23 12L21 10"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M1 12L3 10M1 12L3 14M1 12H8"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

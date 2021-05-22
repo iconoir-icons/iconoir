@@ -27,7 +27,14 @@ export const Lens = forwardRef(({ color = 'currentColor', size = 24 }, ref) => {
           stroke-linejoin="round"
         />
         <path
-          d="M17.811 13.5C17.2683 15.6084 15.6084 17.2683 13.5 17.811M17.1973 9C17.0977 8.82774 16.9897 8.66089 16.874 8.5"
+          d="M17.1973 9C17.0976 8.82774 16.9896 8.66089 16.8739 8.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M17.811 13.5C17.2683 15.6084 15.6084 17.2683 13.5 17.811"
           stroke="currentColor"
           stroke-width="1.5"
           stroke-linecap="round"

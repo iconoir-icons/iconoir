@@ -21,14 +21,28 @@ export const TextSize = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M10 6L10 18M10 6L4 6L4 8M10 6L16 6V8M10 18H12M10 18H8"
+            d="M4 8L4 6L16 6V8"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M17 12V18M17 12L14 12L14 13.5M17 12L20 12V13.5M17 18H15.5M17 18H18.5"
+            d="M10 6L10 18M10 18H12M10 18H8"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 13.5L14 12L20 12V13.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M17 12V18M17 18H15.5M17 18H18.5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

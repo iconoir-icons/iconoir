@@ -21,7 +21,14 @@ export const UndoCircle = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M7 10.625H14.2C14.2 10.625 14.2 10.625 14.2 10.625C14.2 10.625 17 10.625 17 13.625C17 17 14.2 17 14.2 17H13.4M7 10.625L10.5 14M7 10.625L10.5 7"
+            d="M7 10.625H14.2C14.2 10.625 14.2 10.625 14.2 10.625C14.2 10.625 17 10.625 17 13.625C17 17 14.2 17 14.2 17H13.4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10.5 14L7 10.625L10.5 7"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

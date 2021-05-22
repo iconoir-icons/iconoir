@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-export const TvFix = forwardRef(
+export const DatabaseStar = forwardRef(
   ({ color = 'currentColor', size = 24 }, ref) => {
     return (
       <svg
@@ -21,33 +21,28 @@ export const TvFix = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M2 20V9C2 7.89543 2.89543 7 4 7H20C21.1046 7 22 7.89543 22 9V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20Z"
-            stroke="currentColor"
-            stroke-width="1.5"
-          />
-          <path
-            d="M13.6569 12.8284L10.8284 15.6568"
+            d="M4 6V12C4 12 4 15 11 15C18 15 18 12 18 12V6"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M16.4853 12.8284C15.7042 13.6095 14.4379 13.6095 13.6569 12.8284C12.8758 12.0474 12.8758 10.781 13.6569 10"
+            d="M11 3C18 3 18 6 18 6C18 6 18 9 11 9C4 9 4 6 4 6C4 6 4 3 11 3Z"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M10.8284 18.4853C11.6094 17.7043 11.6094 16.4379 10.8284 15.6569C10.0473 14.8758 8.78102 14.8758 7.99997 15.6569"
+            d="M11 21C4 21 4 18 4 18V12"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M8.5 2.5L12 6L15.5 2.5"
+            d="M17.3056 17.1133L18.2147 15.1856C18.3314 14.9381 18.6686 14.9381 18.7853 15.1856L19.6944 17.1133L21.7275 17.4243C21.9884 17.4642 22.0923 17.7998 21.9035 17.9923L20.4326 19.4917L20.7797 21.61C20.8243 21.882 20.5515 22.0895 20.3181 21.961L18.5 20.9603L16.6819 21.961C16.4485 22.0895 16.1757 21.882 16.2203 21.61L16.5674 19.4917L15.0965 17.9923C14.9077 17.7998 15.0116 17.4642 15.2725 17.4243L17.3056 17.1133Z"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
@@ -59,11 +54,11 @@ export const TvFix = forwardRef(
   }
 );
 
-TvFix.propTypes = {
+DatabaseStar.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-TvFix.displayName = 'TvFix';
+DatabaseStar.displayName = 'DatabaseStar';
 
-export default TvFix;
+export default DatabaseStar;

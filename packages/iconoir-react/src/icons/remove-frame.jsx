@@ -22,7 +22,7 @@ export const RemoveFrame = forwardRef(
         >
           <path
             d="M4.9984 2H2V4.9984H4.9984V2Z"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.4992"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -30,7 +30,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M4.99854 3.50049H18.9987"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.50335"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -38,7 +38,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M3.5 4.99805V19"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.35589"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -46,7 +46,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M20.4978 4.99951V19.0015"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.35589"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -54,7 +54,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M4.99854 20.5005H18.9987"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.50335"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -62,7 +62,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M4.9984 19H2V21.9984H4.9984V19Z"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.4992"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -70,7 +70,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M21.9974 2.00098H18.999V4.99938H21.9974V2.00098Z"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.4992"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -78,7 +78,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M21.9974 19.001H18.999V21.9994H21.9974V19.001Z"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.4992"
             stroke-miterlimit="1.5"
             stroke-linecap="round"
@@ -86,7 +86,7 @@ export const RemoveFrame = forwardRef(
           />
           <path
             d="M9 12H15"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"

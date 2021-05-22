@@ -20,7 +20,14 @@ export const Text = forwardRef(({ color = 'currentColor', size = 24 }, ref) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 5L12 19M12 5L5 5V7M12 5L19 5V7M12 19H10M12 19H14"
+          d="M19 7V5L5 5V7"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 5L12 19M12 19H10M12 19H14"
           stroke="currentColor"
           stroke-width="1.5"
           stroke-linecap="round"

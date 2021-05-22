@@ -28,14 +28,28 @@ export const GoogleDriveSync = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M22.6663 17.6667C22.0476 16.097 20.6344 15 18.9901 15C17.2317 15 15.7376 16.2545 15.1967 18M22.6663 17.6667H20.995M22.6663 17.6667V17.6667C22.8506 17.6667 23 17.5173 23 17.333V15.4444"
+            d="M22.6663 17.6667C22.0476 16.097 20.6344 15 18.9901 15C17.2317 15 15.7376 16.2545 15.1967 18"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M15.3337 20.3333C15.9524 21.903 17.3656 23 19.0099 23C20.7683 23 22.2624 21.7455 22.8033 20M15.3337 20.3333H17.005M15.3337 20.3333V20.3333C15.1494 20.3333 15 20.4827 15 20.667V22.5556"
+            d="M20.9951 17.7722H22.4C22.7314 17.7722 23 17.5036 23 17.1722V15.55"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M15.3337 20.3333C15.9524 21.903 17.3656 23 19.0099 23C20.7683 23 22.2624 21.7455 22.8033 20"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M17.0049 20.2278H15.6C15.2686 20.2278 15 20.4964 15 20.8278V22.45"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
