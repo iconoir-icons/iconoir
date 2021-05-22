@@ -16,7 +16,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lucaburgio/iconoir.git"
-  },
+  },  
+  "keywords": [
+    "icons",
+    "svg",
+    "library"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lucaburgio/iconoir/issues"
