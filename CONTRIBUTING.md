@@ -16,7 +16,7 @@ Guidelines for pull requests:
 - __Make your commit messages as descriptive as possible.__ Include as much information as you can. Explain anything that the file diffs themselves won’t make apparent.
 - __Target Master__. Most of bugfix or new feature should go to the `master` branch.
 - __Include only related work__. If your pull request has unrelated commit, it won't be accepted.
-- __Packages and Libraries__. If you're adding or updating a package or React/Vue library the target folder is `/packages/[LIBRARY_NAME]`.
+- __Packages and Libraries__. If you're adding or updating a package or React/Vue library the target folder is `/packages/iconoir-[LIBRARY_NAME]`.
 - __Fonts__. If you're adding or updating fonts the target folder is `/fonts/`.
 
 ## Icon Requests
