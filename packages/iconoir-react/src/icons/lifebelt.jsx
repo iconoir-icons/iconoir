@@ -28,7 +28,35 @@ export const Lifebelt = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M9.2351 9.10943C8.474 9.83764 8 10.8635 8 12C8 13.1365 8.474 14.1624 9.2351 14.8906M9.2351 9.10943C9.95339 8.42218 10.9274 8 12 8C13.0726 8 14.0466 8.42218 14.7649 9.10943M9.2351 9.10943L5 5M14.7649 9.10943C15.526 9.83764 16 10.8635 16 12C16 13.1365 15.526 14.1624 14.7649 14.8906M14.7649 9.10943L19 5M14.7649 14.8906C14.0466 15.5778 13.0726 16 12 16C10.9274 16 9.95339 15.5778 9.2351 14.8906M14.7649 14.8906L19 19M9.2351 14.8906L5 19"
+            d="M8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.2351 14.8906L5 19.0001"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14.7649 14.8906L19 19.0001"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14.7649 9.10943L19 5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.2351 9.10943L5 5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

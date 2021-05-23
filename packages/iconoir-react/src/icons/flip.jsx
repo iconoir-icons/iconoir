@@ -27,7 +27,35 @@ export const Flip = forwardRef(({ color = 'currentColor', size = 24 }, ref) => {
           stroke-linejoin="round"
         />
         <path
-          d="M18.25 12L19.1875 14M16.375 8L14.5 4V8M14.5 12V14M16.375 20H14.5V18M20.125 20H22L21.0625 18"
+          d="M20.125 20H22L21.0625 18"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16.375 20H14.5V18"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14.5 12V14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18.25 12L19.1875 14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16.375 8L14.5 4V8"
           stroke="currentColor"
           stroke-width="1.5"
           stroke-linecap="round"

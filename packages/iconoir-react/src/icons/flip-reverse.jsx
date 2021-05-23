@@ -21,7 +21,35 @@ export const FlipReverse = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M5.75 12L4.8125 14M7.625 8L9.5 4V8M9.5 12V14M7.625 20H9.5V18M3.875 20H2L2.9375 18"
+            d="M9.5 12V14"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5.75 12L4.8125 14"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7.625 20H9.5V18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3.875 20H2L2.9375 18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7.625 8L9.5 4V8"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

@@ -31,7 +31,17 @@ export const BinHalf = forwardRef(
             stroke-width="1.5"
           />
           <path
-            d="M8 15.5L10.6149 12.4493C10.8284 12.2001 11.2025 12.1688 11.4546 12.3788L14 14.5M8 15.5L11 18M8 15.5L4.5 16M11 18L14 14.5M11 18L14 21M14 14.5L19 17M14 14.5L20 11.5"
+            d="M11 18L14 14.5M14 14.5L19 17M14 14.5L20 11.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+          <path
+            d="M4.5 16L7.73595 15.5377C7.90405 15.5137 8.07446 15.562 8.20491 15.6708L11 18L14 21"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+          <path
+            d="M8 15.5L10.6149 12.4493C10.8284 12.2001 11.2025 12.1688 11.4546 12.3788L14 14.5"
             stroke="currentColor"
             stroke-width="1.5"
           />

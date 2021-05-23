@@ -21,7 +21,14 @@ export const TriangleFlagFull = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M8 21L8 16M8 16L17.7231 9.51793C18.0866 9.2756 18.0775 8.73848 17.7061 8.50854L14.5 6.52381M8 16V11M8 11V3.57709C8 3.10698 8.5161 2.81949 8.91581 3.06693L14.5 6.52381M8 11L14.5 6.52381"
+            d="M8 21L8 16M8 16L17.7231 9.51793C18.0866 9.2756 18.0775 8.73848 17.7061 8.50854L8.91581 3.06693C8.5161 2.81949 8 3.10699 8 3.57709V16Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8 11.0001L14.5 6.52393"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

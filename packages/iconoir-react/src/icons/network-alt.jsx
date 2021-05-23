@@ -45,10 +45,11 @@ export const NetworkAlt = forwardRef(
             stroke-width="1.5"
           />
           <path
-            d="M6.5 17V13.5C6.5 12.3954 7.39543 11.5 8.5 11.5H12M17.5 17V13.5C17.5 12.3954 16.6046 11.5 15.5 11.5H12M12 11.5V7"
+            d="M6.5 17V13.5C6.5 12.3954 7.39543 11.5 8.5 11.5H15.5C16.6046 11.5 17.5 12.3954 17.5 13.5V17"
             stroke="currentColor"
             stroke-width="1.5"
           />
+          <path d="M12 11.5V7" stroke="currentColor" stroke-width="1.5" />
         </svg>
       </svg>
     );

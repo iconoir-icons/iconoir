@@ -21,7 +21,42 @@ export const StarHalfDashed = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M12.8151 3.00376C12.4817 2.33208 11.5183 2.33208 11.1849 3.00376L10.6894 4.00188M12 18.678L10.4279 19.5M3.69875 12L2.27575 10.6219C1.73617 10.0994 2.03322 9.18848 2.77852 9.08017L3.88926 8.91875M7 8.46666L8.58737 8.23597L9.39062 6.61799M6.25259 16L6.47825 14.6918L5.78338 14.0188M5.67145 19.3689L5.48645 20.4414C5.35909 21.1798 6.1386 21.7428 6.80547 21.3941L7.65273 20.9511"
+            d="M12.8151 3.00376C12.4817 2.33208 11.5184 2.33208 11.1849 3.00376L10.6894 4.00188"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 18.678L10.4279 19.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5.67145 19.3689L5.48645 20.4414C5.35908 21.1797 6.13859 21.7428 6.80546 21.3941L7.65273 20.9511"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6.25259 16L6.47826 14.6917L5.78339 14.0188"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3.69875 12L2.27575 10.6219C1.73617 10.0993 2.03322 9.18844 2.77852 9.08012L3.88926 8.9187"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 8.4666L8.58737 8.23591L9.39062 6.61792"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

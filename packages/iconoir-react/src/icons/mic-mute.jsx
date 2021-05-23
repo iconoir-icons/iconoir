@@ -35,7 +35,14 @@ export const MicMute = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M5 10V11C5 14.866 8.13401 18 12 18V18M19 10V11C19 14.866 15.866 18 12 18V18M12 18V22M12 22H9M12 22H15"
+            d="M5 10V11C5 14.866 8.13401 18 12 18V18V18C15.866 18 19 14.866 19 11V10"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 18V22M12 22H9M12 22H15"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

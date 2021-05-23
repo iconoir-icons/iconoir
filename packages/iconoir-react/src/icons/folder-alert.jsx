@@ -35,7 +35,14 @@ export const FolderAlert = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M22 7V11V19.4C22 19.7314 21.7314 20 21.4 20H2.6C2.26863 20 2 19.7314 2 19.4V11M2 11V4.6C2 4.26863 2.26863 4 2.6 4H8.77805C8.92127 4 9.05977 4.05124 9.16852 4.14445L12.3315 6.85555C12.4402 6.94876 12.5787 7 12.722 7H14M2 11H14"
+            d="M22 7V11V19.4C22 19.7314 21.7314 20 21.4 20H2.6C2.26863 20 2 19.7314 2 19.4V11"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 7H12.722C12.5787 7 12.4402 6.94876 12.3315 6.85555L9.16852 4.14445C9.05977 4.05124 8.92127 4 8.77805 4H2.6C2.26863 4 2 4.26863 2 4.6V11H14"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

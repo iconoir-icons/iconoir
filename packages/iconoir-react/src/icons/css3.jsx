@@ -27,7 +27,14 @@ export const Css3 = forwardRef(({ color = 'currentColor', size = 24 }, ref) => {
           stroke-linejoin="round"
         />
         <path
-          d="M7 7H16.5L16 11.5M8.25 14.5L8.5 17L12 18L15.5 17L16 11.5M16 11.5H7.5"
+          d="M7 7H16.5L15.5 17L12 18L8.5 17L8.25 14.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16 11.5H7.5"
           stroke="currentColor"
           stroke-width="1.5"
           stroke-linecap="round"

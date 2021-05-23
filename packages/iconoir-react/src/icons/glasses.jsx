@@ -28,7 +28,14 @@ export const Glasses = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M14 14C14 16.2091 15.7909 18 18 18C20.2091 18 22 16.2091 22 14M14 14C14 11.7909 15.7909 10 18 10C20.2091 10 22 11.7909 22 14M14 14H10M22 14V6"
+            d="M22 14C22 16.2091 20.2091 18 18 18C15.7909 18 14 16.2091 14 14C14 11.7909 15.7909 10 18 10C20.2091 10 22 11.7909 22 14ZM22 14V6"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 14H10"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

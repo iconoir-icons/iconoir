@@ -28,7 +28,21 @@ export const GitBranch = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15M9 18C9 16.3431 7.65685 15 6 15M9 18C12.5 18 18 15.9 18 9.5M6 15V3"
+            d="M6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6 15V3"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9 18C12.5 18 18 15.9 18 9.5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

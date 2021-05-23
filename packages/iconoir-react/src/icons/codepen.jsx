@@ -21,22 +21,43 @@ export const Codepen = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M21 8.85L12 3L3 8.85M21 8.85V15.15M21 8.85L12 15L3 8.85M21 15.15L12 21L3 15.15M21 15.15L12 9L3 15.15M3 15.15V8.85"
-            stroke="black"
+            d="M21 9V15"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3 15V9"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M12 21V15"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M12 3V9"
-            stroke="black"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 15L3 9L12 3L21 9L12 15Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 21L3 15L12 9L21 15L12 21Z"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"

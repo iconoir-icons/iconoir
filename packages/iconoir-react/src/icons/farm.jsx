@@ -20,8 +20,29 @@ export const Farm = forwardRef(({ color = 'currentColor', size = 24 }, ref) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M14 14V17M14 14H18M14 14V8L8 5L2 8V20H5M22 14H18M14 17V20H11M14 17H18M22 17H18M18 14V17M18 17V20M5 20V13H11V20M5 20H11"
-          stroke="black"
+          d="M5 20H2V8L8 5L14 8V20H11M5 20V13H11V20M5 20H11"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18 14V17V20"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14 17H18H22"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14 14H18H22"
+          stroke="currentColor"
           stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"

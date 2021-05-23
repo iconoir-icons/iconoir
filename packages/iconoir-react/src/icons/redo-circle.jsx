@@ -21,7 +21,14 @@ export const RedoCircle = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M17 10.625H9.8C9.8 10.625 9.8 10.625 9.8 10.625C9.8 10.625 7 10.625 7 13.625C7 17 9.8 17 9.8 17H10.6M17 10.625L13.5 14M17 10.625L13.5 7"
+            d="M17 10.625H9.8C9.8 10.625 9.8 10.625 9.8 10.625C9.8 10.625 7 10.625 7 13.625C7 17 9.8 17 9.8 17H10.6"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M13.5 14L17 10.625L13.5 7"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

@@ -20,7 +20,42 @@ export const Usb = forwardRef(({ color = 'currentColor', size = 24 }, ref) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12.5 17C11.1193 17 10 18.1193 10 19.5C10 20.8807 11.1193 22 12.5 22C13.8807 22 15 20.8807 15 19.5C15 18.1193 13.8807 17 12.5 17ZM12.5 17V16M12.5 2L10.5 4M12.5 2L14.5 4M12.5 2V14M12.5 16L7 14.5V11.5M12.5 16V14M12.5 14L18 12V8.5M18 8.5H16.5V5.5H19.5V8.5H18Z"
+          d="M12.5 2V17"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12.5 14L18 12V8.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12.5 16L7 14.5V11.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12.5 22C13.8807 22 15 20.8807 15 19.5C15 18.1193 13.8807 17 12.5 17C11.1193 17 10 18.1193 10 19.5C10 20.8807 11.1193 22 12.5 22Z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16.5 5.5V8.5H19.5V5.5H16.5Z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10.5 4L12.5 2L14.5 4"
           stroke="currentColor"
           stroke-width="1.5"
           stroke-linecap="round"

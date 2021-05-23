@@ -21,7 +21,14 @@ export const Football = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M12 13.8281L12 21M12 13.8281L5 13.8281L5 3M12 13.8281H19V3"
+            d="M12 13.8281L12 21"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5 3L5 13.8281L19 13.8281V3"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

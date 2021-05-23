@@ -35,7 +35,14 @@ export const EyeOff = forwardRef(
             stroke-linejoin="round"
           />
           <path
-            d="M12 6C16.0084 6 18.7015 9.1582 21 12C20.6816 12.5043 20.3203 13.0092 19.922 13.5M7.36185 7.56107C5.68002 8.73966 4.27894 10.4188 3 12C4.88856 14.991 8.2817 18 12 18C13.5499 18 15.0434 17.4772 16.3949 16.6508"
+            d="M7.36185 7.5611C5.68002 8.73968 4.27894 10.4188 3 12C4.88856 14.991 8.2817 18 12 18C13.5499 18 15.0434 17.4772 16.3949 16.6508"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 6C16.0084 6 18.7015 9.1582 21 12C20.6815 12.5043 20.3203 13.0092 19.922 13.5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

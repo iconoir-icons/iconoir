@@ -21,14 +21,32 @@ export const EvPlugError = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M10 13.1538V21M10 13.1538H13C14.1046 13.1538 15 12.2584 15 11.1538V8.05128C15 7.13081 14.2538 6.38462 13.3333 6.38462V6.38462M10 13.1538H7C5.89543 13.1538 5 12.2584 5 11.1538V8.05128C5 7.13081 5.74619 6.38462 6.66667 6.38462V6.38462M6.66667 6.38462H10H13.3333M6.66667 6.38462V3M13.3333 6.38462V3"
-            stroke="black"
+            d="M10 13.1538V21"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M15 8.38452V11.1538C15 12.2583 14.1046 13.1538 13 13.1538H7C5.89543 13.1538 5 12.2583 5 11.1538V8.38452C5 7.27995 5.89543 6.38452 7 6.38452H13C14.1046 6.38452 15 7.27995 15 8.38452Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M13.3334 6.38462V3"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M6.66663 6.38462V3"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
           />
           <path
             d="M15.1213 21.364L17.2427 19.2427M17.2427 19.2427L19.364 17.1213M17.2427 19.2427L15.1213 17.1213M17.2427 19.2427L19.364 21.364"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"

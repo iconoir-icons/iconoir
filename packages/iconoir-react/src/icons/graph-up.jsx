@@ -21,7 +21,14 @@ export const GraphUp = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M20 20H4V16.5M4 4V16.5M4 16.5L12 9L15 12L19.5 7.5"
+            d="M20 20H4V4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M4 16.5L12 9L15 12L19.5 7.5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

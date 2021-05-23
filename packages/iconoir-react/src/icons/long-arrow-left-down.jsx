@@ -21,7 +21,14 @@ export const LongArrowLeftDown = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M8 17V11C8 8.79086 9.79086 7 12 7H19M8 17L4.5 13.5M8 17L11.5 13.5"
+            d="M4.5 13.5L8 17L11.5 13.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8 17V11C8 8.79086 9.79086 7 12 7H19"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"

@@ -22,14 +22,14 @@ export const TerminalSimple = forwardRef(
         >
           <path
             d="M13 17H20"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M5 7L10 12L5 17"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"

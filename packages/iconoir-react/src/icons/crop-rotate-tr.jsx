@@ -21,7 +21,14 @@ export const CropRotateTr = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M18 12V8C18 5.79086 16.2091 4 14 4H13M18 12L20.5 9.5M18 12L15.5 9.5"
+            d="M18 12V8C18 5.79086 16.2091 4 14 4H13"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20.5 9.5L18 12L15.5 9.5"
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
