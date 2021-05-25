@@ -1,9 +1,9 @@
 ---
 name: Icon request
 about: Suggest an idea for this project
-title: ''
+title: "[ICON]"
 labels: icon request
-assignees: ''
+assignees: lucaburgio
 
 ---
 
