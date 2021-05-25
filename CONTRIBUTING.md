@@ -6,7 +6,7 @@ The following is a quick set of guidelines for contributing to Iconoir.
 
 ## Pull Requests
 
-> :information_source: **Note:** At the moment we are not accepting pull requests containing _**icons**_. The best way to contribute an icon is to create an issue with a screenshot and link to an SVG of your icon.
+> :information_source: **Note:** At the moment, to keep consistency, quality, and make the whole process time-efficient, we are not accepting pull requests containing icons. You can open an issue to request a new icon.
 
 Pull requests for new features, bug fixes, etc. are often appreciated.
 
