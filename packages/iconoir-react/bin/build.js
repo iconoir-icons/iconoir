@@ -44,8 +44,8 @@ fs.readdir(iconoirIconsDir, (err, files) => {
 
   Promise.all(promises).then(() => {
     exec(
-      `npx @svgr/cli -d ${builtIconsDir} ${tmpIconsDir}`,
-      (error, stdout, stderr) => {
+      `npx @svgr/cli --out-dir ${builtIconsDir} ${tmpIconsDir}`,
+      (err, stdout, stderr) => {
         if (err) {
           return console.error('Could not run command to generate icons');
         }
