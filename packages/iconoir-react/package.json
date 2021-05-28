@@ -34,6 +34,7 @@
   "devDependencies": {
     "@svgr/cli": "^5.5.0",
     "@types/react": "^17.0.6",
+    "ora": "^5.4.0",
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "tsup": "^4.11.1",
