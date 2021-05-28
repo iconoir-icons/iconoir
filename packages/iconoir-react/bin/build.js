@@ -33,7 +33,9 @@ fs.readdir(iconoirIconsDir, (err, files) => {
     fs.mkdirSync(tmpIconsDir);
   }
 
-  spinner.start('Copying icons to tmp dir, while renaming files with incompatible names');
+  spinner.start(
+    'Copying icons to tmp dir, while renaming files with incompatible names'
+  );
   const promises = [];
   files.forEach((file) => {
     const srcFilePath = path.join(iconoirIconsDir, file);
@@ -55,34 +57,34 @@ fs.readdir(iconoirIconsDir, (err, files) => {
 
   Promise.all(promises)
     .then(() => {
-    spinner.succeed();
+      spinner.succeed();
 
-    spinner.start('Generating icons');
-    exec(
-      `npx @svgr/cli --silent --out-dir ${builtIconsDir} ${tmpIconsDir}`,
-      (err, stdout, stderr) => {
-        if (err) {
-          spinner.stop();
+      spinner.start('Generating icons');
+      exec(
+        `npx @svgr/cli --silent --out-dir ${builtIconsDir} ${tmpIconsDir}`,
+        (err, stdout, stderr) => {
+          if (err) {
+            spinner.stop();
+            rmTmpDir();
+            throw new Error('Could not run command to generate icons');
+          }
+
+          spinner.succeed();
+
+          if (stdout) {
+            console.log(stdout);
+          }
+          if (stderr) {
+            console.error(`Error while generating icons:\n${stderr}`);
+          }
+
           rmTmpDir();
-          throw new Error('Could not run command to generate icons');
         }
-
-        spinner.succeed();
-
-        if (stdout) {
-          console.log(stdout);
-        }
-        if (stderr) {
-          console.error(`Error while generating icons:\n${stderr}`);
-        }
-
-        rmTmpDir();
-      }
-    );
-  })
-  .catch(() => {
-    spinner.stop();
-    rmTmpDir();
-    throw new Error('Error while copying icons');
-  });
+      );
+    })
+    .catch(() => {
+      spinner.stop();
+      rmTmpDir();
+      throw new Error('Error while copying icons');
+    });
 });
