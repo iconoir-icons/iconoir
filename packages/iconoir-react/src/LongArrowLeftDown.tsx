@@ -8,6 +8,7 @@ function SvgLongArrowLeftDown(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,14 +19,12 @@ function SvgLongArrowLeftDown(
       <path
         d="M4.5 13.5L8 17l3.5-3.5"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M8 17v-6a4 4 0 014-4h7"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

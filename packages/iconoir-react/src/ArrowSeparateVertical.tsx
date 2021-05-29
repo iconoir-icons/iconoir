@@ -8,6 +8,7 @@ function SvgArrowSeparateVertical(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgArrowSeparateVertical(
       <path
         d="M15.5 9.5L12 6 8.5 9.5M15.5 14L12 17.5 8.5 14"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

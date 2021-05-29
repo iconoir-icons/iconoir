@@ -8,6 +8,7 @@ function SvgGasTankDrop(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +29,6 @@ function SvgGasTankDrop(
         clipRule="evenodd"
         d="M12 9s3 2.993 3 4.886c0 1.656-1.345 3-3 3-1.656 0-2.988-1.344-3-3C9.01 11.992 12 9 12 9z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

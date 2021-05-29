@@ -8,6 +8,7 @@ function SvgNetworkLeft(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +24,6 @@ function SvgNetworkLeft(
         rx={0.6}
         transform="rotate(-90 2 21)"
         stroke="currentColor"
-        strokeWidth={1.5}
       />
       <rect
         x={17}
@@ -33,7 +33,6 @@ function SvgNetworkLeft(
         rx={0.6}
         transform="rotate(-90 17 15.5)"
         stroke="currentColor"
-        strokeWidth={1.5}
       />
       <rect
         x={2}
@@ -43,12 +42,10 @@ function SvgNetworkLeft(
         rx={0.6}
         transform="rotate(-90 2 10)"
         stroke="currentColor"
-        strokeWidth={1.5}
       />
       <path
         d="M7 17.5h3.5a2 2 0 002-2v-7a2 2 0 00-2-2H7M12.5 12H17"
         stroke="currentColor"
-        strokeWidth={1.5}
       />
     </svg>
   );

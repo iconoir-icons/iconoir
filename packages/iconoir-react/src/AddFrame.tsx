@@ -8,6 +8,7 @@ function SvgAddFrame(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +59,6 @@ function SvgAddFrame(
       <path
         d="M9 12h3m3 0h-3m0 0V9m0 3v3"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

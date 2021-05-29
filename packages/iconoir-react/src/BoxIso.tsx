@@ -8,6 +8,7 @@ function SvgBoxIso(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,14 +23,12 @@ function SvgBoxIso(
       <path
         d="M3 17.11V6.89a.6.6 0 01.356-.548l8.4-3.734a.6.6 0 01.488 0l8.4 3.734A.6.6 0 0121 6.89v10.22a.6.6 0 01-.356.548l-8.4 3.734a.6.6 0 01-.488 0l-8.4-3.734A.6.6 0 013 17.11z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M7.5 4.5l8.644 3.842a.6.6 0 01.356.548v3.61"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -8,6 +8,7 @@ function SvgArrowUp(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgArrowUp(
       <path
         d="M12.25 18.5V6m0 0l6 6m-6-6l-6 6"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

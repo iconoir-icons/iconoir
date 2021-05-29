@@ -8,6 +8,7 @@ function SvgJournal(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgJournal(
       <path
         d="M6 6h12M6 10h12M12 14h6M12 18h6M2 21.4V2.6a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6v18.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -26,7 +26,6 @@ function SvgJournal(
         d="M6 18v-4h2v4H6z"
         fill="currentColor"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

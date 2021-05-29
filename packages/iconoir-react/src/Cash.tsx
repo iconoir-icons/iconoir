@@ -8,6 +8,7 @@ function SvgCash(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgCash(
       <path
         d="M14 5h7.4a.6.6 0 01.6.6v12.8a.6.6 0 01-.6.6H14m0-14v14m0-14h-4m4 14h-4m0 0H2.6a.6.6 0 01-.6-.6V5.6a.6.6 0 01.6-.6H10m0 14V5"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

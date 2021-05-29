@@ -8,6 +8,7 @@ function SvgHexagonAlt(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +20,6 @@ function SvgHexagonAlt(
         <path
           d="M6.327 2.774a.6.6 0 01.52-.3h10.307a.6.6 0 01.52.3l5.153 8.926a.6.6 0 010 .6l-5.154 8.926a.6.6 0 01-.52.3H6.847a.6.6 0 01-.52-.3L1.174 12.3a.6.6 0 010-.6l5.154-8.926z"
           stroke="currentColor"
-          strokeWidth={1.5}
           strokeLinecap="round"
           strokeLinejoin="round"
         />

@@ -8,6 +8,7 @@ function SvgFx(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgFx(
       <path
         d="M3 17V7h7M3 12h5M13 17l4-5m0 0l4-5m-4 5l-4-5m4 5l4 5"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

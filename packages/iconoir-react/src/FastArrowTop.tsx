@@ -8,6 +8,7 @@ function SvgFastArrowTop(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgFastArrowTop(
       <path
         d="M15.5 16.5L12 13l-3.5 3.5M15.5 10.5L12 7l-3.5 3.5"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

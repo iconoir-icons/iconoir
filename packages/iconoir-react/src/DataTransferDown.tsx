@@ -8,6 +8,7 @@ function SvgDataTransferDown(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgDataTransferDown(
       <path
         d="M17 20v-1M17 15v-1M7 4v16m0 0l-3-3m3 3l3-3M17 10V4m0 0l-3 3m3-3l3 3"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

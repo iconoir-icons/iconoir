@@ -8,6 +8,7 @@ function SvgAlbumCarousel(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,14 +19,8 @@ function SvgAlbumCarousel(
       <path
         d="M2 19.4V4.6a.6.6 0 01.6-.6h14.8a.6.6 0 01.6.6v14.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6z"
         stroke="currentColor"
-        strokeWidth={1.5}
       />
-      <path
-        d="M22 6v12"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-      />
+      <path d="M22 6v12" stroke="currentColor" strokeLinecap="round" />
       <path
         d="M11 14.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
         fill="currentColor"
@@ -33,7 +28,6 @@ function SvgAlbumCarousel(
       <path
         d="M11 14.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0V8.6a.6.6 0 01.6-.6H13"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
       />
     </svg>

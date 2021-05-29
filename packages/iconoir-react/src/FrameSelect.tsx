@@ -8,6 +8,7 @@ function SvgFrameSelect(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +60,6 @@ function SvgFrameSelect(
         clipRule="evenodd"
         d="M10.997 15.002l-3-7 7 3-2.998.999-1.002 3.001z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -68,7 +68,6 @@ function SvgFrameSelect(
         clipRule="evenodd"
         d="M11.999 12.002l2.998 3-2.998-3z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -8,6 +8,7 @@ function SvgBluetooth(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgBluetooth(
       <path
         d="M6.75 8l10.5 8.5-5.5 5.5V2l5.5 5.5L6.75 16"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

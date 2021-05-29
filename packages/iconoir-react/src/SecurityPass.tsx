@@ -8,6 +8,7 @@ function SvgSecurityPass(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgSecurityPass(
       <path
         d="M9 11l3 3 8-8M20 12a8 8 0 11-5.3-7.533"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -8,6 +8,7 @@ function SvgAirplaneRotation(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgAirplaneRotation(
       <path
         d="M9.879 14.122a3 3 0 104.242-4.243 3 3 0 00-4.242 4.243z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -35,7 +35,6 @@ function SvgAirplaneRotation(
         clipRule="evenodd"
         d="M14.121 9.88s-.009-2.803 1.415-4.243c1.41-1.409 2.793-2.865 4.242-1.415 1.377 1.378.015 2.81-1.414 4.243-1.402 1.406-4.243 1.414-4.243 1.414zM9.879 14.12s.009 2.803-1.415 4.243c-1.41 1.409-2.793 2.865-4.242 1.415-1.377-1.378-.015-2.81 1.414-4.243 1.402-1.406 4.243-1.414 4.243-1.414z"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

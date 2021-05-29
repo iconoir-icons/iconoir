@@ -8,6 +8,7 @@ function SvgScaleFrameReduce(
     <svg
       width="1.5em"
       height="1.5em"
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,6 @@ function SvgScaleFrameReduce(
       <path
         d="M11 15v-1.4a.6.6 0 00-.6-.6H9M6 13H3M11 18v3"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -33,7 +33,6 @@ function SvgScaleFrameReduce(
       <path
         d="M16 11h-3V8"
         stroke="currentColor"
-        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
