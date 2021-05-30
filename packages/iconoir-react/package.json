@@ -11,8 +11,7 @@
   "scripts": {
     "test": "echo Tests not currently set up",
     "build": "rm -rf src && node bin/build.js",
-    "dist": "tsup",
-    "prepublishOnly": "npm run build && npm run dist"
+    "dist": "tsup"
   },
   "repository": {
     "type": "git",
