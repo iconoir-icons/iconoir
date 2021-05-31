@@ -1,110 +1,90 @@
 const path = require('path');
 const fs = require('fs');
-const upperCamelCase = require('uppercamelcase');
-const format = require('prettier-eslint');
+const fsPromises = require('fs').promises;
+const { exec } = require('child_process');
+const ora = require('ora');
 
 const rootDir = path.join(__dirname, '..');
 const iconoirRootDir = path.join(rootDir, '../..');
 const iconoirIconsDir = path.join(iconoirRootDir, 'icons');
-
-const builtIconsDir = path.join(rootDir, 'src/icons');
-
-const initialTypeDefinitions = `/// <reference types="react" />
-import { FC } from 'react';
-
-export interface IconProps {
-  color?: string;
-  size?: string | number;
-};
-
-export type Icon = FC<IconProps>;
-
-`;
-
-if (!fs.existsSync(builtIconsDir)) {
-  fs.mkdirSync(builtIconsDir);
-};
-
-fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), '', 'utf-8');
-fs.writeFileSync(
-  path.join(rootDir, 'src', 'index.d.ts'),
-  initialTypeDefinitions,
-  'utf-8',
-);
+const tmpIconsDir = path.join(rootDir, 'tmp');
+const builtIconsDir = path.join(rootDir, 'src');
 
 const incompatibleNames = {
-  '1st-medal': 'Medal1st',
-  '4k-display': 'Display4k',
-  '4x4-cell': 'Cell4x4',
-  'github': 'GitHub',
-  'github-outline': 'GitHubOutline',
-  'gitlab-full': 'GitLabFull',
-  'linkedin': 'LinkedIn',
-  'tiktok': 'TikTok',
-  'youtube': 'YouTube',
+  '1st-medal': 'medal-1st',
+  '4k-display': 'display-4k',
+  '4x4-cell': 'cell-4x4',
+  github: 'gitHub',
+  'github-outline': 'gitHubOutline',
+  'gitlab-full': 'gitLabFull',
+  linkedin: 'linkedIn',
+  tiktok: 'tikTok',
+  youtube: 'youTube',
 };
+
+const spinner = ora();
 
 fs.readdir(iconoirIconsDir, (err, files) => {
   if (err) {
-    return console.error('Unable to find root icons directory');
-  };
+    throw new Error('Unable to find root icons directory');
+  }
+
+  if (!fs.existsSync(tmpIconsDir)) {
+    fs.mkdirSync(tmpIconsDir);
+  }
+
+  spinner.start(
+    'Copying icons to tmp dir, while renaming files with incompatible names'
+  );
+  const promises = [];
   files.forEach((file) => {
+    const srcFilePath = path.join(iconoirIconsDir, file);
     const iconName = file.split('.')[0];
+    const dstFileName =
+      iconName in incompatibleNames ? incompatibleNames[iconName] : iconName;
+    const dstFilePath = path.join(tmpIconsDir, `${dstFileName}.svg`);
 
-    const location = path.join(builtIconsDir, `${iconName}.jsx`);
-
-    const componentName = (iconName in incompatibleNames) ? incompatibleNames[iconName] : upperCamelCase(iconName);
-
-    const fileData = fs.readFileSync(path.join(iconoirIconsDir, file));
-    
-    const element = `import React, { forwardRef } from 'react';
-    import PropTypes from 'prop-types';
-
-    export const ${componentName} = forwardRef(({color = 'currentColor', size = 24}, ref) => {
-      return (
-        <svg ref={ref} width={size} height={size} viewBox="0 0 24 24" fill="none" color={color} xmlns="http://www.w3.org/2000/svg">
-        ${fileData}
-        </svg>
-      );
-    });
-
-    ${componentName}.propTypes = {
-      color: PropTypes.string,
-      size: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-    };
-
-    ${componentName}.displayName = '${componentName}';
-
-    export default ${componentName};
-    `;
-
-    const component = format({
-      text: element,
-      prettierOptions: {
-        singleQuote: true,
-        parser: 'babel',
-      },
-    });
-
-    fs.writeFileSync(location, component, 'utf-8');
-
-    console.log('Built', componentName);
-
-    const exportString = `export { default as ${componentName} } from './icons/${iconName}';\n`;
-    fs.appendFileSync(
-      path.join(rootDir, 'src', 'index.js'),
-      exportString,
-      'utf-8',
-    );
-
-    const typeString = `export const ${componentName}: Icon;\n`;
-    fs.appendFileSync(
-      path.join(rootDir, 'src', 'index.d.ts'),
-      typeString,
-      'utf-8',
-    );
+    promises.push(fsPromises.copyFile(srcFilePath, dstFilePath));
   });
+
+  function rmTmpDir() {
+    fs.rm(tmpIconsDir, { recursive: true }, (err) => {
+      if (err) {
+        console.error('Could not remove tmp dir');
+      }
+    });
+  }
+
+  Promise.all(promises)
+    .then(() => {
+      spinner.succeed();
+
+      spinner.start('Generating icons');
+      exec(
+        `npx @svgr/cli --silent --out-dir ${builtIconsDir} ${tmpIconsDir}`,
+        (err, stdout, stderr) => {
+          if (err) {
+            spinner.stop();
+            rmTmpDir();
+            throw new Error('Could not run command to generate icons');
+          }
+
+          spinner.succeed();
+
+          if (stdout) {
+            console.log(stdout);
+          }
+          if (stderr) {
+            console.error(`Error while generating icons:\n${stderr}`);
+          }
+
+          rmTmpDir();
+        }
+      );
+    })
+    .catch(() => {
+      spinner.stop();
+      rmTmpDir();
+      throw new Error('Error while copying icons');
+    });
 });
