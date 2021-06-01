@@ -30,7 +30,7 @@ function SvgPageSearch(
       />
       <path
         d="M16 5.4V2.354a.354.354 0 01.604-.25l3.292 3.292a.353.353 0 01-.25.604H16.6a.6.6 0 01-.6-.6z"
-        fill="#000"
+        fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

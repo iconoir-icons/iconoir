@@ -24,7 +24,7 @@ function SvgNoCreditCard(
       />
       <path
         d="M7 15a1 1 0 100-2 1 1 0 000 2z"
-        fill="#000"
+        fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -24,7 +24,7 @@ function SvgAccessibility(
       />
       <path
         d="M12 7a.5.5 0 110-1 .5.5 0 010 1z"
-        fill="#000"
+        fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
