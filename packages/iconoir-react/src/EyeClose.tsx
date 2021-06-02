@@ -17,7 +17,7 @@ function SvgEyeClose(
       {...props}
     >
       <path
-        d="M4.5 15.5c3-6.5 12-6.5 15 0M16.816 12.182L19.5 8.5M12 10.625V7M7.184 12.182L4.5 8.5"
+        d="M4.5 8c3 6.5 12 6.5 15 0M16.816 11.318L19.5 15M12 12.875V16.5M7.184 11.318L4.5 15"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
