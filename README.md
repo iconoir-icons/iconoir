@@ -28,6 +28,11 @@ Here is an example in HTML:
 
 A React library is available to install under the name `iconoir-react`. For more details, see the package [README](./packages/iconoir-react).
 
+## Framer
+
+Iconoir is happily part of [Framer](https://framer.com) now. To start using the icons: On the top menu, `Insert` > `Graphics` > `Iconoir`.
+You can switch between icons from the right sidebar in the editor.
+
 ## Figma
 
 The library is available in the Figma community [here](https://www.figma.com/community/file/983248991460488027/Iconoir-Pack).
