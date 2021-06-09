@@ -9,8 +9,6 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo Tests not currently set up",
-    "build": "rm -rf src && node bin/build.js",
     "dist": "tsup"
   },
   "repository": {
@@ -31,12 +29,9 @@
     "react": "^16.8.6 || ^17"
   },
   "devDependencies": {
-    "@svgr/cli": "^5.5.0",
-    "@types/react": "^17.0.6",
-    "ora": "^5.4.0",
-    "prettier": "^2.3.0",
+    "@types/react": "^17.0.9",
     "react": "^17.0.2",
-    "tsup": "^4.11.1",
-    "typescript": "^4.2.4"
+    "tsup": "^4.11.2",
+    "typescript": "^4.3.2"
   }
 }
