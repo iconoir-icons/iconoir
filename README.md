@@ -10,6 +10,21 @@
   <a href="https://iconoir.com"><strong>Browse at iconoir.com &rarr;</strong></a>
 </p>
 
+<p align="center">
+  
+  <a href="https://www.npmjs.com/package/iconoir-react">
+    <img src="https://img.shields.io/npm/v/iconoir-react.svg?style=flat-square" alt="NPM Monthly Downloads">
+  </a>
+  <a href="https://www.npmjs.com/package/iconoir-react">
+    <img src="https://img.shields.io/npm/dm/iconoir-react.svg?style=flat-square" alt="NPM Version">
+  </a>
+  <a href="https://github.com/lucaburgio/iconoir">
+    <img src="https://img.shields.io/github/stars/lucaburgio/iconoir?style=flat-square" alt="Project Stars">
+  </a>
+  <a href="https://github.com/lucaburgio/iconoir/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/lucaburgio/iconoir?style=flat-square" alt="License">
+  </a>
+</p>
 
 ## Basic Usage
 
