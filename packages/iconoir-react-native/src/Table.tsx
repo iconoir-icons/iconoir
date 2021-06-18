@@ -1,0 +1,30 @@
+import * as React from 'react';
+import Svg, { SvgProps, Path } from 'react-native-svg';
+
+function SvgTable(
+  props: SvgProps,
+  svgRef?: React.Ref<React.Component<SvgProps>>
+) {
+  return (
+    <Svg
+      width="1.5em"
+      height="1.5em"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
+      fill="none"
+      color="currentColor"
+      ref={svgRef}
+      {...props}
+    >
+      <Path
+        d="M21 3v18H3V3h18zM3 16.5h18M3 12h18M3 7.5h18M16.5 3v18M12 3v18M7.5 3v18"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+const ForwardRef = React.forwardRef(SvgTable);
+export default ForwardRef;

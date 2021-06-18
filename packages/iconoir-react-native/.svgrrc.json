@@ -1,0 +1,24 @@
+{
+  "icon": true,
+  "ref": true,
+  "typescript": true,
+  "native": true,
+  "svgProps": {
+    "width": "1.5em",
+    "height": "1.5em",
+    "color": "currentColor"
+  },
+  "jsx": {
+    "babelConfig": {
+      "plugins": [
+        [
+          "@svgr/babel-plugin-remove-jsx-attribute",
+          {
+            "elements":["Svg"],
+            "attributes":["xmlns"]
+          }
+        ]
+      ]
+    }
+  }
+}

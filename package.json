@@ -1,0 +1,13 @@
+{
+  "name": "iconoir",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./bin/build.js"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.5.0",
+    "execa": "^5.1.1",
+    "listr2": "^3.10.0"
+  }
+}
