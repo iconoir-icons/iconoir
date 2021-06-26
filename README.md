@@ -46,7 +46,7 @@ Here is an example in HTML:
 ```html
 <span class="iconoir-hand-brake"></span>
 ```
-The name of the icon must always be inserted as the class. You can find it [here](https://iconoir.com).
+The class must always be "iconoir-" and then the name of the icon. You can find the names of the icons [here](https://iconoir.com).
 
 
 ## React
