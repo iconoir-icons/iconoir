@@ -33,11 +33,21 @@ You can download any icon of the pack directly from https://iconoir.com or get t
 ## Font
 
 Iconoir is available in .EOT, .SVG, .TTF, and .WOFF. Get them in the /fonts folder.
+If you want to use Iconoir in a HTML file, you just need to add the [iconoir.css](./fonts/iconoir.css) file.
+
+Import the CSS File:
+
+```html
+<link rel="stylesheet" href="https://raw.githubusercontent.com/lucaburgio/iconoir/master/fonts/iconoir.css">
+```
+
 Here is an example in HTML:
 
-```shell
+```html
 <span class="iconoir-hand-brake"></span>
 ```
+The name of the icon must always be inserted as the class. You can find it [here](https://iconoir.com).
+
 
 ## React
 
