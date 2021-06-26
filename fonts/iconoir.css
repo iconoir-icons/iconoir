@@ -19,9 +19,6 @@
 
 span[class^="iconoir-"]:before, span[class*=" iconoir-"]:before{
     font-family: "Iconoir" !important;
-}
-
-.iconoir{
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
