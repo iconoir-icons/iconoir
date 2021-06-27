@@ -25,7 +25,9 @@ span[class^="iconoir-"]:before, span[class*=" iconoir-"]:before{
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
-    line-height:1
+    line-height:1;
+    font-size: 1em;
+    vertical-align: middle;
 }
 
 .iconoir-hand-brake:before {
