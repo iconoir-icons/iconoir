@@ -12,11 +12,11 @@ Iconoir is an open source library with 900+ SVG Icons. No premium icons, no emai
 ### Installation
 
 ```
-yarn add iconoir-react-native
+yarn add iconoir-react-native react-native-svg
 ```
 or
 ```
-npm i iconoir-react-native
+npm i iconoir-react-native react-native-svg
 ```
 
 ### Usage
