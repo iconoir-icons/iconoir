@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "dist": "tsup"
+    "dist": "tsup && tsc"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "bugs": {
     "url": "https://github.com/lucaburgio/iconoir/issues"
   },
+  "sideEffects": false,
   "homepage": "https://github.com/lucaburgio/iconoir#readme",
   "peerDependencies": {
     "react": "^16.8.6 || ^17",
@@ -36,6 +37,5 @@
     "react-native-svg": "^12.1.1",
     "tsup": "^4.11.2",
     "typescript": "^4.3.3"
-  },
-  "dependencies": {}
+  }
 }
