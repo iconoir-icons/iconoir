@@ -1,6 +1,6 @@
 {
   "entryPoints": ["src/index.tsx"],
-  "format": ["cjs", "esm"],
+  "format": ["cjs"],
   "legacyOutput": true,
   "sourcemap": true,
   "minify": true,
