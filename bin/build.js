@@ -16,6 +16,7 @@ const incompatibleNames = {
   '1st-medal': 'medal-1st',
   '4k-display': 'display-4k',
   '4x4-cell': 'cell-4x4',
+  '360-view': 'view360',
   github: 'gitHub',
   'github-outline': 'gitHubOutline',
   'gitlab-full': 'gitLabFull',
