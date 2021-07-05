@@ -7,7 +7,7 @@ Iconoir is an open source library with 900+ SVG Icons. No premium icons, no emai
 
 `iconoir-react` is an open source package that exports these icons as React.js components that can be used in all of your React projects.
 
-**Based on Iconoir Icons ```v4.3.1```.**
+**Based on Iconoir Icons ```v4.4.0```.**
 
 ### Installation
 
@@ -56,6 +56,7 @@ For the most part, the React components are named as PascalCase variations of th
 | `1st-medal`      | `Medal1St`      |
 | `4k-display`     | `Display4K`     |
 | `4x4-cell`       | `Cell4X4`       |
+| `360-view`       | `View360`       |
 | `github`         | `GitHub`        |
 | `github-outline` | `GitHubOutline` |
 | `gitlab-full`    | `GitLabFull`    |
