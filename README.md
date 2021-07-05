@@ -34,6 +34,10 @@ You can download any icon of the pack directly from https://iconoir.com or get t
 
 A React library is available to install under the name `iconoir-react`. For more details, see the package [README](./packages/iconoir-react).
 
+## React Native
+
+A React Native library is available to install under the name `iconoir-react-native`. For more details, see the package [README](./packages/iconoir-react-native).
+
 ## Framer
 
 Iconoir is happily part of [Framer](https://framer.com) now. To start using the icons: On the top menu, `Insert` > `Graphics` > `Iconoir`.
