@@ -18,14 +18,15 @@
   "keywords": [
     "icons",
     "svg",
-    "library"
+    "library",
+    "react-native"
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lucaburgio/iconoir/issues"
   },
   "sideEffects": false,
-  "homepage": "https://github.com/lucaburgio/iconoir#readme",
+  "homepage": "https://iconoir.com",
   "peerDependencies": {
     "react": "^16.8.6 || ^17",
     "react-native": ">=0.50.0",

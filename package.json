@@ -1,10 +1,28 @@
 {
   "name": "iconoir",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A Simple and Definitive Open-Source Icons Library",
   "type": "module",
+  "files": [
+    "icons"
+  ],
   "scripts": {
     "build": "node ./bin/build.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaburgio/iconoir.git"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "library"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucaburgio/iconoir/issues"
+  },
+  "homepage": "https://iconoir.com",
   "devDependencies": {
     "@svgr/cli": "^5.5.0",
     "execa": "^5.1.1",
