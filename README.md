@@ -11,12 +11,8 @@
 </p>
 
 <p align="center">
-  
-  <a href="https://www.npmjs.com/package/iconoir-react">
-    <img src="https://img.shields.io/npm/v/iconoir-react.svg?style=flat-square" alt="NPM Monthly Downloads">
-  </a>
-  <a href="https://www.npmjs.com/package/iconoir-react">
-    <img src="https://img.shields.io/npm/dm/iconoir-react.svg?style=flat-square" alt="NPM Version">
+  <a href="https://github.com/lucaburgio/iconoir/releases">
+    <img src="https://img.shields.io/github/v/release/lucaburgio/iconoir?style=flat-square" alt="Version">
   </a>
   <a href="https://github.com/lucaburgio/iconoir">
     <img src="https://img.shields.io/github/stars/lucaburgio/iconoir?style=flat-square" alt="Project Stars">
