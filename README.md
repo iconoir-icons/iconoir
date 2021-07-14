@@ -58,7 +58,7 @@ To use Iconoir in a HTML file, add the [iconoir.css](./fonts/iconoir.css) file i
 Import the CSS File:
 
 ```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/lucaburgio/iconoir/master/css/iconoir.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@4.4/css/iconoir.css">
 ```
 
 Here is an example in HTML:
