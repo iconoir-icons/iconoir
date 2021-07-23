@@ -53,8 +53,6 @@ You can switch between icons from the right sidebar in the editor.
 
 ## CSS
 
-To use Iconoir in a HTML file, add the [iconoir.css](./fonts/iconoir.css) file in your project.
-
 Import the CSS File:
 
 ```html
