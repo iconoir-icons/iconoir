@@ -51,22 +51,6 @@ A React Native library is available to install under the name `iconoir-react-nat
 Iconoir is happily part of [Framer](https://framer.com) now. To start using the icons: On the top menu, `Insert` > `Graphics` > `Iconoir`.
 You can switch between icons from the right sidebar in the editor.
 
-## Font
-
-To use Iconoir as a font, add the [iconoir.css](./fonts/iconoir.css) file in your project.
-
-Import the CSS File:
-
-```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/lucaburgio/iconoir/master/fonts/iconoir.css">
-```
-
-Here is an example in HTML:
-
-```html
-<span class="iconoir-hand-brake"></span>
-```
-The class must always be "iconoir-" and then the name of the icon. You can find the names of the icons [here](https://iconoir.com).
 
 ## Figma
 
