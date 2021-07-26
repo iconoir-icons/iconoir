@@ -74,6 +74,19 @@ const tasks = new Listr(
       },
     },
     {
+      title: 'Generating meta data json',
+      task: async (ctx) => {
+        try {
+          await fs.writeFile(
+            'meta-data.json',
+            JSON.stringify({ icons: ctx.iconoirIconsFiles })
+          );
+        } catch (error) {
+          console.log(error.message);
+        }
+      },
+    },
+    {
       title:
         'Copying icon files to temporary directory, while renaming icons with incompatible names',
       skip: (ctx) => ctx.skip,
