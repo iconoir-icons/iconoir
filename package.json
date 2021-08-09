@@ -26,6 +26,6 @@
   "devDependencies": {
     "@svgr/cli": "^5.5.0",
     "execa": "^5.1.1",
-    "listr2": "^3.10.0"
+    "listr2": "^3.11.0"
   }
 }
