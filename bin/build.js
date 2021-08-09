@@ -51,19 +51,7 @@ args.forEach((target) => {
 const tasks = new Listr(
   [
     {
-      title: 'Creating temporary directory',
-      task: async (ctx) => {
-        try {
-          ctx.tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'iconoir-'));
-        } catch (err) {
-          ctx.skip = true;
-          throw new Error(err.message);
-        }
-      },
-    },
-    {
       title: 'Fetching icon files',
-      skip: (ctx) => ctx.skip,
       task: async (ctx) => {
         try {
           ctx.iconoirIconsFiles = await fs.readdir(iconoirIconsDir);
@@ -74,15 +62,24 @@ const tasks = new Listr(
       },
     },
     {
-      title: 'Generating meta data json',
+      title: 'Generating meta-data.json file',
+      skip: (ctx) => ctx.skip,
       task: async (ctx) => {
-        try {
           await fs.writeFile(
-            'meta-data.json',
+            path.join(rootDir, 'meta-data.json'),
             JSON.stringify({ icons: ctx.iconoirIconsFiles })
           );
-        } catch (error) {
-          console.log(error.message);
+      },
+    },
+    {
+      title: 'Creating temporary directory',
+      skip: (ctx) => ctx.skip,
+      task: async (ctx) => {
+        try {
+          ctx.tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'iconoir-'));
+        } catch (err) {
+          ctx.skip = true;
+          throw new Error(err.message);
         }
       },
     },
@@ -196,7 +193,7 @@ const tasks = new Listr(
   {
     concurrent: false,
     exitOnError: false,
-    rendererOptions: { showErrorMessage: false },
+    rendererOptions: { collapseErrors: false },
   }
 );
 
