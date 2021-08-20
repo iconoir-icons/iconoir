@@ -56,7 +56,7 @@ You can switch between icons from the right sidebar in the editor.
 Import the CSS File:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@4.4/css/iconoir.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css">
 ```
 
 Here is an example in HTML:
