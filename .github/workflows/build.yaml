@@ -6,7 +6,8 @@ on:
       - master
 
 jobs:
-  lint:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
