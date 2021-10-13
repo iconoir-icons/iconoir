@@ -2,7 +2,6 @@
   "entryPoints": ["src/index.tsx"],
   "format": ["cjs"],
   "legacyOutput": true,
-  "sourcemap": true,
   "minify": true,
   "clean": true,
   "dts": true
