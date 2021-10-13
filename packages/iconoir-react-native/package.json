@@ -33,11 +33,11 @@
     "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.14.6",
-    "@types/react": "^17.0.13",
+    "@babel/runtime": "^7.15.4",
+    "@types/react": "^17.0.29",
     "react": "^17.0.2",
     "react-native-svg": "^12.1.1",
-    "tsup": "^4.12.0",
-    "typescript": "^4.3.5"
+    "tsup": "^5.4.0",
+    "typescript": "^4.4.4"
   }
 }

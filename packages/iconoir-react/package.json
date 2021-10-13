@@ -31,9 +31,9 @@
     "react": "^16.8.6 || ^17"
   },
   "devDependencies": {
-    "@types/react": "^17.0.13",
+    "@types/react": "^17.0.29",
     "react": "^17.0.2",
-    "tsup": "^4.12.0",
-    "typescript": "^4.3.5"
+    "tsup": "^5.4.0",
+    "typescript": "^4.4.4"
   }
 }
