@@ -3673,6 +3673,8 @@ i[class^="iconoir-"]::before, i[class*=" iconoir-"]::before{
     content: url('../icons/her-slips.svg');
 }
 
+/*--- v4.4 ---*/
+
 .iconoir-360-view::before {
     content: url('../icons/360-view.svg');
 }
@@ -3779,4 +3781,138 @@ i[class^="iconoir-"]::before, i[class*=" iconoir-"]::before{
 
 .iconoir-windows::before {
     content: url('../icons/windows.svg');
+}
+
+/*--- v4.5 ---*/
+
+.iconoir-apple-wallet::before {
+    content: url('../icons/apple-wallet.svg');
+}
+
+.iconoir-atom::before {
+    content: url('../icons/atom.svg');
+}
+
+.iconoir-backward-15-seconds::before {
+    content: url('../icons/backward-15-seconds.svg');
+}
+
+.iconoir-bonfire::before {
+    content: url('../icons/bonfire.svg');
+}
+
+.iconoir-book-stack::before {
+    content: url('../icons/book-stack.svg');
+}
+
+.iconoir-book::before {
+    content: url('../icons/book.svg');
+}
+
+.iconoir-bookmark-book::before {
+    content: url('../icons/bookmark-book.svg');
+}
+
+.iconoir-carbon::before {
+    content: url('../icons/carbon.svg');
+}
+
+.iconoir-card-wallet::before {
+    content: url('../icons/card-wallet.svg');
+}
+
+.iconoir-code-brackets-square::before {
+    content: url('../icons/code-brackets-square.svg');
+}
+
+.iconoir-code-brackets::before {
+    content: url('../icons/code-brackets.svg');
+}
+
+.iconoir-favourite-book::before {
+    content: url('../icons/favourite-book.svg');
+}
+
+.iconoir-fire-flame::before {
+    content: url('../icons/fire-flame.svg');
+}
+
+.iconoir-flask::before {
+    content: url('../icons/flask.svg');
+}
+
+.iconoir-fluorine::before {
+    content: url('../icons/fluorine.svg');
+}
+
+.iconoir-forward-15-seconds::before {
+    content: url('../icons/forward-15-seconds.svg');
+}
+
+.iconoir-hd-display::before {
+    content: url('../icons/hd-display.svg');
+}
+
+.iconoir-hydrogen::before {
+    content: url('../icons/hydrogen.svg');
+}
+
+.iconoir-locked-book::before {
+    content: url('../icons/locked-book.svg');
+}
+
+.iconoir-magnet-energy::before {
+    content: url('../icons/magnet-energy.svg');
+}
+
+.iconoir-magnet::before {
+    content: url('../icons/magnet.svg');
+}
+
+.iconoir-math-book::before {
+    content: url('../icons/math-book.svg');
+}
+
+.iconoir-nitrogen::before {
+    content: url('../icons/nitrogen.svg');
+}
+
+.iconoir-numbered-list-left::before {
+    content: url('../icons/numbered-list-left.svg');
+}
+
+.iconoir-numbered-list-right::before {
+    content: url('../icons/numbered-list-right.svg');
+}
+
+.iconoir-oxygen::before {
+    content: url('../icons/oxygen.svg');
+}
+
+.iconoir-page-edit::before {
+    content: url('../icons/page-edit.svg');
+}
+
+.iconoir-round-flask::before {
+    content: url('../icons/round-flask.svg');
+}
+
+.iconoir-sidebar-collapse::before {
+    content: url('../icons/sidebar-collapse.svg');
+}
+
+.iconoir-sidebar-expand::before {
+    content: url('../icons/sidebar-expand.svg');
+}
+
+.iconoir-task-list::before {
+    content: url('../icons/task-list.svg');
+}
+
+.iconoir-test-tube::before {
+    content: url('../icons/test-tube.svg');
+}
+
+.iconoir-wallet::before {
+    content: url('../icons/wallet.svg');
 }
