@@ -1,28 +1,28 @@
 import * as React from 'react';
-import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgCell4X4(
-  props: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
+function SvgCell2X2(
+  props: React.SVGProps<SVGSVGElement>,
+  svgRef?: React.Ref<SVGSVGElement>
 ) {
   return (
-    <Svg
+    <svg
       width="1.5em"
       height="1.5em"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
-      <Path
+      <path
         d="M21 3.6V12h-9V3h8.4a.6.6 0 01.6.6zM21 20.4V12h-9v9h8.4a.6.6 0 00.6-.6zM3 12V3.6a.6.6 0 01.6-.6H12v9H3zM3 12v8.4a.6.6 0 00.6.6H12v-9H3z"
         stroke="currentColor"
       />
-    </Svg>
+    </svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgCell4X4);
+const ForwardRef = React.forwardRef(SvgCell2X2);
 export default ForwardRef;
