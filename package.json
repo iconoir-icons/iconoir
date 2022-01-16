@@ -1,9 +1,10 @@
 {
   "name": "iconoir",
-  "version": "1.0.0",
+  "version": "4.6.0",
   "description": "A Simple and Definitive Open-Source Icons Library",
   "type": "module",
   "files": [
+    "css",
     "icons"
   ],
   "scripts": {
@@ -17,8 +18,9 @@
   },
   "keywords": [
     "icons",
+    "library",
     "svg",
-    "library"
+    "css"
   ],
   "license": "MIT",
   "bugs": {
