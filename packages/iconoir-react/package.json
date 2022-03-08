@@ -1,6 +1,6 @@
 {
   "name": "iconoir-react",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "React library for Iconoir icon set",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
