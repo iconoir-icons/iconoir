@@ -11,12 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
+        registry-url: 'https://registry.npmjs.org'
+    - uses: pnpm/action-setup@v2.1.0
+      with:
+        version: 6.27.1
+        run_install: true
+    - run: pnpm run build
+    - run: pnpm run prepublish
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Update build artifacts
+        commit_message: Update build artifacts and release
+    - run: pnpm -r publish --filter ./packages --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -9,7 +9,8 @@
     "dist"
   ],
   "scripts": {
-    "dist": "tsup && tsc"
+    "dist": "tsup && tsc",
+    "prepublish": "npm run dist"
   },
   "repository": {
     "type": "git",

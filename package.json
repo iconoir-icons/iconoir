@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "eslint ./bin/build.js",
     "lint:fix": "npm run lint -- --fix",
-    "build": "node ./bin/build.js"
+    "build": "node ./bin/build.js",
+    "prepublish": "node ./bin/prepublish.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "execa": "^5.1.1",
     "listr2": "^3.12.2",
+    "semver": "^7.3.5",
     "prettier": "^2.4.1"
   }
 }
