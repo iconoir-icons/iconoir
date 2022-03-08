@@ -1,8 +1,0 @@
-{
-  "entryPoints": ["src/index.tsx"],
-  "format": ["cjs"],
-  "legacyOutput": true,
-  "minify": true,
-  "clean": true,
-  "dts": true
-}
