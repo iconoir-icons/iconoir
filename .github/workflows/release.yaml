@@ -25,6 +25,7 @@ jobs:
       with:
         version: 6.27.1
         run_install: true
+    - run: pnpm run build
     - run: pnpm run prepublish
       env:
         TAG_NAME: ${{ github.ref_name }}
