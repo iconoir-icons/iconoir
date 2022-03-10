@@ -1,13 +1,13 @@
-name: Build
+name: Release
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - 'v*'
 
 jobs:
-  build:
-    name: Build
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -26,6 +26,14 @@ jobs:
         version: 6.27.1
         run_install: true
     - run: pnpm run build
+    - run: pnpm run prepublish
+      env:
+        TAG_NAME: ${{ github.ref_name }}
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Update build artifacts
+        commit_message: Release Version
+        tagging_message: ${{ github.ref_name }}
+        push_options: '--force'
+    - run: pnpm -r publish --filter ./packages --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
