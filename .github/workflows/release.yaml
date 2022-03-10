@@ -34,7 +34,7 @@ jobs:
         commit_message: Release Version ${{ github.ref_name }}
         branch: master
     - run: git push origin :refs/tags/${{ github.ref_name }}
-    - run: git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }}
+    - run: git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
     - run: git push origin --tags
     - run: pnpm -r publish --filter ./packages --access public
       env:
