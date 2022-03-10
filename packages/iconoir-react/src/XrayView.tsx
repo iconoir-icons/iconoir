@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgElectronicsTransister(
+function SvgXrayView(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -17,7 +17,13 @@ function SvgElectronicsTransister(
       {...props}
     >
       <path
-        d="M7 16V3.6a.6.6 0 01.6-.6h8.8a.6.6 0 01.6.6V16M7 16h2m-2 0H5m12 0h-2m2 0h2m-7 0v6m0-6H9m3 0h3m-6 0v6m6-6v6"
+        d="M21 7.353v9.294a.6.6 0 01-.309.525l-8.4 4.666a.6.6 0 01-.582 0l-8.4-4.666A.6.6 0 013 16.647V7.353a.6.6 0 01.309-.524l8.4-4.667a.6.6 0 01.582 0l8.4 4.667a.6.6 0 01.309.524z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20.5 16.722l-8.209-4.56a.6.6 0 00-.582 0L3.5 16.722M3.528 7.294l8.18 4.544a.6.6 0 00.583 0l8.209-4.56M12 21V3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -26,5 +32,5 @@ function SvgElectronicsTransister(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgElectronicsTransister);
+const ForwardRef = React.forwardRef(SvgXrayView);
 export default ForwardRef;

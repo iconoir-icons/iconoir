@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgElectronicsTransister(
+function Svg3DSelectSolid(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,7 +17,13 @@ function SvgElectronicsTransister(
       {...props}
     >
       <Path
-        d="M7 16V3.6a.6.6 0 01.6-.6h8.8a.6.6 0 01.6.6V16M7 16h2m-2 0H5m12 0h-2m2 0h2m-7 0v6m0-6H9m3 0h3m-6 0v6m6-6v6"
+        d="M21 7.353v9.294a.6.6 0 01-.309.525l-8.4 4.666a.6.6 0 01-.582 0l-8.4-4.666A.6.6 0 013 16.647V7.353a.6.6 0 01.309-.524l8.4-4.667a.6.6 0 01.582 0l8.4 4.667a.6.6 0 01.309.524z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M3.528 7.294l8.18 4.544a.6.6 0 00.583 0l8.209-4.56M12 21v-9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -26,5 +32,5 @@ function SvgElectronicsTransister(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgElectronicsTransister);
+const ForwardRef = React.forwardRef(Svg3DSelectSolid);
 export default ForwardRef;
