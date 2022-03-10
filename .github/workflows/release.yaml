@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: master # We have to checkout master or PNPM fails. Tag should be on master anyway.
     - uses: actions/cache@v2
       with:
         path: ~/.pnpm-store
@@ -35,7 +37,6 @@ jobs:
         branch: master
     - run: git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
     - run: git push -f origin ${{ github.ref_name }}
-    - run: git checkout master
     - run: pnpm -r publish --filter ./packages --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
