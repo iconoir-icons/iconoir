@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/iconoir.png" alt="Iconoir">
+  <img src="assets/iconoir.png?v=1.1" alt="Iconoir">
 </p>
 
 <p align="center">
