@@ -11,7 +11,8 @@
     "lint": "eslint ./bin/build.js",
     "lint:fix": "npm run lint -- --fix",
     "build": "node ./bin/build.js",
-    "prepublish": "node ./bin/prepublish.js"
+    "prepublish": "node ./bin/prepublish.js",
+    "dist": "pnpm m --filter ./packages run dist"
   },
   "repository": {
     "type": "git",

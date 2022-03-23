@@ -4,11 +4,12 @@
   "description": "React Native library for Iconoir icon set",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dist": "tsc",
+    "dist": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
     "prepublish": "npm run dist"
   },
   "repository": {
