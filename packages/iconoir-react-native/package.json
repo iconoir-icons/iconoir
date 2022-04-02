@@ -1,6 +1,6 @@
 {
   "name": "iconoir-react-native",
-  "version": "4.7.1",
+  "version": "4.8.0",
   "description": "React Native library for Iconoir icon set",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
