@@ -17,6 +17,9 @@
   <a href="https://github.com/lucaburgio/iconoir">
     <img src="https://img.shields.io/github/stars/lucaburgio/iconoir?style=flat-square" alt="Project Stars">
   </a>
+  <a href="https://www.npmjs.com/package/iconoir-react">
+    <img src="https://img.shields.io/npm/dm/iconoir-react?color=98E8F3&label=react&style=flat-square" alt="React Library">
+  </a>
   <a href="https://github.com/lucaburgio/iconoir/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/lucaburgio/iconoir?style=flat-square" alt="License">
   </a>
