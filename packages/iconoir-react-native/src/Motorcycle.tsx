@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgDialpad(
+function SvgMotorcycle(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,8 +17,13 @@ function SvgDialpad(
       {...props}
     >
       <Path
-        d="M5.5 5a.5.5 0 110-1 .5.5 0 010 1zM5.5 10a.5.5 0 110-1 .5.5 0 010 1zM5.5 15a.5.5 0 110-1 .5.5 0 010 1zM12 5a.5.5 0 110-1 .5.5 0 010 1zM12 10a.5.5 0 110-1 .5.5 0 010 1zM12 15a.5.5 0 110-1 .5.5 0 010 1zM12 20a.5.5 0 110-1 .5.5 0 010 1zM18.5 5a.5.5 0 110-1 .5.5 0 010 1zM18.5 10a.5.5 0 110-1 .5.5 0 010 1zM18.5 15a.5.5 0 110-1 .5.5 0 010 1z"
-        fill="currentColor"
+        d="M5 19a4 4 0 100-8 4 4 0 000 8zM19 15l-3-9 1-1"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M16 8.5h-4.5l-4.5 3M5.5 15.5H12l1-2.5 3.5-4.5M8.5 10c-2-1.5-5-1.5-7 0M19 19a4 4 0 100-8 4 4 0 000 8z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -27,5 +32,5 @@ function SvgDialpad(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgDialpad);
+const ForwardRef = React.forwardRef(SvgMotorcycle);
 export default ForwardRef;

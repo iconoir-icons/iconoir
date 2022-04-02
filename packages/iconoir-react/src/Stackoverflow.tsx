@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgDialpad(
+function SvgStackoverflow(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -17,8 +17,7 @@ function SvgDialpad(
       {...props}
     >
       <path
-        d="M5.5 5a.5.5 0 110-1 .5.5 0 010 1zM5.5 10a.5.5 0 110-1 .5.5 0 010 1zM5.5 15a.5.5 0 110-1 .5.5 0 010 1zM12 5a.5.5 0 110-1 .5.5 0 010 1zM12 10a.5.5 0 110-1 .5.5 0 010 1zM12 15a.5.5 0 110-1 .5.5 0 010 1zM12 20a.5.5 0 110-1 .5.5 0 010 1zM18.5 5a.5.5 0 110-1 .5.5 0 010 1zM18.5 10a.5.5 0 110-1 .5.5 0 010 1zM18.5 15a.5.5 0 110-1 .5.5 0 010 1z"
-        fill="currentColor"
+        d="M19 15v6H5v-6M16 17H8M15.913 14.663L8.087 13M16.713 12.38L9.463 9M18.173 10.642L12.044 5.5M20.034 8.804L15.109 2.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -27,5 +26,5 @@ function SvgDialpad(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgDialpad);
+const ForwardRef = React.forwardRef(SvgStackoverflow);
 export default ForwardRef;

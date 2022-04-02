@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgDialpad(
+function SvgOpenNewWindow(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -17,15 +17,19 @@ function SvgDialpad(
       {...props}
     >
       <path
-        d="M5.5 5a.5.5 0 110-1 .5.5 0 010 1zM5.5 10a.5.5 0 110-1 .5.5 0 010 1zM5.5 15a.5.5 0 110-1 .5.5 0 010 1zM12 5a.5.5 0 110-1 .5.5 0 010 1zM12 10a.5.5 0 110-1 .5.5 0 010 1zM12 15a.5.5 0 110-1 .5.5 0 010 1zM12 20a.5.5 0 110-1 .5.5 0 010 1zM18.5 5a.5.5 0 110-1 .5.5 0 010 1zM18.5 10a.5.5 0 110-1 .5.5 0 010 1zM18.5 15a.5.5 0 110-1 .5.5 0 010 1z"
-        fill="currentColor"
+        d="M21 3h-6m6 0l-9 9m9-9v6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+      <path
+        d="M21 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"
+        stroke="currentColor"
+        strokeLinecap="round"
       />
     </svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgDialpad);
+const ForwardRef = React.forwardRef(SvgOpenNewWindow);
 export default ForwardRef;
