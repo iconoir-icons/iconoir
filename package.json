@@ -1,6 +1,6 @@
 {
   "name": "iconoir",
-  "version": "4.6.0",
+  "version": "4.9.0",
   "description": "A Simple and Definitive Open-Source Icons Library",
   "type": "module",
   "files": [
@@ -11,7 +11,7 @@
     "lint": "eslint ./bin/build.js",
     "lint:fix": "npm run lint -- --fix",
     "build": "node ./bin/build.js",
-    "prepublish": "node ./bin/prepublish.js",
+    "prepublish-all": "node ./bin/prepublish.js",
     "dist": "pnpm m --filter ./packages run dist"
   },
   "repository": {
