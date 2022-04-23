@@ -13,7 +13,10 @@ function publishPackage(name) {
     throw new Error(`Tag name ${process.env.TAG_NAME} is not valid.`);
   }
 
-  const packageJsonPath = path.join('packages', name, 'package.json');
+  const packageJsonPath =
+    name === 'iconoir'
+      ? 'package.json'
+      : path.join('packages', name, 'package.json');
   const contents = JSON.parse(fs.readFileSync(packageJsonPath).toString());
   contents.version = newVersion;
   if (PACKAGE_BASE) {
@@ -23,5 +26,6 @@ function publishPackage(name) {
   console.info('package.json updated');
 }
 
+publishPackage('iconoir');
 publishPackage('iconoir-react');
 publishPackage('iconoir-react-native');
