@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgThreePointsCircle(
+function Svg3DArcCenterPt(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,33 +17,28 @@ function SvgThreePointsCircle(
       {...props}
     >
       <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+        d="M22 16c0-5.523-4.477-10-10-10-4.1 0-7.625 2.468-9.168 6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeDasharray="3 3"
       />
       <Path
-        d="M5 6a1 1 0 100-2 1 1 0 000 2z"
+        d="M2 17a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
-        d="M5 10.5V9M5 15v-1.5"
+        d="M2 16h10"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
-        d="M5 20a1 1 0 100-2 1 1 0 000 2zM19 20a1 1 0 100-2 1 1 0 000 2z"
+        d="M12 17a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M10.5 19H9M15 19h-1.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -52,5 +47,5 @@ function SvgThreePointsCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgThreePointsCircle);
+const ForwardRef = React.forwardRef(Svg3DArcCenterPt);
 export default ForwardRef;

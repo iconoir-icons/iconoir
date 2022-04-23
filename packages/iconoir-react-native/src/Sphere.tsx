@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgThreePointsCircle(
+function SvgSphere(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -23,27 +23,7 @@ function SvgThreePointsCircle(
         strokeLinejoin="round"
       />
       <Path
-        d="M5 6a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M5 10.5V9M5 15v-1.5"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M5 20a1 1 0 100-2 1 1 0 000 2zM19 20a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M10.5 19H9M15 19h-1.5"
+        d="M12 22c-3.314 0-6-4.477-6-10S8.686 2 12 2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -52,5 +32,5 @@ function SvgThreePointsCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgThreePointsCircle);
+const ForwardRef = React.forwardRef(SvgSphere);
 export default ForwardRef;

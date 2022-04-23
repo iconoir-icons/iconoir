@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgOnePointCircle(
+function SvgNintendoSwitch(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,27 +17,23 @@ function SvgOnePointCircle(
       {...props}
     >
       <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+        d="M2 17V7a4 4 0 014-4h3.9a.6.6 0 01.6.6v16.8a.6.6 0 01-.6.6H6a4 4 0 01-4-4z"
         stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
       <Path
-        d="M12 13a1 1 0 100-2 1 1 0 000 2z"
+        d="M6.5 8a1 1 0 100-2 1 1 0 000 2zM17.5 14a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1"
+        d="M22 17V7a4 4 0 00-4-4h-3.9a.6.6 0 00-.6.6v16.8a.6.6 0 00.6.6H18a4 4 0 004-4z"
         stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </Svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgOnePointCircle);
+const ForwardRef = React.forwardRef(SvgNintendoSwitch);
 export default ForwardRef;

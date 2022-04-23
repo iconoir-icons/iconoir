@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgOnePointCircle(
+function SvgSigmaFunction(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -17,20 +17,7 @@ function SvgOnePointCircle(
       {...props}
     >
       <path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 13a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1"
+        d="M4 4h16v3M4 20h16v-3M4 20l8-8-8-8"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -39,5 +26,5 @@ function SvgOnePointCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgOnePointCircle);
+const ForwardRef = React.forwardRef(SvgSigmaFunction);
 export default ForwardRef;

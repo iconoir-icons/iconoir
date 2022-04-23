@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgOnePointCircle(
+function SvgArcheryMatch(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,20 +17,7 @@ function SvgOnePointCircle(
       {...props}
     >
       <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M12 13a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1"
+        d="M8.611 15.89l12.02-12.022M8.612 15.89H5.783l-2.829 2.829h2.829v2.828l2.828-2.828v-2.829zm12.02-12.02h-2.828m2.829 0v2.828M15.39 15.89L3.367 3.867M15.39 15.89h2.829l2.828 2.829h-2.828v2.828l-2.829-2.828v-2.829zM3.37 3.87h2.828m-2.829 0v2.828"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -39,5 +26,5 @@ function SvgOnePointCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgOnePointCircle);
+const ForwardRef = React.forwardRef(SvgArcheryMatch);
 export default ForwardRef;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgTwoPointsCircle(
+function SvgPokeball(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -23,21 +23,15 @@ function SvgTwoPointsCircle(
         strokeLinejoin="round"
       />
       <path
-        d="M5 6a1 1 0 100-2 1 1 0 000 2zM19 20a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
+        d="M12 15a3 3 0 100-6 3 3 0 000 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1M12.5 12.5l-1-1M9.5 9.5l-1-1M6.5 6.5L5 5"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M2 12h7M15 12h7" stroke="currentColor" />
     </svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgTwoPointsCircle);
+const ForwardRef = React.forwardRef(SvgPokeball);
 export default ForwardRef;

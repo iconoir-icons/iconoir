@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgOnePointCircle(
+function SvgSpades(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,27 +17,19 @@ function SvgOnePointCircle(
       {...props}
     >
       <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+        d="M12 14.5c3 4.5 9 4.47 9-.5 0-4-4-7-9-12-5 5-9 8-9 12 0 4.97 6 5 9 .5z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
-        d="M12 13a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
+        d="M11.47 15.493l-3 5.625A.6.6 0 009 22h6a.6.6 0 00.53-.882l-3-5.625a.6.6 0 00-1.06 0z"
         stroke="currentColor"
         strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </Svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgOnePointCircle);
+const ForwardRef = React.forwardRef(SvgSpades);
 export default ForwardRef;

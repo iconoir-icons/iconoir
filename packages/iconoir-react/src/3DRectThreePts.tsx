@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgTwoPointsCircle(
+function Svg3DRectThreePts(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -16,21 +16,16 @@ function SvgTwoPointsCircle(
       ref={svgRef}
       {...props}
     >
+      <path d="M3 21V3.6a.6.6 0 01.6-.6H21" stroke="currentColor" />
       <path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+        d="M17 21h3.4a.6.6 0 00.6-.6V17M21 7v2M21 12v2M7 21h2M12 21h2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M5 6a1 1 0 100-2 1 1 0 000 2zM19 20a1 1 0 100-2 1 1 0 000 2z"
+        d="M3 4a1 1 0 100-2 1 1 0 000 2zM3 22a1 1 0 100-2 1 1 0 000 2zM21 4a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1M12.5 12.5l-1-1M9.5 9.5l-1-1M6.5 6.5L5 5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -39,5 +34,5 @@ function SvgTwoPointsCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgTwoPointsCircle);
+const ForwardRef = React.forwardRef(Svg3DRectThreePts);
 export default ForwardRef;

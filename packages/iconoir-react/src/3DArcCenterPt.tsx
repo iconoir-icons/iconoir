@@ -1,56 +1,51 @@
 import * as React from 'react';
-import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgThreePointsCircle(
-  props: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
+function Svg3DArcCenterPt(
+  props: React.SVGProps<SVGSVGElement>,
+  svgRef?: React.Ref<SVGSVGElement>
 ) {
   return (
-    <Svg
+    <svg
       width="1.5em"
       height="1.5em"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
-      <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+      <path
+        d="M22 16c0-5.523-4.477-10-10-10-4.1 0-7.625 2.468-9.168 6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeDasharray="3 3"
       />
-      <Path
-        d="M5 6a1 1 0 100-2 1 1 0 000 2z"
+      <path
+        d="M2 17a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <Path
-        d="M5 10.5V9M5 15v-1.5"
+      <path
+        d="M2 16h10"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <Path
-        d="M5 20a1 1 0 100-2 1 1 0 000 2zM19 20a1 1 0 100-2 1 1 0 000 2z"
+      <path
+        d="M12 17a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <Path
-        d="M10.5 19H9M15 19h-1.5"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </Svg>
+    </svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgThreePointsCircle);
+const ForwardRef = React.forwardRef(Svg3DArcCenterPt);
 export default ForwardRef;

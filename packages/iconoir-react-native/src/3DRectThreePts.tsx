@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgOnePointCircle(
+function Svg3DRectThreePts(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -16,21 +16,16 @@ function SvgOnePointCircle(
       ref={svgRef}
       {...props}
     >
+      <Path d="M3 21V3.6a.6.6 0 01.6-.6H21" stroke="currentColor" />
       <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+        d="M17 21h3.4a.6.6 0 00.6-.6V17M21 7v2M21 12v2M7 21h2M12 21h2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
-        d="M12 13a1 1 0 100-2 1 1 0 000 2z"
+        d="M3 4a1 1 0 100-2 1 1 0 000 2zM3 22a1 1 0 100-2 1 1 0 000 2zM21 4a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -39,5 +34,5 @@ function SvgOnePointCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgOnePointCircle);
+const ForwardRef = React.forwardRef(Svg3DRectThreePts);
 export default ForwardRef;

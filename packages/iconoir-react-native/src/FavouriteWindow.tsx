@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-function SvgOnePointCircle(
+function SvgFavouriteWindow(
   props: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -17,20 +17,17 @@ function SvgOnePointCircle(
       {...props}
     >
       <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+        d="M13 21H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v8"
         stroke="currentColor"
         strokeLinecap="round"
+      />
+      <Path
+        d="M22 17.28a2.28 2.28 0 01-.662 1.606c-.976.984-1.923 2.01-2.936 2.958a.597.597 0 01-.823-.017l-2.918-2.94a2.281 2.281 0 010-3.214 2.277 2.277 0 013.233 0l.106.107.106-.107A2.277 2.277 0 0122 17.28z"
+        stroke="currentColor"
         strokeLinejoin="round"
       />
       <Path
-        d="M12 13a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M19 19l-1.5-1.5M15.5 15.5l-1-1"
+        d="M2 7h20M5 5.01l.01-.011M8 5.01l.01-.011M11 5.01l.01-.011"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -39,5 +36,5 @@ function SvgOnePointCircle(
   );
 }
 
-const ForwardRef = React.forwardRef(SvgOnePointCircle);
+const ForwardRef = React.forwardRef(SvgFavouriteWindow);
 export default ForwardRef;

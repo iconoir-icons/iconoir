@@ -9,8 +9,8 @@ function SvgTwoPointsCircle(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
@@ -30,7 +30,7 @@ function SvgTwoPointsCircle(
         strokeLinejoin="round"
       />
       <Path
-        d="M15 15l.011.01M13 13l.011.01M11 11l.011.01M9 9l.011.01M7 7l.011.01M17 17l.011.01"
+        d="M19 19l-1.5-1.5M15.5 15.5l-1-1M12.5 12.5l-1-1M9.5 9.5l-1-1M6.5 6.5L5 5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
