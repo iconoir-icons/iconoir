@@ -1,6 +1,6 @@
 import path from 'path';
 import os from 'os';
-import { promises as fs } from 'fs';
+import { promises as fs, readFileSync } from 'fs';
 import execa from 'execa';
 import { Listr } from 'listr2';
 import { fileURLToPath } from 'url';
@@ -84,16 +84,23 @@ const tasks = new Listr(
                 cliTargets.length === 0 || cliTargets.includes('css'),
               task: async (ctx) => {
                 const content = [
-                  await fs.readFile(path.join(__dirname, 'header.css'), 'utf8'),
+                  (
+                    await fs.readFile(
+                      path.join(__dirname, 'header.css'),
+                      'utf8'
+                    )
+                  ).replace('[YEAR]', new Date().getFullYear()),
                 ];
-                content.push(
-                  'i[class*=" iconoir-"]::before,i[class^=iconoir-]::before{line-height:1;position:relative;top:4px}'
-                );
                 ctx.iconoirIconsFiles.forEach((file) => {
+                  const fileContents = readFileSync(
+                    path.join(__dirname, '../icons/', file)
+                  )
+                    .toString()
+                    .replace(/\n/g, '');
                   content.push(
                     `.iconoir-${
                       path.parse(file).name
-                    }::before{content:url(../icons/${file})}`
+                    }::before{mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');}`
                   );
                 });
                 await fs.writeFile(
