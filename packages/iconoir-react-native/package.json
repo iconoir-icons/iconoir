@@ -29,7 +29,7 @@
   "sideEffects": false,
   "homepage": "https://iconoir.com",
   "peerDependencies": {
-    "react": "^16.8.6 || ^17",
+    "react": "^16.8.6 || ^17 || ^18",
     "react-native": ">=0.50.0",
     "react-native-svg": "^12.1.1"
   },
