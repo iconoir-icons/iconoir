@@ -8,8 +8,8 @@ function SvgCropRotateTr(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -17,19 +17,13 @@ function SvgCropRotateTr(
       {...props}
     >
       <path
-        d="M18 12V8a4 4 0 00-4-4h-1"
+        d="M20 10V7a4 4 0 00-4-4h-4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M20.5 9.5L18 12l-2.5-2.5M12 20v-8a1 1 0 00-1-1H3"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M5 9v8a1 1 0 001 1h8"
+        d="M22.5 7.5L20 10l-2.5-2.5M14 17v-6a1 1 0 00-1-1H7M2 10h2M14 22v-2M4 8v11a1 1 0 001 1h11"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

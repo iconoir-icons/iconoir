@@ -8,8 +8,8 @@ function SvgGitCommit(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -17,7 +17,7 @@ function SvgGitCommit(
       {...props}
     >
       <path
-        d="M12 16a4 4 0 100-8 4 4 0 000 8zM8 12H3M16 12h5"
+        d="M12 15a3 3 0 100-6 3 3 0 000 6zM9 12H3M15 12h6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

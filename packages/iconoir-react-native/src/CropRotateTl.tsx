@@ -9,27 +9,21 @@ function SvgCropRotateTl(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M11.746 5.75h-4a4 4 0 00-4 4v1"
+        d="M10 4H7a4 4 0 00-4 4v4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <Path
-        d="M9.246 3.25l2.5 2.5-2.5 2.5M19.746 11.75h-8a1 1 0 00-1 1v8"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M8.746 18.75h8a1 1 0 001-1v-8"
+        d="M7.5 1.5L10 4 7.5 6.5M20 17v-6a1 1 0 00-1-1h-6M8 10h2M20 22v-2M10 8v11a1 1 0 001 1h11"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

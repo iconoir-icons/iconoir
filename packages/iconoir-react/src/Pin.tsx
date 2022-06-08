@@ -8,8 +8,8 @@ function SvgPin(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -17,7 +17,7 @@ function SvgPin(
       {...props}
     >
       <path
-        d="M11.572 12.5l-7.643 7.57M21.192 8.465a5.657 5.657 0 10-11.313 0 5.657 5.657 0 0011.313 0zM12.903 9.5a2.829 2.829 0 013.808-3.609"
+        d="M9.5 14.5L3 21M5 9.485l9.193 9.193 1.697-1.697-.393-3.787 5.51-4.673-5.85-5.85-4.674 5.51-3.786-.393L5 9.485z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

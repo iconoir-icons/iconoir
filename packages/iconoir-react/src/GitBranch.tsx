@@ -8,8 +8,8 @@ function SvgGitBranch(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -17,7 +17,13 @@ function SvgGitBranch(
       {...props}
     >
       <path
-        d="M18 9a3 3 0 100-6 3 3 0 000 6zM6 21a3 3 0 100-6 3 3 0 000 6zM6 15V3M9 18c3.5 0 9-2.1 9-8.5"
+        d="M18 8a2 2 0 100-4 2 2 0 000 4zM6 20a2 2 0 100-4 2 2 0 000 4zM6 16V3"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 18h1c3.5 0 9-2.1 9-8.5V8"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
