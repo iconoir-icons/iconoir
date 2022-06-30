@@ -1,10 +1,9 @@
-import path from 'path';
-import os from 'os';
-import { promises as fs, readFileSync } from 'fs';
 import execa from 'execa';
+import { promises as fs, readFileSync } from 'fs';
 import { Listr } from 'listr2';
+import os from 'os';
+import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -29,6 +28,7 @@ const incompatibleNames = {
 const targets = {
   'meta-data': { path: 'meta-data.json' },
   css: { path: 'css/iconoir.css' },
+  'iconoir-flutter': { flutter: true, path: 'packages/iconoir-flutter' },
   'iconoir-react': { react: true, path: 'packages/iconoir-react' },
   'iconoir-react-native': {
     react: true,
@@ -250,11 +250,150 @@ const tasks = new Listr(
                         });
                       },
                     },
+                  ],
+                  { concurrent: false }
+                ),
+            },
+            {
+              title: 'Building Flutter libraries',
+              enabled: () =>
+                cliTargets.length === 0 ||
+                cliTargets.filter((cliTarget) => targets[cliTarget]?.flutter)
+                  .length > 0,
+              task: (_, task) =>
+                task.newListr(
+                  [
                     {
-                      title: 'Removing temporary directory',
-                      skip: (ctx) => !ctx.tmpDir,
+                      title: 'Creating temporary directory',
                       task: async (ctx) => {
-                        await fs.rm(ctx.tmpDir, { recursive: true });
+                        try {
+                          ctx.tmpDir = await fs.mkdtemp(
+                            path.join(os.tmpdir(), 'iconoir-')
+                          );
+                        } catch (err) {
+                          ctx.skip = true;
+                          throw new Error(err.message);
+                        }
+                      },
+                    },
+                    {
+                      title:
+                        'Copying icon files to temporary directory, while renaming icons with incompatible names',
+                      skip: (ctx) => ctx.skip,
+                      task: async (ctx) => {
+                        try {
+                          const promises = ctx.iconoirIconsFiles.map((file) => {
+                            const srcFilePath = path.join(
+                              iconoirIconsDir,
+                              file
+                            );
+                            const iconName = file.split('.')[0];
+                            const dstFileName =
+                              iconName in incompatibleNames
+                                ? incompatibleNames[iconName]
+                                : iconName;
+                            const dstFilePath = path.join(
+                              ctx.tmpDir,
+                              `${dstFileName}.svg`
+                            );
+
+                            return fs.copyFile(srcFilePath, dstFilePath);
+                          });
+                          return Promise.all(promises).catch((err) => {
+                            ctx.skip = true;
+                            throw new Error(err.message);
+                          });
+                        } catch (err) {
+                          ctx.skip = true;
+                          throw new Error(err.message);
+                        }
+                      },
+                    },
+                    {
+                      skip: (ctx) => ctx.skip,
+                      task: (_, task) => {
+                        const targetsToBuild =
+                          cliTargets.length > 0
+                            ? cliTargets.filter(
+                                (cliTarget) => targets[cliTarget]?.flutter
+                              )
+                            : Object.keys(targets).filter(
+                                (target) => targets[target].flutter
+                              );
+                        const tasks = targetsToBuild.map((target) => {
+                          const builtIconsDir = path.join(
+                            rootDir,
+                            targets[target].path,
+                            'lib/src'
+                          );
+                          return {
+                            title: `Building ${target}`,
+                            task: (_, task) =>
+                              task.newListr(
+                                [
+                                  {
+                                    title: 'Cleaning target directory',
+                                    task: async (ctx) => {
+                                      try {
+                                        const files = await fs.readdir(
+                                          builtIconsDir
+                                        );
+                                        const promises = files.map((file) => {
+                                          return fs.unlink(
+                                            path.join(builtIconsDir, file)
+                                          );
+                                        });
+                                        return Promise.all(promises).catch(
+                                          (err) => {
+                                            ctx[target] = { skip: true };
+                                            throw new Error(err.message);
+                                          }
+                                        );
+                                      } catch (err) {
+                                        ctx[target] = { skip: true };
+                                        throw new Error(err.message);
+                                      }
+                                    },
+                                  },
+                                  {
+                                    title: 'Building icon files',
+                                    skip: (ctx) => ctx[target]?.skip,
+                                    task: async () => {
+                                      try {
+                                        // @todo(heavybeard): generate flutter files
+                                        // await execa(
+                                        //   'svg2flutter',
+                                        //   [
+                                        //     '--input',
+                                        //     ctx.tmpDir,
+                                        //     '--dart',
+                                        //     builtIconsDir,
+                                        //     '--ttf',
+                                        //     builtIconsDir,
+                                        //     '--name',
+                                        //     'Iconoir',
+                                        //   ],
+                                        //   { preferLocal: true }
+                                        // );
+                                        // await execa(
+                                        //   'flutter',
+                                        //   'format',
+                                        //   builtIconsDir
+                                        // );
+                                      } catch (err) {
+                                        throw new Error(err.message);
+                                      }
+                                    },
+                                  },
+                                ],
+                                { concurrent: false, exitOnError: false }
+                              ),
+                          };
+                        });
+                        return task.newListr(tasks, {
+                          concurrent: true,
+                          rendererOptions: { collapse: false },
+                        });
                       },
                     },
                   ],
@@ -264,6 +403,13 @@ const tasks = new Listr(
           ],
           { concurrent: true }
         ),
+    },
+    {
+      title: 'Removing temporary directory',
+      skip: (ctx) => !ctx.tmpDir,
+      task: async (ctx) => {
+        await fs.rm(ctx.tmpDir, { recursive: true });
+      },
     },
   ],
   {
