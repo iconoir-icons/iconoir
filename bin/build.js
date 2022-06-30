@@ -329,7 +329,7 @@ const tasks = new Listr(
                           const builtIconsDir = path.join(
                             rootDir,
                             targets[target].path,
-                            'lib/src'
+                            'lib'
                           );
                           return {
                             title: `Building ${target}`,
@@ -385,38 +385,35 @@ const tasks = new Listr(
                                             );
                                           }
                                         );
-
-                                        // await fs.readdir(
-                                        //   ctx.tmpDir,
-                                        //   { withFileTypes: false },
-                                        //   async (err, files) => {
-                                        //     if (err) {
-                                        //       throw new Error(err.message);
-                                        //     }
-
-                                        //     files.forEach(async (file) => {
-                                        //       await execa(
-                                        //         'node',
-                                        //         [
-                                        //           path.join(
-                                        //             __dirname,
-                                        //             'generate.js'
-                                        //           ),
-                                        //           'create-icon-flutter-widget',
-                                        //           '--output',
-                                        //           builtIconsDir,
-                                        //           `__icon__=${
-                                        //             path.parse(file).name
-                                        //           }`,
-                                        //         ],
-                                        //         { preferLocal: true }
-                                        //       );
-                                        //     });
-                                        //   }
-                                        // );
                                       } catch (err) {
                                         throw new Error(err.message);
                                       }
+                                    },
+                                  },
+                                  {
+                                    title: 'Create entry file',
+                                    task: async () => {
+                                      await fs.writeFile(
+                                        path.join(
+                                          builtIconsDir,
+                                          'iconoir_flutter.dart'
+                                        ),
+                                        'library iconoir_flutter;\n\n'
+                                      );
+
+                                      (await fs.readdir(builtIconsDir)).forEach(
+                                        async (file) => {
+                                          await fs.appendFile(
+                                            path.join(
+                                              builtIconsDir,
+                                              'iconoir_flutter.dart'
+                                            ),
+                                            `export './${
+                                              path.parse(file).name
+                                            }.dart';\n`
+                                          );
+                                        }
+                                      );
                                     },
                                   },
                                 ],
