@@ -297,6 +297,11 @@ const tasks = new Listr(
                               `${dstFileName}.svg`
                             );
 
+                            ctx.dstFilePaths = [
+                              ...(ctx.dstFilePaths ?? []),
+                              dstFilePath,
+                            ];
+
                             return fs.copyFile(srcFilePath, dstFilePath);
                           });
                           return Promise.all(promises).catch((err) => {
@@ -358,27 +363,56 @@ const tasks = new Listr(
                                   {
                                     title: 'Building icon files',
                                     skip: (ctx) => ctx[target]?.skip,
-                                    task: async () => {
+                                    task: async (ctx) => {
                                       try {
-                                        // @todo(heavybeard): generate flutter files
-                                        // await execa(
-                                        //   'svg2flutter',
-                                        //   [
-                                        //     '--input',
-                                        //     ctx.tmpDir,
-                                        //     '--dart',
-                                        //     builtIconsDir,
-                                        //     '--ttf',
-                                        //     builtIconsDir,
-                                        //     '--name',
-                                        //     'Iconoir',
-                                        //   ],
-                                        //   { preferLocal: true }
-                                        // );
-                                        // await execa(
-                                        //   'flutter',
-                                        //   'format',
-                                        //   builtIconsDir
+                                        ctx.dstFilePaths.forEach(
+                                          async (file) => {
+                                            await execa(
+                                              'node',
+                                              [
+                                                path.join(
+                                                  __dirname,
+                                                  'generate.js'
+                                                ),
+                                                'create-icon-flutter-widget',
+                                                '--output',
+                                                builtIconsDir,
+                                                `__icon__=${
+                                                  path.parse(file).name
+                                                }`,
+                                              ],
+                                              { preferLocal: true }
+                                            );
+                                          }
+                                        );
+
+                                        // await fs.readdir(
+                                        //   ctx.tmpDir,
+                                        //   { withFileTypes: false },
+                                        //   async (err, files) => {
+                                        //     if (err) {
+                                        //       throw new Error(err.message);
+                                        //     }
+
+                                        //     files.forEach(async (file) => {
+                                        //       await execa(
+                                        //         'node',
+                                        //         [
+                                        //           path.join(
+                                        //             __dirname,
+                                        //             'generate.js'
+                                        //           ),
+                                        //           'create-icon-flutter-widget',
+                                        //           '--output',
+                                        //           builtIconsDir,
+                                        //           `__icon__=${
+                                        //             path.parse(file).name
+                                        //           }`,
+                                        //         ],
+                                        //         { preferLocal: true }
+                                        //       );
+                                        //     });
+                                        //   }
                                         // );
                                       } catch (err) {
                                         throw new Error(err.message);

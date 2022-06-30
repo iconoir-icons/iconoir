@@ -35,6 +35,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "execa": "^5.1.1",
+    "generate-template-files": "^3.2.0",
     "listr2": "^3.12.2",
     "semver": "^7.3.5",
     "prettier": "^2.4.1"
