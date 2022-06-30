@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 importers:
 
@@ -16,7 +16,7 @@ importers:
       '@svgr/cli': 5.5.0
       eslint: 8.9.0
       eslint-config-prettier: 8.4.0_eslint@8.9.0
-      eslint-plugin-prettier: 4.0.0_9f62b85ce3ce02949dbd2ccffcebe95f
+      eslint-plugin-prettier: 4.0.0_t5rlqxhdzybjjhn5fth7z27jl4
       execa: 5.1.1
       listr2: 3.14.0
       prettier: 2.5.1
@@ -213,6 +213,8 @@ packages:
     resolution: {integrity: sha512-7yJPvPV+ESz2IUTPbOL+YkIGyCqOyNIzdguKQuJGnH7bg1WTIifuM21YqokFt/THWh1AkCRn9IgoykTRCBVpzA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/runtime/7.17.2:
@@ -858,7 +860,7 @@ packages:
       eslint: 8.9.0
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_9f62b85ce3ce02949dbd2ccffcebe95f:
+  /eslint-plugin-prettier/4.0.0_t5rlqxhdzybjjhn5fth7z27jl4:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
