@@ -5,5 +5,5 @@ class __icon__(pascalCase) extends StatelessWidget {
   const __icon__(pascalCase)({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SvgPicture.asset('icons/__icon__.svg');
+  Widget build(BuildContext context) => SvgPicture.asset('icons/__svgfilename__.svg');
 }

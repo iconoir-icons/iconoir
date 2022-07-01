@@ -1,5 +1,6 @@
 import execa from 'execa';
 import { promises as fs, readFileSync } from 'fs';
+import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
 import os from 'os';
 import path, { dirname } from 'path';
@@ -367,6 +368,42 @@ const tasks = new Listr(
                                       try {
                                         ctx.dstFilePaths.forEach(
                                           async (file) => {
+                                            const svgfilename =
+                                              path.parse(file).name;
+                                            // Prefix with Svg if icon name starts with a number
+                                            const iconname = `${
+                                              /^\d/.test(svgfilename)
+                                                ? 'Svg'
+                                                : ''
+                                            }${svgfilename}`;
+
+                                            generateTemplateFilesBatch([
+                                              {
+                                                option:
+                                                  'Create Icon Flutter Widget',
+                                                defaultCase: '(pascalCase)',
+                                                entry: {
+                                                  folderPath:
+                                                    './bin/templates/__icon__.dart',
+                                                },
+                                                dynamicReplacers: [
+                                                  {
+                                                    slot: '__icon__',
+                                                    slotValue: iconname,
+                                                  },
+                                                  {
+                                                    slot: '__svgfilename__',
+                                                    slotValue: svgfilename,
+                                                  },
+                                                ],
+                                                output: {
+                                                  path: './packages/iconoir-flutter/lib/__icon__(snakeCase).dart',
+                                                  pathAndFileNameDefaultCase:
+                                                    '(snakeCase)',
+                                                },
+                                              },
+                                            ]);
+
                                             await execa(
                                               'node',
                                               [
