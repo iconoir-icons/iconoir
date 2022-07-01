@@ -525,7 +525,6 @@ export './hourglass.dart';
 export './html_5.dart';
 export './hydrogen.dart';
 export './iconoir.dart';
-export './iconoir_flutter.dart';
 export './import.dart';
 export './industry.dart';
 export './infinite.dart';

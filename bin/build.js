@@ -3,7 +3,7 @@ import { promises as fs, readFileSync } from 'fs';
 import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
 import os from 'os';
-import path, { dirname } from 'path';
+import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 // Paths
@@ -362,6 +362,18 @@ const tasks = new Listr(
                                     },
                                   },
                                   {
+                                    title: 'Create entry file',
+                                    task: async () => {
+                                      await fs.writeFile(
+                                        path.join(
+                                          builtIconsDir,
+                                          'iconoir_flutter.dart'
+                                        ),
+                                        'library iconoir_flutter;\n\n'
+                                      );
+                                    },
+                                  },
+                                  {
                                     title: 'Building icon files',
                                     skip: (ctx) => ctx[target]?.skip,
                                     task: async (ctx) => {
@@ -401,6 +413,17 @@ const tasks = new Listr(
                                                   pathAndFileNameDefaultCase:
                                                     '(snakeCase)',
                                                 },
+                                                async onComplete(results) {
+                                                  await fs.appendFile(
+                                                    path.join(
+                                                      builtIconsDir,
+                                                      'iconoir_flutter.dart'
+                                                    ),
+                                                    `export './${basename(
+                                                      results.output.path
+                                                    )}';\n`
+                                                  );
+                                                },
                                               },
                                             ]);
                                           }
@@ -408,32 +431,6 @@ const tasks = new Listr(
                                       } catch (err) {
                                         throw new Error(err.message);
                                       }
-                                    },
-                                  },
-                                  {
-                                    title: 'Create entry file',
-                                    task: async () => {
-                                      await fs.writeFile(
-                                        path.join(
-                                          builtIconsDir,
-                                          'iconoir_flutter.dart'
-                                        ),
-                                        'library iconoir_flutter;\n\n'
-                                      );
-
-                                      (await fs.readdir(builtIconsDir)).forEach(
-                                        async (file) => {
-                                          await fs.appendFile(
-                                            path.join(
-                                              builtIconsDir,
-                                              'iconoir_flutter.dart'
-                                            ),
-                                            `export './${
-                                              path.parse(file).name
-                                            }.dart';\n`
-                                          );
-                                        }
-                                      );
                                     },
                                   },
                                 ],
