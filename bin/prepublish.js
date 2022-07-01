@@ -1,17 +1,18 @@
-import semver from 'semver';
-import path from 'path';
+import { updateYamlKey } from '@atomist/yaml-updater';
 import fs from 'fs';
+import path from 'path';
+import semver from 'semver';
 
 const PACKAGE_BASE = '';
 
-function publishPackage(name) {
-  console.info('Publishing %s', name);
+const newVersion = semver.valid(semver.coerce(process.env.TAG_NAME));
+console.info('New version is %s', newVersion);
+if (!newVersion) {
+  throw new Error(`Tag name ${process.env.TAG_NAME} is not valid.`);
+}
 
-  const newVersion = semver.valid(semver.coerce(process.env.TAG_NAME));
-  console.info('New version is %s', newVersion);
-  if (!newVersion) {
-    throw new Error(`Tag name ${process.env.TAG_NAME} is not valid.`);
-  }
+function publishNpmPackage(name) {
+  console.info('Publishing %s', name);
 
   const packageJsonPath =
     name === 'iconoir'
@@ -26,6 +27,19 @@ function publishPackage(name) {
   console.info('package.json updated');
 }
 
-publishPackage('iconoir');
-publishPackage('iconoir-react');
-publishPackage('iconoir-react-native');
+function publishPubPackage(name) {
+  const pubspecFilepath = path.join('packages', name, 'pubspec.yaml');
+  const pubspecContents = fs.readFileSync(pubspecFilepath).toString();
+
+  fs.writeFileSync(
+    pubspecFilepath,
+    updateYamlKey('version', newVersion, pubspecContents)
+  );
+
+  console.info('pubspec.yaml updated');
+}
+
+publishNpmPackage('iconoir');
+publishNpmPackage('iconoir-react');
+publishNpmPackage('iconoir-react-native');
+publishPubPackage('iconoir-flutter');
