@@ -377,7 +377,7 @@ const tasks = new Listr(
                                                 : ''
                                             }${svgfilename}`;
 
-                                            generateTemplateFilesBatch([
+                                            await generateTemplateFilesBatch([
                                               {
                                                 option:
                                                   'Create Icon Flutter Widget',
@@ -403,23 +403,6 @@ const tasks = new Listr(
                                                 },
                                               },
                                             ]);
-
-                                            await execa(
-                                              'node',
-                                              [
-                                                path.join(
-                                                  __dirname,
-                                                  'generate.js'
-                                                ),
-                                                'create-icon-flutter-widget',
-                                                '--output',
-                                                builtIconsDir,
-                                                `__icon__=${
-                                                  path.parse(file).name
-                                                }`,
-                                              ],
-                                              { preferLocal: true }
-                                            );
                                           }
                                         );
                                       } catch (err) {
