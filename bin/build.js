@@ -396,7 +396,7 @@ const tasks = new Listr(
                                                 defaultCase: '(pascalCase)',
                                                 entry: {
                                                   folderPath:
-                                                    './bin/templates/__icon__.dart',
+                                                    './bin/templates/__svgfilename__.dart',
                                                 },
                                                 dynamicReplacers: [
                                                   {
@@ -409,7 +409,7 @@ const tasks = new Listr(
                                                   },
                                                 ],
                                                 output: {
-                                                  path: './packages/iconoir-flutter/lib/__icon__(snakeCase).dart',
+                                                  path: './packages/iconoir-flutter/lib/__svgfilename__(snakeCase).dart',
                                                   pathAndFileNameDefaultCase:
                                                     '(snakeCase)',
                                                 },
