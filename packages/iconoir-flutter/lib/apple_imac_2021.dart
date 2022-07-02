@@ -2,8 +2,22 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppleImac2021 extends StatelessWidget {
-  const AppleImac2021({Key? key}) : super(key: key);
+  final Color? color;
+  final double? width;
+  final double? height;
+
+  const AppleImac2021({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SvgPicture.asset('icons/AppleImac2021.svg');
+  Widget build(BuildContext context) => SvgPicture.string(
+        '''
+<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 15.5V2.6C2 2.26863 2.26863 2 2.6 2H21.4C21.7314 2 22 2.26863 22 2.6V15.5M2 15.5V17.4C2 17.7314 2.26863 18 2.6 18H21.4C21.7314 18 22 17.7314 22 17.4V15.5M2 15.5H22M9 22H10.5M10.5 22V18M10.5 22H13.5M13.5 22H15M13.5 22L13.5 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+''',
+        color: color,
+        width: width,
+        height: height,
+      );
 }

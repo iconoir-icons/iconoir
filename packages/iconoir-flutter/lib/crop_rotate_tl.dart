@@ -2,8 +2,27 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CropRotateTl extends StatelessWidget {
-  const CropRotateTl({Key? key}) : super(key: key);
+  final Color? color;
+  final double? width;
+  final double? height;
+
+  const CropRotateTl({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SvgPicture.asset('icons/CropRotateTl.svg');
+  Widget build(BuildContext context) => SvgPicture.string(
+        '''
+<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 4H7C4.79086 4 3 5.79086 3 8V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 1.5L10 4L7.5 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 17L20 11C20 10.4477 19.5523 10 19 10L13 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 10H10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 22V20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 8L10 19C10 19.5523 10.4477 20 11 20L22 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+''',
+        color: color,
+        width: width,
+        height: height,
+      );
 }

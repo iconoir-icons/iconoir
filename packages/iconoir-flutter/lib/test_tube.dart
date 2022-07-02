@@ -2,8 +2,23 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TestTube extends StatelessWidget {
-  const TestTube({Key? key}) : super(key: key);
+  final Color? color;
+  final double? width;
+  final double? height;
+
+  const TestTube({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SvgPicture.asset('icons/TestTube.svg');
+  Widget build(BuildContext context) => SvgPicture.string(
+        '''
+<svg width="24" stroke-width="1.5" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.1414 19.995C8.59885 21.7157 10.4224 19.9831 11.4592 18.5025L18.7592 8.07692L20.7255 7.0122L14.1723 2.42358L5.7251 14.4875C4.68838 15.9681 3.68394 18.2743 6.1414 19.995Z" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.091 11.0194C13.2146 10.1673 11.6877 11.801 8.81128 10.9489" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+''',
+        color: color,
+        width: width,
+        height: height,
+      );
 }

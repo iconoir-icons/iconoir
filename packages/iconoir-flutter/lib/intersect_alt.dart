@@ -2,8 +2,37 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IntersectAlt extends StatelessWidget {
-  const IntersectAlt({Key? key}) : super(key: key);
+  final Color? color;
+  final double? width;
+  final double? height;
+
+  const IntersectAlt({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SvgPicture.asset('icons/IntersectAlt.svg');
+  Widget build(BuildContext context) => SvgPicture.string(
+        '''
+<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.0098 3.00001L14.9998 3.01112" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.0098 3.00001L10.9998 3.01112" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.00977 3.00001L6.99977 3.01112" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.00977 3.00001L2.99977 3.01112" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.00977 7.00001L2.99977 7.01112" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.00977 11L2.99977 11.0111" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.00977 15L2.99977 15.0111" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 21.01L9.01 20.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 21.01L13.01 20.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 21.01L17.01 20.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 21.01L21.01 20.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 17.01L21.01 16.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 13.01L21.01 12.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 9.01L21.01 8.99889" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 17L9 10C9 9.44772 9.44772 9 10 9L17 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 7L15 14C15 14.5523 14.5523 15 14 15L7 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+''',
+        color: color,
+        width: width,
+        height: height,
+      );
 }

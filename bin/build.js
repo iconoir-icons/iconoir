@@ -389,11 +389,14 @@ const tasks = new Listr(
                                                 : ''
                                             }${svgfilename}`;
 
+                                            const svgfilecontent = (
+                                              await fs.readFile(file)
+                                            ).toString();
+
                                             await generateTemplateFilesBatch([
                                               {
                                                 option:
                                                   'Create Icon Flutter Widget',
-                                                defaultCase: '(pascalCase)',
                                                 entry: {
                                                   folderPath:
                                                     './bin/templates/__svgfilename__.dart',
@@ -402,6 +405,10 @@ const tasks = new Listr(
                                                   {
                                                     slot: '__icon__',
                                                     slotValue: iconname,
+                                                  },
+                                                  {
+                                                    slot: '__svgfilecontent__',
+                                                    slotValue: svgfilecontent,
                                                   },
                                                   {
                                                     slot: '__svgfilename__',

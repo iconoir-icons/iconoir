@@ -56,8 +56,6 @@ Default values for the most common props are given below:
 | color       | "currentColor" |
 | width       | "1.5em"        |
 | height      | "1.5em"        |
-| strokeWidth | 1.5            |
-| fill         | "none"         |
 
 
 ### Icon names
