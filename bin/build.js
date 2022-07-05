@@ -1,10 +1,10 @@
-import path from 'path';
-import os from 'os';
-import { promises as fs, readFileSync } from 'fs';
 import execa from 'execa';
+import { promises as fs, readFileSync } from 'fs';
+import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
+import os from 'os';
+import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -29,6 +29,7 @@ const incompatibleNames = {
 const targets = {
   'meta-data': { path: 'meta-data.json' },
   css: { path: 'css/iconoir.css' },
+  'iconoir-flutter': { flutter: true, path: 'packages/iconoir-flutter' },
   'iconoir-react': { react: true, path: 'packages/iconoir-react' },
   'iconoir-react-native': {
     react: true,
@@ -250,11 +251,204 @@ const tasks = new Listr(
                         });
                       },
                     },
+                  ],
+                  { concurrent: false }
+                ),
+            },
+            {
+              title: 'Building Flutter libraries',
+              enabled: () =>
+                cliTargets.length === 0 ||
+                cliTargets.filter((cliTarget) => targets[cliTarget]?.flutter)
+                  .length > 0,
+              task: (_, task) =>
+                task.newListr(
+                  [
                     {
-                      title: 'Removing temporary directory',
-                      skip: (ctx) => !ctx.tmpDir,
+                      title: 'Creating temporary directory',
                       task: async (ctx) => {
-                        await fs.rm(ctx.tmpDir, { recursive: true });
+                        try {
+                          ctx.tmpDir = await fs.mkdtemp(
+                            path.join(os.tmpdir(), 'iconoir-')
+                          );
+                        } catch (err) {
+                          ctx.skip = true;
+                          throw new Error(err.message);
+                        }
+                      },
+                    },
+                    {
+                      title:
+                        'Copying icon files to temporary directory, while renaming icons with incompatible names',
+                      skip: (ctx) => ctx.skip,
+                      task: async (ctx) => {
+                        try {
+                          const promises = ctx.iconoirIconsFiles.map((file) => {
+                            const srcFilePath = path.join(
+                              iconoirIconsDir,
+                              file
+                            );
+                            const iconName = file.split('.')[0];
+                            const dstFileName =
+                              iconName in incompatibleNames
+                                ? incompatibleNames[iconName]
+                                : iconName;
+                            const dstFilePath = path.join(
+                              ctx.tmpDir,
+                              `${dstFileName}.svg`
+                            );
+
+                            ctx.dstFilePaths = [
+                              ...(ctx.dstFilePaths ?? []),
+                              dstFilePath,
+                            ];
+
+                            return fs.copyFile(srcFilePath, dstFilePath);
+                          });
+                          return Promise.all(promises).catch((err) => {
+                            ctx.skip = true;
+                            throw new Error(err.message);
+                          });
+                        } catch (err) {
+                          ctx.skip = true;
+                          throw new Error(err.message);
+                        }
+                      },
+                    },
+                    {
+                      skip: (ctx) => ctx.skip,
+                      task: (_, task) => {
+                        const targetsToBuild =
+                          cliTargets.length > 0
+                            ? cliTargets.filter(
+                                (cliTarget) => targets[cliTarget]?.flutter
+                              )
+                            : Object.keys(targets).filter(
+                                (target) => targets[target].flutter
+                              );
+                        const tasks = targetsToBuild.map((target) => {
+                          const builtIconsDir = path.join(
+                            rootDir,
+                            targets[target].path,
+                            'lib'
+                          );
+                          return {
+                            title: `Building ${target}`,
+                            task: (_, task) =>
+                              task.newListr(
+                                [
+                                  {
+                                    title: 'Cleaning target directory',
+                                    task: async (ctx) => {
+                                      try {
+                                        const files = await fs.readdir(
+                                          builtIconsDir
+                                        );
+                                        const promises = files.map((file) => {
+                                          return fs.unlink(
+                                            path.join(builtIconsDir, file)
+                                          );
+                                        });
+                                        return Promise.all(promises).catch(
+                                          (err) => {
+                                            ctx[target] = { skip: true };
+                                            throw new Error(err.message);
+                                          }
+                                        );
+                                      } catch (err) {
+                                        ctx[target] = { skip: true };
+                                        throw new Error(err.message);
+                                      }
+                                    },
+                                  },
+                                  {
+                                    title: 'Create entry file',
+                                    task: async () => {
+                                      await fs.writeFile(
+                                        path.join(
+                                          builtIconsDir,
+                                          'iconoir_flutter.dart'
+                                        ),
+                                        'library iconoir_flutter;\n\n'
+                                      );
+                                    },
+                                  },
+                                  {
+                                    title: 'Building icon files',
+                                    skip: (ctx) => ctx[target]?.skip,
+                                    task: async (ctx) => {
+                                      try {
+                                        ctx.dstFilePaths.forEach(
+                                          async (file) => {
+                                            const svgfilename =
+                                              path.parse(file).name;
+                                            // Prefix with Svg if icon name starts with a number
+                                            const iconname = `${
+                                              /^\d/.test(svgfilename)
+                                                ? 'Svg'
+                                                : ''
+                                            }${svgfilename}`;
+
+                                            const svgfilecontent = (
+                                              await fs.readFile(file)
+                                            ).toString();
+
+                                            await generateTemplateFilesBatch([
+                                              {
+                                                option:
+                                                  'Create Icon Flutter Widget',
+                                                entry: {
+                                                  folderPath:
+                                                    './bin/templates/__svgfilename__.dart',
+                                                },
+                                                dynamicReplacers: [
+                                                  {
+                                                    slot: '__icon__',
+                                                    slotValue: iconname,
+                                                  },
+                                                  {
+                                                    slot: '__svgfilecontent__',
+                                                    slotValue: svgfilecontent,
+                                                  },
+                                                  {
+                                                    slot: '__svgfilename__',
+                                                    slotValue: svgfilename,
+                                                  },
+                                                ],
+                                                output: {
+                                                  path: './packages/iconoir-flutter/lib/__svgfilename__(snakeCase).dart',
+                                                  pathAndFileNameDefaultCase:
+                                                    '(snakeCase)',
+                                                },
+                                                async onComplete(results) {
+                                                  await fs.appendFile(
+                                                    path.join(
+                                                      builtIconsDir,
+                                                      'iconoir_flutter.dart'
+                                                    ),
+                                                    `export './${basename(
+                                                      results.output.path
+                                                    )}';\n`
+                                                  );
+                                                },
+                                              },
+                                            ]);
+                                          }
+                                        );
+                                      } catch (err) {
+                                        throw new Error(err.message);
+                                      }
+                                    },
+                                  },
+                                ],
+                                { concurrent: false, exitOnError: false }
+                              ),
+                          };
+                        });
+                        return task.newListr(tasks, {
+                          concurrent: true,
+                          rendererOptions: { collapse: false },
+                        });
                       },
                     },
                   ],
@@ -264,6 +458,13 @@ const tasks = new Listr(
           ],
           { concurrent: true }
         ),
+    },
+    {
+      title: 'Removing temporary directory',
+      skip: (ctx) => !ctx.tmpDir,
+      task: async (ctx) => {
+        await fs.rm(ctx.tmpDir, { recursive: true });
+      },
     },
   ],
   {

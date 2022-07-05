@@ -1,0 +1,2 @@
+analyzer:
+  exclude: [bin/templates/**]

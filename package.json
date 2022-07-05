@@ -30,11 +30,13 @@
   },
   "homepage": "https://iconoir.com",
   "devDependencies": {
+    "@atomist/yaml-updater": "^1.0.2",
     "@svgr/cli": "^5.5.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "execa": "^5.1.1",
+    "generate-template-files": "^3.2.0",
     "listr2": "^3.12.2",
     "semver": "^7.3.5",
     "prettier": "^2.4.1"
