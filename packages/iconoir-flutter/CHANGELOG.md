@@ -1,0 +1,474 @@
+<a name="v5.1.2"></a>
+# [v5.1.2](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.2) - 05 Jul 2022
+
+Automatically generate Flutter release notes from GitHub releases.
+
+[Changes][v5.1.2]
+
+
+<a name="v5.1.1"></a>
+# [v5.1.1](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.1) - 05 Jul 2022
+
+Fixes for Flutter publish script.
+
+[Changes][v5.1.1]
+
+
+<a name="v5.1"></a>
+# [v5.1](https://github.com/lucaburgio/iconoir/releases/tag/v5.1) - 05 Jul 2022
+
+## What's Changed
+* feat(flutter): create package by @heavybeard in https://github.com/lucaburgio/iconoir/pull/173
+
+## New Contributors
+* @heavybeard made their first contribution in https://github.com/lucaburgio/iconoir/pull/173
+
+**Full Changelog**: https://github.com/lucaburgio/iconoir/compare/v5.0...v5.1-2
+
+[Changes][v5.1]
+
+
+<a name="v5.0"></a>
+# [v5.0](https://github.com/lucaburgio/iconoir/releases/tag/v5.0) - 08 Jun 2022
+
+Fixed 8 icons:
+- `git-branch`
+- `git-commit`
+- `git-merge`
+- `crop-rotate-bl`
+- `crop-rotate-br`
+- `crop-rotate-tl`
+- `crop-rotate-tr`
+- `pin`
+
+Added 60 new icons:
+- `african-tree`
+- `bed-ready`
+- `bed`
+- `bitbucket`
+- `clean-water`
+- `crib`
+- `depth`
+- `desk`
+- `dimmer-switch`
+- `director-chair`
+- `drone-charge-full`
+- `drone-charge-half`
+- `drone-charge-low`
+- `drone-check`
+- `drone-error`
+- `drone-landing`
+- `drone-refresh`
+- `drone-take-off`
+- `drone`
+- `ecology-book`
+- `folder-settings`
+- `git-command`
+- `git-compare`
+- `git-fork`
+- `git-pull-request`
+- `green-bus`
+- `green-truck`
+- `green-vehicle`
+- `home-sale`
+- `home-secure`
+- `home-shield`
+- `home-table`
+- `hot-air-balloon`
+- `infinite`
+- `input-output`
+- `leaf`
+- `mirror`
+- `no-link`
+- `organic-food-squared`
+- `organic-food`
+- `pillow`
+- `pine-tree`
+- `remove-link`
+- `remove-pin`
+- `repository`
+- `rocket`
+- `rounded-mirror`
+- `sleeper-chair`
+- `small-lamp-alt`
+- `small-lamp`
+- `sofa`
+- `soil-alt`
+- `soil`
+- `sort`
+- `tree`
+- `two-seater-sofa`
+- `vegan-rounded`
+- `vegan-squared`
+- `vegan`
+- `watering-soil`
+
+[Changes][v5.0]
+
+
+<a name="v4.9.2"></a>
+# [v4.9.2](https://github.com/lucaburgio/iconoir/releases/tag/v4.9.2) - 21 May 2022
+
+- Updated peerDependecies to include React 18.
+
+[Changes][v4.9.2]
+
+
+<a name="v4.9.1"></a>
+# [v4.9.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.9.1) - 23 Apr 2022
+
+- The CSS file has been optimized.
+- NPM Iconoir core is now auto-updated after every release.
+
+[Changes][v4.9.1]
+
+
+<a name="v4.9"></a>
+# [v4.9](https://github.com/lucaburgio/iconoir/releases/tag/v4.9) - 23 Apr 2022
+
+Optimized 3 icons:
+- `one-point-circle`
+- `two-points-circle`
+- `three-points-circle`
+
+Added 42 new icons:
+- `3d-add-hole`
+- `3d-arc-center-pt`
+- `3d-arc`
+- `3d-bridge`
+- `3d-center-box`
+- `3d-ellipse-three-pts`
+- `3d-ellipse`
+- `3d-pt-box`
+- `3d-rect-corner-to-corner`
+- `3d-rect-from-center`
+- `3d-rect-three-pts`
+- `3d-three-pts-box`
+- `app-window`
+- `archery-match`
+- `augmented-reality`
+- `bishop`
+- `brightness-window`
+- `brightness`
+- `check-window`
+- `cylinder`
+- `download-data-window`
+- `energy-usage-window`
+- `error-window`
+- `favourite-window`
+- `finger-print-window`
+- `locked-window`
+- `nintendo-switch`
+- `no-access-window`
+- `pause-window`
+- `pokeball`
+- `potion`
+- `reload-window`
+- `rook`
+- `search-window`
+- `secure-window`
+- `select-window`
+- `sigma-function`
+- `spades`
+- `sphere`
+- `spiral`
+- `upload-data-window`
+- `warning-window`
+
+[Changes][v4.9]
+
+
+<a name="v4.8.1"></a>
+# [v4.8.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.8.1) - 10 Apr 2022
+
+Fixed 5 icons stroke:
+- `add-frame`
+- `frame-select`
+- `frame-simple`
+- `frame`
+- `remove-frame`
+
+[Changes][v4.8.1]
+
+
+<a name="v4.8"></a>
+# [v4.8](https://github.com/lucaburgio/iconoir/releases/tag/v4.8) - 02 Apr 2022
+
+Fixed 1 icon:
+- `dialpad`
+
+Added 32 new icons:
+- `peace-hand`
+- `dice-three`
+- `dice-one`
+- `paste-clipboard`
+- `dice-five`
+- `xbox-x`
+- `arcade`
+- `xbox-y`
+- `podcast`
+- `no-smoking-circled`
+- `hexagon-dice`
+- `wifi-error`
+- `private-wifi`
+- `erase`
+- `pacman`
+- `pinterest`
+- `stackoverflow`
+- `tournament`
+- `xbox-a`
+- `compass`
+- `behance-squared`
+- `xbox-b`
+- `discord`
+- `dice-two`
+- `dice-six`
+- `motorcycle`
+- `dice-four`
+- `open-new-window`
+- `gamepad`
+- `clipboard-check`
+- `behance`
+- `playstation-gamepad`
+
+[Changes][v4.8]
+
+
+<a name="v4.7.1"></a>
+# [v4.7.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.7.1) - 10 Mar 2022
+
+Fix: Auto-update React libraries.
+
+[Changes][v4.7.1]
+
+
+<a name="v4.7"></a>
+# [v4.7](https://github.com/lucaburgio/iconoir/releases/tag/v4.7) - 10 Mar 2022
+
+Renamed 1 icon:
+- `electronics-transister` to `electronics-transistor`
+
+Added 10 new icons:
+- `axes`
+- `3d-select-edge`
+- `3d-select-face`
+- `3d-select-point`
+- `3d-select-solid`
+- `one-point-circle`
+- `orthogonal-view`
+- `perspective-view`
+- `three-points-circle`
+- `two-points-circle`
+- `xray-view`
+
+
+[Changes][v4.7]
+
+
+<a name="v4.6"></a>
+# [v4.6](https://github.com/lucaburgio/iconoir/releases/tag/v4.6) - 09 Jan 2022
+
+Renamed 2 icons:
+- `basket-ball-alt` to `basketball-alt`
+- `basket-ball` to `basketball`
+
+Added 33 new icons:
+- `axes`
+- `barcode`
+- `consumable`
+- `delivery-truck`
+- `delivery`
+- `dishwasher`
+- `emoji-puzzled`
+- `globe`
+- `internet`
+- `ip-address`
+- `kanban-board`
+- `new-tab`
+- `open-book`
+- `package-lock`
+- `package`
+- `packages`
+- `pc-check`
+- `pc-firewall`
+- `pc-no-entry`
+- `pc-warning`
+- `puzzle`
+- `quote-message`
+- `quote`
+- `restart`
+- `scan-barcode`
+- `search-engine`
+- `thumbs-down`
+- `thumbs-up`
+- `truck-length`
+- `truck`
+- `wash`
+- `washing-machine`
+- `www`
+
+[Changes][v4.6]
+
+
+<a name="v4.5.1"></a>
+# [v4.5.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.5.1) - 06 Dec 2021
+
+Updated 1 icon:
+- `qr-code`
+
+[Changes][v4.5.1]
+
+
+<a name="v4.5"></a>
+# [v4.5](https://github.com/lucaburgio/iconoir/releases/tag/v4.5) - 11 Oct 2021
+
+Added 27 new icons:
+- `apple-wallet`
+- `atom`
+- `backward-15-seconds`
+- `bonfire`
+- `book-stack`
+- `book`
+- `bookmark-book`
+- `carbon`
+- `card-wallet`
+- `code-brackets-square`
+- `code-brackets`
+- `favourite-book`
+- `fire-flame`
+- `flask`
+- `fluorine`
+- `forward-15-seconds`
+- `hd-display`
+- `hydrogen`
+- `locked-book`
+- `magnet-energy`
+- `magnet`
+- `math-book`
+- `nitrogen`
+- `numbered-list-left`
+- `numbered-list-right`
+- `oxygen`
+- `page-edit`
+- `round-flask`
+- `sidebar-collapse`
+- `sidebar-expand`
+- `task-list`
+- `test-tube`
+- `wallet`
+
+[Changes][v4.5]
+
+
+<a name="v4.4"></a>
+# [v4.4](https://github.com/lucaburgio/iconoir/releases/tag/v4.4) - 03 Jul 2021
+
+- Update React library.
+- Add React Native library.
+- Add CSS font.
+- Remove support to other fonts, for now.
+- - -
+- Add 27 new icons:
+- `360-view`
+- `add-media-image`
+- `add-media-video`
+- `air-conditioner`
+- `apple-mac`
+- `bank`
+- `bbq`
+- `cookie`
+- `facetime`
+- `half-cookie`
+- `linux`
+- `media-image-folder`
+- `media-image-list`
+- `media-image`
+- `media-video-folder`
+- `media-video-list`
+- `media-video`
+- `parking`
+- `piggy-bank`
+- `qr-code`
+- `remove-media-image`
+- `remove-media-video`
+- `safari`
+- `scan-qr-code`
+- `snapchat`
+- `stroller`
+- `windows`
+
+
+[Changes][v4.4]
+
+
+<a name="v4.3.1"></a>
+# [v4.3.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.3.1) - 01 Jun 2021
+
+- Update React library.
+- Fix issue on paths on `cloud-sync` and `cloud-desync` icons
+- Fix `eye-close` icon.
+- Fix some icons `fill` rules from `black` to `currentColor`.
+
+[Changes][v4.3.1]
+
+
+<a name="v4.3.0"></a>
+# [v4.3.0](https://github.com/lucaburgio/iconoir/releases/tag/v4.3.0) - 22 May 2021
+
+add: React library.
+
+fix: simplified and exploded paths to solve an issue while importing the icons to Figma.
+fix: changed stroke property from `black` to `currentColor`.
+
+
+[Changes][v4.3.0]
+
+
+<a name="v4.2.2"></a>
+# [v4.2.2](https://github.com/lucaburgio/iconoir/releases/tag/v4.2.2) - 16 May 2021
+
+- **add:** .EOT, .SVG, .TTF, and .WOFF fonts.
+
+[Changes][v4.2.2]
+
+
+<a name="v4.2.1"></a>
+# [v4.2.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.2.1) - 14 May 2021
+
+- **fix:** renamed 4 icons from categories Edit and Album.
+- **add:** IconJar pack.
+
+[Changes][v4.2.1]
+
+
+<a name="v4.2"></a>
+# [v4.2](https://github.com/lucaburgio/iconoir/releases/tag/v4.2) - 11 May 2021
+
+- 40 new icons.
+- The library is now open-source.
+
+[Changes][v4.2]
+
+
+[v5.1.2]: https://github.com/lucaburgio/iconoir/compare/v5.1.1...v5.1.2
+[v5.1.1]: https://github.com/lucaburgio/iconoir/compare/v5.1...v5.1.1
+[v5.1]: https://github.com/lucaburgio/iconoir/compare/v5.0...v5.1
+[v5.0]: https://github.com/lucaburgio/iconoir/compare/v4.9.2...v5.0
+[v4.9.2]: https://github.com/lucaburgio/iconoir/compare/v4.9.1...v4.9.2
+[v4.9.1]: https://github.com/lucaburgio/iconoir/compare/v4.9...v4.9.1
+[v4.9]: https://github.com/lucaburgio/iconoir/compare/v4.8.1...v4.9
+[v4.8.1]: https://github.com/lucaburgio/iconoir/compare/v4.8...v4.8.1
+[v4.8]: https://github.com/lucaburgio/iconoir/compare/v4.7.1...v4.8
+[v4.7.1]: https://github.com/lucaburgio/iconoir/compare/v4.7...v4.7.1
+[v4.7]: https://github.com/lucaburgio/iconoir/compare/v4.6...v4.7
+[v4.6]: https://github.com/lucaburgio/iconoir/compare/v4.5.1...v4.6
+[v4.5.1]: https://github.com/lucaburgio/iconoir/compare/v4.5...v4.5.1
+[v4.5]: https://github.com/lucaburgio/iconoir/compare/v4.4...v4.5
+[v4.4]: https://github.com/lucaburgio/iconoir/compare/v4.3.1...v4.4
+[v4.3.1]: https://github.com/lucaburgio/iconoir/compare/v4.3.0...v4.3.1
+[v4.3.0]: https://github.com/lucaburgio/iconoir/compare/v4.2.2...v4.3.0
+[v4.2.2]: https://github.com/lucaburgio/iconoir/compare/v4.2.1...v4.2.2
+[v4.2.1]: https://github.com/lucaburgio/iconoir/compare/v4.2...v4.2.1
+[v4.2]: https://github.com/lucaburgio/iconoir/tree/v4.2
+
+ <!-- Generated by https://github.com/rhysd/changelog-from-release -->
