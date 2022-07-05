@@ -1,3 +1,11 @@
+<a name="v5.1.4"></a>
+# [v5.1.4](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.4) - 05 Jul 2022
+
+Give the release one more try!
+
+[Changes][v5.1.4]
+
+
 <a name="v5.1.3"></a>
 # [v5.1.3](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.3) - 05 Jul 2022
 
@@ -458,6 +466,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.1.4]: https://github.com/lucaburgio/iconoir/compare/v5.1.3...v5.1.4
 [v5.1.3]: https://github.com/lucaburgio/iconoir/compare/v5.1.2...v5.1.3
 [v5.1.2]: https://github.com/lucaburgio/iconoir/compare/v5.1.1...v5.1.2
 [v5.1.1]: https://github.com/lucaburgio/iconoir/compare/v5.1...v5.1.1
