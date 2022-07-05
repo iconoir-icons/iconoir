@@ -1,3 +1,11 @@
+<a name="v5.1.3"></a>
+# [v5.1.3](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.3) - 05 Jul 2022
+
+Don't automatically commit Flutter package changelog updates.
+
+[Changes][v5.1.3]
+
+
 <a name="v5.1.2"></a>
 # [v5.1.2](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.2) - 05 Jul 2022
 
@@ -450,6 +458,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.1.3]: https://github.com/lucaburgio/iconoir/compare/v5.1.2...v5.1.3
 [v5.1.2]: https://github.com/lucaburgio/iconoir/compare/v5.1.1...v5.1.2
 [v5.1.1]: https://github.com/lucaburgio/iconoir/compare/v5.1...v5.1.1
 [v5.1]: https://github.com/lucaburgio/iconoir/compare/v5.0...v5.1
