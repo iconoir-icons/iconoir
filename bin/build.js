@@ -5,25 +5,13 @@ import { Listr } from 'listr2';
 import os from 'os';
 import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { incompatibleNames } from '../constants';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 const iconoirIconsDir = path.join(rootDir, 'icons');
-
-// Icon files with incompatible names
-const incompatibleNames = {
-  '1st-medal': 'medal-1st',
-  '4k-display': 'display-4k',
-  '2x2-cell': 'cell-2x2',
-  '360-view': 'view360',
-  github: 'gitHub',
-  'github-outline': 'gitHubOutline',
-  'gitlab-full': 'gitLabFull',
-  linkedin: 'linkedIn',
-  tiktok: 'tikTok',
-  youtube: 'youTube',
-};
+const ignoreCleanFilenames = ['IconoirContext.tsx'];
 
 // Targets for building icons
 const targets = {
@@ -194,11 +182,18 @@ const tasks = new Listr(
                                         const files = await fs.readdir(
                                           builtIconsDir
                                         );
-                                        const promises = files.map((file) => {
-                                          return fs.unlink(
-                                            path.join(builtIconsDir, file)
-                                          );
-                                        });
+                                        const promises = files
+                                          .filter(
+                                            (file) =>
+                                              !ignoreCleanFilenames.includes(
+                                                path.basename(file)
+                                              )
+                                          )
+                                          .map((file) => {
+                                            return fs.unlink(
+                                              path.join(builtIconsDir, file)
+                                            );
+                                          });
                                         return Promise.all(promises).catch(
                                           (err) => {
                                             ctx[target] = { skip: true };
@@ -231,6 +226,16 @@ const tasks = new Listr(
                                             ),
                                             '--out-dir',
                                             builtIconsDir,
+                                            '--template',
+                                            path.join(
+                                              rootDir,
+                                              'templates/icon-template.js'
+                                            ),
+                                            '--index-template',
+                                            path.join(
+                                              rootDir,
+                                              'templates/index-template.js'
+                                            ),
                                             ctx.tmpDir,
                                           ],
                                           { preferLocal: true }

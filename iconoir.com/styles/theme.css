@@ -1,0 +1,33 @@
+:root {
+
+  /* Colors */
+  --black-40: rgba(0, 0, 0, 0.4);
+  --black-60: rgba(0, 0, 0, 0.6);
+  --black-80: rgba(0, 0, 0, 0.8);
+  --black: #000000;
+  --gray: #E7E7E7;
+  --light-gray: #F2F2F2;
+  --super-light-gray: #FBFBFB;
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white: #FFFFFF;
+  --accent: #1E5AF6;
+
+}
+
+body {
+  margin: 0;
+  padding: 50px;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+* {
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
