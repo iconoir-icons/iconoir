@@ -1,49 +1,143 @@
 import React from 'react';
-import styled from 'styled-components';
-import { GITHUB, GUMROAD } from './constants';
+import styled, { css } from 'styled-components';
+import { GITHUB, SUPPORT_LINK } from './constants';
 import { Text15 } from './Typography';
-import { Heart, PeaceHand } from 'iconoir-react';
+import { Cancel, Heart, Menu, PeaceHand } from 'iconoir-react';
+import { CurrentVersion } from './CurrentVersion';
+import { media } from './responsive';
+import { ResetButton } from './Button';
 
-export function Header() {
+export interface HeaderProps {
+  currentVersion: string;
+}
+export function Header({ currentVersion }: HeaderProps) {
+  const [menuVisible, setMenuVisible] = React.useState(false);
   return (
     <Container>
-      <LogoIcon />
-      <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
-      <a
-        href={GUMROAD}
-        target={'_blank'}
-        rel={'noreferrer'}
-        style={{ marginLeft: 'auto' }}
-      >
-        <NavigationItem>Support the Project</NavigationItem>
-      </a>
-      <a href={GITHUB} target={'_blank'} rel="noreferrer">
-        <NavigationItem>GitHub</NavigationItem>
-      </a>
-      <BuiltWith>
-        Designed and built with <Heart width={'1em'} height={'1em'} /> by{' '}
-        <a href={''}>Luca</a> &amp; <a href={''}>Sam</a>
-      </BuiltWith>
+      <LogoContainer>
+        <LogoIcon />
+        <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
+      </LogoContainer>
+      <CurrentVersion version={currentVersion} />
+      <MobileMenuContainer visible={menuVisible}>
+        <NavigationItem
+          as={'a'}
+          href={SUPPORT_LINK}
+          target={'_blank'}
+          rel={'noreferrer'}
+          style={{ marginLeft: 'auto' }}
+        >
+          Support the Project
+        </NavigationItem>
+        <NavigationItem
+          as={'a'}
+          href={GITHUB}
+          target={'_blank'}
+          rel="noreferrer"
+        >
+          GitHub
+        </NavigationItem>
+        <BuiltWith>
+          Made with <Heart width={'1em'} height={'1em'} /> by{' '}
+          <a href={''}>Luca</a> &amp; <a href={''}>Sam</a>
+        </BuiltWith>
+      </MobileMenuContainer>
+      <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
+        {menuVisible ? <Cancel /> : <Menu />}
+      </MobileMenuButton>
     </Container>
   );
 }
 
+const LogoContainer = styled.div`
+  position: relative;
+  z-index: 101;
+  display: inline-flex;
+  align-items: center;
+`;
+const MobileMenuButton = styled(ResetButton)`
+  z-index: 101;
+  color: var(--black);
+  background: transparent;
+  display: inline-block;
+  margin-left: auto;
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  ${media.lg} {
+    display: none;
+  }
+`;
+const MobileMenuContainer = styled.div<{ visible?: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: white;
+  padding-top: 100px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s linear;
+  transform: translateY(-100%);
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  ${(props) => (props.visible ? '&' : '&.noop')} {
+    pointer-events: all;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  ${media.lg} {
+    margin-left: auto;
+    background: none;
+    padding-top: 0;
+    display: inline-flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    transform: none;
+    pointer-events: all;
+    opacity: 1;
+    > :not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+`;
 const Container = styled.div`
   display: flex;
   align-items: center;
-  > :not(:last-child) {
-    margin-right: 60px;
-  }
 `;
 const NavigationItem = styled(Text15)`
-  font-weight: 500;
-  line-height: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
   text-decoration: none;
-  color: var(--black-60);
+  padding: 25px;
+  color: var(--black);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  &:not(:last-child) {
+    border-bottom: solid 1px var(--light-gray);
+  }
+  ${media.lg} {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 0;
+    color: var(--black-60);
+    width: auto;
+    border-bottom: none;
+  }
 `;
 const Logo = styled.img`
   height: 20px;
   color: var(--black);
+  margin-right: 16px !important;
+  z-index: 101;
 `;
 const LogoIcon = styled(PeaceHand)`
   width: 36px;
@@ -54,6 +148,8 @@ const LogoIcon = styled(PeaceHand)`
 const BuiltWith = styled(NavigationItem)`
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: var(--black-60);
   svg {
     fill: var(--black);
     margin: 0 0.22em;
@@ -61,7 +157,17 @@ const BuiltWith = styled(NavigationItem)`
   > * {
     margin: 0 0.22em;
   }
+  a {
+    color: var(--black);
+    font-weight: 700;
+  }
   > :last-child {
     margin-right: 0;
+  }
+  ${media.lg} {
+    justify-content: flex-start;
+    a {
+      font-weight: normal;
+    }
   }
 `;

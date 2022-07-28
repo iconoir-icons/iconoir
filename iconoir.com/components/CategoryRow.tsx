@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media } from './responsive';
 import { Text15 } from './Typography';
 
 export interface CategoryRowProps {
@@ -10,25 +11,35 @@ export interface CategoryRowProps {
 export function CategoryRow({ category, numIcons, style }: CategoryRowProps) {
   return (
     <Container style={style}>
-      <Title>{category}</Title>
-      <Text15>
-        {numIcons} Icon{numIcons === 1 ? '' : 's'}
-      </Text15>
-      <Separator />
+      <InnerContainer>
+        <Title>{category}</Title>
+        <Text15>
+          {numIcons} Icon{numIcons === 1 ? '' : 's'}
+        </Text15>
+        <Separator />
+      </InnerContainer>
     </Container>
   );
 }
 
-const Container = styled.div`
+const InnerContainer = styled.div`
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 40px;
-  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
   * {
     line-height: 1;
   }
   > :not(:last-child) {
     margin-right: 10px;
+  }
+`;
+const Container = styled.div`
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  ${media.sm} {
+    padding-bottom: 40px;
   }
 `;
 const Title = styled(Text15)`

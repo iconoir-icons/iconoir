@@ -11,6 +11,7 @@ import { CategoryRow } from './CategoryRow';
 import { IconsRow } from './IconsRow';
 import { ReactWindowScroller } from 'react-window-scroller';
 import styled from 'styled-components';
+import { IconListEmpty } from './IconListEmpty';
 
 export interface IconListFilters {
   search?: string;
@@ -30,7 +31,7 @@ export interface Icon {
 export const DEFAULT_CUSTOMIZATIONS: IconListCustomizations = {
   size: 24,
   strokeWidth: 1.5,
-  hexColor: '000',
+  hexColor: '#000000',
 };
 
 function normalizeString(s: string) {
@@ -103,18 +104,18 @@ function getItemSize(row: IconRow, iconWidth: number): number {
 interface IconListContextValue {
   iconWidth: number;
   iconsPerRow: number;
-  customizations: IconListCustomizations;
+  hoverItem?: string;
+  setHoverItem: (hoverItem: string) => void;
 }
-const IconListContext = React.createContext<IconListContextValue | undefined>(
-  undefined
-);
+export const IconListContext = React.createContext<
+  IconListContextValue | undefined
+>(undefined);
 
 export interface IconListProps {
   filters: IconListFilters;
-  customizations: IconListCustomizations;
   allIcons: Icon[];
 }
-export function IconList({ filters, customizations, allIcons }: IconListProps) {
+export function IconList({ filters, allIcons }: IconListProps) {
   const filteredIcons = filterIcons(allIcons, filters);
   const { ref, width = 400 } = useResizeObserver();
   const iconsPerRow = width
@@ -130,13 +131,25 @@ export function IconList({ filters, customizations, allIcons }: IconListProps) {
       listRef.current.resetAfterIndex(0, true);
     }
   }, []);
-  if (iconsPerRow && width) {
+
+  // Mobile-friendly hover simulations.
+  const [hoverItem, setHoverItem] = React.useState('');
+  React.useEffect(() => {
+    window.document.body.addEventListener('touchend', (e) => {
+      const element = e.target as HTMLElement;
+      if (!element.closest('.icon-container')) {
+        setHoverItem('');
+      }
+    });
+  }, []);
+
+  if (filteredIcons.length && iconsPerRow && width) {
     const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
     const iconWidth =
       Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE;
     children = (
       <IconListContext.Provider
-        value={{ iconsPerRow, iconWidth, customizations }}
+        value={{ iconsPerRow, iconWidth, hoverItem, setHoverItem }}
       >
         <ReactWindowScroller>
           {({ ref, outerRef, style, onScroll }: any) => (
@@ -161,6 +174,8 @@ export function IconList({ filters, customizations, allIcons }: IconListProps) {
         </ReactWindowScroller>
       </IconListContext.Provider>
     );
+  } else if (width && filters.search) {
+    return <IconListEmpty searchTerm={filters.search} />;
   }
 
   return <Container ref={ref}>{children}</Container>;
@@ -169,11 +184,14 @@ export function IconList({ filters, customizations, allIcons }: IconListProps) {
 const Container = styled.div`
   width: 100%;
   margin-top: -${HEADER_TOP_PADDING}px;
+  > :first-child {
+    overflow: visible;
+  }
 `;
 
 const Row = React.memo(
   ({ data, index, style }: ListChildComponentProps<IconRow[]>) => {
-    const { iconWidth, customizations } = React.useContext(IconListContext)!;
+    const { iconWidth } = React.useContext(IconListContext)!;
     const row = data[index];
     if (isCategoryRow(row)) {
       return (
@@ -184,14 +202,7 @@ const Row = React.memo(
         />
       );
     } else {
-      return (
-        <IconsRow
-          icons={row.icons}
-          style={style}
-          iconWidth={iconWidth}
-          customizations={customizations}
-        />
-      );
+      return <IconsRow icons={row.icons} style={style} iconWidth={iconWidth} />;
     }
   },
   areEqual

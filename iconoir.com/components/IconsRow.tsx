@@ -1,6 +1,6 @@
 import React from 'react';
 import { ICON_SPACE } from './constants';
-import { Icon, IconListCustomizations } from './IconList';
+import { Icon } from './IconList';
 import styled from 'styled-components';
 import { Icon as IconC } from './Icon';
 
@@ -8,14 +8,8 @@ export interface IconsRowProps {
   icons: Icon[];
   style?: any;
   iconWidth: number;
-  customizations: IconListCustomizations;
 }
-export function IconsRow({
-  icons,
-  style,
-  iconWidth,
-  customizations,
-}: IconsRowProps) {
+export function IconsRow({ icons, style, iconWidth }: IconsRowProps) {
   return (
     <RowContainer style={style}>
       {icons.map((icon) => (

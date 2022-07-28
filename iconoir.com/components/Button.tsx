@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ResetButton = styled.button`
+export const ResetButton = styled.button`
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -8,6 +8,7 @@ const ResetButton = styled.button`
   text-transform: none;
   -webkit-appearance: button;
   border: none;
+  outline: none;
 `;
 
 export const LargeButton = styled(ResetButton)`
@@ -42,5 +43,21 @@ export const LargeButton = styled(ResetButton)`
   &:hover::after {
     inset: -7px;
     opacity: 1;
+  }
+`;
+
+export const Button = styled(LargeButton)`
+  height: 40px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 21px;
+  padding: 0 18px;
+  &::after {
+    border-radius: 13px;
+    border-width: 2px;
+  }
+  &:focus::after,
+  &:hover::after {
+    inset: -4px;
   }
 `;

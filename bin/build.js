@@ -5,7 +5,7 @@ import { Listr } from 'listr2';
 import os from 'os';
 import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { incompatibleNames } from '../constants';
+import { incompatibleNames } from '../constants.js';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -219,23 +219,12 @@ const tasks = new Listr(
                                               targets[target].path,
                                               '.svgrrc.json'
                                             ),
-                                            '--prettier-config',
-                                            path.join(
-                                              rootDir,
-                                              '.prettierrc.json'
-                                            ),
                                             '--out-dir',
                                             builtIconsDir,
                                             '--template',
-                                            path.join(
-                                              rootDir,
-                                              'templates/icon-template.js'
-                                            ),
+                                            'bin/templates/icon-template.cjs',
                                             '--index-template',
-                                            path.join(
-                                              rootDir,
-                                              'templates/index-template.js'
-                                            ),
+                                            'bin/templates/index-template.cjs',
                                             ctx.tmpDir,
                                           ],
                                           { preferLocal: true }

@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import styled from 'styled-components';
 import { AvailableFor } from '../components/AvailableFor';
 import { LargeButton } from '../components/Button';
-import { GUMROAD } from '../components/constants';
+import { REPO, SUPPORT_LINK } from '../components/constants';
 import { Explore } from '../components/Explore';
 import { Header } from '../components/Header';
 import { HeaderBackground } from '../components/HeaderBackground';
@@ -12,16 +12,30 @@ import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
 import { Text18 } from '../components/Typography';
 import { getAllIcons } from '../lib/getIcons';
+import fs from 'fs';
+import axios from 'axios';
+import numbro from 'numbro';
+// @ts-ignore no types
+import * as downloadStats from 'download-stats';
+import { media } from '../components/responsive';
 
 interface HomeProps {
   allIcons: Icon[];
+  currentVersion: string;
+  numStars: number;
+  numDownloads: number;
 }
-const Home: NextPage<HomeProps> = ({ allIcons }) => {
+const Home: NextPage<HomeProps> = ({
+  allIcons,
+  currentVersion,
+  numStars,
+  numDownloads,
+}) => {
   return (
     <div>
       <SEO />
       <HeaderBackground />
-      <Header />
+      <Header currentVersion={currentVersion} />
       <HeroText>Your new default library.</HeroText>
       <HeroDescription>
         Iconoir is one of the biggest open source icons libraries. No premium
@@ -42,13 +56,19 @@ const Home: NextPage<HomeProps> = ({ allIcons }) => {
           }
         />
         <Stat
-          value={'8.2k'}
+          value={numbro(numDownloads).format({
+            average: true,
+            mantissa: 1,
+          })}
           description={
-            'downloads/week on React only. Iconoir supports also React Native, Flutter and CSS.'
+            'downloads/week on React only. Iconoir also supports React Native, Flutter and CSS.'
           }
         />
         <Stat
-          value={'2.7k'}
+          value={numbro(numStars).format({
+            average: true,
+            mantissa: 1,
+          })}
           description={
             'people who starred the project on Github. Show your support and be one of them.'
           }
@@ -58,7 +78,7 @@ const Home: NextPage<HomeProps> = ({ allIcons }) => {
       <SupportContainer>
         <LargeButton
           as={'a'}
-          href={GUMROAD}
+          href={SUPPORT_LINK}
           target={'_blank'}
           rel={'noreferrer'}
         >
@@ -77,12 +97,18 @@ const Home: NextPage<HomeProps> = ({ allIcons }) => {
 };
 
 const HeroText = styled.h1`
-  font-size: 90px;
+  font-size: 50px;
   font-weight: 700;
   letter-spacing: -0.05em;
-  line-height: 1;
+  line-height: 52px;
   text-align: center;
-  margin: 200px auto 80px auto;
+  margin: 60px auto 40px auto;
+
+  ${media.md} {
+    font-size: 90px;
+    line-height: 1;
+    margin: 200px auto 80px auto;
+  }
 `;
 const HeroDescription = styled(Text18)`
   display: block;
@@ -92,7 +118,6 @@ const HeroDescription = styled(Text18)`
 `;
 const SupportContainer = styled.div`
   text-align: center;
-  margin-bottom: 250px;
   > * {
     margin: 0 auto;
     max-width: 750px;
@@ -100,14 +125,32 @@ const SupportContainer = styled.div`
   > :not(:last-child) {
     margin-bottom: 30px;
   }
+  margin-bottom: 50px;
+  ${media.sm} {
+    margin-bottom: 150px;
+  }
 `;
 
 export default Home;
 
 export async function getStaticProps() {
+  const packageJson = JSON.parse(fs.readFileSync('../package.json').toString());
+  const apiResult = await axios.get(`https://api.github.com/repos/${REPO}`);
+  const stars = apiResult.data?.stargazers_count;
+  if (!stars) throw new Error('Could not find GitHub stars');
+  const numDownloads = await new Promise<number>((resolve, reject) => {
+    downloadStats.get.lastWeek('iconoir-react', (err: any, results: any) => {
+      if (err) return reject(err);
+      resolve(results.downloads);
+    });
+  });
+  if (!numDownloads) throw new Error('Could not find NPM downloads');
   return {
     props: {
       allIcons: await getAllIcons(),
+      currentVersion: `v${packageJson.version}`,
+      numStars: stars,
+      numDownloads,
     },
   };
 }
