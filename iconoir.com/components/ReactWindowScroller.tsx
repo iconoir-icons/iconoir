@@ -47,6 +47,7 @@ interface ChildOpts<Props extends ListProps | GridProps> {
   onScroll: Props['onScroll'];
 }
 interface ReactWindowScrollerProps<Props extends ListProps | GridProps> {
+  // eslint-disable-next-line no-unused-vars
   children: (opts: ChildOpts<Props>) => React.ReactElement;
   throttleTime?: number;
   isGrid?: boolean;

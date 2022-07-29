@@ -5,6 +5,7 @@ const CUSTOMIZATIONS_KEY = 'iconoir-customize';
 
 export function useCustomizationPersistence(): [
   IconListCustomizations,
+  // eslint-disable-next-line no-unused-vars
   (customizations: IconListCustomizations) => void
 ] {
   const [customizations, _setCustomizations] = React.useState(

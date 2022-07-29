@@ -8,13 +8,14 @@ import { Slider } from './Slider';
 
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;
+  // eslint-disable-next-line no-unused-vars
   onChange: (customizations: IconListCustomizations) => void;
 }
 export function CustomizationEditor({
   customizations,
   onChange,
 }: CustomizationEditorProps) {
-  const [isPending, startTransition] = (React as any).useTransition();
+  const [, startTransition] = (React as any).useTransition();
   const [color, setColor] = React.useState(customizations.hexColor);
   const [size, setSize] = React.useState(customizations.size);
   const [strokeWidth, setStrokeWidth] = React.useState(

@@ -17,7 +17,7 @@ export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
         Unfortunately there are no icons for &apos;{searchTerm}&apos;
       </Title>
       <Text18 style={{ color: 'var(--black-60)' }}>
-        If you can't find the icon, you can make a
+        {"If you can't find the icon, you can make a"}
         <br />
         <a href={SUGGEST_ICON} target={'_blank'} rel={'noreferrer'}>
           suggestion on GitHub.

@@ -4,6 +4,7 @@ import { LargeInput } from './Input';
 
 export interface FiltersEditorProps {
   filters: IconListFilters;
+  // eslint-disable-next-line no-unused-vars
   onChange: (filters: IconListFilters) => void;
 }
 export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
