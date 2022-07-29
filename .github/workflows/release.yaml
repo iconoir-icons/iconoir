@@ -52,3 +52,51 @@ jobs:
         with:
           credential: ${{ secrets.PUB_CREDENTIAL_JSON }}
           package_directory: ./packages/iconoir-flutter
+      - name: Build
+        run: ./node_modules/.bin/next build
+        working-directory: iconoir.com
+      - name: Export
+        run: ./node_modules/.bin/next export
+        working-directory: iconoir.com
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './iconoir.com/out'
+  website:
+    runs-on: ubuntu-latest
+    name: deploy
+    needs: [release]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master # We have to checkout master or PNPM fails. Tag should be on master anyway.
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 6.27.1
+          run_install: true
+      - name: Build Packages
+        run: pnpm run dist
+      - name: Build
+        run: ./node_modules/.bin/next build
+        working-directory: iconoir.com
+      - name: Export
+        run: ./node_modules/.bin/next export
+        working-directory: iconoir.com
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './iconoir.com/out'

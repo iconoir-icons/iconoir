@@ -50,6 +50,28 @@ Default values for the most common props are given below:
 | strokeWidth | 1.5            |
 | fill        | "none"         |
 
+#### IconoirProvider
+
+Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider.
+
+```tsx
+import { IconoirProvider, Check } from 'iconoir-react-native'
+
+return (
+  <IconoirProvider
+    iconProps={{
+      color: '#AAAAAA',
+      strokeWidth: 1,
+      width: '1em',
+      height: '1em',
+    }}
+  >
+    <SomeOtherContainer>
+      <Check />
+    </SomeOtherContainer>
+  </IconoirProvider>
+)
+```
 
 ### Icon names
 
