@@ -70,7 +70,7 @@ const FilterContainer = styled.div<{ isMobile?: boolean }>`
   position: sticky;
   top: 20px;
   z-index: 100;
-  ${media.sm} {
+  ${media.md} {
     position: relative;
     top: 0;
     display: ${(props) => (props.isMobile ? 'none' : 'block')};

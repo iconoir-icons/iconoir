@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  DEFAULT_CUSTOMIZATIONS,
-  Icon as IconType,
-  IconListContext,
-} from './IconList';
+import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
 import styled from 'styled-components';
 import * as AllIcons from 'iconoir-react';
 import { ResetButton } from './Button';
@@ -36,7 +32,13 @@ export function Icon({ iconWidth, icon }: IconProps) {
   const downloadRef = React.useRef<HTMLAnchorElement>(null);
   const htmlContentsRef = React.useRef<string>('');
   const iconContext = React.useContext(AllIcons.IconoirContext);
-  const { setHoverItem, hoverItem } = React.useContext(IconListContext) || {};
+  const [supportsClipboard, setSupportsClipboard] = React.useState(false);
+  React.useEffect(() => {
+    setSupportsClipboard(
+      typeof window !== 'undefined' &&
+        typeof window?.navigator?.clipboard?.writeText !== 'undefined'
+    );
+  }, []);
   React.useEffect(() => {
     if (iconContainerRef.current) {
       htmlContentsRef.current = bakeSvg(
@@ -44,74 +46,72 @@ export function Icon({ iconWidth, icon }: IconProps) {
         iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
         iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth
       );
-      if (downloadRef.current) {
-        downloadRef.current.href = `data:image/svg+xml;base64,${btoa(
-          htmlContentsRef.current
-        )}`;
-      }
     }
-  }, [iconContext]);
+  }, [iconContext, supportsClipboard]);
+  React.useEffect(() => {
+    const element =
+      downloadRef.current ||
+      (iconContainerRef.current as unknown as HTMLAnchorElement);
+    if (element) {
+      element.href = `data:image/svg+xml;base64,${btoa(
+        htmlContentsRef.current
+      )}`;
+    }
+  }, [iconContext, supportsClipboard]);
   return (
-    <div
-      className={'icon-container'}
-      onTouchEnd={
-        setHoverItem
-          ? (e) => {
-              if (hoverItem !== icon.filename) {
-                e.preventDefault();
-                e.stopPropagation();
-              }
-              setHoverItem(icon.filename);
-            }
-          : undefined
-      }
-    >
-      <BorderContainer
-        iconWidth={iconWidth}
-        hovering={hoverItem === icon.filename}
-      >
-        <IconContainer ref={iconContainerRef}>
+    <div className={'icon-container'}>
+      <BorderContainer iconWidth={iconWidth}>
+        <IconContainer
+          ref={iconContainerRef}
+          {...((supportsClipboard
+            ? {}
+            : {
+                as: 'a',
+                href: '#',
+                rel: 'noreferrer',
+                download: `${icon.filename}.svg`,
+              }) as any)}
+        >
           <IconComponent />
         </IconContainer>
-        <HoverContainer>
-          <HoverButton
-            onClick={() => {
-              if (setHoverItem) setHoverItem('');
-              if (htmlContentsRef.current) {
-                navigator.clipboard
-                  .writeText(htmlContentsRef.current)
-                  .then(() => {
-                    showNotification('SVG code copied!');
-                  })
-                  .catch((err) => {
-                    console.error(err);
-                  });
-              }
-            }}
-          >
-            Copy SVG
-          </HoverButton>
-          <HoverButton
-            as={'a'}
-            ref={downloadRef}
-            href={'#'}
-            rel={'noreferrer'}
-            download={`${icon.filename}.svg`}
-            onClick={() => {
-              if (setHoverItem) setHoverItem('');
-            }}
-          >
-            Download
-          </HoverButton>
-        </HoverContainer>
+        {supportsClipboard ? (
+          <HoverContainer>
+            <HoverButton
+              onClick={() => {
+                if (htmlContentsRef.current) {
+                  navigator.clipboard
+                    .writeText(htmlContentsRef.current)
+                    .then(() => {
+                      showNotification('SVG code copied!');
+                    })
+                    .catch((err) => {
+                      console.error(err);
+                    });
+                }
+              }}
+            >
+              Copy SVG
+            </HoverButton>
+            <HoverButton
+              as={'a'}
+              ref={downloadRef}
+              href={'#'}
+              rel={'noreferrer'}
+              download={`${icon.filename}.svg`}
+            >
+              Download
+            </HoverButton>
+          </HoverContainer>
+        ) : null}
       </BorderContainer>
       <Subtitle>{icon.filename}</Subtitle>
     </div>
   );
 }
 
-const HoverContainer = styled.div`
+const HoverContainer = styled.div<{ supportsCopy?: boolean }>`
   position: absolute;
+  display: ${(props) => (props.supportsCopy ? 'block' : 'none')};
   inset: 0;
   display: flex;
   align-items: stretch;
@@ -129,7 +129,7 @@ const HoverButton = styled(ResetButton)`
   align-items: center;
   justify-content: center;
   background: var(--light-gray);
-  border-radius: 0;
+  border-radius: 0 !important;
   transition: background 0.1s linear;
   color: var(--black);
   font-size: 14px;
@@ -144,7 +144,7 @@ const HoverButton = styled(ResetButton)`
     background: var(--gray);
   }
 `;
-const BorderContainer = styled.div<{ iconWidth: number; hovering: boolean }>`
+const BorderContainer = styled.div<{ iconWidth: number }>`
   width: ${(props) => props.iconWidth}px;
   box-sizing: border-box;
   padding-bottom: 100%;
@@ -152,11 +152,6 @@ const BorderContainer = styled.div<{ iconWidth: number; hovering: boolean }>`
   border: solid 1px var(--light-gray);
   border-radius: 12px;
   margin-bottom: 10px;
-  ${(props) => (props.hovering ? '&' : '&.noop')}
-  ${HoverContainer} {
-    opacity: 1;
-    pointer-events: all;
-  }
   @media (hover: hover) {
     &:hover ${HoverContainer} {
       opacity: 1;

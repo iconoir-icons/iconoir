@@ -26,7 +26,7 @@ const HeaderBackgroundContainer = styled.div`
   min-height: 100vh;
   z-index: -1;
   overflow: hidden;
-  ${media.sm} {
+  ${media.md} {
     overflow: visible;
   }
 `;

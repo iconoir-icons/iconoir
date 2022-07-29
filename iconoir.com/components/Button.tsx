@@ -6,7 +6,7 @@ export const ResetButton = styled.button`
   line-height: 1.15;
   margin: 0;
   text-transform: none;
-  -webkit-appearance: button;
+  -webkit-appearance: none;
   border: none;
   outline: none;
 `;

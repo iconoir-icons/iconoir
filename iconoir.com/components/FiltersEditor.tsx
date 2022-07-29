@@ -7,7 +7,7 @@ export interface FiltersEditorProps {
   onChange: (filters: IconListFilters) => void;
 }
 export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
-  const [isPending, startTransition] = (React as any).useTransition();
+  const [, startTransition] = (React as any).useTransition();
   const [search, setSearch] = React.useState(filters.search);
   React.useEffect(() => {
     setSearch(filters.search);
@@ -26,6 +26,8 @@ export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
     <LargeInput
       placeholder={'Search...'}
       value={search}
+      type={'search'}
+      autoCapitalize={'none'}
       onChange={(e) => {
         const value = e.target.value;
         setSearch(value);

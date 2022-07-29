@@ -1,11 +1,12 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { GITHUB, SUPPORT_LINK } from './constants';
+import styled from 'styled-components';
+import { AUTHOR_LINKS, GITHUB, SUPPORT_LINK } from './constants';
 import { Text15 } from './Typography';
-import { Cancel, Heart, Menu, PeaceHand } from 'iconoir-react';
+import { Cancel, Heart, Menu } from 'iconoir-react';
 import { CurrentVersion } from './CurrentVersion';
 import { media } from './responsive';
 import { ResetButton } from './Button';
+import { AnimatedSvg } from './AnimatedSvg';
 
 export interface HeaderProps {
   currentVersion: string;
@@ -15,7 +16,9 @@ export function Header({ currentVersion }: HeaderProps) {
   return (
     <Container>
       <LogoContainer>
-        <LogoIcon />
+        <LogoIcon>
+          <AnimatedSvg />
+        </LogoIcon>
         <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
       </LogoContainer>
       <CurrentVersion version={currentVersion} />
@@ -39,7 +42,13 @@ export function Header({ currentVersion }: HeaderProps) {
         </NavigationItem>
         <BuiltWith>
           Made with <Heart width={'1em'} height={'1em'} /> by{' '}
-          <a href={''}>Luca</a> &amp; <a href={''}>Sam</a>
+          <a href={AUTHOR_LINKS.Luca} target={'_blank'} rel={'noreferrer'}>
+            Luca
+          </a>{' '}
+          &amp;{' '}
+          <a href={AUTHOR_LINKS.Sam} target={'_blank'} rel={'noreferrer'}>
+            Sam
+          </a>
         </BuiltWith>
       </MobileMenuContainer>
       <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
@@ -49,7 +58,7 @@ export function Header({ currentVersion }: HeaderProps) {
   );
 }
 
-const LogoContainer = styled.div`
+export const LogoContainer = styled.div`
   position: relative;
   z-index: 101;
   display: inline-flex;
@@ -60,7 +69,7 @@ const MobileMenuButton = styled(ResetButton)`
   color: var(--black);
   background: transparent;
   display: inline-block;
-  margin-left: auto;
+  margin-left: auto !important;
   cursor: pointer;
   svg {
     width: 24px;
@@ -79,6 +88,7 @@ const MobileMenuContainer = styled.div<{ visible?: boolean }>`
   background: white;
   padding-top: 100px;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s linear;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-100%);
   pointer-events: none;
   opacity: 0;
@@ -94,6 +104,7 @@ const MobileMenuContainer = styled.div<{ visible?: boolean }>`
     margin-left: auto;
     background: none;
     padding-top: 0;
+    box-shadow: none;
     display: inline-flex;
     flex-direction: row;
     position: relative;
@@ -110,7 +121,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
 `;
-const NavigationItem = styled(Text15)`
+export const NavigationItem = styled(Text15)`
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
@@ -133,17 +144,19 @@ const NavigationItem = styled(Text15)`
     border-bottom: none;
   }
 `;
-const Logo = styled.img`
-  height: 20px;
+export const Logo = styled.img`
+  height: 24px;
   color: var(--black);
   margin-right: 16px !important;
   z-index: 101;
 `;
-const LogoIcon = styled(PeaceHand)`
-  width: 36px;
-  height: 36px;
+export const LogoIcon = styled.div`
   color: var(--black);
   margin-right: 4px !important;
+  svg {
+    width: 36px;
+    height: 36px;
+  }
 `;
 const BuiltWith = styled(NavigationItem)`
   display: flex;

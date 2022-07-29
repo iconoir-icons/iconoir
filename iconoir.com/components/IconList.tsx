@@ -9,7 +9,7 @@ import useResizeObserver from 'use-resize-observer';
 import { ICON_SPACE, ICON_WIDTH } from './constants';
 import { CategoryRow } from './CategoryRow';
 import { IconsRow } from './IconsRow';
-import { ReactWindowScroller } from 'react-window-scroller';
+import { ReactWindowScroller } from './ReactWindowScroller';
 import styled from 'styled-components';
 import { IconListEmpty } from './IconListEmpty';
 
@@ -104,8 +104,6 @@ function getItemSize(row: IconRow, iconWidth: number): number {
 interface IconListContextValue {
   iconWidth: number;
   iconsPerRow: number;
-  hoverItem?: string;
-  setHoverItem: (hoverItem: string) => void;
 }
 export const IconListContext = React.createContext<
   IconListContextValue | undefined
@@ -132,25 +130,12 @@ export function IconList({ filters, allIcons }: IconListProps) {
     }
   }, []);
 
-  // Mobile-friendly hover simulations.
-  const [hoverItem, setHoverItem] = React.useState('');
-  React.useEffect(() => {
-    window.document.body.addEventListener('touchend', (e) => {
-      const element = e.target as HTMLElement;
-      if (!element.closest('.icon-container')) {
-        setHoverItem('');
-      }
-    });
-  }, []);
-
   if (filteredIcons.length && iconsPerRow && width) {
     const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
     const iconWidth =
       Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE;
     children = (
-      <IconListContext.Provider
-        value={{ iconsPerRow, iconWidth, hoverItem, setHoverItem }}
-      >
+      <IconListContext.Provider value={{ iconsPerRow, iconWidth }}>
         <ReactWindowScroller>
           {({ ref, outerRef, style, onScroll }: any) => (
             <List<IconRow[]>
@@ -186,6 +171,9 @@ const Container = styled.div`
   margin-top: -${HEADER_TOP_PADDING}px;
   > :first-child {
     overflow: visible;
+    > :first-child {
+      -webkit-overflow-scrolling: touch;
+    }
   }
 `;
 

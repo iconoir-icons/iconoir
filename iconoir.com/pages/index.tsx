@@ -18,6 +18,9 @@ import numbro from 'numbro';
 // @ts-ignore no types
 import * as downloadStats from 'download-stats';
 import { media } from '../components/responsive';
+import { Praise } from '../components/Praise';
+import { Footer } from '../components/Footer';
+import { GA } from '../components/GA';
 
 interface HomeProps {
   allIcons: Icon[];
@@ -34,6 +37,7 @@ const Home: NextPage<HomeProps> = ({
   return (
     <div>
       <SEO />
+      <GA />
       <HeaderBackground />
       <Header currentVersion={currentVersion} />
       <HeroText>Your new default library.</HeroText>
@@ -91,7 +95,11 @@ const Home: NextPage<HomeProps> = ({
           format, Font, React and React Native libraries, Figma and Framer.
         </Text18>
       </SupportContainer>
+      <PraiseContainer>
+        <Praise />
+      </PraiseContainer>
       <Explore allIcons={allIcons} />
+      <Footer />
     </div>
   );
 };
@@ -129,6 +137,13 @@ const SupportContainer = styled.div`
   ${media.sm} {
     margin-bottom: 150px;
   }
+`;
+const PraiseContainer = styled.div`
+  margin: 50px 0 64px 0;
+  ${media.md} {
+    margin: 140px 0 150px 0;
+  }
+  width: 100%;
 `;
 
 export default Home;
