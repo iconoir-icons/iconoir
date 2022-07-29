@@ -371,9 +371,10 @@ const tasks = new Listr(
                                     title: 'Building icon files',
                                     skip: (ctx) => ctx[target]?.skip,
                                     task: async (ctx) => {
+                                      const finalFileNames = [];
                                       try {
-                                        ctx.dstFilePaths.forEach(
-                                          async (file) => {
+                                        await Promise.all(
+                                          ctx.dstFilePaths.map(async (file) => {
                                             const svgfilename =
                                               path.parse(file).name;
                                             // Prefix with Svg if icon name starts with a number
@@ -415,19 +416,29 @@ const tasks = new Listr(
                                                     '(snakeCase)',
                                                 },
                                                 async onComplete(results) {
-                                                  await fs.appendFile(
-                                                    path.join(
-                                                      builtIconsDir,
-                                                      'iconoir_flutter.dart'
-                                                    ),
-                                                    `export './${basename(
-                                                      results.output.path
-                                                    )}';\n`
+                                                  finalFileNames.push(
+                                                    results.output.path
                                                   );
                                                 },
                                               },
                                             ]);
-                                          }
+                                          })
+                                        );
+
+                                        finalFileNames.sort();
+                                        await fs.appendFile(
+                                          path.join(
+                                            builtIconsDir,
+                                            'iconoir_flutter.dart'
+                                          ),
+                                          finalFileNames
+                                            .map(
+                                              (fileName) =>
+                                                `export './${basename(
+                                                  fileName
+                                                )}';`
+                                            )
+                                            .join('\n')
                                         );
                                       } catch (err) {
                                         throw new Error(err.message);
