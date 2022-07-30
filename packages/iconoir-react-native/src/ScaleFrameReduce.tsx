@@ -28,7 +28,6 @@ function SvgScaleFrameReduce(
       <Path
         d="M20.4 3H3.6a.6.6 0 00-.6.6v16.8a.6.6 0 00.6.6h16.8a.6.6 0 00.6-.6V3.6a.6.6 0 00-.6-.6z"
         stroke="currentColor"
-        strokeWidth={1.499}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

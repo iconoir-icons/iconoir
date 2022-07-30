@@ -90,9 +90,10 @@ const Home: NextPage<HomeProps> = ({
           <span>Support the project</span>
         </LargeButton>
         <Text18>
-          Iconoir is one of the biggest open source icons libraries. No premium
-          icons, no email sign-up, no newsletters. Icons available in SVG
-          format, Font, React and React Native libraries, Figma and Framer.
+          Iconoir is an open source project built with consistent passion and
+          dedication. If you consider this library valuable for you and your
+          projects, support Iconoir with a donation to help us sustain costs and
+          development time.
         </Text18>
       </SupportContainer>
       <PraiseContainer>

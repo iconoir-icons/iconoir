@@ -15,22 +15,21 @@ export function AvailableFor() {
           <DesktopHeader>Available for</DesktopHeader>
           <a href={LIBRARY_LINKS.React} target={'_blank'} rel={'noreferrer'}>
             <AvailableForImage
-              src={'/react.png'}
+              src={'/logo-react.svg'}
               alt={'React Logo'}
               title={'React'}
-              larger
             />
           </a>
           <a href={LIBRARY_LINKS.Flutter} target={'_blank'} rel={'noreferrer'}>
             <AvailableForImage
-              src={'/flutter.png'}
+              src={'/logo-flutter.svg'}
               alt={'Flutter Logo'}
               title={'Flutter'}
             />
           </a>
           <a href={LIBRARY_LINKS.Figma} target={'_blank'} rel={'noreferrer'}>
             <AvailableForImage
-              src={'/figma.png'}
+              src={'/logo-figma.svg'}
               alt={'Figma Logo'}
               title={'Figma'}
             />
@@ -41,15 +40,14 @@ export function AvailableFor() {
             rel={'noreferrer'}
           >
             <AvailableForImage
-              src={'/react-native.png'}
+              src={'/logo-react-native.svg'}
               alt={'React Native Logo'}
               title={'React Native'}
-              larger
             />
           </a>
           <a href={LIBRARY_LINKS.Framer} target={'_blank'} rel={'noreferrer'}>
             <AvailableForImage
-              src={'/framer.png'}
+              src={'/logo-framer.svg'}
               alt={'Framer Logo'}
               title={'Framer'}
             />
@@ -135,10 +133,10 @@ const AvailableForContainer = styled.div<{ contentWidth: number }>`
     }
   }
 `;
-const AvailableForImage = styled.img<{ larger?: boolean }>`
-  height: ${(props) => (props.larger ? 40 : 22)}px;
+const AvailableForImage = styled.img`
+  height: 40px;
   display: block;
   ${media.lg} {
-    height: ${(props) => (props.larger ? 50 : 30)}px;
+    height: 50px;
   }
 `;

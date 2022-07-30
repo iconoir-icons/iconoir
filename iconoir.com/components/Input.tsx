@@ -48,6 +48,7 @@ export const LargeInput = styled(Input)`
 export const ColorInput = styled(Input)`
   padding: 0px;
   border: none;
+  cursor: pointer;
   &::-webkit-color-swatch,
   &::-moz-color-swatch {
     border: none;

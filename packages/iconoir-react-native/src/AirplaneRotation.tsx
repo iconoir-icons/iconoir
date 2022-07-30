@@ -29,7 +29,6 @@ function SvgAirplaneRotation(
       <Path
         d="M4.37 16.773A8.956 8.956 0 013.002 12c0-4.236 2.934-7.792 6.878-8.747A8.998 8.998 0 0112 3.002M19.715 7.367A8.953 8.953 0 0120.999 12c0 3.806-2.368 7.063-5.709 8.378-1.02.4-2.13.621-3.29.621"
         stroke="currentColor"
-        strokeWidth={1.497}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

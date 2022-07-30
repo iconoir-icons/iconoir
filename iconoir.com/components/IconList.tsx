@@ -122,18 +122,20 @@ export function IconList({ filters, allIcons }: IconListProps) {
   let children = null;
   const listRef = React.useRef<List<IconRow[]> | null>();
   const [height, setHeight] = React.useState(400);
+  const iconWidth = iconsPerRow
+    ? Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE
+    : null;
   React.useEffect(() => {
     setHeight(window.innerHeight);
+  }, []);
+  React.useEffect(() => {
     if (listRef.current) {
-      // Reset the list height cache after re-population from server.
       listRef.current.resetAfterIndex(0, true);
     }
-  }, []);
+  }, [iconWidth, height]);
 
-  if (filteredIcons.length && iconsPerRow && width) {
+  if (filteredIcons.length && iconsPerRow && width && iconWidth) {
     const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
-    const iconWidth =
-      Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE;
     children = (
       <IconListContext.Provider value={{ iconsPerRow, iconWidth }}>
         <ReactWindowScroller>

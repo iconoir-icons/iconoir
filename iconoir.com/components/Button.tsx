@@ -28,6 +28,9 @@ export const LargeButton = styled(ResetButton)`
   > :not(:last-child) {
     margin-right: 15px;
   }
+  * {
+    font-weight: 700;
+  }
   &::after {
     content: ' ';
     display: block;

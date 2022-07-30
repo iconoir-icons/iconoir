@@ -29,7 +29,6 @@ function SvgFrame(
       <path
         d="M4.999 3.503h5.5"
         stroke="currentColor"
-        strokeWidth={1.22}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -44,7 +43,6 @@ function SvgFrame(
       <path
         d="M13.498 3.501h5.5"
         stroke="currentColor"
-        strokeWidth={1.22}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
