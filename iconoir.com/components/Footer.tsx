@@ -2,7 +2,8 @@ import { PeaceHand } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
 import { LICENSE_LINK } from './constants';
-import { Logo, LogoContainer, LogoIcon, NavigationItem } from './Header';
+import { Logo, LogoContainer, LogoIcon } from './Header';
+import { NavigationItemContainer } from './NavigationItem';
 
 export function Footer() {
   return (
@@ -36,6 +37,6 @@ const Container = styled.div`
   }
 `;
 
-const FooterNavigationItem = styled(NavigationItem)`
+const FooterNavigationItem = styled(NavigationItemContainer)`
   color: var(--black);
 `;

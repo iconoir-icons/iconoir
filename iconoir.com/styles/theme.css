@@ -5,13 +5,21 @@
   --black-60: rgba(0, 0, 0, 0.6);
   --black-80: rgba(0, 0, 0, 0.8);
   --black: #000000;
+  --darker-gray: #484848;
   --dark-gray: #626262;
+  --pink: #FFEBE4;
+  --blue: #E4F9FF;
+  --green: #E4FFE4;
   --gray: #E7E7E7;
   --light-gray: #F2F2F2;
+  --lighter-gray: #F9F9F9;
   --super-light-gray: #FBFBFB;
   --white-80: rgba(255, 255, 255, 0.8);
   --white: #FFFFFF;
   --accent: #1E5AF6;
+
+  --code-family: 'IBM Plex Mono', monospace;
+  --font-family: 'DM Sans', sans-serif;
 
 }
 
@@ -29,7 +37,7 @@ a {
 
 * {
   font-weight: 400;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-family);
   letter-spacing: -0.02em;
 }
 

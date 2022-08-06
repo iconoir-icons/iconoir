@@ -1,23 +1,26 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import { GITHUB } from './constants';
 import { Text13 } from './Typography';
 
 export interface CurrentVersionProps {
   version: string;
+  color?: string;
 }
-export function CurrentVersion({ version }: CurrentVersionProps) {
+export function CurrentVersion({ version, color }: CurrentVersionProps) {
   return (
-    <Container as={'a'} href={GITHUB} target={'_blank'} rel={'noreferrer'}>
-      {version}
-    </Container>
+    <Link href={'/docs/changelog'} passHref>
+      <Container as={'a'} style={color ? { background: color } : undefined}>
+        {version}
+      </Container>
+    </Link>
   );
 }
 
 const Container = styled(Text13)`
   color: var(--black);
   font-weight: 700;
-  background: var(--white-80);
+  background: var(--pink);
   line-height: 1;
   padding: 7px 16px;
   border-radius: 200px;

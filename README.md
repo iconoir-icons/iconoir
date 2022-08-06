@@ -1,29 +1,29 @@
-<p align="center">
-  <img src="assets/iconoir-cover.png" alt="Iconoir">
-</p>
+<div align="center">
+  <img src="assets/iconoir-cover.png" alt="Iconoir" />
+</div>
 
-<p align="center">
+<div align="center">
   Iconoir is an open-source library with 1000+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.
-<p>
+</div>
 
-<p align="center">
+<div align="center">
   <a href="https://iconoir.com"><strong>Browse at iconoir.com &rarr;</strong></a>
-</p>
+</div>
 
-<p align="center">
+<div align="center">
   <a href="https://github.com/lucaburgio/iconoir/releases">
-    <img src="https://img.shields.io/github/v/release/lucaburgio/iconoir?style=flat-square" alt="Version">
+    <img src="https://img.shields.io/github/v/release/lucaburgio/iconoir?style=flat-square" alt="Version" />
   </a>
   <a href="https://github.com/lucaburgio/iconoir">
-    <img src="https://img.shields.io/github/stars/lucaburgio/iconoir?style=flat-square" alt="Project Stars">
+    <img src="https://img.shields.io/github/stars/lucaburgio/iconoir?style=flat-square" alt="Project Stars" />
   </a>
   <a href="https://www.npmjs.com/package/iconoir-react">
-    <img src="https://img.shields.io/npm/dm/iconoir-react?color=98E8F3&label=react&style=flat-square" alt="React Library">
+    <img src="https://img.shields.io/npm/dm/iconoir-react?color=98E8F3&label=react&style=flat-square" alt="React Library" />
   </a>
   <a href="https://github.com/lucaburgio/iconoir/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/lucaburgio/iconoir?style=flat-square" alt="License">
+    <img src="https://img.shields.io/github/license/lucaburgio/iconoir?style=flat-square" alt="License" />
   </a>
-</p>
+</div>
 
 ## Basic Usage
 

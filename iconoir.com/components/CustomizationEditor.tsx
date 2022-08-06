@@ -60,7 +60,7 @@ export function CustomizationEditor({
       <Field>
         <Slider
           label={'Stroke Width'}
-          minValue={0.01}
+          minValue={0.5}
           maxValue={3}
           value={[strokeWidth]}
           step={0.01}

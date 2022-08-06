@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import '../styles/prism-theme.css';
 import '../styles/theme.css';
 
 function MyApp({ Component, pageProps }: AppProps) {

@@ -12,6 +12,8 @@ export const SUGGEST_LIBRARY =
   'https://github.com/iconoir-icons/iconoir/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D';
 export const FEEDBACK_LINK = 'https://forms.gle/3HvwVYow7D6T8zad7';
 
+export const FILE_PREFIX =
+  'https://github.com/iconoir-icons/iconoir/tree/master';
 export const LIBRARY_LINKS = {
   React:
     'https://github.com/iconoir-icons/iconoir/tree/master/packages/iconoir-react',

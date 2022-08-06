@@ -13,7 +13,6 @@ export const ResetButton = styled.button`
 
 export const LargeButton = styled(ResetButton)`
   background: var(--black);
-  border-radius: 200px;
   height: 75px;
   display: inline-flex;
   align-items: center;
@@ -25,6 +24,7 @@ export const LargeButton = styled(ResetButton)`
   font-weight: 700;
   position: relative;
   cursor: pointer;
+  z-index: 12;
   > :not(:last-child) {
     margin-right: 15px;
   }
@@ -36,11 +36,10 @@ export const LargeButton = styled(ResetButton)`
     display: block;
     position: absolute;
     inset: 0;
-    border-radius: 200px;
     border: solid 3px var(--black);
     opacity: 0;
     transition: inset 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s linear;
-    z-index: -1;
+    z-index: 10;
   }
   &:focus::after,
   &:hover::after {
@@ -51,16 +50,17 @@ export const LargeButton = styled(ResetButton)`
 
 export const Button = styled(LargeButton)`
   height: 40px;
-  border-radius: 10px;
   font-size: 13px;
   line-height: 21px;
   padding: 0 18px;
   &::after {
-    border-radius: 13px;
     border-width: 2px;
   }
   &:focus::after,
   &:hover::after {
     inset: -4px;
+  }
+  &:active {
+    background: var(--darker-gray);
   }
 `;

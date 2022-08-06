@@ -1,47 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AUTHOR_LINKS, GITHUB, SUPPORT_LINK } from './constants';
-import { Text15 } from './Typography';
+import { AUTHOR_LINKS } from './constants';
 import { Cancel, Heart, Menu } from 'iconoir-react';
 import { CurrentVersion } from './CurrentVersion';
 import { media } from './responsive';
 import { ResetButton } from './Button';
 import { AnimatedSvg } from './AnimatedSvg';
+import { NavigationItem, NavigationItemContainer } from './NavigationItem';
+import Link from 'next/link';
 
 export interface HeaderProps {
   currentVersion: string;
+  currentVersionColor?: string;
 }
-export function Header({ currentVersion }: HeaderProps) {
+export function Header({ currentVersion, currentVersionColor }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
   return (
     <Container>
-      <LogoContainer>
-        <LogoIcon>
-          <AnimatedSvg />
-        </LogoIcon>
-        <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
-      </LogoContainer>
-      <CurrentVersion version={currentVersion} />
-      <MobileMenuContainer visible={menuVisible}>
-        <NavigationItem
-          as={'a'}
-          href={SUPPORT_LINK}
-          target={'_blank'}
-          rel={'noreferrer'}
-          style={{ marginLeft: 'auto' }}
-        >
-          Support the Project
-        </NavigationItem>
-        <NavigationItem
-          as={'a'}
-          href={GITHUB}
-          target={'_blank'}
-          rel="noreferrer"
-        >
-          GitHub
-        </NavigationItem>
+      <HeaderLeft>
+        <Link href={'/'}>
+          <a>
+            <LogoContainer>
+              <LogoIcon>
+                <AnimatedSvg />
+              </LogoIcon>
+              <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
+            </LogoContainer>
+          </a>
+        </Link>
+        <CurrentVersion version={currentVersion} color={currentVersionColor} />
+      </HeaderLeft>
+      <HeaderCenter>
+        <MobileMenuContainer visible={menuVisible}>
+          <NavigationItem href={'/'}>Icons</NavigationItem>
+          <NavigationItem href={'/docs'}>Documentation</NavigationItem>
+          <NavigationItem href={'/support'} style={{ marginRight: 0 }}>
+            Donate &mdash; Our Mission
+          </NavigationItem>
+          <BuiltWith isMobile>
+            Made with <Heart width={'1em'} height={'1em'} /> by{' '}
+            <a href={AUTHOR_LINKS.Luca} target={'_blank'} rel={'noreferrer'}>
+              Luca
+            </a>{' '}
+            &amp;{' '}
+            <a href={AUTHOR_LINKS.Sam} target={'_blank'} rel={'noreferrer'}>
+              Sam
+            </a>
+          </BuiltWith>
+        </MobileMenuContainer>
+      </HeaderCenter>
+      <HeaderRight>
         <BuiltWith>
-          Made with <Heart width={'1em'} height={'1em'} /> by{' '}
+          Designed and built with <Heart width={'1em'} height={'1em'} /> by{' '}
           <a href={AUTHOR_LINKS.Luca} target={'_blank'} rel={'noreferrer'}>
             Luca
           </a>{' '}
@@ -50,10 +60,10 @@ export function Header({ currentVersion }: HeaderProps) {
             Sam
           </a>
         </BuiltWith>
-      </MobileMenuContainer>
-      <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
-        {menuVisible ? <Cancel /> : <Menu />}
-      </MobileMenuButton>
+        <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
+          {menuVisible ? <Cancel /> : <Menu />}
+        </MobileMenuButton>
+      </HeaderRight>
     </Container>
   );
 }
@@ -105,7 +115,7 @@ const MobileMenuContainer = styled.div<{ visible?: boolean }>`
     background: none;
     padding-top: 0;
     box-shadow: none;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     position: relative;
     align-items: center;
@@ -120,29 +130,27 @@ const MobileMenuContainer = styled.div<{ visible?: boolean }>`
 const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
-export const NavigationItem = styled(Text15)`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 28px;
-  text-decoration: none;
-  padding: 25px;
-  color: var(--black);
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  &:not(:last-child) {
-    border-bottom: solid 1px var(--light-gray);
+const HeaderItem = styled.div`
+  flex: 1;
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+const HeaderCenter = styled(HeaderItem)`
+  padding: 0 16px;
+  > :not(:last-child) {
+    margin-right: 16px;
   }
-  ${media.lg} {
-    font-size: 15px;
-    line-height: 20px;
-    font-weight: 500;
-    padding: 0;
-    color: var(--black-60);
-    width: auto;
-    border-bottom: none;
-  }
+`;
+const HeaderLeft = styled(HeaderItem)`
+  justify-content: flex-start;
+`;
+const HeaderRight = styled(HeaderItem)`
+  justify-content: flex-end;
 `;
 export const Logo = styled.img`
   height: 24px;
@@ -158,11 +166,15 @@ export const LogoIcon = styled.div`
     height: 36px;
   }
 `;
-const BuiltWith = styled(NavigationItem)`
-  display: flex;
+const BuiltWith = styled(NavigationItemContainer)<{ isMobile?: boolean }>`
+  display: ${(props) => (props.isMobile ? 'flex' : 'none')};
+  ${media.lg} {
+    display: ${(props) => (props.isMobile ? 'none' : 'flex')};
+  }
   align-items: center;
   justify-content: center;
   color: var(--black-60);
+  border-bottom: none !important;
   svg {
     fill: var(--black);
     margin: 0 0.22em;

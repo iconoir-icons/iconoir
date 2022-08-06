@@ -12,7 +12,6 @@ import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
 import { Text18 } from '../components/Typography';
 import { getAllIcons } from '../lib/getIcons';
-import fs from 'fs';
 import axios from 'axios';
 import numbro from 'numbro';
 // @ts-ignore no types
@@ -20,7 +19,8 @@ import * as downloadStats from 'download-stats';
 import { media } from '../components/responsive';
 import { Praise } from '../components/Praise';
 import { Footer } from '../components/Footer';
-import { GA } from '../components/GA';
+import { getHeaderProps } from '../lib/getHeaderProps';
+import { Layout } from '../components/Layout';
 
 interface HomeProps {
   allIcons: Icon[];
@@ -35,12 +35,12 @@ const Home: NextPage<HomeProps> = ({
   numDownloads,
 }) => {
   return (
-    <div>
+    <Layout>
       <SEO />
-      <GA />
-      <HeaderBackground />
       <Header currentVersion={currentVersion} />
-      <HeroText>Your new default library.</HeroText>
+      <HeaderBackground src={'/home-background.svg'}>
+        <HeroText>Your new default library.</HeroText>
+      </HeaderBackground>
       <HeroDescription>
         Iconoir is one of the biggest open source icons libraries. No premium
         icons, no email sign-up, no newsletters. Icons available in SVG format,
@@ -65,7 +65,7 @@ const Home: NextPage<HomeProps> = ({
             mantissa: 1,
           })}
           description={
-            'downloads/week on React only. Iconoir also supports React Native, Flutter and CSS.'
+            'downloads/month on React only. Iconoir also supports React Native, Flutter and CSS.'
           }
         />
         <Stat
@@ -101,11 +101,11 @@ const Home: NextPage<HomeProps> = ({
       </PraiseContainer>
       <Explore allIcons={allIcons} />
       <Footer />
-    </div>
+    </Layout>
   );
 };
 
-const HeroText = styled.h1`
+export const HeroText = styled.h1`
   font-size: 50px;
   font-weight: 700;
   letter-spacing: -0.05em;
@@ -119,11 +119,14 @@ const HeroText = styled.h1`
     margin: 200px auto 80px auto;
   }
 `;
-const HeroDescription = styled(Text18)`
+export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
   display: block;
   max-width: 750px;
   margin: 0 auto;
   text-align: center;
+  ${media.lg} {
+    margin-top: ${(props) => props.topMargin || 0}px;
+  }
 `;
 const SupportContainer = styled.div`
   text-align: center;
@@ -150,12 +153,12 @@ const PraiseContainer = styled.div`
 export default Home;
 
 export async function getStaticProps() {
-  const packageJson = JSON.parse(fs.readFileSync('../package.json').toString());
+  const headerProps = getHeaderProps();
   const apiResult = await axios.get(`https://api.github.com/repos/${REPO}`);
   const stars = apiResult.data?.stargazers_count;
   if (!stars) throw new Error('Could not find GitHub stars');
   const numDownloads = await new Promise<number>((resolve, reject) => {
-    downloadStats.get.lastWeek('iconoir-react', (err: any, results: any) => {
+    downloadStats.get.lastMonth('iconoir-react', (err: any, results: any) => {
       if (err) return reject(err);
       resolve(results.downloads);
     });
@@ -163,8 +166,8 @@ export async function getStaticProps() {
   if (!numDownloads) throw new Error('Could not find NPM downloads');
   return {
     props: {
+      ...headerProps,
       allIcons: await getAllIcons(),
-      currentVersion: `v${packageJson.version}`,
       numStars: stars,
       numDownloads,
     },
