@@ -5,6 +5,11 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
   async redirects() {
     return [
       { source: '/docs', destination: '/docs/introduction', permanent: true }
