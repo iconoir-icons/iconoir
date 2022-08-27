@@ -48,13 +48,14 @@ export function Praise() {
           position={'Nibol CEO'}
           description={
             <>
-              Blandit viverra torquent eget pellentesque nulla maecenas rhoncus
-              rutrum placerat ipsum integer phasellus diam facilisi magnis
-              dapibus penatibus varius ut.
+              In Nibol we decided to use Iconoir to speed up the design process.
+              We want to focus on the product and let Iconoir help us with the
+              design.
             </>
           }
           imageUrl={'./riccardo-suardi.png'}
           logoUrl={'./nibol-logo.png'}
+          logoLink={'https://www.nibol.com/'}
           logoAlt={'Nibol Logo'}
         />
         <PraiseItem
@@ -62,27 +63,29 @@ export function Praise() {
           position={'Mailbrew and Typefully founder'}
           description={
             <>
-              Blandit viverra torquent eget pellentesque nulla maecenas rhoncus
-              rutrum placerat ipsum integer phasellus diam facilisi magnis
-              dapibus penatibus varius ut.
+              There's no shortage of icon packs, and yet I always find myself
+              browsing iconoir. I love the style and attention to detail, and
+              how easy it is to grab the perfect icons for my projects.
             </>
           }
           imageUrl={'./fabrizio-rinaldi.png'}
-          logoUrl={'./mailbrew-logo.png'}
-          logoAlt={'Mailbrew Logo'}
+          logoUrl={'./typefully-logo.png'}
+          logoLink={'https://typefully.com/'}
+          logoAlt={'Typefully Logo'}
         />
         <PraiseItem
           name={'Chris Messina'}
           position={'Entrepreneur and # inventor'}
           description={
             <>
-              Blandit viverra torquent eget pellentesque nulla maecenas rhoncus
-              rutrum placerat ipsum integer phasellus diam facilisi magnis
-              dapibus penatibus varius ut.
+              It's the tiny details the determine the degree of delight your
+              customers experience from your product. Adopting Iconoir icons
+              will easily boost your app's delight by a factor of 10!
             </>
           }
           imageUrl={'./chris-messina.png'}
           logoUrl={'./twitter-logo.png'}
+          logoLink={'https://twitter.com/chrismessina'}
           logoAlt={'Twitter Logo'}
         />
       </Container>

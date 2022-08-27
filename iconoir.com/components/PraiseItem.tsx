@@ -8,6 +8,7 @@ export interface PraiseItemProps {
   position: string;
   description: string | React.ReactElement;
   logoUrl: string;
+  logoLink: string;
   logoAlt: string;
   imageUrl: string;
 }
@@ -16,6 +17,7 @@ export function PraiseItem({
   position,
   description,
   logoUrl,
+  logoLink,
   logoAlt,
   imageUrl,
 }: PraiseItemProps) {
@@ -26,7 +28,9 @@ export function PraiseItem({
         <Header>{name}</Header>
         <Text14>{position}</Text14>
         <Body>{description}</Body>
-        <Logo src={logoUrl} alt={logoAlt} />
+        <a href={logoLink} target={'_blank'} rel={'noreferrer'}>
+          <Logo src={logoUrl} alt={logoAlt} />
+        </a>
       </div>
     </Container>
   );
