@@ -1,5 +1,14 @@
 name: Website
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 on:
   workflow_dispatch: {}
   push:
@@ -7,9 +16,8 @@ on:
       - 'v*'
 
 jobs:
-  website:
+  build:
     runs-on: ubuntu-latest
-    name: deploy
     steps:
       - uses: actions/checkout@v2
         with:
@@ -42,3 +50,13 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: './iconoir.com/out'
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
