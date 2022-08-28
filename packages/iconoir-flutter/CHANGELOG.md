@@ -1,5 +1,19 @@
+<a name="v5.2.0"></a>
+# [v5.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.2.0) - 28 Aug 2022
+
+## What's Changed
+* feat: add Flutter package to README by @sammarks in https://github.com/iconoir-icons/iconoir/pull/178
+* Remove old changelogs from react packages by @paescuj in https://github.com/iconoir-icons/iconoir/pull/191
+* feat: add iconoir.com and React contexts by @sammarks in https://github.com/iconoir-icons/iconoir/pull/185
+
+
+**Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
+
+[Changes][v5.2.0]
+
+
 <a name="v5.1.4"></a>
-# [v5.1.4](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.4) - 05 Jul 2022
+# [v5.1.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.4) - 05 Jul 2022
 
 Give the release one more try!
 
@@ -7,7 +21,7 @@ Give the release one more try!
 
 
 <a name="v5.1.3"></a>
-# [v5.1.3](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.3) - 05 Jul 2022
+# [v5.1.3](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.3) - 05 Jul 2022
 
 Don't automatically commit Flutter package changelog updates.
 
@@ -15,7 +29,7 @@ Don't automatically commit Flutter package changelog updates.
 
 
 <a name="v5.1.2"></a>
-# [v5.1.2](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.2) - 05 Jul 2022
+# [v5.1.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.2) - 05 Jul 2022
 
 Automatically generate Flutter release notes from GitHub releases.
 
@@ -23,7 +37,7 @@ Automatically generate Flutter release notes from GitHub releases.
 
 
 <a name="v5.1.1"></a>
-# [v5.1.1](https://github.com/lucaburgio/iconoir/releases/tag/v5.1.1) - 05 Jul 2022
+# [v5.1.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.1) - 05 Jul 2022
 
 Fixes for Flutter publish script.
 
@@ -31,7 +45,7 @@ Fixes for Flutter publish script.
 
 
 <a name="v5.1"></a>
-# [v5.1](https://github.com/lucaburgio/iconoir/releases/tag/v5.1) - 05 Jul 2022
+# [v5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1) - 05 Jul 2022
 
 ## What's Changed
 * feat(flutter): create package by @heavybeard in https://github.com/lucaburgio/iconoir/pull/173
@@ -45,7 +59,7 @@ Fixes for Flutter publish script.
 
 
 <a name="v5.0"></a>
-# [v5.0](https://github.com/lucaburgio/iconoir/releases/tag/v5.0) - 08 Jun 2022
+# [v5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.0) - 08 Jun 2022
 
 Fixed 8 icons:
 - `git-branch`
@@ -123,7 +137,7 @@ Added 60 new icons:
 
 
 <a name="v4.9.2"></a>
-# [v4.9.2](https://github.com/lucaburgio/iconoir/releases/tag/v4.9.2) - 21 May 2022
+# [v4.9.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9.2) - 21 May 2022
 
 - Updated peerDependecies to include React 18.
 
@@ -131,7 +145,7 @@ Added 60 new icons:
 
 
 <a name="v4.9.1"></a>
-# [v4.9.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.9.1) - 23 Apr 2022
+# [v4.9.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9.1) - 23 Apr 2022
 
 - The CSS file has been optimized.
 - NPM Iconoir core is now auto-updated after every release.
@@ -140,7 +154,7 @@ Added 60 new icons:
 
 
 <a name="v4.9"></a>
-# [v4.9](https://github.com/lucaburgio/iconoir/releases/tag/v4.9) - 23 Apr 2022
+# [v4.9](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9) - 23 Apr 2022
 
 Optimized 3 icons:
 - `one-point-circle`
@@ -195,7 +209,7 @@ Added 42 new icons:
 
 
 <a name="v4.8.1"></a>
-# [v4.8.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.8.1) - 10 Apr 2022
+# [v4.8.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.8.1) - 10 Apr 2022
 
 Fixed 5 icons stroke:
 - `add-frame`
@@ -208,7 +222,7 @@ Fixed 5 icons stroke:
 
 
 <a name="v4.8"></a>
-# [v4.8](https://github.com/lucaburgio/iconoir/releases/tag/v4.8) - 02 Apr 2022
+# [v4.8](https://github.com/iconoir-icons/iconoir/releases/tag/v4.8) - 02 Apr 2022
 
 Fixed 1 icon:
 - `dialpad`
@@ -251,7 +265,7 @@ Added 32 new icons:
 
 
 <a name="v4.7.1"></a>
-# [v4.7.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.7.1) - 10 Mar 2022
+# [v4.7.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.7.1) - 10 Mar 2022
 
 Fix: Auto-update React libraries.
 
@@ -259,7 +273,7 @@ Fix: Auto-update React libraries.
 
 
 <a name="v4.7"></a>
-# [v4.7](https://github.com/lucaburgio/iconoir/releases/tag/v4.7) - 10 Mar 2022
+# [v4.7](https://github.com/iconoir-icons/iconoir/releases/tag/v4.7) - 10 Mar 2022
 
 Renamed 1 icon:
 - `electronics-transister` to `electronics-transistor`
@@ -282,7 +296,7 @@ Added 10 new icons:
 
 
 <a name="v4.6"></a>
-# [v4.6](https://github.com/lucaburgio/iconoir/releases/tag/v4.6) - 09 Jan 2022
+# [v4.6](https://github.com/iconoir-icons/iconoir/releases/tag/v4.6) - 09 Jan 2022
 
 Renamed 2 icons:
 - `basket-ball-alt` to `basketball-alt`
@@ -327,7 +341,7 @@ Added 33 new icons:
 
 
 <a name="v4.5.1"></a>
-# [v4.5.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.5.1) - 06 Dec 2021
+# [v4.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.5.1) - 06 Dec 2021
 
 Updated 1 icon:
 - `qr-code`
@@ -336,7 +350,7 @@ Updated 1 icon:
 
 
 <a name="v4.5"></a>
-# [v4.5](https://github.com/lucaburgio/iconoir/releases/tag/v4.5) - 11 Oct 2021
+# [v4.5](https://github.com/iconoir-icons/iconoir/releases/tag/v4.5) - 11 Oct 2021
 
 Added 27 new icons:
 - `apple-wallet`
@@ -377,7 +391,7 @@ Added 27 new icons:
 
 
 <a name="v4.4"></a>
-# [v4.4](https://github.com/lucaburgio/iconoir/releases/tag/v4.4) - 03 Jul 2021
+# [v4.4](https://github.com/iconoir-icons/iconoir/releases/tag/v4.4) - 03 Jul 2021
 
 - Update React library.
 - Add React Native library.
@@ -418,7 +432,7 @@ Added 27 new icons:
 
 
 <a name="v4.3.1"></a>
-# [v4.3.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.3.1) - 01 Jun 2021
+# [v4.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.3.1) - 01 Jun 2021
 
 - Update React library.
 - Fix issue on paths on `cloud-sync` and `cloud-desync` icons
@@ -429,7 +443,7 @@ Added 27 new icons:
 
 
 <a name="v4.3.0"></a>
-# [v4.3.0](https://github.com/lucaburgio/iconoir/releases/tag/v4.3.0) - 22 May 2021
+# [v4.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v4.3.0) - 22 May 2021
 
 add: React library.
 
@@ -441,7 +455,7 @@ fix: changed stroke property from `black` to `currentColor`.
 
 
 <a name="v4.2.2"></a>
-# [v4.2.2](https://github.com/lucaburgio/iconoir/releases/tag/v4.2.2) - 16 May 2021
+# [v4.2.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.2) - 16 May 2021
 
 - **add:** .EOT, .SVG, .TTF, and .WOFF fonts.
 
@@ -449,7 +463,7 @@ fix: changed stroke property from `black` to `currentColor`.
 
 
 <a name="v4.2.1"></a>
-# [v4.2.1](https://github.com/lucaburgio/iconoir/releases/tag/v4.2.1) - 14 May 2021
+# [v4.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.1) - 14 May 2021
 
 - **fix:** renamed 4 icons from categories Edit and Album.
 - **add:** IconJar pack.
@@ -458,7 +472,7 @@ fix: changed stroke property from `black` to `currentColor`.
 
 
 <a name="v4.2"></a>
-# [v4.2](https://github.com/lucaburgio/iconoir/releases/tag/v4.2) - 11 May 2021
+# [v4.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2) - 11 May 2021
 
 - 40 new icons.
 - The library is now open-source.
@@ -466,27 +480,28 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
-[v5.1.4]: https://github.com/lucaburgio/iconoir/compare/v5.1.3...v5.1.4
-[v5.1.3]: https://github.com/lucaburgio/iconoir/compare/v5.1.2...v5.1.3
-[v5.1.2]: https://github.com/lucaburgio/iconoir/compare/v5.1.1...v5.1.2
-[v5.1.1]: https://github.com/lucaburgio/iconoir/compare/v5.1...v5.1.1
-[v5.1]: https://github.com/lucaburgio/iconoir/compare/v5.0...v5.1
-[v5.0]: https://github.com/lucaburgio/iconoir/compare/v4.9.2...v5.0
-[v4.9.2]: https://github.com/lucaburgio/iconoir/compare/v4.9.1...v4.9.2
-[v4.9.1]: https://github.com/lucaburgio/iconoir/compare/v4.9...v4.9.1
-[v4.9]: https://github.com/lucaburgio/iconoir/compare/v4.8.1...v4.9
-[v4.8.1]: https://github.com/lucaburgio/iconoir/compare/v4.8...v4.8.1
-[v4.8]: https://github.com/lucaburgio/iconoir/compare/v4.7.1...v4.8
-[v4.7.1]: https://github.com/lucaburgio/iconoir/compare/v4.7...v4.7.1
-[v4.7]: https://github.com/lucaburgio/iconoir/compare/v4.6...v4.7
-[v4.6]: https://github.com/lucaburgio/iconoir/compare/v4.5.1...v4.6
-[v4.5.1]: https://github.com/lucaburgio/iconoir/compare/v4.5...v4.5.1
-[v4.5]: https://github.com/lucaburgio/iconoir/compare/v4.4...v4.5
-[v4.4]: https://github.com/lucaburgio/iconoir/compare/v4.3.1...v4.4
-[v4.3.1]: https://github.com/lucaburgio/iconoir/compare/v4.3.0...v4.3.1
-[v4.3.0]: https://github.com/lucaburgio/iconoir/compare/v4.2.2...v4.3.0
-[v4.2.2]: https://github.com/lucaburgio/iconoir/compare/v4.2.1...v4.2.2
-[v4.2.1]: https://github.com/lucaburgio/iconoir/compare/v4.2...v4.2.1
-[v4.2]: https://github.com/lucaburgio/iconoir/tree/v4.2
+[v5.2.0]: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
+[v5.1.4]: https://github.com/iconoir-icons/iconoir/compare/v5.1.3...v5.1.4
+[v5.1.3]: https://github.com/iconoir-icons/iconoir/compare/v5.1.2...v5.1.3
+[v5.1.2]: https://github.com/iconoir-icons/iconoir/compare/v5.1.1...v5.1.2
+[v5.1.1]: https://github.com/iconoir-icons/iconoir/compare/v5.1...v5.1.1
+[v5.1]: https://github.com/iconoir-icons/iconoir/compare/v5.0...v5.1
+[v5.0]: https://github.com/iconoir-icons/iconoir/compare/v4.9.2...v5.0
+[v4.9.2]: https://github.com/iconoir-icons/iconoir/compare/v4.9.1...v4.9.2
+[v4.9.1]: https://github.com/iconoir-icons/iconoir/compare/v4.9...v4.9.1
+[v4.9]: https://github.com/iconoir-icons/iconoir/compare/v4.8.1...v4.9
+[v4.8.1]: https://github.com/iconoir-icons/iconoir/compare/v4.8...v4.8.1
+[v4.8]: https://github.com/iconoir-icons/iconoir/compare/v4.7.1...v4.8
+[v4.7.1]: https://github.com/iconoir-icons/iconoir/compare/v4.7...v4.7.1
+[v4.7]: https://github.com/iconoir-icons/iconoir/compare/v4.6...v4.7
+[v4.6]: https://github.com/iconoir-icons/iconoir/compare/v4.5.1...v4.6
+[v4.5.1]: https://github.com/iconoir-icons/iconoir/compare/v4.5...v4.5.1
+[v4.5]: https://github.com/iconoir-icons/iconoir/compare/v4.4...v4.5
+[v4.4]: https://github.com/iconoir-icons/iconoir/compare/v4.3.1...v4.4
+[v4.3.1]: https://github.com/iconoir-icons/iconoir/compare/v4.3.0...v4.3.1
+[v4.3.0]: https://github.com/iconoir-icons/iconoir/compare/v4.2.2...v4.3.0
+[v4.2.2]: https://github.com/iconoir-icons/iconoir/compare/v4.2.1...v4.2.2
+[v4.2.1]: https://github.com/iconoir-icons/iconoir/compare/v4.2...v4.2.1
+[v4.2]: https://github.com/iconoir-icons/iconoir/tree/v4.2
 
  <!-- Generated by https://github.com/rhysd/changelog-from-release -->
