@@ -14,9 +14,9 @@ Before reporting an issue, please search to see if someone has filed a similar i
 ## Prerequisites
 
 * Version:
-* Are you running from source/master:
+* Are you running from source/main:
 * Are you using a released build:
-* Operating system: 
+* Operating system:
 * Bits:
 
 ## Step to reproduce

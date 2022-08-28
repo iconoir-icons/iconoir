@@ -23,7 +23,7 @@ Guidelines for pull requests:
 > **Make your commit messages as descriptive as possible.** Include as much information as you can.
 > Explain anything that the file diffs themselves won't make apparent.
 
-> **Target Master.** Most of bugfixes or new features should go to the master branch.
+> **Target main.** Most of bugfixes or new features should go to the main branch.
 
 > **Include only related work.** If your pull request has unrelated commits, it won't be accepted.
 

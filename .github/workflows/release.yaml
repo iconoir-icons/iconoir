@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master # We have to checkout master or PNPM fails. Tag should be on master anyway.
+          ref: main # We have to checkout main or PNPM fails. Tag should be on main anyway.
       - uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
@@ -39,7 +39,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Release Version ${{ github.ref_name }}
-          branch: master
+          branch: main
       - run: git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
       - run: git push -f origin ${{ github.ref_name }}
       - run: npm publish --access public
@@ -71,7 +71,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master # We have to checkout master or PNPM fails. Tag should be on master anyway.
+          ref: main # We have to checkout main or PNPM fails. Tag should be on main anyway.
       - uses: actions/cache@v2
         with:
           path: ~/.pnpm-store

@@ -3,7 +3,7 @@
 Import the CSS File:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@master/css/iconoir.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
 ```
 
 Here is an example in HTML:
