@@ -1,9 +1,12 @@
-import * as React from 'react';
+import * as React from "react";
+import { IconoirContext } from "./IconoirContext";
 
 function SvgFrame(
-  props: React.SVGProps<SVGSVGElement>,
+  passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
+  const context = React.useContext(IconoirContext);
+  const props = { ...context, ...passedProps };
   return (
     <svg
       width="1.5em"
@@ -26,7 +29,6 @@ function SvgFrame(
       <path
         d="M4.999 3.503h5.5"
         stroke="currentColor"
-        strokeWidth={1.22}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -41,7 +43,6 @@ function SvgFrame(
       <path
         d="M13.498 3.501h5.5"
         stroke="currentColor"
-        strokeWidth={1.22}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

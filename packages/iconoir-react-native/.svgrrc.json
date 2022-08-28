@@ -17,6 +17,14 @@
             "elements":["Svg"],
             "attributes":["xmlns"]
           }
+        ],
+        [
+          "@svgr/babel-plugin-remove-jsx-attribute",
+          {
+            "elements": ["Path"],
+            "attributes": ["strokeWidth"]
+          },
+          "remove-stroke-width"
         ]
       ]
     }

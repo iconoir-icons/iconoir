@@ -1,4 +1,4 @@
-## Flutter Iconoir Icons
+# Flutter Iconoir Icons
 
 ![PUB Version](https://img.shields.io/pub/v/iconoir_flutter?style=flat-square)
 ![PUB Monthly Downloads](https://img.shields.io/pub/dm/iconoir_flutter?style=flat-square)
@@ -8,13 +8,13 @@ Iconoir is an open source library with 900+ SVG Icons. No premium icons, no emai
 
 `iconoir_flutter` is an open source package that exports these icons as Flutter widgets (`flutter_svg`) that can be used in all of your Flutter projects.
 
-### Installation
+## Installation
 
 ```
 flutter pub add iconoir_flutter
 ```
 
-### Usage
+## Usage
 
 ```dart
 import 'package:flutter/material.dart';
@@ -58,7 +58,7 @@ Default values for the most common props are given below:
 | height      | "1.5em"        |
 
 
-### Icon names
+## Icon names
 
 For the most part, the Flutter widgets are named as PascalCase variations of their reference names (i.e. `add-circle-outline` becomes `AddCircleOutline`). However, some names have been altered slightly either because they start with numerical digits, which would lead to invalid Flutter widgets names, or because they are organisations which use PascalCase in their brand names, such as `GitHub`. The altered names are as follows:
 

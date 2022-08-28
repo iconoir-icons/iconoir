@@ -1,10 +1,13 @@
-import * as React from 'react';
-import Svg, { SvgProps, Path } from 'react-native-svg';
+import * as React from "react";
+import Svg, { SvgProps, Path } from "react-native-svg";
+import { IconoirContext } from "./IconoirContext";
 
 function SvgScaleFrameReduce(
-  props: SvgProps,
+  passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
+  const context = React.useContext(IconoirContext);
+  const props = { ...context, ...passedProps };
   return (
     <Svg
       width="1.5em"
@@ -25,7 +28,6 @@ function SvgScaleFrameReduce(
       <Path
         d="M20.4 3H3.6a.6.6 0 00-.6.6v16.8a.6.6 0 00.6.6h16.8a.6.6 0 00.6-.6V3.6a.6.6 0 00-.6-.6z"
         stroke="currentColor"
-        strokeWidth={1.499}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

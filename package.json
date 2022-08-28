@@ -40,5 +40,10 @@
     "listr2": "^3.12.2",
     "semver": "^7.3.5",
     "prettier": "^2.4.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^17.0.29"
+    }
   }
 }

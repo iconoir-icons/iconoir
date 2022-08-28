@@ -1,9 +1,12 @@
-import * as React from 'react';
+import * as React from "react";
+import { IconoirContext } from "./IconoirContext";
 
 function SvgStyleBorder(
-  props: React.SVGProps<SVGSVGElement>,
+  passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
+  const context = React.useContext(IconoirContext);
+  const props = { ...context, ...passedProps };
   return (
     <svg
       width="1.5em"
@@ -19,7 +22,6 @@ function SvgStyleBorder(
       <path
         d="M16 2H8a6 6 0 00-6 6v8a6 6 0 006 6h8a6 6 0 006-6V8a6 6 0 00-6-6z"
         stroke="currentColor"
-        strokeWidth={1.499}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -28,7 +30,6 @@ function SvgStyleBorder(
       <path
         d="M16 5H8a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V8a3 3 0 00-3-3z"
         stroke="currentColor"
-        strokeWidth={1.499}
         strokeMiterlimit={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

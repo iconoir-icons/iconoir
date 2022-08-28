@@ -5,25 +5,13 @@ import { Listr } from 'listr2';
 import os from 'os';
 import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { incompatibleNames } from '../constants.js';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 const iconoirIconsDir = path.join(rootDir, 'icons');
-
-// Icon files with incompatible names
-const incompatibleNames = {
-  '1st-medal': 'medal-1st',
-  '4k-display': 'display-4k',
-  '2x2-cell': 'cell-2x2',
-  '360-view': 'view360',
-  github: 'gitHub',
-  'github-outline': 'gitHubOutline',
-  'gitlab-full': 'gitLabFull',
-  linkedin: 'linkedIn',
-  tiktok: 'tikTok',
-  youtube: 'youTube',
-};
+const ignoreCleanFilenames = ['IconoirContext.tsx'];
 
 // Targets for building icons
 const targets = {
@@ -194,11 +182,18 @@ const tasks = new Listr(
                                         const files = await fs.readdir(
                                           builtIconsDir
                                         );
-                                        const promises = files.map((file) => {
-                                          return fs.unlink(
-                                            path.join(builtIconsDir, file)
-                                          );
-                                        });
+                                        const promises = files
+                                          .filter(
+                                            (file) =>
+                                              !ignoreCleanFilenames.includes(
+                                                path.basename(file)
+                                              )
+                                          )
+                                          .map((file) => {
+                                            return fs.unlink(
+                                              path.join(builtIconsDir, file)
+                                            );
+                                          });
                                         return Promise.all(promises).catch(
                                           (err) => {
                                             ctx[target] = { skip: true };
@@ -224,13 +219,12 @@ const tasks = new Listr(
                                               targets[target].path,
                                               '.svgrrc.json'
                                             ),
-                                            '--prettier-config',
-                                            path.join(
-                                              rootDir,
-                                              '.prettierrc.json'
-                                            ),
                                             '--out-dir',
                                             builtIconsDir,
+                                            '--template',
+                                            'bin/templates/icon-template.cjs',
+                                            '--index-template',
+                                            'bin/templates/index-template.cjs',
                                             ctx.tmpDir,
                                           ],
                                           { preferLocal: true }
@@ -377,9 +371,10 @@ const tasks = new Listr(
                                     title: 'Building icon files',
                                     skip: (ctx) => ctx[target]?.skip,
                                     task: async (ctx) => {
+                                      const finalFileNames = [];
                                       try {
-                                        ctx.dstFilePaths.forEach(
-                                          async (file) => {
+                                        await Promise.all(
+                                          ctx.dstFilePaths.map(async (file) => {
                                             const svgfilename =
                                               path.parse(file).name;
                                             // Prefix with Svg if icon name starts with a number
@@ -421,19 +416,29 @@ const tasks = new Listr(
                                                     '(snakeCase)',
                                                 },
                                                 async onComplete(results) {
-                                                  await fs.appendFile(
-                                                    path.join(
-                                                      builtIconsDir,
-                                                      'iconoir_flutter.dart'
-                                                    ),
-                                                    `export './${basename(
-                                                      results.output.path
-                                                    )}';\n`
+                                                  finalFileNames.push(
+                                                    results.output.path
                                                   );
                                                 },
                                               },
                                             ]);
-                                          }
+                                          })
+                                        );
+
+                                        finalFileNames.sort();
+                                        await fs.appendFile(
+                                          path.join(
+                                            builtIconsDir,
+                                            'iconoir_flutter.dart'
+                                          ),
+                                          finalFileNames
+                                            .map(
+                                              (fileName) =>
+                                                `export './${basename(
+                                                  fileName
+                                                )}';`
+                                            )
+                                            .join('\n')
                                         );
                                       } catch (err) {
                                         throw new Error(err.message);
