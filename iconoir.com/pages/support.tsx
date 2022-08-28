@@ -10,7 +10,7 @@ import { Code, Heading2, Text18 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import Image from 'next/image';
 import { ArrowRight } from 'iconoir-react';
-import { SUPPORT_LINK } from '../components/constants';
+import { DISCORD_LINK, SUPPORT_LINK } from '../components/constants';
 import { Footer } from '../components/Footer';
 import { media } from '../components/responsive';
 
@@ -78,12 +78,16 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
           <DonateLeft>
             <DonateHeader>Join us on Discord</DonateHeader>
             <Text18>
-              Tristique lobortis risus donec aliquam mattis nibh nisi congue
-              cursus sollicitudin erat posuere consequat gravida rhoncus.
+              Join the community and help us with your suggestions and feedback.
             </Text18>
           </DonateLeft>
           <DonateRight>
-            <DonateButton>
+            <DonateButton
+              as={'a'}
+              href={DISCORD_LINK}
+              target={'_blank'}
+              rel={'noreferrer'}
+            >
               <span>Join</span> <ArrowRight />
             </DonateButton>
           </DonateRight>

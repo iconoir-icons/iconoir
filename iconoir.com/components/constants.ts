@@ -3,6 +3,7 @@ export const GITHUB = `https://github.com/${REPO}`;
 export const SUGGEST_ICON =
   'https://github.com/iconoir-icons/iconoir/issues/new?assignees=lucaburgio&labels=icon+request&template=icon_request.md&title=%5BICON%5D';
 export const SUPPORT_LINK = 'https://opencollective.com/iconoir/donate';
+export const DISCORD_LINK = 'https://discord.gg/c3uzjx6k';
 export const LICENSE_LINK =
   'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE';
 export const ICON_WIDTH = 140;
