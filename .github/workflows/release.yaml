@@ -46,7 +46,7 @@ jobs:
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: pnpm -r publish --filter ./packages --access public
+      - run: pnpm -r publish --filter './packages/**' --access public
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
