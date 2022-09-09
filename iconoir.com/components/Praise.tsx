@@ -54,7 +54,7 @@ export function Praise() {
             </>
           }
           imageUrl={'./riccardo-suardi.png'}
-          logoUrl={'./nibol-logo.png'}
+          logoUrl={'./nibol-logo.svg'}
           logoLink={'https://www.nibol.com/'}
           logoAlt={'Nibol Logo'}
         />
