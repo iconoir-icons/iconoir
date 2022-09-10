@@ -1,3 +1,50 @@
+<a name="v5.3.0"></a>
+# [v5.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.0) - 10 Sep 2022
+
+Added 37 new icons:
+
+- `add-page-alt`
+- `angle-tool`
+- `avi-format`
+- `bread-slice`
+- `closed-captions`
+- `clutery`
+- `coffee-cup`
+- `design-nib`
+- `forward-message`
+- `forward`
+- `gif-format`
+- `hammer`
+- `jpeg-format`
+- `jpg-format`
+- `list-select`
+- `mail-in`
+- `mail-out`
+- `mpeg-format`
+- `npm-square`
+- `npm`
+- `png-format`
+- `raw-format`
+- `remove-page-alt`
+- `reply-to-message`
+- `reply`
+- `screenshot`
+- `send-diagonal`
+- `send-mail`
+- `send`
+- `submit-document`
+- `svg-format`
+- `text-box`
+- `tif-format`
+- `tiff-format`
+- `tools`
+- `webp-format`
+- `wrench`
+
+
+[Changes][v5.3.0]
+
+
 <a name="v5.2.0"></a>
 # [v5.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.2.0) - 28 Aug 2022
 
@@ -480,6 +527,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.3.0]: https://github.com/iconoir-icons/iconoir/compare/v5.2.0...v5.3.0
 [v5.2.0]: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
 [v5.1.4]: https://github.com/iconoir-icons/iconoir/compare/v5.1.3...v5.1.4
 [v5.1.3]: https://github.com/iconoir-icons/iconoir/compare/v5.1.2...v5.1.3
