@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/iconoir-cover.png" alt="Iconoir" />
+  <img src="assets/cover.png" alt="Iconoir" />
 </div>
 
 <div align="center">
