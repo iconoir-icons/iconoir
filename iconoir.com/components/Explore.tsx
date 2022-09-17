@@ -1,6 +1,7 @@
 import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
+import { Ad } from './Ad';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { Icon, IconList, IconListFilters } from './IconList';
@@ -40,6 +41,7 @@ export function Explore({ allIcons }: ExploreProps) {
           customizations={customizations}
           onChange={setCustomizations}
         />
+        <Ad />
       </Right>
     </Container>
   );
