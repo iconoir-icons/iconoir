@@ -78,7 +78,7 @@ export function Praise() {
           position={'Entrepreneur and # inventor'}
           description={
             <>
-              It's the tiny details the determine the degree of delight your
+              It's the tiny details that determine the degree of delight your
               customers experience from your product. Adopting Iconoir icons
               will easily boost your app's delight by a factor of 10!
             </>
