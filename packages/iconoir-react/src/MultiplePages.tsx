@@ -11,8 +11,8 @@ function SvgMultiplePages(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -32,8 +32,7 @@ function SvgMultiplePages(
         strokeLinejoin="round"
       />
       <path
-        d="M14 8.4V5.354a.354.354 0 01.604-.25l3.292 3.292a.353.353 0 01-.25.604H14.6a.6.6 0 01-.6-.6z"
-        fill="currentColor"
+        d="M14 5v3.4a.6.6 0 00.6.6H18"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

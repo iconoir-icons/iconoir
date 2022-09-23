@@ -11,8 +11,8 @@ function SvgMultiplePagesRemove(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -26,20 +26,13 @@ function SvgMultiplePagesRemove(
         strokeLinejoin="round"
       />
       <path
-        d="M11 22h5.5a1.5 1.5 0 001.5-1.5V8.749a.6.6 0 00-.176-.425l-3.148-3.148A.6.6 0 0014.25 5H4.5A1.5 1.5 0 003 6.5V13"
+        d="M11 22h5.5a1.5 1.5 0 001.5-1.5V8.749a.6.6 0 00-.176-.425l-3.148-3.148A.6.6 0 0014.25 5H4.5A1.5 1.5 0 003 6.5V13M1.992 19h6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M14 8.4V5.354a.354.354 0 01.604-.25l3.292 3.292a.353.353 0 01-.25.604H14.6a.6.6 0 01-.6-.6z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M1.992 19h6"
+        d="M14 5v3.4a.6.6 0 00.6.6H18"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
