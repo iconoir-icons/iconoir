@@ -1,3 +1,29 @@
+<a name="v5.3.1"></a>
+# [v5.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.1) - 23 Sep 2022
+
+Optimized 19 new icons:
+- `add-page`
+- `doc-search-alt`
+- `doc-search`
+- `doc-star-alt`
+- `doc-star`
+- `empty-page`
+- `journal-page`
+- `journal`
+- `multiple-pages-add`
+- `multiple-pages-delete`
+- `multiple-pages-empty`
+- `multiple-pages-remove`
+- `multiple-pages`
+- `page-edit`
+- `page-search`
+- `page-star`
+- `page`
+- `remove-page`
+
+[Changes][v5.3.1]
+
+
 <a name="v5.3.0"></a>
 # [v5.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.0) - 10 Sep 2022
 
@@ -527,6 +553,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.3.1]: https://github.com/iconoir-icons/iconoir/compare/v5.3.0...v5.3.1
 [v5.3.0]: https://github.com/iconoir-icons/iconoir/compare/v5.2.0...v5.3.0
 [v5.2.0]: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
 [v5.1.4]: https://github.com/iconoir-icons/iconoir/compare/v5.1.3...v5.1.4
