@@ -12,15 +12,15 @@ function SvgAlbumOpen(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M15 2.2c4.564.926 8 4.962 8 9.8 0 4.838-3.436 8.873-8 9.8"
+        d="M15 2.2c4.564.927 8 4.962 8 9.8 0 4.838-3.436 8.873-8 9.8"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -31,7 +31,6 @@ function SvgAlbumOpen(
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <Path d="M4 15.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill="currentColor" />
       <Path
         d="M4 15.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0V7.6a.6.6 0 01.6-.6H7"
         stroke="currentColor"

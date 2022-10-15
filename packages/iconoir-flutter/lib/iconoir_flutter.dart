@@ -403,6 +403,7 @@ export './facebook.dart';
 export './facebook_squared.dart';
 export './facetime.dart';
 export './farm.dart';
+export './fast_arrow_bottom.dart';
 export './fast_arrow_down.dart';
 export './fast_arrow_down_box.dart';
 export './fast_arrow_left.dart';

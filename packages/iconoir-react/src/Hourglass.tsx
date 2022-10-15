@@ -11,8 +11,8 @@ function SvgHourglass(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -20,7 +20,7 @@ function SvgHourglass(
       {...props}
     >
       <path
-        d="M12 12a6 6 0 006-6H6a6 6 0 006 6zm0 0a6 6 0 016 6H6a6 6 0 016-6zM6 3h12M6 21h12"
+        d="M12 12a7 7 0 007-7H5a7 7 0 007 7zm0 0a7 7 0 017 7H5a7 7 0 017-7zM5 2h14M5 22h14"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

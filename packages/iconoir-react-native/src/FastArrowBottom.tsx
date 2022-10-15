@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
 
-function SvgAlbum(
+function SvgFastArrowBottom(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -20,17 +20,14 @@ function SvgAlbum(
       {...props}
     >
       <Path
-        d="M3 20.4V3.6a.6.6 0 01.6-.6h16.8a.6.6 0 01.6.6v16.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6z"
-        stroke="currentColor"
-      />
-      <Path
-        d="M12 15.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0V7.6a.6.6 0 01.6-.6H15"
+        d="M6 13l6 6 6-6M6 5l6 6 6-6"
         stroke="currentColor"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Svg>
   );
 }
 
-const ForwardRef = React.forwardRef(SvgAlbum);
+const ForwardRef = React.forwardRef(SvgFastArrowBottom);
 export default ForwardRef;

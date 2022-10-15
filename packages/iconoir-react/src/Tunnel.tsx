@@ -11,8 +11,8 @@ function SvgTunnel(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -20,15 +20,21 @@ function SvgTunnel(
       {...props}
     >
       <path
-        d="M20 20H4v-5m16 5v-8a8 8 0 10-16 0v3m16 5L4 15"
+        d="M21 20L3 14"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M16 9v1M12 8v1M8 7v1"
+        d="M16 10v1M12 9v1M8 8v1"
         stroke="currentColor"
         strokeLinecap="round"
+      />
+      <path
+        d="M3 21h18v-9a9 9 0 10-18 0v9z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

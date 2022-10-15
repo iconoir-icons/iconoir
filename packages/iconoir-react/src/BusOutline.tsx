@@ -11,8 +11,8 @@ function SvgBusOutline(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -26,8 +26,9 @@ function SvgBusOutline(
         strokeLinejoin="round"
       />
       <path
-        d="M4 20h4v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2zM16 20h4v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z"
-        fill="currentColor"
+        d="M4.5 20v1.9a.6.6 0 00.6.6h2.8a.6.6 0 00.6-.6V20M15.5 20v1.9a.6.6 0 00.6.6h2.8a.6.6 0 00.6-.6V20"
+        stroke="currentColor"
+        strokeLinecap="round"
       />
     </svg>
   );

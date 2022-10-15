@@ -12,8 +12,8 @@ function SvgPlaylist(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
@@ -24,10 +24,6 @@ function SvgPlaylist(
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <Path
-        d="M20 18.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-        fill="currentColor"
       />
       <Path
         d="M20 18.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0v-7.9a.6.6 0 01.6-.6H22"

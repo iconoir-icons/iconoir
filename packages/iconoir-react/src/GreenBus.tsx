@@ -31,7 +31,11 @@ function SvgGreenBus(
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M4 20h4v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2z" fill="currentColor" />
+      <path
+        d="M4.5 20v1.9a.6.6 0 00.6.6h2.8a.6.6 0 00.6-.6V20"
+        stroke="currentColor"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
