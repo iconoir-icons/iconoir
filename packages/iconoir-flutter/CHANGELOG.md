@@ -1,3 +1,34 @@
+<a name="v5.3.2"></a>
+# [v5.3.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.2) - 15 Oct 2022
+
+Optimized 23 new icons:
+- `album-carousel`
+- `album-list`
+- `album-open`
+- `album`
+- `bus-outline`
+- `bus-stop`
+- `credit-card`
+- `fast-arrow-bottom`
+- `fast-arrow-left`
+- `fast-arrow-right`
+- `fast-arrow-top`
+- `green-bus`
+- `hd-display`
+- `hourglass`
+- `metro`
+- `no-credit-card`
+- `playlist-play`
+- `playlist`
+- `skateboard`
+- `train-outline`
+- `tram`
+- `trash`
+- `tunnel`
+
+[Changes][v5.3.2]
+
+
 <a name="v5.3.1"></a>
 # [v5.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.1) - 23 Sep 2022
 
@@ -553,6 +584,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.3.2]: https://github.com/iconoir-icons/iconoir/compare/v5.3.1...v5.3.2
 [v5.3.1]: https://github.com/iconoir-icons/iconoir/compare/v5.3.0...v5.3.1
 [v5.3.0]: https://github.com/iconoir-icons/iconoir/compare/v5.2.0...v5.3.0
 [v5.2.0]: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
