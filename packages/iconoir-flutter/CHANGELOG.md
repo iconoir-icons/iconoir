@@ -1,3 +1,32 @@
+<a name="v5.4"></a>
+# [v5.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4) - 01 Nov 2022
+
+Added 21 new icons:
+- `arrow-bl-circled`
+- `arrow-bl-square`
+- `arrow-br-circled`
+- `arrow-br-square`
+- `arrow-tl-circled`
+- `arrow-tl-square`
+- `arrow-tr-circled`
+- `arrow-tr-square`
+- `divide-three`
+- `divide`
+- `drag`
+- `horizontal-merge`
+- `horizontal-split`
+- `page-down`
+- `page-left`
+- `page-right`
+- `page-up`
+- `path-arrow`
+- `shortcut`
+- `vertical-merge`
+- `vertical-split`
+
+[Changes][v5.4]
+
+
 <a name="v5.3.2"></a>
 # [v5.3.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.2) - 15 Oct 2022
 
@@ -584,6 +613,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.4]: https://github.com/iconoir-icons/iconoir/compare/v5.3.2...v5.4
 [v5.3.2]: https://github.com/iconoir-icons/iconoir/compare/v5.3.1...v5.3.2
 [v5.3.1]: https://github.com/iconoir-icons/iconoir/compare/v5.3.0...v5.3.1
 [v5.3.0]: https://github.com/iconoir-icons/iconoir/compare/v5.2.0...v5.3.0
