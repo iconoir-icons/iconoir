@@ -12,15 +12,15 @@ function SvgFastArrowDown(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M15.5 7L12 10.5 8.5 7M15.5 13L12 16.5 8.5 13"
+        d="M6 13l6 6 6-6M6 5l6 6 6-6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
