@@ -26,4 +26,9 @@ const Container = styled(Text13)`
   border-radius: 200px;
   display: block;
   text-decoration: none !important;
+  transition: color 0.1s linear, background 0.1s linear;
+  &:hover {
+    background: var(--black);
+    color: var(--white);
+  }
 `;

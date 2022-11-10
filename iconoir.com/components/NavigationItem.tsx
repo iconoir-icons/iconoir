@@ -42,6 +42,7 @@ export const NavigationItemContainer = styled(Text15)<{ isActive?: boolean }>`
   box-sizing: border-box;
   position: relative;
   z-index: 2;
+  transition: background 0.1s linear;
   &:not(:last-child) {
     border-bottom: solid 1px var(--light-gray);
   }
@@ -53,19 +54,25 @@ export const NavigationItemContainer = styled(Text15)<{ isActive?: boolean }>`
     color: var(--black-60);
     width: auto;
     border-bottom: none !important;
+    &::before {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      display: block;
+      top: -18px;
+      bottom: -18px;
+      left: -24px;
+      right: -24px;
+      transition: background 0.1s linear;
+    }
     ${(props) => (props.isActive ? '&' : '&.noop')} {
       color: var(--white);
       &::before {
-        position: absolute;
-        z-index: -1;
-        content: '';
-        display: block;
-        top: -18px;
-        bottom: -18px;
-        left: -24px;
-        right: -24px;
         background: var(--black);
       }
+    }
+    &:hover::before {
+      background: var(--light-gray);
     }
   }
 `;
