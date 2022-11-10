@@ -28,7 +28,7 @@ const Container = styled(Text13)`
   text-decoration: none !important;
   transition: color 0.1s linear, background 0.1s linear;
   &:hover {
-    background: var(--black);
+    background: var(--black) !important;
     color: var(--white);
   }
 `;
