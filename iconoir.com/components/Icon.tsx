@@ -104,7 +104,9 @@ export function Icon({ iconWidth, icon }: IconProps) {
           </HoverContainer>
         ) : null}
       </BorderContainer>
-      <Subtitle>{icon.filename}</Subtitle>
+      <Subtitle iconWidth={iconWidth} title={icon.filename}>
+        {icon.filename}
+      </Subtitle>
     </div>
   );
 }
@@ -166,10 +168,14 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Subtitle = styled.div`
+const Subtitle = styled.div<{ iconWidth: number }>`
   font-size: 11px;
   font-weight: 500;
   line-height: 14.74px;
   color: var(--black-40);
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: ${(props) => props.iconWidth}px;
 `;
