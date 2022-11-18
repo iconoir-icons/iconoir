@@ -1,3 +1,32 @@
+<a name=""></a>
+# [v6.0 ()](https://github.com/iconoir-icons/iconoir/releases/tag/) - 01 Jan 0001
+
+Removed icons:
+- `credit-card-2`
+
+Renamed icons:
+
+- `music-1-add` to `music-double-note-add`
+- `music-1` to `music-double-note`
+- `music-2-add` to `music-note-add`
+- `music-2` to `music-note`
+
+[Changes][]
+
+
+<a name="v5.4.1"></a>
+# [v5.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4.1) - 18 Nov 2022
+
+Added 3 new icons:
+- `auto-flash`
+- `flash-off`
+- `flash`
+
+
+
+[Changes][v5.4.1]
+
+
 <a name="v5.4"></a>
 # [v5.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4) - 01 Nov 2022
 
@@ -613,6 +642,8 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[]: https://github.com/iconoir-icons/iconoir/compare/v5.4.1...
+[v5.4.1]: https://github.com/iconoir-icons/iconoir/compare/v5.4...v5.4.1
 [v5.4]: https://github.com/iconoir-icons/iconoir/compare/v5.3.2...v5.4
 [v5.3.2]: https://github.com/iconoir-icons/iconoir/compare/v5.3.1...v5.3.2
 [v5.3.1]: https://github.com/iconoir-icons/iconoir/compare/v5.3.0...v5.3.1
