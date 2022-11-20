@@ -65,14 +65,15 @@ export const NavigationItemContainer = styled(Text15)<{ isActive?: boolean }>`
       right: -24px;
       transition: background 0.1s linear;
     }
-    ${(props) => (props.isActive ? '&' : '&.noop')} {
-      color: var(--white);
-      &::before {
-        background: var(--black);
-      }
-    }
     &:hover::before {
       background: var(--light-gray);
+    }
+    ${(props) => (props.isActive ? '&' : '&.noop')} {
+      color: var(--white);
+      &::before,
+      &:hover::before {
+        background: var(--black);
+      }
     }
   }
 `;
