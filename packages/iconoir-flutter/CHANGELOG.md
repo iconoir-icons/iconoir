@@ -3,6 +3,7 @@
 
 Removed icons:
 - `credit-card-2`
+- test
 
 Renamed icons:
 
@@ -12,6 +13,42 @@ Renamed icons:
 - `music-2` to `music-note`
 
 [Changes][]
+
+
+<a name="v5.5"></a>
+# [v5.5](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5) - 07 Dec 2022
+
+Added 27 new icons:
+
+- `at-sign-circle`
+- `at-sign`
+- `brain-electricity`
+- `brain-research`
+- `brain-warning`
+- `brain`
+- `candlestick-chart`
+- `card-issue`
+- `card-locked`
+- `card-security`
+- `cooling`
+- `credit-cards`
+- `diameter`
+- `dna`
+- `graduation-cap`
+- `heating`
+- `inclination`
+- `mastercard-card`
+- `microscope`
+- `paypal`
+- `radiation`
+- `radius`
+- `rubik-cube`
+- `vials`
+- `x-coordinate`
+- `y-coordinate`
+- `z-coordinate`
+
+[Changes][v5.5]
 
 
 <a name="v5.4.1"></a>
@@ -642,7 +679,8 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
-[]: https://github.com/iconoir-icons/iconoir/compare/v5.4.1...
+[]: https://github.com/iconoir-icons/iconoir/compare/v5.5...
+[v5.5]: https://github.com/iconoir-icons/iconoir/compare/v5.4.1...v5.5
 [v5.4.1]: https://github.com/iconoir-icons/iconoir/compare/v5.4...v5.4.1
 [v5.4]: https://github.com/iconoir-icons/iconoir/compare/v5.3.2...v5.4
 [v5.3.2]: https://github.com/iconoir-icons/iconoir/compare/v5.3.1...v5.3.2
