@@ -1,3 +1,11 @@
+<a name="v5.5.2"></a>
+# [v5.5.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.2) - 08 Dec 2022
+
+Use a different Action for Flutter publishing.
+
+[Changes][v5.5.2]
+
+
 <a name="v5.5.1"></a>
 # [v5.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.1) - 08 Dec 2022
 
@@ -675,6 +683,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v5.5.2]: https://github.com/iconoir-icons/iconoir/compare/v5.5.1...v5.5.2
 [v5.5.1]: https://github.com/iconoir-icons/iconoir/compare/v5.5...v5.5.1
 [v5.5]: https://github.com/iconoir-icons/iconoir/compare/v5.4.1...v5.5
 [v5.4.1]: https://github.com/iconoir-icons/iconoir/compare/v5.4...v5.4.1
