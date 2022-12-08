@@ -1,18 +1,14 @@
-<a name=""></a>
-# [v6.0 ()](https://github.com/iconoir-icons/iconoir/releases/tag/) - 01 Jan 0001
+<a name="v5.5.1"></a>
+# [v5.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.1) - 08 Dec 2022
 
-Removed icons:
-- `credit-card-2`
-- test
+## What's Changed
+* Refactor workflows by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/222
+* Fix Flutter publishing workflow
 
-Renamed icons:
 
-- `music-1-add` to `music-double-note-add`
-- `music-1` to `music-double-note`
-- `music-2-add` to `music-note-add`
-- `music-2` to `music-note`
+**Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v5.5...v5.5.1
 
-[Changes][]
+[Changes][v5.5.1]
 
 
 <a name="v5.5"></a>
@@ -201,9 +197,9 @@ Added 37 new icons:
 # [v5.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.2.0) - 28 Aug 2022
 
 ## What's Changed
-* feat: add Flutter package to README by @sammarks in https://github.com/iconoir-icons/iconoir/pull/178
-* Remove old changelogs from react packages by @paescuj in https://github.com/iconoir-icons/iconoir/pull/191
-* feat: add iconoir.com and React contexts by @sammarks in https://github.com/iconoir-icons/iconoir/pull/185
+* feat: add Flutter package to README by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/178
+* Remove old changelogs from react packages by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/191
+* feat: add iconoir.com and React contexts by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/185
 
 
 **Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
@@ -247,10 +243,10 @@ Fixes for Flutter publish script.
 # [v5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1) - 05 Jul 2022
 
 ## What's Changed
-* feat(flutter): create package by @heavybeard in https://github.com/lucaburgio/iconoir/pull/173
+* feat(flutter): create package by [@heavybeard](https://github.com/heavybeard) in https://github.com/lucaburgio/iconoir/pull/173
 
 ## New Contributors
-* @heavybeard made their first contribution in https://github.com/lucaburgio/iconoir/pull/173
+* [@heavybeard](https://github.com/heavybeard) made their first contribution in https://github.com/lucaburgio/iconoir/pull/173
 
 **Full Changelog**: https://github.com/lucaburgio/iconoir/compare/v5.0...v5.1-2
 
@@ -656,7 +652,7 @@ fix: changed stroke property from `black` to `currentColor`.
 <a name="v4.2.2"></a>
 # [v4.2.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.2) - 16 May 2021
 
-- **add:** .EOT, .SVG, .TTF, and .WOFF fonts.
+- add: .EOT, .SVG, .TTF, and .WOFF fonts.
 
 [Changes][v4.2.2]
 
@@ -664,8 +660,8 @@ fix: changed stroke property from `black` to `currentColor`.
 <a name="v4.2.1"></a>
 # [v4.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.1) - 14 May 2021
 
-- **fix:** renamed 4 icons from categories Edit and Album.
-- **add:** IconJar pack.
+- fix: renamed 4 icons from categories Edit and Album.
+- add: IconJar pack.
 
 [Changes][v4.2.1]
 
@@ -679,7 +675,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
-[]: https://github.com/iconoir-icons/iconoir/compare/v5.5...
+[v5.5.1]: https://github.com/iconoir-icons/iconoir/compare/v5.5...v5.5.1
 [v5.5]: https://github.com/iconoir-icons/iconoir/compare/v5.4.1...v5.5
 [v5.4.1]: https://github.com/iconoir-icons/iconoir/compare/v5.4...v5.4.1
 [v5.4]: https://github.com/iconoir-icons/iconoir/compare/v5.3.2...v5.4
