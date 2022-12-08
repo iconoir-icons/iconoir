@@ -78,3 +78,14 @@ jobs:
         with:
           credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
           relativePath: ./packages/iconoir-flutter
+
+      - name: Trigger Website Workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'website.yaml',
+              ref: 'main',
+            })
