@@ -17,45 +17,63 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          ref: main # We have to checkout main or PNPM fails. Tag should be on main anyway.
-      - uses: actions/cache@v2
+          node-version: 16
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          version: 7
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v2.1.0
-        with:
-          version: 7.8.0
-          run_install: true
-      - name: Build Packages
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build packages
         run: pnpm run dist
-      - name: Build
+
+      - name: Build website
         run: ./node_modules/.bin/next build
         working-directory: iconoir.com
-      - name: Export
+
+      - name: Export website
         run: ./node_modules/.bin/next export
         working-directory: iconoir.com
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v2
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: './iconoir.com/out'
+
   deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
