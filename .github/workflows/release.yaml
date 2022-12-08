@@ -74,7 +74,7 @@ jobs:
         continue-on-error: true
 
       - name: Publish Flutter
-        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+        uses: k-paxian/dart-package-publisher@v1.5.1
         with:
-          credential: ${{ secrets.PUB_CREDENTIAL_JSON }}
-          package_directory: ./packages/iconoir-flutter
+          credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
+          relativePath: ./packages/iconoir-flutter
