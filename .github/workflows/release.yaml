@@ -71,8 +71,10 @@ jobs:
         run: pnpm -r publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        continue-on-error: true
 
-      # - uses: sakebook/actions-flutter-pub-publisher@v1.4.0
-      #   with:
-      #     credential: ${{ secrets.PUB_CREDENTIAL_JSON }}
-      #     package_directory: ./packages/iconoir-flutter
+      - name: Publish Flutter
+        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+        with:
+          credential: ${{ secrets.PUB_CREDENTIAL_JSON }}
+          package_directory: ./packages/iconoir-flutter
