@@ -42,11 +42,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - uses: rhysd/changelog-from-release/action@v3
+      - name: Generate changelog file
+        uses: rhysd/changelog-from-release/action@v3
         with:
-          file: packages/iconoir-flutter/CHANGELOG.md
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          file: packages/iconoir-flutter/CHANGELOG.md
           commit: false
+          args: -d=false
 
       - name: Build
         run: pnpm run build
