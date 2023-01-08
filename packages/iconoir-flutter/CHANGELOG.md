@@ -1,5 +1,5 @@
 <a name="v6.0"></a>
-# [v6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.0) - 08 Jan 2023
+# [v6.0.0 (v6.0)](https://github.com/iconoir-icons/iconoir/releases/tag/v6.0) - 08 Jan 2023
 
 In this major release, we made some old icons' names more consistent and removed one icon.
 **Please double-check this list before updating to Iconoir v6.0.**
