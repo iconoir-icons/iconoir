@@ -69,9 +69,6 @@ jobs:
           git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
           git push -f origin ${{ github.ref_name }}
 
-      - name: Checkout tag again for release updates
-        run: git pull && git checkout main
-
       - name: Publish packages
         run: pnpm -r publish --access public
         env:
