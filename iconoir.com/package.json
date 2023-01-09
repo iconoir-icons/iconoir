@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@internationalized/number": "^3.1.1",
+    "@octokit/rest": "^19.0.5",
     "@react-types/slider": "^3.1.1",
     "@types/animejs": "^3.1.5",
     "@types/lodash": "^4.14.182",
@@ -41,7 +42,6 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-window": "^1.8.5",
     "@types/styled-components": "^5.1.25",
-    "axios": "^0.27.2",
     "csvtojson": "^2.0.10",
     "download-stats": "^0.3.4",
     "eslint": "^8.0.0",

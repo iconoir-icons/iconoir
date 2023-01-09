@@ -51,6 +51,8 @@ jobs:
       - name: Build website
         run: ./node_modules/.bin/next build
         working-directory: iconoir.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Export website
         run: ./node_modules/.bin/next export

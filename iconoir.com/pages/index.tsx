@@ -12,7 +12,7 @@ import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
 import { Text18 } from '../components/Typography';
 import { getAllIcons } from '../lib/getIcons';
-import axios from 'axios';
+import { octokit } from '../lib/octokit';
 import numbro from 'numbro';
 // @ts-ignore no types
 import * as downloadStats from 'download-stats';
@@ -154,8 +154,10 @@ export default Home;
 
 export async function getStaticProps() {
   const headerProps = getHeaderProps();
-  const apiResult = await axios.get(`https://api.github.com/repos/${REPO}`);
-  const stars = apiResult.data?.stargazers_count;
+  const { data: repo } = await octokit.rest.repos.get({
+    ...REPO,
+  });
+  const stars = repo.stargazers_count;
   if (!stars) throw new Error('Could not find GitHub stars');
   const numDownloads = await new Promise<number>((resolve, reject) => {
     downloadStats.get.lastMonth('iconoir-react', (err: any, results: any) => {

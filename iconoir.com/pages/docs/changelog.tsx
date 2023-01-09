@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { octokit } from '../../lib/octokit';
 import React from 'react';
 import {
   ChangelogEntry,
@@ -59,15 +59,15 @@ export default function Changelog({
 }
 
 export async function getStaticProps() {
-  const apiResult = await axios.get(
-    `https://api.github.com/repos/${REPO}/releases`
-  );
-  const entryData = apiResult.data || [];
+  const { data: releases } = await octokit.rest.repos.listReleases({
+    ...REPO,
+  });
   const entries: ChangelogEntryProps[] = [];
-  for (const entry of entryData) {
+  for (const release of releases) {
     entries.push({
-      ...entry,
-      body: await serialize(entry.body, {
+      name: release.name || release.tag_name,
+      created_at: release.created_at,
+      body: await serialize(release.body || '', {
         mdxOptions: {
           remarkPlugins: [require('remark-prism'), remarkGfm],
         },
