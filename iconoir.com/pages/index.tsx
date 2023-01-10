@@ -13,7 +13,6 @@ import { Stat, StatsContainer } from '../components/Stats';
 import { Text18 } from '../components/Typography';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
-import numbro from 'numbro';
 // @ts-ignore no types
 import * as downloadStats from 'download-stats';
 import { media } from '../components/responsive';
@@ -48,7 +47,7 @@ const Home: NextPage<HomeProps> = ({
       </HeroDescription>
       <StatsContainer>
         <Stat
-          value={allIcons.length.toString()}
+          value={new Intl.NumberFormat('en-US').format(allIcons.length)}
           description={
             'icons available in this very moment, and they’re growing fast!'
           }
@@ -60,19 +59,17 @@ const Home: NextPage<HomeProps> = ({
           }
         />
         <Stat
-          value={numbro(numDownloads).format({
-            average: true,
-            mantissa: 1,
-          })}
+          value={new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
+            numDownloads
+          )}
           description={
             'downloads/month on React only. Iconoir also supports React Native, Flutter and CSS.'
           }
         />
         <Stat
-          value={numbro(numStars).format({
-            average: true,
-            mantissa: 1,
-          })}
+          value={new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
+            numStars
+          )}
           description={
             'people who starred the project on GitHub. Show your support and be one of them.'
           }

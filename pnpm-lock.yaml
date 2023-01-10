@@ -58,7 +58,6 @@ importers:
       moment: ^2.29.4
       next: 12.2.2
       next-mdx-remote: ^4.1.0
-      numbro: ^2.3.6
       react: ^18.2.0
       react-dom: ^18.2.0
       react-window: ^1.8.7
@@ -81,7 +80,6 @@ importers:
       moment: 2.29.4
       next: 12.2.2_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
-      numbro: 2.3.6
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-window: 1.8.7_biqbaboplfbrettd7655fr4n2y
@@ -1557,10 +1555,6 @@ packages:
   /before-after-hook/2.2.3:
     resolution: {integrity: sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==}
     dev: true
-
-  /bignumber.js/8.1.1:
-    resolution: {integrity: sha512-QD46ppGintwPGuL1KqmwhR0O+N2cZUg8JG/VzwI2e28sM9TqHjQB10lI4QAaMHVbLzwVLLAwEglpKPViWX+5NQ==}
-    dev: false
 
   /bluebird/3.7.2:
     resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
@@ -4136,12 +4130,6 @@ packages:
     dependencies:
       boolbase: 1.0.0
     dev: true
-
-  /numbro/2.3.6:
-    resolution: {integrity: sha512-pxpoTT3hVxQGaOA2RTzXR/muonQNd1K1HPJbWo7QOmxPwiPmoFCFfsG9XXgW3uqjyzezJ0P9IvCPDXUtJexjwg==}
-    dependencies:
-      bignumber.js: 8.1.1
-    dev: false
 
   /nwsapi/2.2.1:
     resolution: {integrity: sha512-JYOWTeFoS0Z93587vRJgASD5Ut11fYl5NyihP3KrYBvMe1FRRs6RN7m20SA/16GM4P6hTnZjT+UmDOt38UeXNg==}
