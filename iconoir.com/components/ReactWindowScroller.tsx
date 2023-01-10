@@ -3,7 +3,7 @@
 // in this implementation anyway.
 
 import { throttle } from 'lodash';
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { GridProps, ListProps } from 'react-window';
 
 function isHtmlElement(
@@ -89,11 +89,10 @@ export function ReactWindowScroller<
       handleWindowScroll.cancel();
       targetElement.removeEventListener('scroll', handleWindowScroll);
     };
-  }, [isGrid, targetElement]);
+  }, [throttleTime, isGrid, targetElement]);
 
-  const onScroll = useCallback(() => {
-    // We are purposefully doing nothing here in order to support momentum scroll on iOS.
-  }, [isGrid, targetElement]);
+  // We are purposefully doing nothing here in order to support momentum scroll on iOS.
+  const onScroll = () => {};
 
   React.useEffect(() => {
     // We have to get rid of the scroll handlers here, because they will cause the list
