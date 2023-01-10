@@ -12,14 +12,18 @@ import { Text18 } from './Typography';
 
 export interface ReadOnGitHubProps {
   path: string;
+  resource?: string;
 }
-export function ReadOnGitHub({ path }: ReadOnGitHubProps) {
+export function ReadOnGitHub({
+  path,
+  resource = 'our documentation',
+}: ReadOnGitHubProps) {
   return (
     <DonateContainer style={{ marginTop: 88 }}>
       <div>
         <DonateHeader>Read it on GitHub</DonateHeader>
         <Text18>
-          If you prefer, you can take a look at our documentation on our GitHub
+          If you prefer, you can take a look at {resource} on our GitHub
           repository.
         </Text18>
       </div>

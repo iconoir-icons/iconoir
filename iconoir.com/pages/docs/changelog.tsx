@@ -49,7 +49,7 @@ export default function Changelog({
             {entries.map((entry) => (
               <ChangelogEntry key={entry.name} {...entry} />
             ))}
-            <ReadOnGitHub path={'../../releases'} />
+            <ReadOnGitHub path={'../../releases'} resource="the releases" />
           </InnerContentContainer>
         </ContentContainer>
       </Container>
