@@ -66,11 +66,14 @@ export async function getStaticProps() {
   for (const release of releases) {
     entries.push({
       name: release.name || release.tag_name,
+      url: release.html_url,
       created_at: release.created_at,
-      body: await serialize(release.body || '', {
-        mdxOptions: {
-          remarkPlugins: [require('remark-prism'), remarkGfm],
-        },
+      ...(release.body && {
+        body: await serialize(release.body, {
+          mdxOptions: {
+            remarkPlugins: [require('remark-prism'), remarkGfm],
+          },
+        }),
       }),
     });
   }
