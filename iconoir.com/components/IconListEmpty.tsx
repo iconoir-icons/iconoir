@@ -1,5 +1,4 @@
 import { SpockHandGesture } from 'iconoir-react';
-import React from 'react';
 import styled from 'styled-components';
 import { SUGGEST_ICON_LINK } from './constants';
 import { Text18 } from './Typography';

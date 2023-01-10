@@ -3,7 +3,7 @@
 // in this implementation anyway.
 
 import { throttle } from 'lodash';
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { GridProps, ListProps } from 'react-window';
 
 function isHtmlElement(

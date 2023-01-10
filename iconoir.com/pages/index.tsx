@@ -1,3 +1,4 @@
+import { downloads as npmDownloads } from '@nodesecure/npm-registry-sdk';
 import { PeaceHand } from 'iconoir-react';
 import type { NextPage } from 'next';
 import styled from 'styled-components';
@@ -5,20 +6,19 @@ import { AvailableFor } from '../components/AvailableFor';
 import { LargeButton } from '../components/Button';
 import { REPO, SUPPORT_LINK } from '../components/constants';
 import { Explore } from '../components/Explore';
+import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { HeaderBackground } from '../components/HeaderBackground';
 import { Icon } from '../components/IconList';
+import { Layout } from '../components/Layout';
+import { Praise } from '../components/Praise';
+import { media } from '../components/responsive';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
 import { Text18 } from '../components/Typography';
+import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
-import { downloads as npmDownloads } from '@nodesecure/npm-registry-sdk';
-import { media } from '../components/responsive';
-import { Praise } from '../components/Praise';
-import { Footer } from '../components/Footer';
-import { getHeaderProps } from '../lib/getHeaderProps';
-import { Layout } from '../components/Layout';
 
 interface HomeProps {
   allIcons: Icon[];

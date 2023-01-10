@@ -1,23 +1,23 @@
-import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { MDXRemote } from '../../components/MDXRemote';
 import fs from 'fs';
-import { Layout } from '../../components/Layout';
-import { SEO } from '../../components/SEO';
-import { Header, HeaderProps } from '../../components/Header';
-import { getHeaderProps } from '../../lib/getHeaderProps';
-import styled from 'styled-components';
-import { media } from '../../components/responsive';
-import { Footer } from '../../components/Footer';
+import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import { ParsedUrlQuery } from 'querystring';
+import remarkGfm from 'remark-gfm';
+import styled from 'styled-components';
 import {
   DocumentationNavigation,
   DocumentationNavigationProps,
 } from '../../components/DocumentationNavigation';
-import remarkGfm from 'remark-gfm';
+import { Footer } from '../../components/Footer';
+import { Header, HeaderProps } from '../../components/Header';
+import { Layout } from '../../components/Layout';
+import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
+import { media } from '../../components/responsive';
+import { SEO } from '../../components/SEO';
+import { getHeaderProps } from '../../lib/getHeaderProps';
 
 interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;

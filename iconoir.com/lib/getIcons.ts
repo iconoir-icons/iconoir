@@ -1,8 +1,8 @@
-import { Icon } from '../components/IconList';
-import csv from 'csvtojson';
-import { incompatibleNames } from '../../constants';
 import Case from 'case';
+import csv from 'csvtojson';
 import * as AllIcons from 'iconoir-react';
+import { incompatibleNames } from '../../constants';
+import { Icon } from '../components/IconList';
 
 const ICONS_PATH = 'icons.csv';
 const TAG_SEPARATOR = '|';

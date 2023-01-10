@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'next/head';
 
 const TITLE_SUFFIX = 'Iconoir | Free Icons';

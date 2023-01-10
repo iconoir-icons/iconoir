@@ -1,5 +1,5 @@
-import { octokit } from '../../lib/octokit';
-import React from 'react';
+import { serialize } from 'next-mdx-remote/serialize';
+import remarkGfm from 'remark-gfm';
 import {
   ChangelogEntry,
   ChangelogEntryProps,
@@ -12,10 +12,11 @@ import {
 import { Footer } from '../../components/Footer';
 import { Header, HeaderProps } from '../../components/Header';
 import { Layout } from '../../components/Layout';
+import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
 import { H1 } from '../../components/Typography';
-import remarkGfm from 'remark-gfm';
 import { getHeaderProps } from '../../lib/getHeaderProps';
+import { octokit } from '../../lib/octokit';
 import {
   Container,
   ContentContainer,
@@ -23,8 +24,6 @@ import {
   InnerContentContainer,
   NavigationContainer,
 } from './[...slug]';
-import { serialize } from 'next-mdx-remote/serialize';
-import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 
 export interface ChangelogProps extends HeaderProps {
   documentationProps: DocumentationNavigationProps;

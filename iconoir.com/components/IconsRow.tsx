@@ -1,8 +1,7 @@
-import React from 'react';
-import { ICON_SPACE } from './constants';
-import { Icon } from './IconList';
 import styled from 'styled-components';
+import { ICON_SPACE } from './constants';
 import { Icon as IconC } from './Icon';
+import { Icon } from './IconList';
 
 export interface IconsRowProps {
   icons: Icon[];

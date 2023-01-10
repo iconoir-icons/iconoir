@@ -1,13 +1,13 @@
+import { Cancel, Heart, Menu } from 'iconoir-react';
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import { AUTHOR_LINKS } from './constants';
-import { Cancel, Heart, Menu } from 'iconoir-react';
-import { CurrentVersion } from './CurrentVersion';
-import { media } from './responsive';
-import { ResetButton } from './Button';
 import { AnimatedSvg } from './AnimatedSvg';
+import { ResetButton } from './Button';
+import { AUTHOR_LINKS } from './constants';
+import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem, NavigationItemContainer } from './NavigationItem';
-import Link from 'next/link';
+import { media } from './responsive';
 
 export interface HeaderProps {
   currentVersion: string;

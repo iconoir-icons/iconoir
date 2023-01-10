@@ -1,10 +1,10 @@
-import React from 'react';
-import { DocumentationItem } from '../pages/docs/[...slug]';
-import styled from 'styled-components';
+import { NavArrowUp } from 'iconoir-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
+import styled from 'styled-components';
+import { DocumentationItem } from '../pages/docs/[...slug]';
 import { media } from './responsive';
-import { NavArrowUp } from 'iconoir-react';
 
 export interface DocumentationNavigationProps {
   documentationItems: DocumentationItem[];

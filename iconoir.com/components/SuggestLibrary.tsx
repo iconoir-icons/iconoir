@@ -1,5 +1,4 @@
 import { ArrowRight } from 'iconoir-react';
-import React from 'react';
 import { DonateContainer, DonateHeader, DonateRight } from '../pages/support';
 import { SUGGEST_LIBRARY_LINK } from './constants';
 import { DonateIconButton } from './ReadOnGitHub';

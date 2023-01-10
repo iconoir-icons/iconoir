@@ -1,11 +1,11 @@
 import { BoxIso } from 'iconoir-react';
-import React from 'react';
-import styled from 'styled-components';
-import { Code, CopyButton, Text15, Text18 } from './Typography';
 import moment from 'moment';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import React from 'react';
+import styled from 'styled-components';
 import { MDXRemote } from './MDXRemote';
 import { media } from './responsive';
+import { Code, CopyButton, Text15, Text18 } from './Typography';
 
 const EXPAND_HEIGHT = 400;
 

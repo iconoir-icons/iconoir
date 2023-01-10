@@ -1,5 +1,5 @@
-import React from 'react';
 import anime from 'animejs';
+import React from 'react';
 
 // eslint-disable-next-line no-unused-vars
 type SetInstances = (instances: anime.AnimeInstance[]) => void;

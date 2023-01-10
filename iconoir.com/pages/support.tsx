@@ -1,18 +1,18 @@
+import { ArrowRight } from 'iconoir-react';
 import { NextPage } from 'next';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { HeroText } from '.';
 import { LargeButton } from '../components/Button';
+import { DISCORD_LINK, SUPPORT_LINK } from '../components/constants';
+import { Footer } from '../components/Footer';
 import { Header, HeaderProps } from '../components/Header';
 import { HeaderBackground } from '../components/HeaderBackground';
 import { Layout } from '../components/Layout';
+import { media } from '../components/responsive';
 import { SEO } from '../components/SEO';
 import { Code, Heading2, Text18 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
-import Image from 'next/image';
-import { ArrowRight } from 'iconoir-react';
-import { DISCORD_LINK, SUPPORT_LINK } from '../components/constants';
-import { Footer } from '../components/Footer';
-import { media } from '../components/responsive';
 
 interface SupportProps extends HeaderProps {}
 const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
