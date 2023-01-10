@@ -37,6 +37,7 @@ importers:
       '@react-aria/focus': ^3.6.1
       '@react-aria/i18n': ^3.4.1
       '@react-aria/slider': ^3.1.1
+      '@react-aria/ssr': ^3.4.1
       '@react-aria/utils': ^3.13.1
       '@react-aria/visually-hidden': ^3.3.1
       '@react-stately/slider': ^3.1.1
@@ -91,6 +92,7 @@ importers:
       '@internationalized/number': 3.1.1
       '@nodesecure/npm-registry-sdk': 1.4.1
       '@octokit/rest': 19.0.5
+      '@react-aria/ssr': 3.4.1_react@18.2.0
       '@react-types/slider': 3.1.1_react@18.2.0
       '@types/animejs': 3.1.5
       '@types/lodash': 4.14.182
@@ -852,7 +854,7 @@ packages:
       '@internationalized/date': 3.0.0
       '@internationalized/message': 3.0.8
       '@internationalized/number': 3.1.1
-      '@react-aria/ssr': 3.2.0_react@18.2.0
+      '@react-aria/ssr': 3.4.1_react@18.2.0
       '@react-aria/utils': 3.13.1_react@18.2.0
       '@react-types/shared': 3.13.1_react@18.2.0
       react: 18.2.0
@@ -899,14 +901,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-aria/ssr/3.2.0_react@18.2.0:
-    resolution: {integrity: sha512-wwJFdkl+Q8NU5yJ4NvdAOqx5LM3QtUVoSjuK7Ey8jZ4WS4bB0EqT3Kr3IInBs257HzZ5nXCiKXKE4NGXXuIRWA==}
+  /@react-aria/ssr/3.4.1_react@18.2.0:
+    resolution: {integrity: sha512-NmhoilMDyIfQiOSdQgxpVH2tC2u85Y0mVijtBNbI9kcDYLEiW/r6vKYVKtkyU+C4qobXhGMPfZ70PTc0lysSVA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.6
+      '@swc/helpers': 0.4.14
       react: 18.2.0
-    dev: false
 
   /@react-aria/utils/3.13.1_react@18.2.0:
     resolution: {integrity: sha512-usW6RoLKil4ylgDbRcaQ5YblNGv5ZihI4I9NB8pdazhw53cSRyLaygLdmHO33xgpPnAhb6Nb/tv8d5p6cAde+A==}
@@ -914,7 +915,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.18.6
-      '@react-aria/ssr': 3.2.0_react@18.2.0
+      '@react-aria/ssr': 3.4.1_react@18.2.0
       '@react-stately/utils': 3.5.0_react@18.2.0
       '@react-types/shared': 3.13.1_react@18.2.0
       clsx: 1.2.1
@@ -1121,6 +1122,11 @@ packages:
       deepmerge: 4.2.2
       svgo: 1.3.2
     dev: true
+
+  /@swc/helpers/0.4.14:
+    resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
+    dependencies:
+      tslib: 2.4.0
 
   /@swc/helpers/0.4.2:
     resolution: {integrity: sha512-556Az0VX7WR6UdoTn4htt/l3zPQ7bsQWK+HqdG4swV7beUCxo/BqmvbOpUkTIm/9ih86LIf1qsUnywNL3obGHw==}
@@ -5086,7 +5092,6 @@ packages:
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: false
 
   /tsutils/3.21.0_typescript@4.7.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}

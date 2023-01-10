@@ -34,6 +34,7 @@
     "@internationalized/number": "^3.1.1",
     "@nodesecure/npm-registry-sdk": "^1.4.1",
     "@octokit/rest": "^19.0.5",
+    "@react-aria/ssr": "^3.4.1",
     "@react-types/slider": "^3.1.1",
     "@types/animejs": "^3.1.5",
     "@types/lodash": "^4.14.182",
