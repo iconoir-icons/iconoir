@@ -19,7 +19,7 @@ export function ReadOnGitHub({ path }: ReadOnGitHubProps) {
       <div>
         <DonateHeader>Read it on GitHub</DonateHeader>
         <Text18>
-          If you prefer, you can take a look at our documentation on our Github
+          If you prefer, you can take a look at our documentation on our GitHub
           repository.
         </Text18>
       </div>

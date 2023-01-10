@@ -74,7 +74,7 @@ const Home: NextPage<HomeProps> = ({
             mantissa: 1,
           })}
           description={
-            'people who starred the project on Github. Show your support and be one of them.'
+            'people who starred the project on GitHub. Show your support and be one of them.'
           }
         />
       </StatsContainer>

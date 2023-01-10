@@ -43,7 +43,7 @@ export default function DocumentationPage({
         <ContentContainer>
           <InnerContentContainer>
             <MDXRemote {...source} />
-            {navigationItem.noReadOnGithub ||
+            {navigationItem.noReadOnGitHub ||
             !navigationItem.filepath ? null : (
               <ReadOnGitHub path={navigationItem.filepath} />
             )}
@@ -98,7 +98,7 @@ export interface DocumentationItem {
   children?: DocumentationItem[];
   title: string;
   label?: string;
-  noReadOnGithub?: boolean;
+  noReadOnGitHub?: boolean;
   skip?: boolean;
 }
 export function getDocumentationStructure(): DocumentationItem[] {
@@ -123,32 +123,32 @@ export function getDocumentationStructure(): DocumentationItem[] {
           path: 'iconoir-react',
           filepath: 'packages/iconoir-react/README.md',
           title: 'React',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'iconoir-react-native',
           filepath: 'packages/iconoir-react-native/README.md',
           title: 'React Native',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
           label: 'New',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'framer',
           filepath: 'docs/framer.md',
           title: 'Framer',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'css',
           filepath: 'css/README.md',
           title: 'CSS',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
       ],
     },
