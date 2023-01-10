@@ -111,7 +111,6 @@ const MobileMenuContainer = styled.div<{ visible?: boolean }>`
     opacity: 1;
   }
   ${media.lg} {
-    margin-left: auto;
     background: none;
     padding-top: 0;
     box-shadow: none;
