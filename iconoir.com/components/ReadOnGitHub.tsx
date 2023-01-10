@@ -7,7 +7,7 @@ import {
   DonateHeader,
   DonateRight,
 } from '../pages/support';
-import { FILE_PREFIX } from './constants';
+import { GITHUB_TREE_PREFIX } from './constants';
 import { Text18 } from './Typography';
 
 export interface ReadOnGitHubProps {
@@ -29,7 +29,9 @@ export function ReadOnGitHub({
       </div>
       <DonateRight>
         <a
-          href={`${FILE_PREFIX}/${path.startsWith('/') ? path.slice(1) : path}`}
+          href={`${GITHUB_TREE_PREFIX}/${
+            path.startsWith('/') ? path.slice(1) : path
+          }`}
           target={'_blank'}
           rel={'noreferrer'}
         >

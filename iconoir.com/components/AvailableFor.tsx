@@ -1,7 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
-import { FEEDBACK_LINK, LIBRARY_LINKS, SUGGEST_LIBRARY } from './constants';
+import {
+  FEEDBACK_LINK,
+  LIBRARY_LINKS,
+  SUGGEST_LIBRARY_LINK,
+} from './constants';
 import { media } from './responsive';
 import { Text14 } from './Typography';
 
@@ -53,7 +57,7 @@ export function AvailableFor() {
             />
           </a>
           <AreYouUsing>
-            <a href={SUGGEST_LIBRARY} target={'_blank'} rel={'noreferrer'}>
+            <a href={SUGGEST_LIBRARY_LINK} target={'_blank'} rel={'noreferrer'}>
               <Text14>More?</Text14>
             </a>
             <a href={FEEDBACK_LINK} target={'_blank'} rel={'noreferrer'}>
