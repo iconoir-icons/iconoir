@@ -19,14 +19,12 @@ export function Header({ currentVersion, currentVersionColor }: HeaderProps) {
     <Container>
       <HeaderLeft>
         <Link href={'/'}>
-          <a>
-            <LogoContainer>
-              <LogoIcon>
-                <AnimatedSvg />
-              </LogoIcon>
-              <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
-            </LogoContainer>
-          </a>
+          <LogoContainer>
+            <LogoIcon>
+              <AnimatedSvg />
+            </LogoIcon>
+            <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
+          </LogoContainer>
         </Link>
         <CurrentVersion version={currentVersion} color={currentVersionColor} />
       </HeaderLeft>

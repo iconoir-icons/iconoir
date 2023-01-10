@@ -13,7 +13,7 @@ export interface NavigationItemProps {
 export function NavigationItem({ href, children, style }: NavigationItemProps) {
   const router = useRouter();
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref legacyBehavior>
       <NavigationItemContainer
         as={'a'}
         isActive={

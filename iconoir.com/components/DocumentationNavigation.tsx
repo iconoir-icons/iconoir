@@ -69,7 +69,12 @@ export function DocumentationNavigation({
           );
         } else {
           return (
-            <Link href={`/docs/${path}`} passHref key={documentationItem.path}>
+            <Link
+              href={`/docs/${path}`}
+              passHref
+              legacyBehavior
+              key={documentationItem.path}
+            >
               <NavigationItem as={'a'} active={activePath === path}>
                 <span>{documentationItem.title}</span>
                 {documentationItem.label ? (
