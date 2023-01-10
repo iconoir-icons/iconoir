@@ -13,8 +13,7 @@ import { Stat, StatsContainer } from '../components/Stats';
 import { Text18 } from '../components/Typography';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
-// @ts-ignore no types
-import * as downloadStats from 'download-stats';
+import { downloads as npmDownloads } from '@nodesecure/npm-registry-sdk';
 import { media } from '../components/responsive';
 import { Praise } from '../components/Praise';
 import { Footer } from '../components/Footer';
@@ -151,23 +150,25 @@ export default Home;
 
 export async function getStaticProps() {
   const headerProps = getHeaderProps();
-  const { data: repo } = await octokit.rest.repos.get({
+
+  const {
+    data: { stargazers_count: numStars },
+  } = await octokit.rest.repos.get({
     ...REPO,
   });
-  const stars = repo.stargazers_count;
-  if (!stars) throw new Error('Could not find GitHub stars');
-  const numDownloads = await new Promise<number>((resolve, reject) => {
-    downloadStats.get.lastMonth('iconoir-react', (err: any, results: any) => {
-      if (err) return reject(err);
-      resolve(results.downloads);
-    });
-  });
+  if (!numStars) throw new Error('Could not find GitHub stars');
+
+  const { downloads: numDownloads } = await npmDownloads(
+    'iconoir-react',
+    'last-month'
+  );
   if (!numDownloads) throw new Error('Could not find NPM downloads');
+
   return {
     props: {
       ...headerProps,
       allIcons: await getAllIcons(),
-      numStars: stars,
+      numStars,
       numDownloads,
     },
   };
