@@ -1672,6 +1672,10 @@ packages:
     resolution: {integrity: sha512-XDgbeOHfifWV3GEES2B8rtsrADx4Jf+juKX2SICJcaUhjYBO3bR96kvEIHa15VU6ohtOhBZuPGGYGbXMRn0NCw==}
     dev: true
 
+  /caniuse-lite/1.0.30001442:
+    resolution: {integrity: sha512-239m03Pqy0hwxYPYR5JwOIxRJfLTWtle9FV8zosfV5pHg+/51uD4nxcUlM8+mWWGfwKtt8lJNHnD3cWw9VZ6ow==}
+    dev: true
+
   /case/1.6.3:
     resolution: {integrity: sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==}
     engines: {node: '>= 0.8.0'}
@@ -4124,7 +4128,7 @@ packages:
     dependencies:
       '@next/env': 12.2.2
       '@swc/helpers': 0.4.2
-      caniuse-lite: 1.0.30001367
+      caniuse-lite: 1.0.30001442
       postcss: 8.4.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
