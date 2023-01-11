@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PraiseItem } from './PraiseItem';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 
 const NUM_PRAISE_ITEMS = 3;
 export function Praise() {

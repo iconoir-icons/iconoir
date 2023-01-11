@@ -1,23 +1,23 @@
-import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { MDXRemote } from '../../components/MDXRemote';
 import fs from 'fs';
-import { Layout } from '../../components/Layout';
-import { SEO } from '../../components/SEO';
-import { Header, HeaderProps } from '../../components/Header';
-import { getHeaderProps } from '../../lib/getHeaderProps';
-import styled from 'styled-components';
-import { media } from '../../components/responsive';
-import { Footer } from '../../components/Footer';
+import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import { ParsedUrlQuery } from 'querystring';
+import remarkGfm from 'remark-gfm';
+import styled from 'styled-components';
 import {
   DocumentationNavigation,
   DocumentationNavigationProps,
 } from '../../components/DocumentationNavigation';
-import remarkGfm from 'remark-gfm';
+import { Footer } from '../../components/Footer';
+import { Header, HeaderProps } from '../../components/Header';
+import { Layout } from '../../components/Layout';
+import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
+import { media } from '../../lib/responsive';
+import { SEO } from '../../components/SEO';
+import { getHeaderProps } from '../../lib/getHeaderProps';
 
 interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;
@@ -43,7 +43,7 @@ export default function DocumentationPage({
         <ContentContainer>
           <InnerContentContainer>
             <MDXRemote {...source} />
-            {navigationItem.noReadOnGithub ||
+            {navigationItem.noReadOnGitHub ||
             !navigationItem.filepath ? null : (
               <ReadOnGitHub path={navigationItem.filepath} />
             )}
@@ -98,7 +98,7 @@ export interface DocumentationItem {
   children?: DocumentationItem[];
   title: string;
   label?: string;
-  noReadOnGithub?: boolean;
+  noReadOnGitHub?: boolean;
   skip?: boolean;
 }
 export function getDocumentationStructure(): DocumentationItem[] {
@@ -123,32 +123,32 @@ export function getDocumentationStructure(): DocumentationItem[] {
           path: 'iconoir-react',
           filepath: 'packages/iconoir-react/README.md',
           title: 'React',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'iconoir-react-native',
           filepath: 'packages/iconoir-react-native/README.md',
           title: 'React Native',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
           label: 'New',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'framer',
           filepath: 'docs/framer.md',
           title: 'Framer',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
         {
           path: 'css',
           filepath: 'css/README.md',
           title: 'CSS',
-          noReadOnGithub: true,
+          noReadOnGitHub: true,
         },
       ],
     },

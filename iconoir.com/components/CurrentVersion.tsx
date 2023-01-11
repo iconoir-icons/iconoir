@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import styled from 'styled-components';
 import { Text13 } from './Typography';
 
@@ -9,7 +8,7 @@ export interface CurrentVersionProps {
 }
 export function CurrentVersion({ version, color }: CurrentVersionProps) {
   return (
-    <Link href={'/docs/changelog'} passHref>
+    <Link href={'/docs/changelog'} passHref legacyBehavior>
       <Container as={'a'} style={color ? { background: color } : undefined}>
         {version}
       </Container>

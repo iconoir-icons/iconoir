@@ -1,22 +1,23 @@
 import { BoxIso } from 'iconoir-react';
-import React from 'react';
-import styled from 'styled-components';
-import { Code, CopyButton, Text15, Text18 } from './Typography';
 import moment from 'moment';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import React from 'react';
+import styled from 'styled-components';
 import { MDXRemote } from './MDXRemote';
-import { FILE_PREFIX } from './constants';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
+import { Code, CopyButton, Text15, Text18 } from './Typography';
 
 const EXPAND_HEIGHT = 400;
 
 export interface ChangelogEntryProps {
   name: string;
-  body: MDXRemoteSerializeResult;
+  url: string;
   created_at: string;
+  body?: MDXRemoteSerializeResult;
 }
 export function ChangelogEntry({
   name,
+  url,
   body,
   created_at,
 }: ChangelogEntryProps) {
@@ -39,7 +40,7 @@ export function ChangelogEntry({
         </ContainerIcon>
         <TitleContainer>
           <a
-            href={`${FILE_PREFIX}/../../releases/tag/${name}`}
+            href={url}
             target={'_blank'}
             rel={'noreferrer'}
             style={{ textDecoration: 'none' }}
@@ -50,7 +51,7 @@ export function ChangelogEntry({
         </TitleContainer>
       </ContainerLeft>
       <EntryBody expanded={expanded}>
-        <MDXRemote {...body} />
+        {body ? <MDXRemote {...body} /> : 'No changelog'}
         {shouldExpand ? (
           <ExpandContainer>
             <CopyButton onClick={() => setExpanded((e) => !e)}>

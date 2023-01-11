@@ -1,13 +1,13 @@
+import { Cancel, Heart, Menu } from 'iconoir-react';
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import { AUTHOR_LINKS } from './constants';
-import { Cancel, Heart, Menu } from 'iconoir-react';
-import { CurrentVersion } from './CurrentVersion';
-import { media } from './responsive';
-import { ResetButton } from './Button';
 import { AnimatedSvg } from './AnimatedSvg';
+import { ResetButton } from './Button';
+import { AUTHOR_LINKS } from '../lib/constants';
+import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem, NavigationItemContainer } from './NavigationItem';
-import Link from 'next/link';
+import { media } from '../lib/responsive';
 
 export interface HeaderProps {
   currentVersion: string;
@@ -19,14 +19,12 @@ export function Header({ currentVersion, currentVersionColor }: HeaderProps) {
     <Container>
       <HeaderLeft>
         <Link href={'/'}>
-          <a>
-            <LogoContainer>
-              <LogoIcon>
-                <AnimatedSvg />
-              </LogoIcon>
-              <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
-            </LogoContainer>
-          </a>
+          <LogoContainer>
+            <LogoIcon>
+              <AnimatedSvg />
+            </LogoIcon>
+            <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
+          </LogoContainer>
         </Link>
         <CurrentVersion version={currentVersion} color={currentVersionColor} />
       </HeaderLeft>

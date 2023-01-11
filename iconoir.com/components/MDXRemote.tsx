@@ -1,8 +1,7 @@
-import React from 'react';
 import { MDXRemote as CoreMDXRemote, MDXRemoteProps } from 'next-mdx-remote';
 import { SuggestLibrary } from './SuggestLibrary';
-import { Pre, Body, H1, H2, H3, Code } from './Typography';
 import { Table } from './Table';
+import { Body, Code, H1, H2, H3, Pre } from './Typography';
 
 export function MDXRemote(props: MDXRemoteProps) {
   return (

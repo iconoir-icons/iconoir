@@ -1,10 +1,10 @@
 import React from 'react';
-import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
 import styled from 'styled-components';
-import { Text13, Text18 } from './Typography';
 import { Button } from './Button';
+import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
 import { ColorInput } from './Input';
 import { Slider } from './Slider';
+import { Text13, Text18 } from './Typography';
 
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;

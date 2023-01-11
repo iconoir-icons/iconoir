@@ -1,17 +1,17 @@
+import { chunk } from 'lodash';
 import React from 'react';
 import {
-  VariableSizeList as List,
-  ListChildComponentProps,
   areEqual,
+  ListChildComponentProps,
+  VariableSizeList as List,
 } from 'react-window';
-import { chunk } from 'lodash';
+import styled from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
-import { ICON_SPACE, ICON_WIDTH } from './constants';
 import { CategoryRow } from './CategoryRow';
+import { ICON_SPACE, ICON_WIDTH } from '../lib/constants';
+import { IconListEmpty } from './IconListEmpty';
 import { IconsRow } from './IconsRow';
 import { ReactWindowScroller } from './ReactWindowScroller';
-import styled from 'styled-components';
-import { IconListEmpty } from './IconListEmpty';
 
 export interface IconListFilters {
   search?: string;

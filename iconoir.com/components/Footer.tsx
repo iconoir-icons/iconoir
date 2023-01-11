@@ -1,7 +1,6 @@
 import { PeaceHand } from 'iconoir-react';
-import React from 'react';
 import styled from 'styled-components';
-import { LICENSE_LINK } from './constants';
+import { LICENSE_LINK } from '../lib/constants';
 import { Logo, LogoContainer, LogoIcon } from './Header';
 import { NavigationItemContainer } from './NavigationItem';
 

@@ -1,12 +1,12 @@
-import React from 'react';
-import { useSlider, useSliderThumb } from '@react-aria/slider';
-import { SliderState, useSliderState } from '@react-stately/slider';
-import { useFocusRing } from '@react-aria/focus';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { mergeProps } from '@react-aria/utils';
-import { useNumberFormatter } from '@react-aria/i18n';
-import { SliderProps as ReactSliderProps } from '@react-types/slider';
 import { NumberFormatOptions } from '@internationalized/number';
+import { useFocusRing } from '@react-aria/focus';
+import { useNumberFormatter } from '@react-aria/i18n';
+import { useSlider, useSliderThumb } from '@react-aria/slider';
+import { mergeProps } from '@react-aria/utils';
+import { VisuallyHidden } from '@react-aria/visually-hidden';
+import { SliderState, useSliderState } from '@react-stately/slider';
+import { SliderProps as ReactSliderProps } from '@react-types/slider';
+import React from 'react';
 import styled from 'styled-components';
 import { Text13 } from './Typography';
 

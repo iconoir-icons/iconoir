@@ -1,10 +1,10 @@
-import React from 'react';
-import { DocumentationItem } from '../pages/docs/[...slug]';
-import styled from 'styled-components';
+import { NavArrowUp } from 'iconoir-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { media } from './responsive';
-import { NavArrowUp } from 'iconoir-react';
+import React from 'react';
+import styled from 'styled-components';
+import { DocumentationItem } from '../pages/docs/[...slug]';
+import { media } from '../lib/responsive';
 
 export interface DocumentationNavigationProps {
   documentationItems: DocumentationItem[];
@@ -69,7 +69,12 @@ export function DocumentationNavigation({
           );
         } else {
           return (
-            <Link href={`/docs/${path}`} passHref key={documentationItem.path}>
+            <Link
+              href={`/docs/${path}`}
+              passHref
+              legacyBehavior
+              key={documentationItem.path}
+            >
               <NavigationItem as={'a'} active={activePath === path}>
                 <span>{documentationItem.title}</span>
                 {documentationItem.label ? (

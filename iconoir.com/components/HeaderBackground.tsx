@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 
 export interface HeaderBackgroundProps {
   children: React.ReactElement;

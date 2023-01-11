@@ -1,7 +1,6 @@
 import { SpockHandGesture } from 'iconoir-react';
-import React from 'react';
 import styled from 'styled-components';
-import { SUGGEST_ICON } from './constants';
+import { SUGGEST_ICON_LINK } from '../lib/constants';
 import { Text18 } from './Typography';
 
 export interface IconListEmptyProps {
@@ -19,7 +18,7 @@ export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
       <Text18 style={{ color: 'var(--black-60)' }}>
         {"If you can't find the icon, you can make a"}
         <br />
-        <a href={SUGGEST_ICON} target={'_blank'} rel={'noreferrer'}>
+        <a href={SUGGEST_ICON_LINK} target={'_blank'} rel={'noreferrer'}>
           suggestion on GitHub.
         </a>
       </Text18>

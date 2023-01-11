@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 
 export const Table = styled.table`
   width: 100%;

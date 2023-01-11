@@ -1,9 +1,9 @@
-import React from 'react';
-import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
-import styled from 'styled-components';
 import * as AllIcons from 'iconoir-react';
+import React from 'react';
+import styled from 'styled-components';
+import { showNotification } from '../lib/showNotification';
 import { ResetButton } from './Button';
-import { showNotification } from '../helpers/showNotification';
+import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
 
 const HEADER = '<?xml version="1.0" encoding="UTF-8"?>';
 function bakeSvg(

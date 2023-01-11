@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
+import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
-import { media } from './responsive';
 
 export interface StatProps {
   value: string;

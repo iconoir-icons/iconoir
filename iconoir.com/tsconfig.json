@@ -13,17 +13,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "types"
-    ]
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
-  "references": [
-    {
-      "path": "../packages/iconoir-react"
-    }
-  ]
+  "exclude": ["node_modules"]
 }
