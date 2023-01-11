@@ -4,7 +4,7 @@ import {
   ChangelogEntry,
   ChangelogEntryProps,
 } from '../../components/ChangelogEntry';
-import { REPO } from '../../components/constants';
+import { REPO } from '../../lib/constants';
 import {
   DocumentationNavigation,
   DocumentationNavigationProps,

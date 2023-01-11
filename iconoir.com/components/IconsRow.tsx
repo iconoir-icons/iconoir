@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ICON_SPACE } from './constants';
+import { ICON_SPACE } from '../lib/constants';
 import { Icon as IconC } from './Icon';
 import { Icon } from './IconList';
 

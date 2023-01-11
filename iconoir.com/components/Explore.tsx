@@ -5,7 +5,7 @@ import { Ad } from './Ad';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { Icon, IconList, IconListFilters } from './IconList';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
 
 export interface ExploreProps {

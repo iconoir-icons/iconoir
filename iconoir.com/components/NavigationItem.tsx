@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
 
 export interface NavigationItemProps {

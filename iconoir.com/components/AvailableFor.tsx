@@ -4,8 +4,8 @@ import {
   FEEDBACK_LINK,
   LIBRARY_LINKS,
   SUGGEST_LIBRARY_LINK,
-} from './constants';
-import { media } from './responsive';
+} from '../lib/constants';
+import { media } from '../lib/responsive';
 import { Text14 } from './Typography';
 
 export function AvailableFor() {

@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
 import { CategoryRow } from './CategoryRow';
-import { ICON_SPACE, ICON_WIDTH } from './constants';
+import { ICON_SPACE, ICON_WIDTH } from '../lib/constants';
 import { IconListEmpty } from './IconListEmpty';
 import { IconsRow } from './IconsRow';
 import { ReactWindowScroller } from './ReactWindowScroller';

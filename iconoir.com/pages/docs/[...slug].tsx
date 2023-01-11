@@ -15,7 +15,7 @@ import { Header, HeaderProps } from '../../components/Header';
 import { Layout } from '../../components/Layout';
 import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
-import { media } from '../../components/responsive';
+import { media } from '../../lib/responsive';
 import { SEO } from '../../components/SEO';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 

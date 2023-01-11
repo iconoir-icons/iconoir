@@ -6,7 +6,7 @@ import {
   DonateHeader,
   DonateRight,
 } from '../pages/support';
-import { GITHUB_TREE_PREFIX } from './constants';
+import { GITHUB_TREE_PREFIX } from '../lib/constants';
 import { Text18 } from './Typography';
 
 export interface ReadOnGitHubProps {

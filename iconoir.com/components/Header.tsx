@@ -4,10 +4,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { AnimatedSvg } from './AnimatedSvg';
 import { ResetButton } from './Button';
-import { AUTHOR_LINKS } from './constants';
+import { AUTHOR_LINKS } from '../lib/constants';
 import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem, NavigationItemContainer } from './NavigationItem';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 
 export interface HeaderProps {
   currentVersion: string;

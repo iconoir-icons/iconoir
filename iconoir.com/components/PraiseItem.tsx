@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 import { Text14, Text18 } from './Typography';
 
 export interface PraiseItemProps {

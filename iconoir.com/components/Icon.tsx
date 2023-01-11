@@ -1,7 +1,7 @@
 import * as AllIcons from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
-import { showNotification } from '../helpers/showNotification';
+import { showNotification } from '../lib/showNotification';
 import { ResetButton } from './Button';
 import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
 

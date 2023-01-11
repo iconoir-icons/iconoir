@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 import { DocumentationItem } from '../pages/docs/[...slug]';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 
 export interface DocumentationNavigationProps {
   documentationItems: DocumentationItem[];

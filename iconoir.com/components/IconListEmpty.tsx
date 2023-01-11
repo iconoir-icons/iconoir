@@ -1,6 +1,6 @@
 import { SpockHandGesture } from 'iconoir-react';
 import styled from 'styled-components';
-import { SUGGEST_ICON_LINK } from './constants';
+import { SUGGEST_ICON_LINK } from '../lib/constants';
 import { Text18 } from './Typography';
 
 export interface IconListEmptyProps {

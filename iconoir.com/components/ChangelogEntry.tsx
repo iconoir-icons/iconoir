@@ -4,7 +4,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import React from 'react';
 import styled from 'styled-components';
 import { MDXRemote } from './MDXRemote';
-import { media } from './responsive';
+import { media } from '../lib/responsive';
 import { Code, CopyButton, Text15, Text18 } from './Typography';
 
 const EXPAND_HEIGHT = 400;
