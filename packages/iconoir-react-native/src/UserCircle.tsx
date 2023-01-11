@@ -1,13 +1,15 @@
 import * as React from "react";
 import Svg, { SvgProps, Path, Circle } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgUserCircle(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <Svg
       width="1.5em"
@@ -34,6 +36,5 @@ function SvgUserCircle(
     </Svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgUserCircle);
 export default ForwardRef;

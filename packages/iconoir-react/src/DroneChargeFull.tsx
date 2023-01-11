@@ -1,12 +1,14 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgDroneChargeFull(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <svg
       width="1.5em"
@@ -57,6 +59,5 @@ function SvgDroneChargeFull(
     </svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgDroneChargeFull);
 export default ForwardRef;

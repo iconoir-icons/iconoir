@@ -1,13 +1,15 @@
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgMacOsWindow(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <Svg
       width="1.5em"
@@ -32,6 +34,5 @@ function SvgMacOsWindow(
     </Svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgMacOsWindow);
 export default ForwardRef;

@@ -1,12 +1,14 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgCell2X2(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <svg
       width="1.5em"
@@ -26,6 +28,5 @@ function SvgCell2X2(
     </svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgCell2X2);
 export default ForwardRef;

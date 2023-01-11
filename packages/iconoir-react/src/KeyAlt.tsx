@@ -1,12 +1,14 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgKeyAlt(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <svg
       width="1.5em"
@@ -28,6 +30,5 @@ function SvgKeyAlt(
     </svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgKeyAlt);
 export default ForwardRef;

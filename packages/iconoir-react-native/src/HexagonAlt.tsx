@@ -1,13 +1,15 @@
 import * as React from "react";
 import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgHexagonAlt(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <Svg
       width="1.5em"
@@ -35,6 +37,5 @@ function SvgHexagonAlt(
     </Svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgHexagonAlt);
 export default ForwardRef;

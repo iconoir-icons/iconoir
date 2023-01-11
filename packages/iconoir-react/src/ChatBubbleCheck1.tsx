@@ -1,12 +1,14 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgChatBubbleCheck1(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <svg
       width="1.5em"
@@ -34,6 +36,5 @@ function SvgChatBubbleCheck1(
     </svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgChatBubbleCheck1);
 export default ForwardRef;

@@ -1,13 +1,15 @@
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgUploadDataWindow(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <Svg
       width="1.5em"
@@ -33,6 +35,5 @@ function SvgUploadDataWindow(
     </Svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgUploadDataWindow);
 export default ForwardRef;

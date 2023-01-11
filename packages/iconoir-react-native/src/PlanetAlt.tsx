@@ -1,13 +1,15 @@
 import * as React from "react";
 import Svg, { SvgProps, Circle, Path } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgPlanetAlt(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <Svg
       width="1.5em"
@@ -27,6 +29,5 @@ function SvgPlanetAlt(
     </Svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgPlanetAlt);
 export default ForwardRef;

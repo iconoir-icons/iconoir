@@ -1,12 +1,14 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgPenTabletConnectWifi(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <svg
       width="1.5em"
@@ -35,6 +37,5 @@ function SvgPenTabletConnectWifi(
     </svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgPenTabletConnectWifi);
 export default ForwardRef;

@@ -1,12 +1,14 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgFavouriteBook(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <svg
       width="1.5em"
@@ -39,6 +41,5 @@ function SvgFavouriteBook(
     </svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgFavouriteBook);
 export default ForwardRef;

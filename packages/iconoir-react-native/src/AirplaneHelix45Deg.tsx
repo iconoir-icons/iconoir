@@ -1,13 +1,15 @@
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-
 function SvgAirplaneHelix45Deg(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
   const context = React.useContext(IconoirContext);
-  const props = { ...context, ...passedProps };
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
     <Svg
       width="1.5em"
@@ -37,6 +39,5 @@ function SvgAirplaneHelix45Deg(
     </Svg>
   );
 }
-
 const ForwardRef = React.forwardRef(SvgAirplaneHelix45Deg);
 export default ForwardRef;
