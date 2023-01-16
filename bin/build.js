@@ -85,7 +85,9 @@ const tasks = new Listr(
                     path.join(__dirname, '../icons/', file)
                   )
                     .toString()
-                    .replace(/\n/g, '');
+                    .replace(/\n/g, '')
+                    .replace(/(width|height)="[0-9]+"/g, '')
+                    .replace(/[ ]+/g, ' ');
                   content.push(
                     `.iconoir-${
                       path.parse(file).name

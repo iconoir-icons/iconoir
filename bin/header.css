@@ -17,5 +17,5 @@
 }
 *[class^="iconoir-"],
 *[class*=" iconoir-"] {
-  display: block;
+  display: inline-block;
 }
