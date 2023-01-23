@@ -17,7 +17,6 @@ Before reporting an issue, please search to see if someone has filed a similar i
 * Are you running from source/main:
 * Are you using a released build:
 * Operating system:
-* Bits:
 
 ## Step to reproduce
 
