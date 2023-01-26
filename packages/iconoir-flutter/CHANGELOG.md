@@ -1,5 +1,5 @@
-<a name="v6.1"></a>
-# [v6.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1) - 26 Jan 2023
+<a name="v6.1.0"></a>
+# [v6.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.0) - 26 Jan 2023
 
 Added 24 new icons:
 - `agile`
@@ -27,7 +27,7 @@ Added 24 new icons:
 - `video-projector`
 - `women-t-shirt`
 
-[Changes][v6.1]
+[Changes][v6.1.0]
 
 
 <a name="v6.0"></a>
@@ -824,7 +824,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
-[v6.1]: https://github.com/iconoir-icons/iconoir/compare/v6.0...v6.1
+[v6.1.0]: https://github.com/iconoir-icons/iconoir/compare/v6.0...v6.1.0
 [v6.0]: https://github.com/iconoir-icons/iconoir/compare/v5.5.2...v6.0
 [v5.5.2]: https://github.com/iconoir-icons/iconoir/compare/v5.5.1...v5.5.2
 [v5.5.1]: https://github.com/iconoir-icons/iconoir/compare/v5.5...v5.5.1
