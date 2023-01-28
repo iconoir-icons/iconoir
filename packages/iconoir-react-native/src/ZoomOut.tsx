@@ -14,15 +14,15 @@ function SvgZoomOut(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M9 11h4M16 16l4 4M4 11a7 7 0 1014 0 7 7 0 00-14 0z"
+        d="M17 17l4 4M3 11a8 8 0 1016 0 8 8 0 00-16 0zM8 11h6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

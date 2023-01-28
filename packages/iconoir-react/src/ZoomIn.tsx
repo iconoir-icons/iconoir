@@ -13,8 +13,8 @@ function SvgZoomIn(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -22,7 +22,7 @@ function SvgZoomIn(
       {...props}
     >
       <path
-        d="M9 11h2m2 0h-2m0 0V9m0 2v2M16 16l4 4M4 11a7 7 0 1014 0 7 7 0 00-14 0z"
+        d="M8 11h3m3 0h-3m0 0V8m0 3v3M17 17l4 4M3 11a8 8 0 1016 0 8 8 0 00-16 0z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
