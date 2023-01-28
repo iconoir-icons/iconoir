@@ -1,3 +1,14 @@
+<a name="v6.1.1"></a>
+# [v6.1.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.1) - 28 Jan 2023
+
+Fixed the optical size of 3 icons:
+- `search`
+- `zoom-in`
+- `zoom-out`
+
+[Changes][v6.1.1]
+
+
 <a name="v6.1.0"></a>
 # [v6.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.0) - 26 Jan 2023
 
@@ -824,6 +835,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.1.1]: https://github.com/iconoir-icons/iconoir/compare/v6.1.0...v6.1.1
 [v6.1.0]: https://github.com/iconoir-icons/iconoir/compare/v6.0...v6.1.0
 [v6.0]: https://github.com/iconoir-icons/iconoir/compare/v5.5.2...v6.0
 [v5.5.2]: https://github.com/iconoir-icons/iconoir/compare/v5.5.1...v5.5.2
