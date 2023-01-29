@@ -71,6 +71,11 @@ export const LogoContainer = styled.div`
   z-index: 101;
   display: inline-flex;
   align-items: center;
+  transition: 0.1s;
+  &:hover{
+    scale: 1.1;
+    transition: 0.2s;
+  }
 `;
 const MobileMenuButton = styled(ResetButton)`
   z-index: 101;
