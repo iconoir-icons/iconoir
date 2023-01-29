@@ -4,12 +4,26 @@
   "description": "React library for Iconoir icon set",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/esm/index.js",
+  "module": "dist/esm/index.mjs",
+  "exports": {
+    ".": {
+      "react-server": "./dist/esm/server/index.mjs",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dist": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
+    "dist": "rm -rf dist && tsc -p tsconfig.json && tsc -p tsconfig.esm.json && node scripts/fix-esm.js && rm -rf dist/server",
     "prepublish": "npm run dist"
   },
   "repository": {

@@ -1,5 +1,5 @@
 import execa from 'execa';
-import { promises as fs, readFileSync } from 'fs';
+import { promises as fs, readFileSync, existsSync } from 'fs';
 import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
 import os from 'os';
@@ -11,7 +11,7 @@ import { incompatibleNames } from '../constants.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 const iconoirIconsDir = path.join(rootDir, 'icons');
-const ignoreCleanFilenames = ['IconoirContext.tsx'];
+const ignoreCleanFilenames = ['IconoirContext.tsx', 'server'];
 
 // Targets for building icons
 const targets = {
@@ -184,7 +184,22 @@ const tasks = new Listr(
                                         const files = await fs.readdir(
                                           builtIconsDir
                                         );
-                                        const promises = files
+                                        const serverFiles = existsSync(
+                                          path.join(builtIconsDir, 'server')
+                                        )
+                                          ? (
+                                              await fs.readdir(
+                                                path.join(
+                                                  builtIconsDir,
+                                                  'server'
+                                                )
+                                              )
+                                            ).map((file) => `server/${file}`)
+                                          : [];
+                                        const promises = [
+                                          ...files,
+                                          ...serverFiles,
+                                        ]
                                           .filter(
                                             (file) =>
                                               !ignoreCleanFilenames.includes(
@@ -236,6 +251,42 @@ const tasks = new Listr(
                                       }
                                     },
                                   },
+                                  ...(target === 'iconoir-react'
+                                    ? [
+                                        {
+                                          title:
+                                            'Building icon files (server components)',
+                                          skip: (ctx) => ctx[target]?.skip,
+                                          task: async (ctx) => {
+                                            try {
+                                              await execa(
+                                                'svgr',
+                                                [
+                                                  '--config-file',
+                                                  path.join(
+                                                    targets[target].path,
+                                                    '.svgrrc.json'
+                                                  ),
+                                                  '--out-dir',
+                                                  path.join(
+                                                    builtIconsDir,
+                                                    'server'
+                                                  ),
+                                                  '--template',
+                                                  'bin/templates/icon-template-server-component.cjs',
+                                                  '--index-template',
+                                                  'bin/templates/index-template.cjs',
+                                                  ctx.tmpDir,
+                                                ],
+                                                { preferLocal: true }
+                                              );
+                                            } catch (err) {
+                                              throw new Error(err.message);
+                                            }
+                                          },
+                                        },
+                                      ]
+                                    : []),
                                 ],
                                 { concurrent: false, exitOnError: false }
                               ),
