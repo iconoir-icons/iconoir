@@ -76,6 +76,6 @@ const FilterContainer = styled.div<{ isMobile?: boolean }>`
     position: relative;
     top: 0;
     display: ${(props) => (props.isMobile ? 'none' : 'block')};
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
 `;
