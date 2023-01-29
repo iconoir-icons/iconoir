@@ -34,21 +34,21 @@ export function Footer() {
       </LogoContainer>
       <FooterCategories>
         <FooterCategory category={'Project'} links={[
-          {name: 'Our Mission',url:'https://google.com'},
-          {name: 'Contribute',url:'https://dice.se'},
-          {name: 'Donate',url:'https://dice.se'}
+          {name: 'Our Mission',url:'/support'},
+          {name: 'Contribute',url:'/docs/contributing'},
+          {name: 'Donate',url:'https://opencollective.com/iconoir/donate'}
         ]} />
         <FooterCategory category={'Support'} links={[
-          {name: 'License',url:'https://google.com'},
-          {name: 'GitHub Repository',url:'https://dice.se'},
-          {name: 'File a Request',url:'https://dice.se'}
+          {name: 'License',url:'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE'},
+          {name: 'GitHub Repository',url:'https://github.com/iconoir-icons/iconoir'},
+          {name: 'File a Request',url:'https://github.com/iconoir-icons/iconoir/issues/new/choose'}
         ]} />
         <FooterCategory category={'Developers'} links={[
-          {name: 'Changelog',url:'https://google.com'},
-          {name: 'React and React Native',url:'https://dice.se'},
-          {name: 'Flutter',url:'https://dice.se'},
-          {name: 'Framer and Figma',url:'https://dice.se'},
-          {name: 'CSS',url:'https://dice.se'}
+          {name: 'Changelog',url:'/docs/changelog'},
+          {name: 'React and React Native',url:'/docs/libraries/iconoir-react'},
+          {name: 'Flutter',url:'/docs/libraries/flutter'},
+          {name: 'Framer and Figma',url:'/docs/libraries/framer'},
+          {name: 'CSS',url:'/docs/libraries/css'}
         ]} />
         
         
