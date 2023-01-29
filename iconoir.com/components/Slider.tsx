@@ -72,8 +72,13 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
           backgroundColor: isFocusVisible
             ? 'var(--accent)'
             : state.isThumbDragging(index)
-            ? 'var(--accent)'
-            : 'var(--black)',
+            ? 'var(--black)'
+            : 'var(--white)',
+          scale: isFocusVisible
+            ? '1.0'
+            : state.isThumbDragging(index)
+            ? '1.3'
+            : '1.0',
         }}
       >
         <VisuallyHidden>
@@ -99,7 +104,7 @@ const SliderHeader = styled.div`
 const Output = styled(Text13)`
   flex: 1 0 auto;
   text-align: end;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 `;
 const Track = styled.div`
   position: relative;
@@ -108,9 +113,9 @@ const Track = styled.div`
 `;
 const TrackBackground = styled.div`
   position: absolute;
-  height: 3px;
-  top: 13px;
-  background: #f4f3f4;
+  height: 2px;
+  top: 15px;
+  background: var(--black);
   width: 100%;
 `;
 const ThumbContainer = styled.div`
@@ -119,8 +124,11 @@ const ThumbContainer = styled.div`
   transform: translateX(-50%);
 `;
 const ThumbInner = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  outline: solid 2px var(--white);
+  -webkit-box-shadow: inset 0px 0px 0px 2px #000000; 
+  box-shadow: inset 0px 0px 0px 2px #000000;
   border-radius: 50%;
   cursor: pointer;
 `;

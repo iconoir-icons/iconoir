@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
 import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
-import { ColorInput } from './Input';
+import { ColorButton, ColorInput } from './Input';
 import { Slider } from './Slider';
-import { Text13, Text18 } from './Typography';
+import { Text13, Text15 } from './Typography';
 
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;
@@ -38,17 +38,18 @@ export function CustomizationEditor({
 
   return (
     <>
+    <CustomizationBox>
       <Header>
-        <Text18 style={{ fontWeight: 700, color: 'var(--black)' }}>
+        <Text15 style={{ fontWeight: 700, color: 'var(--black)' }}>
           Customize
-        </Text18>
-        <Button onClick={() => onChange(DEFAULT_CUSTOMIZATIONS)}>Reset</Button>
+        </Text15>
+        <ResetButton onClick={() => onChange(DEFAULT_CUSTOMIZATIONS)}>Reset</ResetButton>
       </Header>
       <Field>
         <Slider
-          label={'Size'}
-          minValue={12}
-          maxValue={128}
+          label={'Optical Size'}
+          minValue={16}
+          maxValue={64}
           value={[size]}
           formatOptions={{ maximumFractionDigits: 0 }}
           onChange={(values) => {
@@ -59,11 +60,11 @@ export function CustomizationEditor({
       </Field>
       <Field>
         <Slider
-          label={'Stroke Width'}
+          label={'Stroke Weight'}
           minValue={0.5}
           maxValue={3}
           value={[strokeWidth]}
-          step={0.01}
+          step={0.1}
           formatOptions={{ maximumFractionDigits: 1 }}
           onChange={(values) => {
             setStrokeWidth(values[0]);
@@ -81,22 +82,45 @@ export function CustomizationEditor({
             updateCustomizations({ hexColor: e.target.value });
           }}
         />
+        <ColorButton />
+        
       </HorizontalField>
+    </CustomizationBox>
     </>
   );
 }
 
+const CustomizationBox = styled.div`
+  background-color:var(--gray-200);
+  width: 84%;
+  padding: 8%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+`;
 const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px var(--light-gray);
+  padding-bottom: 10px;
 `;
 const Field = styled.div`
-  margin-bottom: 35px;
+  margin-bottom: 24px;
 `;
 const HorizontalField = styled(Field)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+const ResetButton = styled(Field)`
+  margin: initial;
+  text-decoration: underline;
+  color: var(--dark-gray);
+  font-size: 13px;
+
+  &:hover{
+    color: var(--black);
+    cursor: pointer;
+  }
 `;
