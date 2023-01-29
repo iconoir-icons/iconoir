@@ -82,7 +82,7 @@ export function CustomizationEditor({
             updateCustomizations({ hexColor: e.target.value });
           }}
         />
-        <ColorButton></ColorButton>
+        <ColorButton />
         
       </HorizontalField>
     </CustomizationBox>
