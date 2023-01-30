@@ -1,6 +1,4 @@
 import { PeaceHand } from 'iconoir-react';
-import { url } from 'inspector';
-import { Text } from 'react-native-svg';
 import styled from 'styled-components';
 import { LICENSE_LINK } from '../lib/constants';
 import { Logo, LogoContainer, LogoIcon } from './Header';
@@ -54,7 +52,7 @@ export function Footer() {
         
       </FooterCategories>
       <FooterEnd>
-        <Text13 style={{ fontWeight: 400 }}>Parts of this content are ©2020-2023 by individual Iconoir contributors. Content available under a <a href={'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE'} target={'_blank'} rel={'noreferrer'}>MIT License</a>.</Text13>
+        <Text13 style={{ fontWeight: 400 }}>Parts of this content are &copy;2020-2023 by individual Iconoir contributors. Content available under a <a href={'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE'} target={'_blank'} rel={'noreferrer'}>MIT License</a>.</Text13>
         <Text13 style={{ fontWeight: 400 }}><a href={'https://www.freeprivacypolicy.com/live/ba00d743-a0cd-44f8-8cb5-6f58911db0fb'} target={'_blank'} rel={'noreferrer'}>Privacy</a></Text13>
       </FooterEnd>
     </Container>
