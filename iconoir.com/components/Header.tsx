@@ -4,10 +4,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { AnimatedSvg } from './AnimatedSvg';
 import { ResetButton } from './Button';
-import { AUTHOR_LINKS } from '../lib/constants';
+import { SHARE_LINK } from '../lib/constants';
 import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem, NavigationItemContainer } from './NavigationItem';
 import { media } from '../lib/responsive';
+import { Text15 } from './Typography';
 
 export interface HeaderProps {
   currentVersion: string;
@@ -36,27 +37,19 @@ export function Header({ currentVersion, currentVersionColor }: HeaderProps) {
             Donate &mdash; Our Mission
           </NavigationItem>
           <BuiltWith isMobile>
-            Made with <Heart width={'1em'} height={'1em'} /> by{' '}
-            <a href={AUTHOR_LINKS.Luca} target={'_blank'} rel={'noreferrer'}>
-              Luca
+            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+            <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
+              Twitter
             </a>{' '}
-            &amp;{' '}
-            <a href={AUTHOR_LINKS.Sam} target={'_blank'} rel={'noreferrer'}>
-              Sam
-            </a>
           </BuiltWith>
         </MobileMenuContainer>
       </HeaderCenter>
       <HeaderRight>
         <BuiltWith>
-          Designed and built with <Heart width={'1em'} height={'1em'} /> by{' '}
-          <a href={AUTHOR_LINKS.Luca} target={'_blank'} rel={'noreferrer'}>
-            Luca
+          Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+          <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
+            Twitter
           </a>{' '}
-          &amp;{' '}
-          <a href={AUTHOR_LINKS.Sam} target={'_blank'} rel={'noreferrer'}>
-            Sam
-          </a>
         </BuiltWith>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
           {menuVisible ? <Cancel /> : <Menu />}
@@ -168,7 +161,7 @@ export const LogoIcon = styled.div`
     height: 36px;
   }
 `;
-const BuiltWith = styled(NavigationItemContainer)<{ isMobile?: boolean }>`
+const BuiltWith = styled(Text15)<{ isMobile?: boolean }>`
   display: ${(props) => (props.isMobile ? 'flex' : 'none')};
   ${media.lg} {
     display: ${(props) => (props.isMobile ? 'none' : 'flex')};

@@ -44,6 +44,9 @@ const Container = styled.div`
 const Title = styled(Text15)`
   font-weight: 700;
   color: var(--black);
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 6px 10px;
 `;
 const Separator = styled.div`
   height: 1px;

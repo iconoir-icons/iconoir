@@ -2,6 +2,7 @@ export const REPO = {
   owner: 'iconoir-icons',
   repo: 'iconoir',
 };
+export const SHARE_LINK = 'https://twitter.com/intent/tweet?text=Check%20out%20Iconoir%20by%20%40burgioluca%20and%20the%20amazing%20team%20with%20%40therealsammarks%20%F0%9F%94%A5&url=https%3A%2F%2Ficonoir.com';
 export const GITHUB_LINK = `https://github.com/${REPO.owner}/${REPO.repo}`;
 export const SUGGEST_ICON_LINK = `${GITHUB_LINK}/issues/new?assignees=lucaburgio&labels=icon+request&template=icon_request.md&title=%5BICON%5D`;
 export const SUPPORT_LINK = 'https://opencollective.com/iconoir/donate';
@@ -27,3 +28,4 @@ export const AUTHOR_LINKS = {
   Luca: 'https://twitter.com/burgioluca',
   Sam: 'https://twitter.com/therealsammarks',
 };
+

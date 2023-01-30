@@ -131,4 +131,8 @@ const ThumbInner = styled.div`
   box-shadow: inset 0px 0px 0px 2px #000000;
   border-radius: 50%;
   cursor: pointer;
+  &:hover{
+    transition: 0.2s;
+    scale: 1.2;
+  }
 `;

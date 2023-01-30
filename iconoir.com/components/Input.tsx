@@ -50,18 +50,9 @@ export const LargeInput = styled(Input)`
   width: 100%;
   box-sizing: border-box;
   outline: none;
-`;
-
-export const ColorInput = styled.input`
-  padding: 0px;
-  border: none;
-  cursor: pointer;
-  &::-webkit-color-swatch,
-  &::-moz-color-swatch {
-    border: none;
+  &:hover{
+    transition: 0.4s;
   }
-  background-color: var(--gray-200);
-  opacity:0;
 `;
 
 export const ColorButton = styled.div`
@@ -73,4 +64,27 @@ export const ColorButton = styled.div`
   right: 20px;
   position: absolute;
   pointer-events: none;
+  &:hover{
+    transition: 0.2s;
+    scale: 1.2;
+  }
+`;
+
+export const ColorInput = styled.input`
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  &::-webkit-color-swatch,
+  &::-moz-color-swatch {
+    border: none;
+  }
+  background-color: var(--gray-200);
+  opacity:0;
+  transition: 0.2s;
+  &:hover + ${ColorButton} {
+    transition: 0.2s;
+    scale: 1.3;
+  }
 `;
