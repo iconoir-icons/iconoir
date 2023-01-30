@@ -7,7 +7,7 @@ import { Text13, Text17 } from './Typography';
 
 export interface FooterCategoryProps {
   category: string;
-  links: [{ name: string, url: string }];
+  links: { name: string, url: string }[];
 }
 function FooterCategory({ category, links }: FooterCategoryProps) {
   return (
@@ -15,7 +15,7 @@ function FooterCategory({ category, links }: FooterCategoryProps) {
       <FooterCategoryTitle>{category}</FooterCategoryTitle>
       <FooterCategoryLinks>
         {links.map((link) => (
-          <FooterCategoryLink href={link.url}>{link.name}</FooterCategoryLink>
+          <FooterCategoryLink key={link.url} href={link.url}>{link.name}</FooterCategoryLink>
         ))}
       </FooterCategoryLinks>
     </FooterCategoryContainer>
@@ -33,20 +33,20 @@ export function Footer() {
       <FooterCategories>
         <FooterCategory category={'Project'} links={[
           { name: 'Our Mission', url:'/support' },
-          {name: 'Contribute',url:'/docs/contributing'},
-          {name: 'Donate',url:'https://opencollective.com/iconoir/donate'}
+          { name: 'Contribute', url:'/docs/contributing' },
+          { name: 'Donate', url:'https://opencollective.com/iconoir/donate' }
         ]} />
         <FooterCategory category={'Support'} links={[
-          {name: 'License',url:'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE'},
-          {name: 'GitHub Repository',url:'https://github.com/iconoir-icons/iconoir'},
-          {name: 'File a Request',url:'https://github.com/iconoir-icons/iconoir/issues/new/choose'}
+          { name: 'License', url:'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE' },
+          { name: 'GitHub Repository', url:'https://github.com/iconoir-icons/iconoir' },
+          { name: 'File a Request', url:'https://github.com/iconoir-icons/iconoir/issues/new/choose' }
         ]} />
         <FooterCategory category={'Developers'} links={[
-          {name: 'Changelog',url:'/docs/changelog'},
-          {name: 'React and React Native',url:'/docs/libraries/iconoir-react'},
-          {name: 'Flutter',url:'/docs/libraries/flutter'},
-          {name: 'Framer and Figma',url:'/docs/libraries/framer'},
-          {name: 'CSS',url:'/docs/libraries/css'}
+          { name: 'Changelog',url:'/docs/changelog' },
+          { name: 'React and React Native', url:'/docs/libraries/iconoir-react' },
+          { name: 'Flutter', url:'/docs/libraries/flutter'} ,
+          { name: 'Framer and Figma', url:'/docs/libraries/framer' },
+          { name: 'CSS', url:'/docs/libraries/css' }
         ]} />
         
         
