@@ -23,6 +23,10 @@ export const Text13 = styled.div`
   font-weight: 500;
 `;
 
+export const Text17 = styled.div`
+  font-size: 17px;
+`;
+  
 export const Text18 = styled.div`
   font-size: 16px;
   line-height: 25px;

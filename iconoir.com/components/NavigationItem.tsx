@@ -51,29 +51,31 @@ export const NavigationItemContainer = styled(Text15)<{ isActive?: boolean }>`
     line-height: 20px;
     font-weight: 500;
     padding: 0;
-    color: var(--black-60);
+    color: var(--black);
     width: auto;
     border-bottom: none !important;
+      
+    transition: 0.2s;
     &::before {
       position: absolute;
       z-index: -1;
       content: '';
       display: block;
-      top: -18px;
-      bottom: -18px;
-      left: -24px;
-      right: -24px;
+      top: -12px;
+      bottom: -12px;
+      left: -16px;
+      right: -16px;
+      border-radius: 10px;
       transition: background 0.1s linear;
     }
     &:hover::before {
       background: var(--light-gray);
+      transition: 0.2s;
+      top: -16px;
+      bottom: -16px;
+      left: -20px;
+      right: -20px;
     }
-    ${(props) => (props.isActive ? '&' : '&.noop')} {
-      color: var(--white);
-      &::before,
-      &:hover::before {
-        background: var(--black);
-      }
-    }
+    
   }
 `;

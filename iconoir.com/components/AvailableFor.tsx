@@ -139,6 +139,11 @@ const AvailableForContainer = styled.div<{ contentWidth: number }>`
 const AvailableForImage = styled.img`
   height: 40px;
   display: block;
+  transition: 0.2s;
+  &:hover {
+    scale: 1.2;
+    transition: 0.2s;
+  }
   ${media.lg} {
     height: 50px;
   }
