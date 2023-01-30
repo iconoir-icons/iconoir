@@ -34,7 +34,7 @@ export function Footer() {
       </LogoContainer>
       <FooterCategories>
         <FooterCategory category={'Project'} links={[
-          {name: 'Our Mission',url:'/support'},
+          { name: 'Our Mission', url:'/support' },
           {name: 'Contribute',url:'/docs/contributing'},
           {name: 'Donate',url:'https://opencollective.com/iconoir/donate'}
         ]} />
