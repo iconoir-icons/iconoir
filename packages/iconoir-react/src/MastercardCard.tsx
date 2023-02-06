@@ -22,7 +22,7 @@ function SvgMastercardCard(
       {...props}
     >
       <path
-        d="M22 9v9.4a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6V5.6a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6V9zm0 0H6M16.5 13.382a1.5 1.5 0 110 2.236M16.5 13.382a1.5 1.5 0 100 2.236"
+        d="M22 9v8a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2h16a2 2 0 012 2v2zm0 0H6M16.5 13.382a1.5 1.5 0 110 2.236M16.5 13.382a1.5 1.5 0 100 2.236"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

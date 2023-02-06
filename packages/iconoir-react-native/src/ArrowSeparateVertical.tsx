@@ -14,15 +14,15 @@ function SvgArrowSeparateVertical(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M15.5 9.5L12 6 8.5 9.5M15.5 14L12 17.5 8.5 14"
+        d="M17 8l-5-5-5 5M17 16l-5 5-5-5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

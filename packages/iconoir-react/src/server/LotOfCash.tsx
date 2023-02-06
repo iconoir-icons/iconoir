@@ -7,8 +7,8 @@ function SvgLotOfCash(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -16,13 +16,13 @@ function SvgLotOfCash(
       {...props}
     >
       <path
-        d="M1 16V4h18"
+        d="M4 18v-8a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2zM18.5 14.01l.01-.011M7.5 14.01l.01-.011"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M16 8h6.4a.6.6 0 01.6.6v10.8a.6.6 0 01-.6.6H16m0-12v12m0-12h-4m4 12h-4m0 0H5.6a.6.6 0 01-.6-.6V8.6a.6.6 0 01.6-.6H12m0 12V8"
+        d="M4 16H3a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v2M13 16a2 2 0 110-4 2 2 0 010 4z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

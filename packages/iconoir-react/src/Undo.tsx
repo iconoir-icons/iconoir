@@ -13,8 +13,8 @@ function SvgUndo(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -22,13 +22,13 @@ function SvgUndo(
       {...props}
     >
       <path
-        d="M5 9.5h10c.162 0 4 0 4 4 0 4.5-3.702 4.5-4 4.5H7"
+        d="M4.5 8H15s0 0 0 0 5 0 5 4.706C20 18 15 18 15 18H6.286"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M8.5 13L5 9.5 8.5 6"
+        d="M7.5 11.5L4 8l3.5-3.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -22,13 +22,13 @@ function SvgCreditCards(
       {...props}
     >
       <path
-        d="M22 11.429V19.4a.6.6 0 01-.6.6H5.6a.6.6 0 01-.6-.6v-2.9m17-5.071V8.6a.6.6 0 00-.6-.6H19m3 3.429h-3"
+        d="M22 11.429V18a2 2 0 01-2 2H7a2 2 0 01-2-2v-1.5m17-5.071V10a2 2 0 00-2-2h-1m3 3.429h-3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M19 8v7.9a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6V5.1a.6.6 0 01.6-.6h15.8a.6.6 0 01.6.6V8zm0 0H5.5"
+        d="M19 8v6.5a2 2 0 01-2 2H4a2 2 0 01-2-2v-8a2 2 0 012-2h13a2 2 0 012 2V8zm0 0H5.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

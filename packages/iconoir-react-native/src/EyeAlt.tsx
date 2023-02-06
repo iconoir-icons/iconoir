@@ -14,15 +14,15 @@ function SvgEyeAlt(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M4.5 12.5c3-6.5 12-6.5 15 0M12 16a2 2 0 110-4 2 2 0 010 4z"
+        d="M3 13c3.6-8 14.4-8 18 0M12 17a3 3 0 110-6 3 3 0 010 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

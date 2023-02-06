@@ -22,7 +22,7 @@ function SvgCardSecurity(
       {...props}
     >
       <Path
-        d="M22 9V5.6a.6.6 0 00-.6-.6H2.6a.6.6 0 00-.6.6v12.8a.6.6 0 00.6.6H12M22 9H6m16 0v2"
+        d="M22 9V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2h8M22 9H6m16 0v2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

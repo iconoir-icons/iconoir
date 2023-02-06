@@ -14,15 +14,15 @@ function SvgArchery(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M7 12h11M7 12l-2-2H1l2 2-2 2h4l2-2zm11 0l-2-2m2 2l-2 2M17.5 22c3.038 0 5.5-4.477 5.5-10S20.538 2 17.5 2 12 6.477 12 12s2.462 10 5.5 10z"
+        d="M8 12h9m-9 0l-2-2H2l2 2-2 2h4l2-2zm9 0l-2-2m2 2l-2 2M16 22.5c2.761 0 5-4.701 5-10.5S18.761 1.5 16 1.5 11 6.201 11 12s2.239 10.5 5 10.5z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

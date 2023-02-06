@@ -22,7 +22,7 @@ function SvgNoCreditCard(
       {...props}
     >
       <path
-        d="M5 5H2.6a.6.6 0 00-.6.6v12.8a.6.6 0 00.6.6h18.8a.6.6 0 00.6-.6V5.6a.6.6 0 00-.6-.6H10M22 9h-8M6 9h3M3 3l18 18"
+        d="M6 9h3M3 3l18 18M22 9v8a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2h1m17 4V7a2 2 0 00-2-2H10m12 4h-8M9 9H6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

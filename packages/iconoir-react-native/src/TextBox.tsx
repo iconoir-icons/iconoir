@@ -28,12 +28,7 @@ function SvgTextBox(
         strokeLinejoin="round"
       />
       <Path
-        d="M2 20.4V3.6a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6v16.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6z"
-        stroke="currentColor"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M1 13v-2h2v2H1zM21 13v-2h2v2h-2z"
+        d="M21 13.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2v-5.5m18-3V5a2 2 0 00-2-2H5a2 2 0 00-2 2v5.5M19.5 13.5v-3h3v3h-3zM1.5 13.5v-3h3v3h-3z"
         stroke="currentColor"
         strokeLinejoin="round"
       />

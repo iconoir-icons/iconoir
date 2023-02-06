@@ -7,24 +7,27 @@ function SvgSoundOff(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
-      <path
-        d="M17 14l2-2m2-2l-2 2m0 0l-2-2m2 2l2 2"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M3 14v-4a1 1 0 011-1h2.697a1 1 0 00.555-.168l4.193-2.796A1 1 0 0113 6.87V17.13a1 1 0 01-1.555.832l-4.193-2.795A1 1 0 006.697 15H4a1 1 0 01-1-1z"
-        stroke="currentColor"
-      />
+      <g clipPath="url(#sound-off_svg__clip0_3173_16686)" stroke="currentColor">
+        <path
+          d="M18 14l2-2m2-2l-2 2m0 0l-2-2m2 2l2 2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M2 13.857v-3.714a2 2 0 012-2h2.9a1 1 0 00.55-.165l6-3.956a1 1 0 011.55.835v14.286a1 1 0 01-1.55.835l-6-3.956a1 1 0 00-.55-.165H4a2 2 0 01-2-2z" />
+      </g>
+      <defs>
+        <clipPath id="sound-off_svg__clip0_3173_16686">
+          <path fill="#fff" d="M0 0h24v24H0z" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }

@@ -13,8 +13,8 @@ function SvgAccessibilityTech(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -26,14 +26,20 @@ function SvgAccessibilityTech(
         stroke="currentColor"
       />
       <path
-        d="M9.72 11.786a3 3 0 103.576 4.646M12 14h2.5l1 1.5h1M12 9.5V11m0 3v-3m0 0h2.5"
+        d="M12.5 12.16l4-.16-.5 4.5M11.833 12L13.5 9.538 10.833 8 9.5 9.846"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M12 7.5a.5.5 0 110-1 .5.5 0 010 1z"
+        d="M15.5 7.5a.5.5 0 110-1 .5.5 0 010 1z"
         fill="currentColor"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.5 18a3 3 0 110-6 3 3 0 010 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -13,8 +13,8 @@ function SvgArrowUnionVertical(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -22,7 +22,7 @@ function SvgArrowUnionVertical(
       {...props}
     >
       <path
-        d="M15.5 6L12 9.5 8.5 6M15.5 17.5L12 14l-3.5 3.5"
+        d="M17 4l-5 5-5-5M17 20l-5-5-5 5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

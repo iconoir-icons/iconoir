@@ -12,8 +12,8 @@ class Droplet extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SvgPicture.string(
         '''
-<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M19 13.8C19 9.82355 12 3 12 3C12 3 5 9.82355 5 13.8C5 17.7765 8.13401 21 12 21C15.866 21 19 17.7765 19 13.8Z" stroke="currentColor" stroke-width="1.5"/>
+<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 14C20 9.58172 12 2 12 2C12 2 4 9.58172 4 14C4 18.4183 7.58172 22 12 22C16.4183 22 20 18.4183 20 14Z" stroke="currentColor"/>
 </svg>
 ''',
         color: color,

@@ -7,8 +7,8 @@ function SvgRedoAction(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -16,13 +16,13 @@ function SvgRedoAction(
       {...props}
     >
       <path
-        d="M19 7v5M16 9.5H9C3.5 9.5 3.5 18 9 18h10"
+        d="M19 5v6M15.5 8H9s0 0 0 0-5 0-5 4.706C4 18 9 18 9 18h8.714"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M12.5 13L16 9.5 12.5 6"
+        d="M12.5 11.5L16 8l-3.5-3.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

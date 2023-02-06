@@ -13,8 +13,8 @@ function SvgRedo(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -22,13 +22,13 @@ function SvgRedo(
       {...props}
     >
       <path
-        d="M19 9.5H9c-.162 0-4 0-4 4C5 18 8.702 18 9 18h8"
+        d="M19.5 8H9s0 0 0 0-5 0-5 4.706C4 18 9 18 9 18h8.714"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M15.5 13L19 9.5 15.5 6"
+        d="M16.5 11.5L20 8l-3.5-3.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

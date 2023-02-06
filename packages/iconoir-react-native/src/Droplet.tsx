@@ -14,15 +14,15 @@ function SvgDroplet(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M19 13.8C19 9.824 12 3 12 3S5 9.824 5 13.8c0 3.976 3.134 7.2 7 7.2s7-3.224 7-7.2z"
+        d="M20 14c0-4.418-8-12-8-12S4 9.582 4 14a8 8 0 1016 0z"
         stroke="currentColor"
       />
     </Svg>

@@ -7,8 +7,8 @@ function SvgSoundHigh(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -16,11 +16,11 @@ function SvgSoundHigh(
       {...props}
     >
       <path
-        d="M2 14v-4a1 1 0 011-1h2.697a1 1 0 00.555-.168l4.193-2.796A1 1 0 0112 6.87V17.13a1 1 0 01-1.555.832l-4.193-2.795A1 1 0 005.697 15H3a1 1 0 01-1-1z"
+        d="M1 13.857v-3.714a2 2 0 012-2h2.9a1 1 0 00.55-.165l6-3.956a1 1 0 011.55.835v14.286a1 1 0 01-1.55.835l-6-3.956a1 1 0 00-.55-.165H3a2 2 0 01-2-2z"
         stroke="currentColor"
       />
       <path
-        d="M16.5 7.5S18 9 18 11.5s-1.5 4-1.5 4M19.5 4.5S22 7 22 11.5s-2.5 7-2.5 7"
+        d="M17.5 7.5S19 9 19 11.5s-1.5 4-1.5 4M20.5 4.5S23 7 23 11.5s-2.5 7-2.5 7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

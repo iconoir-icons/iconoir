@@ -14,15 +14,15 @@ function SvgDropletHalf(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M5.333 16A7.384 7.384 0 015 13.8C5 9.824 12 3 12 3s3.748 3.653 5.759 7.171M5.333 16c.904 2.9 3.547 5 6.667 5 3.866 0 7-3.224 7-7.2 0-1.067-.504-2.339-1.241-3.629M5.333 16l12.426-5.829"
+        d="M4.5 16.5l14-6.5M20 14c0-4.418-8-12-8-12S4 9.582 4 14a8 8 0 1016 0z"
         stroke="currentColor"
       />
     </Svg>

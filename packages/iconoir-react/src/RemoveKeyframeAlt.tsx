@@ -13,8 +13,8 @@ function SvgRemoveKeyframeAlt(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -22,7 +22,7 @@ function SvgRemoveKeyframeAlt(
       {...props}
     >
       <path
-        d="M18.819 13.329l-5.324 5.99a2 2 0 01-2.99 0l-5.324-5.99a2 2 0 010-2.658l5.324-5.99a2 2 0 012.99 0l5.324 5.99a2 2 0 010 2.658zM9 12h6"
+        d="M9 12h6M20.777 13.345l-7.297 8.027a2 2 0 01-2.96 0l-7.297-8.027a2 2 0 010-2.69l7.297-8.027a2 2 0 012.96 0l7.297 8.027a2 2 0 010 2.69z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

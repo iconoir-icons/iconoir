@@ -7,8 +7,8 @@ function SvgEyeClose(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -16,7 +16,7 @@ function SvgEyeClose(
       {...props}
     >
       <path
-        d="M4.5 8c3 6.5 12 6.5 15 0M16.816 11.318L19.5 15M12 12.875V16.5M7.184 11.318L4.5 15"
+        d="M19.5 16l-2.475-3.396M12 17.5V14M4.5 16l2.469-3.388M3 8c3.6 8 14.4 8 18 0"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
