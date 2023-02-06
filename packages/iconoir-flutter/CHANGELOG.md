@@ -1,3 +1,62 @@
+<a name="v6.2.1"></a>
+# [v6.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.2.1) - 06 Feb 2023
+
+Renewed 50 new icons and optimized their optical size:
+(Accessibility icons have been updated following [#207](https://github.com/iconoir-icons/iconoir/issues/207)).
+- `accessibility-sign`
+- `accessibility-tech`
+- `add-keyframe-alt`
+- `add-keyframe`
+- `archery`
+- `arrow-separate-vertical`
+- `arrow-separate`
+- `arrow-union-vertical`
+- `arrow-union`
+- `card-issue`
+- `card-locked`
+- `card-security`
+- `cash`
+- `credit-card`
+- `credit-cards`
+- `domotic-issue`
+- `droplet-half`
+- `droplet`
+- `edit-pencil`
+- `eye-alt`
+- `eye-close`
+- `home-alt-slim-horiz`
+- `home-alt-slim`
+- `home-alt`
+- `home-sale`
+- `home-secure`
+- `home-shield`
+- `home`
+- `keyframe-align-center`
+- `keyframe-align-horizontal`
+- `keyframe-align-vertical`
+- `keyframe-position`
+- `keyframe`
+- `line-space`
+- `lot-of-cash`
+- `mastercard-card`
+- `no-credit-card`
+- `numbered-list-right`
+- `redo-action`
+- `redo`
+- `remove-keyframe-alt`
+- `remove-keyframe`
+- `sound-high`
+- `sound-low`
+- `sound-min`
+- `sound-off`
+- `text-box`
+- `text-size`
+- `undo-action`
+- `undo`
+
+[Changes][v6.2.1]
+
+
 <a name="v6.2.0"></a>
 # [v6.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.2.0) - 29 Jan 2023
 
@@ -848,6 +907,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.2.1]: https://github.com/iconoir-icons/iconoir/compare/v6.2.0...v6.2.1
 [v6.2.0]: https://github.com/iconoir-icons/iconoir/compare/v6.1.1...v6.2.0
 [v6.1.1]: https://github.com/iconoir-icons/iconoir/compare/v6.1.0...v6.1.1
 [v6.1.0]: https://github.com/iconoir-icons/iconoir/compare/v6.0...v6.1.0
