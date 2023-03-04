@@ -1,3 +1,20 @@
+<a name="v6.4.0"></a>
+# [v6.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.0) - 04 Mar 2023
+
+Added 9 new icons:
+- `cut-solid-with-curve`
+- `extrude`
+- `fillet-3d`
+- `loft-3d`
+- `patch-holes-3d`
+- `pipe-3d`
+- `project-curve-3d`
+- `sweep-3d`
+- `unjoin-3d`
+
+[Changes][v6.4.0]
+
+
 <a name="v6.3.0"></a>
 # [v6.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.3.0) - 22 Feb 2023
 
@@ -961,6 +978,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.4.0]: https://github.com/iconoir-icons/iconoir/compare/v6.3.0...v6.4.0
 [v6.3.0]: https://github.com/iconoir-icons/iconoir/compare/v6.2.1...v6.3.0
 [v6.2.1]: https://github.com/iconoir-icons/iconoir/compare/v6.2.0...v6.2.1
 [v6.2.0]: https://github.com/iconoir-icons/iconoir/compare/v6.1.1...v6.2.0
