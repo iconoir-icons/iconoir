@@ -23,7 +23,11 @@
   <a href="https://github.com/lucaburgio/iconoir/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/lucaburgio/iconoir?style=flat-square" alt="License" />
   </a>
+  <a href="https://discord.gg/txXcKCAmKW">
+    <img src="https://img.shields.io/discord/998909400234348615?color=5865f2&label=Discord&style=flat-square" alt="Discord" />
+  </a>
 </div>
+
 
 ## Basic Usage
 
