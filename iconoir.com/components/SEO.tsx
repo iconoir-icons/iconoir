@@ -12,7 +12,9 @@ export function SEO({ title }: SEOProps) {
       <title>{pageTitle}</title>
       <meta
         name="description"
-        content="The Simple and Definitive hand-crafted SVG Icons library."
+        content="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. 
+        No premium options or email sign-up required, free for real. Icons available in SVG, 
+        Font, React, React Native, and Flutter libraries, Figma and Framer."
       />
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +29,9 @@ export function SEO({ title }: SEOProps) {
       />
       <meta
         property="og:description"
-        content="The Simple and Definitive hand-crafted SVG Icons Library."
+        content="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. 
+        No premium options or email sign-up required, free for real. Icons available in SVG, 
+        Font, React, React Native, and Flutter libraries, Figma and Framer."
       />
       <meta property="og:image:width" content="1270" />
       <meta property="og:image:height" content="760" />
@@ -45,11 +49,11 @@ export function SEO({ title }: SEOProps) {
       />
       <meta
         name="twitter:image:alt"
-        content="The Simple and Definitive hand-crafted SVG Icons Library."
+        content="The biggest open source icon library with tons of free icons."
       />
       <meta
         name="twitter:description"
-        content="The Simple and Definitive hand-crafted SVG Icons Library."
+        content="The biggest open source icon library with tons of free icons."
       />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>

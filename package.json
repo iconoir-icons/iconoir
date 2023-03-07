@@ -1,7 +1,7 @@
 {
   "name": "iconoir",
   "version": "6.4.0",
-  "description": "A Simple and Definitive Open-Source Icons Library",
+  "description": "The biggest open source icon library with tons of free icons.",
   "type": "module",
   "files": [
     "css",
@@ -19,9 +19,12 @@
     "url": "git+https://github.com/lucaburgio/iconoir.git"
   },
   "keywords": [
+    "free",
     "icons",
     "library",
     "svg",
+    "react",
+    "flutter",
     "css"
   ],
   "license": "MIT",

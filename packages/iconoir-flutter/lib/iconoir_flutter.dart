@@ -1133,6 +1133,7 @@ export './submit_document.dart';
 export './substract.dart';
 export './suggestion.dart';
 export './sun_light.dart';
+export './svg.dart';
 export './svg_format.dart';
 export './sweep_3_d.dart';
 export './swimming.dart';
