@@ -40,9 +40,8 @@ const Home: NextPage<HomeProps> = ({
         <HeroText>Your new default library.</HeroText>
       </HeaderBackground>
       <HeroDescription>
-        Iconoir is one of the biggest open source icons libraries. No premium
-        icons, no email sign-up, no newsletters. Icons available in SVG format,
-        Font, React and React Native libraries, Figma and Framer.
+        A high-quality selection of free icons. No premium options or sign-ups. Your new alternative to Noun Project, Flaticon, and all Figma resources. Available in SVG, 
+        Font, React, React Native, Flutter, Figma and Framer.
       </HeroDescription>
       <StatsContainer>
         <Stat
