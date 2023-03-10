@@ -3,11 +3,12 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { HeroText } from '.';
+import { HeroTextSecondary } from '.';
 import { LargeButton } from '../components/Button';
 import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { Footer } from '../components/Footer';
 import { Header, HeaderProps } from '../components/Header';
-import { HeaderBackground } from '../components/HeaderBackground';
+import { HeaderSecondary } from '../components/HeaderSecondary';
 import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
@@ -19,10 +20,13 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
     <Layout>
       <SEO title={'Donate - Our Mission'} />
-      <Header {...headerProps} currentVersionColor={'var(--blue)'} />
-      <HeaderBackground src={'/support-background.svg'}>
-        <HeroText>Support our open library.</HeroText>
-      </HeaderBackground>
+      <Header {...headerProps}/>
+      <HeaderSecondary>
+        <SupportHead>
+          <HeroText>Our Goal</HeroText>
+          <HeroTextSecondary>A free, complete, and open icons library.</HeroTextSecondary>
+        </SupportHead>
+      </HeaderSecondary>
       <PageContainer>
         <Text18>
           Iconoir is an open source project built with consistent passion and
@@ -98,6 +102,13 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   );
 };
 
+export const SupportHead = styled.div`
+  margin: 60px auto 40px auto;
+  ${media.md} {
+    margin: 100px auto 80px auto;
+  }
+`;
+
 const PageContainer = styled.div`
   max-width: 1336px;
   margin: 75px auto 0 auto;
@@ -137,7 +148,8 @@ export const DonateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: var(--lighter-gray);
+  border: 2px solid var(--g6);
+  border-radius: 20px;
   padding: 30px;
   margin-bottom: 24px;
   ${media.md} {

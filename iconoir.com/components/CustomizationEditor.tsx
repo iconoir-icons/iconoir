@@ -91,7 +91,7 @@ export function CustomizationEditor({
 }
 
 const CustomizationBox = styled.div`
-  background-color:var(--gray-200);
+  background-color:var(--g7);
   width: 84%;
   padding: 8%;
   border-radius: 10px;
@@ -102,7 +102,7 @@ const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
-  border-bottom: solid 1px var(--light-gray);
+  border-bottom: solid 1px var(--g6);
   padding-bottom: 10px;
 `;
 const Field = styled.div`

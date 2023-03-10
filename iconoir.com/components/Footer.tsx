@@ -65,14 +65,14 @@ const Container = styled.div`
   padding-top: 30px;
   margin: 100px -50px -50px -50px; /* not ideal. To fix removing padding from body.*/
   padding: 84px 12%;
-  background-color: var(--gray-200);
+  background-color: var(--g7);
   align-items: center;
   > :not(:last-child) {
     margin-right: 50px;
   }
 `;
 const FooterEnd = styled.div`
-  border-top: 1px solid var(--gray-100);
+  border-top: 1px solid var(--g5);
   padding-top: 20px;
   margin-top: 74px;
   width: 100%;
@@ -92,6 +92,7 @@ const FooterCategoryTitle = styled(Text17)`
   margin-bottom: 24px;
   font-weight: 600;
   display: block;
+  color: var(--g0);
 `;
 const FooterCategoryLinks = styled.div`
 
@@ -99,12 +100,12 @@ const FooterCategoryLinks = styled.div`
 const FooterCategoryLink = styled.a`
   display: block;
   font-size: 17px;
-  color: #424258;
+  color: var(--g1);
   width: fit-content;
   margin-bottom: 12px;
   text-decoration: none;
   &:hover{
     text-decoration: underline;
-    color: var(--black);
+    color: var(--g0);
   }
 `;

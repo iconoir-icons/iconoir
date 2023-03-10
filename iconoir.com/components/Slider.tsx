@@ -72,7 +72,7 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
           backgroundColor: isFocusVisible
             ? 'var(--accent)'
             : state.isThumbDragging(index)
-            ? 'var(--black)'
+            ? 'var(--g6)'
             : 'var(--white)',
           scale: isFocusVisible
             ? '1.0'
@@ -120,15 +120,15 @@ const TrackBackground = styled.div`
 `;
 const ThumbContainer = styled.div`
   position: absolute;
-  top: 4px;
   transform: translateX(-50%);
 `;
 const ThumbInner = styled.div`
   width: 24px;
   height: 24px;
-  outline: solid 2px var(--white);
-  -webkit-box-shadow: inset 0px 0px 0px 2px #000000; 
-  box-shadow: inset 0px 0px 0px 2px #000000;
+  border: solid 2px var(--black);
+  -webkit-box-shadow: 0px 3px 0px 0px var(--g0);
+  -moz-box-shadow: 0px 3px 0px 0px var(--g0);
+  box-shadow: 0px 3px 0px 0px var(--g0);
   border-radius: 50%;
   cursor: pointer;
   &:hover{

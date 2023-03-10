@@ -51,7 +51,7 @@ export const NavigationItemContainer = styled(Text15)<{ isActive?: boolean }>`
     line-height: 20px;
     font-weight: 500;
     padding: 0;
-    color: var(--black);
+    color: var(--g0);
     width: auto;
     border-bottom: none !important;
       
@@ -69,7 +69,7 @@ export const NavigationItemContainer = styled(Text15)<{ isActive?: boolean }>`
       transition: background 0.1s linear;
     }
     &:hover::before {
-      background: var(--light-gray);
+      background: var(--g6);
       transition: 0.2s;
       top: -16px;
       bottom: -16px;

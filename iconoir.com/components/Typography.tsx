@@ -7,18 +7,18 @@ import { media } from '../lib/responsive';
 export const Text15 = styled.div`
   font-size: 15px;
   line-height: 24px;
-  color: var(--black-60);
+  color: var(--g1);
 `;
 
 export const Text14 = styled.div`
   font-size: 14px;
   line-height: 22px;
-  color: var(--black);
+  color: var(--g1);
 `;
 
 export const Text13 = styled.div`
   font-size: 13px;
-  color: var(--dark-gray);
+  color: var(--g1);
   line-height: 21px;
   font-weight: 500;
 `;
@@ -30,7 +30,7 @@ export const Text17 = styled.div`
 export const Text18 = styled.div`
   font-size: 16px;
   line-height: 25px;
-  color: var(--black-60);
+  color: var(--g1);
 
   ${media.md} {
     font-size: 18px;
@@ -41,17 +41,17 @@ export const Text18 = styled.div`
 export const Heading2 = styled.h2`
   font-size: 24px;
   line-height: 40px;
-  color: var(--black);
+  color: var(--g0);
   letter-spacing: -0.02em;
   margin: 24px 0;
   font-weight: 700;
 `;
 
 export const Code = styled.div`
-  background: var(--light-gray) !important;
-  border-radius: 0 !important;
+  background: var(--g6) !important;
+  border-radius: 6px !important;
   padding: 26px 32px;
-  color: var(--black-60);
+  color: var(--g1);
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;

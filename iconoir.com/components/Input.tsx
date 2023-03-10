@@ -30,13 +30,13 @@ export const Input = styled(ResetInput)`
   line-height: 21px;
   font-weight: 500;
   color: var(--black);
-  border: solid 1px var(--light-gray);
+  border: solid 1px var(--g6);
   
   &:hover{
-    border: solid 1px var(--dark-gray);
+    border: solid 2px var(--g0);
   }
   &:focus{
-    border: solid 1px var(--dark-gray);
+    border: solid 2px var(--g0);
   }
 `;
 

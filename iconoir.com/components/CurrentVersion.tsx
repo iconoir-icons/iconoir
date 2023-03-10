@@ -9,7 +9,7 @@ export interface CurrentVersionProps {
 export function CurrentVersion({ version, color }: CurrentVersionProps) {
   return (
     <Link href={'/docs/changelog'} passHref legacyBehavior>
-      <Container as={'a'} style={color ? { background: color } : undefined}>
+      <Container as={'a'}>
         {version}
       </Container>
     </Link>
@@ -17,9 +17,9 @@ export function CurrentVersion({ version, color }: CurrentVersionProps) {
 }
 
 const Container = styled(Text13)`
-  color: var(--black);
+  color: var(--g1);
   font-weight: 700;
-  background: var(--pink);
+  background: var(--g5);
   line-height: 1;
   padding: 7px 16px;
   border-radius: 200px;

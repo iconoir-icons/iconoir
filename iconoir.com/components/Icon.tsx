@@ -76,6 +76,10 @@ export function Icon({ iconWidth, icon }: IconProps) {
         </IconContainer>
         {supportsClipboard ? (
           <HoverContainer>
+            <CornerBR/>
+            <CornerTR/>
+            <CornerBL/>
+            <CornerTL/>
             <HoverButton
               onClick={() => {
                 if (htmlContentsRef.current) {
@@ -111,6 +115,31 @@ export function Icon({ iconWidth, icon }: IconProps) {
   );
 }
 
+const Test = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  border: solid 2px var(--g0);
+  background: var(--white);
+  width: 8px;
+  height: 8px;
+`;
+const CornerBR = styled(Test)`
+bottom: -6px;
+right: -6px;
+z-index: 999;
+`;
+const CornerTR = styled(Test)`
+top: -6px;
+right: -6px;
+`;
+const CornerBL = styled(Test)`
+bottom: -6px;
+left: -6px;
+`;
+const CornerTL = styled(Test)`
+top: -6px;
+left: -6px;
+`;
 const HoverContainer = styled.div<{ supportsCopy?: boolean }>`
   position: absolute;
   display: ${(props) => (props.supportsCopy ? 'block' : 'none')};
@@ -119,8 +148,7 @@ const HoverContainer = styled.div<{ supportsCopy?: boolean }>`
   align-items: stretch;
   justify-content: stretch;
   flex-direction: column;
-  border-radius: 12px;
-  overflow: hidden;
+  
   transform: translateZ(0px); // Safari Fix
   transition: opacity 0.1s linear;
   opacity: 0;
@@ -130,10 +158,10 @@ const HoverButton = styled(ResetButton)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--light-gray);
-  border-radius: 0 !important;
+  background: var(--white);
+  border-radius: 0px !important;
   transition: background 0.1s linear;
-  color: var(--black);
+  color: var(--g0);
   font-size: 14px;
   line-height: 23px;
   font-weight: 700;
@@ -143,7 +171,8 @@ const HoverButton = styled(ResetButton)`
   text-decoration: none;
   &:hover,
   &:active {
-    background: var(--gray);
+    background: var(--g0);
+    color: var(--white);
   }
 `;
 const BorderContainer = styled.div<{ iconWidth: number }>`
@@ -151,13 +180,14 @@ const BorderContainer = styled.div<{ iconWidth: number }>`
   box-sizing: border-box;
   padding-bottom: 100%;
   position: relative;
-  border: solid 1px var(--light-gray);
+  border: solid 1px var(--g6);
   border-radius: 12px;
   margin-bottom: 10px;
   @media (hover: hover) {
     &:hover ${HoverContainer} {
       opacity: 1;
       pointer-events: all;
+      border: solid 2px var(--g0);
     }
   }
 `;
