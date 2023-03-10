@@ -113,11 +113,9 @@ const ChildrenContainer = styled.div<{ expanded?: boolean }>`
 `;
 const HeaderItem = styled.div`
   padding: 10px 30px;
-  text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 19px;
-  color: var(--black);
-  letter-spacing: 0.12em;
+  color: var(--g0);
   font-weight: 700;
   display: flex;
   align-items: baseline;
@@ -138,7 +136,7 @@ const NavigationItem = styled.div<{ active?: boolean }>`
   font-size: 16px;
   line-height: 14.5px;
   letter-spacing: -0.02em;
-  color: var(--black-60);
+  color: var(--g1);
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -150,8 +148,8 @@ const NavigationItem = styled.div<{ active?: boolean }>`
   }
   &:hover,
   ${(props) => (props.active ? '&' : '&.noop')} {
-    background: var(--light-gray);
-    color: var(--black);
+    color: var(--g0);
+    text-decoration: underline;
   }
   ${(props) => (props.active ? 'span' : '&.noop')} {
     font-weight: 700;
@@ -164,12 +162,13 @@ const NavigationItemLabel = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
   font-size: 11px;
   line-height: 17.6px;
-  font-weight: 700;
+  font-weight: 700!important;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--white);
-  background: var(--black);
+  color: var(--g1);
+  background: var(--g5);
 `;

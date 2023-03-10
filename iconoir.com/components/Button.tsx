@@ -68,3 +68,21 @@ export const Button = styled(LargeButton)`
     background: var(--darker-gray);
   }
 `;
+
+export const CopyButton = styled(Button)`
+  text-transform: uppercase;
+  background: var(--white);
+  height: 30px;
+  padding: 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  line-height: 17.6px;
+  font-weight: 700;
+  color: var(--black);
+  transition: background 0.1s linear, color 0.1s linear;
+  font-family: var(--font-family) !important;
+  &:hover {
+    background: var(--g0) !important;
+    color: var(--white);
+  }
+`;

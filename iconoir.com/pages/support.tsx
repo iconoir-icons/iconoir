@@ -36,16 +36,14 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
         </Text18>
         <Heading2>Our mission pillars</Heading2>
         <Code>
-          <strong>Free forever.</strong> We want to give to developers and users
+          <strong>Free.</strong> We want to give to developers and users
           high-quality free icons. Hassle-free.
         </Code>
         <Code>
-          <strong>Full coverage.</strong> We're aiming at having as many unique
-          icons as possible.
+          <strong>Complete.</strong> We’re aiming at having as much unique icons as possible.
         </Code>
         <Code>
-          <strong>Used everywhere.</strong> We'd like to see Iconoir as a point
-          of reference for any new and exciting project out there.
+          <strong>Ambitious.</strong> We want to help and be part of as many projects as possible.
         </Code>
         <Text18>
           If you consider this library valuable for you and your projects,
@@ -148,7 +146,7 @@ export const DonateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  border: 2px solid var(--g6);
+  border: 1px solid var(--g6);
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 24px;

@@ -37,7 +37,7 @@ export default function Changelog({
   return (
     <Layout>
       <SEO title={'Changelog'} />
-      <Header {...headerProps} currentVersionColor={'var(--green)'} />
+      <Header {...headerProps} />
       <Container>
         <NavigationContainer>
           <DocumentationNavigation {...documentationProps} />

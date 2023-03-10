@@ -50,8 +50,10 @@ export const LargeInput = styled(Input)`
   width: 100%;
   box-sizing: border-box;
   outline: none;
+  transition: 0.2s;
   &:hover{
-    transition: 0.4s;
+    transition: 0.2s;
+    transform: scale(1.02);
   }
 `;
 

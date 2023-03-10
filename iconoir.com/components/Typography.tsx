@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { showNotification } from '../lib/showNotification';
-import { Button } from './Button';
+import { CopyButton } from './Button';
 import { media } from '../lib/responsive';
 
 export const Text15 = styled.div`
@@ -132,23 +132,7 @@ const CopyContainer = styled.div`
   top: 16px;
   right: 23px;
 `;
-export const CopyButton = styled(Button)`
-  text-transform: uppercase;
-  background: var(--gray);
-  height: 30px;
-  padding: 0 12px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  line-height: 17.6px;
-  font-weight: 700;
-  color: var(--black);
-  transition: background 0.1s linear, color 0.1s linear;
-  font-family: var(--font-family) !important;
-  &:hover {
-    background: var(--black) !important;
-    color: var(--white);
-  }
-`;
+
 export function Pre({ children, ...props }: React.PropsWithChildren<any>) {
   const containerRef = React.useRef<HTMLPreElement>(null);
   const [supportsClipboard, setSupportsClipboard] = React.useState(false);
