@@ -81,7 +81,7 @@ export const H1 = styled.h1`
   font-weight: 700;
   line-height: 49px;
   letter-spacing: -0.02em;
-  color: var(--black);
+  color: var(--g0);
   margin-bottom: 40px;
   ${media.lg} {
     font-size: 90px;
@@ -93,26 +93,26 @@ export const H2 = styled.h2`
   font-size: 24px;
   line-height: 40px;
   font-weight: 700;
-  color: var(--black);
+  color: var(--g0);
   margin: 24px 0;
 `;
 export const H3 = styled.h3`
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  color: var(--black);
+  color: var(--g0);
   margin: 24px 0;
 `;
 export const Body = styled.p`
   font-size: 18px;
-  color: var(--black-60);
+  color: var(--g1);
   line-height: 30px;
   margin: 24px 0;
 `;
 export const CodeElement = styled.code`
   display: inline-block;
   padding: 0 4px;
-  color: var(--black);
+  color: var(--g0);
 `;
 
 const PreContainer = styled(Code)`

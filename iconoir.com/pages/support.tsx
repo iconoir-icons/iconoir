@@ -159,12 +159,12 @@ export const DonateContainer = styled.div`
 `;
 export const DonateHeader = styled.div`
   font-size: 18px;
-  line-height: 27px;
+  color: var(--g0);
   letter-spacing: -0.02em;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
   ${media.md} {
-    font-size: 30px;
+    font-size: 22px;
   }
 `;
 

@@ -35,7 +35,7 @@ export default function DocumentationPage({
   return (
     <Layout>
       <SEO title={title} />
-      <Header {...headerProps} currentVersionColor={'var(--green)'} />
+      <Header {...headerProps} />
       <Container>
         <NavigationContainer>
           <DocumentationNavigation {...navigationProps} />
