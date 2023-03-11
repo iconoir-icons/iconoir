@@ -10,7 +10,6 @@ import { Header } from '../components/Header';
 import { HeaderBackground } from '../components/HeaderBackground';
 import { Icon } from '../components/IconList';
 import { Layout } from '../components/Layout';
-import { Praise } from '../components/Praise';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
@@ -149,13 +148,7 @@ const SupportContainer = styled.div`
     margin-bottom: 150px;
   }
 `;
-const PraiseContainer = styled.div`
-  margin: 50px 0 64px 0;
-  ${media.md} {
-    margin: 140px 0 150px 0;
-  }
-  width: 100%;
-`;
+
 
 export default Home;
 

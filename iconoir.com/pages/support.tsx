@@ -14,6 +14,7 @@ import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
 import { Code, Heading2, Text18 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
+import { Praise } from '../components/Praise';
 
 interface SupportProps extends HeaderProps {}
 const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
@@ -50,6 +51,9 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
           support Iconoir with a donation to help us sustain costs and
           development time.
         </Text18>
+        <PraiseContainer>
+        <Praise />
+      </PraiseContainer>
         <DonateSeparator />
         <DonateContainer>
           <DonateLeft>
@@ -166,6 +170,13 @@ export const DonateHeader = styled.div`
   ${media.md} {
     font-size: 22px;
   }
+`;
+const PraiseContainer = styled.div`
+  margin: 50px 0 64px 0;
+  ${media.md} {
+    margin: 140px 0 150px 0;
+  }
+  width: 100%;
 `;
 
 export default Support;
