@@ -1,16 +1,7 @@
-<div align="center">
-  <img src="assets/cover.png" alt="Iconoir" />
-</div>
+# Iconoir
 
-<div align="center">
-  Iconoir is an open-source library with 1000+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.
-</div>
+<div>
 
-<div align="center">
-  <a href="https://iconoir.com"><strong>Browse at iconoir.com &rarr;</strong></a>
-</div>
-
-<div align="center">
   <a href="https://github.com/lucaburgio/iconoir/releases">
     <img src="https://img.shields.io/github/v/release/lucaburgio/iconoir?style=flat-square" alt="Version" />
   </a>
@@ -27,6 +18,15 @@
     <img src="https://img.shields.io/discord/998909400234348615?color=5865f2&label=Discord&style=flat-square" alt="Discord" />
   </a>
 </div>
+
+## What is Iconoir?
+
+Iconoir is an open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.
+
+<a href="https://iconoir.com"><strong>Browse at iconoir.com &rarr;</strong></a>
+
+
+
 
 
 ## Basic Usage
