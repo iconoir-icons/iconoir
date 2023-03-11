@@ -5,7 +5,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { MDXRemote } from './MDXRemote';
 import { media } from '../lib/responsive';
-import { Code, CopyButton, Text15, Text18 } from './Typography';
+import { Code, Text15, Text18 } from './Typography';
+import { CopyButton } from './Button';
 
 const EXPAND_HEIGHT = 400;
 
@@ -117,11 +118,12 @@ const EntryBody = styled(Code)<{ expanded?: boolean }>`
     padding: 0;
     li {
       margin-bottom: 8px;
+      
     }
   }
   code {
     display: inline-block;
-    background: var(--gray) !important;
+    background: var(--g5) !important;
     color: var(--black);
     font-family: var(--font-family) !important;
     padding: 0 4px;

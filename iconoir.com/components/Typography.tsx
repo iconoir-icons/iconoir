@@ -48,7 +48,8 @@ export const Heading2 = styled.h2`
 `;
 
 export const Code = styled.div`
-  background: var(--g6) !important;
+  background: var(--g7) !important;
+  border: solid 1px var(--g6);
   border-radius: 6px !important;
   padding: 26px 32px;
   color: var(--g1);
@@ -78,13 +79,13 @@ export const Code = styled.div`
 
 export const H1 = styled.h1`
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 49px;
   letter-spacing: -0.02em;
   color: var(--g0);
   margin-bottom: 40px;
   ${media.lg} {
-    font-size: 90px;
+    font-size: 60px;
     line-height: 81px;
     letter-spacing: -0.05em;
   }

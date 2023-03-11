@@ -1,6 +1,6 @@
 import { ArrowRight } from 'iconoir-react';
+import { Discord } from 'iconoir-react';
 import { NextPage } from 'next';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { HeroText } from '.';
 import { HeroTextSecondary } from '.';
@@ -46,40 +46,19 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
         <Code>
           <strong>Ambitious.</strong> We want to help and be part of as many projects as possible.
         </Code>
-        <Text18>
-          If you consider this library valuable for you and your projects,
-          support Iconoir with a donation to help us sustain costs and
-          development time.
-        </Text18>
+        <WideSection>
+          <Heading2>Become part of the project.</Heading2>
+          <Text18>
+            If you consider this library valuable for you and your projects,
+            support Iconoir with a donation to help us sustain costs and
+            development time.
+          </Text18>
+          <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}><span>Donate</span><ArrowRight /></CallToAction>
+        </WideSection>
         <PraiseContainer>
+        <PraiseTitle>What our friends say</PraiseTitle>
         <Praise />
       </PraiseContainer>
-        <DonateSeparator />
-        <DonateContainer>
-          <DonateLeft>
-            <DonateHeader>Donate with OpenCollective</DonateHeader>
-            <Text18>We collect donations with transparency.</Text18>
-          </DonateLeft>
-          <DonateRight>
-            <DonateImage>
-              <Image
-                src={'/opencollective.png'}
-                alt={'OpenCollective Logo'}
-                width={65}
-                height={65}
-                style={{ mixBlendMode: 'multiply' }}
-              />
-            </DonateImage>
-            <DonateButton
-              as={'a'}
-              href={SUPPORT_LINK}
-              target={'_blank'}
-              rel={'noreferrer'}
-            >
-              <span>Donate</span> <ArrowRight />
-            </DonateButton>
-          </DonateRight>
-        </DonateContainer>
         <DonateContainer>
           <DonateLeft>
             <DonateHeader>Join us on Discord</DonateHeader>
@@ -94,7 +73,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
               target={'_blank'}
               rel={'noreferrer'}
             >
-              <span>Join</span> <ArrowRight />
+              <span>Join</span> <Discord />
             </DonateButton>
           </DonateRight>
         </DonateContainer>
@@ -118,17 +97,19 @@ const PageContainer = styled.div`
     margin: 150px auto 0 auto;
   }
 `;
-const DonateSeparator = styled.div`
-  margin-top: 88px;
+const WideSection = styled.div`
+  width: 60%;
+  background: var(--g7);
+  border-radius: 12px;
+  text-align: center;
+  padding: 80px 20%;
+`;
+const PraiseTitle = styled(Heading2)`
+  margin: 100px 0 80px 0;
+  text-align: center;
 `;
 const DonateLeft = styled.div`
   max-width: 800px;
-`;
-const DonateImage = styled.div`
-  display: none;
-  ${media.lg} {
-    display: block;
-  }
 `;
 export const DonateRight = styled.div`
   display: flex;
@@ -145,6 +126,9 @@ export const DonateRight = styled.div`
 export const DonateButton = styled(LargeButton)`
   padding: 0 24px;
   height: 50px;
+`;
+const CallToAction = styled(LargeButton)`
+  margin-top: 40px;
 `;
 export const DonateContainer = styled.div`
   display: flex;
