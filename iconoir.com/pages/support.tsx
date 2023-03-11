@@ -1,5 +1,4 @@
-import { ArrowRight } from 'iconoir-react';
-import { Discord } from 'iconoir-react';
+import { ArrowRight, Flash, Discord, Globe, DesignNib } from 'iconoir-react';
 import { NextPage } from 'next';
 import styled from 'styled-components';
 import { HeroText } from '.';
@@ -12,7 +11,7 @@ import { HeaderSecondary } from '../components/HeaderSecondary';
 import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
-import { Code, Heading2, Text18 } from '../components/Typography';
+import { Body, Code, Heading2, Text18 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { Praise } from '../components/Praise';
 
@@ -29,23 +28,29 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
         </SupportHead>
       </HeaderSecondary>
       <PageContainer>
-        <Text18>
+        <PillarsContainer>
+          <Pillar>
+            <PillarIcon R={"140"} G={"26"} B={"245"}><Flash /></PillarIcon>
+            <PillarTitle>Free</PillarTitle>
+            <PillarDescription>We want to give to developers and users high-quality free icons. Hassle-free.</PillarDescription>
+          </Pillar>
+          <Pillar>
+            <PillarIcon R={"72"} G={"88"} B={"255"}><DesignNib /></PillarIcon>
+            <PillarTitle>Complete</PillarTitle>
+            <PillarDescription>We’re aiming at having as much unique icons as possible.</PillarDescription>
+          </Pillar>
+          <Pillar>
+            <PillarIcon R={"65"} G={"209"} B={"255"}><Globe /></PillarIcon>
+            <PillarTitle>Ambitious</PillarTitle>
+            <PillarDescription>We want to help and be part of as many projects as possible.</PillarDescription>
+          </Pillar>
+        </PillarsContainer>
+        <CenteredParagraph>
           Iconoir is an open source project built with consistent passion and
           dedication. There are no pro subscriptions, forced sign-ups, free
           trials or limitations. <br />
           Building an open library is what makes us happy.
-        </Text18>
-        <Heading2>Our mission pillars</Heading2>
-        <Code>
-          <strong>Free.</strong> We want to give to developers and users
-          high-quality free icons. Hassle-free.
-        </Code>
-        <Code>
-          <strong>Complete.</strong> We’re aiming at having as much unique icons as possible.
-        </Code>
-        <Code>
-          <strong>Ambitious.</strong> We want to help and be part of as many projects as possible.
-        </Code>
+        </CenteredParagraph>
         <WideSection>
           <Heading2>Become part of the project.</Heading2>
           <Text18>
@@ -83,6 +88,52 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   );
 };
 
+const CenteredParagraph = styled(Text18)`
+  text-align: center;
+  margin: 120px auto;
+`;
+
+const PillarsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Pillar = styled.div`
+  height: 180px;
+  width: 22%;
+  border: 1px solid var(--g6);
+  background: var(--white);
+  border-radius: 12px;
+  display: flex-column;
+  text-align: center;
+  padding: 60px 5%;
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.2s
+  }
+`;
+
+const PillarTitle = styled(Heading2)`
+  width: 100%;
+  margin: 20px 0 0 0;
+`;
+
+const PillarDescription = styled(Body)`
+  margin: 10px 0 0 0;
+`;
+
+const PillarIcon = styled.span<{ R?: string, G?: string, B?: string  }>`
+  font-size: 18px;
+  padding: 20px 11px 6px 11px;
+  color: var(--white);
+  width: 100px;
+  height: 100px;
+  background: rgb(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B});
+  box-shadow: 2px 6px 20px rgba(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B}, 0.5);
+  border-radius: 18px;
+
+`;
+
 export const SupportHead = styled.div`
   margin: 60px auto 40px auto;
   ${media.md} {
@@ -94,7 +145,7 @@ const PageContainer = styled.div`
   max-width: 1336px;
   margin: 75px auto 0 auto;
   ${media.lg} {
-    margin: 150px auto 0 auto;
+    margin: 110px auto 0 auto;
   }
 `;
 const WideSection = styled.div`
