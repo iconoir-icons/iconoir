@@ -90,20 +90,31 @@ const CenteredParagraph = styled(Text18)`
 const PillarsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  ${media.md} {
+    flex-direction: row;
+  }
 `;
 
 const Pillar = styled.div`
-  height: 180px;
-  width: 22%;
+  height: fit-content;
+  width: 80%;
   border: 1px solid var(--g6);
   background: var(--white);
   border-radius: 12px;
   display: flex-column;
   text-align: center;
-  padding: 60px 5%;
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.2s
+  padding: 60px 10%;
+  margin-bottom: 20px;
+  ${media.md} {
+    width: 22%;
+    height: 180px;
+    padding: 60px 5%;
+    margin-bottom: 0;
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.2s
+    }
   }
 `;
 
@@ -149,8 +160,11 @@ const WideSection = styled.div`
   background: var(--g7);
   border-radius: 12px;
   text-align: center;
-  padding: 80px 20%;
+  padding: 4% 20% 10% 20%;
   margin-top: 60px;
+  ${media.md} {
+    padding: 80px 20%;
+  }
 `;
 const PraiseTitle = styled(Heading2)`
   margin: 100px 0 80px 0;

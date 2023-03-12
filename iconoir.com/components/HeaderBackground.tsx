@@ -52,15 +52,15 @@ const HeaderContainer = styled.div`
 `;
 const FloatingIcon = styled.div`
   position: absolute;
-  /*background-color:red;*/
-  ${media.lg} {
-  }
+  display: none;
   background-repeat:no-repeat;
   z-index: -1;
   pointer-events: none;
-  display: flex;
   align-items: center;
   justify-content: center;
+  ${media.md} {
+    display: flex;
+  }
 `;
 const FloatingIconCellar = styled(FloatingIcon)`
   -webkit-transform: rotate(6deg);
