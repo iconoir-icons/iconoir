@@ -5,6 +5,7 @@ import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
 import { ColorButton, ColorInput } from './Input';
 import { Slider } from './Slider';
 import { Text13, Text15 } from './Typography';
+import { media } from '../lib/responsive';
 
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;
@@ -96,6 +97,10 @@ const CustomizationBox = styled.div`
   padding: 8%;
   border-radius: 10px;
   margin-bottom: 30px;
+  display: none;
+  ${media.md} {
+    display: block;
+  }
 `;
 const Header = styled.div`
   display: flex;

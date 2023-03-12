@@ -49,21 +49,29 @@ export function Explore({ allIcons }: ExploreProps) {
 
 const Container = styled.div`
   display: flex;
-  align-items: flex-start;
-  flex-direction: row;
+  flex-direction: column-reverse;
+  ${media.md} {
+    align-items: flex-start;
+    flex-direction: row;
+  }
 `;
 const Left = styled.div`
   flex: 1;
   min-height: calc(100vh - 100px);
+  background:white;
+  ${media.md} {
+    background: none;
+  }
 `;
 const Right = styled.div`
   position: sticky;
   top: 50px;
   width: 275px;
   margin-left: 68px;
-  display: none;
+  display: block;
+  z-index: -1;
   ${media.md} {
-    display: block;
+    z-index: 1;
   }
 `;
 const FilterContainer = styled.div<{ isMobile?: boolean }>`
@@ -72,6 +80,7 @@ const FilterContainer = styled.div<{ isMobile?: boolean }>`
   position: sticky;
   top: 20px;
   z-index: 100;
+  width: 100%;
   ${media.md} {
     position: relative;
     top: 0;
