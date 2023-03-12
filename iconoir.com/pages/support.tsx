@@ -45,12 +45,6 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
             <PillarDescription>We want to help and be part of as many projects as possible.</PillarDescription>
           </Pillar>
         </PillarsContainer>
-        <CenteredParagraph>
-          Iconoir is an open source project built with consistent passion and
-          dedication. There are no pro subscriptions, forced sign-ups, free
-          trials or limitations. <br />
-          Building an open library is what makes us happy.
-        </CenteredParagraph>
         <WideSection>
           <Heading2>Become part of the project.</Heading2>
           <Text18>
@@ -116,10 +110,12 @@ const Pillar = styled.div`
 const PillarTitle = styled(Heading2)`
   width: 100%;
   margin: 20px 0 0 0;
+  font-weight: 500;
+  font-size: 20px;
 `;
 
 const PillarDescription = styled(Body)`
-  margin: 10px 0 0 0;
+  margin: 0;
 `;
 
 const PillarIcon = styled.span<{ R?: string, G?: string, B?: string  }>`
@@ -154,6 +150,7 @@ const WideSection = styled.div`
   border-radius: 12px;
   text-align: center;
   padding: 80px 20%;
+  margin-top: 60px;
 `;
 const PraiseTitle = styled(Heading2)`
   margin: 100px 0 80px 0;
