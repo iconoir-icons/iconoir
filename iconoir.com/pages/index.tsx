@@ -97,7 +97,7 @@ const Home: NextPage<HomeProps> = ({
 export const HeroHead = styled.div`
   margin: 60px auto 40px auto;
   ${media.md} {
-    margin: 200px auto 80px auto;
+    margin: 160px auto 80px auto;
   }
 `;
 export const HeroText = styled.h1`
@@ -145,7 +145,7 @@ const SupportContainer = styled.div`
   }
   margin-bottom: 50px;
   ${media.sm} {
-    margin-bottom: 150px;
+    margin-bottom: 110px;
   }
 `;
 

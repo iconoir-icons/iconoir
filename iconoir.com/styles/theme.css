@@ -102,6 +102,6 @@ a {
 
 @media (min-width: 1100px) {
   body {
-    padding: 50px;
+    padding: 30px 50px 50px 50px;
   }
 }

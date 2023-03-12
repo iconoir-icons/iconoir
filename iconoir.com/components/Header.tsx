@@ -148,6 +148,7 @@ const HeaderRight = styled(HeaderItem)`
 `;
 export const Logo = styled.img`
   height: 24px;
+  margin-top: -4px;
   color: var(--black);
   margin-right: 16px !important;
   z-index: 101;

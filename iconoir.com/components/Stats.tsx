@@ -47,6 +47,6 @@ export const StatsContainer = styled.div`
   }
 
   ${media.md} {
-    margin: 64px auto 120px auto;
+    margin: 60px auto;
   }
 `;

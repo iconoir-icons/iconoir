@@ -108,7 +108,7 @@ const AvailableForOuter = styled.div`
   padding: 0 30px;
   overflow: hidden;
   ${media.lg} {
-    margin: 120px auto;
+    margin: 80px auto;
     padding: 0;
   }
 `;
