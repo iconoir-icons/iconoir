@@ -115,7 +115,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
   );
 }
 
-const Test = styled.div`
+const Overlay = styled.div`
   position: absolute;
   border-radius: 50%;
   border: solid 2px var(--g0);
@@ -123,20 +123,20 @@ const Test = styled.div`
   width: 8px;
   height: 8px;
 `;
-const CornerBR = styled(Test)`
+const CornerBR = styled(Overlay)`
 bottom: -6px;
 right: -6px;
 z-index: 999;
 `;
-const CornerTR = styled(Test)`
+const CornerTR = styled(Overlay)`
 top: -6px;
 right: -6px;
 `;
-const CornerBL = styled(Test)`
+const CornerBL = styled(Overlay)`
 bottom: -6px;
 left: -6px;
 `;
-const CornerTL = styled(Test)`
+const CornerTL = styled(Overlay)`
 top: -6px;
 left: -6px;
 `;
