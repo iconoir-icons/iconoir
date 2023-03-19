@@ -4,9 +4,8 @@ import { Text13 } from './Typography';
 
 export interface CurrentVersionProps {
   version: string;
-  color?: string;
 }
-export function CurrentVersion({ version, color }: CurrentVersionProps) {
+export function CurrentVersion({ version }: CurrentVersionProps) {
   return (
     <Link href={'/docs/changelog'} passHref legacyBehavior>
       <Container as={'a'}>
