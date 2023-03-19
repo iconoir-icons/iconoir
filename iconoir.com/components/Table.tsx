@@ -7,23 +7,23 @@ export const Table = styled.table`
   margin: 24px 0;
   td,
   th {
-    border: solid 2px var(--light-gray);
+    border: solid 2px var(--g6);
     font-size: 16px;
     line-height: 25.6px;
     padding: 12px 20px;
-    color: var(--black-60);
+    color: var(--g1);
     ${media.lg} {
       padding: 12px 30px 12px 60px;
     }
   }
   thead td,
   thead th {
-    color: var(--black);
-    background: var(--lighter-gray);
+    color: var(--g0);
+    background: var(--g7);
     font-weight: 700;
     text-align: left;
   }
   tbody tr:nth-child(even) td {
-    background: var(--lighter-gray);
+    background: var(--g7);
   }
 `;

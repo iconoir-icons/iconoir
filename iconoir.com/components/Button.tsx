@@ -12,13 +12,18 @@ export const ResetButton = styled.button`
 `;
 
 export const LargeButton = styled(ResetButton)`
-  background: var(--black);
+  background: var(--white);
   height: 75px;
+  border-radius: 10px 50px 50px 50px;
+  border: solid 2px var(--g0);
+
+  box-shadow: 0px 8px 0px 0px var(--g0);
+
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: var(--white);
-  padding: 0 43px;
+  color: var(--g0);
+  padding: 0 70px;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
@@ -31,15 +36,10 @@ export const LargeButton = styled(ResetButton)`
   * {
     font-weight: 700;
   }
-  &::after {
-    content: ' ';
-    display: block;
-    position: absolute;
-    inset: 0;
-    border: solid 3px var(--black);
-    opacity: 0;
-    transition: inset 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s linear;
-    z-index: 10;
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 0px 3px 0px 0px var(--g0);
+    transform: translateY(5px);
   }
   &:focus::after,
   &:hover::after {
@@ -63,4 +63,17 @@ export const Button = styled(LargeButton)`
   &:active {
     background: var(--darker-gray);
   }
+`;
+
+export const CopyButton = styled(Button)`
+  text-transform: uppercase;
+  background: var(--white);
+  height: 30px;
+  padding: 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  line-height: 17.6px;
+  font-weight: 700;
+  color: var(--black);
+  font-family: var(--font-family) !important;
 `;

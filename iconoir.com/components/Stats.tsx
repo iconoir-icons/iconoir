@@ -19,10 +19,12 @@ const StatText = styled.div`
   font-size: 38px;
   font-weight: 700;
   line-height: 62px;
-  color: var(--black);
+  color: var(--g0);
   ${media.md} {
     font-size: 50px;
     line-height: 82px;
+    -webkit-text-stroke: 1.5px;
+    text-stroke: 1.5px;
   }
 `;
 const StatContainer = styled.div`
@@ -46,6 +48,6 @@ export const StatsContainer = styled.div`
   }
 
   ${media.md} {
-    margin: 64px auto 120px auto;
+    margin: 60px auto;
   }
 `;
