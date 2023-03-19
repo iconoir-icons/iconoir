@@ -24,7 +24,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
       <HeaderSecondary>
         <SupportHead>
           <HeroText>Our Goal</HeroText>
-          <HeroTextSecondary>A free, complete, and open icons library.</HeroTextSecondary>
+          <HeroTextSecondary>A free, complete, and open icon library.</HeroTextSecondary>
         </SupportHead>
       </HeaderSecondary>
       <PageContainer>
