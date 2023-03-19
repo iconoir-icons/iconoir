@@ -37,7 +37,7 @@ const Home: NextPage<HomeProps> = ({
       <HeaderBackground>
         <HeroHead>
         <HeroText>Say hello</HeroText>
-        <HeroTextSecondary>to your new icons library.</HeroTextSecondary>
+        <HeroTextSecondary>to your new icon library.</HeroTextSecondary>
         </HeroHead>
       </HeaderBackground>
       <HeroDescription>
