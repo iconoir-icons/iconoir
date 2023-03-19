@@ -107,9 +107,9 @@ const Pillar = styled.div`
     height: 180px;
     padding: 60px 5%;
     margin-bottom: 0;
+    transition: 0.2s;
     &:hover {
       transform: scale(1.05);
-      transition: 0.2s
     }
   }
 `;
