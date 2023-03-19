@@ -82,10 +82,6 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   );
 };
 
-const CenteredParagraph = styled(Text18)`
-  text-align: center;
-  margin: 120px auto;
-`;
 
 const PillarsContainer = styled.div`
   display: flex;
