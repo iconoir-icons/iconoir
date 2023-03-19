@@ -24,6 +24,7 @@ const StatText = styled.div`
     font-size: 50px;
     line-height: 82px;
     -webkit-text-stroke: 1.5px;
+    text-stroke: 1.5px;
   }
 `;
 const StatContainer = styled.div`
