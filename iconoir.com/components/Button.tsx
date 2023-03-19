@@ -36,12 +36,10 @@ export const LargeButton = styled(ResetButton)`
   * {
     font-weight: 700;
   }
+  transition: 0.2s;
   &:hover {
-    -webkit-box-shadow: 0px 3px 0px 0px var(--g0);
-    -moz-box-shadow: 0px 3px 0px 0px var(--g0);
     box-shadow: 0px 3px 0px 0px var(--g0);
-    transition: 0.2s;
-    transform:translateY(5px);
+    transform: translateY(5px);
   }
   &:focus::after,
   &:hover::after {
