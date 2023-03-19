@@ -52,7 +52,6 @@ export const LargeInput = styled(Input)`
   outline: none;
   transition: 0.2s;
   &:hover{
-    transition: 0.2s;
     transform: scale(1.02);
   }
 `;
