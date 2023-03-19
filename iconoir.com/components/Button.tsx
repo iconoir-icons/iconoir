@@ -77,10 +77,5 @@ export const CopyButton = styled(Button)`
   line-height: 17.6px;
   font-weight: 700;
   color: var(--black);
-  transition: background 0.1s linear, color 0.1s linear;
   font-family: var(--font-family) !important;
-  &:hover {
-    background: var(--g0) !important;
-    color: var(--white);
-  }
 `;
