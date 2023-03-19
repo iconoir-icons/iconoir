@@ -126,8 +126,6 @@ const ThumbInner = styled.div`
   width: 24px;
   height: 24px;
   border: solid 2px var(--black);
-  -webkit-box-shadow: 0px 3px 0px 0px var(--g0);
-  -moz-box-shadow: 0px 3px 0px 0px var(--g0);
   box-shadow: 0px 3px 0px 0px var(--g0);
   border-radius: 50%;
   cursor: pointer;
