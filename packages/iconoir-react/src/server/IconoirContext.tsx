@@ -7,7 +7,7 @@ console.warn('Using IconoirContext in server components has no effect, because '
 export interface IconoirContextValue {}
 export const IconoirContext = null
 interface IconoirProviderProps {
-  children: React.ReactElement
+  children: React.ReactNode
 }
 export function IconoirProvider({ children }: IconoirProviderProps) {
   return children
