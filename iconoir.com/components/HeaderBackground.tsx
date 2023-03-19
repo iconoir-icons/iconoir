@@ -7,7 +7,6 @@ export interface HeaderBackgroundProps {
   children: React.ReactElement;
 }
 export function HeaderBackground({ children }: HeaderBackgroundProps) {
-  
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,14 +45,13 @@ export function HeaderBackground({ children }: HeaderBackgroundProps) {
 
 const HeaderContainer = styled.div`
   position: relative;
-  width:fit-content;
-  margin:auto;
-  /*background-color:green;*/
+  width: fit-content;
+  margin: auto;
 `;
 const FloatingIcon = styled.div`
   position: absolute;
   display: none;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   z-index: -1;
   pointer-events: none;
   align-items: center;

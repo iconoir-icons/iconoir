@@ -138,7 +138,6 @@ const PillarIcon = styled.span<{ R?: string, G?: string, B?: string  }>`
   background: rgb(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B});
   box-shadow: 2px 6px 20px rgba(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B}, 0.5);
   border-radius: 18px;
-
 `;
 
 export const SupportHead = styled.div`

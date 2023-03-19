@@ -58,7 +58,7 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 1;
   min-height: calc(100vh - 100px);
-  background:white;
+  background: white;
   ${media.md} {
     background: none;
   }

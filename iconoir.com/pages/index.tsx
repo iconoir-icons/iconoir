@@ -104,14 +104,14 @@ export const HeroText = styled.h1`
   font-size: 50px;
   font-weight: 700;
   color: var(--g0);
-  margin:0 auto;
+  margin: 0 auto;
   letter-spacing: -0.035em;
   line-height: 1;
   text-align: center;
-  transition:0.3s;
+  transition: 0.3s;
   ${media.md} {
     font-size: 90px;
-    padding:0 20px;
+    padding: 0 20px;
     letter-spacing: -0.045em;
     -webkit-text-stroke: 2.5px;
   }
@@ -122,8 +122,8 @@ export const HeroText = styled.h1`
   
 `;
 export const HeroTextSecondary = styled(HeroText)`
-color: var(--g4);
-max-width: 1000px;
+  color: var(--g4);
+  max-width: 1000px;
 `;
 export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
   display: block;
@@ -176,10 +176,5 @@ export async function getStaticProps() {
       numDownloads,
     },
   };
-
-  
-
-
-
   
 }

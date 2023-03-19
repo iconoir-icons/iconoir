@@ -17,7 +17,6 @@ export function HeaderSecondary({ children }: HeaderSecondaryProps) {
 
 const HeaderContainer = styled.div`
   position: relative;
-  width:fit-content;
-  margin:auto;
-  /*background-color:green;*/
+  width: fit-content;
+  margin: auto;
 `;

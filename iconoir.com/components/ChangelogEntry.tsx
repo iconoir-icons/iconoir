@@ -118,7 +118,6 @@ const EntryBody = styled(Code)<{ expanded?: boolean }>`
     padding: 0;
     li {
       margin-bottom: 8px;
-      
     }
   }
   code {
