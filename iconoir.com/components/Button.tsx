@@ -17,8 +17,6 @@ export const LargeButton = styled(ResetButton)`
   border-radius: 10px 50px 50px 50px;
   border: solid 2px var(--g0);
 
-  -webkit-box-shadow: 0px 8px 0px 0px var(--g0);
-  -moz-box-shadow: 0px 8px 0px 0px var(--g0);
   box-shadow: 0px 8px 0px 0px var(--g0);
 
   display: inline-flex;
