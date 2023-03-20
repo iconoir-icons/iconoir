@@ -18,7 +18,8 @@ class CreativeCommons extends StatelessWidget {
 <path d="M16.75 9.17071C16.4372 9.06015 16.1006 9 15.75 9C14.0931 9 12.75 10.3431 12.75 12C12.75 13.6569 14.0931 15 15.75 15C16.1006 15 16.4372 14.9398 16.75 14.8293" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

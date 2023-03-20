@@ -18,7 +18,8 @@ class WomenTShirt extends StatelessWidget {
 <path d="M16.5 6.00002V3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

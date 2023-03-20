@@ -17,7 +17,8 @@ class SendDollars extends StatelessWidget {
 <path d="M13 12H21M21 12L17.16 8M21 12L17.16 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class ColorPickerEmpty extends StatelessWidget {
 <path d="M13.8787 3.45395L16.0001 5.57527M20.2427 9.81791L18.1214 7.69659M16.0001 5.57527L17.4143 4.16106C17.8048 3.77054 18.438 3.77054 18.8285 4.16106L19.5356 4.86817C19.9261 5.25869 19.9261 5.89186 19.5356 6.28238L18.1214 7.69659M16.0001 5.57527L18.1214 7.69659" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

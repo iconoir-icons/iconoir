@@ -18,7 +18,8 @@ class Facetime extends StatelessWidget {
 <path d="M17.0399 9.22L13.9733 11.52C13.6533 11.76 13.6533 12.24 13.9733 12.48L17.0399 14.78C17.4355 15.0767 17.9999 14.7944 17.9999 14.3V9.7C17.9999 9.20557 17.4355 8.92334 17.0399 9.22Z" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

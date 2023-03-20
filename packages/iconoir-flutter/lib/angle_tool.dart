@@ -22,7 +22,8 @@ class AngleTool extends StatelessWidget {
 <path d="M17 19V21" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

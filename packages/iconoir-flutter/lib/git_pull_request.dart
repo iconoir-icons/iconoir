@@ -21,7 +21,8 @@ class GitPullRequest extends StatelessWidget {
 <path d="M15.0005 7.50012L12.5005 5.00012L15.0005 2.50012" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

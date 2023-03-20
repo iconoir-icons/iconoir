@@ -18,7 +18,8 @@ class QuoteMessage extends StatelessWidget {
 <path d="M16.5 10H14.5C13.9477 10 13.5 9.55228 13.5 9V8C13.5 7.44772 13.9477 7 14.5 7H15.5C16.0523 7 16.5 7.44772 16.5 8V10ZM16.5 10C16.5 11 15.5 12 14.5 13" stroke="currentColor"   stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

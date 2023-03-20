@@ -17,7 +17,8 @@ class CableTag extends StatelessWidget {
 <path d="M11.6667 8L10 12H14L12.3333 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

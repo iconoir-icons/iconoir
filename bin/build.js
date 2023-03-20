@@ -5,7 +5,7 @@ import { Listr } from 'listr2';
 import os from 'os';
 import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { incompatibleNames } from '../constants.js';
+import { incompatibleNames, flutterIncompatibleNames } from '../constants.js';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -315,7 +315,7 @@ const tasks = new Listr(
                       title: 'Creating temporary directory',
                       task: async (ctx) => {
                         try {
-                          ctx.tmpDir = await fs.mkdtemp(
+                          ctx.flutterTmpDir = await fs.mkdtemp(
                             path.join(os.tmpdir(), 'iconoir-')
                           );
                         } catch (err) {
@@ -337,11 +337,11 @@ const tasks = new Listr(
                             );
                             const iconName = file.split('.')[0];
                             const dstFileName =
-                              iconName in incompatibleNames
-                                ? incompatibleNames[iconName]
+                              iconName in flutterIncompatibleNames
+                                ? flutterIncompatibleNames[iconName]
                                 : iconName;
                             const dstFilePath = path.join(
-                              ctx.tmpDir,
+                              ctx.flutterTmpDir,
                               `${dstFileName}.svg`
                             );
 
@@ -518,10 +518,17 @@ const tasks = new Listr(
         ),
     },
     {
-      title: 'Removing temporary directory',
+      title: 'Removing React temporary directory',
       skip: (ctx) => !ctx.tmpDir,
       task: async (ctx) => {
         await fs.rm(ctx.tmpDir, { recursive: true });
+      },
+    },
+    {
+      title: 'Removing Flutter temporary directory',
+      skip: (ctx) => !ctx.flutterTmpDir,
+      task: async (ctx) => {
+        await fs.rm(ctx.flutterTmpDir, { recursive: true });
       },
     },
   ],

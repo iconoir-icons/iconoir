@@ -19,7 +19,8 @@ class AppleWallet extends StatelessWidget {
 <path d="M3 11H21" stroke="currentColor" />
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

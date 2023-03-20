@@ -20,7 +20,8 @@ class Book extends StatelessWidget {
 <path d="M9 7L15 7" stroke="currentColor"  stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class TransitionRight extends StatelessWidget {
 <path d="M10 12H18M18 12L15 9M18 12L15 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

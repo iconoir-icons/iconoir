@@ -19,7 +19,8 @@ class AdobeIllustrator extends StatelessWidget {
 <path d="M7 16L8.125 13M13 16L11.875 13M8.125 13L10 8L11.875 13M8.125 13L11.875 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -21,7 +21,8 @@ class CropRotateTl extends StatelessWidget {
 <path d="M10 8L10 19C10 19.5523 10.4477 20 11 20L22 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

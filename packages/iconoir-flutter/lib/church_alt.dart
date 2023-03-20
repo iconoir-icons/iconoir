@@ -20,7 +20,8 @@ class ChurchAlt extends StatelessWidget {
 <path d="M8 13.01L8.01 12.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

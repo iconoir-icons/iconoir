@@ -20,7 +20,8 @@ class ReminderHandGesture extends StatelessWidget {
 <path d="M17.5625 6.5H19.625C20.5 6.5 21 6.07843 21 5.25C21 4.42157 20.5 4 19.625 4H17.5625H14.4375H12.25C11.5596 4 11 4.55964 11 5.25V5.5C11 6.05228 11.4477 6.5 12 6.5V6.5" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -20,7 +20,8 @@ class GitPullRequestClosed extends StatelessWidget {
 <path d="M4 7.24264L6.12132 5.12132M6.12132 5.12132L8.24264 3M6.12132 5.12132L4 3M6.12132 5.12132L8.24264 7.24264" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

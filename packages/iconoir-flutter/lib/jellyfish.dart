@@ -19,7 +19,8 @@ class Jellyfish extends StatelessWidget {
 <path d="M16 13L17 14.125C17.5703 14.7666 17.5703 15.7334 17 16.375V16.375C16.4297 17.0166 16.4297 17.9834 17 18.625V18.625C17.5703 19.2666 17.5703 20.2334 17 20.875L16 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

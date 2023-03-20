@@ -17,7 +17,8 @@ class ArcheryMatch extends StatelessWidget {
 <path d="M15.3891 15.8891L3.36829 3.86829M15.3891 15.8891H18.2175L21.046 18.7175H18.2175V21.546L15.3891 18.7175V15.8891ZM3.36829 3.86829H6.19672M3.36829 3.86829V6.69671" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

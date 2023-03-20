@@ -17,7 +17,8 @@ class ScissorAlt extends StatelessWidget {
 <path d="M10.2361 16C10.7111 16.5308 11 17.2316 11 18C11 19.6569 9.65685 21 8 21C6.34315 21 5 19.6569 5 18C5 16.3431 6.34315 15 8 15C8.8885 15 9.68679 15.3863 10.2361 16ZM10.2361 16L20 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

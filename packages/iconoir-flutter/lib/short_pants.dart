@@ -18,7 +18,8 @@ class ShortPants extends StatelessWidget {
 <path d="M20.5 9.5H18.5C17.3954 9.5 16.5 8.60457 16.5 7.5V5" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

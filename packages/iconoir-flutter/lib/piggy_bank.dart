@@ -20,7 +20,8 @@ class PiggyBank extends StatelessWidget {
 <path d="M12.8008 7.75296C12.9298 7.38131 13 6.98136 13 6.56472C13 4.59598 11.433 3 9.5 3C7.567 3 6 4.59598 6 6.56472C6 7.50638 6.35849 8.36275 6.94404 9" stroke="currentColor"  stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

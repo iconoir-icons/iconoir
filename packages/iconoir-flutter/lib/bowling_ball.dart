@@ -19,7 +19,8 @@ class BowlingBall extends StatelessWidget {
 <path d="M11.5 13C11.7761 13 12 12.7761 12 12.5C12 12.2239 11.7761 12 11.5 12C11.2239 12 11 12.2239 11 12.5C11 12.7761 11.2239 13 11.5 13Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class Gps extends StatelessWidget {
 <path d="M6.5 9.12734C5.93308 8.73191 5.24362 8.5 4.5 8.5C2.567 8.5 1 10.067 1 12C1 13.933 2.567 15.5 4.5 15.5C6.433 15.5 8 14 8 12H5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

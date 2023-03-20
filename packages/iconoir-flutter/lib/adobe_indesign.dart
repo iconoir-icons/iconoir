@@ -18,7 +18,8 @@ class AdobeIndesign extends StatelessWidget {
 <path d="M15.5 12V15.4C15.5 15.7314 15.2314 16 14.9 16H13.5C12.3954 16 11.5 15.1046 11.5 14V14C11.5 12.8954 12.3954 12 13.5 12H15.5ZM15.5 12V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

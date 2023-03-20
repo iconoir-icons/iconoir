@@ -23,7 +23,8 @@ class Balcony extends StatelessWidget {
 <path d="M18 10V3.6C18 3.26863 17.7314 3 17.4 3H6.6C6.26863 3 6 3.26863 6 3.6V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

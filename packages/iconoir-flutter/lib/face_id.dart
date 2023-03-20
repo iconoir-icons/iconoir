@@ -23,7 +23,8 @@ class FaceId extends StatelessWidget {
 <path d="M17 21H19C20.1046 21 21 20.1046 21 19V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

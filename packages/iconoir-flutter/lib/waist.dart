@@ -19,7 +19,8 @@ class Waist extends StatelessWidget {
 <path d="M4.68335 16.6035C4.68335 16.6035 10.4 17.7143 12 20C13.6 17.7143 19.3165 16.6035 19.3165 16.6035" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

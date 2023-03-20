@@ -17,7 +17,8 @@ class AutoFlash extends StatelessWidget {
 <path d="M13 10H10V3L2 14H8V21L14 12.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

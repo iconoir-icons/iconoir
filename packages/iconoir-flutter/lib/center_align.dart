@@ -32,7 +32,8 @@ class CenterAlign extends StatelessWidget {
 <path d="M8 16V8H16V16H8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

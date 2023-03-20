@@ -16,7 +16,8 @@ class Bluetooth extends StatelessWidget {
 <path d="M6.75 8L17.25 16.5L11.75 22V2L17.25 7.5L6.75 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

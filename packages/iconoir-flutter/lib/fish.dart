@@ -18,7 +18,8 @@ class Fish extends StatelessWidget {
 <path d="M17 12.01L17.01 11.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -21,7 +21,8 @@ class Pipe3D extends StatelessWidget {
 <path d="M14.5 18L19.2188 13.2812" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

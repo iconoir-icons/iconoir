@@ -19,7 +19,8 @@ class Consumable extends StatelessWidget {
 <path d="M2.05084 21V16.503C2.05084 16.2252 2.27603 16 2.5538 16V16C2.75372 16 2.93363 16.119 3.01969 16.2994C4.62743 19.6705 8.06709 22 12.0508 22C17.2362 22 21.4997 18.0533 22.0015 13" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

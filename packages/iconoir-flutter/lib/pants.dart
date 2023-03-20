@@ -18,7 +18,8 @@ class Pants extends StatelessWidget {
 <path d="M18.5 7.5H17.5C16.3954 7.5 15.5 6.60457 15.5 5.5V3" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

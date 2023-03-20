@@ -24,7 +24,8 @@ class Drone extends StatelessWidget {
 <path d="M19.5 22C20.8807 22 22 20.8807 22 19.5C22 18.1193 20.8807 17 19.5 17C18.1193 17 17 18.1193 17 19.5C17 20.8807 18.1193 22 19.5 22Z" stroke="currentColor" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

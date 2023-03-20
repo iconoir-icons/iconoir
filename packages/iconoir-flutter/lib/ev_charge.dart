@@ -20,7 +20,8 @@ class EvCharge extends StatelessWidget {
 <path d="M18.1667 4L16.5 7H20.5L18.8333 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

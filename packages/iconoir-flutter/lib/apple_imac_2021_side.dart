@@ -17,7 +17,8 @@ class AppleImac2021Side extends StatelessWidget {
 <path d="M17 22L18 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

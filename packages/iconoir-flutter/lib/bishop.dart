@@ -20,7 +20,8 @@ class Bishop extends StatelessWidget {
 <path d="M17.8 22L6.2 22C5.70557 22 5.41559 21.434 5.7005 21.0299C7.01607 19.1641 9.76293 15.044 10.1929 12.5964C10.2502 12.27 10.5186 12 10.85 12L13.15 12C13.4814 12 13.7498 12.27 13.8071 12.5963C14.237 15.044 16.9839 19.1641 18.2995 21.0299C18.5844 21.434 18.2944 22 17.8 22Z" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

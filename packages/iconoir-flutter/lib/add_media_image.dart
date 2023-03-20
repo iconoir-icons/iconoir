@@ -19,7 +19,8 @@ class AddMediaImage extends StatelessWidget {
 <path d="M16 19H19M22 19H19M19 19V16M19 19V22" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

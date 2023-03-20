@@ -17,7 +17,8 @@ class Album extends StatelessWidget {
 <path d="M12 15.5C12 16.3284 11.3284 17 10.5 17C9.67157 17 9 16.3284 9 15.5C9 14.6716 9.67157 14 10.5 14C11.3284 14 12 14.6716 12 15.5ZM12 15.5V7.6C12 7.26863 12.2686 7 12.6 7H15" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

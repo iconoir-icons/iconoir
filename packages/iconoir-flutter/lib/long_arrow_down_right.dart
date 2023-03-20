@@ -17,7 +17,8 @@ class LongArrowDownRight extends StatelessWidget {
 <path d="M16.75 15.75H10.75C8.54086 15.75 6.75 13.9591 6.75 11.75V4.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

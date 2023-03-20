@@ -19,7 +19,8 @@ class OpenInBrowser extends StatelessWidget {
 <path d="M3.5 20.5L12 12M12 12V16M12 12H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

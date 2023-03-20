@@ -19,7 +19,8 @@ class AccessibilitySign extends StatelessWidget {
 <path d="M5.49951 12.5C6.33526 11.8721 7.37418 11.5 8.5 11.5C11.2614 11.5 13.5 13.7386 13.5 16.5C13.5 17.2111 13.3516 17.8875 13.084 18.5M3.7289 15C3.58018 15.4735 3.5 15.9774 3.5 16.5C3.5 19.2614 5.73858 21.5 8.5 21.5C9.41072 21.5 10.2646 21.2565 11 20.8311" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

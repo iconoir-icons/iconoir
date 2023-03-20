@@ -22,7 +22,8 @@ class BirthdayCake extends StatelessWidget {
 <path d="M21 14C21 15.6569 19.6569 17 18 17C16.3431 17 15 15.6569 15 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

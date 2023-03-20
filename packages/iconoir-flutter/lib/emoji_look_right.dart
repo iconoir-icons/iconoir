@@ -17,7 +17,8 @@ class EmojiLookRight extends StatelessWidget {
 <path d="M21.5422 15C21.8396 14.053 22 13.0452 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C16.4776 22 20.2679 19.0571 21.5422 15ZM21.5422 15H17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

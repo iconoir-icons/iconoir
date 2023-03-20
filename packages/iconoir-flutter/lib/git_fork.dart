@@ -20,7 +20,8 @@ class GitFork extends StatelessWidget {
 <path d="M17 7V8C17 10.5 15 11 15 11L9 13C9 13 7 13.5 7 16V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class BubbleError extends StatelessWidget {
 <path d="M17.1211 7.36398L19.2424 5.24266M19.2424 5.24266L21.3637 3.12134M19.2424 5.24266L17.1211 3.12134M19.2424 5.24266L21.3637 7.36398" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

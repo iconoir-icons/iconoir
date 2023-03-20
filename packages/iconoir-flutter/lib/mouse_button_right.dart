@@ -17,7 +17,8 @@ class MouseButtonRight extends StatelessWidget {
 <path d="M12 2V8.4C12 8.73137 12.2686 9 12.6 9H20" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

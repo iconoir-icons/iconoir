@@ -18,7 +18,8 @@ class SubmitDocument extends StatelessWidget {
 <path d="M16 19H22M22 19L19 16M22 19L19 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

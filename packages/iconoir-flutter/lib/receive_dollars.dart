@@ -17,7 +17,8 @@ class ReceiveDollars extends StatelessWidget {
 <path d="M21 12H13M13 12L16.84 8M13 12L16.84 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -22,7 +22,8 @@ class Bank extends StatelessWidget {
 <path d="M18 17L18 12" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -21,7 +21,8 @@ class DatabaseStats extends StatelessWidget {
 <path d="M21 21V15" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

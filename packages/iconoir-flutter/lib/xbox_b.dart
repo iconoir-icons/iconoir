@@ -17,7 +17,8 @@ class XboxB extends StatelessWidget {
 <path d="M12.5986 11.8261C15.1338 11.8261 15.1338 16 12.5986 16C11.1685 16 9.5 16 9.5 16V11.8261M12.5986 11.8261C11.1685 11.8261 9.5 11.8261 9.5 11.8261M12.5986 11.8261C15.1338 11.8261 15.1338 8 12.5986 8C11.4718 8 9.5 8 9.5 8V11.8261" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

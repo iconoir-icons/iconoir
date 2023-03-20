@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ColorFilter extends StatelessWidget {
+class ColorFilterIcon extends StatelessWidget {
   final Color? color;
   final double? width;
   final double? height;
 
-  const ColorFilter({Key? key, this.color, this.width, this.height})
+  const ColorFilterIcon({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override
@@ -18,7 +18,8 @@ class ColorFilter extends StatelessWidget {
 <path d="M8 21.5C11.3137 21.5 14 18.8137 14 15.5C14 12.1863 11.3137 9.5 8 9.5C4.68629 9.5 2 12.1863 2 15.5C2 18.8137 4.68629 21.5 8 21.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

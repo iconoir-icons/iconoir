@@ -20,7 +20,8 @@ class MusicDoubleNoteAdd extends StatelessWidget {
 <path d="M3 21H4C5.10457 21 6 20.1046 6 19V16H3C1.89543 16 1 16.8954 1 18V19C1 20.1046 1.89543 21 3 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

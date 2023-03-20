@@ -16,7 +16,8 @@ class ArrowEmailForward extends StatelessWidget {
 <path d="M22 10L8 10C0 10 0 21 8 21M22 10L15 3M22 10L15 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

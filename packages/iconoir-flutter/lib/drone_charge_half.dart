@@ -26,7 +26,8 @@ class DroneChargeHalf extends StatelessWidget {
 <path d="M13 22.4V17.6C13 17.2686 13.2686 17 13.6 17H20.4C20.7314 17 21 17.2686 21 17.6V22.4C21 22.7314 20.7314 23 20.4 23H13.6C13.2686 23 13 22.7314 13 22.4Z" stroke="currentColor"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

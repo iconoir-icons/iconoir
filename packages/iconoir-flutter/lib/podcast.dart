@@ -20,7 +20,8 @@ class Podcast extends StatelessWidget {
 <path d="M10.076 16.2827L10.8906 15.7396C11.5624 15.2917 12.4376 15.2917 13.1094 15.7396L13.924 16.2827C14.5789 16.7192 14.9168 17.4993 14.7874 18.2756L14.2785 21.3288C14.1178 22.2932 13.2834 23 12.3057 23H11.6943C10.7166 23 9.8822 22.2932 9.72147 21.3288L9.2126 18.2756C9.08321 17.4993 9.42114 16.7192 10.076 16.2827Z" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

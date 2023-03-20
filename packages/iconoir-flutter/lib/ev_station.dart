@@ -19,7 +19,8 @@ class EvStation extends StatelessWidget {
 <path d="M11.1667 11L9.5 14H13.5L11.8333 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

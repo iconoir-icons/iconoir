@@ -20,7 +20,8 @@ class GoogleDriveSync extends StatelessWidget {
 <path d="M17.0049 20.2278H15.6C15.2686 20.2278 15 20.4964 15 20.8278V22.45" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

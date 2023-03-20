@@ -17,7 +17,8 @@ class SwipeTwoFingersLeftGesture extends StatelessWidget {
 <path d="M12 6.5C12 8.433 13.567 10 15.5 10C17.433 10 19 8.433 19 6.5C19 4.567 17.433 3 15.5 3C13.567 3 12 4.567 12 6.5ZM12 6.5H5M5 6.5L7.4 4M5 6.5L7.4 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class BatteryCharging extends StatelessWidget {
 <path d="M10.1667 9L8.5 12H12.5L10.8333 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

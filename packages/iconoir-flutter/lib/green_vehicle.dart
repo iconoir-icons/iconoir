@@ -22,7 +22,8 @@ class GreenVehicle extends StatelessWidget {
 <path d="M19.8022 21.4245L19.6677 21.4372C17.9758 21.5961 16.469 20.3541 16.3021 18.663C16.1353 16.9719 17.3715 15.4721 19.0634 15.3131L22.049 15.0326C22.2406 15.0146 22.4111 15.1552 22.43 15.3466L22.6847 17.9276C22.8589 19.6929 21.5683 21.2586 19.8022 21.4245Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

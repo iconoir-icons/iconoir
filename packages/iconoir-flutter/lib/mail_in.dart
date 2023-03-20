@@ -18,7 +18,8 @@ class MailIn extends StatelessWidget {
 <path d="M23 14H17M17 14L20 11M17 14L20 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

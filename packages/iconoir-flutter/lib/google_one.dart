@@ -17,7 +17,8 @@ class GoogleOne extends StatelessWidget {
 <path d="M11.6396 3.52916L6.74732 8.17181C5.94609 8.93214 5.91294 10.198 6.67328 10.9993C7.43361 11.8005 8.69951 11.8336 9.50074 11.0733L14.3931 6.43066C15.1943 5.67033 15.2274 4.40443 14.4671 3.6032C13.7068 2.80198 12.4409 2.76883 11.6396 3.52916Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

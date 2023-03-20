@@ -19,7 +19,8 @@ class OnePointCircle extends StatelessWidget {
 <path d="M15.5 15.5L14.5 14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

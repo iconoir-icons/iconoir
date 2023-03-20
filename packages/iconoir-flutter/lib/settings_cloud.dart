@@ -17,7 +17,8 @@ class SettingsCloud extends StatelessWidget {
 <path d="M12 8C8.72727 8 8.72727 10 8.72727 11C7.81818 11 6 11.5 6 13.5C6 15.5 7.81818 16 8.72727 16H15.2727C16.1818 16 18 15.5 18 13.5C18 11.5 16.1818 11 15.2727 11C15.2727 10 15.2727 8 12 8Z" stroke="currentColor" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

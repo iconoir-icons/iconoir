@@ -22,7 +22,8 @@ class WarningWindow extends StatelessWidget {
 <path d="M21 22.01L21.01 21.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

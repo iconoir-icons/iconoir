@@ -19,7 +19,8 @@ class TextBox extends StatelessWidget {
 <path d="M1.5 13.5V10.5H4.5V13.5H1.5Z" stroke="currentColor" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

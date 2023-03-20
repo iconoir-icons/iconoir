@@ -18,7 +18,8 @@ class HomeHospital extends StatelessWidget {
 <path d="M13.6667 17H10.3333V14.6667H8V11.3333H10.3333V9H13.6667V11.3333H16V14.6667H13.6667V17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

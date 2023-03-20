@@ -17,7 +17,8 @@ class Parking extends StatelessWidget {
 <circle cx="12" cy="12" r="10" stroke="currentColor" />
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class Stretching extends StatelessWidget {
 <path d="M14.8181 15.2857H16.9999V20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

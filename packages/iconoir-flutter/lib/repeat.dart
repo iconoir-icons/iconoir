@@ -17,7 +17,8 @@ class Repeat extends StatelessWidget {
 <path d="M14.5 14.5L17 17L14.5 19.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

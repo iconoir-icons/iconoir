@@ -19,7 +19,8 @@ class ProjectCurve3D extends StatelessWidget {
 <path d="M20.5 15.5L16.5 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

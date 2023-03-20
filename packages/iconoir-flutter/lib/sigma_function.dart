@@ -18,7 +18,8 @@ class SigmaFunction extends StatelessWidget {
 <path d="M4 20L12 12L4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class InputField extends StatelessWidget {
 <path d="M5 8.5H6.5M8 8.5H6.5M6.5 8.5V15.5M6.5 15.5H5M6.5 15.5H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

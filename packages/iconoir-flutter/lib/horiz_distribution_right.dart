@@ -17,7 +17,8 @@ class HorizDistributionRight extends StatelessWidget {
 <path d="M15 17V7M15 17H18.4C18.7314 17 19 16.7314 19 16.4V7.6C19 7.26863 18.7314 7 18.4 7H15M15 17V20M15 7V4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

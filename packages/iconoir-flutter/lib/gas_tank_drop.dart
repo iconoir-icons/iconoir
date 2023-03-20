@@ -17,7 +17,8 @@ class GasTankDrop extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9991 9C11.9991 9 14.9991 11.9934 14.9994 13.8865C14.9997 15.5422 13.6552 16.8865 11.9997 16.8865C10.3442 16.8865 9.012 15.5422 9 13.8865C9.00979 11.9924 11.9991 9 11.9991 9Z" stroke="currentColor" stroke-width="1.49993" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

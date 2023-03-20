@@ -22,7 +22,8 @@ class TemperatureUp extends StatelessWidget {
 <path d="M19 18V6M19 6L21.5 8.5M19 6L16.5 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

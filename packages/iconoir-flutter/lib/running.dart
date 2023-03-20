@@ -19,7 +19,8 @@ class Running extends StatelessWidget {
 <path d="M8.89152 15.7103L7.65095 16.5374H4.34277" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );
