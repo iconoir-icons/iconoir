@@ -22,7 +22,8 @@ class BusStop extends StatelessWidget {
 <path d="M14.5 20V21.9C14.5 22.2314 14.7686 22.5 15.1 22.5H16" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

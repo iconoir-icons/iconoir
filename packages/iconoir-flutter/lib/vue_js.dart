@@ -17,7 +17,8 @@ class VueJs extends StatelessWidget {
 <path d="M18.5 4H14.5L12 7.5L9.5 4H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

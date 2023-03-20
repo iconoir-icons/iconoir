@@ -17,7 +17,8 @@ class MapsGoStraight extends StatelessWidget {
 <path d="M12 10.5V4M12 4L8 6.5M12 4L16 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

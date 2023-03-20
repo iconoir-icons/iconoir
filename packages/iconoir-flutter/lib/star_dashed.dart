@@ -25,7 +25,8 @@ class StarDashed extends StatelessWidget {
 <path d="M7 8.4666L8.58737 8.23591L9.39062 6.61792" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

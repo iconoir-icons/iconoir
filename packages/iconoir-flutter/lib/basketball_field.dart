@@ -19,7 +19,8 @@ class BasketballField extends StatelessWidget {
 <path d="M22 17C19.2386 17 17 14.7614 17 12C17 9.23858 19.2386 7 22 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

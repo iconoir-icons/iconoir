@@ -6,8 +6,7 @@ class Bin extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Bin({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Bin({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -17,7 +16,8 @@ class Bin extends StatelessWidget {
 <path d="M3 5C5.57143 7.66666 18.4286 7.66662 21 5" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

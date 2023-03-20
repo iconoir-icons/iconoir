@@ -22,7 +22,8 @@ class MathBook extends StatelessWidget {
 <path d="M12 7.01L12.01 6.99889" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

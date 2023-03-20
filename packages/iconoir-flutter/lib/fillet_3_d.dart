@@ -18,7 +18,8 @@ class Fillet3D extends StatelessWidget {
 <path d="M9 9L16 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 3"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

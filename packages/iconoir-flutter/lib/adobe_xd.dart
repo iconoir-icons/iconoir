@@ -18,7 +18,8 @@ class AdobeXd extends StatelessWidget {
 <path d="M17 12V15.4C17 15.7314 16.7314 16 16.4 16H15C13.8954 16 13 15.1046 13 14V14C13 12.8954 13.8954 12 15 12H17ZM17 12V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -6,8 +6,7 @@ class Cart extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Cart({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Cart({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -19,7 +18,8 @@ class Cart extends StatelessWidget {
 <path d="M20 15H7H5.23077C3.44646 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

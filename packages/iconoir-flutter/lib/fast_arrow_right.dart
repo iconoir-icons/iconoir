@@ -17,7 +17,8 @@ class FastArrowRight extends StatelessWidget {
 <path d="M5 6L11 12L5 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

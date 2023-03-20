@@ -16,7 +16,8 @@ class NavArrowUp extends StatelessWidget {
 <path d="M6 15L12 9L18 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

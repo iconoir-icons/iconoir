@@ -20,7 +20,8 @@ class Basketball extends StatelessWidget {
 <path d="M5.42838 4.46234C8.09504 8.99175 8.09516 14.1847 5.42838 19.5377" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

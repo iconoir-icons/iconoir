@@ -31,7 +31,8 @@ class IntersectAlt extends StatelessWidget {
 <path d="M15 7L15 14C15 14.5523 14.5523 15 14 15L7 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

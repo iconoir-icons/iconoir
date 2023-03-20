@@ -6,8 +6,7 @@ class Tram extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Tram({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Tram({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -23,7 +22,8 @@ class Tram extends StatelessWidget {
 <path d="M9.6087 9H14.3913C15.832 9 17 10.168 17 11.6087C17 11.8248 16.8248 12 16.6087 12H7.3913C7.17519 12 7 11.8248 7 11.6087C7 10.168 8.16795 9 9.6087 9Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

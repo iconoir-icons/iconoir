@@ -18,7 +18,8 @@ class AdobeLightroom extends StatelessWidget {
 <path d="M14 10.5L14 13M14 16L14 13M14 13C14 13 14 10.5 17 10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

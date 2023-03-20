@@ -16,7 +16,8 @@ class EaseIn extends StatelessWidget {
 <path d="M3 20C11 20 21 4 21 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

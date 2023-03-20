@@ -19,7 +19,8 @@ class Exclude extends StatelessWidget {
 <path d="M9 10.5V9.6C9 9.26863 9.26863 9 9.6 9H10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class ChatRemove extends StatelessWidget {
 <path d="M9 12H12L15 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

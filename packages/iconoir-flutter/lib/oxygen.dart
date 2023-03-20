@@ -17,7 +17,8 @@ class Oxygen extends StatelessWidget {
 <path d="M12.2 8H11.8C10.8059 8 10 8.80589 10 9.8V14.2C10 15.1941 10.8059 16 11.8 16H12.2C13.1941 16 14 15.1941 14 14.2V9.8C14 8.80589 13.1941 8 12.2 8Z" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

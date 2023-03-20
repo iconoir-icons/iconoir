@@ -6,8 +6,7 @@ class Redo extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Redo({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Redo({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -17,7 +16,8 @@ class Redo extends StatelessWidget {
 <path d="M16.5 11.5C17.8668 10.1332 18.6332 9.36683 20 8C18.6332 6.63317 17.8668 5.86683 16.5 4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

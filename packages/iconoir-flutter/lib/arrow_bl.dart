@@ -16,7 +16,8 @@ class ArrowBl extends StatelessWidget {
 <path d="M19 6L6 19M6 19L6 6.52M6 19H18.48" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -21,7 +21,8 @@ class GitCompare extends StatelessWidget {
 <path d="M8.5 16.5L11 19L8.5 21.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

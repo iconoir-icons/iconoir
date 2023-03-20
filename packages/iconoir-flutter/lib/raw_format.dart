@@ -21,7 +21,8 @@ class RawFormat extends StatelessWidget {
 <path d="M4.5 12H6V12C6.82843 12 7.5 12.6716 7.5 13.5L7.5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

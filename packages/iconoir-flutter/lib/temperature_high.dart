@@ -22,7 +22,8 @@ class TemperatureHigh extends StatelessWidget {
 <path d="M9 14C7.89543 14 7 14.8954 7 16C7 17.1046 7.89543 18 9 18C10.1046 18 11 17.1046 11 16C11 14.8954 10.1046 14 9 14ZM9 14V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

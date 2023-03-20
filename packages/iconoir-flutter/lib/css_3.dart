@@ -6,8 +6,7 @@ class Css3 extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Css3({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Css3({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Css3 extends StatelessWidget {
 <path d="M16 11.5H7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

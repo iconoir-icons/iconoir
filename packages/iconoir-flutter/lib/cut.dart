@@ -6,8 +6,7 @@ class Cut extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Cut({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Cut({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -19,7 +18,8 @@ class Cut extends StatelessWidget {
 <path d="M6.23611 17C6.71115 17.5308 7 18.2316 7 19C7 20.6569 5.65685 22 4 22C2.34315 22 1 20.6569 1 19C1 17.3431 2.34315 16 4 16C4.8885 16 5.68679 16.3863 6.23611 17ZM6.23611 17L19 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

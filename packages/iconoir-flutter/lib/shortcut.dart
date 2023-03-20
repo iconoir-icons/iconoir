@@ -17,7 +17,8 @@ class Shortcut extends StatelessWidget {
 <path d="M15.0251 8.02513H10.0754M15.0251 8.02513V12.9749M15.0251 8.02513C15.0251 8.02513 12.1967 10.8536 11.4896 11.5607C9.01472 14.0355 11.4896 16.5104 11.4896 16.5104" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

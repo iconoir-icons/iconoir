@@ -19,7 +19,8 @@ class ClipboardCheck extends StatelessWidget {
 <path d="M15.5 20.5L17.5 22.5L22.5 17.5" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

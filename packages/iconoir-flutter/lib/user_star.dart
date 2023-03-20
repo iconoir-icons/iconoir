@@ -18,7 +18,8 @@ class UserStar extends StatelessWidget {
 <path d="M16.6349 16.4151L17.674 14.2121C17.8073 13.9293 18.1927 13.9293 18.326 14.2121L19.3651 16.4151L21.6886 16.7706C21.9867 16.8162 22.1055 17.1997 21.8897 17.4198L20.2087 19.1334L20.6054 21.5543C20.6564 21.8652 20.3446 22.1022 20.0778 21.9554L18 20.8118L15.9222 21.9554C15.6554 22.1022 15.3436 21.8652 15.3946 21.5543L15.7913 19.1334L14.1103 17.4198C13.8945 17.1997 14.0133 16.8162 14.3114 16.7706L16.6349 16.4151Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

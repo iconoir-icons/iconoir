@@ -25,7 +25,8 @@ class Dialpad extends StatelessWidget {
 <path d="M18.5 15C18.2239 15 18 14.7761 18 14.5C18 14.2239 18.2239 14 18.5 14C18.7761 14 19 14.2239 19 14.5C19 14.7761 18.7761 15 18.5 15Z" fill="currentColor" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

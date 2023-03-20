@@ -17,7 +17,8 @@ class Hydrogen extends StatelessWidget {
 <path d="M10 8V12M10 16V12M10 12H14M14 12L14 8M14 12L14 16" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

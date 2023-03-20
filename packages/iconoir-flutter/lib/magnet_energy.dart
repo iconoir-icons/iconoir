@@ -22,7 +22,8 @@ class MagnetEnergy extends StatelessWidget {
 <path d="M11.6667 2L10 5H14L12.3333 8" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

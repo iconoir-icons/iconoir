@@ -6,8 +6,7 @@ class Npm extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Npm({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Npm({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -22,7 +21,8 @@ class Npm extends StatelessWidget {
 <path d="M20.5 11V15" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -23,7 +23,8 @@ class SystemRestart extends StatelessWidget {
 <path d="M7.75732 16.2427L4.9289 19.0711" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

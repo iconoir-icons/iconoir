@@ -23,7 +23,8 @@ class TwoPointsCircle extends StatelessWidget {
 <path d="M6.5 6.5L5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class Bitbucket extends StatelessWidget {
 <path d="M16.7501 7.75L15.8125 15.7201C15.7769 16.0223 15.5208 16.25 15.2166 16.25H8.78368C8.47942 16.25 8.22333 16.0223 8.18779 15.7201L7.32896 8.4201C7.287 8.06341 7.5657 7.75 7.92485 7.75H16.7501ZM16.7501 7.75H20.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

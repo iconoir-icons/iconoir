@@ -6,8 +6,7 @@ class Menu extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Menu({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Menu({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Menu extends StatelessWidget {
 <path d="M3 19H21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

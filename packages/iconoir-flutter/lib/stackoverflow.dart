@@ -21,7 +21,8 @@ class Stackoverflow extends StatelessWidget {
 <path d="M20.0338 8.80409L15.1085 2.5" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

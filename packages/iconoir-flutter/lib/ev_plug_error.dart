@@ -20,7 +20,8 @@ class EvPlugError extends StatelessWidget {
 <path d="M15.1213 21.364L17.2427 19.2427M17.2427 19.2427L19.364 17.1213M17.2427 19.2427L15.1213 17.1213M17.2427 19.2427L19.364 21.364" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

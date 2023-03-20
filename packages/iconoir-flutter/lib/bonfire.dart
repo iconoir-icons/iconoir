@@ -20,7 +20,8 @@ class Bonfire extends StatelessWidget {
 <path d="M19.7274 21.0703L15.8637 20.035" stroke="currentColor"  stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

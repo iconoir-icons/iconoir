@@ -18,7 +18,8 @@ class Learning extends StatelessWidget {
 <path d="M11 13C12.6569 13 14 11.6569 14 10C14 8.34315 12.6569 7 11 7C9.34315 7 8 8.34315 8 10C8 11.6569 9.34315 13 11 13Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 2"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

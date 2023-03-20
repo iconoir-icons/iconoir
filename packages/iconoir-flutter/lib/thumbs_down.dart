@@ -17,7 +17,8 @@ class ThumbsDown extends StatelessWidget {
 <path d="M7 14.5L7 3.5" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

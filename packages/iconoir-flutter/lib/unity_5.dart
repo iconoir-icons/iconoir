@@ -17,7 +17,8 @@ class Unity5 extends StatelessWidget {
 <path d="M14.5 6H10L9.5 11C10.0187 10.1033 10.9882 9.5 12.0987 9.5C13.7555 9.5 15.0987 10.8431 15.0987 12.5C15.0987 13.327 14.764 14.0758 14.2228 14.6185C13.6797 15.163 12.9285 15.5 12.0987 15.5C10.9882 15.5 10.0187 14.8967 9.5 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

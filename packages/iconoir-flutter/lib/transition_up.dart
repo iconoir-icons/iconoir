@@ -18,7 +18,8 @@ class TransitionUp extends StatelessWidget {
 <path d="M12 14V6M12 6L9 9M12 6L15 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

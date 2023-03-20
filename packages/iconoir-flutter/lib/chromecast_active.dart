@@ -20,7 +20,8 @@ class ChromecastActive extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.00195 7.63027C5.00195 7.2989 5.27058 7.03027 5.60195 7.03027H18.4059C18.7372 7.03027 19.0059 7.2989 19.0059 7.63027V16.462C19.0059 16.7934 18.7372 17.062 18.4059 17.062H13.4413C13.2029 17.062 12.9876 16.9226 12.8854 16.7072C12.4625 15.815 11.2633 13.4465 9.81567 12C8.39582 10.5813 6.24338 9.55638 5.37987 9.17985C5.15312 9.08097 5.00195 8.85869 5.00195 8.61131V7.63027Z" fill="currentColor"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

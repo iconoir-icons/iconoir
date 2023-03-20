@@ -6,8 +6,7 @@ class Send extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Send({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Send({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -17,7 +16,8 @@ class Send extends StatelessWidget {
 <path d="M6.5 12L22 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class TransitionDown extends StatelessWidget {
 <path d="M12 10V18M12 18L9 15M12 18L15 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

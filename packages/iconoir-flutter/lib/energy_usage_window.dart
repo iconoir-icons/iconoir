@@ -21,7 +21,8 @@ class EnergyUsageWindow extends StatelessWidget {
 <path d="M11.6667 11L10 14H14L12.3333 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

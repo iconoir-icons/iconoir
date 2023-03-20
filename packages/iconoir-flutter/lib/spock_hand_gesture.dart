@@ -19,7 +19,8 @@ class SpockHandGesture extends StatelessWidget {
 <path d="M17 12.5L18 7.5L18.2475 6.01515C18.3869 5.17836 17.8216 4.38694 16.9848 4.24747V4.24747C16.16 4.11 15.3767 4.65763 15.2226 5.47955L14 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

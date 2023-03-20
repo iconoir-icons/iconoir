@@ -22,7 +22,8 @@ class DirectorChair extends StatelessWidget {
 <path d="M5 7L19 7" stroke="currentColor" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

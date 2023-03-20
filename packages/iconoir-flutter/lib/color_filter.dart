@@ -1,16 +1,16 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart' as w;
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ColorFilter extends StatelessWidget {
-  final Color? color;
+class ColorFilter extends w.StatelessWidget {
+  final w.Color? color;
   final double? width;
   final double? height;
 
-  const ColorFilter({Key? key, this.color, this.width, this.height})
+  const ColorFilter({w.Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SvgPicture.string(
+  w.Widget build(w.BuildContext context) => SvgPicture.string(
         '''
 <svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 14.5C15.3137 14.5 18 11.8137 18 8.5C18 5.18629 15.3137 2.5 12 2.5C8.68629 2.5 6 5.18629 6 8.5C6 11.8137 8.68629 14.5 12 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
@@ -18,7 +18,9 @@ class ColorFilter extends StatelessWidget {
 <path d="M8 21.5C11.3137 21.5 14 18.8137 14 15.5C14 12.1863 11.3137 9.5 8 9.5C4.68629 9.5 2 12.1863 2 15.5C2 18.8137 4.68629 21.5 8 21.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter: color != null
+            ? w.ColorFilter.mode(color!, w.BlendMode.srcIn)
+            : null,
         width: width,
         height: height,
       );

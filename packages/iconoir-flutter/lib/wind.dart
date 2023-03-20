@@ -6,8 +6,7 @@ class Wind extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Wind({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Wind({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Wind extends StatelessWidget {
 <path d="M10.4118 4C11.8412 4 13 5.11929 13 6.5C13 7.88071 11.8412 9 10.4118 9H3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

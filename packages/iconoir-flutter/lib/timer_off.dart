@@ -19,7 +19,8 @@ class TimerOff extends StatelessWidget {
 <path d="M6.1905 8.5C4.83275 9.93366 4 11.8696 4 14C4 18.4183 7.58172 22 12 22C14.0049 22 15.8375 21.2625 17.2413 20.044M19.4185 17C19.7935 16.0736 20 15.0609 20 14C20 9.58172 16.4183 6 12 6C11.0187 6 10.0786 6.17669 9.20988 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

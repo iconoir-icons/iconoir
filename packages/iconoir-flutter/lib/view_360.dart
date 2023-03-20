@@ -19,7 +19,8 @@ class View360 extends StatelessWidget {
 <path d="M17 8.5V7C17 5.89543 17.8954 5 19 5H19.5C20.6046 5 21.5 5.89543 21.5 7V8.5V10C21.5 11.1046 20.6046 12 19.5 12H19C17.8954 12 17 11.1046 17 10V8.5Z" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

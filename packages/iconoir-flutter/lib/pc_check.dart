@@ -18,7 +18,8 @@ class PcCheck extends StatelessWidget {
 <path d="M9 10.5L11 12.5L15 8.5" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

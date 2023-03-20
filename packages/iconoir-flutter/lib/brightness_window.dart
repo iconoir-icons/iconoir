@@ -22,7 +22,8 @@ class BrightnessWindow extends StatelessWidget {
 <path d="M16.7754 20.9564L18 22V14L16.7754 15.0436L15.1716 15.1716L15.0436 16.7754L14 18L15.0436 19.2246L15.1716 20.8284L16.7754 20.9564Z" fill="currentColor"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

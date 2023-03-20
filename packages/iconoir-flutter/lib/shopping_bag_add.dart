@@ -18,7 +18,8 @@ class ShoppingBagAdd extends StatelessWidget {
 <path d="M8.99219 15H11.9922M14.9922 15H11.9922M11.9922 15V12M11.9922 15V18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

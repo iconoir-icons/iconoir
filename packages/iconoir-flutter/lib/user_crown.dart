@@ -18,7 +18,8 @@ class UserCrown extends StatelessWidget {
 <path d="M21 22L22 16L18.5 17.8L17 16L15.5 17.8L12 16L13 22H21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -20,7 +20,8 @@ class NetworkLeft extends StatelessWidget {
 <path d="M12.5 12H17" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class Diameter extends StatelessWidget {
 <path d="M18.9999 12L15.9999 9M18.9999 12L15.9999 15M18.9999 12H4.99988M4.99988 12L7.99988 9M4.99988 12L7.99988 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

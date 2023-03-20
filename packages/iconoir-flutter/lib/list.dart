@@ -6,8 +6,7 @@ class List extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const List({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const List({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -21,7 +20,8 @@ class List extends StatelessWidget {
 <path d="M8 18L20 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

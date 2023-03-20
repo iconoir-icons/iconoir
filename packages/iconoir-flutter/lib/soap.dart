@@ -6,8 +6,7 @@ class Soap extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Soap({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Soap({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Soap extends StatelessWidget {
 <path d="M12 7V3M12 3H9M12 3H13" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

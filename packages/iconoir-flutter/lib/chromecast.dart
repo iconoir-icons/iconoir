@@ -19,7 +19,8 @@ class Chromecast extends StatelessWidget {
 <path d="M2 12C6 12.5 9.5 16 10 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

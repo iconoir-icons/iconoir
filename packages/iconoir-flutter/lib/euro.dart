@@ -6,8 +6,7 @@ class Euro extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Euro({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Euro({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Euro extends StatelessWidget {
 <path d="M5 14H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

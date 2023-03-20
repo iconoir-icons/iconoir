@@ -23,7 +23,8 @@ class Cookie extends StatelessWidget {
 <path d="M13 12.01L13.01 11.9989" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

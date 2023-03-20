@@ -19,7 +19,8 @@ class BinFull extends StatelessWidget {
 <path d="M3 5.00002C5.57143 7.66668 18.4286 7.66664 21 5.00002" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

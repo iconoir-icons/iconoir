@@ -22,7 +22,8 @@ class Treadmill extends StatelessWidget {
 <path d="M20.8914 21.7103L18.6509 19.5374" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

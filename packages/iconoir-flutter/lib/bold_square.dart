@@ -17,7 +17,8 @@ class BoldSquare extends StatelessWidget {
 <path d="M12 12H9M12 12C12 12 14.5 12 14.5 9.5C14.5 7.00001 12 7 12 7C12 7 12 7 12 7H9.6C9.26863 7 9 7.26863 9 7.6V12M12 12C12 12 15 12 15 14.75C15 17.5 12 17.5 12 17.5C12 17.5 12 17.5 12 17.5H9.6C9.26863 17.5 9 17.2314 9 16.9V12" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

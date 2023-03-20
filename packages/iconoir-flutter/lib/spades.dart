@@ -17,7 +17,8 @@ class Spades extends StatelessWidget {
 <path d="M11.4706 15.4926L8.47059 21.1176C8.25743 21.5173 8.54705 22 9 22H15C15.453 22 15.7426 21.5173 15.5294 21.1176L12.5294 15.4926C12.3035 15.0691 11.6965 15.0691 11.4706 15.4926Z" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

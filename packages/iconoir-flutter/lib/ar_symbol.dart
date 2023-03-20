@@ -18,7 +18,8 @@ class ArSymbol extends StatelessWidget {
 <path d="M11 15.5L9.92857 13M5 15.5L6.07143 13M6.07143 13L8 8.5L9.92857 13M6.07143 13H9.92857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

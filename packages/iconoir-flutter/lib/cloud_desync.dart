@@ -20,7 +20,8 @@ class CloudDesync extends StatelessWidget {
 <path d="M7.93413 14.4268L7.58058 16.9017L10.0554 16.5481L7.93413 14.4268Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

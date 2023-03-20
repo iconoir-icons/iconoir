@@ -6,7 +6,8 @@ class OneFingerSelectHandGesture extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const OneFingerSelectHandGesture({Key? key, this.color, this.width, this.height})
+  const OneFingerSelectHandGesture(
+      {Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override
@@ -20,7 +21,8 @@ class OneFingerSelectHandGesture extends StatelessWidget {
 <path d="M10.5 10C10.5 10 10.5 8.61578 10.5 7.5C10.5 6.34156 10.5 4.68968 10.5 3.49899C10.5 2.67056 9.82843 2 9 2V2C8.17157 2 7.5 2.67157 7.5 3.5V12V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

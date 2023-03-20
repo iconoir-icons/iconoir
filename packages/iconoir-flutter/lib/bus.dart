@@ -6,8 +6,7 @@ class Bus extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Bus({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Bus({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -22,7 +21,8 @@ class Bus extends StatelessWidget {
 <path d="M15.5 20V21.9C15.5 22.2314 15.7686 22.5 16.1 22.5H18.9C19.2314 22.5 19.5 22.2314 19.5 21.9V20" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

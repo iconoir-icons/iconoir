@@ -24,7 +24,8 @@ class CandlestickChart extends StatelessWidget {
 <path d="M21 5.6V10.4C21 10.7314 20.7314 11 20.4 11H17.6C17.2686 11 17 10.7314 17 10.4V5.6C17 5.26863 17.2686 5 17.6 5H20.4C20.7314 5 21 5.26863 21 5.6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

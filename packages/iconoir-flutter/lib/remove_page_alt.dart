@@ -18,7 +18,8 @@ class RemovePageAlt extends StatelessWidget {
 <path d="M1.99219 19H7.99219" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

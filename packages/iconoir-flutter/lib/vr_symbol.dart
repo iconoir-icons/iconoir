@@ -18,7 +18,8 @@ class VrSymbol extends StatelessWidget {
 <path d="M11 8.5L8 15.5L5 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

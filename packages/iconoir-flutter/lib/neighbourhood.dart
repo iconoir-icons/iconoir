@@ -20,7 +20,8 @@ class Neighbourhood extends StatelessWidget {
 <path d="M18 21V17.6C18 17.2686 17.7314 17 17.4 17L16 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

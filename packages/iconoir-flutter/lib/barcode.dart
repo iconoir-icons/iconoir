@@ -22,7 +22,8 @@ class Barcode extends StatelessWidget {
 <path d="M13 5L13 19H12" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

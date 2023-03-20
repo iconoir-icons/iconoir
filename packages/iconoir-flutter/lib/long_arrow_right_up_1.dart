@@ -16,7 +16,8 @@ class LongArrowRightUp1 extends StatelessWidget {
 <path d="M15.5 7V13C15.5 15.2091 13.7091 17 11.5 17H4.5M15.5 7L19 10.5M15.5 7L12 10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

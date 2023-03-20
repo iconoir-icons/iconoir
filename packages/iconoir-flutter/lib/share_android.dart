@@ -20,7 +20,8 @@ class ShareAndroid extends StatelessWidget {
 <path d="M8.5 13.5L15.5 17.5" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

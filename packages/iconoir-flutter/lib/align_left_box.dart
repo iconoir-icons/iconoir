@@ -23,7 +23,8 @@ class AlignLeftBox extends StatelessWidget {
 <path d="M12.0059 3.995L4.00586 3.995L4.00586 19.995H12.0059L12.0059 3.995Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

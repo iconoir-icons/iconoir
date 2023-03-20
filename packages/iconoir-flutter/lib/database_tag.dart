@@ -18,7 +18,8 @@ class DatabaseTag extends StatelessWidget {
 <path d="M8.35714 8H5.5V12L5.5 16H8.35714C9.07143 16 10.5 16 10.5 14V10C10.5 8 9.07143 8 8.35714 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

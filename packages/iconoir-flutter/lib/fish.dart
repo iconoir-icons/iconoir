@@ -6,8 +6,7 @@ class Fish extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Fish({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Fish({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Fish extends StatelessWidget {
 <path d="M17 12.01L17.01 11.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

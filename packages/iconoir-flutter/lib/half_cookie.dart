@@ -25,7 +25,8 @@ class HalfCookie extends StatelessWidget {
 <path d="M11 2C10.5 3.5 11.4999 5 13.0855 5C11 8.5 13 12 18 11.5C18 14 20.5 14.5 21.6998 14.0136" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

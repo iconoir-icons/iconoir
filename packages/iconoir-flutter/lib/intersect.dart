@@ -25,7 +25,8 @@ class Intersect extends StatelessWidget {
 <path d="M13.5 3H14.4C14.7314 3 15 3.26863 15 3.6V4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

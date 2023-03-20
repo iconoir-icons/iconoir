@@ -17,7 +17,8 @@ class SoundMin extends StatelessWidget {
 <path d="M20.5 15L20.5 9" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

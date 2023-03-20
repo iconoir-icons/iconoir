@@ -6,8 +6,7 @@ class Wolf extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Wolf({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Wolf({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -19,7 +18,8 @@ class Wolf extends StatelessWidget {
 <path d="M15.5 12.5L14 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -19,7 +19,8 @@ class Radiation extends StatelessWidget {
 <path d="M12.0001 13.9993C10.8955 13.9993 10.0001 13.1039 10.0001 11.9993C10.0001 10.8947 10.8955 9.99928 12.0001 9.99928C13.1046 9.99928 14.0001 10.8947 14.0001 11.9993C14.0001 13.1039 13.1046 13.9993 12.0001 13.9993Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

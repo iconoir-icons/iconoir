@@ -6,8 +6,7 @@ class Usb extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Usb({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Usb({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -22,7 +21,8 @@ class Usb extends StatelessWidget {
 <path d="M7 11C8.10457 11 9 10.1046 9 9C9 7.89543 8.10457 7 7 7C5.89543 7 5 7.89543 5 9C5 10.1046 5.89543 11 7 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

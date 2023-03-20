@@ -6,8 +6,7 @@ class Yelp extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Yelp({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Yelp({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -20,7 +19,8 @@ class Yelp extends StatelessWidget {
 <path d="M9.5 14L5.36833 11.9342C4.96939 11.7347 4.5 12.0248 4.5 12.4708V15.1138C4.5 15.5383 4.92872 15.8285 5.32283 15.6709L9.5 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

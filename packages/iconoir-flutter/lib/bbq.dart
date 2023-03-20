@@ -6,8 +6,7 @@ class Bbq extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Bbq({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Bbq({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -23,7 +22,8 @@ class Bbq extends StatelessWidget {
 <path d="M12 15C15.664 15 18.6705 12.185 18.9747 8.59974C19.0027 8.26956 18.7314 8 18.4 8H5.6C5.26863 8 4.99732 8.26956 5.02533 8.59974C5.32955 12.185 8.33603 15 12 15Z" stroke="currentColor" />
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

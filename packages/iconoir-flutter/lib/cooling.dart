@@ -17,7 +17,8 @@ class Cooling extends StatelessWidget {
 <path d="M12 7L12 12M12 17L12 12M12 12L7.5 9.5M12 12L16.5 14.5M12 12L16.5 9.5M12 12L7.5 14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

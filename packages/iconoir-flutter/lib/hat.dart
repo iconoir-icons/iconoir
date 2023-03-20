@@ -6,8 +6,7 @@ class Hat extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Hat({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Hat({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -17,7 +16,8 @@ class Hat extends StatelessWidget {
 <path d="M14 6.01L14.01 5.99889" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

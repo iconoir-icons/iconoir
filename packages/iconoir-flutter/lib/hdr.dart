@@ -6,8 +6,7 @@ class Hdr extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Hdr({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Hdr({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -18,7 +17,8 @@ class Hdr extends StatelessWidget {
 <path d="M9.5 12V8.5C12 8.5 14.5 8.5 14.5 12C14.5 15.5 12 15.5 9.5 15.5V12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

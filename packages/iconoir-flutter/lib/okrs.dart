@@ -6,8 +6,7 @@ class Okrs extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Okrs({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Okrs({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -21,7 +20,8 @@ class Okrs extends StatelessWidget {
 <path d="M16 21.2426L18.1213 19.1213M18.1213 19.1213L20.2426 17M18.1213 19.1213L16 17M18.1213 19.1213L20.2426 21.2426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

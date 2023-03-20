@@ -21,7 +21,8 @@ class Sweep3D extends StatelessWidget {
 <path d="M15.5 21L21.5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

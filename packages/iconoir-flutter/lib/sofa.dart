@@ -6,8 +6,7 @@ class Sofa extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Sofa({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Sofa({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -19,7 +18,8 @@ class Sofa extends StatelessWidget {
 <path d="M22 16L22 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -19,7 +19,8 @@ class FxTag extends StatelessWidget {
 <path d="M13 15L15.5 12M15.5 12L18 9M15.5 12L13 9M15.5 12L18 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

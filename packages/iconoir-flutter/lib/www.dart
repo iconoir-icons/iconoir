@@ -6,8 +6,7 @@ class Www extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Www({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Www({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -24,7 +23,8 @@ class Www extends StatelessWidget {
 <path d="M17 10L18.5 15L20 10L21.5 15L23 10" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

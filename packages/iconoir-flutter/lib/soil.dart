@@ -6,8 +6,7 @@ class Soil extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Soil({Key? key, this.color, this.width, this.height})
-      : super(key: key);
+  const Soil({Key? key, this.color, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(
@@ -30,7 +29,8 @@ class Soil extends StatelessWidget {
 <path d="M21 16.01L21.01 15.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

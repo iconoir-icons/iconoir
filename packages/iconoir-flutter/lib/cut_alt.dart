@@ -19,7 +19,8 @@ class CutAlt extends StatelessWidget {
 <path d="M6.23611 16C6.71115 16.5308 7 17.2316 7 18C7 19.6569 5.65685 21 4 21C2.34315 21 1 19.6569 1 18C1 16.3431 2.34315 15 4 15C4.8885 15 5.68679 15.3863 6.23611 16ZM6.23611 16L16 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );
