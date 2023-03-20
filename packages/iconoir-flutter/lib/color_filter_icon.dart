@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ColorFilterIc extends StatelessWidget {
+class ColorFilterIcon extends StatelessWidget {
   final Color? color;
   final double? width;
   final double? height;
 
-  const ColorFilterIc({Key? key, this.color, this.width, this.height})
+  const ColorFilterIcon({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override
