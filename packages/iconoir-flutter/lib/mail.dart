@@ -6,7 +6,8 @@ class Mail extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Mail({Key? key, this.color, this.width, this.height}) : super(key: key);
+  const Mail({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(

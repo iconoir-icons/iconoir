@@ -6,8 +6,7 @@ class WebWindowEnergyConsumption extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const WebWindowEnergyConsumption(
-      {Key? key, this.color, this.width, this.height})
+  const WebWindowEnergyConsumption({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override

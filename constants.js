@@ -10,3 +10,8 @@ export const incompatibleNames = {
   tiktok: 'tikTok',
   youtube: 'youTube',
 };
+
+export const flutterIncompatibleNames = {
+  ...incompatibleNames,
+  'color-filter': 'color-filter-ic'
+};

@@ -6,7 +6,8 @@ class Egg extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Egg({Key? key, this.color, this.width, this.height}) : super(key: key);
+  const Egg({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(

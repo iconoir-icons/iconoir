@@ -6,7 +6,8 @@ class Desk extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Desk({Key? key, this.color, this.width, this.height}) : super(key: key);
+  const Desk({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(

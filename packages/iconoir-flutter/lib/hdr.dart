@@ -6,7 +6,8 @@ class Hdr extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Hdr({Key? key, this.color, this.width, this.height}) : super(key: key);
+  const Hdr({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(

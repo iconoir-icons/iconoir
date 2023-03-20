@@ -270,7 +270,7 @@ export './coffee_cup.dart';
 export './coin.dart';
 export './collage_frame.dart';
 export './collapse.dart';
-export './color_filter.dart';
+export './color_filter_ic.dart';
 export './color_picker.dart';
 export './color_picker_empty.dart';
 export './color_wheel.dart';

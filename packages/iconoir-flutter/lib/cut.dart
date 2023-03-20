@@ -6,7 +6,8 @@ class Cut extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Cut({Key? key, this.color, this.width, this.height}) : super(key: key);
+  const Cut({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(

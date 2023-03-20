@@ -6,7 +6,8 @@ class Map extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const Map({Key? key, this.color, this.width, this.height}) : super(key: key);
+  const Map({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => SvgPicture.string(

@@ -6,8 +6,7 @@ class SwipeTwoFingersRightGesture extends StatelessWidget {
   final double? width;
   final double? height;
 
-  const SwipeTwoFingersRightGesture(
-      {Key? key, this.color, this.width, this.height})
+  const SwipeTwoFingersRightGesture({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override
