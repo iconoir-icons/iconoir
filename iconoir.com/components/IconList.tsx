@@ -40,14 +40,18 @@ function normalizeString(s: string) {
 
 function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
   if (filters.search) {
-    return allIcons.filter((icon) => {
-      const normalSearch = normalizeString(filters.search!);
-      return (
-        normalizeString(icon.filename).includes(normalSearch) ||
-        normalizeString(icon.category).includes(normalSearch) ||
-        icon.tags.some((tag) => normalizeString(tag).includes(normalSearch))
-      );
-    });
+    const normalSearch = normalizeString(filters.search!);
+    let result = allIcons
+    for (const term of normalSearch.split(' ')) {
+      result = result.filter((icon) => {
+        return (
+          normalizeString(icon.filename).includes(term) ||
+          normalizeString(icon.category).includes(term) ||
+          icon.tags.some((tag) => normalizeString(tag).includes(term))
+        );
+      })
+    }
+    return result;
   } else return allIcons;
 }
 
