@@ -18,7 +18,8 @@ class TennisBall extends StatelessWidget {
 <path d="M5.42834 4.46234C8.09501 8.99175 8.09513 14.1847 5.42834 19.5377" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

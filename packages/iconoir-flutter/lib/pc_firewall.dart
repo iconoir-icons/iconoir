@@ -18,7 +18,8 @@ class PcFirewall extends StatelessWidget {
 <path d="M12.4851 6.12127L15.5455 6.88638C15.8126 6.95316 16.0011 7.19646 15.9937 7.47168C15.8176 13.9997 12 15 12 15C12 15 8.18239 13.9997 8.00629 7.47168C7.99886 7.19646 8.18738 6.95316 8.45448 6.88638L11.5149 6.12127C11.8334 6.04165 12.1666 6.04165 12.4851 6.12127Z" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

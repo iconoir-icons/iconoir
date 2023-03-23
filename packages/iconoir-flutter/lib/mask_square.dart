@@ -17,7 +17,8 @@ class MaskSquare extends StatelessWidget {
 <path d="M10 17.6586C10.6256 17.8797 11.2987 18 12 18C15.3137 18 18 15.3137 18 12C18 9.38756 16.3304 7.16508 14 6.34141M10 17.6586C7.66962 16.8349 6 14.6124 6 12C6 8.68629 8.68629 6 12 6C12.7013 6 13.3744 6.12031 14 6.34141M10 17.6586L14 6.34141" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

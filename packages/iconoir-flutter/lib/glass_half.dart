@@ -19,7 +19,8 @@ class GlassHalf extends StatelessWidget {
 <path d="M4 13C6.28571 10.3333 17.7143 10.3334 20 13" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

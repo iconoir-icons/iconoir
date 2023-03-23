@@ -12,9 +12,8 @@ import { Text15 } from './Typography';
 
 export interface HeaderProps {
   currentVersion: string;
-  currentVersionColor?: string;
 }
-export function Header({ currentVersion, currentVersionColor }: HeaderProps) {
+export function Header({ currentVersion }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
   return (
     <Container>
@@ -27,7 +26,7 @@ export function Header({ currentVersion, currentVersionColor }: HeaderProps) {
             <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
           </LogoContainer>
         </Link>
-        <CurrentVersion version={currentVersion} color={currentVersionColor} />
+        <CurrentVersion version={currentVersion} />
       </HeaderLeft>
       <HeaderCenter>
         <MobileMenuContainer visible={menuVisible}>
@@ -149,6 +148,7 @@ const HeaderRight = styled(HeaderItem)`
 `;
 export const Logo = styled.img`
   height: 24px;
+  margin-top: -4px;
   color: var(--black);
   margin-right: 16px !important;
   z-index: 101;

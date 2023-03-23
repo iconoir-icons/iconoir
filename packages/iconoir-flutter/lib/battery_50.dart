@@ -18,7 +18,8 @@ class Battery50 extends StatelessWidget {
 <path d="M4 14.4V9.6C4 9.26863 4.26863 9 4.6 9H9.4C9.73137 9 10 9.26863 10 9.6V14.4C10 14.7314 9.73137 15 9.4 15H4.6C4.26863 15 4 14.7314 4 14.4Z" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

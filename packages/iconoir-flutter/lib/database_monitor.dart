@@ -19,7 +19,8 @@ class DatabaseMonitor extends StatelessWidget {
 <path d="M18 22H19.5H21M19.5 19.4286H21.8333V16H17.1666V19.4286H19.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

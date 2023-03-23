@@ -20,7 +20,8 @@ class JpgFormat extends StatelessWidget {
 <path d="M7 9C7 9 7 11.4 7 13.2C7 15 5 15 5 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

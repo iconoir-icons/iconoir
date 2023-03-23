@@ -21,7 +21,8 @@ class CropRotateBr extends StatelessWidget {
 <path d="M4 2L4 13C4 13.5523 4.44772 14 5 14L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

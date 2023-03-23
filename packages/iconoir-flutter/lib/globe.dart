@@ -20,7 +20,8 @@ class Globe extends StatelessWidget {
 <path d="M2.5 10.5L5 8.5L7.5 8L9.5 5L8.5 3" stroke="currentColor"   stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

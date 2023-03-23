@@ -17,7 +17,8 @@ class Sphere extends StatelessWidget {
 <path d="M12 22C8.68629 22 6 17.5228 6 12C6 6.47715 8.68629 2 12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

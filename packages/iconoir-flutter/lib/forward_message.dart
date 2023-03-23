@@ -18,7 +18,8 @@ class ForwardMessage extends StatelessWidget {
 <path d="M22 17.1111H15.7C12.1 17.1111 12.1 22 15.7 22M22 17.1111L18.85 14M22 17.1111L18.85 20.2222" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

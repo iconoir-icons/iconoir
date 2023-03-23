@@ -18,7 +18,8 @@ class BoxingGlove extends StatelessWidget {
 <path d="M7.39282 7.90909C7.39282 11.7273 9.03725 12.2727 10.1335 12.2727" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

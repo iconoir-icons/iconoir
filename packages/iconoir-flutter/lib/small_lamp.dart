@@ -18,7 +18,8 @@ class SmallLamp extends StatelessWidget {
 <path d="M8.6 21H15.4C15.7314 21 15.9949 20.7315 15.9423 20.4043C15.763 19.2896 15.0263 17 12 17C8.97369 17 8.23702 19.2896 8.0577 20.4043C8.00506 20.7315 8.26863 21 8.6 21Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

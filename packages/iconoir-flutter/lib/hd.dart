@@ -17,7 +17,8 @@ class Hd extends StatelessWidget {
 <path d="M13 12V7C17 7 21 7 21 12C21 17 17 17 13 17V12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

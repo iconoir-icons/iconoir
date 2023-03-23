@@ -19,7 +19,8 @@ class Svg3DAddHole extends StatelessWidget {
 <path d="M12 21V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

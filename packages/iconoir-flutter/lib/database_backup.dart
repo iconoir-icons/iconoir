@@ -23,7 +23,8 @@ class DatabaseBackup extends StatelessWidget {
 <path d="M17.0049 20.3333H15.3336V20.3333C15.1493 20.3333 14.9999 20.4827 14.9999 20.667V22.5555" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

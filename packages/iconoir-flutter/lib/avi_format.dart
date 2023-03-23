@@ -20,7 +20,8 @@ class AviFormat extends StatelessWidget {
 <path d="M6 15V12M6 12V10.5C6 9.67157 6.67157 9 7.5 9V9C8.32843 9 9 9.67157 9 10.5L9 12M6 12H9M9 12L9 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

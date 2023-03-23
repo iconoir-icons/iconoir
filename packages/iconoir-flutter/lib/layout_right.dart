@@ -18,7 +18,8 @@ class LayoutRight extends StatelessWidget {
 <path d="M21 9.75H14.25H3" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

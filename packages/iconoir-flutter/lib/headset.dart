@@ -18,7 +18,8 @@ class Headset extends StatelessWidget {
 <path d="M22 17.4385V15.5616C22 14.6439 21.3754 13.8439 20.4851 13.6213L20 13.5L18.7455 13.1864C18.3668 13.0918 18 13.3782 18 13.7685V19.2316C18 19.6219 18.3668 19.9083 18.7455 19.8137L20.4851 19.3788C21.3754 19.1562 22 18.3562 22 17.4385Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -13,7 +13,8 @@ class __icon__(pascalCase) extends StatelessWidget {
   Widget build(BuildContext context) => SvgPicture.string(
         '''
 __svgfilecontent__''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

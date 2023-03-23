@@ -21,7 +21,8 @@ class UploadDataWindow extends StatelessWidget {
 <path d="M19.5 22V16M19.5 16L17 18.5M19.5 16L22 18.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

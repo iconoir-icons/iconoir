@@ -26,7 +26,8 @@ class SoilAlt extends StatelessWidget {
 <path d="M16.1857 2.24133L16.5601 6.13059C16.8031 8.65364 14.9114 10.9001 12.3883 11.143C9.91266 11.3814 7.67 9.57185 7.43162 7.0962C7.19324 4.62055 9.00691 2.4204 11.4826 2.18203L15.6293 1.78274C15.9096 1.75575 16.1587 1.96107 16.1857 2.24133Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class UserCircle extends StatelessWidget {
 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

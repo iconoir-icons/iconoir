@@ -21,7 +21,8 @@ class DownloadDataWindow extends StatelessWidget {
 <path d="M19.5 16V22M19.5 22L17 19.5M19.5 22L22 19.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

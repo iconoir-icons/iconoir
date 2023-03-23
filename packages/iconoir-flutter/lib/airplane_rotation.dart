@@ -20,7 +20,8 @@ class AirplaneRotation extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.87869 14.1208C9.87869 14.1208 9.88788 16.9231 8.46448 18.3635C7.0545 19.772 5.6707 21.228 4.22183 19.7777C2.8451 18.3995 4.20698 16.9683 5.63605 15.535C7.03753 14.1293 9.87869 14.1208 9.87869 14.1208Z" stroke="currentColor" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

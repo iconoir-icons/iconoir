@@ -19,7 +19,8 @@ class Pokeball extends StatelessWidget {
 <path d="M15 12L22 12" stroke="currentColor"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

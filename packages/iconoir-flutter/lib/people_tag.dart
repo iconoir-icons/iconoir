@@ -19,7 +19,8 @@ class PeopleTag extends StatelessWidget {
 <path d="M15.5 10C15.2239 10 15 9.77614 15 9.5C15 9.22386 15.2239 9 15.5 9C15.7761 9 16 9.22386 16 9.5C16 9.77614 15.7761 10 15.5 10Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

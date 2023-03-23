@@ -23,7 +23,8 @@ class FrameSimple extends StatelessWidget {
 <path d="M21.9964 19.002H18.998V22.0004H21.9964V19.002Z" stroke="currentColor" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -18,7 +18,8 @@ class VeganSquare extends StatelessWidget {
 <path d="M18.0155 6.73006L18.3121 9.81003C18.5045 11.8081 17.0064 13.5871 15.0083 13.7795C13.0478 13.9683 11.2718 12.5352 11.083 10.5747C10.8942 8.61421 12.3305 6.87187 14.291 6.68309L17.5749 6.36689C17.7969 6.34552 17.9941 6.50812 18.0155 6.73006Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

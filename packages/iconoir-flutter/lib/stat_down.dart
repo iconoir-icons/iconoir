@@ -17,7 +17,8 @@ class StatDown extends StatelessWidget {
 <path d="M16 4V12M16 12L19 9M16 12L13 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

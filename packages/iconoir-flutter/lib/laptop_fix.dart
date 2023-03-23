@@ -21,7 +21,8 @@ class LaptopFix extends StatelessWidget {
 <path d="M14.8284 10.4853C15.6094 9.70427 15.6094 8.43794 14.8284 7.65689C14.0473 6.87584 12.781 6.87584 12 7.65689" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

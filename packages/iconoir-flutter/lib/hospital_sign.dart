@@ -17,7 +17,8 @@ class HospitalSign extends StatelessWidget {
 <path d="M8 12C10.6667 12 13.3333 12 16 12M8 12V7M8 12V17M16 12V17M16 12V7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

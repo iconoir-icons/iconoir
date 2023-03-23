@@ -22,7 +22,8 @@ class JournalPage extends StatelessWidget {
 <path d="M18 2V5.4C18 5.73137 18.2686 6 18.6 6H22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

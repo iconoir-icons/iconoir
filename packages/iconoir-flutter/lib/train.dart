@@ -23,7 +23,8 @@ class Train extends StatelessWidget {
 <path d="M7.5 19L5.5 21.5" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

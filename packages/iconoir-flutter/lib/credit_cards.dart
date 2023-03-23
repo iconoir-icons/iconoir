@@ -17,7 +17,8 @@ class CreditCards extends StatelessWidget {
 <path d="M19 8V14.5C19 15.6046 18.1046 16.5 17 16.5H4C2.89543 16.5 2 15.6046 2 14.5V6.5C2 5.39543 2.89543 4.5 4 4.5H17C18.1046 4.5 19 5.39543 19 6.5V8ZM19 8H5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -5,6 +5,7 @@ import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
 import { ColorButton, ColorInput } from './Input';
 import { Slider } from './Slider';
 import { Text13, Text15 } from './Typography';
+import { media } from '../lib/responsive';
 
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;
@@ -91,18 +92,22 @@ export function CustomizationEditor({
 }
 
 const CustomizationBox = styled.div`
-  background-color:var(--gray-200);
+  background-color:var(--g7);
   width: 84%;
   padding: 8%;
   border-radius: 10px;
   margin-bottom: 30px;
+  display: none;
+  ${media.md} {
+    display: block;
+  }
 `;
 const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
-  border-bottom: solid 1px var(--light-gray);
+  border-bottom: solid 1px var(--g6);
   padding-bottom: 10px;
 `;
 const Field = styled.div`

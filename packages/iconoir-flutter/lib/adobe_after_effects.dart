@@ -18,7 +18,8 @@ class AdobeAfterEffects extends StatelessWidget {
 <path d="M6 16L7.125 13M12 16L10.875 13M7.125 13L9 8L10.875 13M7.125 13L10.875 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

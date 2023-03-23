@@ -24,7 +24,8 @@ class HexagonDice extends StatelessWidget {
 <path d="M7 15L12 23L17 15" stroke="currentColor"  stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

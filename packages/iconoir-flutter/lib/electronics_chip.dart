@@ -26,7 +26,8 @@ class ElectronicsChip extends StatelessWidget {
 <path d="M19.5 17.5H17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

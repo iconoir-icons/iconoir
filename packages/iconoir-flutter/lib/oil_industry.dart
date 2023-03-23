@@ -19,7 +19,8 @@ class OilIndustry extends StatelessWidget {
 <path d="M21 10C21 4 17 4 17 4C17 4 21 4.5 21 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class SettingsProfiles extends StatelessWidget {
 <path d="M9 13L11 15L16 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

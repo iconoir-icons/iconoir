@@ -17,7 +17,8 @@ class Html5 extends StatelessWidget {
 <path d="M17 7H7.5L8 11.5H16L15.5 17L12 18L8.5 17L8.25 14.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

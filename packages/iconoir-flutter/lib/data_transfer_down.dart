@@ -19,7 +19,8 @@ class DataTransferDown extends StatelessWidget {
 <path d="M17 10V4M17 4L14 7M17 4L20 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

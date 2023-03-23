@@ -17,7 +17,8 @@ class Terminal extends StatelessWidget {
 <path d="M5 7L10 12L5 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

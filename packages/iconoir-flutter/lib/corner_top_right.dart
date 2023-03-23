@@ -27,7 +27,8 @@ class CornerTopRight extends StatelessWidget {
 <path d="M20.01 12V4H12.01V12H20.01Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

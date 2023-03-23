@@ -26,7 +26,8 @@ class DroneRefresh extends StatelessWidget {
 <path d="M16.0049 19.2277H14.5999C14.2686 19.2277 13.9999 19.4964 13.9999 19.8277V21.45" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -17,7 +17,8 @@ class Tv extends StatelessWidget {
 <path d="M8.5 2.5L12 6L15.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

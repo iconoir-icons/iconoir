@@ -17,7 +17,8 @@ class GasTank extends StatelessWidget {
 <path d="M8 8.87817L16 17.1155L12 12.9948L8 17.1155L12 12.9948L16 8.87402" stroke="currentColor" stroke-width="1.50217" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

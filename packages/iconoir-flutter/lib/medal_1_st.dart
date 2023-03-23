@@ -17,7 +17,8 @@ class Medal1St extends StatelessWidget {
 <path d="M10.5 15L12.5 13.5V18.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

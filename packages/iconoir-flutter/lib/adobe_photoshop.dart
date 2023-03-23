@@ -18,7 +18,8 @@ class AdobePhotoshop extends StatelessWidget {
 <path d="M17 11V11C16.6936 10.3871 16.0672 10 15.382 10H15C14.1716 10 13.5 10.6716 13.5 11.5V11.5C13.5 12.3284 14.1716 13 15 13H15.5C16.3284 13 17 13.6716 17 14.5V14.5C17 15.3284 16.3284 16 15.5 16H15.118C14.4328 16 13.8064 15.6129 13.5 15V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

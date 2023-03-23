@@ -18,7 +18,8 @@ class Pound extends StatelessWidget {
 <path d="M17.3333 8.8C17.3333 6.14903 15.0947 4 12.3333 4C9.57189 4 7.33331 6.14903 7.33331 8.8C7.33331 11.451 9.57189 13.6 12.3333 13.6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

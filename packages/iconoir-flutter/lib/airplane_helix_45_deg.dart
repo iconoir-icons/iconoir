@@ -20,7 +20,8 @@ class AirplaneHelix45Deg extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1213 14.1214C14.1213 14.1214 16.9236 14.1122 18.364 15.5356C19.7725 16.9456 21.2284 18.3294 19.7782 19.7782C18.4 21.155 16.9688 19.7931 15.5355 18.364C14.1298 16.9625 14.1213 14.1214 14.1213 14.1214Z" stroke="currentColor" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

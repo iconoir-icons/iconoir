@@ -22,7 +22,8 @@ class TemperatureDown extends StatelessWidget {
 <path d="M19 6V18M19 18L21.5 15.5M19 18L16.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

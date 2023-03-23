@@ -23,7 +23,8 @@ class BorderBr extends StatelessWidget {
 <path d="M7.99999 4L8.01111 4.01" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

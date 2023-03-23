@@ -18,7 +18,8 @@ class ServerConnection extends StatelessWidget {
 <path d="M12 9.01L12.01 8.99889" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

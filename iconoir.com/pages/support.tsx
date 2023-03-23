@@ -1,79 +1,63 @@
-import { ArrowRight } from 'iconoir-react';
+import { ArrowRight, Flash, Discord, Globe, DesignNib } from 'iconoir-react';
 import { NextPage } from 'next';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { HeroText } from '.';
+import { HeroTextSecondary } from '.';
 import { LargeButton } from '../components/Button';
 import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { Footer } from '../components/Footer';
 import { Header, HeaderProps } from '../components/Header';
-import { HeaderBackground } from '../components/HeaderBackground';
+import { HeaderSecondary } from '../components/HeaderSecondary';
 import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
-import { Code, Heading2, Text18 } from '../components/Typography';
+import { Body, Code, Heading2, Text18 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
+import { Praise } from '../components/Praise';
 
 interface SupportProps extends HeaderProps {}
 const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
     <Layout>
       <SEO title={'Donate - Our Mission'} />
-      <Header {...headerProps} currentVersionColor={'var(--blue)'} />
-      <HeaderBackground src={'/support-background.svg'}>
-        <HeroText>Support our open library.</HeroText>
-      </HeaderBackground>
+      <Header {...headerProps}/>
+      <HeaderSecondary>
+        <SupportHead>
+          <HeroText>Our Goal</HeroText>
+          <HeroTextSecondary>A free, complete, and open icon library.</HeroTextSecondary>
+        </SupportHead>
+      </HeaderSecondary>
       <PageContainer>
-        <Text18>
-          Iconoir is an open source project built with consistent passion and
-          dedication. There are no pro subscriptions, forced sign-ups, free
-          trials or limitations. <br />
-          Building an open library is what makes us happy.
-        </Text18>
-        <Heading2>Our mission pillars</Heading2>
-        <Code>
-          <strong>Free forever.</strong> We want to give to developers and users
-          high-quality free icons. Hassle-free.
-        </Code>
-        <Code>
-          <strong>Full coverage.</strong> We're aiming at having as many unique
-          icons as possible.
-        </Code>
-        <Code>
-          <strong>Used everywhere.</strong> We'd like to see Iconoir as a point
-          of reference for any new and exciting project out there.
-        </Code>
-        <Text18>
-          If you consider this library valuable for you and your projects,
-          support Iconoir with a donation to help us sustain costs and
-          development time.
-        </Text18>
-        <DonateSeparator />
-        <DonateContainer>
-          <DonateLeft>
-            <DonateHeader>Donate with OpenCollective</DonateHeader>
-            <Text18>We collect donations with transparency.</Text18>
-          </DonateLeft>
-          <DonateRight>
-            <DonateImage>
-              <Image
-                src={'/opencollective.png'}
-                alt={'OpenCollective Logo'}
-                width={65}
-                height={65}
-                style={{ mixBlendMode: 'multiply' }}
-              />
-            </DonateImage>
-            <DonateButton
-              as={'a'}
-              href={SUPPORT_LINK}
-              target={'_blank'}
-              rel={'noreferrer'}
-            >
-              <span>Donate</span> <ArrowRight />
-            </DonateButton>
-          </DonateRight>
-        </DonateContainer>
+        <PillarsContainer>
+          <Pillar>
+            <PillarIcon R={"140"} G={"26"} B={"245"}><Flash /></PillarIcon>
+            <PillarTitle>Free</PillarTitle>
+            <PillarDescription>We want to give to developers and users high-quality free icons. Hassle-free.</PillarDescription>
+          </Pillar>
+          <Pillar>
+            <PillarIcon R={"72"} G={"88"} B={"255"}><DesignNib /></PillarIcon>
+            <PillarTitle>Complete</PillarTitle>
+            <PillarDescription>We’re aiming at having as much unique icons as possible.</PillarDescription>
+          </Pillar>
+          <Pillar>
+            <PillarIcon R={"65"} G={"209"} B={"255"}><Globe /></PillarIcon>
+            <PillarTitle>Ambitious</PillarTitle>
+            <PillarDescription>We want to help and be part of as many projects as possible.</PillarDescription>
+          </Pillar>
+        </PillarsContainer>
+        <WideSection>
+          <Heading2>Become part of the project.</Heading2>
+          <Text18>
+            If you consider this library valuable for you and your projects,
+            support Iconoir with a donation to help us sustain costs and
+            development time.
+          </Text18>
+          <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}><span>Donate</span><ArrowRight /></CallToAction>
+        </WideSection>
+        <PraiseContainer>
+        <PraiseTitle>What our friends say</PraiseTitle>
+        <Praise />
+      </PraiseContainer>
         <DonateContainer>
           <DonateLeft>
             <DonateHeader>Join us on Discord</DonateHeader>
@@ -88,7 +72,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
               target={'_blank'}
               rel={'noreferrer'}
             >
-              <span>Join</span> <ArrowRight />
+              <span>Join</span> <Discord />
             </DonateButton>
           </DonateRight>
         </DonateContainer>
@@ -98,24 +82,91 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   );
 };
 
+
+const PillarsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  ${media.md} {
+    flex-direction: row;
+  }
+`;
+
+const Pillar = styled.div`
+  height: fit-content;
+  width: 80%;
+  border: 1px solid var(--g6);
+  background: var(--white);
+  border-radius: 12px;
+  display: flex-column;
+  text-align: center;
+  padding: 60px 10%;
+  margin-bottom: 20px;
+  ${media.md} {
+    width: 22%;
+    height: 180px;
+    padding: 60px 5%;
+    margin-bottom: 0;
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+`;
+
+const PillarTitle = styled(Heading2)`
+  width: 100%;
+  margin: 20px 0 0 0;
+  font-weight: 500;
+  font-size: 20px;
+`;
+
+const PillarDescription = styled(Body)`
+  margin: 0;
+`;
+
+const PillarIcon = styled.span<{ R?: string, G?: string, B?: string  }>`
+  font-size: 18px;
+  padding: 20px 11px 6px 11px;
+  color: var(--white);
+  width: 100px;
+  height: 100px;
+  background: rgb(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B});
+  box-shadow: 2px 6px 20px rgba(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B}, 0.5);
+  border-radius: 18px;
+`;
+
+export const SupportHead = styled.div`
+  margin: 60px auto 40px auto;
+  ${media.md} {
+    margin: 100px auto 80px auto;
+  }
+`;
+
 const PageContainer = styled.div`
   max-width: 1336px;
   margin: 75px auto 0 auto;
   ${media.lg} {
-    margin: 150px auto 0 auto;
+    margin: 110px auto 0 auto;
   }
 `;
-const DonateSeparator = styled.div`
-  margin-top: 88px;
+const WideSection = styled.div`
+  width: 60%;
+  background: var(--g7);
+  border-radius: 12px;
+  text-align: center;
+  padding: 4% 20% 10% 20%;
+  margin-top: 60px;
+  ${media.md} {
+    padding: 80px 20%;
+  }
+`;
+const PraiseTitle = styled(Heading2)`
+  margin: 100px 0 80px 0;
+  text-align: center;
 `;
 const DonateLeft = styled.div`
   max-width: 800px;
-`;
-const DonateImage = styled.div`
-  display: none;
-  ${media.lg} {
-    display: block;
-  }
 `;
 export const DonateRight = styled.div`
   display: flex;
@@ -133,11 +184,15 @@ export const DonateButton = styled(LargeButton)`
   padding: 0 24px;
   height: 50px;
 `;
+const CallToAction = styled(LargeButton)`
+  margin-top: 40px;
+`;
 export const DonateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: var(--lighter-gray);
+  border: 1px solid var(--g6);
+  border-radius: 20px;
   padding: 30px;
   margin-bottom: 24px;
   ${media.md} {
@@ -149,13 +204,20 @@ export const DonateContainer = styled.div`
 `;
 export const DonateHeader = styled.div`
   font-size: 18px;
-  line-height: 27px;
+  color: var(--g0);
   letter-spacing: -0.02em;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
   ${media.md} {
-    font-size: 30px;
+    font-size: 22px;
   }
+`;
+const PraiseContainer = styled.div`
+  margin: 50px 0 64px 0;
+  ${media.md} {
+    margin: 140px 0 150px 0;
+  }
+  width: 100%;
 `;
 
 export default Support;

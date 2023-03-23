@@ -19,7 +19,8 @@ class Tournament extends StatelessWidget {
 <path d="M3 15L8.00001 15L8.00001 21H3" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

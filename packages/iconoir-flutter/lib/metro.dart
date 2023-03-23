@@ -24,7 +24,8 @@ class Metro extends StatelessWidget {
 <path d="M11.7857 10H12.2143C13.2005 10 14 10.7995 14 11.7857C14 11.9041 13.9041 12 13.7857 12H10.2143C10.0959 12 10 11.9041 10 11.7857C10 10.7995 10.7995 10 11.7857 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

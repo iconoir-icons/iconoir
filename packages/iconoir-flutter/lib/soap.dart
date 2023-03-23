@@ -18,7 +18,8 @@ class Soap extends StatelessWidget {
 <path d="M12 7V3M12 3H9M12 3H13" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -19,7 +19,8 @@ class CompressLines extends StatelessWidget {
 <path d="M12 19V14M12 14L15 17M12 14L9 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

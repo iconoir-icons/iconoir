@@ -20,7 +20,8 @@ class Smoking extends StatelessWidget {
 <rect x="2" y="19" width="12" height="3" rx="0.6" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

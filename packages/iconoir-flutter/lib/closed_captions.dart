@@ -18,7 +18,8 @@ class ClosedCaptions extends StatelessWidget {
 <path d="M18.5 10L18.3284 9.82843C17.798 9.29799 17.0786 9 16.3284 9V9C14.7663 9 13.5 10.2663 13.5 11.8284V12.1716C13.5 13.7337 14.7663 15 16.3284 15V15C17.0786 15 17.798 14.702 18.3284 14.1716L18.5 14" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

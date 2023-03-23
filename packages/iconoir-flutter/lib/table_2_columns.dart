@@ -20,7 +20,8 @@ class Table2Columns extends StatelessWidget {
 <path d="M12 21V3" stroke="currentColor" stroke-width="1.5"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

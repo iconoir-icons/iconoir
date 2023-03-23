@@ -18,7 +18,8 @@ class Windows extends StatelessWidget {
 <path d="M10.5 5.5V18.5" stroke="currentColor" />
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

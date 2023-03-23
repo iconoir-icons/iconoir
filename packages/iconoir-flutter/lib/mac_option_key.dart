@@ -18,7 +18,8 @@ class MacOptionKey extends StatelessWidget {
 <path d="M17 14L14.9167 14L12 14L10.3333 10H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

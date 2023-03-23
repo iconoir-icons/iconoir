@@ -18,7 +18,8 @@ class AtSign extends StatelessWidget {
 <path d="M15 12V13.5C15 14.8807 13.6569 16 12 16C10.3431 16 9 14.8807 9 13.5V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

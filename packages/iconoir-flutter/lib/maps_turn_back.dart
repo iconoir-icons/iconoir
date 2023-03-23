@@ -18,7 +18,8 @@ class MapsTurnBack extends StatelessWidget {
 <path d="M9 7.5C7.63317 8.86683 6.86683 9.63317 5.5 11C4.13317 9.63317 3.36683 8.86683 2 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

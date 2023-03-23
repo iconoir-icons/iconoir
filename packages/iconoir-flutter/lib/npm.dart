@@ -22,7 +22,8 @@ class Npm extends StatelessWidget {
 <path d="M20.5 11V15" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

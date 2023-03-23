@@ -16,7 +16,8 @@ class Flash extends StatelessWidget {
 <path d="M13 10V3L5 14H11V21L19 10H13Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

@@ -20,7 +20,8 @@ class AccessibilityTech extends StatelessWidget {
 <path d="M10.5 18C8.84315 18 7.5 16.6569 7.5 15C7.5 13.3431 8.84315 12 10.5 12C12.1569 12 13.5 13.3431 13.5 15C13.5 16.6569 12.1569 18 10.5 18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

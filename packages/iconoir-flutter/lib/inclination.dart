@@ -17,7 +17,8 @@ class Inclination extends StatelessWidget {
 <path d="M20 16C19.5 12.5 19 11 17 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

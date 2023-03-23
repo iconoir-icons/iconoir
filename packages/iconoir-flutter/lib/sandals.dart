@@ -17,7 +17,8 @@ class Sandals extends StatelessWidget {
 <path d="M10.0001 7C10.0001 7 10.5001 3 6.00007 3C1.5 3 2.00007 7 2.00007 7M10.0001 7H2.00007M10.0001 7L9.78579 10M2.00007 7L2.21436 10M9.78579 10L9.19909 18.2137C9.08695 19.7837 7.78063 21 6.20671 21H5.79343C4.21951 21 2.91319 19.7837 2.80105 18.2137L2.21436 10M9.78579 10H2.21436" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

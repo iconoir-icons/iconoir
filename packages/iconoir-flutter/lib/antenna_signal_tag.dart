@@ -21,7 +21,8 @@ class AntennaSignalTag extends StatelessWidget {
 <path d="M7 7C7 7 5 8.78571 5 12C5 15.2143 7 17 7 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

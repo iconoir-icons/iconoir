@@ -19,7 +19,8 @@ class Shuffle extends StatelessWidget {
 <path d="M20 20C20 20 21.219 18.781 22 18C21.219 17.219 20 16 20 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

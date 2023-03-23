@@ -19,7 +19,8 @@ class Antenna extends StatelessWidget {
 <path d="M7 23L8.11111 19M17 23L15.8889 19M14.5 14L12 5L9.5 14M14.5 14H9.5M14.5 14L15.8889 19M9.5 14L8.11111 19M8.11111 19H15.8889" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );

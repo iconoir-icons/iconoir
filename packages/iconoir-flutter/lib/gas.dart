@@ -18,7 +18,8 @@ class Gas extends StatelessWidget {
 <path d="M12 5V2M12 2H11M12 2H13" stroke="currentColor" stroke-linecap="round"/>
 </svg>
 ''',
-        color: color,
+        colorFilter:
+            color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         width: width,
         height: height,
       );
