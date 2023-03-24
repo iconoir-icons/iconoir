@@ -1,3 +1,20 @@
+<a name="v6.4.1"></a>
+# [v6.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.1) - 24 Mar 2023
+
+Optimized the optical size of 6 icons:
+- `arrow-down`
+- `arrow-left`
+- `arrow-right`
+- `arrow-up`
+- `more-horiz`
+- `more-vert`
+
+Minor fix of 1 icon:
+- `numbered-list-left`
+
+[Changes][v6.4.1]
+
+
 <a name="v6.4.0"></a>
 # [v6.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.0) - 04 Mar 2023
 
@@ -978,6 +995,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.4.1]: https://github.com/iconoir-icons/iconoir/compare/v6.4.0...v6.4.1
 [v6.4.0]: https://github.com/iconoir-icons/iconoir/compare/v6.3.0...v6.4.0
 [v6.3.0]: https://github.com/iconoir-icons/iconoir/compare/v6.2.1...v6.3.0
 [v6.2.1]: https://github.com/iconoir-icons/iconoir/compare/v6.2.0...v6.2.1
