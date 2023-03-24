@@ -42,10 +42,8 @@ Modifiers:
 `-plus`, `-minus`, `-warning`, `-check`, `-xmark`, `-tag`,
 `-ban`, `-slash`.
 
-`-plus-in`: Differently from `-plus`, this is used when the icon 
-has a bigger plus icon in the center or inside the main object.
-
-`minus-in`: Same as `-plus-in`.
+`-plus-in` and `minus-in`: Differently from `-plus` and `-minus`, these are used when the icon 
+has a bigger plus or minus icon in the center or inside the main object.
 
 `-no-access`: It's regularly used when the icon has a restrict 
 symbol in a corner.
