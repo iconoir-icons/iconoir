@@ -96,7 +96,7 @@ const CustomizationBox = styled.div`
   width: 84%;
   padding: 8%;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin: 24px 0;
   display: none;
   ${media.md} {
     display: block;

@@ -21,25 +21,30 @@ export function Ad() {
 }
 
 const AdContainer = styled.div`
-  #carbonads {
-    a {
-      text-decoration: none !important;
+#carbonads {
+  margin: 24px 0 0 0;
+  a {
+    text-decoration: none !important;
+  }
+  .carbon-wrap {
+    display: flex;
+    align-items: flex-start;
+    > :first-child {
+      margin-right: 12px;
     }
-    .carbon-wrap {
-      display: flex;
-      align-items: flex-start;
-      > :first-child {
-        margin-right: 12px;
-      }
-    }
-    .carbon-text {
-      color: var(--black-80);
-      font-size: 14px;
-    }
-    .carbon-poweredby {
-      text-align: center;
-      font-size: 12px;
-      color: var(--black-40);
+    & > a > img {
+      width:100px;
+      height:74px;
     }
   }
+  .carbon-text {
+    color: var(--black-80);
+    font-size: 14px;
+  }
+  .carbon-poweredby {
+    text-align: center;
+    font-size: 12px;
+    color: var(--black-40);
+  }
+}
 `;
