@@ -50,12 +50,43 @@ const SponsorLeft = styled.div`
 `;
 
 const SponsorLogo = styled.div`
+
+@keyframes my-animation {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) rotate(-15deg);
+  }
+  55% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1.6) rotate(15deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
   width: 34px;
   height: 34px;
   background: url('/framer-spns.png') no-repeat;
   background-size: 100%;
   border-radius: 12px;
   margin-right: 16px;
+
+  animation-name: my-animation;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
 `;
 
 const SponsorTitle = styled.div`

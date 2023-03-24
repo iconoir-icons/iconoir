@@ -35,6 +35,7 @@ const AdContainer = styled.div`
     & > a > img {
       width:100px;
       height:74px;
+      filter: grayscale(100%);
     }
   }
   .carbon-text {
