@@ -13,8 +13,8 @@ function SvgArrowLeft(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -22,7 +22,7 @@ function SvgArrowLeft(
       {...props}
     >
       <path
-        d="M18.5 12H6m0 0l6-6m-6 6l6 6"
+        d="M21 12H3m0 0l8.5-8.5M3 12l8.5 8.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
