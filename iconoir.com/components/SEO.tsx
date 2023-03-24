@@ -10,6 +10,7 @@ export function SEO({ title }: SEOProps) {
   return (
     <Head>
       <title>{pageTitle}</title>
+      <link rel="canonical" href="https://iconoir.com/" />
       <meta
         name="description"
         content="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. 
