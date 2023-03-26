@@ -1,3 +1,32 @@
+<a name="v6.5.0"></a>
+# [v6.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.5.0) - 26 Mar 2023
+
+Added 21 new icons:
+- `bitcoin-circle`
+- `bitcoin-rotate-out`
+- `card-reader`
+- `coins-swap`
+- `coins`
+- `commodity`
+- `contactless`
+- `dogecoin-circle`
+- `dogecoin-rotate-out`
+- `ethereum-circle`
+- `ethereum-rotate-out`
+- `hand-card`
+- `hand-cash`
+- `hand-contactless`
+- `litecoin-circle`
+- `litecoin-rotate-out`
+- `percent-rotate-out`
+- `safe-arrow-left`
+- `safe-arrow-right`
+- `safe-open`
+- `safe`
+
+[Changes][v6.5.0]
+
+
 <a name="v6.4.1"></a>
 # [v6.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.1) - 24 Mar 2023
 
@@ -995,6 +1024,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.5.0]: https://github.com/iconoir-icons/iconoir/compare/v6.4.1...v6.5.0
 [v6.4.1]: https://github.com/iconoir-icons/iconoir/compare/v6.4.0...v6.4.1
 [v6.4.0]: https://github.com/iconoir-icons/iconoir/compare/v6.3.0...v6.4.0
 [v6.3.0]: https://github.com/iconoir-icons/iconoir/compare/v6.2.1...v6.3.0
