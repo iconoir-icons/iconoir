@@ -43,7 +43,6 @@ Default values for the most common props are given below:
 | width       | "1.5em"        |
 | height      | "1.5em"        |
 | strokeWidth | 1.5            |
-| fill        | "none"         |
 
 ### IconoirProvider
 
