@@ -14,15 +14,15 @@ function SvgArrowDown(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M12.25 5.5V18m0 0l-6-6m6 6l6-6"
+        d="M12 3v18m0 0l8.5-8.5M12 21l-8.5-8.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

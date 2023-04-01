@@ -14,15 +14,15 @@ function SvgArrowRight(
     <Svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
       <Path
-        d="M6 12h12.5m0 0l-6-6m6 6l-6 6"
+        d="M3 12h18m0 0l-8.5-8.5M21 12l-8.5 8.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

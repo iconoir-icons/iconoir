@@ -7,8 +7,8 @@ function SvgMoreVert(
     <svg
       width="1.5em"
       height="1.5em"
-      strokeWidth={1.5}
       viewBox="0 0 24 24"
+      strokeWidth={1.5}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
@@ -16,7 +16,7 @@ function SvgMoreVert(
       {...props}
     >
       <path
-        d="M12 12.5a.5.5 0 100-1 .5.5 0 000 1zM12 18.5a.5.5 0 100-1 .5.5 0 000 1zM12 6.5a.5.5 0 100-1 .5.5 0 000 1z"
+        d="M12 12.5a.5.5 0 100-1 .5.5 0 000 1zM12 20.5a.5.5 0 100-1 .5.5 0 000 1zM12 4.5a.5.5 0 100-1 .5.5 0 000 1z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
