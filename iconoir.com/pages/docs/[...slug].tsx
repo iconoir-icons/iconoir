@@ -116,7 +116,7 @@ export function getDocumentationStructure(): DocumentationItem[] {
       ],
     },
     {
-      path: 'libraries',
+      path: 'packages',
       title: 'Libraries',
       children: [
         {
@@ -132,7 +132,7 @@ export function getDocumentationStructure(): DocumentationItem[] {
           noReadOnGitHub: true,
         },
         {
-          path: 'flutter',
+          path: 'iconoir-flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
           label: 'New',
