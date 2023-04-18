@@ -84,6 +84,41 @@ by adjusting the `::before` styles of the element (which is where the icons are 
 
 The library is available in the Figma community [here](https://www.figma.com/community/file/983248991460488027/Iconoir-Pack).
 
+## Swift Package
+
+## Installation
+
+To add `Iconoir-swift` to your Xcode project, follow these steps:
+
+1. In Xcode, open your project and navigate to *File* > *Swift Packages* > *Add Package Dependency...*
+2. Enter the repository URL: `https://github.com/mkaulfers/Iconoir-swift.git`
+3. Choose the branch or version you want to add, and click *Next*.
+4. Select the target where you want to use the package, then click *Finish*.
+
+### UIKit
+
+```swift
+import UIKit
+import Iconoir
+
+let imageView = UIImageView(image: Iconoir.bell.asUIImage)
+```
+
+### SwiftUI
+
+```swift
+import SwiftUI
+import Iconoir
+
+struct ContentView: View {
+    var body: some View {
+        Iconoir.bell.asImage
+            .foregroundColor(.blue)
+            .font(.system(size: 24))
+    }
+}
+```
+
 ## License
 
 MIT License
