@@ -86,8 +86,6 @@ The library is available in the Figma community [here](https://www.figma.com/com
 
 ## Swift Package
 
-## Installation
-
 To add `Iconoir-swift` to your Xcode project, follow these steps:
 
 1. In Xcode, open your project and navigate to *File* > *Swift Packages* > *Add Package Dependency...*
