@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class EyeClose extends StatelessWidget {
+class EyeClosed extends StatelessWidget {
   final Color? color;
   final double? width;
   final double? height;
 
-  const EyeClose({Key? key, this.color, this.width, this.height})
+  const EyeClosed({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override

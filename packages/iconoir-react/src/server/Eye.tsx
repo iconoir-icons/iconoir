@@ -1,14 +1,8 @@
 import * as React from "react";
-import { IconoirContext } from "./IconoirContext";
-function SvgEyeAlt(
-  passedProps: React.SVGProps<SVGSVGElement>,
+function SvgEye(
+  props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
-  const context = React.useContext(IconoirContext);
-  const props = {
-    ...context,
-    ...passedProps,
-  };
   return (
     <svg
       width="1.5em"
@@ -30,5 +24,5 @@ function SvgEyeAlt(
     </svg>
   );
 }
-const ForwardRef = React.forwardRef(SvgEyeAlt);
+const ForwardRef = React.forwardRef(SvgEye);
 export default ForwardRef;

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgEyeClose(
+function SvgEyeClosed(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -30,5 +30,5 @@ function SvgEyeClose(
     </svg>
   );
 }
-const ForwardRef = React.forwardRef(SvgEyeClose);
+const ForwardRef = React.forwardRef(SvgEyeClosed);
 export default ForwardRef;

@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class EyeAlt extends StatelessWidget {
+class Eye extends StatelessWidget {
   final Color? color;
   final double? width;
   final double? height;
 
-  const EyeAlt({Key? key, this.color, this.width, this.height})
+  const Eye({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override

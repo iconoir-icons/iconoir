@@ -1,28 +1,34 @@
 import * as React from "react";
-function SvgEyeAlt(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
+import Svg, { SvgProps, Path } from "react-native-svg";
+import { IconoirContext } from "./IconoirContext";
+function SvgEye(
+  passedProps: SvgProps,
+  svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
+  const context = React.useContext(IconoirContext);
+  const props = {
+    ...context,
+    ...passedProps,
+  };
   return (
-    <svg
+    <Svg
       width="1.5em"
       height="1.5em"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
       ref={svgRef}
       {...props}
     >
-      <path
+      <Path
         d="M3 13c3.6-8 14.4-8 18 0M12 17a3 3 0 110-6 3 3 0 010 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
+    </Svg>
   );
 }
-const ForwardRef = React.forwardRef(SvgEyeAlt);
+const ForwardRef = React.forwardRef(SvgEye);
 export default ForwardRef;
