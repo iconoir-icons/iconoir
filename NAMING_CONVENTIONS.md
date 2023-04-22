@@ -1,9 +1,9 @@
 ## Hierarchy
 
 The foundation of the naming conventions in Iconoir is:
-
+```txt
 [Object]-[Modifier]-[Container]
-
+```
 [Object]
 It contains one or more objects.
 
