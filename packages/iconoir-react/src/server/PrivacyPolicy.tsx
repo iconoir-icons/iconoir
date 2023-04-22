@@ -1,5 +1,5 @@
 import * as React from "react";
-function SvgPrivacypolicy(
+function SvgPrivacyPolicy(
   props: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -30,5 +30,5 @@ function SvgPrivacypolicy(
     </svg>
   );
 }
-const ForwardRef = React.forwardRef(SvgPrivacypolicy);
+const ForwardRef = React.forwardRef(SvgPrivacyPolicy);
 export default ForwardRef;

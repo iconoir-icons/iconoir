@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPrivacypolicy(
+function SvgPrivacyPolicy(
   passedProps: React.SVGProps<SVGSVGElement>,
   svgRef?: React.Ref<SVGSVGElement>
 ) {
@@ -36,5 +36,5 @@ function SvgPrivacypolicy(
     </svg>
   );
 }
-const ForwardRef = React.forwardRef(SvgPrivacypolicy);
+const ForwardRef = React.forwardRef(SvgPrivacyPolicy);
 export default ForwardRef;

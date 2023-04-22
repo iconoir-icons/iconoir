@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-function SvgPrivacypolicy(
+function SvgPrivacyPolicy(
   passedProps: SvgProps,
   svgRef?: React.Ref<React.Component<SvgProps>>
 ) {
@@ -36,5 +36,5 @@ function SvgPrivacypolicy(
     </Svg>
   );
 }
-const ForwardRef = React.forwardRef(SvgPrivacypolicy);
+const ForwardRef = React.forwardRef(SvgPrivacyPolicy);
 export default ForwardRef;
