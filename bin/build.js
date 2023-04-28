@@ -6,6 +6,7 @@ import os from 'os';
 import path, { basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { incompatibleNames, flutterIncompatibleNames } from '../constants.js';
+import { buildVueIcons } from './buildVue.js';
 
 // Paths
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -22,6 +23,10 @@ const targets = {
   'iconoir-react-native': {
     react: true,
     path: 'packages/iconoir-react-native',
+  },
+  'iconoir-vue': {
+    vue: true,
+    path: 'packages/iconoir-vue',
   },
 };
 
@@ -287,6 +292,142 @@ const tasks = new Listr(
                                         },
                                       ]
                                     : []),
+                                ],
+                                { concurrent: false, exitOnError: false }
+                              ),
+                          };
+                        });
+                        return task.newListr(tasks, {
+                          concurrent: true,
+                          rendererOptions: { collapse: false },
+                        });
+                      },
+                    },
+                  ],
+                  { concurrent: false }
+                ),
+            },
+            {
+              title: 'Building Vue library',
+              enabled: () =>
+                cliTargets.length === 0 ||
+                cliTargets.filter((cliTarget) => targets[cliTarget]?.vue)
+                  .length > 0,
+              task: (_, task) =>
+                task.newListr(
+                  [
+                    {
+                      title: 'Creating temporary directory',
+                      task: async (ctx) => {
+                        try {
+                          ctx.tmpDir = await fs.mkdtemp(
+                            path.join(os.tmpdir(), 'iconoir-')
+                          );
+                        } catch (err) {
+                          ctx.skip = true;
+                          throw new Error(err.message);
+                        }
+                      },
+                    },
+                    {
+                      title:
+                        'Copying icon files to temporary directory, while renaming icons with incompatible names',
+                      skip: (ctx) => ctx.skip,
+                      task: async (ctx) => {
+                        try {
+                          const promises = ctx.iconoirIconsFiles.map((file) => {
+                            const srcFilePath = path.join(
+                              iconoirIconsDir,
+                              file
+                            );
+                            const iconName = file.split('.')[0];
+                            const dstFileName =
+                              iconName in incompatibleNames
+                                ? incompatibleNames[iconName]
+                                : iconName;
+                            const dstFilePath = path.join(
+                              ctx.tmpDir,
+                              `${dstFileName}.svg`
+                            );
+
+                            return fs.copyFile(srcFilePath, dstFilePath);
+                          });
+                          return Promise.all(promises).catch((err) => {
+                            ctx.skip = true;
+                            throw new Error(err.message);
+                          });
+                        } catch (err) {
+                          ctx.skip = true;
+                          throw new Error(err.message);
+                        }
+                      },
+                    },
+                    {
+                      skip: (ctx) => ctx.skip,
+                      task: (_, task) => {
+                        const targetsToBuild =
+                          cliTargets.length > 0
+                            ? cliTargets.filter(
+                                (cliTarget) => targets[cliTarget]?.vue
+                              )
+                            : Object.keys(targets).filter(
+                                (target) => targets[target].vue
+                              );
+                        const tasks = targetsToBuild.map((target) => {
+                          const builtIconsDir = path.join(
+                            rootDir,
+                            targets[target].path,
+                            'src'
+                          );
+                          return {
+                            title: `Building ${target}`,
+                            task: (_, task) =>
+                              task.newListr(
+                                [
+                                  {
+                                    title: 'Cleaning target directory',
+                                    task: async (ctx) => {
+                                      try {
+                                        const files = await fs.readdir(
+                                          builtIconsDir
+                                        );
+                                        files
+                                          .filter(
+                                            (file) =>
+                                              !ignoreCleanFilenames.includes(
+                                                path.basename(file)
+                                              )
+                                          )
+                                          .map((file) => {
+                                            return fs.unlink(
+                                              path.join(builtIconsDir, file)
+                                            );
+                                          });
+                                        return Promise.all(files).catch(
+                                          (err) => {
+                                            ctx[target] = { skip: true };
+                                            throw new Error(err.message);
+                                          }
+                                        );
+                                      } catch (err) {
+                                        ctx[target] = { skip: true };
+                                        throw new Error(err.message);
+                                      }
+                                    },
+                                  },
+                                  {
+                                    title: 'Building icon files',
+                                    skip: (ctx) => ctx[target]?.skip,
+                                    task: async (ctx) => {
+                                      try {
+                                        await buildVueIcons(ctx.tmpDir, {
+                                          outDir: builtIconsDir,
+                                        });
+                                      } catch (err) {
+                                        throw new Error(err.message);
+                                      }
+                                    },
+                                  },
                                 ],
                                 { concurrent: false, exitOnError: false }
                               ),

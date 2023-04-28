@@ -1,0 +1,68 @@
+{
+  "name": "iconoir-vue",
+  "version": "6.6.0",
+  "description": "Vue library for Iconoir icon set",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/esm/*.mjs",
+      "require": "./dist/*.js"
+    },
+    "./*.js": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/esm/*.mjs",
+      "require": "./dist/*.js"
+    }
+  },
+  "module": "./dist/esm/index.mjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dist": "vite build",
+    "prepublish": "npm run dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaburgio/iconoir.git"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "library",
+    "vue"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucaburgio/iconoir/issues"
+  },
+  "sideEffects": false,
+  "homepage": "https://iconoir.com",
+  "dependencies": {
+    "vue-demi": "latest"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": ">=1.0.0-rc.1",
+    "vue": "^2.6.11 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.1",
+    "esbuild": "^0.17.18",
+    "terser": "^5.17.1",
+    "vite": "^4.3.3",
+    "vite-plugin-dts": "^2.3.0",
+    "vue": "^3.2.47"
+  }
+}
