@@ -1,11 +1,10 @@
 <script lang="ts">
-import { defineComponent } from "vue-demi";
+import { defineComponent, inject } from "vue-demi";
 import type { SVGAttributes } from "vue-demi";
 import providerKey from "./providerKey";
-export default defineComponent<SVGAttributes>({
-    inject: {
-        context: { from: providerKey }
-    }
+export default defineComponent<SVGAttributes>(() => {
+  const context = inject(providerKey);
+  return { context };
 });
 </script>
 <template>
