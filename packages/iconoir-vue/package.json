@@ -1,5 +1,5 @@
 {
-  "name": "iconoir-vue",
+  "name": "@iconoir/vue",
   "version": "6.6.0",
   "description": "Vue library for Iconoir icon set",
   "exports": {

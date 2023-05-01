@@ -55,7 +55,7 @@ A React Native library is available to install under the name `iconoir-react-nat
 
 ## Vue
 
-A Vue library is available to install under the name `iconoir-vue`. For more details, see the package [README](./packages/iconoir-vue).
+A Vue library is available to install under the name `@iconoir/vue`. For more details, see the package [README](./packages/iconoir-vue).
 
 ## Flutter
 

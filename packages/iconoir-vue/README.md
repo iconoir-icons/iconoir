@@ -2,24 +2,24 @@
 
 Iconoir is an open source library with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters. You can browse the full suite of icons at [iconoir.com](https://iconoir.com/).
 
-`iconoir-vue` is an open source package that exports these icons as Vue.js components that can be used in all of your Vue projects. Thanks to `vue-demi`, both Vue 2 and Vue 3 are supported.
+`@iconoir/vue` is an open source package that exports these icons as Vue.js components that can be used in all of your Vue projects. Thanks to `vue-demi`, both Vue 2 and Vue 3 are supported.
 
 ## Installation
 
 ```
-yarn add iconoir-vue
+yarn add @iconoir/vue
 ```
 
 or
 
 ```
-npm i iconoir-vue
+npm i @iconoir/vue
 ```
 
 or 
 
 ```
-pnpm add iconoir-vue
+pnpm add @iconoir/vue
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ pnpm add iconoir-vue
 Vue 3:
 ```vue
 <script setup>
-import { Iconoir } from 'iconoir-vue';
+import { Iconoir } from '@iconoir/vue';
 </script>
 
 <template>
@@ -38,7 +38,7 @@ import { Iconoir } from 'iconoir-vue';
 Vue 2:
 ```vue
 <script>
-import { Iconoir } from 'iconoir-vue';
+import { Iconoir } from '@iconoir/vue';
 
 export default 
     components: {
@@ -73,7 +73,7 @@ Tired of specifying the same props for every single icon, every time you use the
 
 ```vue
 <script setup>
-import { IconoirProvider, Check } from 'iconoir-vue';
+import { IconoirProvider, Check } from '@iconoir/vue';
 </script>
 
 <template>
