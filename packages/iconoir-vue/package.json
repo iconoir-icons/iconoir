@@ -2,26 +2,22 @@
   "name": "@iconoir/vue",
   "version": "6.6.0",
   "description": "Vue library for Iconoir icon set",
-  "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/esm/*.mjs",
-      "require": "./dist/*.js"
-    },
-    "./*.js": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/esm/*.mjs",
-      "require": "./dist/*.js"
-    }
-  },
-  "module": "./dist/esm/index.mjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "module": "./dist/esm/index.mjs",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
