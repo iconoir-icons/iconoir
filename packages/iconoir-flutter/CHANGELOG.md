@@ -1,3 +1,20 @@
+<a name="v6.7.0"></a>
+# [v6.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.7.0) - 03 May 2023
+
+## What's Changed
+* **New Iconoir Vue package** (thanks [@Scalamando](https://github.com/Scalamando)!)
+* **New Iconoir Swift package** (thanks [@mkaulfers](https://github.com/mkaulfers)!)
+* fix: correct footer links by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/293
+
+## New Contributors
+* [@mkaulfers](https://github.com/mkaulfers) made their first contribution in https://github.com/iconoir-icons/iconoir/pull/285
+* [@Scalamando](https://github.com/Scalamando) made their first contribution in https://github.com/iconoir-icons/iconoir/pull/294
+
+**Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v6.6.0...v6.7.0
+
+[Changes][v6.7.0]
+
+
 <a name="v6.6.0"></a>
 # [v6.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.6.0) - 12 Apr 2023
 
@@ -1039,6 +1056,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.7.0]: https://github.com/iconoir-icons/iconoir/compare/v6.6.0...v6.7.0
 [v6.6.0]: https://github.com/iconoir-icons/iconoir/compare/v6.5.0...v6.6.0
 [v6.5.0]: https://github.com/iconoir-icons/iconoir/compare/v6.4.1...v6.5.0
 [v6.4.1]: https://github.com/iconoir-icons/iconoir/compare/v6.4.0...v6.4.1
