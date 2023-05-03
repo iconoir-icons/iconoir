@@ -1,4 +1,4 @@
-# Vue Iconior Icons
+# Vue Iconoir Icons
 
 Iconoir is an open source library with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters. You can browse the full suite of icons at [iconoir.com](https://iconoir.com/).
 
@@ -16,7 +16,7 @@ or
 npm i @iconoir/vue
 ```
 
-or 
+or
 
 ```
 pnpm add @iconoir/vue
@@ -40,7 +40,7 @@ Vue 2:
 <script>
 import { Iconoir } from '@iconoir/vue';
 
-export default 
+export default
     components: {
         Iconoir
     }
