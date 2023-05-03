@@ -34,7 +34,7 @@
   "homepage": "https://iconoir.com",
   "devDependencies": {
     "@atomist/yaml-updater": "^1.0.2",
-    "@svgr/cli": "^5.5.0",
+    "@svgr/cli": "^7.0.0",
     "@types/svg-parser": "^2.0.3",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
