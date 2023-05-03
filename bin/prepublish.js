@@ -42,4 +42,5 @@ function publishPubPackage(name) {
 publishNpmPackage('iconoir');
 publishNpmPackage('iconoir-react');
 publishNpmPackage('iconoir-react-native');
+publishNpmPackage('iconoir-vue');
 publishPubPackage('iconoir-flutter');
