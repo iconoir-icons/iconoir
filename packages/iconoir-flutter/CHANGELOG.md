@@ -1,3 +1,19 @@
+<a name="v6.8.0"></a>
+# [v6.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.8.0) - 06 May 2023
+
+Added 8 new icons:
+- `comp-align-bottom`
+- `comp-align-left`
+- `comp-align-right`
+- `comp-align-top`
+- `component`
+- `spark`
+- `sparks`
+- `square-cursor`
+
+[Changes][v6.8.0]
+
+
 <a name="v6.7.0"></a>
 # [v6.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.7.0) - 03 May 2023
 
@@ -1056,6 +1072,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.8.0]: https://github.com/iconoir-icons/iconoir/compare/v6.7.0...v6.8.0
 [v6.7.0]: https://github.com/iconoir-icons/iconoir/compare/v6.6.0...v6.7.0
 [v6.6.0]: https://github.com/iconoir-icons/iconoir/compare/v6.5.0...v6.6.0
 [v6.5.0]: https://github.com/iconoir-icons/iconoir/compare/v6.4.1...v6.5.0
