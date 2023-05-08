@@ -35,6 +35,15 @@ Icons can take any standard SVG properties as optional props, e.g.
 ```javascript
 <Iconoir color="red" height={36} width={36} />
 ```
+
+Use the Icon component with the _as_ prop to dynamically display icons.\
+The _as_ prop accepts the name of any available icon.
+```javascript
+import { Icon } from 'iconoir-react';
+
+<Icon as="Iconoir" height={36} width={36} />
+```
+
 Default values for the most common props are given below:
 
 | Prop name   | Default value  |
