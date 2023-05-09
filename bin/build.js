@@ -12,7 +12,7 @@ import { buildVueIcons } from './buildVue.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 const iconoirIconsDir = path.join(rootDir, 'icons');
-const ignoreCleanFilenames = ['IconoirContext.tsx', 'server'];
+const ignoreCleanFilenames = ['IconoirContext.tsx', 'server', "Icon.tsx"];
 
 // Targets for building icons
 const targets = {

@@ -1,14 +1,15 @@
 import * as React from "react";
-import * as icons from "./icons";
+import * as icons from "./index";
 
+type Icons = Omit<typeof icons, "IconoirProvider"| "IconoirContext"| "IconoirContextValue" | "Icon">
 
-type IconProps<T extends keyof typeof icons> = React.ComponentProps<
+type IconProps<T extends keyof Icons> = React.ComponentProps<
   typeof icons[T]
 > & {
   as: T;
 };
 
-function Icon<T extends keyof typeof icons>({
+export function Icon<T extends keyof Icons>({
   as,
   ...props
 }: IconProps<T>) {
@@ -21,6 +22,3 @@ function Icon<T extends keyof typeof icons>({
   }
   return <IconComponent {...props} />;
 }
-
-export default Icon;
-

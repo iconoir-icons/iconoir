@@ -9,6 +9,9 @@ function template(filePaths) {
   exportEntries.push(
     "export { IconoirProvider, IconoirContext, IconoirContextValue } from './IconoirContext'"
   );
+  exportEntries.push(
+    "export { Icon } from './Icon'"
+  );
   return exportEntries.join('\n');
 }
 
