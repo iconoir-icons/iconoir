@@ -36,6 +36,7 @@
     "@atomist/yaml-updater": "^1.0.2",
     "@svgr/cli": "^5.5.0",
     "@types/svg-parser": "^2.0.3",
+    "@typescript-eslint/parser": "^5.59.2",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
