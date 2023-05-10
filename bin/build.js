@@ -91,7 +91,7 @@ const tasks = new Listr(
                   )
                     .toString()
                     .replace(/\n/g, '')
-                    .replace(/(width|height)="[0-9]+"/g, '')
+                    .replace(/(width|height)="[0-9]+px"/g, '')
                     .replace(/[ ]+/g, ' ');
                   content.push(
                     `.iconoir-${
