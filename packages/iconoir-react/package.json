@@ -1,6 +1,6 @@
 {
   "name": "iconoir-react",
-  "version": "6.6.0",
+  "version": "6.9.0",
   "description": "React library for Iconoir icon set",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucaburgio/iconoir.git"
+    "url": "git+https://github.com/iconoir-icons/iconoir.git"
   },
   "keywords": [
     "icons",

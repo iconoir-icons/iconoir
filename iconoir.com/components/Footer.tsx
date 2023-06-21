@@ -43,13 +43,13 @@ export function Footer() {
         ]} />
         <FooterCategory category={'Developers'} links={[
           { name: 'Changelog',url:'/docs/changelog' },
-          { name: 'React and React Native', url:'/docs/libraries/iconoir-react' },
-          { name: 'Flutter', url:'/docs/libraries/flutter'} ,
-          { name: 'Framer and Figma', url:'/docs/libraries/framer' },
-          { name: 'CSS', url:'/docs/libraries/css' }
+          { name: 'React and React Native', url:'/docs/packages/iconoir-react' },
+          { name: 'Flutter', url:'/docs/packages/iconoir-flutter'} ,
+          { name: 'Framer and Figma', url:'/docs/packages/framer' },
+          { name: 'CSS', url:'/docs/packages/css' }
         ]} />
-        
-        
+
+
       </FooterCategories>
       <FooterEnd>
         <Text13 style={{ fontWeight: 400 }}>Parts of this content are &copy;2020-2023 by individual Iconoir contributors. Content available under a <a href={'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE'} target={'_blank'} rel={'noreferrer'}>MIT License</a>.</Text13>

@@ -137,6 +137,12 @@ export function getDocumentationStructure(): DocumentationItem[] {
           noReadOnGitHub: true,
         },
         {
+          path: 'iconoir-vue',
+          filepath: 'packages/iconoir-vue/README.md',
+          title: 'Vue',
+          noReadOnGitHub: true,
+        },
+        {
           path: 'iconoir-flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
