@@ -1,6 +1,6 @@
 {
   "name": "@iconoir/vue",
-  "version": "6.8.0",
+  "version": "6.9.0",
   "description": "Vue library for Iconoir icon set",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
