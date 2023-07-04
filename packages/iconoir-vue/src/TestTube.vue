@@ -1,11 +1,11 @@
-<script lang="ts">
-import { defineComponent, inject } from "vue-demi";
-import type { SVGAttributes } from "vue-demi";
+<script lang="ts" setup>
+import { inject } from "vue";
+
 import providerKey from "./providerKey";
-export default defineComponent<SVGAttributes>(() => {
+
   const context = inject(providerKey);
-  return { context };
-});
+
+
 </script>
 <template>
     <svg width="24" stroke-width="1.5" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" v-bind="context"><path d="M6.1414 19.995C8.59885 21.7157 10.4224 19.9831 11.4592 18.5025L18.7592 8.07692L20.7255 7.0122L14.1723 2.42358L5.7251 14.4875C4.68838 15.9681 3.68394 18.2743 6.1414 19.995Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.091 11.0194C13.2146 10.1673 11.6877 11.801 8.81128 10.9489" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>

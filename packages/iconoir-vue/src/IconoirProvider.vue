@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { provide } from "vue-demi";
-import type { SVGAttributes } from "vue-demi";  
+import { provide } from "vue";
+
 import providerKey from "./providerKey";
 interface Props {
     iconProps: SVGAttributes

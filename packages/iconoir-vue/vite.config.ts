@@ -19,11 +19,8 @@ export default () => {
         formats: ['cjs', 'es'],
       },
       rollupOptions: {
-        external: ['vue-demi', 'vue'],
+        external: ['vue'],
       },
-    },
-    optimizeDeps: {
-      exclude: ['vue-demi'],
     },
     plugins: [
       vue({
