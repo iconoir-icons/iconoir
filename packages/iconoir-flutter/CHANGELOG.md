@@ -1,3 +1,18 @@
+<a name="v6.10.0"></a>
+# [v6.10.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.10.0) - 14 Jul 2023
+
+Added 6 new icons:
+
+- `align-horizontal-centers`
+- `align-horizontal-spacing`
+- `align-vertical-centers`
+- `align-vertical-spacing`
+- `app-store`
+- `circle-spark`
+
+[Changes][v6.10.0]
+
+
 <a name="v6.9.0"></a>
 # [v6.9.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.9.0) - 21 Jun 2023
 
@@ -1084,6 +1099,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v6.10.0]: https://github.com/iconoir-icons/iconoir/compare/v6.9.0...v6.10.0
 [v6.9.0]: https://github.com/iconoir-icons/iconoir/compare/v6.8.0...v6.9.0
 [v6.8.0]: https://github.com/iconoir-icons/iconoir/compare/v6.7.0...v6.8.0
 [v6.7.0]: https://github.com/iconoir-icons/iconoir/compare/v6.6.0...v6.7.0
