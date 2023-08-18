@@ -1150,11 +1150,8 @@ export './split_square_dashed.dart';
 export './spock_hand_gesture.dart';
 export './spotify.dart';
 export './square.dart';
-<<<<<<< HEAD
-export './square_dashed.dart';
-=======
 export './square_cursor.dart';
->>>>>>> main
+export './square_dashed.dart';
 export './square_wave.dart';
 export './stackoverflow.dart';
 export './star.dart';
@@ -1174,7 +1171,6 @@ export './submit_document.dart';
 export './substract.dart';
 export './suggestion.dart';
 export './sun_light.dart';
-export './svg.dart';
 export './svg_format.dart';
 export './sweep_3_d.dart';
 export './swimming.dart';
@@ -1211,11 +1207,8 @@ export './text_arrows_up_down.dart';
 export './text_box.dart';
 export './text_magnifying_glass.dart';
 export './text_size.dart';
-<<<<<<< HEAD
 export './text_square.dart';
-=======
 export './threads.dart';
->>>>>>> main
 export './three_points_circle.dart';
 export './three_stars.dart';
 export './thumbs_down.dart';

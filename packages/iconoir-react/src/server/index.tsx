@@ -1147,11 +1147,8 @@ export { default as SplitArea } from './SplitArea'
 export { default as SplitSquareDashed } from './SplitSquareDashed'
 export { default as SpockHandGesture } from './SpockHandGesture'
 export { default as Spotify } from './Spotify'
-<<<<<<< HEAD
-export { default as SquareDashed } from './SquareDashed'
-=======
 export { default as SquareCursor } from './SquareCursor'
->>>>>>> main
+export { default as SquareDashed } from './SquareDashed'
 export { default as SquareWave } from './SquareWave'
 export { default as Square } from './Square'
 export { default as Stackoverflow } from './Stackoverflow'
