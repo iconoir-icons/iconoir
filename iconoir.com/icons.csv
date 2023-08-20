@@ -845,7 +845,7 @@ filename,category,tags
 "folder-minus","Docs","remove",
 "frame-minus-in","Design Tools","remove",
 "cart-minus","Shopping","remove",
-"remove-keyframe-alt","Animations",
+"keyframe-minus-in","Animations",
 "remove-keyframe","Animations",
 "remove-keyframes","Animations",
 "remove-link","Other",
