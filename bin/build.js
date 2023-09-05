@@ -52,7 +52,8 @@ const tasks = new Listr(
     {
       title: 'Fetching icons',
       task: async (ctx) => {
-        ctx.iconoirIconsFiles = await fs.readdir(iconoirIconsDir);
+        const iconFiles = await fs.readdir(iconoirIconsDir);
+        ctx.iconoirIconsFiles = iconFiles.filter(file => file.endsWith('.svg'));
       },
     },
     {
