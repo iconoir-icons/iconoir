@@ -1,5 +1,5 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
 function SvgBasketball(
   passedProps: SvgProps,
@@ -21,12 +21,19 @@ function SvgBasketball(
       ref={svgRef}
       {...props}
     >
-      <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 22V2M21.95 11c-6.47 2.667-12.254 2.667-19.9 0M18.572 4.462c-2.667 4.53-2.667 9.723 0 15.076M5.428 4.462c2.667 4.53 2.667 9.723 0 15.076"
+      <G
+        clipPath="url(#basketball_svg__clip0)"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
+      >
+        <Path d="M17.736 20.192c4.524-3.168 5.623-9.404 2.455-13.928C17.024 1.74 10.788.641 6.264 3.81 1.74 6.976.641 13.212 3.808 17.736c3.168 4.524 9.404 5.623 13.928 2.456zM17.736 20.192L6.264 3.809M19.577 5.473c-3.77 5.896-8.508 9.214-16.302 11.415M13.06 2.056c.413 5.24 3.392 9.494 8.646 12.35M2.293 9.595c4.783 2.18 7.761 6.434 8.647 12.349" />
+      </G>
+      <Defs>
+        <ClipPath id="basketball_svg__clip0">
+          <Path fill="#fff" d="M0 0h24v24H0z" />
+        </ClipPath>
+      </Defs>
     </Svg>
   );
 }
