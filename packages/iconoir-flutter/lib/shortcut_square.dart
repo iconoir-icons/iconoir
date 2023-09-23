@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Shortcut extends StatelessWidget {
+class ShortcutSquare extends StatelessWidget {
   final Color? color;
   final double? width;
   final double? height;
 
-  const Shortcut({Key? key, this.color, this.width, this.height})
+  const ShortcutSquare({Key? key, this.color, this.width, this.height})
       : super(key: key);
 
   @override
