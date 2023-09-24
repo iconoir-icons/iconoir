@@ -16,31 +16,10 @@ jobs:
           # We have to checkout main or PNPM fails. Tag should be on main anyway.
           ref: main
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
+          node-registry: https://registry.npmjs.org
 
       - name: Generate changelog file
         uses: rhysd/changelog-from-release/action@v3
