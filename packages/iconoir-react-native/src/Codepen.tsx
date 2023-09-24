@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCodepen(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgCodepen = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgCodepen(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M21 9v6M3 15V9M12 21v-6M12 3v6M12 15L3 9l9-6 9 6-9 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M21 9v6M3 15V9M12 21v-6M12 3v6M12 15 3 9l9-6 9 6-9 6Z"
       />
       <Path
-        d="M12 21l-9-6 9-6 9 6-9 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m12 21-9-6 9-6 9 6-9 6Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCodepen);
+};
+const ForwardRef = forwardRef(SvgCodepen);
 export default ForwardRef;

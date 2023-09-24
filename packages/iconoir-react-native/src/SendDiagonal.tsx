@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
+import Svg, { G, Path, Defs, ClipPath } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgSendDiagonal(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgSendDiagonal = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,28 +13,28 @@ function SvgSendDiagonal(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <G
-        clipPath="url(#send-diagonal_svg__clip0_2476_13290)"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        clipPath="url(#send-diagonal_svg__a)"
       >
-        <Path d="M22.152 3.553L11.178 21.004l-1.67-8.596L2 7.898l20.152-4.345zM9.456 12.444l12.696-8.89" />
+        <Path d="M22.152 3.553 11.178 21.004l-1.67-8.596L2 7.898l20.152-4.345ZM9.456 12.444l12.696-8.89" />
       </G>
       <Defs>
-        <ClipPath id="send-diagonal_svg__clip0_2476_13290">
+        <ClipPath id="send-diagonal_svg__a">
           <Path fill="#fff" d="M0 0h24v24H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgSendDiagonal);
+};
+const ForwardRef = forwardRef(SvgSendDiagonal);
 export default ForwardRef;

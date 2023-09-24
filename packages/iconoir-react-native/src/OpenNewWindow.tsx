@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgOpenNewWindow(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgOpenNewWindow = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,26 +13,26 @@ function SvgOpenNewWindow(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M21 3h-6m6 0l-9 9m9-9v6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M21 3h-6m6 0-9 9m9-9v6"
       />
       <Path
-        d="M21 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgOpenNewWindow);
+};
+const ForwardRef = forwardRef(SvgOpenNewWindow);
 export default ForwardRef;

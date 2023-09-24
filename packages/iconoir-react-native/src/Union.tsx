@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgUnion(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgUnion = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgUnion(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M15 9h5.4a.6.6 0 01.6.6v10.8a.6.6 0 01-.6.6H9.6a.6.6 0 01-.6-.6V15"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 9h5.4a.6.6 0 0 1 .6.6v10.8a.6.6 0 0 1-.6.6H9.6a.6.6 0 0 1-.6-.6V15"
       />
       <Path
-        d="M15 9V3.6a.6.6 0 00-.6-.6H3.6a.6.6 0 00-.6.6v10.8a.6.6 0 00.6.6H9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 9V3.6a.6.6 0 0 0-.6-.6H3.6a.6.6 0 0 0-.6.6v10.8a.6.6 0 0 0 .6.6H9"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgUnion);
+};
+const ForwardRef = forwardRef(SvgUnion);
 export default ForwardRef;

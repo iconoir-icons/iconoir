@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMagnetEnergy(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgMagnetEnergy = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,41 +13,41 @@ function SvgMagnetEnergy(
   };
   return (
     <svg
-      width="1.5em"
-      strokeWidth={1.5}
-      height="1.5em"
-      viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="1.5em"
+      height="1.5em"
+      fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M5 9v6.74C5 19.199 8.134 22 12 22s7-2.802 7-6.26V9M5 9h3M16 9h3"
+      />
+      <path
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <path
         d="M14.074 11.5v3.56c0 1.072-.928 1.94-2.074 1.94s-2.074-.868-2.074-1.94V11.5"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
       <path
+        stroke="currentColor"
+        strokeLinejoin="round"
         d="M10 13H5M19 13h-5"
-        stroke="currentColor"
-        strokeLinejoin="round"
       />
       <path
-        d="M11.667 2L10 5h4l-1.667 3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M11.667 2 10 5h4l-1.667 3"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMagnetEnergy);
+};
+const ForwardRef = forwardRef(SvgMagnetEnergy);
 export default ForwardRef;

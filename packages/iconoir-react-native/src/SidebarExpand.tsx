@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgSidebarExpand(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgSidebarExpand = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -13,28 +12,28 @@ function SvgSidebarExpand(
   return (
     <Svg
       width="1.5em"
-      strokeWidth={1.5}
       height="1.5em"
-      viewBox="0 0 24 24"
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2zM9.5 21V3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2ZM9.5 21V3"
       />
       <Path
-        d="M5.5 10l1.75 2-1.75 2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m5.5 10 1.75 2-1.75 2"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgSidebarExpand);
+};
+const ForwardRef = forwardRef(SvgSidebarExpand);
 export default ForwardRef;

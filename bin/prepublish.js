@@ -33,7 +33,7 @@ function publishPubPackage(name) {
 
   fs.writeFileSync(
     pubspecFilepath,
-    updateYamlKey('version', newVersion, pubspecContents)
+    updateYamlKey('version', newVersion, pubspecContents),
   );
 
   console.info('pubspec.yaml updated');

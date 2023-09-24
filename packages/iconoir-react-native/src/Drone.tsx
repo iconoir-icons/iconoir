@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDrone(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgDrone = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,40 +13,40 @@ function SvgDrone(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M13.463 17h-2.926a.6.6 0 01-.596-.534l-.867-7.8A.6.6 0 019.67 8h4.66a.6.6 0 01.596.666l-.867 7.8a.6.6 0 01-.596.534z"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M13.463 17h-2.926a.6.6 0 0 1-.596-.534l-.867-7.8A.6.6 0 0 1 9.67 8h4.66a.6.6 0 0 1 .596.666l-.867 7.8a.6.6 0 0 1-.596.534Z"
       />
       <Path
-        d="M4.5 7a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
         stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeMiterlimit={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M4.5 7a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
       />
       <Path
-        d="M4.5 4.5L9 8M4.5 19.5l5-4M19.5 4.5L15 8M19.5 19.5l-5-4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M4.5 4.5 9 8M4.5 19.5l5-4M19.5 4.5 15 8M19.5 19.5l-5-4"
       />
       <Path
-        d="M4.5 22a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM19.5 7a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM19.5 22a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
         stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeMiterlimit={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M4.5 22a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM19.5 7a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM19.5 22a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDrone);
+};
+const ForwardRef = forwardRef(SvgDrone);
 export default ForwardRef;

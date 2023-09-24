@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPotion(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgPotion = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,29 +13,29 @@ function SvgPotion(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M10 4h4v2.568c0 .258.17.487.412.579C22.938 10.37 20.907 22 15 22H9c-5.907 0-7.937-11.63.588-14.853a.629.629 0 00.412-.58V4z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M10 4h4v2.568c0 .258.17.487.412.579C22.938 10.37 20.907 22 15 22H9c-5.907 0-7.937-11.63.588-14.853a.629.629 0 0 0 .412-.58V4Z"
       />
-      <Path d="M6 10h12" stroke="currentColor" />
-      <Path d="M9 2h6" stroke="currentColor" strokeLinecap="round" />
+      <Path stroke="currentColor" d="M6 10h12" />
+      <Path stroke="currentColor" strokeLinecap="round" d="M9 2h6" />
       <Path
-        d="M11.667 13L10 16h4l-1.667 3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M11.667 13 10 16h4l-1.667 3"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPotion);
+};
+const ForwardRef = forwardRef(SvgPotion);
 export default ForwardRef;

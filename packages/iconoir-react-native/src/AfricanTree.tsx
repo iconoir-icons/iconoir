@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
+import Svg, { G, Path, Defs, ClipPath } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgAfricanTree(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgAfricanTree = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,28 +13,28 @@ function SvgAfricanTree(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <G
-        clipPath="url(#african-tree_svg__clip0_2032_8254)"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        clipPath="url(#african-tree_svg__a)"
       >
-        <Path d="M12 22V12m0-4v4m0 0l3-3M12.424 18.576l6.169-6.169a5.502 5.502 0 00-.513-8.234 9.904 9.904 0 00-12.16 0 5.502 5.502 0 00-.513 8.234l6.169 6.169a.6.6 0 00.848 0z" />
+        <Path d="M12 22V12m0-4v4m0 0 3-3M12.424 18.576l6.169-6.169a5.502 5.502 0 0 0-.513-8.234 9.904 9.904 0 0 0-12.16 0 5.502 5.502 0 0 0-.513 8.234l6.169 6.169a.6.6 0 0 0 .848 0Z" />
       </G>
       <Defs>
-        <ClipPath id="african-tree_svg__clip0_2032_8254">
+        <ClipPath id="african-tree_svg__a">
           <Path fill="#fff" d="M0 0h24v24H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgAfricanTree);
+};
+const ForwardRef = forwardRef(SvgAfricanTree);
 export default ForwardRef;

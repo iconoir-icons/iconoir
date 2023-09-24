@@ -15,7 +15,7 @@ export async function buildVueIcons(srcDir, { outDir = './out/' }) {
   await fs.writeFile(
     path.join(outDir, providerKeyFileName + '.ts'),
     providerKey,
-    'utf8'
+    'utf8',
   );
 
   const fileNames = [];
@@ -35,7 +35,7 @@ export async function buildVueIcons(srcDir, { outDir = './out/' }) {
     await fs.writeFile(
       path.join(outDir, pascalCaseFileName),
       component,
-      'utf8'
+      'utf8',
     );
 
     fileNames.push(pascalCaseFileName);

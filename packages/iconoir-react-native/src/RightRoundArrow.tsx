@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgRightRoundArrow(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgRightRoundArrow = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,25 +13,25 @@ function SvgRightRoundArrow(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M6.75 12h10m0 0L14 14.75M16.75 12L14 9.25"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6.75 12h10m0 0L14 14.75M16.75 12 14 9.25"
       />
       <Path
-        d="M2 15V9a4 4 0 014-4h12a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4z"
         stroke="currentColor"
+        d="M2 15V9a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgRightRoundArrow);
+};
+const ForwardRef = forwardRef(SvgRightRoundArrow);
 export default ForwardRef;

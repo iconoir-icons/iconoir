@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgAngleTool(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgAngleTool = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,29 +13,29 @@ function SvgAngleTool(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M3 21V3h6v12h12v6H3z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 21V3h6v12h12v6H3Z"
       />
       <path
-        d="M13 19v2M9 19v2M3 7h2M3 11h2M3 15h2M17 19v2"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M13 19v2M9 19v2M3 7h2M3 11h2M3 15h2M17 19v2"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgAngleTool);
+};
+const ForwardRef = forwardRef(SvgAngleTool);
 export default ForwardRef;

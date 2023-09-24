@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgAlarm(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgAlarm = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgAlarm(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M17 13h-5V8M5 3.5L7 2M19 3.5L17 2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M17 13h-5V8M5 3.5 7 2M19 3.5 17 2"
       />
       <Path
-        d="M12 22a9 9 0 100-18 9 9 0 000 18z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12 22a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgAlarm);
+};
+const ForwardRef = forwardRef(SvgAlarm);
 export default ForwardRef;

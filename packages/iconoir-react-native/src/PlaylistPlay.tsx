@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPlaylistPlay(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgPlaylistPlay = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgPlaylistPlay(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M22 17.5L18.5 20v-5l3.5 2.5zM2 5h18M2 11h18M2 17h12"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M22 17.5 18.5 20v-5l3.5 2.5ZM2 5h18M2 11h18M2 17h12"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPlaylistPlay);
+};
+const ForwardRef = forwardRef(SvgPlaylistPlay);
 export default ForwardRef;

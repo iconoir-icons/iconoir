@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgLongArrowUpLeft(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgLongArrowUpLeft = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgLongArrowUpLeft(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M10.25 4.75l-3.5 3.5 3.5 3.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m10.25 4.75-3.5 3.5 3.5 3.5"
       />
       <Path
-        d="M6.75 8.25h6a4 4 0 014 4v7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6.75 8.25h6a4 4 0 0 1 4 4v7"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgLongArrowUpLeft);
+};
+const ForwardRef = forwardRef(SvgLongArrowUpLeft);
 export default ForwardRef;

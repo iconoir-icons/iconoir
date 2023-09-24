@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPageSearch(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgPageSearch = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,30 +13,30 @@ function SvgPageSearch(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M20 12V5.749a.6.6 0 00-.176-.425l-3.148-3.148A.6.6 0 0016.252 2H4.6a.6.6 0 00-.6.6v18.8a.6.6 0 00.6.6H11M8 10h8M8 6h4m-4 8h3M20.5 20.5L22 22"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M20 12V5.749a.6.6 0 0 0-.176-.425l-3.148-3.148A.6.6 0 0 0 16.252 2H4.6a.6.6 0 0 0-.6.6v18.8a.6.6 0 0 0 .6.6H11M8 10h8M8 6h4m-4 8h3M20.5 20.5 22 22"
       />
       <path
-        d="M15 18a3 3 0 106 0 3 3 0 00-6 0zM16 2v3.4a.6.6 0 00.6.6H20"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 18a3 3 0 1 0 6 0 3 3 0 0 0-6 0ZM16 2v3.4a.6.6 0 0 0 .6.6H20"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPageSearch);
+};
+const ForwardRef = forwardRef(SvgPageSearch);
 export default ForwardRef;

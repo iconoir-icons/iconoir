@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMailIn(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgMailIn = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,32 +13,32 @@ function SvgMailIn(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M5 9l4.5 3L14 9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m5 9 4.5 3L14 9"
       />
       <Path
-        d="M17 19H3a2 2 0 01-2-2V7a2 2 0 012-2h13a2 2 0 012 2v2"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M17 19H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v2"
       />
       <Path
-        d="M23 14h-6m0 0l3-3m-3 3l3 3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M23 14h-6m0 0 3-3m-3 3 3 3"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMailIn);
+};
+const ForwardRef = forwardRef(SvgMailIn);
 export default ForwardRef;

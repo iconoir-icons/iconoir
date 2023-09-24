@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgWristwatch(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgWristwatch = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,33 +13,33 @@ function SvgWristwatch(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M16 16.472V20a2 2 0 01-2 2h-4a2 2 0 01-2-2v-3.528M8 7.528V4a2 2 0 012-2h4a2 2 0 012 2v3.528"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 16.472V20a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-3.528M8 7.528V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3.528"
       />
       <Path
-        d="M18 12a6 6 0 10-12 0 6 6 0 0012 0z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M18 12a6 6 0 1 0-12 0 6 6 0 0 0 12 0Z"
       />
       <Path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M14 12h-2v-2"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgWristwatch);
+};
+const ForwardRef = forwardRef(SvgWristwatch);
 export default ForwardRef;

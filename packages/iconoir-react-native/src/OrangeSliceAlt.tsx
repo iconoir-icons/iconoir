@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgOrangeSliceAlt(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgOrangeSliceAlt = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgOrangeSliceAlt(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M13.39 10.11L5.61 2.334c-4.295 4.296-4.295 11.26 0 15.556 4.296 4.296 11.26 4.296 15.557 0l-7.778-7.778zm0 0l.353 8.133m-.354-8.132H5.612m7.779 0l-5.304 5.303"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M13.39 10.11 5.61 2.334c-4.295 4.296-4.295 11.26 0 15.556 4.296 4.296 11.26 4.296 15.557 0l-7.778-7.778Zm0 0 .353 8.133m-.354-8.132H5.612m7.779 0-5.304 5.303"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgOrangeSliceAlt);
+};
+const ForwardRef = forwardRef(SvgOrangeSliceAlt);
 export default ForwardRef;

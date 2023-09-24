@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgGreenTruck(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgGreenTruck = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,33 +13,39 @@ function SvgGreenTruck(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M7 17a2 2 0 100-4 2 2 0 000 4z"
         stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeMiterlimit={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M7 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
       />
       <Path
-        d="M14 15V4.6a.6.6 0 00-.6-.6H2.6a.6.6 0 00-.6.6v9.8a.6.6 0 00.6.6h2.05M14 15H9.05M14 7h5.61a.6.6 0 01.548.356l1.29 2.903a.6.6 0 01.052.243V12"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M14 15V4.6a.6.6 0 0 0-.6-.6H2.6a.6.6 0 0 0-.6.6v9.8a.6.6 0 0 0 .6.6h2.05M14 15H9.05M14 7h5.61a.6.6 0 0 1 .548.356l1.29 2.903a.6.6 0 0 1 .052.243V12"
       />
       <Path
-        d="M17 23s.9-3.118 3-5M19.802 21.424l-.134.013a3.094 3.094 0 01-3.366-2.774 3.06 3.06 0 012.761-3.35l2.986-.28a.35.35 0 01.381.314l.255 2.58a3.194 3.194 0 01-2.883 3.497z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M17 23s.9-3.118 3-5"
+      />
+      <Path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m19.802 21.424-.134.013a3.094 3.094 0 0 1-3.366-2.774 3.06 3.06 0 0 1 2.761-3.35l2.986-.28a.35.35 0 0 1 .381.314l.255 2.58a3.194 3.194 0 0 1-2.883 3.497Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgGreenTruck);
+};
+const ForwardRef = forwardRef(SvgGreenTruck);
 export default ForwardRef;

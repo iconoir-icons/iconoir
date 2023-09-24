@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgSearchFont(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgSearchFont = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgSearchFont(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M19.5 19.5L21 21M14 17a3 3 0 106 0 3 3 0 00-6 0zM9 5v12m0 0H7m2 0h2M15 7V5H3v2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M19.5 19.5 21 21M14 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0ZM9 5v12m0 0H7m2 0h2M15 7V5H3v2"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgSearchFont);
+};
+const ForwardRef = forwardRef(SvgSearchFont);
 export default ForwardRef;

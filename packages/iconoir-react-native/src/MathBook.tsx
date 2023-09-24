@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMathBook(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgMathBook = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -13,34 +12,34 @@ function SvgMathBook(
   return (
     <Svg
       width="1.5em"
-      strokeWidth={1.5}
       height="1.5em"
-      viewBox="0 0 24 24"
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M4 19V5a2 2 0 012-2h13.4a.6.6 0 01.6.6v13.114M6 17h14M6 21h14"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M4 19V5a2 2 0 0 1 2-2h13.4a.6.6 0 0 1 .6.6v13.114M6 17h14M6 21h14"
       />
       <Path
-        d="M6 21a2 2 0 110-4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6 21a2 2 0 1 1 0-4"
       />
-      <Path d="M10 10h4" stroke="currentColor" strokeLinecap="round" />
+      <Path stroke="currentColor" strokeLinecap="round" d="M10 10h4" />
       <Path
-        d="M12 13.01l.01-.011M12 7.01l.01-.011"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m12 13.01.01-.011M12 7.01l.01-.011"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMathBook);
+};
+const ForwardRef = forwardRef(SvgMathBook);
 export default ForwardRef;

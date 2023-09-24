@@ -1,28 +1,28 @@
 import * as React from "react";
-function SvgNonBinary(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M12 9a6 6 0 110 12 6 6 0 010-12zm0 0V3M9 4l6 3M15 4L9 7"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgNonBinary);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgNonBinary = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 9a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 0V3M9 4l6 3M15 4 9 7"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgNonBinary);
 export default ForwardRef;

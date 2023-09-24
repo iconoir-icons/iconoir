@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Rect, Path } from "react-native-svg";
+import Svg, { Rect, Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgNetworkAlt(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgNetworkAlt = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,40 +13,40 @@ function SvgNetworkAlt(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Rect
         width={7}
         height={5}
+        stroke="currentColor"
         rx={0.6}
         transform="matrix(1 0 0 -1 3 22)"
-        stroke="currentColor"
       />
       <Rect
         width={7}
         height={5}
+        stroke="currentColor"
         rx={0.6}
         transform="matrix(1 0 0 -1 8.5 7)"
-        stroke="currentColor"
       />
       <Rect
         width={7}
         height={5}
+        stroke="currentColor"
         rx={0.6}
         transform="matrix(1 0 0 -1 14 22)"
-        stroke="currentColor"
       />
       <Path
-        d="M6.5 17v-3.5a2 2 0 012-2h7a2 2 0 012 2V17M12 11.5V7"
         stroke="currentColor"
+        d="M6.5 17v-3.5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2V17M12 11.5V7"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgNetworkAlt);
+};
+const ForwardRef = forwardRef(SvgNetworkAlt);
 export default ForwardRef;
