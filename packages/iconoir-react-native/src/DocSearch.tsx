@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDocSearch(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgDocSearch = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,33 +13,33 @@ function SvgDocSearch(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M20.5 20.5L22 22M15 18a3 3 0 106 0 3 3 0 00-6 0z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M20.5 20.5 22 22M15 18a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"
       />
       <Path
-        d="M20 12V5.749a.6.6 0 00-.176-.425l-3.148-3.148A.6.6 0 0016.252 2H4.6a.6.6 0 00-.6.6v18.8a.6.6 0 00.6.6H11"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M20 12V5.749a.6.6 0 0 0-.176-.425l-3.148-3.148A.6.6 0 0 0 16.252 2H4.6a.6.6 0 0 0-.6.6v18.8a.6.6 0 0 0 .6.6H11"
       />
       <Path
-        d="M16 2v3.4a.6.6 0 00.6.6H20"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 2v3.4a.6.6 0 0 0 .6.6H20"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDocSearch);
+};
+const ForwardRef = forwardRef(SvgDocSearch);
 export default ForwardRef;

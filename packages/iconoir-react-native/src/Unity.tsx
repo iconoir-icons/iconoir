@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
+import Svg, { G, Path, Defs, ClipPath } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgUnity(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgUnity = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,28 +13,28 @@ function SvgUnity(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
-      <G clipPath="url(#unity_svg__clip0)">
+      <G clipPath="url(#unity_svg__a)">
         <Path
-          d="M4 13h9.5M4 13l4 4.5M4 13l4-4.5m5.5 4.5l5-9m-5 9l5 7m0-16l-6 1m6-1L20 9.5M18.5 20l1.5-5.5M18.5 20l-6-.5"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
+          d="M4 13h9.5M4 13l4 4.5M4 13l4-4.5m5.5 4.5 5-9m-5 9 5 7m0-16-6 1m6-1L20 9.5M18.5 20l1.5-5.5M18.5 20l-6-.5"
         />
       </G>
       <Defs>
-        <ClipPath id="unity_svg__clip0">
+        <ClipPath id="unity_svg__a">
           <Path fill="#fff" d="M0 0h24v24H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgUnity);
+};
+const ForwardRef = forwardRef(SvgUnity);
 export default ForwardRef;

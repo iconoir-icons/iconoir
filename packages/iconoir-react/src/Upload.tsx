@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgUpload(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgUpload = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,24 +13,24 @@ function SvgUpload(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M6 20h12M12 16V4m0 0l3.5 3.5M12 4L8.5 7.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6 20h12M12 16V4m0 0 3.5 3.5M12 4 8.5 7.5"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgUpload);
+};
+const ForwardRef = forwardRef(SvgUpload);
 export default ForwardRef;

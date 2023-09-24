@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgWifiTag(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgWifiTag = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,28 +13,28 @@ function SvgWifiTag(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M2 15V9a6 6 0 016-6h8a6 6 0 016 6v6a6 6 0 01-6 6H8a6 6 0 01-6-6z"
         stroke="currentColor"
+        d="M2 15V9a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v6a6 6 0 0 1-6 6H8a6 6 0 0 1-6-6Z"
       />
       <path
-        d="M12 14.76l.01-.011M7 11.25c2.5-3 7.5-3 10 0M9 13.25c1.5-2 4.5-2 6 0"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m12 14.76.01-.011M7 11.25c2.5-3 7.5-3 10 0M9 13.25c1.5-2 4.5-2 6 0"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgWifiTag);
+};
+const ForwardRef = forwardRef(SvgWifiTag);
 export default ForwardRef;

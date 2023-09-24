@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCancel(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgCancel = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgCancel(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M6.758 17.243L12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6.758 17.243 12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCancel);
+};
+const ForwardRef = forwardRef(SvgCancel);
 export default ForwardRef;

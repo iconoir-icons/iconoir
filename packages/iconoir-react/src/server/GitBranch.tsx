@@ -1,34 +1,34 @@
 import * as React from "react";
-function SvgGitBranch(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M18 8a2 2 0 100-4 2 2 0 000 4zM6 20a2 2 0 100-4 2 2 0 000 4zM6 16V3"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 18h1c3.5 0 9-2.1 9-8.5V8"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgGitBranch);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgGitBranch = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M18 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM6 16V3"
+    />
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M8 18h1c3.5 0 9-2.1 9-8.5V8"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgGitBranch);
 export default ForwardRef;

@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgScaleFrameReduce(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgScaleFrameReduce = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,34 +13,34 @@ function SvgScaleFrameReduce(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M11 15v-1.4a.6.6 0 00-.6-.6H9M6 13H3M11 18v3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M11 15v-1.4a.6.6 0 0 0-.6-.6H9M6 13H3M11 18v3"
       />
       <Path
-        d="M20.4 3H3.6a.6.6 0 00-.6.6v16.8a.6.6 0 00.6.6h16.8a.6.6 0 00.6-.6V3.6a.6.6 0 00-.6-.6z"
         stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeMiterlimit={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M20.4 3H3.6a.6.6 0 0 0-.6.6v16.8a.6.6 0 0 0 .6.6h16.8a.6.6 0 0 0 .6-.6V3.6a.6.6 0 0 0-.6-.6Z"
       />
       <Path
-        d="M16 11h-3V8"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 11h-3V8"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgScaleFrameReduce);
+};
+const ForwardRef = forwardRef(SvgScaleFrameReduce);
 export default ForwardRef;

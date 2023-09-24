@@ -1,28 +1,28 @@
 import * as React from "react";
-function SvgMoveLeft(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M20 14a2 2 0 110-4 2 2 0 010 4zM15 12H2m0 0l3-3m-3 3l3 3"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgMoveLeft);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgMoveLeft = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M20 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM15 12H2m0 0 3-3m-3 3 3 3"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgMoveLeft);
 export default ForwardRef;

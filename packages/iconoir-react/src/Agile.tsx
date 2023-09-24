@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgAgile(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgAgile = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,36 +13,36 @@ function SvgAgile(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M17.5 19H22m0 0l-2.5-2.5M22 19l-2.5 2.5M12 2L9.5 4.5 12 7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M17.5 19H22m0 0-2.5-2.5M22 19l-2.5 2.5M12 2 9.5 4.5 12 7"
       />
       <path
-        d="M10.5 4.5a7.5 7.5 0 010 15H2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M10.5 4.5a7.5 7.5 0 0 1 0 15H2"
       />
       <path
-        d="M6.756 5.5A7.497 7.497 0 003 12c0 1.688.558 3.246 1.5 4.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6.756 5.5A7.497 7.497 0 0 0 3 12c0 1.688.558 3.246 1.5 4.5"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgAgile);
+};
+const ForwardRef = forwardRef(SvgAgile);
 export default ForwardRef;

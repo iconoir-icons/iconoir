@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMediumPriority(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgMediumPriority = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,31 +13,31 @@ function SvgMediumPriority(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <g
-        clipPath="url(#medium-priority_svg__clip0_2475_13213)"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        clipPath="url(#medium-priority_svg__a)"
       >
-        <path d="M11.576 1.424a.6.6 0 01.848 0l10.152 10.152a.6.6 0 010 .848L12.424 22.576a.6.6 0 01-.848 0L1.424 12.424a.6.6 0 010-.848L11.576 1.424zM6 12h4M14 12h4" />
+        <path d="M11.576 1.424a.6.6 0 0 1 .848 0l10.152 10.152a.6.6 0 0 1 0 .848L12.424 22.576a.6.6 0 0 1-.848 0L1.424 12.424a.6.6 0 0 1 0-.848L11.576 1.424ZM6 12h4M14 12h4" />
       </g>
       <defs>
-        <clipPath id="medium-priority_svg__clip0_2475_13213">
+        <clipPath id="medium-priority_svg__a">
           <path fill="#fff" d="M0 0h24v24H0z" />
         </clipPath>
       </defs>
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMediumPriority);
+};
+const ForwardRef = forwardRef(SvgMediumPriority);
 export default ForwardRef;

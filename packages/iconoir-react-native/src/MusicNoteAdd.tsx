@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMusicNoteAdd(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgMusicNoteAdd = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgMusicNoteAdd(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M16 10h3m3 0h-3m0 0V7m0 3v3M7 16v3a2 2 0 01-2 2H4a2 2 0 01-2-2v-1a2 2 0 012-2h3zm0 0V8m0 0V4l5-1v4L7 8z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 10h3m3 0h-3m0 0V7m0 3v3M7 16v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2h3Zm0 0V8m0 0V4l5-1v4L7 8Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMusicNoteAdd);
+};
+const ForwardRef = forwardRef(SvgMusicNoteAdd);
 export default ForwardRef;

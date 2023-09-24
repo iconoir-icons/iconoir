@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgVoiceOk(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgVoiceOk = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgVoiceOk(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M12 3v16M8 8v6M20 9v4M4 9v4M16 6v9M15.5 19.5l2 2 5-5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12 3v16M8 8v6M20 9v4M4 9v4M16 6v9M15.5 19.5l2 2 5-5"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgVoiceOk);
+};
+const ForwardRef = forwardRef(SvgVoiceOk);
 export default ForwardRef;

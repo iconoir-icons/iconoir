@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgShuffle(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgShuffle = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,36 +13,36 @@ function SvgShuffle(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M22 7c-3 0-8.5 0-10.5 5.5S5 18 2 18"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
       <path
-        d="M20 5l2 2-2 2M22 18c-3 0-8.5 0-10.5-5.5S5 7 2 7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m20 5 2 2-2 2M22 18c-3 0-8.5 0-10.5-5.5S5 7 2 7"
       />
       <path
-        d="M20 20l2-2-2-2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m20 20 2-2-2-2"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgShuffle);
+};
+const ForwardRef = forwardRef(SvgShuffle);
 export default ForwardRef;

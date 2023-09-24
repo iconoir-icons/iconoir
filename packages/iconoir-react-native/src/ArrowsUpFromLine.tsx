@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgArrowsUpFromLine(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgArrowsUpFromLine = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgArrowsUpFromLine(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M3 20h18M6 17V4m0 0L2 8m4-4l4 4M18 17V4m0 0l-4 4m4-4l4 4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 20h18M6 17V4m0 0L2 8m4-4 4 4M18 17V4m0 0-4 4m4-4 4 4"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgArrowsUpFromLine);
+};
+const ForwardRef = forwardRef(SvgArrowsUpFromLine);
 export default ForwardRef;

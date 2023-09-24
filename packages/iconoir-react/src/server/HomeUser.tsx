@@ -1,35 +1,35 @@
 import * as React from "react";
-function SvgHomeUser(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M2.5 9.5L12 4l9.5 5.5"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M7 21v-1a5 5 0 015-5v0a5 5 0 015 5v1" stroke="currentColor" />
-      <path
-        d="M12 15a3 3 0 100-6 3 3 0 000 6z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgHomeUser);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgHomeUser = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M2.5 9.5 12 4l9.5 5.5"
+    />
+    <path stroke="currentColor" d="M7 21v-1a5 5 0 0 1 10 0v1" />
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgHomeUser);
 export default ForwardRef;

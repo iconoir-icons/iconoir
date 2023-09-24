@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgAntenna(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgAntenna = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,31 +13,31 @@ function SvgAntenna(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M12 5a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12 5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
       />
       <path
-        d="M16 1s1.5 1 1.5 3S16 7 16 7M8 1S6.5 2 6.5 4 8 7 8 7M7 23l1.111-4M17 23l-1.111-4M14.5 14L12 5l-2.5 9m5 0h-5m5 0l1.389 5M9.5 14l-1.389 5m0 0h7.778"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 1s1.5 1 1.5 3S16 7 16 7M8 1S6.5 2 6.5 4 8 7 8 7M7 23l1.111-4M17 23l-1.111-4M14.5 14 12 5l-2.5 9m5 0h-5m5 0 1.389 5M9.5 14l-1.389 5m0 0h7.778"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgAntenna);
+};
+const ForwardRef = forwardRef(SvgAntenna);
 export default ForwardRef;

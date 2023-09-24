@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMapsArrowIssue(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgMapsArrowIssue = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgMapsArrowIssue(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M14 17.278l-1.819-.707a.5.5 0 00-.362 0l-7.517 2.923a.5.5 0 01-.617-.711l7.88-14.008a.5.5 0 01.87 0l6.065 10.78M17.121 22.364l2.122-2.121m0 0l2.121-2.122m-2.121 2.122L17.12 18.12m2.122 2.122l2.121 2.121"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m14 17.278-1.819-.707a.5.5 0 0 0-.362 0l-7.517 2.923a.5.5 0 0 1-.617-.711l7.88-14.008a.5.5 0 0 1 .87 0l6.065 10.78M17.121 22.364l2.122-2.121m0 0 2.121-2.122m-2.121 2.122L17.12 18.12m2.122 2.122 2.121 2.121"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMapsArrowIssue);
+};
+const ForwardRef = forwardRef(SvgMapsArrowIssue);
 export default ForwardRef;

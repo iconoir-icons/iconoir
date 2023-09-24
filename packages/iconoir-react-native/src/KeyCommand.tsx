@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgKeyCommand(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgKeyCommand = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgKeyCommand(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M9 6v12M15 6v12M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3M9 18a3 3 0 11-3-3h12a3 3 0 11-3 3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M9 6v12M15 6v12M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3M9 18a3 3 0 1 1-3-3h12a3 3 0 1 1-3 3"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgKeyCommand);
+};
+const ForwardRef = forwardRef(SvgKeyCommand);
 export default ForwardRef;

@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgGitMerge(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgGitMerge = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgGitMerge(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M18 20a2 2 0 100-4 2 2 0 000 4zM6 21V7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM6 21V7"
       />
       <Path
-        d="M6 7v2c0 3.5 2.5 9 8.5 9H16M6 7a2 2 0 100-4 2 2 0 000 4z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6 7v2c0 3.5 2.5 9 8.5 9H16M6 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgGitMerge);
+};
+const ForwardRef = forwardRef(SvgGitMerge);
 export default ForwardRef;

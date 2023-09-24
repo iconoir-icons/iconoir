@@ -7,7 +7,7 @@ import React, { useEffect, useRef } from 'react';
 import { GridProps, ListProps } from 'react-window';
 
 function isHtmlElement(
-  element: HTMLElement | typeof window
+  element: HTMLElement | typeof window,
 ): element is HTMLElement {
   return (element as HTMLElement).scrollTop !== undefined;
 }
@@ -28,7 +28,7 @@ const documentScrollPositionKey: PositionKey = {
 
 const getScrollPosition = (
   axis: keyof PositionKey,
-  element?: HTMLElement | null
+  element?: HTMLElement | null,
 ): number =>
   // @ts-ignore indexing as string
   element?.[documentScrollPositionKey[axis] as any] ||
@@ -53,7 +53,7 @@ interface ReactWindowScrollerProps<Props extends ListProps | GridProps> {
   isGrid?: boolean;
 }
 export function ReactWindowScroller<
-  Props extends ListProps | GridProps = ListProps
+  Props extends ListProps | GridProps = ListProps,
 >({
   children,
   throttleTime = 10,

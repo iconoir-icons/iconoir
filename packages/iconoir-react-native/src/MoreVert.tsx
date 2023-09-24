@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMoreVert(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgMoreVert = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,22 +13,22 @@ function SvgMoreVert(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M12 12.5a.5.5 0 100-1 .5.5 0 000 1zM12 20.5a.5.5 0 100-1 .5.5 0 000 1zM12 4.5a.5.5 0 100-1 .5.5 0 000 1z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12 12.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1ZM12 20.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1ZM12 4.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMoreVert);
+};
+const ForwardRef = forwardRef(SvgMoreVert);
 export default ForwardRef;

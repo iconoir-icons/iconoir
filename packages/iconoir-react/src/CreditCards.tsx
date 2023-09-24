@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCreditCards(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgCreditCards = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,30 +13,30 @@ function SvgCreditCards(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M22 11.429V18a2 2 0 01-2 2H7a2 2 0 01-2-2v-1.5m17-5.071V10a2 2 0 00-2-2h-1m3 3.429h-3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M22 11.429V18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1.5m17-5.071V10a2 2 0 0 0-2-2h-1m3 3.429h-3"
       />
       <path
-        d="M19 8v6.5a2 2 0 01-2 2H4a2 2 0 01-2-2v-8a2 2 0 012-2h13a2 2 0 012 2V8zm0 0H5.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M19 8v6.5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2V8Zm0 0H5.5"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCreditCards);
+};
+const ForwardRef = forwardRef(SvgCreditCards);
 export default ForwardRef;

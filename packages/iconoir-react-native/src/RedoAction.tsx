@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgRedoAction(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgRedoAction = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgRedoAction(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M19 5v6M15.5 8H9s0 0 0 0-5 0-5 4.706C4 18 9 18 9 18h8.714"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M19 5v6M15.5 8H9s0 0 0 0-5 0-5 4.706C4 18 9 18 9 18h8.714"
       />
       <Path
-        d="M12.5 11.5L16 8l-3.5-3.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12.5 11.5 16 8l-3.5-3.5"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgRedoAction);
+};
+const ForwardRef = forwardRef(SvgRedoAction);
 export default ForwardRef;

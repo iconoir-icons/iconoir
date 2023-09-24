@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgStrikethrough(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgStrikethrough = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgStrikethrough(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M3 12h18M16.286 3h-6.218a4.068 4.068 0 00-1.286 7.927L12 12m-6 9h7.932a4.068 4.068 0 003.58-6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 12h18M16.286 3h-6.218a4.068 4.068 0 0 0-1.286 7.927L12 12m-6 9h7.932a4.068 4.068 0 0 0 3.58-6"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgStrikethrough);
+};
+const ForwardRef = forwardRef(SvgStrikethrough);
 export default ForwardRef;

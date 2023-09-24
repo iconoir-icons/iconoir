@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDivideSelection1(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgDivideSelection1 = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,24 +13,24 @@ function SvgDivideSelection1(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M20 20H4v-4h16v4zM2 12h20M7 4H4v3M11 4h2M17 4h3v3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M20 20H4v-4h16v4ZM2 12h20M7 4H4v3M11 4h2M17 4h3v3"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDivideSelection1);
+};
+const ForwardRef = forwardRef(SvgDivideSelection1);
 export default ForwardRef;

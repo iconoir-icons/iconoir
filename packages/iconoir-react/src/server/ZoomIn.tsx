@@ -1,28 +1,25 @@
 import * as React from "react";
-function SvgZoomIn(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M8 11h3m3 0h-3m0 0V8m0 3v3M17 17l4 4M3 11a8 8 0 1016 0 8 8 0 00-16 0z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgZoomIn);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgZoomIn = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M8 11h3m3 0h-3m0 0V8m0 3v3M17 17l4 4M3 11a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgZoomIn);
 export default ForwardRef;

@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
+import Svg, { G, Path, Defs, ClipPath } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgAppleShortcuts(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgAppleShortcuts = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,24 @@ function SvgAppleShortcuts(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
-      <G
-        clipPath="url(#apple-shortcuts_svg__clip0_3190_17433)"
-        stroke="currentColor"
-      >
-        <Path d="M9.852 14.633l-6.2-3.946a2 2 0 010-3.374l6.2-3.946a4 4 0 014.296 0l6.2 3.946a2 2 0 010 3.374l-6.2 3.946a4 4 0 01-4.296 0z" />
-        <Path d="M18.286 12l2.063 1.313a2 2 0 010 3.374l-6.201 3.946a4 4 0 01-4.296 0l-6.2-3.946a2 2 0 010-3.374L5.714 12" />
+      <G stroke="currentColor" clipPath="url(#apple-shortcuts_svg__a)">
+        <Path d="m9.852 14.633-6.2-3.946a2 2 0 0 1 0-3.374l6.2-3.946a4 4 0 0 1 4.296 0l6.2 3.946a2 2 0 0 1 0 3.374l-6.2 3.946a4 4 0 0 1-4.296 0Z" />
+        <Path d="m18.286 12 2.063 1.313a2 2 0 0 1 0 3.374l-6.201 3.946a4 4 0 0 1-4.296 0l-6.2-3.946a2 2 0 0 1 0-3.374L5.714 12" />
       </G>
       <Defs>
-        <ClipPath id="apple-shortcuts_svg__clip0_3190_17433">
+        <ClipPath id="apple-shortcuts_svg__a">
           <Path fill="#fff" d="M0 0h24v24H0z" />
         </ClipPath>
       </Defs>
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgAppleShortcuts);
+};
+const ForwardRef = forwardRef(SvgAppleShortcuts);
 export default ForwardRef;

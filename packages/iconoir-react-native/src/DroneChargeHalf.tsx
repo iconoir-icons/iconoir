@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDroneChargeHalf(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgDroneChargeHalf = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,50 +13,50 @@ function SvgDroneChargeHalf(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M14.25 14.75l.25-2.25.426-3.834A.6.6 0 0014.33 8H9.67a.6.6 0 00-.596.666l.867 7.8a.6.6 0 00.596.534H11"
         stroke="currentColor"
         strokeLinecap="round"
+        d="m14.25 14.75.25-2.25.426-3.834A.6.6 0 0 0 14.33 8H9.67a.6.6 0 0 0-.596.666l.867 7.8a.6.6 0 0 0 .596.534H11"
       />
       <Path
-        d="M4.5 7a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
         stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeMiterlimit={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M4.5 7a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
       />
       <Path
-        d="M4.5 4.5L9 8M4.5 19.5l5-4M19.5 4.5L15 8"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M4.5 4.5 9 8M4.5 19.5l5-4M19.5 4.5 15 8"
       />
       <Path
-        d="M4.5 22a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM19.5 7a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
         stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeMiterlimit={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M4.5 22a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM19.5 7a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
       />
       <Path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M23 19v2M15 19v2M17 19v2"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
       <Path
-        d="M13 22.4v-4.8a.6.6 0 01.6-.6h6.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6h-6.8a.6.6 0 01-.6-.6z"
         stroke="currentColor"
+        d="M13 22.4v-4.8a.6.6 0 0 1 .6-.6h6.8a.6.6 0 0 1 .6.6v4.8a.6.6 0 0 1-.6.6h-6.8a.6.6 0 0 1-.6-.6Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDroneChargeHalf);
+};
+const ForwardRef = forwardRef(SvgDroneChargeHalf);
 export default ForwardRef;

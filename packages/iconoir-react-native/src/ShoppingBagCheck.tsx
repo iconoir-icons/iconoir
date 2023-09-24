@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgShoppingBagCheck(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgShoppingBagCheck = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgShoppingBagCheck(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M20 14.5l-.74-4.804A2 2 0 0017.285 8H6.716a2 2 0 00-1.977 1.696l-1.385 9A2 2 0 005.331 21H12"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m20 14.5-.74-4.804A2 2 0 0 0 17.285 8H6.716a2 2 0 0 0-1.977 1.696l-1.385 9A2 2 0 0 0 5.331 21H12"
       />
       <Path
-        d="M14 19l3 3 5-5M14 5a2 2 0 10-4 0"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m14 19 3 3 5-5M14 5a2 2 0 1 0-4 0"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgShoppingBagCheck);
+};
+const ForwardRef = forwardRef(SvgShoppingBagCheck);
 export default ForwardRef;

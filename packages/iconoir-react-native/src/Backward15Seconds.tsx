@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgBackward15Seconds(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgBackward15Seconds = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -13,28 +12,28 @@ function SvgBackward15Seconds(
   return (
     <Svg
       width="1.5em"
-      strokeWidth={1.5}
       height="1.5em"
-      viewBox="0 0 24 24"
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M3 13a9 9 0 109-9M9 9v7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 13a9 9 0 1 0 9-9M9 9v7"
       />
       <Path
-        d="M15 9h-2a1 1 0 00-1 1v1.5a1 1 0 001 1h1a1 1 0 011 1V15a1 1 0 01-1 1h-2M12 4H4.5m0 0l2-2m-2 2l2 2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 9h-2a1 1 0 0 0-1 1v1.5a1 1 0 0 0 1 1h1a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1h-2M12 4H4.5m0 0 2-2m-2 2 2 2"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgBackward15Seconds);
+};
+const ForwardRef = forwardRef(SvgBackward15Seconds);
 export default ForwardRef;

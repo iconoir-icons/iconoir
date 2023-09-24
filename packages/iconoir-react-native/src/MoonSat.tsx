@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Circle, Path } from "react-native-svg";
+import Svg, { Circle, Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMoonSat(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgMoonSat = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,26 +13,26 @@ function SvgMoonSat(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Circle cx={12} cy={12} r={10} stroke="currentColor" />
       <Path
-        d="M7.633 3.067A3.001 3.001 0 114.017 6.32M22 13.05a3.5 3.5 0 10-3 5.914"
         stroke="currentColor"
+        d="M7.633 3.067A3.001 3.001 0 1 1 4.017 6.32M22 13.05a3.5 3.5 0 1 0-3 5.914"
       />
       <Path
-        d="M14.5 8.51l.01-.011M10 17a2 2 0 100-4 2 2 0 000 4z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m14.5 8.51.01-.011M10 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMoonSat);
+};
+const ForwardRef = forwardRef(SvgMoonSat);
 export default ForwardRef;

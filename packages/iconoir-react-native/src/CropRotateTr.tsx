@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCropRotateTr(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgCropRotateTr = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgCropRotateTr(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M20 10V7a4 4 0 00-4-4h-4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M20 10V7a4 4 0 0 0-4-4h-4"
       />
       <Path
-        d="M22.5 7.5L20 10l-2.5-2.5M14 17v-6a1 1 0 00-1-1H7M2 10h2M14 22v-2M4 8v11a1 1 0 001 1h11"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M22.5 7.5 20 10l-2.5-2.5M14 17v-6a1 1 0 0 0-1-1H7M2 10h2M14 22v-2M4 8v11a1 1 0 0 0 1 1h11"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCropRotateTr);
+};
+const ForwardRef = forwardRef(SvgCropRotateTr);
 export default ForwardRef;

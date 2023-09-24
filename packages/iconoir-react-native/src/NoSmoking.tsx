@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgNoSmoking(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgNoSmoking = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,31 +13,31 @@ function SvgNoSmoking(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M18 15v3M18 11c0-1-1-2-3-2h-1a3 3 0 01-3-3V2M22 11c0-6-4-6-4-6s4 1 4-3M22 15v3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M18 15v3M18 11c0-1-1-2-3-2h-1a3 3 0 0 1-3-3V2M22 11c0-6-4-6-4-6s4 1 4-3M22 15v3"
       />
       <Path
-        d="M2.6 18H18l-3-3H2.6a.6.6 0 00-.6.6v1.8a.6.6 0 00.6.6z"
         stroke="currentColor"
+        d="M2.6 18H18l-3-3H2.6a.6.6 0 0 0-.6.6v1.8a.6.6 0 0 0 .6.6Z"
       />
       <Path
-        d="M3 3l18 18"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m3 3 18 18"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgNoSmoking);
+};
+const ForwardRef = forwardRef(SvgNoSmoking);
 export default ForwardRef;

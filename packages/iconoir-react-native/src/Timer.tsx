@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgTimer(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgTimer = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgTimer(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M9 2h6M12 10v4M12 22a8 8 0 100-16 8 8 0 000 16z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M9 2h6M12 10v4M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgTimer);
+};
+const ForwardRef = forwardRef(SvgTimer);
 export default ForwardRef;

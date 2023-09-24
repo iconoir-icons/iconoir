@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDialpad(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgDialpad = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,22 +13,22 @@ function SvgDialpad(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M5.5 5a.5.5 0 110-1 .5.5 0 010 1zM5.5 10a.5.5 0 110-1 .5.5 0 010 1zM5.5 15a.5.5 0 110-1 .5.5 0 010 1zM12 5a.5.5 0 110-1 .5.5 0 010 1zM12 10a.5.5 0 110-1 .5.5 0 010 1zM12 15a.5.5 0 110-1 .5.5 0 010 1zM12 20a.5.5 0 110-1 .5.5 0 010 1zM18.5 5a.5.5 0 110-1 .5.5 0 010 1zM18.5 10a.5.5 0 110-1 .5.5 0 010 1zM18.5 15a.5.5 0 110-1 .5.5 0 010 1z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM5.5 10a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM5.5 15a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM12 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM12 10a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM12 15a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM12 20a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM18.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM18.5 10a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM18.5 15a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDialpad);
+};
+const ForwardRef = forwardRef(SvgDialpad);
 export default ForwardRef;

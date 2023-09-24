@@ -1,28 +1,28 @@
 import * as React from "react";
-function SvgGitCommit(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M12 15a3 3 0 100-6 3 3 0 000 6zM9 12H3M15 12h6"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgGitCommit);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgGitCommit = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM9 12H3M15 12h6"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgGitCommit);
 export default ForwardRef;

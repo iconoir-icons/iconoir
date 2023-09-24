@@ -30,28 +30,24 @@
   "scripts": {
     "build": "node ./bin/build.js",
     "dist": "pnpm -r --filter './packages/**' run dist",
-    "lint": "eslint ./bin/build.js",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint \"./bin/**/*.{cjs,js}\"",
+    "lint:fix": "pnpm run lint --fix",
     "prepublish-all": "node ./bin/prepublish.js"
   },
   "devDependencies": {
     "@atomist/yaml-updater": "^1.0.2",
-    "@svgr/cli": "^5.5.0",
+    "@svgr/cli": "^8.1.0",
     "@types/svg-parser": "^2.0.3",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "execa": "^5.1.1",
-    "generate-template-files": "^3.2.0",
-    "hast-util-to-html": "^8.0.4",
-    "listr2": "^3.12.2",
-    "prettier": "^2.4.1",
-    "semver": "^7.3.5",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "execa": "^8.0.1",
+    "generate-template-files": "^3.2.1",
+    "hast-util-to-html": "^9.0.0",
+    "listr2": "^7.0.1",
+    "prettier": "^3.0.3",
+    "semver": "^7.5.4",
     "svg-parser": "^2.0.4"
   },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "^17.0.29"
-    }
-  }
+  "packageManager": "pnpm@8.7.6"
 }

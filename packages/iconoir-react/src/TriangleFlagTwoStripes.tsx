@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgTriangleFlagTwoStripes(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgTriangleFlagTwoStripes = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,24 +13,24 @@ function SvgTriangleFlagTwoStripes(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M8 21v-5m0 0l9.723-6.482a.6.6 0 00-.017-1.01l-8.79-5.441a.6.6 0 00-.916.51V16zM8 11l6.5-4.476"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M8 21v-5m0 0 9.723-6.482a.6.6 0 0 0-.017-1.01l-8.79-5.441a.6.6 0 0 0-.916.51V16ZM8 11l6.5-4.476"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgTriangleFlagTwoStripes);
+};
+const ForwardRef = forwardRef(SvgTriangleFlagTwoStripes);
 export default ForwardRef;

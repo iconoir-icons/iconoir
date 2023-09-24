@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgEyeAlt(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgEyeAlt = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,24 +13,30 @@ function SvgEyeAlt(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M3 13c3.6-8 14.4-8 18 0M12 17a3 3 0 110-6 3 3 0 010 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 13c3.6-8 14.4-8 18 0"
+      />
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 17a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgEyeAlt);
+};
+const ForwardRef = forwardRef(SvgEyeAlt);
 export default ForwardRef;

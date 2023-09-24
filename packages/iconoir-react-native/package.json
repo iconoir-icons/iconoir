@@ -31,16 +31,15 @@
     "prepublish": "npm run dist"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.15.4",
-    "@types/react": "^17.0.29",
-    "@types/react-native": "^0.50.0",
-    "react": "^17.0.2",
-    "react-native-svg": "^12.1.1",
-    "typescript": "^4.4.4"
+    "@types/react": "^18.2.22",
+    "@types/react-native": "^0.72.2",
+    "react": "^18.2.0",
+    "react-native-svg": "^13.14.0",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17 || ^18",
     "react-native": ">=0.50.0",
-    "react-native-svg": "^12.1.1"
+    "react-native-svg": ">=12.1.1"
   }
 }

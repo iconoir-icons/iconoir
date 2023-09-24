@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgNetwork(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgNetwork = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,32 +13,32 @@ function SvgNetwork(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
-      <rect x={3} y={2} width={7} height={5} rx={0.6} stroke="currentColor" />
+      <rect width={7} height={5} x={3} y={2} stroke="currentColor" rx={0.6} />
       <rect
-        x={8.5}
-        y={17}
         width={7}
         height={5}
+        x={8.5}
+        y={17}
+        stroke="currentColor"
         rx={0.6}
-        stroke="currentColor"
       />
-      <rect x={14} y={2} width={7} height={5} rx={0.6} stroke="currentColor" />
+      <rect width={7} height={5} x={14} y={2} stroke="currentColor" rx={0.6} />
       <path
-        d="M6.5 7v3.5a2 2 0 002 2h7a2 2 0 002-2V7M12 12.5V17"
         stroke="currentColor"
+        d="M6.5 7v3.5a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V7M12 12.5V17"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgNetwork);
+};
+const ForwardRef = forwardRef(SvgNetwork);
 export default ForwardRef;

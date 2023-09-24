@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgTournament(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgTournament = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,24 +13,24 @@ function SvgTournament(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M3 3h5v6H3M8 6h7v12H8M15 12h7M3 15h5v6H3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 3h5v6H3M8 6h7v12H8M15 12h7M3 15h5v6H3"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgTournament);
+};
+const ForwardRef = forwardRef(SvgTournament);
 export default ForwardRef;

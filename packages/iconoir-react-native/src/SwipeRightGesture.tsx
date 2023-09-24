@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgSwipeRightGesture(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgSwipeRightGesture = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgSwipeRightGesture(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M14 12a6 6 0 11-12 0 6 6 0 0112 0zm0 0h8m0 0l-3-3m3 3l-3 3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M14 12a6 6 0 1 1-12 0 6 6 0 0 1 12 0Zm0 0h8m0 0-3-3m3 3-3 3"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgSwipeRightGesture);
+};
+const ForwardRef = forwardRef(SvgSwipeRightGesture);
 export default ForwardRef;
