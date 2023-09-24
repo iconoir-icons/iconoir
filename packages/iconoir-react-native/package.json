@@ -34,7 +34,6 @@
     "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.22.15",
     "@types/react": "^17.0.29",
     "@types/react-native": "^0.50.0",
     "react": "^17.0.2",
