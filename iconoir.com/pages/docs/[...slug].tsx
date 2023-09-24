@@ -175,7 +175,7 @@ export function getDocumentationStructure(): DocumentationItem[] {
 
 function structureItemsToPaths(
   items: DocumentationItem[],
-  slugPrefix?: string[]
+  slugPrefix?: string[],
 ): ParsedUrlQuery[] {
   const result: ParsedUrlQuery[] = [];
   const filteredItems = items.filter((item) => !item.skip);
@@ -187,8 +187,8 @@ function structureItemsToPaths(
       result.push(
         ...structureItemsToPaths(
           item.children,
-          [...(slugPrefix || []), item.path].filter(Boolean)
-        )
+          [...(slugPrefix || []), item.path].filter(Boolean),
+        ),
       );
     }
   }
@@ -198,7 +198,7 @@ function structureItemsToPaths(
 
 function flattenItems(
   items: DocumentationItem[],
-  prefix?: string[]
+  prefix?: string[],
 ): DocumentationItem[] {
   return items.reduce<DocumentationItem[]>((acc, item) => {
     return [
@@ -214,7 +214,7 @@ function flattenItems(
       ...(item.children?.length
         ? flattenItems(
             item.children,
-            [...(prefix || []), item.path].filter(Boolean)
+            [...(prefix || []), item.path].filter(Boolean),
           )
         : []),
     ];
@@ -223,7 +223,7 @@ function flattenItems(
 
 function itemFromSlug(
   items: DocumentationItem[],
-  slug: string[]
+  slug: string[],
 ): DocumentationItem {
   const flatItems = flattenItems(items);
   const joinedSlug = slug.filter(Boolean).join('/');

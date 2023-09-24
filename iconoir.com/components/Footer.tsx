@@ -1,13 +1,18 @@
 import { PeaceHand } from 'iconoir-react';
 import styled from 'styled-components';
-import { LICENSE_LINK } from '../lib/constants';
+import {
+  GITHUB_LINK,
+  ISSUE_LINK,
+  LICENSE_LINK,
+  PRIVACY_LINK,
+  SUPPORT_LINK,
+} from '../lib/constants';
 import { Logo, LogoContainer, LogoIcon } from './Header';
-import { NavigationItemContainer } from './NavigationItem';
 import { Text13, Text17 } from './Typography';
 
 export interface FooterCategoryProps {
   category: string;
-  links: { name: string, url: string }[];
+  links: { name: string; url: string }[];
 }
 function FooterCategory({ category, links }: FooterCategoryProps) {
   return (
@@ -15,7 +20,9 @@ function FooterCategory({ category, links }: FooterCategoryProps) {
       <FooterCategoryTitle>{category}</FooterCategoryTitle>
       <FooterCategoryLinks>
         {links.map((link) => (
-          <FooterCategoryLink key={link.url} href={link.url}>{link.name}</FooterCategoryLink>
+          <FooterCategoryLink key={link.url} href={link.url}>
+            {link.name}
+          </FooterCategoryLink>
         ))}
       </FooterCategoryLinks>
     </FooterCategoryContainer>
@@ -31,29 +38,62 @@ export function Footer() {
         <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
       </LogoContainer>
       <FooterCategories>
-        <FooterCategory category={'Project'} links={[
-          { name: 'Our Mission', url:'/support' },
-          { name: 'Contribute', url:'/docs/contributing' },
-          { name: 'Donate', url:'https://opencollective.com/iconoir/donate' }
-        ]} />
-        <FooterCategory category={'Support'} links={[
-          { name: 'License', url:'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE' },
-          { name: 'GitHub Repository', url:'https://github.com/iconoir-icons/iconoir' },
-          { name: 'File a Request', url:'https://github.com/iconoir-icons/iconoir/issues/new/choose' }
-        ]} />
-        <FooterCategory category={'Developers'} links={[
-          { name: 'Changelog',url:'/docs/changelog' },
-          { name: 'React and React Native', url:'/docs/packages/iconoir-react' },
-          { name: 'Flutter', url:'/docs/packages/iconoir-flutter'} ,
-          { name: 'Framer and Figma', url:'/docs/packages/framer' },
-          { name: 'CSS', url:'/docs/packages/css' }
-        ]} />
-
-
+        <FooterCategory
+          category={'Project'}
+          links={[
+            { name: 'Our Mission', url: '/support' },
+            { name: 'Contribute', url: '/docs/contributing' },
+            {
+              name: 'Donate',
+              url: SUPPORT_LINK,
+            },
+          ]}
+        />
+        <FooterCategory
+          category={'Support'}
+          links={[
+            {
+              name: 'License',
+              url: LICENSE_LINK,
+            },
+            {
+              name: 'GitHub Repository',
+              url: GITHUB_LINK,
+            },
+            {
+              name: 'File a Request',
+              url: ISSUE_LINK,
+            },
+          ]}
+        />
+        <FooterCategory
+          category={'Developers'}
+          links={[
+            { name: 'Changelog', url: '/docs/changelog' },
+            {
+              name: 'React and React Native',
+              url: '/docs/packages/iconoir-react',
+            },
+            { name: 'Flutter', url: '/docs/packages/iconoir-flutter' },
+            { name: 'Framer and Figma', url: '/docs/packages/framer' },
+            { name: 'CSS', url: '/docs/packages/css' },
+          ]}
+        />
       </FooterCategories>
       <FooterEnd>
-        <Text13 style={{ fontWeight: 400 }}>Parts of this content are &copy;2020-2023 by individual Iconoir contributors. Content available under a <a href={'https://github.com/iconoir-icons/iconoir/blob/main/LICENSE'} target={'_blank'} rel={'noreferrer'}>MIT License</a>.</Text13>
-        <Text13 style={{ fontWeight: 400 }}><a href={'https://www.freeprivacypolicy.com/live/ba00d743-a0cd-44f8-8cb5-6f58911db0fb'} target={'_blank'} rel={'noreferrer'}>Privacy</a></Text13>
+        <Text13 style={{ fontWeight: 400 }}>
+          Parts of this content are &copy;2020-2023 by individual Iconoir
+          contributors. Content available under a{' '}
+          <a href={LICENSE_LINK} target={'_blank'} rel={'noreferrer'}>
+            MIT License
+          </a>
+          .
+        </Text13>
+        <Text13 style={{ fontWeight: 400 }}>
+          <a href={PRIVACY_LINK} target={'_blank'} rel={'noreferrer'}>
+            Privacy
+          </a>
+        </Text13>
       </FooterEnd>
     </Container>
   );
@@ -94,9 +134,7 @@ const FooterCategoryTitle = styled(Text17)`
   display: block;
   color: var(--g0);
 `;
-const FooterCategoryLinks = styled.div`
-
-`;
+const FooterCategoryLinks = styled.div``;
 const FooterCategoryLink = styled.a`
   display: block;
   font-size: 17px;
@@ -104,7 +142,7 @@ const FooterCategoryLink = styled.a`
   width: fit-content;
   margin-bottom: 12px;
   text-decoration: none;
-  &:hover{
+  &:hover {
     text-decoration: underline;
     color: var(--g0);
   }

@@ -25,11 +25,11 @@ export async function getAllIcons(): Promise<Icon[]> {
     const matchingKey = Object.keys(AllIcons).find(
       (k) =>
         k.toLowerCase() === iconComponentName.toLowerCase() ||
-        k.toLowerCase() === `svg${iconComponentName.toLowerCase()}`
+        k.toLowerCase() === `svg${iconComponentName.toLowerCase()}`,
     );
     if (!matchingKey)
       throw new Error(
-        `Cannot find icon '${iconComponentName}' in iconoir-react.`
+        `Cannot find icon '${iconComponentName}' in iconoir-react.`,
       );
     return {
       filename: row.filename,

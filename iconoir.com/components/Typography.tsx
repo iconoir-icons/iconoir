@@ -26,7 +26,7 @@ export const Text13 = styled.div`
 export const Text17 = styled.div`
   font-size: 17px;
 `;
-  
+
 export const Text18 = styled.div`
   font-size: 16px;
   line-height: 25px;
@@ -140,7 +140,7 @@ export function Pre({ children, ...props }: React.PropsWithChildren<any>) {
   React.useEffect(() => {
     setSupportsClipboard(
       typeof window !== 'undefined' &&
-        typeof window?.navigator?.clipboard?.writeText !== 'undefined'
+        typeof window?.navigator?.clipboard?.writeText !== 'undefined',
     );
   }, []);
   return (
