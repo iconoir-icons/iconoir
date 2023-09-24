@@ -24,7 +24,7 @@ export function DocumentationNavigation({
         normalized === item.path ||
         item.children?.some((child) => {
           return activePath.startsWith(
-            [item.path, child.path].filter(Boolean).join('/')
+            [item.path, child.path].filter(Boolean).join('/'),
           );
         })
       );
@@ -51,12 +51,12 @@ export function DocumentationNavigation({
                   });
                 }}
               >
-                <HeaderItemIcon active={active}>
+                <HeaderItemIcon $active={active}>
                   <NavArrowUp />
                 </HeaderItemIcon>
                 {documentationItem.title}
               </HeaderItem>
-              <ChildrenContainer expanded={active}>
+              <ChildrenContainer $expanded={active}>
                 <DocumentationNavigation
                   documentationItems={documentationItem.children}
                   pathPrefix={[
@@ -75,7 +75,7 @@ export function DocumentationNavigation({
               legacyBehavior
               key={documentationItem.path}
             >
-              <NavigationItem as={'a'} active={activePath === path}>
+              <NavigationItem as={'a'} $active={activePath === path}>
                 <span>{documentationItem.title}</span>
                 {documentationItem.label ? (
                   <NavigationItemLabel>
@@ -91,10 +91,10 @@ export function DocumentationNavigation({
   );
 }
 
-const HeaderItemIcon = styled.div<{ active?: boolean }>`
+const HeaderItemIcon = styled.div<{ $active?: boolean }>`
   font-size: 13px;
   transition: transform 0.25s linear;
-  transform: rotate(${(props) => (props.active ? 180 : 0)}deg);
+  transform: rotate(${(props) => (props.$active ? 180 : 0)}deg);
   margin-right: 7px;
   position: relative;
   top: 6px;
@@ -105,8 +105,8 @@ const HeaderItemIcon = styled.div<{ active?: boolean }>`
     display: none;
   }
 `;
-const ChildrenContainer = styled.div<{ expanded?: boolean }>`
-  display: ${(props) => (props.expanded ? 'block' : 'none')};
+const ChildrenContainer = styled.div<{ $expanded?: boolean }>`
+  display: ${(props) => (props.$expanded ? 'block' : 'none')};
   ${media.lg} {
     display: block;
   }
@@ -129,9 +129,11 @@ const HeaderItem = styled.div`
     }
   }
 `;
-const NavigationItem = styled.div<{ active?: boolean }>`
+const NavigationItem = styled.div<{ $active?: boolean }>`
   padding: 12px 45px 12px 75px;
-  transition: background 0.1s linear, color 0.1s linear;
+  transition:
+    background 0.1s linear,
+    color 0.1s linear;
   font-weight: 500;
   font-size: 16px;
   line-height: 14.5px;
@@ -147,11 +149,11 @@ const NavigationItem = styled.div<{ active?: boolean }>`
     margin-right: 14px;
   }
   &:hover,
-  ${(props) => (props.active ? '&' : '&.noop')} {
+  ${(props) => (props.$active ? '&' : '&.noop')} {
     color: var(--g0);
     text-decoration: underline;
   }
-  ${(props) => (props.active ? 'span' : '&.noop')} {
+  ${(props) => (props.$active ? 'span' : '&.noop')} {
     font-weight: 700;
   }
   ${media.lg} {

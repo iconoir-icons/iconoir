@@ -1,16 +1,6 @@
 {
-  "root": true,
   "extends": ["next/core-web-vitals"],
   "rules": {
     "react/no-unescaped-entities": ["off"]
-  },
-  "overrides": [
-    {
-      "files": ["*.js"],
-      "parser": "espree",
-      "parserOptions": {
-        "ecmaVersion": 2020
-      }
-    }
-  ]
+  }
 }

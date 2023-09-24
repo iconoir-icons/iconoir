@@ -1,4 +1,3 @@
-import { NumberFormatOptions } from '@internationalized/number';
 import { useFocusRing } from '@react-aria/focus';
 import { useNumberFormatter } from '@react-aria/i18n';
 import { useSlider, useSliderThumb } from '@react-aria/slider';
@@ -11,7 +10,7 @@ import styled from 'styled-components';
 import { Text13 } from './Typography';
 
 export interface SliderProps extends ReactSliderProps<number[]> {
-  formatOptions?: NumberFormatOptions;
+  formatOptions?: Parameters<typeof useNumberFormatter>[0];
 }
 export function Slider(props: SliderProps) {
   let trackRef = React.useRef(null);
@@ -20,7 +19,7 @@ export function Slider(props: SliderProps) {
   let { groupProps, trackProps, labelProps, outputProps } = useSlider(
     props,
     state,
-    trackRef
+    trackRef,
   );
 
   return (
@@ -56,7 +55,7 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
       trackRef,
       inputRef,
     },
-    state
+    state,
   );
 
   let { focusProps, isFocusVisible } = useFocusRing();
@@ -129,7 +128,7 @@ const ThumbInner = styled.div`
   box-shadow: 0px 3px 0px 0px var(--g0);
   border-radius: 50%;
   cursor: pointer;
-  &:hover{
+  &:hover {
     transition: 0.2s;
     scale: 1.2;
   }
