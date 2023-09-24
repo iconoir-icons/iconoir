@@ -141,7 +141,6 @@ export function getDocumentationStructure(): DocumentationItem[] {
           path: 'iconoir-flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
-          label: 'New',
           noReadOnGitHub: true,
         },
         {

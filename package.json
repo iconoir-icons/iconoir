@@ -2,36 +2,38 @@
   "name": "iconoir",
   "version": "6.11.0",
   "description": "The biggest open source icon library with tons of free icons.",
-  "type": "module",
-  "files": [
-    "css",
-    "icons"
-  ],
-  "scripts": {
-    "lint": "eslint ./bin/build.js",
-    "lint:fix": "npm run lint -- --fix",
-    "build": "node ./bin/build.js",
-    "prepublish-all": "node ./bin/prepublish.js",
-    "dist": "pnpm -r --filter './packages/**' run dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iconoir-icons/iconoir.git"
-  },
   "keywords": [
     "free",
     "icons",
     "library",
     "svg",
     "react",
+    "vue",
     "flutter",
     "css"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lucaburgio/iconoir/issues"
-  },
   "homepage": "https://iconoir.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconoir-icons/iconoir.git"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "css",
+    "icons"
+  ],
+  "scripts": {
+    "build": "node ./bin/build.js",
+    "dist": "pnpm -r --filter './packages/**' run dist",
+    "lint": "eslint ./bin/build.js",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublish-all": "node ./bin/prepublish.js"
+  },
   "devDependencies": {
     "@atomist/yaml-updater": "^1.0.2",
     "@svgr/cli": "^5.5.0",

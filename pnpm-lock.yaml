@@ -147,9 +147,9 @@ importers:
       vite: ^4.3.3
       vite-plugin-dts: ^2.3.0
       vue: ^3.2.47
-      vue-demi: latest
+      vue-demi: ^0.14.6
     dependencies:
-      vue-demi: 0.14.0_vue@3.2.47
+      vue-demi: 0.14.6_vue@3.2.47
     devDependencies:
       '@vitejs/plugin-vue': 4.2.1_vite@4.3.3+vue@3.2.47
       esbuild: 0.17.18
@@ -6471,8 +6471,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vue-demi/0.14.0_vue@3.2.47:
-    resolution: {integrity: sha512-gt58r2ogsNQeVoQ3EhoUAvUsH9xviydl0dWJj7dabBC/2L4uBId7ujtCwDRD0JhkGsV1i0CtfLAeyYKBht9oWg==}
+  /vue-demi/0.14.6_vue@3.2.47:
+    resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
