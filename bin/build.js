@@ -1,11 +1,11 @@
-import execa from 'execa';
-import { promises as fs, readFileSync, existsSync } from 'fs';
+import { execa } from 'execa';
 import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
-import os from 'os';
-import path, { basename, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { incompatibleNames, flutterIncompatibleNames } from '../constants.js';
+import { existsSync, promises as fs, readFileSync } from 'node:fs';
+import os from 'node:os';
+import path, { basename, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { flutterIncompatibleNames, incompatibleNames } from '../constants.js';
 import { buildVueIcons } from './buildVue.js';
 
 // Paths
@@ -53,7 +53,9 @@ const tasks = new Listr(
       title: 'Fetching icons',
       task: async (ctx) => {
         const iconFiles = await fs.readdir(iconoirIconsDir);
-        ctx.iconoirIconsFiles = iconFiles.filter(file => file.endsWith('.svg'));
+        ctx.iconoirIconsFiles = iconFiles.filter((file) =>
+          file.endsWith('.svg')
+        );
       },
     },
     {

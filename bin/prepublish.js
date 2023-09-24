@@ -1,6 +1,6 @@
 import { updateYamlKey } from '@atomist/yaml-updater';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import semver from 'semver';
 
 const PACKAGE_BASE = '';
