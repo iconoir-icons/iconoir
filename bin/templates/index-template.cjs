@@ -1,13 +1,13 @@
 const path = require('path');
 
 function template(filePaths) {
-  const exportEntries = filePaths.map((filePath) => {
+  const exportEntries = filePaths.map(({ path: filePath }) => {
     const basename = path.basename(filePath, path.extname(filePath));
     const exportName = /^\d/.test(basename) ? `Svg${basename}` : basename;
     return `export { default as ${exportName} } from './${basename}'`;
   });
   exportEntries.push(
-    "export { IconoirProvider, IconoirContext, IconoirContextValue } from './IconoirContext'"
+    "export { IconoirProvider, IconoirContext, IconoirContextValue } from './IconoirContext'",
   );
   return exportEntries.join('\n');
 }

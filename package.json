@@ -8,8 +8,8 @@
     "icons"
   ],
   "scripts": {
-    "lint": "eslint ./bin/build.js",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint \"./bin/**/*.{cjs,js}\"",
+    "lint:fix": "pnpm run lint --fix",
     "build": "node ./bin/build.js",
     "prepublish-all": "node ./bin/prepublish.js",
     "dist": "pnpm -r --filter './packages/**' run dist"
@@ -34,7 +34,7 @@
   "homepage": "https://iconoir.com",
   "devDependencies": {
     "@atomist/yaml-updater": "^1.0.2",
-    "@svgr/cli": "^5.5.0",
+    "@svgr/cli": "^8.1.0",
     "@types/svg-parser": "^2.0.3",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
@@ -46,11 +46,6 @@
     "prettier": "^3.0.3",
     "semver": "^7.5.4",
     "svg-parser": "^2.0.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "^17.0.29"
-    }
   },
   "packageManager": "pnpm@8.7.6"
 }

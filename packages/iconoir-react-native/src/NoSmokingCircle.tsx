@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgNoSmokingCircle(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgNoSmokingCircle = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,37 +13,37 @@ function SvgNoSmokingCircle(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M15 12v3M15 9c0-1-.714-2-2.143-2v0A2.857 2.857 0 0110 4.143V3M18 9V4M18 12v3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 12v3M15 9c0-1-.714-2-2.143-2v0A2.857 2.857 0 0 1 10 4.143V3M18 9V4M18 12v3"
       />
       <Path
-        d="M15 15H6.6a.6.6 0 01-.6-.6v-1.8a.6.6 0 01.6-.6H12"
         stroke="currentColor"
+        d="M15 15H6.6a.6.6 0 0 1-.6-.6v-1.8a.6.6 0 0 1 .6-.6H12"
       />
       <Path
-        d="M5 5l14 14M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m5 5 14 14M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"
+      />
+      <Path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgNoSmokingCircle);
+};
+const ForwardRef = forwardRef(SvgNoSmokingCircle);
 export default ForwardRef;

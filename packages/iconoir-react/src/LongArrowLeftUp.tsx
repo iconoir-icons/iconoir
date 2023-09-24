@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgLongArrowLeftUp(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgLongArrowLeftUp = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,30 +13,30 @@ function SvgLongArrowLeftUp(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M4.5 10.5L8 7l3.5 3.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M4.5 10.5 8 7l3.5 3.5"
       />
       <path
-        d="M8 7v6a4 4 0 004 4h7"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M8 7v6a4 4 0 0 0 4 4h7"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgLongArrowLeftUp);
+};
+const ForwardRef = forwardRef(SvgLongArrowLeftUp);
 export default ForwardRef;

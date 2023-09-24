@@ -13,5 +13,5 @@ export const incompatibleNames = {
 
 export const flutterIncompatibleNames = {
   ...incompatibleNames,
-  'color-filter': 'color-filter-icon'
+  'color-filter': 'color-filter-icon',
 };

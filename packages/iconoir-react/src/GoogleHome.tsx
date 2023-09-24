@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgGoogleHome(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgGoogleHome = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,29 +13,29 @@ function SvgGoogleHome(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M17.708 17A9 9 0 104.291 5a9 9 0 0013.417 12zm0 0H19.5a2.5 2.5 0 012.5 2.5v0a2.5 2.5 0 01-2.5 2.5H17"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M17.708 17A9 9 0 1 0 4.291 5a9 9 0 0 0 13.417 12Zm0 0H19.5a2.5 2.5 0 0 1 2.5 2.5v0a2.5 2.5 0 0 1-2.5 2.5H17"
       />
       <path
-        d="M11 11.01l.01-.011M8 11.01l.01-.011M14 11.01l.01-.011"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m11 11.01.01-.011M8 11.01l.01-.011M14 11.01l.01-.011"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgGoogleHome);
+};
+const ForwardRef = forwardRef(SvgGoogleHome);
 export default ForwardRef;

@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgWrapText(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgWrapText = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgWrapText(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M4 7h16M4 17h5M4 12h13.5a2.5 2.5 0 012.5 2.5v0a2.5 2.5 0 01-2.5 2.5h-5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M4 7h16M4 17h5M4 12h13.5a2.5 2.5 0 0 1 2.5 2.5v0a2.5 2.5 0 0 1-2.5 2.5h-5"
       />
       <Path
-        d="M15 15.5L12.5 17l2.5 1.5v-3z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 15.5 12.5 17l2.5 1.5v-3Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgWrapText);
+};
+const ForwardRef = forwardRef(SvgWrapText);
 export default ForwardRef;

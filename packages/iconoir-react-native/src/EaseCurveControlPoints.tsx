@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgEaseCurveControlPoints(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgEaseCurveControlPoints = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgEaseCurveControlPoints(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M17 20a2 2 0 104 0 2 2 0 00-4 0zm0 0h-2M7 4a2 2 0 11-4 0 2 2 0 014 0zm0 0h2M14 4h-2M12 20h-2M3 20c8 0 10-16 18-16"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M17 20a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm0 0h-2M7 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm0 0h2M14 4h-2M12 20h-2M3 20c8 0 10-16 18-16"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgEaseCurveControlPoints);
+};
+const ForwardRef = forwardRef(SvgEaseCurveControlPoints);
 export default ForwardRef;

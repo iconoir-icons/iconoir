@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgUnionHorizAlt(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgUnionHorizAlt = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,30 +13,30 @@ function SvgUnionHorizAlt(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M8 19A7 7 0 108 5a7 7 0 000 14z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M8 19A7 7 0 1 0 8 5a7 7 0 0 0 0 14Z"
       />
       <path
-        d="M16 19a7 7 0 100-14 7 7 0 000 14z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 19a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgUnionHorizAlt);
+};
+const ForwardRef = forwardRef(SvgUnionHorizAlt);
 export default ForwardRef;

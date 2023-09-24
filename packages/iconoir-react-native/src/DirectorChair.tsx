@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDirectorChair(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgDirectorChair = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,22 +13,22 @@ function SvgDirectorChair(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M19 12L5 21M5 3v9M19 3v9M5 12l14 9M4 12h16"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M19 12 5 21M5 3v9M19 3v9M5 12l14 9M4 12h16"
       />
-      <Path d="M5 4h14M5 7h14" stroke="currentColor" strokeLinejoin="round" />
+      <Path stroke="currentColor" strokeLinejoin="round" d="M5 4h14M5 7h14" />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDirectorChair);
+};
+const ForwardRef = forwardRef(SvgDirectorChair);
 export default ForwardRef;

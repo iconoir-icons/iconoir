@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgNoLock(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgNoLock = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgNoLock(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M11.5 12H6.6a.6.6 0 00-.6.6v6.8a.6.6 0 00.6.6h10.8a.6.6 0 00.6-.6v-.9M16 12V8c0-1.333-.8-4-4-4-.747 0-1.363.145-1.869.385M16 12h1.4a.6.6 0 01.6.6v.4M8 8v4M3 3l18 18"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M11.5 12H6.6a.6.6 0 0 0-.6.6v6.8a.6.6 0 0 0 .6.6h10.8a.6.6 0 0 0 .6-.6v-.9M16 12V8c0-1.333-.8-4-4-4-.747 0-1.363.145-1.869.385M16 12h1.4a.6.6 0 0 1 .6.6v.4M8 8v4M3 3l18 18"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgNoLock);
+};
+const ForwardRef = forwardRef(SvgNoLock);
 export default ForwardRef;

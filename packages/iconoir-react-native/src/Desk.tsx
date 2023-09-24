@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDesk(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgDesk = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgDesk(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M4 7v10M1 7h22M4 10h16M14 14h6M20 7v10M14 7v10M17 10v1M17 14v1"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M4 7v10M1 7h22M4 10h16M14 14h6M20 7v10M14 7v10M17 10v1M17 14v1"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDesk);
+};
+const ForwardRef = forwardRef(SvgDesk);
 export default ForwardRef;

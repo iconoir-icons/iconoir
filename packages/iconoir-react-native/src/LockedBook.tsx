@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgLockedBook(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgLockedBook = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -13,34 +12,34 @@ function SvgLockedBook(
   return (
     <Svg
       width="1.5em"
-      strokeWidth={1.5}
       height="1.5em"
-      viewBox="0 0 24 24"
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M4 19V5a2 2 0 012-2h13.4a.6.6 0 01.6.6v13.114"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M4 19V5a2 2 0 0 1 2-2h13.4a.6.6 0 0 1 .6.6v13.114"
       />
       <Path
-        d="M14 10h.4a.6.6 0 01.6.6v2.8a.6.6 0 01-.6.6H9.6a.6.6 0 01-.6-.6v-2.8a.6.6 0 01.6-.6h.4m4 0V8c0-.667-.4-2-2-2s-2 1.333-2 2v2m4 0h-4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M14 10h.4a.6.6 0 0 1 .6.6v2.8a.6.6 0 0 1-.6.6H9.6a.6.6 0 0 1-.6-.6v-2.8a.6.6 0 0 1 .6-.6h.4m4 0V8c0-.667-.4-2-2-2s-2 1.333-2 2v2m4 0h-4"
       />
-      <Path d="M6 17h14M6 21h14" stroke="currentColor" strokeLinecap="round" />
+      <Path stroke="currentColor" strokeLinecap="round" d="M6 17h14M6 21h14" />
       <Path
-        d="M6 21a2 2 0 110-4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6 21a2 2 0 1 1 0-4"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgLockedBook);
+};
+const ForwardRef = forwardRef(SvgLockedBook);
 export default ForwardRef;

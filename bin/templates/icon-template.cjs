@@ -1,26 +1,30 @@
-const template = (
-  { template },
-  opts,
-  { imports, interfaces, componentName, props, jsx, exports }
-) => {
-  const plugins = ['jsx'];
-  if (opts.typescript) {
-    plugins.push('typescript');
+const template = (variables, { tpl }) => {
+  variables.props[0].name = 'passedProps';
+
+  // Workaround to fix ref type for React Native
+  const isNative = variables.imports.some(
+    (i) => i.source?.value === 'react-native-svg',
+  );
+
+  if (isNative) {
+    variables.props[1].typeAnnotation.typeAnnotation.typeParameters.params[0].typeName.name =
+      'Svg';
   }
-  const typeScriptTpl = template.smart({ plugins });
-  props[0].name = 'passedProps';
-  return typeScriptTpl.ast`${imports}
-import { IconoirContext } from './IconoirContext'
 
-${interfaces}
+  return tpl`
+${variables.imports};
+import { IconoirContext } from './IconoirContext';
 
-function ${componentName}(${props}) {
+${variables.interfaces};
+
+const ${variables.componentName} = (${variables.props}) => {
   const context = React.useContext(IconoirContext);
   const props = { ...context, ...passedProps };
-  return ${jsx};
-}
-${exports}
-  `;
+  return ${variables.jsx};
+};
+
+${variables.exports};
+`;
 };
 
 module.exports = template;

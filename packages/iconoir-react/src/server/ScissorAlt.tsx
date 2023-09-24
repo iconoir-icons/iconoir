@@ -1,28 +1,28 @@
 import * as React from "react";
-function SvgScissorAlt(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M10.236 8a3 3 0 10-4.472-4 3 3 0 004.472 4zm0 0L20 16M10.236 16a3 3 0 11-4.472 4 3 3 0 014.472-4zm0 0L20 8"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgScissorAlt);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgScissorAlt = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M10.236 8a3 3 0 1 0-4.472-4 3 3 0 0 0 4.472 4Zm0 0L20 16M10.236 16a3 3 0 1 1-4.472 4 3 3 0 0 1 4.472-4Zm0 0L20 8"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgScissorAlt);
 export default ForwardRef;

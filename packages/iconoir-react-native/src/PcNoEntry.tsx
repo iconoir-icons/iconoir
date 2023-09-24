@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPcNoEntry(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgPcNoEntry = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,31 +13,31 @@ function SvgPcNoEntry(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M7 22h10"
+      />
+      <Path
+        stroke="currentColor"
+        d="M2 17V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z"
+      />
+      <Path
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <Path
-        d="M2 17V4a2 2 0 012-2h16a2 2 0 012 2v13a2 2 0 01-2 2H4a2 2 0 01-2-2z"
-        stroke="currentColor"
-      />
-      <Path
-        d="M14.857 7.7a4 4 0 10-5.713 5.6m5.713-5.6a4 4 0 01-5.713 5.6m5.713-5.6l-5.714 5.6"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M14.857 7.7a4 4 0 1 0-5.713 5.6m5.713-5.6a4 4 0 0 1-5.713 5.6m5.713-5.6-5.714 5.6"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPcNoEntry);
+};
+const ForwardRef = forwardRef(SvgPcNoEntry);
 export default ForwardRef;

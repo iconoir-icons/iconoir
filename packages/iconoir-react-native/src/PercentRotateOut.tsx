@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPercentRotateOut(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgPercentRotateOut = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,46 +13,46 @@ function SvgPercentRotateOut(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M21.168 8A10.002 10.002 0 0012 2c-5.185 0-9.449 3.947-9.95 9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M21.168 8A10.002 10.002 0 0 0 12 2c-5.185 0-9.449 3.947-9.95 9"
       />
       <Path
-        d="M18 8h3.4a.6.6 0 00.6-.6V4M2.881 16c1.544 3.532 5.068 6 9.168 6 5.186 0 9.45-3.947 9.951-9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M18 8h3.4a.6.6 0 0 0 .6-.6V4M2.881 16c1.544 3.532 5.068 6 9.168 6 5.186 0 9.45-3.947 9.951-9"
       />
       <Path
-        d="M6.05 16h-3.4a.6.6 0 00-.6.6V20"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M6.05 16h-3.4a.6.6 0 0 0-.6.6V20"
       />
       <Path
-        d="M14.5 15a.5.5 0 100-1 .5.5 0 000 1zM9.5 10a.5.5 0 100-1 .5.5 0 000 1z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M14.5 15a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1ZM9.5 10a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"
       />
       <Path
-        d="M15 9l-6 6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m15 9-6 6"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPercentRotateOut);
+};
+const ForwardRef = forwardRef(SvgPercentRotateOut);
 export default ForwardRef;

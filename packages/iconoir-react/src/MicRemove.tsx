@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMicRemove(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgMicRemove = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,31 +13,31 @@ function SvgMicRemove(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M16.992 19h6"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
-      <rect x={5} y={2} width={6} height={12} rx={3} stroke="currentColor" />
+      <rect width={6} height={12} x={5} y={2} stroke="currentColor" rx={3} />
       <path
-        d="M1 10v1a7 7 0 007 7v0a7 7 0 007-7v-1M8 18v4m0 0H5m3 0h3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M1 10v1a7 7 0 0 0 7 7v0a7 7 0 0 0 7-7v-1M8 18v4m0 0H5m3 0h3"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMicRemove);
+};
+const ForwardRef = forwardRef(SvgMicRemove);
 export default ForwardRef;

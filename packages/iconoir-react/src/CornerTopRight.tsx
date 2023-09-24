@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCornerTopRight(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgCornerTopRight = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,24 +13,24 @@ function SvgCornerTopRight(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M20.01 16.01l-.01-.011M20.01 20.01l-.01-.011M16.01 20.01l-.01-.011M12.01 20.01l-.01-.011M8.01 20.01L8 19.999M4.01 20.01L4 19.999M4.01 16.01L4 15.999M4.01 12.01L4 11.999M4.01 8.01L4 7.999M4.01 4.01L4 3.999M8.01 4.01L8 3.999M20.01 12V4h-8v8h8z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m20.01 16.01-.01-.011M20.01 20.01l-.01-.011M16.01 20.01l-.01-.011M12.01 20.01l-.01-.011M8.01 20.01 8 19.999M4.01 20.01 4 19.999M4.01 16.01 4 15.999M4.01 12.01 4 11.999M4.01 8.01 4 7.999M4.01 4.01 4 3.999M8.01 4.01 8 3.999M20.01 12V4h-8v8h8Z"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCornerTopRight);
+};
+const ForwardRef = forwardRef(SvgCornerTopRight);
 export default ForwardRef;

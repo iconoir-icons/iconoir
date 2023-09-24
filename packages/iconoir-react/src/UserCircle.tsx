@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgUserCircle(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgUserCircle = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,30 +13,30 @@ function SvgUserCircle(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M7 18v-1a5 5 0 015-5v0a5 5 0 015 5v1"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M7 18v-1a5 5 0 0 1 5-5v0a5 5 0 0 1 5 5v1"
       />
       <path
-        d="M12 12a3 3 0 100-6 3 3 0 000 6z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
       />
       <circle cx={12} cy={12} r={10} stroke="currentColor" />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgUserCircle);
+};
+const ForwardRef = forwardRef(SvgUserCircle);
 export default ForwardRef;

@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCylinder(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgCylinder = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,28 +13,28 @@ function SvgCylinder(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M12 2c8 0 8 3 8 3s0 3-8 3-8-3-8-3 0-3 8-3zM12 16c8 0 8 3 8 3s0 3-8 3-8-3-8-3 0-3 8-3z"
         stroke="currentColor"
+        d="M12 2c8 0 8 3 8 3s0 3-8 3-8-3-8-3 0-3 8-3ZM12 16c8 0 8 3 8 3s0 3-8 3-8-3-8-3 0-3 8-3Z"
       />
       <path
-        d="M20 5v14M4 5v14"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M20 5v14M4 5v14"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCylinder);
+};
+const ForwardRef = forwardRef(SvgCylinder);
 export default ForwardRef;

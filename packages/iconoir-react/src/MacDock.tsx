@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgMacDock(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgMacDock = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,31 +13,31 @@ function SvgMacDock(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M8 17a.5.5 0 110-1 .5.5 0 010 1zM12 17a.5.5 0 110-1 .5.5 0 010 1zM16 17a.5.5 0 110-1 .5.5 0 010 1z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M8 17a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM12 17a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM16 17a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Z"
       />
       <path
-        d="M21 21H3a1 1 0 01-1-1V4a1 1 0 011-1h18a1 1 0 011 1v16a1 1 0 01-1 1zM2 17.5l2-1M22 17.5l-2-1"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M21 21H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1ZM2 17.5l2-1M22 17.5l-2-1"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgMacDock);
+};
+const ForwardRef = forwardRef(SvgMacDock);
 export default ForwardRef;
