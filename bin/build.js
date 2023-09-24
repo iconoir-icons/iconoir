@@ -303,7 +303,7 @@ const tasks = new Listr(
                         });
                         return task.newListr(tasks, {
                           concurrent: true,
-                          rendererOptions: { collapse: false },
+                          rendererOptions: { collapseSubtasks: false },
                         });
                       },
                     },
@@ -438,7 +438,7 @@ const tasks = new Listr(
                         });
                         return task.newListr(tasks, {
                           concurrent: true,
-                          rendererOptions: { collapse: false },
+                          rendererOptions: { collapseSubtasks: false },
                         });
                       },
                     },
@@ -611,7 +611,7 @@ const tasks = new Listr(
                                                   pathAndFileNameDefaultCase:
                                                     '(snakeCase)',
                                                 },
-                                                async onComplete(results) {
+                                                onComplete(results) {
                                                   finalFileNames.push(
                                                     results.output.path,
                                                   );
@@ -648,7 +648,9 @@ const tasks = new Listr(
                         });
                         return task.newListr(tasks, {
                           concurrent: true,
-                          rendererOptions: { collapse: false },
+                          rendererOptions: {
+                            collapseSubtasks: false,
+                          },
                         });
                       },
                     },
@@ -678,7 +680,10 @@ const tasks = new Listr(
   {
     concurrent: false,
     exitOnError: false,
-    rendererOptions: { collapse: false, collapseErrors: false },
+    rendererOptions: {
+      collapseSubtasks: false,
+      collapseErrors: false,
+    },
   },
 );
 

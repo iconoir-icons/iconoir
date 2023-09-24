@@ -40,9 +40,9 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "execa": "^8.0.1",
-    "generate-template-files": "^3.2.0",
+    "generate-template-files": "^3.2.1",
     "hast-util-to-html": "^9.0.0",
-    "listr2": "^3.12.2",
+    "listr2": "^7.0.1",
     "prettier": "^3.0.3",
     "semver": "^7.5.4",
     "svg-parser": "^2.0.4"
