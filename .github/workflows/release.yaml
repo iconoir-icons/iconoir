@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # We have to checkout main or PNPM fails. Tag should be on main anyway.
           ref: main
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install pnpm
@@ -76,7 +76,7 @@ jobs:
         continue-on-error: true
 
       - name: Publish Flutter
-        uses: k-paxian/dart-package-publisher@v1.5.1
+        uses: k-paxian/dart-package-publisher@v1.6
         with:
           credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
           relativePath: ./packages/iconoir-flutter
