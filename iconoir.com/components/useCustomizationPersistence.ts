@@ -6,10 +6,10 @@ const CUSTOMIZATIONS_KEY = 'iconoir-customize';
 export function useCustomizationPersistence(): [
   IconListCustomizations,
   // eslint-disable-next-line no-unused-vars
-  (customizations: IconListCustomizations) => void
+  (customizations: IconListCustomizations) => void,
 ] {
   const [customizations, _setCustomizations] = React.useState(
-    DEFAULT_CUSTOMIZATIONS
+    DEFAULT_CUSTOMIZATIONS,
   );
   React.useEffect(() => {
     const localStorageValue = localStorage.getItem(CUSTOMIZATIONS_KEY);
@@ -28,7 +28,7 @@ export function useCustomizationPersistence(): [
     (newCustomizations) => {
       localStorage.setItem(
         CUSTOMIZATIONS_KEY,
-        JSON.stringify(newCustomizations)
+        JSON.stringify(newCustomizations),
       );
       _setCustomizations(newCustomizations);
     },

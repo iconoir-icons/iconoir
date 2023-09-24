@@ -51,7 +51,7 @@ export function ChangelogEntry({
           <Text15>{moment(created_at).format('MMM DD, YYYY')}</Text15>
         </TitleContainer>
       </ContainerLeft>
-      <EntryBody expanded={expanded}>
+      <EntryBody $expanded={expanded}>
         {body ? <MDXRemote {...body} /> : 'No changelog'}
         {shouldExpand ? (
           <ExpandContainer>
@@ -103,10 +103,10 @@ const ExpandContainer = styled.div`
   bottom: 16px;
   right: 23px;
 `;
-const EntryBody = styled(Code)<{ expanded?: boolean }>`
+const EntryBody = styled(Code)<{ $expanded?: boolean }>`
   flex: 1;
   margin: 0;
-  max-height: ${(props) => (props.expanded ? 'none' : `${EXPAND_HEIGHT}px`)};
+  max-height: ${(props) => (props.$expanded ? 'none' : `${EXPAND_HEIGHT}px`)};
   position: relative;
   overflow: hidden;
   * {

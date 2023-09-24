@@ -11,7 +11,7 @@ import { HeaderSecondary } from '../components/HeaderSecondary';
 import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
-import { Body, Code, Heading2, Text18 } from '../components/Typography';
+import { Body, Heading2, Text18 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { Praise } from '../components/Praise';
 
@@ -20,29 +20,44 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
     <Layout>
       <SEO title={'Donate - Our Mission'} />
-      <Header {...headerProps}/>
+      <Header {...headerProps} />
       <HeaderSecondary>
         <SupportHead>
           <HeroText>Our Goal</HeroText>
-          <HeroTextSecondary>A free, complete, and open icon library.</HeroTextSecondary>
+          <HeroTextSecondary>
+            A free, complete, and open icon library.
+          </HeroTextSecondary>
         </SupportHead>
       </HeaderSecondary>
       <PageContainer>
         <PillarsContainer>
           <Pillar>
-            <PillarIcon R={"140"} G={"26"} B={"245"}><Flash /></PillarIcon>
+            <PillarIcon $R={'140'} $G={'26'} $B={'245'}>
+              <Flash />
+            </PillarIcon>
             <PillarTitle>Free</PillarTitle>
-            <PillarDescription>We want to give to developers and users high-quality free icons. Hassle-free.</PillarDescription>
+            <PillarDescription>
+              We want to give to developers and users high-quality free icons.
+              Hassle-free.
+            </PillarDescription>
           </Pillar>
           <Pillar>
-            <PillarIcon R={"72"} G={"88"} B={"255"}><DesignNib /></PillarIcon>
+            <PillarIcon $R={'72'} $G={'88'} $B={'255'}>
+              <DesignNib />
+            </PillarIcon>
             <PillarTitle>Complete</PillarTitle>
-            <PillarDescription>We’re aiming at having as much unique icons as possible.</PillarDescription>
+            <PillarDescription>
+              We’re aiming at having as much unique icons as possible.
+            </PillarDescription>
           </Pillar>
           <Pillar>
-            <PillarIcon R={"65"} G={"209"} B={"255"}><Globe /></PillarIcon>
+            <PillarIcon $R={'65'} $G={'209'} $B={'255'}>
+              <Globe />
+            </PillarIcon>
             <PillarTitle>Ambitious</PillarTitle>
-            <PillarDescription>We want to help and be part of as many projects as possible.</PillarDescription>
+            <PillarDescription>
+              We want to help and be part of as many projects as possible.
+            </PillarDescription>
           </Pillar>
         </PillarsContainer>
         <WideSection>
@@ -52,12 +67,15 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
             support Iconoir with a donation to help us sustain costs and
             development time.
           </Text18>
-          <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}><span>Donate</span><ArrowRight /></CallToAction>
+          <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}>
+            <span>Donate</span>
+            <ArrowRight />
+          </CallToAction>
         </WideSection>
         <PraiseContainer>
-        <PraiseTitle>What our friends say</PraiseTitle>
-        <Praise />
-      </PraiseContainer>
+          <PraiseTitle>What our friends say</PraiseTitle>
+          <Praise />
+        </PraiseContainer>
         <DonateContainer>
           <DonateLeft>
             <DonateHeader>Join us on Discord</DonateHeader>
@@ -81,7 +99,6 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
     </Layout>
   );
 };
-
 
 const PillarsContainer = styled.div`
   display: flex;
@@ -125,14 +142,15 @@ const PillarDescription = styled(Body)`
   margin: 0;
 `;
 
-const PillarIcon = styled.span<{ R?: string, G?: string, B?: string  }>`
+const PillarIcon = styled.span<{ $R?: string; $G?: string; $B?: string }>`
   font-size: 18px;
   padding: 20px 11px 6px 11px;
   color: var(--white);
   width: 100px;
   height: 100px;
-  background: rgb(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B});
-  box-shadow: 2px 6px 20px rgba(${({ R }) => R}, ${({ G }) => G}, ${({ B }) => B}, 0.5);
+  background: rgb(${({ $R }) => $R}, ${({ $G }) => $G}, ${({ $B }) => $B});
+  box-shadow: 2px 6px 20px
+    rgba(${({ $R }) => $R}, ${({ $G }) => $G}, ${({ $B }) => $B}, 0.5);
   border-radius: 18px;
 `;
 
