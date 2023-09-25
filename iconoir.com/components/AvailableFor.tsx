@@ -75,17 +75,21 @@ const AreYouUsing = styled.div`
   }
 `;
 const MobileHeader = styled(Text14)`
-  display: block;
-  margin-top: 5px;
-  text-align: center;
-  ${media.lg} {
-    display: none;
+  &&& {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    ${media.lg} {
+      display: none;
+    }
   }
 `;
 const DesktopHeader = styled(Text14)`
-  display: none;
-  ${media.lg} {
-    display: block;
+  &&& {
+    display: none;
+    ${media.lg} {
+      display: block;
+    }
   }
 `;
 const AvailableForAnimation = keyframes`

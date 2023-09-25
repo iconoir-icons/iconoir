@@ -42,7 +42,9 @@ const IconContainer = styled.div`
   color: var(--black);
 `;
 const Title = styled(Text18)`
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: var(--black);
+  &&& {
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--black);
+  }
 `;

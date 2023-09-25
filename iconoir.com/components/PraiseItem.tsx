@@ -57,8 +57,10 @@ const Logo = styled.img`
   margin-top: 36px;
 `;
 const Header = styled(Text18)`
-  font-weight: 700;
-  color: var(--black);
+  &&& {
+    font-weight: 700;
+    color: var(--black);
+  }
 `;
 const Body = styled(Text18)`
   margin-top: 8px;

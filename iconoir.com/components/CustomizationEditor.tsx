@@ -119,13 +119,15 @@ const HorizontalField = styled(Field)`
   justify-content: space-between;
 `;
 const ResetButton = styled(Field)`
-  margin: initial;
-  text-decoration: underline;
-  color: var(--dark-gray);
-  font-size: 13px;
+  &&& {
+    margin: initial;
+    text-decoration: underline;
+    color: var(--dark-gray);
+    font-size: 13px;
 
-  &:hover {
-    color: var(--black);
-    cursor: pointer;
+    &:hover {
+      color: var(--black);
+      cursor: pointer;
+    }
   }
 `;

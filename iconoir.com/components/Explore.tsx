@@ -69,10 +69,11 @@ const Right = styled.div`
   position: sticky;
   top: 50px;
   width: 275px;
-  margin-left: 68px;
   display: block;
   z-index: -1;
+  margin: 110px auto;
   ${media.md} {
+    margin-left: 68px;
     z-index: 1;
   }
 `;

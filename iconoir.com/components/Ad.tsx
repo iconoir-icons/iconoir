@@ -24,7 +24,7 @@ const AdContainer = styled.div`
   #carbonads {
     margin: 24px 0 0 0;
     a {
-      text-decoration: none !important;
+      text-decoration: none;
     }
     .carbon-wrap {
       display: flex;

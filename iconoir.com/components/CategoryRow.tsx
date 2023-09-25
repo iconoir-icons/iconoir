@@ -42,11 +42,13 @@ const Container = styled.div`
   }
 `;
 const Title = styled(Text15)`
-  font-weight: 700;
-  color: var(--g0);
-  background-color: var(--g6);
-  border-radius: 8px;
-  padding: 6px 10px;
+  &&& {
+    font-weight: 700;
+    color: var(--g0);
+    background-color: var(--g6);
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
 `;
 const Separator = styled.div`
   height: 1px;
