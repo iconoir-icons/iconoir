@@ -20,39 +20,43 @@ const ResetInput = styled.input`
 `;
 
 export const Input = styled(ResetInput)`
-  min-height: 35px;
-  background: var(--white);
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 6px;
-  text-align: center;
-  font-size: 13px;
-  line-height: 21px;
-  font-weight: 500;
-  color: var(--black);
-  border: solid 1px var(--g6);
-  
-  &:hover{
-    border: solid 2px var(--g0);
-  }
-  &:focus{
-    border: solid 2px var(--g0);
+  &&& {
+    min-height: 35px;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 6px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 500;
+    color: var(--black);
+    border: solid 1px var(--g6);
+
+    &:hover {
+      border: solid 2px var(--g0);
+    }
+    &:focus {
+      border: solid 2px var(--g0);
+    }
   }
 `;
 
 export const LargeInput = styled(Input)`
-  height: 60px;
-  font-size: 16px;
-  line-height: 26px;
-  border-radius: 12px;
-  padding: 0 23px;
-  text-align: left;
-  width: 100%;
-  box-sizing: border-box;
-  outline: none;
-  transition: 0.2s;
-  &:hover{
-    transform: scale(1.02);
+  &&& {
+    height: 60px;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 12px;
+    padding: 0 23px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 `;
 
@@ -65,7 +69,7 @@ export const ColorButton = styled.div`
   right: 20px;
   position: absolute;
   pointer-events: none;
-  &:hover{
+  &:hover {
     transition: 0.2s;
     scale: 1.2;
   }
@@ -82,7 +86,7 @@ export const ColorInput = styled.input`
     border: none;
   }
   background-color: var(--gray-200);
-  opacity:0;
+  opacity: 0;
   transition: 0.2s;
   &:hover + ${ColorButton} {
     transition: 0.2s;

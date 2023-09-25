@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPrinter(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgPrinter = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,11 +13,11 @@ function SvgPrinter(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
@@ -26,9 +25,10 @@ function SvgPrinter(
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m17 13.01.01-.011"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPrinter);
+};
+const ForwardRef = forwardRef(SvgPrinter);
 export default ForwardRef;

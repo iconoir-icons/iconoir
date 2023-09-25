@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgFishing(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgFishing = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgFishing(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M16 7a2 2 0 100-4 2 2 0 000 4zm0 0v10c0 6-10 6-10 0v-4l2 2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v10c0 6-10 6-10 0v-4l2 2"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgFishing);
+};
+const ForwardRef = forwardRef(SvgFishing);
 export default ForwardRef;

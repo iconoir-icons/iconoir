@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgArrowUnionVertical(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgArrowUnionVertical = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgArrowUnionVertical(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M17 4l-5 5-5-5M17 20l-5-5-5 5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m17 4-5 5-5-5M17 20l-5-5-5 5"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgArrowUnionVertical);
+};
+const ForwardRef = forwardRef(SvgArrowUnionVertical);
 export default ForwardRef;

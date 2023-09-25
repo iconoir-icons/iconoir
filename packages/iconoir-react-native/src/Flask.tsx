@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgFlask(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgFlask = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -13,23 +12,23 @@ function SvgFlask(
   return (
     <Svg
       width="1.5em"
-      strokeWidth={1.5}
       height="1.5em"
-      viewBox="0 0 24 24"
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
-      <Path d="M18.5 15h-13" stroke="currentColor" strokeLinejoin="round" />
+      <Path stroke="currentColor" strokeLinejoin="round" d="M18.5 15h-13" />
       <Path
-        d="M16 4H8M9 4.5v5.76a2 2 0 01-.481 1.302L3.48 17.438A2 2 0 003 18.74V19a2 2 0 002 2h14a2 2 0 002-2v-.26a2 2 0 00-.482-1.302l-5.037-5.876A2 2 0 0115 10.26V4.5M12 9.01l.01-.011M11 2.01l.01-.011"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M16 4H8M9 4.5v5.76a2 2 0 0 1-.481 1.302L3.48 17.438A2 2 0 0 0 3 18.74V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-.26a2 2 0 0 0-.482-1.302l-5.037-5.876A2 2 0 0 1 15 10.26V4.5M12 9.01l.01-.011M11 2.01l.01-.011"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgFlask);
+};
+const ForwardRef = forwardRef(SvgFlask);
 export default ForwardRef;

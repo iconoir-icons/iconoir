@@ -36,13 +36,14 @@ const Home: NextPage<HomeProps> = ({
       <Header currentVersion={currentVersion} />
       <HeaderBackground>
         <HeroHead>
-        <HeroText>Say hello</HeroText>
-        <HeroTextSecondary>to your new icon library.</HeroTextSecondary>
+          <HeroText>Say hello</HeroText>
+          <HeroTextSecondary>to your new icon library.</HeroTextSecondary>
         </HeroHead>
       </HeaderBackground>
       <HeroDescription>
-        A high-quality selection of free icons. No premium options or sign-ups. Your new alternative to Noun Project, Flaticon, and all Figma resources. Available in SVG, 
-        Font, React, React Native, Flutter, Figma and Framer.
+        A high-quality selection of free icons. No premium options or sign-ups.
+        Your new alternative to Noun Project, Flaticon, and all Figma resources.
+        Available in SVG, Font, React, React Native, Flutter, Figma and Framer.
       </HeroDescription>
       <StatsContainer>
         <Stat
@@ -59,7 +60,7 @@ const Home: NextPage<HomeProps> = ({
         />
         <Stat
           value={new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
-            numDownloads
+            numDownloads,
           )}
           description={
             'downloads/month on React only. Iconoir also supports React Native, Flutter and CSS.'
@@ -67,7 +68,7 @@ const Home: NextPage<HomeProps> = ({
         />
         <Stat
           value={new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
-            numStars
+            numStars,
           )}
           description={
             'people who starred the project on GitHub. Show your support and be one of them.'
@@ -85,7 +86,8 @@ const Home: NextPage<HomeProps> = ({
           <span>Donate</span>
         </LargeButton>
         <Text18>
-          If you find Iconoir valuable for you, consider making a donation to help us pursuing even bigger goals.
+          If you find Iconoir valuable for you, consider making a donation to
+          help us pursuing even bigger goals.
         </Text18>
       </SupportContainer>
       <Explore allIcons={allIcons} />
@@ -116,10 +118,9 @@ export const HeroText = styled.h1`
     -webkit-text-stroke: 2.5px;
   }
   &:hover {
-    transform:scale(1.04);
-    transition:0.3s;
+    transform: scale(1.04);
+    transition: 0.3s;
   }
-  
 `;
 export const HeroTextSecondary = styled(HeroText)`
   color: var(--g4);
@@ -149,7 +150,6 @@ const SupportContainer = styled.div`
   }
 `;
 
-
 export default Home;
 
 export async function getStaticProps() {
@@ -164,7 +164,7 @@ export async function getStaticProps() {
 
   const { downloads: numDownloads } = await npmDownloads(
     'iconoir-react',
-    'last-month'
+    'last-month',
   );
   if (!numDownloads) throw new Error('Could not find NPM downloads');
 
@@ -176,5 +176,4 @@ export async function getStaticProps() {
       numDownloads,
     },
   };
-  
 }

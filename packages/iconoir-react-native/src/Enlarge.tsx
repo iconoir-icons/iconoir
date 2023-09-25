@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgEnlarge(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgEnlarge = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgEnlarge(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M15 9l5-5m0 0v4m0-4h-4M9 15l-5 5m0 0v-4m0 4h4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m15 9 5-5m0 0v4m0-4h-4M9 15l-5 5m0 0v-4m0 4h4"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgEnlarge);
+};
+const ForwardRef = forwardRef(SvgEnlarge);
 export default ForwardRef;

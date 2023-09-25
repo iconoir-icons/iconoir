@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgDivideThree(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgDivideThree = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,30 +13,30 @@ function SvgDivideThree(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M12 21v-4a5 5 0 00-5-5H3M12 21v-4a5 5 0 015-5h4M12 2v20"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M12 21v-4a5 5 0 0 0-5-5H3M12 21v-4a5 5 0 0 1 5-5h4M12 2v20"
       />
       <path
-        d="M6 8l-4 4 4 4M16 6l-4-4-4 4M18 8l4 4-4 4"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m6 8-4 4 4 4M16 6l-4-4-4 4M18 8l4 4-4 4"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgDivideThree);
+};
+const ForwardRef = forwardRef(SvgDivideThree);
 export default ForwardRef;

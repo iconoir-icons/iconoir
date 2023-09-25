@@ -26,7 +26,7 @@ export const Text13 = styled.div`
 export const Text17 = styled.div`
   font-size: 17px;
 `;
-  
+
 export const Text18 = styled.div`
   font-size: 16px;
   line-height: 25px;
@@ -48,9 +48,9 @@ export const Heading2 = styled.h2`
 `;
 
 export const Code = styled.div`
-  background: var(--g7) !important;
+  background: var(--g7);
   border: solid 1px var(--g6);
-  border-radius: 6px !important;
+  border-radius: 6px;
   padding: 26px 32px;
   color: var(--g1);
   font-size: 16px;
@@ -69,8 +69,8 @@ export const Code = styled.div`
   p,
   strong {
     font-family: var(--code-family) !important;
-    font-size: 16px !important;
-    background: transparent !important;
+    font-size: 16px;
+    background: transparent;
   }
   strong {
     font-weight: 700;
@@ -111,21 +111,26 @@ export const Body = styled.p`
   margin: 24px 0;
 `;
 export const CodeElement = styled.code`
-  display: inline-block;
-  padding: 0 4px;
-  color: var(--g0);
+  &&& {
+    display: inline-block;
+    padding: 0 4px;
+    color: var(--g0);
+  }
 `;
 
 const PreContainer = styled(Code)`
-  position: relative;
-  padding: 0;
-  * {
-    white-space: pre;
-  }
-  > pre {
-    padding: 26px 32px;
-    box-sizing: border-box;
-    overflow-x: auto;
+  &&& {
+    position: relative;
+    padding: 0;
+    * {
+      white-space: pre;
+    }
+    > pre {
+      margin-bottom: 0;
+      padding: 26px 32px;
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
   }
 `;
 const CopyContainer = styled.div`
@@ -140,7 +145,7 @@ export function Pre({ children, ...props }: React.PropsWithChildren<any>) {
   React.useEffect(() => {
     setSupportsClipboard(
       typeof window !== 'undefined' &&
-        typeof window?.navigator?.clipboard?.writeText !== 'undefined'
+        typeof window?.navigator?.clipboard?.writeText !== 'undefined',
     );
   }, []);
   return (

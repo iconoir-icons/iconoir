@@ -1,18 +1,22 @@
-import fs from 'fs/promises';
+import { toHtml } from 'hast-util-to-html';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import { parse } from 'svg-parser';
 import componentTemplate from './templates/vue/icon-template.cjs';
 import indexTemplate from './templates/vue/index-template.cjs';
-import providerTemplate from './templates/vue/provider-template.cjs';
 import providerKeyTemplate from './templates/vue/provider-key-template.cjs';
-import { toHtml } from 'hast-util-to-html';
-import path from 'path';
+import providerTemplate from './templates/vue/provider-template.cjs';
 
 export async function buildVueIcons(srcDir, { outDir = './out/' }) {
   const files = await fs.readdir(srcDir, 'utf8');
 
   const providerKeyFileName = 'providerKey';
   const providerKey = providerKeyTemplate();
-  await fs.writeFile(path.join(outDir, providerKeyFileName + '.ts'), providerKey, 'utf8');
+  await fs.writeFile(
+    path.join(outDir, providerKeyFileName + '.ts'),
+    providerKey,
+    'utf8',
+  );
 
   const fileNames = [];
   for (const file of files) {
@@ -31,7 +35,7 @@ export async function buildVueIcons(srcDir, { outDir = './out/' }) {
     await fs.writeFile(
       path.join(outDir, pascalCaseFileName),
       component,
-      'utf8'
+      'utf8',
     );
 
     fileNames.push(pascalCaseFileName);

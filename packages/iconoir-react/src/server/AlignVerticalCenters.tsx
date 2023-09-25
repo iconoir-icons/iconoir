@@ -1,32 +1,32 @@
 import * as React from "react";
-function SvgAlignVerticalCenters(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M22 12H2"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 19V5a2 2 0 012-2h4a2 2 0 012 2v14a2 2 0 01-2 2h-4a2 2 0 01-2-2z"
-        stroke="currentColor"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgAlignVerticalCenters);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgAlignVerticalCenters = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M22 12H2"
+    />
+    <path
+      stroke="currentColor"
+      d="M8 19V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2Z"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgAlignVerticalCenters);
 export default ForwardRef;

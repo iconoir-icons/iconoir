@@ -1,39 +1,36 @@
 import * as React from "react";
-function SvgTunnel(
-  props: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
-  return (
-    <svg
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      ref={svgRef}
-      {...props}
-    >
-      <path
-        d="M21 20L3 14"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M16 10v1M12 9v1M8 8v1"
-        stroke="currentColor"
-        strokeLinecap="round"
-      />
-      <path
-        d="M3 21h18v-9a9 9 0 10-18 0v9z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-const ForwardRef = React.forwardRef(SvgTunnel);
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgTunnel = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5em"
+    height="1.5em"
+    fill="none"
+    strokeWidth={1.5}
+    viewBox="0 0 24 24"
+    color="currentColor"
+    ref={ref}
+    {...props}
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M21 20 3 14"
+    />
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      d="M16 10v1M12 9v1M8 8v1"
+    />
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 21h18v-9a9 9 0 1 0-18 0v9Z"
+    />
+  </svg>
+);
+const ForwardRef = forwardRef(SvgTunnel);
 export default ForwardRef;

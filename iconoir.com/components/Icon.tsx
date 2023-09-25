@@ -9,14 +9,14 @@ const HEADER = '<?xml version="1.0" encoding="UTF-8"?>';
 function bakeSvg(
   svgString: string,
   color: string,
-  strokeWidth: string | number
+  strokeWidth: string | number,
 ) {
   return (
     HEADER +
     svgString
       .replace(
         /stroke="currentColor"/g,
-        `stroke="currentColor" stroke-width="${strokeWidth}"`
+        `stroke="currentColor" stroke-width="${strokeWidth}"`,
       )
       .replace(/currentColor/g, color)
   );
@@ -36,7 +36,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
   React.useEffect(() => {
     setSupportsClipboard(
       typeof window !== 'undefined' &&
-        typeof window?.navigator?.clipboard?.writeText !== 'undefined'
+        typeof window?.navigator?.clipboard?.writeText !== 'undefined',
     );
   }, []);
   React.useEffect(() => {
@@ -44,7 +44,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
       htmlContentsRef.current = bakeSvg(
         iconContainerRef.current.innerHTML,
         iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
-        iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth
+        iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth,
       );
     }
   }, [iconContext, supportsClipboard]);
@@ -54,13 +54,13 @@ export function Icon({ iconWidth, icon }: IconProps) {
       (iconContainerRef.current as unknown as HTMLAnchorElement);
     if (element) {
       element.href = `data:image/svg+xml;base64,${btoa(
-        htmlContentsRef.current
+        htmlContentsRef.current,
       )}`;
     }
   }, [iconContext, supportsClipboard]);
   return (
     <div className={'icon-container'}>
-      <BorderContainer iconWidth={iconWidth}>
+      <BorderContainer $iconWidth={iconWidth}>
         <IconContainer
           ref={iconContainerRef}
           {...((supportsClipboard
@@ -73,13 +73,17 @@ export function Icon({ iconWidth, icon }: IconProps) {
               }) as any)}
         >
           <IconComponent />
+
+          {icon.filename.includes('-solid') ? <IconTag>SOLID</IconTag> : ''}
+
+          
         </IconContainer>
         {supportsClipboard ? (
           <HoverContainer>
-            <CornerBR/>
-            <CornerTR/>
-            <CornerBL/>
-            <CornerTL/>
+            <CornerBR />
+            <CornerTR />
+            <CornerBL />
+            <CornerTL />
             <HoverButton
               onClick={() => {
                 if (htmlContentsRef.current) {
@@ -108,7 +112,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
           </HoverContainer>
         ) : null}
       </BorderContainer>
-      <Subtitle iconWidth={iconWidth} title={icon.filename}>
+      <Subtitle $iconWidth={iconWidth} title={icon.filename}>
         {icon.filename}
       </Subtitle>
     </div>
@@ -124,59 +128,60 @@ const Overlay = styled.div`
   height: 8px;
 `;
 const CornerBR = styled(Overlay)`
-bottom: -6px;
-right: -6px;
-z-index: 999;
+  bottom: -6px;
+  right: -6px;
+  z-index: 999;
 `;
 const CornerTR = styled(Overlay)`
-top: -6px;
-right: -6px;
+  top: -6px;
+  right: -6px;
 `;
 const CornerBL = styled(Overlay)`
-bottom: -6px;
-left: -6px;
+  bottom: -6px;
+  left: -6px;
 `;
 const CornerTL = styled(Overlay)`
-top: -6px;
-left: -6px;
+  top: -6px;
+  left: -6px;
 `;
-const HoverContainer = styled.div<{ supportsCopy?: boolean }>`
+const HoverContainer = styled.div`
   position: absolute;
-  display: ${(props) => (props.supportsCopy ? 'block' : 'none')};
   inset: 0;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
   flex-direction: column;
-  
+
   transform: translateZ(0px); // Safari Fix
   transition: opacity 0.1s linear;
   opacity: 0;
   pointer-events: none;
 `;
 const HoverButton = styled(ResetButton)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--white);
-  border-radius: 0px !important;
-  transition: background 0.1s linear;
-  color: var(--g0);
-  font-size: 14px;
-  line-height: 23px;
-  font-weight: 700;
-  text-align: center;
-  flex: 1;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover,
-  &:active {
-    background: var(--g0);
-    color: var(--white);
+  &&& {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 0px;
+    transition: background 0.1s linear;
+    color: var(--g0);
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,
+    &:active {
+      background: var(--g0);
+      color: var(--white);
+    }
   }
 `;
-const BorderContainer = styled.div<{ iconWidth: number }>`
-  width: ${(props) => props.iconWidth}px;
+const BorderContainer = styled.div<{ $iconWidth: number }>`
+  width: ${(props) => props.$iconWidth}px;
   box-sizing: border-box;
   padding-bottom: 100%;
   position: relative;
@@ -198,7 +203,19 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Subtitle = styled.div<{ iconWidth: number }>`
+const IconTag = styled.div`
+  background-color: var(--g6);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 5px 10px;
+  padding: 3px 6px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--g0);
+`;
+const Subtitle = styled.div<{ $iconWidth: number }>`
   font-size: 11px;
   font-weight: 500;
   line-height: 14.74px;
@@ -207,5 +224,5 @@ const Subtitle = styled.div<{ iconWidth: number }>`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: ${(props) => props.iconWidth}px;
+  width: ${(props) => props.$iconWidth}px;
 `;

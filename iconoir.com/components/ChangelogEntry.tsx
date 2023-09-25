@@ -51,7 +51,7 @@ export function ChangelogEntry({
           <Text15>{moment(created_at).format('MMM DD, YYYY')}</Text15>
         </TitleContainer>
       </ContainerLeft>
-      <EntryBody expanded={expanded}>
+      <EntryBody $expanded={expanded}>
         {body ? <MDXRemote {...body} /> : 'No changelog'}
         {shouldExpand ? (
           <ExpandContainer>
@@ -66,7 +66,7 @@ export function ChangelogEntry({
 }
 
 const Container = styled.div`
-  margin: 40px 0 !important;
+  margin: 40px 0;
   display: flex;
   align-items: stretch;
   flex-direction: column;
@@ -74,7 +74,7 @@ const Container = styled.div`
   ${media.lg} {
     flex-direction: row;
     align-items: flex-start;
-    margin: 24px 0 !important;
+    margin: 24px 0;
   }
 `;
 const ContainerLeft = styled.div`
@@ -95,37 +95,41 @@ const TitleContainer = styled.div`
   width: 100px;
 `;
 const EntryTitle = styled(Text18)`
-  color: var(--black);
-  font-weight: 700;
+  &&& {
+    color: var(--black);
+    font-weight: 700;
+  }
 `;
 const ExpandContainer = styled.div`
   position: absolute;
   bottom: 16px;
   right: 23px;
 `;
-const EntryBody = styled(Code)<{ expanded?: boolean }>`
-  flex: 1;
-  margin: 0;
-  max-height: ${(props) => (props.expanded ? 'none' : `${EXPAND_HEIGHT}px`)};
-  position: relative;
-  overflow: hidden;
-  * {
-    font-family: var(--code-family);
-  }
-  ul {
-    list-style: none none;
+const EntryBody = styled(Code)<{ $expanded?: boolean }>`
+  &&& {
+    flex: 1;
     margin: 0;
-    padding: 0;
-    li {
-      margin-bottom: 8px;
+    max-height: ${(props) => (props.$expanded ? 'none' : `${EXPAND_HEIGHT}px`)};
+    position: relative;
+    overflow: hidden;
+    * {
+      font-family: var(--code-family);
     }
-  }
-  code {
-    display: inline-block;
-    background: var(--g5) !important;
-    color: var(--black);
-    font-family: var(--font-family) !important;
-    padding: 0 4px;
-    font-size: 18px !important;
+    ul {
+      list-style: none none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 8px;
+      }
+    }
+    code {
+      display: inline-block;
+      background: var(--g5);
+      color: var(--black);
+      font-family: var(--font-family) !important;
+      padding: 0 4px;
+      font-size: 18px;
+    }
   }
 `;

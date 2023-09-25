@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
 import {
   FEEDBACK_LINK,
@@ -14,7 +14,7 @@ export function AvailableFor() {
     <>
       <MobileHeader>Available For</MobileHeader>
       <AvailableForOuter>
-        <AvailableForContainer contentWidth={width || 0} ref={ref}>
+        <AvailableForContainer $contentWidth={width || 0} ref={ref}>
           <DesktopHeader>Available for</DesktopHeader>
           <a href={LIBRARY_LINKS.React} target={'_blank'} rel={'noreferrer'}>
             <AvailableForImage
@@ -75,17 +75,21 @@ const AreYouUsing = styled.div`
   }
 `;
 const MobileHeader = styled(Text14)`
-  display: block;
-  margin-top: 5px;
-  text-align: center;
-  ${media.lg} {
-    display: none;
+  &&& {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    ${media.lg} {
+      display: none;
+    }
   }
 `;
 const DesktopHeader = styled(Text14)`
-  display: none;
-  ${media.lg} {
-    display: block;
+  &&& {
+    display: none;
+    ${media.lg} {
+      display: block;
+    }
   }
 `;
 const AvailableForAnimation = keyframes`
@@ -112,16 +116,18 @@ const AvailableForOuter = styled.div`
     padding: 0;
   }
 `;
-const AvailableForContainer = styled.div<{ contentWidth: number }>`
+const AvailableForContainer = styled.div<{ $contentWidth: number }>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: max-content;
-  --content-width: ${(props) => props.contentWidth}px;
-  ${(props) => (props.contentWidth ? '&' : '&.noop')} {
-    animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
-      infinite;
-  }
+  --content-width: ${(props) => props.$contentWidth}px;
+  ${(props) =>
+    props.$contentWidth &&
+    css`
+      animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
+        infinite;
+    `}
   > :not(:last-child) {
     margin-right: 30px;
   }

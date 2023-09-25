@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgSecurityPass(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgSecurityPass = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,27 @@ function SvgSecurityPass(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M9 11l3 3 8-8M20 12a8 8 0 11-5.3-7.533"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m9 11 3 3 8-8"
+      />
+      <Path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M20 12a8 8 0 1 1-5.3-7.533"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgSecurityPass);
+};
+const ForwardRef = forwardRef(SvgSecurityPass);
 export default ForwardRef;

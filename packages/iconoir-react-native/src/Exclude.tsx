@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgExclude(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgExclude = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,33 +13,33 @@ function SvgExclude(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M10.5 15h-.9a.6.6 0 00-.6.6v4.8a.6.6 0 00.6.6h10.8a.6.6 0 00.6-.6V9.6a.6.6 0 00-.6-.6h-4.8a.6.6 0 00-.6.6v.9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M10.5 15h-.9a.6.6 0 0 0-.6.6v4.8a.6.6 0 0 0 .6.6h10.8a.6.6 0 0 0 .6-.6V9.6a.6.6 0 0 0-.6-.6h-4.8a.6.6 0 0 0-.6.6v.9"
       />
       <Path
-        d="M13.5 15h.9a.6.6 0 00.6-.6v-.9M9 13.5v.9a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6V3.6a.6.6 0 01.6-.6h10.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6h-.9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M13.5 15h.9a.6.6 0 0 0 .6-.6v-.9M9 13.5v.9a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h10.8a.6.6 0 0 1 .6.6v4.8a.6.6 0 0 1-.6.6h-.9"
       />
       <Path
-        d="M9 10.5v-.9a.6.6 0 01.6-.6h.9"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M9 10.5v-.9a.6.6 0 0 1 .6-.6h.9"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgExclude);
+};
+const ForwardRef = forwardRef(SvgExclude);
 export default ForwardRef;

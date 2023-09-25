@@ -18,7 +18,7 @@ export function Explore({ allIcons }: ExploreProps) {
   return (
     <Container>
       <Left>
-        <FilterContainer isMobile>
+        <FilterContainer $isMobile>
           <FiltersEditor filters={filters} onChange={setFilters} />
         </FilterContainer>
         <IconoirProvider
@@ -69,15 +69,16 @@ const Right = styled.div`
   position: sticky;
   top: 50px;
   width: 275px;
-  margin-left: 68px;
   display: block;
   z-index: -1;
+  margin: 110px auto;
   ${media.md} {
+    margin-left: 68px;
     z-index: 1;
   }
 `;
-const FilterContainer = styled.div<{ isMobile?: boolean }>`
-  display: ${(props) => (props.isMobile ? 'block' : 'none')};
+const FilterContainer = styled.div<{ $isMobile?: boolean }>`
+  display: ${(props) => (props.$isMobile ? 'block' : 'none')};
   margin-bottom: 40px;
   position: sticky;
   top: 20px;
@@ -86,7 +87,7 @@ const FilterContainer = styled.div<{ isMobile?: boolean }>`
   ${media.md} {
     position: relative;
     top: 0;
-    display: ${(props) => (props.isMobile ? 'none' : 'block')};
+    display: ${(props) => (props.$isMobile ? 'none' : 'block')};
     margin-bottom: 10px;
   }
 `;

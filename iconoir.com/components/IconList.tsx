@@ -41,7 +41,7 @@ function normalizeString(s: string) {
 function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
   if (filters.search) {
     const normalSearch = normalizeString(filters.search!);
-    let result = allIcons
+    let result = allIcons;
     for (const term of normalSearch.split(' ')) {
       result = result.filter((icon) => {
         return (
@@ -49,7 +49,7 @@ function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
           normalizeString(icon.category).includes(term) ||
           icon.tags.some((tag) => normalizeString(tag).includes(term))
         );
-      })
+      });
     }
     return result;
   } else return allIcons;
@@ -69,7 +69,7 @@ function isCategoryRow(iconRow: IconRow): iconRow is IconCategoryRow {
 
 function getRowsFromIcons(
   filteredIcons: Icon[],
-  iconsPerRow: number
+  iconsPerRow: number,
 ): IconRow[] {
   const categoryGroups: Record<string, Icon[]> = {};
   for (const icon of filteredIcons) {
@@ -199,6 +199,6 @@ const Row = React.memo(
       return <IconsRow icons={row.icons} style={style} iconWidth={iconWidth} />;
     }
   },
-  areEqual
+  areEqual,
 );
 Row.displayName = 'Row';

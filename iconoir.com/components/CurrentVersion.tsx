@@ -8,25 +8,27 @@ export interface CurrentVersionProps {
 export function CurrentVersion({ version }: CurrentVersionProps) {
   return (
     <Link href={'/docs/changelog'} passHref legacyBehavior>
-      <Container as={'a'}>
-        {version}
-      </Container>
+      <Container as={'a'}>{version}</Container>
     </Link>
   );
 }
 
 const Container = styled(Text13)`
-  color: var(--g1);
-  font-weight: 700;
-  background: var(--g5);
-  line-height: 1;
-  padding: 7px 16px;
-  border-radius: 200px;
-  display: block;
-  text-decoration: none !important;
-  transition: color 0.1s linear, background 0.1s linear;
-  &:hover {
-    background: var(--black) !important;
-    color: var(--white);
+  &&& {
+    color: var(--g1);
+    font-weight: 700;
+    background: var(--g5);
+    line-height: 1;
+    padding: 7px 16px;
+    border-radius: 200px;
+    display: block;
+    text-decoration: none;
+    transition:
+      color 0.1s linear,
+      background 0.1s linear;
+    &:hover {
+      background: var(--black);
+      color: var(--white);
+    }
   }
 `;

@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgGitCherryPickCommit(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgGitCherryPickCommit = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,21 +13,21 @@ function SvgGitCherryPickCommit(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M17 11v-1a2 2 0 00-2-2h-3m-5 3v-1a2 2 0 012-2h3m0 0V4M12 20a3 3 0 100-6 3 3 0 000 6zM9 17H3M15 17h6"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M17 11v-1a2 2 0 0 0-2-2h-3m-5 3v-1a2 2 0 0 1 2-2h3m0 0V4M12 20a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM9 17H3M15 17h6"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgGitCherryPickCommit);
+};
+const ForwardRef = forwardRef(SvgGitCherryPickCommit);
 export default ForwardRef;

@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgPaypal(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgPaypal = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,27 +13,27 @@ function SvgPaypal(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M3 17.5L6 3h7c6 0 6 9 0 9H8.7l-1.2 5.5H3z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M3 17.5 6 3h7c6 0 6 9 0 9H8.7l-1.2 5.5H3Z"
       />
       <Path
-        d="M6.8 21l3-14.5h7c6 0 6 9 0 9h-4.3L11.3 21H6.8z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="m6.8 21 3-14.5h7c6 0 6 9 0 9h-4.3L11.3 21H6.8Z"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgPaypal);
+};
+const ForwardRef = forwardRef(SvgPaypal);
 export default ForwardRef;

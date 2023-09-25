@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgSoundOff(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgSoundOff = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,31 +13,31 @@ function SvgSoundOff(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
-      <g clipPath="url(#sound-off_svg__clip0_3173_16686)" stroke="currentColor">
+      <g stroke="currentColor" clipPath="url(#sound-off_svg__a)">
         <path
-          d="M18 14l2-2m2-2l-2 2m0 0l-2-2m2 2l2 2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          d="m18 14 2-2m2-2-2 2m0 0-2-2m2 2 2 2"
         />
-        <path d="M2 13.857v-3.714a2 2 0 012-2h2.9a1 1 0 00.55-.165l6-3.956a1 1 0 011.55.835v14.286a1 1 0 01-1.55.835l-6-3.956a1 1 0 00-.55-.165H4a2 2 0 01-2-2z" />
+        <path d="M2 13.857v-3.714a2 2 0 0 1 2-2h2.9a1 1 0 0 0 .55-.165l6-3.956a1 1 0 0 1 1.55.835v14.286a1 1 0 0 1-1.55.835l-6-3.956a1 1 0 0 0-.55-.165H4a2 2 0 0 1-2-2Z" />
       </g>
       <defs>
-        <clipPath id="sound-off_svg__clip0_3173_16686">
+        <clipPath id="sound-off_svg__a">
           <path fill="#fff" d="M0 0h24v24H0z" />
         </clipPath>
       </defs>
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgSoundOff);
+};
+const ForwardRef = forwardRef(SvgSoundOff);
 export default ForwardRef;

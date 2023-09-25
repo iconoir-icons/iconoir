@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgCardReader(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgCardReader = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,29 +13,29 @@ function SvgCardReader(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M5 19V3h14v16a2 2 0 01-2 2H7a2 2 0 01-2-2z"
         stroke="currentColor"
+        d="M5 19V3h14v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z"
       />
       <Path
-        d="M5 6H3.5A1.5 1.5 0 012 4.5v0A1.5 1.5 0 013.5 3h17A1.5 1.5 0 0122 4.5v0A1.5 1.5 0 0120.5 6H19"
         stroke="currentColor"
+        d="M5 6H3.5a1.5 1.5 0 1 1 0-3h17a1.5 1.5 0 0 1 0 3H19"
       />
       <Path
-        d="M15 3v18"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M15 3v18"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgCardReader);
+};
+const ForwardRef = forwardRef(SvgCardReader);
 export default ForwardRef;

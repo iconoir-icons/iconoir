@@ -1,10 +1,9 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function Svg3DBridge(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const Svg3DBridge = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,34 +13,34 @@ function Svg3DBridge(
     <Svg
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <Path
-        d="M18 4h3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M18 4h3"
       />
       <Path
-        d="M10 21a1 1 0 100-2 1 1 0 000 2zM14 5a1 1 0 100-2 1 1 0 000 2z"
         fill="currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM14 5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
       />
       <Path
-        d="M10 20s6.5-2.5 2-8 2-8 2-8M3 20h3"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M10 20s6.5-2.5 2-8 2-8 2-8M3 20h3"
       />
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(Svg3DBridge);
+};
+const ForwardRef = forwardRef(Svg3DBridge);
 export default ForwardRef;

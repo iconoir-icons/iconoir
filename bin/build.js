@@ -1,11 +1,11 @@
-import execa from 'execa';
-import { promises as fs, readFileSync, existsSync } from 'fs';
+import { execa } from 'execa';
 import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
-import os from 'os';
-import path, { basename, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { incompatibleNames, flutterIncompatibleNames } from '../constants.js';
+import { existsSync, promises as fs, readFileSync } from 'node:fs';
+import os from 'node:os';
+import path, { basename, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { flutterIncompatibleNames, incompatibleNames } from '../constants.js';
 import { buildVueIcons } from './buildVue.js';
 
 // Paths
@@ -53,7 +53,9 @@ const tasks = new Listr(
       title: 'Fetching icons',
       task: async (ctx) => {
         const iconFiles = await fs.readdir(iconoirIconsDir);
-        ctx.iconoirIconsFiles = iconFiles.filter(file => file.endsWith('.svg'));
+        ctx.iconoirIconsFiles = iconFiles.filter((file) =>
+          file.endsWith('.svg'),
+        );
       },
     },
     {
@@ -69,7 +71,7 @@ const tasks = new Listr(
               task: async (ctx) => {
                 await fs.writeFile(
                   path.join(rootDir, targets['meta-data'].path),
-                  JSON.stringify({ icons: ctx.iconoirIconsFiles })
+                  JSON.stringify({ icons: ctx.iconoirIconsFiles }),
                 );
               },
             },
@@ -82,13 +84,13 @@ const tasks = new Listr(
                   (
                     await fs.readFile(
                       path.join(__dirname, 'header.css'),
-                      'utf8'
+                      'utf8',
                     )
                   ).replace('[YEAR]', new Date().getFullYear()),
                 ];
                 ctx.iconoirIconsFiles.forEach((file) => {
                   const fileContents = readFileSync(
-                    path.join(__dirname, '../icons/', file)
+                    path.join(__dirname, '../icons/', file),
                   )
                     .toString()
                     .replace(/\n/g, '')
@@ -97,12 +99,12 @@ const tasks = new Listr(
                   content.push(
                     `.iconoir-${
                       path.parse(file).name
-                    }::before{mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');}`
+                    }::before{mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');}`,
                   );
                 });
                 await fs.writeFile(
                   path.join(rootDir, targets.css.path),
-                  content
+                  content,
                 );
               },
             },
@@ -120,7 +122,7 @@ const tasks = new Listr(
                       task: async (ctx) => {
                         try {
                           ctx.tmpDir = await fs.mkdtemp(
-                            path.join(os.tmpdir(), 'iconoir-')
+                            path.join(os.tmpdir(), 'iconoir-'),
                           );
                         } catch (err) {
                           ctx.skip = true;
@@ -137,7 +139,7 @@ const tasks = new Listr(
                           const promises = ctx.iconoirIconsFiles.map((file) => {
                             const srcFilePath = path.join(
                               iconoirIconsDir,
-                              file
+                              file,
                             );
                             const iconName = file.split('.')[0];
                             const dstFileName =
@@ -146,7 +148,7 @@ const tasks = new Listr(
                                 : iconName;
                             const dstFilePath = path.join(
                               ctx.tmpDir,
-                              `${dstFileName}.svg`
+                              `${dstFileName}.svg`,
                             );
 
                             return fs.copyFile(srcFilePath, dstFilePath);
@@ -167,16 +169,16 @@ const tasks = new Listr(
                         const targetsToBuild =
                           cliTargets.length > 0
                             ? cliTargets.filter(
-                                (cliTarget) => targets[cliTarget]?.react
+                                (cliTarget) => targets[cliTarget]?.react,
                               )
                             : Object.keys(targets).filter(
-                                (target) => targets[target].react
+                                (target) => targets[target].react,
                               );
                         const tasks = targetsToBuild.map((target) => {
                           const builtIconsDir = path.join(
                             rootDir,
                             targets[target].path,
-                            'src'
+                            'src',
                           );
                           return {
                             title: `Building ${target}`,
@@ -187,18 +189,17 @@ const tasks = new Listr(
                                     title: 'Cleaning target directory',
                                     task: async (ctx) => {
                                       try {
-                                        const files = await fs.readdir(
-                                          builtIconsDir
-                                        );
+                                        const files =
+                                          await fs.readdir(builtIconsDir);
                                         const serverFiles = existsSync(
-                                          path.join(builtIconsDir, 'server')
+                                          path.join(builtIconsDir, 'server'),
                                         )
                                           ? (
                                               await fs.readdir(
                                                 path.join(
                                                   builtIconsDir,
-                                                  'server'
-                                                )
+                                                  'server',
+                                                ),
                                               )
                                             ).map((file) => `server/${file}`)
                                           : [];
@@ -209,19 +210,19 @@ const tasks = new Listr(
                                           .filter(
                                             (file) =>
                                               !ignoreCleanFilenames.includes(
-                                                path.basename(file)
-                                              )
+                                                path.basename(file),
+                                              ),
                                           )
                                           .map((file) => {
                                             return fs.unlink(
-                                              path.join(builtIconsDir, file)
+                                              path.join(builtIconsDir, file),
                                             );
                                           });
                                         return Promise.all(promises).catch(
                                           (err) => {
                                             ctx[target] = { skip: true };
                                             throw new Error(err.message);
-                                          }
+                                          },
                                         );
                                       } catch (err) {
                                         ctx[target] = { skip: true };
@@ -240,7 +241,7 @@ const tasks = new Listr(
                                             '--config-file',
                                             path.join(
                                               targets[target].path,
-                                              '.svgrrc.json'
+                                              '.svgrrc.json',
                                             ),
                                             '--out-dir',
                                             builtIconsDir,
@@ -248,9 +249,10 @@ const tasks = new Listr(
                                             'bin/templates/icon-template.cjs',
                                             '--index-template',
                                             'bin/templates/index-template.cjs',
+                                            '--',
                                             ctx.tmpDir,
                                           ],
-                                          { preferLocal: true }
+                                          { preferLocal: true },
                                         );
                                       } catch (err) {
                                         throw new Error(err.message);
@@ -271,20 +273,21 @@ const tasks = new Listr(
                                                   '--config-file',
                                                   path.join(
                                                     targets[target].path,
-                                                    '.svgrrc.json'
+                                                    '.svgrrc.json',
                                                   ),
                                                   '--out-dir',
                                                   path.join(
                                                     builtIconsDir,
-                                                    'server'
+                                                    'server',
                                                   ),
                                                   '--template',
                                                   'bin/templates/icon-template-server-component.cjs',
                                                   '--index-template',
                                                   'bin/templates/index-template.cjs',
+                                                  '--',
                                                   ctx.tmpDir,
                                                 ],
-                                                { preferLocal: true }
+                                                { preferLocal: true },
                                               );
                                             } catch (err) {
                                               throw new Error(err.message);
@@ -294,18 +297,18 @@ const tasks = new Listr(
                                       ]
                                     : []),
                                 ],
-                                { concurrent: false, exitOnError: false }
+                                { concurrent: false, exitOnError: false },
                               ),
                           };
                         });
                         return task.newListr(tasks, {
                           concurrent: true,
-                          rendererOptions: { collapse: false },
+                          rendererOptions: { collapseSubtasks: false },
                         });
                       },
                     },
                   ],
-                  { concurrent: false }
+                  { concurrent: false },
                 ),
             },
             {
@@ -322,7 +325,7 @@ const tasks = new Listr(
                       task: async (ctx) => {
                         try {
                           ctx.tmpDir = await fs.mkdtemp(
-                            path.join(os.tmpdir(), 'iconoir-')
+                            path.join(os.tmpdir(), 'iconoir-'),
                           );
                         } catch (err) {
                           ctx.skip = true;
@@ -339,7 +342,7 @@ const tasks = new Listr(
                           const promises = ctx.iconoirIconsFiles.map((file) => {
                             const srcFilePath = path.join(
                               iconoirIconsDir,
-                              file
+                              file,
                             );
                             const iconName = file.split('.')[0];
                             const dstFileName =
@@ -348,7 +351,7 @@ const tasks = new Listr(
                                 : iconName;
                             const dstFilePath = path.join(
                               ctx.tmpDir,
-                              `${dstFileName}.svg`
+                              `${dstFileName}.svg`,
                             );
 
                             return fs.copyFile(srcFilePath, dstFilePath);
@@ -369,16 +372,16 @@ const tasks = new Listr(
                         const targetsToBuild =
                           cliTargets.length > 0
                             ? cliTargets.filter(
-                                (cliTarget) => targets[cliTarget]?.vue
+                                (cliTarget) => targets[cliTarget]?.vue,
                               )
                             : Object.keys(targets).filter(
-                                (target) => targets[target].vue
+                                (target) => targets[target].vue,
                               );
                         const tasks = targetsToBuild.map((target) => {
                           const builtIconsDir = path.join(
                             rootDir,
                             targets[target].path,
-                            'src'
+                            'src',
                           );
                           return {
                             title: `Building ${target}`,
@@ -389,26 +392,25 @@ const tasks = new Listr(
                                     title: 'Cleaning target directory',
                                     task: async (ctx) => {
                                       try {
-                                        const files = await fs.readdir(
-                                          builtIconsDir
-                                        );
+                                        const files =
+                                          await fs.readdir(builtIconsDir);
                                         files
                                           .filter(
                                             (file) =>
                                               !ignoreCleanFilenames.includes(
-                                                path.basename(file)
-                                              )
+                                                path.basename(file),
+                                              ),
                                           )
                                           .map((file) => {
                                             return fs.unlink(
-                                              path.join(builtIconsDir, file)
+                                              path.join(builtIconsDir, file),
                                             );
                                           });
                                         return Promise.all(files).catch(
                                           (err) => {
                                             ctx[target] = { skip: true };
                                             throw new Error(err.message);
-                                          }
+                                          },
                                         );
                                       } catch (err) {
                                         ctx[target] = { skip: true };
@@ -430,18 +432,18 @@ const tasks = new Listr(
                                     },
                                   },
                                 ],
-                                { concurrent: false, exitOnError: false }
+                                { concurrent: false, exitOnError: false },
                               ),
                           };
                         });
                         return task.newListr(tasks, {
                           concurrent: true,
-                          rendererOptions: { collapse: false },
+                          rendererOptions: { collapseSubtasks: false },
                         });
                       },
                     },
                   ],
-                  { concurrent: false }
+                  { concurrent: false },
                 ),
             },
             {
@@ -458,7 +460,7 @@ const tasks = new Listr(
                       task: async (ctx) => {
                         try {
                           ctx.flutterTmpDir = await fs.mkdtemp(
-                            path.join(os.tmpdir(), 'iconoir-')
+                            path.join(os.tmpdir(), 'iconoir-'),
                           );
                         } catch (err) {
                           ctx.skip = true;
@@ -475,7 +477,7 @@ const tasks = new Listr(
                           const promises = ctx.iconoirIconsFiles.map((file) => {
                             const srcFilePath = path.join(
                               iconoirIconsDir,
-                              file
+                              file,
                             );
                             const iconName = file.split('.')[0];
                             const dstFileName =
@@ -484,7 +486,7 @@ const tasks = new Listr(
                                 : iconName;
                             const dstFilePath = path.join(
                               ctx.flutterTmpDir,
-                              `${dstFileName}.svg`
+                              `${dstFileName}.svg`,
                             );
 
                             ctx.dstFilePaths = [
@@ -510,16 +512,16 @@ const tasks = new Listr(
                         const targetsToBuild =
                           cliTargets.length > 0
                             ? cliTargets.filter(
-                                (cliTarget) => targets[cliTarget]?.flutter
+                                (cliTarget) => targets[cliTarget]?.flutter,
                               )
                             : Object.keys(targets).filter(
-                                (target) => targets[target].flutter
+                                (target) => targets[target].flutter,
                               );
                         const tasks = targetsToBuild.map((target) => {
                           const builtIconsDir = path.join(
                             rootDir,
                             targets[target].path,
-                            'lib'
+                            'lib',
                           );
                           return {
                             title: `Building ${target}`,
@@ -530,19 +532,18 @@ const tasks = new Listr(
                                     title: 'Cleaning target directory',
                                     task: async (ctx) => {
                                       try {
-                                        const files = await fs.readdir(
-                                          builtIconsDir
-                                        );
+                                        const files =
+                                          await fs.readdir(builtIconsDir);
                                         const promises = files.map((file) => {
                                           return fs.unlink(
-                                            path.join(builtIconsDir, file)
+                                            path.join(builtIconsDir, file),
                                           );
                                         });
                                         return Promise.all(promises).catch(
                                           (err) => {
                                             ctx[target] = { skip: true };
                                             throw new Error(err.message);
-                                          }
+                                          },
                                         );
                                       } catch (err) {
                                         ctx[target] = { skip: true };
@@ -556,9 +557,9 @@ const tasks = new Listr(
                                       await fs.writeFile(
                                         path.join(
                                           builtIconsDir,
-                                          'iconoir_flutter.dart'
+                                          'iconoir_flutter.dart',
                                         ),
-                                        'library iconoir_flutter;\n\n'
+                                        'library iconoir_flutter;\n\n',
                                       );
                                     },
                                   },
@@ -610,30 +611,30 @@ const tasks = new Listr(
                                                   pathAndFileNameDefaultCase:
                                                     '(snakeCase)',
                                                 },
-                                                async onComplete(results) {
+                                                onComplete(results) {
                                                   finalFileNames.push(
-                                                    results.output.path
+                                                    results.output.path,
                                                   );
                                                 },
                                               },
                                             ]);
-                                          })
+                                          }),
                                         );
 
                                         finalFileNames.sort();
                                         await fs.appendFile(
                                           path.join(
                                             builtIconsDir,
-                                            'iconoir_flutter.dart'
+                                            'iconoir_flutter.dart',
                                           ),
                                           finalFileNames
                                             .map(
                                               (fileName) =>
                                                 `export './${basename(
-                                                  fileName
-                                                )}';`
+                                                  fileName,
+                                                )}';`,
                                             )
-                                            .join('\n')
+                                            .join('\n'),
                                         );
                                       } catch (err) {
                                         throw new Error(err.message);
@@ -641,22 +642,24 @@ const tasks = new Listr(
                                     },
                                   },
                                 ],
-                                { concurrent: false, exitOnError: false }
+                                { concurrent: false, exitOnError: false },
                               ),
                           };
                         });
                         return task.newListr(tasks, {
                           concurrent: true,
-                          rendererOptions: { collapse: false },
+                          rendererOptions: {
+                            collapseSubtasks: false,
+                          },
                         });
                       },
                     },
                   ],
-                  { concurrent: false }
+                  { concurrent: false },
                 ),
             },
           ],
-          { concurrent: true }
+          { concurrent: true },
         ),
     },
     {
@@ -677,8 +680,11 @@ const tasks = new Listr(
   {
     concurrent: false,
     exitOnError: false,
-    rendererOptions: { collapse: false, collapseErrors: false },
-  }
+    rendererOptions: {
+      collapseSubtasks: false,
+      collapseErrors: false,
+    },
+  },
 );
 
 await tasks.run();

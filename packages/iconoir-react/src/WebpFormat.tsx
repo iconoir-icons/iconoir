@@ -1,9 +1,11 @@
 import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
 import { IconoirContext } from "./IconoirContext";
-function SvgWebpFormat(
-  passedProps: React.SVGProps<SVGSVGElement>,
-  svgRef?: React.Ref<SVGSVGElement>
-) {
+const SvgWebpFormat = (
+  passedProps: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -11,35 +13,35 @@ function SvgWebpFormat(
   };
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="1.5em"
       height="1.5em"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <path
-        d="M4 6V3.6a.6.6 0 01.6-.6h14.8a.6.6 0 01.6.6V6M4 18v2.4a.6.6 0 00.6.6h14.8a.6.6 0 00.6-.6V18"
         stroke="currentColor"
         strokeLinecap="round"
+        d="M4 6V3.6a.6.6 0 0 1 .6-.6h14.8a.6.6 0 0 1 .6.6V6M4 18v2.4a.6.6 0 0 0 .6.6h14.8a.6.6 0 0 0 .6-.6V18"
       />
       <path
-        d="M13.5 15V9h2.4a.6.6 0 01.6.6v.9A1.5 1.5 0 0115 12v0"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M13.5 15V9h2.4a.6.6 0 0 1 .6.6v.9A1.5 1.5 0 0 1 15 12v0"
       />
       <path
-        d="M13.5 15h2.4a.6.6 0 00.6-.6v-.9A1.5 1.5 0 0015 12v0h-1.5M19.5 15v-3m0 0V9h3v3h-3zM1.5 9v6L3 12l1.5 3V9M10.5 9h-3v6h3M7.5 12h2"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        d="M13.5 15h2.4a.6.6 0 0 0 .6-.6v-.9A1.5 1.5 0 0 0 15 12v0h-1.5M19.5 15v-3m0 0V9h3v3h-3ZM1.5 9v6L3 12l1.5 3V9M10.5 9h-3v6h3M7.5 12h2"
       />
     </svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgWebpFormat);
+};
+const ForwardRef = forwardRef(SvgWebpFormat);
 export default ForwardRef;

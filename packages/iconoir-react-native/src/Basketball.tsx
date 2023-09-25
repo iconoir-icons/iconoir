@@ -1,10 +1,7 @@
 import * as React from "react";
 import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
 import { IconoirContext } from "./IconoirContext";
-function SvgBasketball(
-  passedProps: SvgProps,
-  svgRef?: React.Ref<React.Component<SvgProps>>
-) {
+const SvgBasketball = (passedProps: SvgProps, ref: Ref<Svg>) => {
   const context = React.useContext(IconoirContext);
   const props = {
     ...context,
@@ -14,11 +11,11 @@ function SvgBasketball(
     <Svg
       width="1.5em"
       height="1.5em"
+      fill="none"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
-      fill="none"
       color="currentColor"
-      ref={svgRef}
+      ref={ref}
       {...props}
     >
       <G
@@ -36,6 +33,6 @@ function SvgBasketball(
       </Defs>
     </Svg>
   );
-}
-const ForwardRef = React.forwardRef(SvgBasketball);
+};
+const ForwardRef = forwardRef(SvgBasketball);
 export default ForwardRef;
