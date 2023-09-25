@@ -73,6 +73,10 @@ export function Icon({ iconWidth, icon }: IconProps) {
               }) as any)}
         >
           <IconComponent />
+
+          {icon.filename.includes('-solid') ? <IconTag>SOLID</IconTag> : ''}
+
+          
         </IconContainer>
         {supportsClipboard ? (
           <HoverContainer>
@@ -197,6 +201,18 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+const IconTag = styled.div`
+  background-color: var(--g6);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 5px 10px;
+  padding: 3px 6px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--g0);
 `;
 const Subtitle = styled.div<{ iconWidth: number }>`
   font-size: 11px;
