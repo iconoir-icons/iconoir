@@ -103,7 +103,7 @@ const Container = styled.div`
   display: block;
   margin-top: 110px;
   padding-top: 30px;
-  margin: 100px -50px -50px -50px; /* not ideal. To fix removing padding from body.*/
+  margin-top: 100px;
   padding: 84px 12%;
   background-color: var(--g7);
   align-items: center;
