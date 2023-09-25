@@ -129,10 +129,12 @@ const FooterCategoryContainer = styled.div`
   margin-right: 20px;
 `;
 const FooterCategoryTitle = styled(Text17)`
-  margin-bottom: 24px;
-  font-weight: 600;
-  display: block;
-  color: var(--g0);
+  &&& {
+    margin-bottom: 24px;
+    font-weight: 600;
+    display: block;
+    color: var(--g0);
+  }
 `;
 const FooterCategoryLinks = styled.div``;
 const FooterCategoryLink = styled.a`

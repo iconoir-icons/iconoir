@@ -132,14 +132,18 @@ const Pillar = styled.div`
 `;
 
 const PillarTitle = styled(Heading2)`
-  width: 100%;
-  margin: 20px 0 0 0;
-  font-weight: 500;
-  font-size: 20px;
+  &&& {
+    width: 100%;
+    margin: 20px 0 0 0;
+    font-weight: 500;
+    font-size: 20px;
+  }
 `;
 
 const PillarDescription = styled(Body)`
-  margin: 0;
+  &&& {
+    margin: 0;
+  }
 `;
 
 const PillarIcon = styled.span<{ $R?: string; $G?: string; $B?: string }>`
@@ -180,8 +184,10 @@ const WideSection = styled.div`
   }
 `;
 const PraiseTitle = styled(Heading2)`
-  margin: 100px 0 80px 0;
-  text-align: center;
+  &&& {
+    margin: 100px 0 80px 0;
+    text-align: center;
+  }
 `;
 const DonateLeft = styled.div`
   max-width: 800px;
@@ -191,19 +197,27 @@ export const DonateRight = styled.div`
   align-items: center;
   margin-top: 30px;
   > :not(:last-child) {
-    margin-right: 30px !important;
+    margin-right: 30px;
   }
   ${media.md} {
     margin-top: 0;
     margin-left: 30px;
   }
 `;
-export const DonateButton = styled(LargeButton)`
-  padding: 0 24px;
-  height: 50px;
+const DonateButton = styled(LargeButton)`
+  &&& {
+    padding: 0 24px;
+    height: 50px;
+  }
 `;
 const CallToAction = styled(LargeButton)`
-  margin-top: 40px;
+  &&& {
+    margin-top: 40px;
+    padding: 0 35px;
+    ${media.xs} {
+      padding: 0 70px;
+    }
+  }
 `;
 export const DonateContainer = styled.div`
   display: flex;
