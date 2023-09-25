@@ -215,6 +215,10 @@ const IconTag = styled.div`
   font-size: 11px;
   color: var(--g0);
 `;
+const Subtitle = styled.div<{ iconWidth: number }>`
+  font-size: 11px;
+  color: var(--g0);
+`;
 const Subtitle = styled.div<{ $iconWidth: number }>`
   font-size: 11px;
   font-weight: 500;
