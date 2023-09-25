@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
@@ -10,18 +11,27 @@ export interface NavigationItemProps {
   style?: any;
 }
 export function NavigationItem({ href, children, style }: NavigationItemProps) {
+  const router = useRouter();
   return (
     <Link href={href} passHref legacyBehavior>
-      <NavigationItemContainer as={'a'} style={style}>
+      <NavigationItemContainer
+        as={'a'}
+        style={style}
+        $isActive={
+          href.slice(1)
+            ? router.asPath.slice(1).startsWith(href.slice(1))
+            : router.asPath === href
+        }
+      >
         {children}
       </NavigationItemContainer>
     </Link>
   );
 }
 
-export const NavigationItemContainer = styled(Text15)`
+export const NavigationItemContainer = styled(Text15)<{ $isActive?: boolean }>`
   &&& {
-    font-weight: 700;
+    font-weight: ${(props) => (props.$isActive ? '700' : '500')};
     font-size: 18px;
     line-height: 28px;
     text-decoration: none;
@@ -40,7 +50,7 @@ export const NavigationItemContainer = styled(Text15)`
     ${media.lg} {
       font-size: 15px;
       line-height: 20px;
-      font-weight: 500;
+      font-weight: ${(props) => (props.$isActive ? '600' : '500')};
       padding: 0;
       color: var(--g0);
       width: auto;
