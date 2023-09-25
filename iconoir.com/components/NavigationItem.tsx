@@ -17,6 +17,7 @@ export function NavigationItem({ href, children, style }: NavigationItemProps) {
       <NavigationItemContainer
         as={'a'}
         style={style}
+        $text={children.toString()}
         $isActive={
           href.slice(1)
             ? router.asPath.slice(1).startsWith(href.slice(1))
@@ -29,7 +30,10 @@ export function NavigationItem({ href, children, style }: NavigationItemProps) {
   );
 }
 
-export const NavigationItemContainer = styled(Text15)<{ $isActive?: boolean }>`
+export const NavigationItemContainer = styled(Text15)<{
+  $text: string;
+  $isActive?: boolean;
+}>`
   &&& {
     font-weight: ${(props) => (props.$isActive ? '700' : '500')};
     font-size: 18px;
@@ -44,9 +48,11 @@ export const NavigationItemContainer = styled(Text15)<{ $isActive?: boolean }>`
     position: relative;
     z-index: 2;
     transition: background 0.1s linear;
+
     &:not(:last-child) {
       border-bottom: solid 1px var(--light-gray);
     }
+
     ${media.lg} {
       font-size: 15px;
       line-height: 20px;
@@ -55,8 +61,21 @@ export const NavigationItemContainer = styled(Text15)<{ $isActive?: boolean }>`
       color: var(--g0);
       width: auto;
       border-bottom: none !important;
-
       transition: 0.2s;
+
+      /* Prevent layout shift */
+      display: inline-flex;
+      flex-direction: column;
+      &::after {
+        content: '${(props) => props.$text}';
+        height: 0;
+        visibility: hidden;
+        overflow: hidden;
+        user-select: none;
+        pointer-events: none;
+        font-weight: 600;
+      }
+
       &::before {
         position: absolute;
         z-index: -1;
@@ -69,6 +88,7 @@ export const NavigationItemContainer = styled(Text15)<{ $isActive?: boolean }>`
         border-radius: 10px;
         transition: background 0.1s linear;
       }
+
       &:hover::before {
         background: var(--g6);
         transition: 0.2s;
