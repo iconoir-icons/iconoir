@@ -389,29 +389,12 @@ const tasks = new Listr(
                               task.newListr(
                                 [
                                   {
-                                    title: 'Cleaning target directory',
+                                    title: 'Create target directory',
                                     task: async (ctx) => {
                                       try {
-                                        const files =
-                                          await fs.readdir(builtIconsDir);
-                                        files
-                                          .filter(
-                                            (file) =>
-                                              !ignoreCleanFilenames.includes(
-                                                path.basename(file),
-                                              ),
-                                          )
-                                          .map((file) => {
-                                            return fs.unlink(
-                                              path.join(builtIconsDir, file),
-                                            );
-                                          });
-                                        return Promise.all(files).catch(
-                                          (err) => {
-                                            ctx[target] = { skip: true };
-                                            throw new Error(err.message);
-                                          },
-                                        );
+                                        await fs.mkdir(builtIconsDir, {
+                                          recursive: true,
+                                        });
                                       } catch (err) {
                                         ctx[target] = { skip: true };
                                         throw new Error(err.message);
@@ -529,22 +512,12 @@ const tasks = new Listr(
                               task.newListr(
                                 [
                                   {
-                                    title: 'Cleaning target directory',
+                                    title: 'Create target directory',
                                     task: async (ctx) => {
                                       try {
-                                        const files =
-                                          await fs.readdir(builtIconsDir);
-                                        const promises = files.map((file) => {
-                                          return fs.unlink(
-                                            path.join(builtIconsDir, file),
-                                          );
+                                        await fs.mkdir(builtIconsDir, {
+                                          recursive: true,
                                         });
-                                        return Promise.all(promises).catch(
-                                          (err) => {
-                                            ctx[target] = { skip: true };
-                                            throw new Error(err.message);
-                                          },
-                                        );
                                       } catch (err) {
                                         ctx[target] = { skip: true };
                                         throw new Error(err.message);

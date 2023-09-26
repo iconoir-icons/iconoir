@@ -31,68 +31,71 @@ const Home: NextPage<HomeProps> = ({
   numDownloads,
 }) => {
   return (
-    <Layout>
-      <SEO />
-      <Header currentVersion={currentVersion} />
-      <HeaderBackground>
-        <HeroHead>
-          <HeroText>Say hello</HeroText>
-          <HeroTextSecondary>to your new icon library.</HeroTextSecondary>
-        </HeroHead>
-      </HeaderBackground>
-      <HeroDescription>
-        A high-quality selection of free icons. No premium options or sign-ups.
-        Your new alternative to Noun Project, Flaticon, and all Figma resources.
-        Available in SVG, Font, React, React Native, Flutter, Figma and Framer.
-      </HeroDescription>
-      <StatsContainer>
-        <Stat
-          value={new Intl.NumberFormat('en-US').format(allIcons.length)}
-          description={
-            'icons available in this very moment, and they’re growing fast!'
-          }
-        />
-        <Stat
-          value={'100%'}
-          description={
-            'free icons. Iconoir is open source and we’re ready for your help.'
-          }
-        />
-        <Stat
-          value={new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
-            numDownloads,
-          )}
-          description={
-            'downloads/month on React only. Iconoir also supports React Native, Flutter and CSS.'
-          }
-        />
-        <Stat
-          value={new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
-            numStars,
-          )}
-          description={
-            'people who starred the project on GitHub. Show your support and be one of them.'
-          }
-        />
-      </StatsContainer>
-      <AvailableFor />
-      <SupportContainer>
-        <LargeButton
-          as={'a'}
-          href={SUPPORT_LINK}
-          target={'_blank'}
-          rel={'noreferrer'}
-        >
-          <span>Donate</span>
-        </LargeButton>
-        <Text18>
-          If you find Iconoir valuable for you, consider making a donation to
-          help us pursuing even bigger goals.
-        </Text18>
-      </SupportContainer>
-      <Explore allIcons={allIcons} />
+    <>
+      <Layout>
+        <SEO />
+        <Header currentVersion={currentVersion} />
+        <HeaderBackground>
+          <HeroHead>
+            <HeroText>Say hello</HeroText>
+            <HeroTextSecondary>to your new icon library.</HeroTextSecondary>
+          </HeroHead>
+        </HeaderBackground>
+        <HeroDescription>
+          A high-quality selection of free icons. No premium options or
+          sign-ups. Your new alternative to Noun Project, Flaticon, and all
+          Figma resources. Available in SVG, Font, React, React Native, Flutter,
+          Figma and Framer.
+        </HeroDescription>
+        <StatsContainer>
+          <Stat
+            value={new Intl.NumberFormat('en-US').format(allIcons.length)}
+            description={
+              'icons available in this very moment, and they’re growing fast!'
+            }
+          />
+          <Stat
+            value={'100%'}
+            description={
+              'free icons. Iconoir is open source and we’re ready for your help.'
+            }
+          />
+          <Stat
+            value={new Intl.NumberFormat('en-US', {
+              notation: 'compact',
+            }).format(numDownloads)}
+            description={
+              'downloads/month on React only. Iconoir also supports React Native, Flutter and CSS.'
+            }
+          />
+          <Stat
+            value={new Intl.NumberFormat('en-US', {
+              notation: 'compact',
+            }).format(numStars)}
+            description={
+              'people who starred the project on GitHub. Show your support and be one of them.'
+            }
+          />
+        </StatsContainer>
+        <AvailableFor />
+        <SupportContainer>
+          <LargeButton
+            as={'a'}
+            href={SUPPORT_LINK}
+            target={'_blank'}
+            rel={'noreferrer'}
+          >
+            <span>Donate</span>
+          </LargeButton>
+          <Text18>
+            If you find Iconoir valuable for you, consider making a donation to
+            help us pursuing even bigger goals.
+          </Text18>
+        </SupportContainer>
+        <Explore allIcons={allIcons} />
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   );
 };
 

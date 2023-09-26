@@ -23,6 +23,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Build
+        run: pnpm run build
+
       - name: Build packages
         run: pnpm run dist
 
