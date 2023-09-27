@@ -2,8 +2,9 @@ name: iconoir_flutter
 description: Flutter library for Iconoir icon set
 version: 6.11.0
 homepage: https://iconoir.com
-repository: https://github.com/lucaburgio/iconoir.git
-issue_tracker: https://github.com/lucaburgio/iconoir/issues
+repository: https://github.com/iconoir-icons/iconoir
+funding:
+  - https://opencollective.com/iconoir
 
 environment:
   sdk: '>=2.17.1 <3.0.0'
