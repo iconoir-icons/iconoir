@@ -70,18 +70,20 @@ export const LogoContainer = styled.div`
   }
 `;
 const MobileMenuButton = styled(ResetButton)`
-  z-index: 101;
-  color: var(--black);
-  background: transparent;
-  display: inline-block;
-  margin-left: auto !important;
-  cursor: pointer;
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-  ${media.lg} {
-    display: none;
+  &&& {
+    z-index: 101;
+    color: var(--black);
+    background: transparent;
+    display: inline-block;
+    margin-left: auto;
+    cursor: pointer;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    ${media.lg} {
+      display: none;
+    }
   }
 `;
 const MobileMenuContainer = styled.div<{ $visible?: boolean }>`
@@ -145,53 +147,59 @@ const HeaderCenter = styled(HeaderItem)`
   }
 `;
 const HeaderLeft = styled(HeaderItem)`
-  justify-content: flex-start;
+  &&& {
+    justify-content: flex-start;
+  }
 `;
 const HeaderRight = styled(HeaderItem)`
-  justify-content: flex-end;
+  &&& {
+    justify-content: flex-end;
+  }
 `;
 export const Logo = styled.img`
   height: 24px;
   margin-top: -4px;
   color: var(--black);
-  margin-right: 16px !important;
+  margin-right: 16px;
   z-index: 101;
 `;
 export const LogoIcon = styled.div`
   color: var(--black);
-  margin-right: 4px !important;
+  margin-right: 4px;
   svg {
     width: 36px;
     height: 36px;
   }
 `;
 const BuiltWith = styled(Text15)<{ $isMobile?: boolean }>`
-  display: ${(props) => (props.$isMobile ? 'flex' : 'none')};
-  ${media.lg} {
-    display: ${(props) => (props.$isMobile ? 'none' : 'flex')};
-  }
-  align-items: center;
-  justify-content: center;
-  color: var(--black-60);
-  border-bottom: none !important;
-  svg {
-    fill: var(--black);
-    margin: 0 0.22em;
-  }
-  > * {
-    margin: 0 0.22em;
-  }
-  a {
-    color: var(--black);
-    font-weight: 700;
-  }
-  > :last-child {
-    margin-right: 0;
-  }
-  ${media.lg} {
-    justify-content: flex-start;
+  &&& {
+    display: ${(props) => (props.$isMobile ? 'flex' : 'none')};
+    ${media.lg} {
+      display: ${(props) => (props.$isMobile ? 'none' : 'flex')};
+    }
+    align-items: center;
+    justify-content: center;
+    color: var(--black-60);
+    border-bottom: none;
+    svg {
+      fill: var(--black);
+      margin: 0 0.22em;
+    }
+    > * {
+      margin: 0 0.22em;
+    }
     a {
-      font-weight: normal;
+      color: var(--black);
+      font-weight: 700;
+    }
+    > :last-child {
+      margin-right: 0;
+    }
+    ${media.lg} {
+      justify-content: flex-start;
+      a {
+        font-weight: normal;
+      }
     }
   }
 `;

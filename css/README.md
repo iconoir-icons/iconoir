@@ -1,6 +1,6 @@
 # Iconoir - CSS
 
-Import the CSS File:
+Import the CSS file:
 
 ```html
 <link

@@ -154,24 +154,26 @@ const HoverContainer = styled.div`
   pointer-events: none;
 `;
 const HoverButton = styled(ResetButton)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--white);
-  border-radius: 0px !important;
-  transition: background 0.1s linear;
-  color: var(--g0);
-  font-size: 14px;
-  line-height: 23px;
-  font-weight: 700;
-  text-align: center;
-  flex: 1;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover,
-  &:active {
-    background: var(--g0);
-    color: var(--white);
+  &&& {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 0px;
+    transition: background 0.1s linear;
+    color: var(--g0);
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,
+    &:active {
+      background: var(--g0);
+      color: var(--white);
+    }
   }
 `;
 const BorderContainer = styled.div<{ $iconWidth: number }>`

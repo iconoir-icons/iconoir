@@ -1,13 +1,9 @@
 import { ArrowRight } from 'iconoir-react';
 import styled from 'styled-components';
-import {
-  DonateButton,
-  DonateContainer,
-  DonateHeader,
-  DonateRight,
-} from '../pages/support';
+import { DonateContainer, DonateHeader, DonateRight } from '../pages/support';
 import { GITHUB_TREE_PREFIX } from '../lib/constants';
 import { Text18 } from './Typography';
+import { LargeButton } from './Button';
 
 export interface ReadOnGitHubProps {
   path: string;
@@ -43,13 +39,15 @@ export function ReadOnGitHub({
   );
 }
 
-export const DonateIconButton = styled(DonateButton)`
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  justify-content: center;
-  &::after {
+export const DonateIconButton = styled(LargeButton)`
+  &&& {
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    &::after {
+      border-radius: 50%;
+    }
   }
 `;

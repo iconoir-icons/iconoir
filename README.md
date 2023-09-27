@@ -62,7 +62,7 @@ You can switch between icons from the right sidebar in the editor.
 
 ## CSS
 
-Import the CSS File:
+Import the CSS file:
 
 ```html
 <link

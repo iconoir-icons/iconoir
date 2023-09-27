@@ -168,7 +168,7 @@ const NavigationItemLabel = styled.span`
   border-radius: 4px;
   font-size: 11px;
   line-height: 17.6px;
-  font-weight: 700 !important;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--g1);
