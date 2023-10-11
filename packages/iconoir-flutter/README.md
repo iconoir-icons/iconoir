@@ -1,10 +1,10 @@
-# Flutter Iconoir Icons
+# Iconoir - Flutter
 
-![PUB Version](https://img.shields.io/pub/v/iconoir_flutter?style=flat-square)
-![PUB Monthly Downloads](https://img.shields.io/pub/dm/iconoir_flutter?style=flat-square)
-![PUB License](https://img.shields.io/npm/l/iconoir_flutter?style=flat-square)
+[![Pub Version](https://img.shields.io/pub/v/iconoir_flutter?style=flat-square)](https://pub.dev/packages/iconoir_flutter)
+[![Pub Popularity](https://img.shields.io/pub/popularity/iconoir_flutter?style=flat-square)](https://pub.dev/packages/iconoir_flutter/score)
+[![License](https://img.shields.io/github/license/iconoir-icons/iconoir?style=flat-square)](https://github.com/iconoir-icons/iconoir/blob/main/packages/iconoir-flutter/LICENSE)
 
-Iconoir is an open source library with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters. You can browse the full suite of icons at [iconoir.com](https://iconoir.com/).
+[Iconoir](https://iconoir.com/) is an open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.
 
 `iconoir_flutter` is an open source package that exports these icons as Flutter widgets (`flutter_svg`) that can be used in all of your Flutter projects.
 
@@ -51,12 +51,11 @@ class DemoPage extends StatelessWidget {
 
 Default values for the most common props are given below:
 
-| Prop name   | Default value  |
-| ----------- | -------------- |
-| color       | "currentColor" |
-| width       | "1.5em"        |
-| height      | "1.5em"        |
-
+| Prop name | Default value  |
+| --------- | -------------- |
+| color     | "currentColor" |
+| width     | "1.5em"        |
+| height    | "1.5em"        |
 
 ## Icon names
 

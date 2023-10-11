@@ -2,36 +2,33 @@
   "name": "iconoir-react-native",
   "version": "6.11.0",
   "description": "React Native library for Iconoir icon set",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dist": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
-    "prepublish": "npm run dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iconoir-icons/iconoir.git"
-  },
   "keywords": [
     "icons",
     "svg",
     "library",
     "react-native"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lucaburgio/iconoir/issues"
-  },
-  "sideEffects": false,
   "homepage": "https://iconoir.com",
-  "peerDependencies": {
-    "react": "^16.8.6 || ^17 || ^18",
-    "react-native": ">=0.50.0",
-    "react-native-svg": ">=12.1.1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconoir-icons/iconoir.git",
+    "directory": "packages/iconoir-react-native"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dist": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
+    "prepublishOnly": "npm run dist"
   },
   "devDependencies": {
     "@types/react": "^18.2.22",
@@ -39,5 +36,10 @@
     "react": "^18.2.0",
     "react-native-svg": "^13.14.0",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17 || ^18",
+    "react-native": ">=0.50.0",
+    "react-native-svg": ">=12.1.1"
   }
 }

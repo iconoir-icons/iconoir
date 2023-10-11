@@ -2,9 +2,24 @@
   "name": "@iconoir/vue",
   "version": "6.11.0",
   "description": "Vue library for Iconoir icon set",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/esm/index.mjs",
+  "keywords": [
+    "icons",
+    "svg",
+    "library",
+    "vue"
+  ],
+  "homepage": "https://iconoir.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconoir-icons/iconoir.git",
+    "directory": "packages/iconoir-vue"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
+  "license": "MIT",
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": {
@@ -18,31 +33,25 @@
       "default": "./dist/index.js"
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "dist": "vite build",
-    "prepublish": "npm run dist"
+    "prepublishOnly": "npm run dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iconoir-icons/iconoir.git"
-  },
-  "keywords": [
-    "icons",
-    "svg",
-    "library",
-    "vue"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lucaburgio/iconoir/issues"
-  },
-  "sideEffects": false,
-  "homepage": "https://iconoir.com",
   "dependencies": {
     "vue-demi": "^0.14.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "terser": "^5.20.0",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.4",
+    "vue": "^3.3.4"
   },
   "peerDependencies": {
     "@vue/composition-api": ">=1.0.0-rc.1",
@@ -52,12 +61,5 @@
     "@vue/composition-api": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.3.4",
-    "terser": "^5.20.0",
-    "vite": "^4.4.9",
-    "vite-plugin-dts": "^3.5.4",
-    "vue": "^3.3.4"
   }
 }

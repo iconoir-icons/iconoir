@@ -2,9 +2,24 @@
   "name": "iconoir-react",
   "version": "6.11.0",
   "description": "React library for Iconoir icon set",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/esm/index.mjs",
+  "keywords": [
+    "icons",
+    "svg",
+    "library",
+    "react"
+  ],
+  "homepage": "https://iconoir.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconoir-icons/iconoir.git",
+    "directory": "packages/iconoir-react"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
+  "license": "MIT",
+  "sideEffects": false,
   "exports": {
     ".": {
       "react-server": "./dist/esm/server/index.mjs",
@@ -19,35 +34,22 @@
       "default": "./dist/index.js"
     }
   },
+  "main": "dist/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "dist": "rm -rf dist && tsc -p tsconfig.json && tsc -p tsconfig.esm.json && node scripts/fix-esm.js && rm -rf dist/server",
-    "prepublish": "npm run dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iconoir-icons/iconoir.git"
-  },
-  "keywords": [
-    "icons",
-    "svg",
-    "library",
-    "react"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lucaburgio/iconoir/issues"
-  },
-  "sideEffects": false,
-  "homepage": "https://iconoir.com",
-  "peerDependencies": {
-    "react": "^16.8.6 || ^17 || ^18"
+    "prepublishOnly": "npm run dist"
   },
   "devDependencies": {
     "@types/react": "^18.2.22",
     "react": "^18.2.0",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17 || ^18"
   }
 }

@@ -1,30 +1,23 @@
-# Vue Iconoir Icons
+# Iconoir - Vue
 
-Iconoir is an open source library with 900+ SVG Icons. No premium icons, no email sign-up, no newsletters. You can browse the full suite of icons at [iconoir.com](https://iconoir.com/).
+[![NPM Version](https://img.shields.io/npm/v/@iconoir/vue?style=flat-square)](https://www.npmjs.com/package/@iconoir/vue)
+[![NPM Monthly Downloads](https://img.shields.io/npm/dm/@iconoir/vue?style=flat-square)](https://www.npmjs.com/package/@iconoir/vue)
+[![NPM License](https://img.shields.io/npm/l/@iconoir/vue?style=flat-square)](https://github.com/iconoir-icons/iconoir/blob/main/packages/iconoir-vue/LICENSE)
+
+[Iconoir](https://iconoir.com/) is an open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.
 
 `@iconoir/vue` is an open source package that exports these icons as Vue.js components that can be used in all of your Vue projects. Thanks to `vue-demi`, both Vue 2 and Vue 3 are supported.
 
 ## Installation
 
-```
-yarn add @iconoir/vue
-```
-
-or
-
-```
-npm i @iconoir/vue
-```
-
-or
-
-```
-pnpm add @iconoir/vue
-```
+| npm                  | Yarn                    | pnpm                    |
+| -------------------- | ----------------------- | ----------------------- |
+| `npm i @iconoir/vue` | `yarn add @iconoir/vue` | `pnpm add @iconoir/vue` |
 
 ## Usage
 
-Vue 3:
+### Vue 3
+
 ```vue
 <script setup>
 import { Iconoir } from '@iconoir/vue';
@@ -35,7 +28,8 @@ import { Iconoir } from '@iconoir/vue';
 </template>
 ```
 
-Vue 2:
+### Vue 2
+
 ```vue
 <script>
 import { Iconoir } from '@iconoir/vue';
@@ -48,9 +42,11 @@ export default
 </script>
 
 <template>
-    <Iconoir />
+  <Iconoir />
 </template>
 ```
+
+### Properties
 
 Icons can take any standard SVG properties as optional props, e.g.
 
@@ -61,7 +57,7 @@ Icons can take any standard SVG properties as optional props, e.g.
 Default values for the most common props are given below:
 
 | Prop name    | Default value  |
-| -----------  | -------------- |
+| ------------ | -------------- |
 | color        | "currentColor" |
 | width        | "1.5em"        |
 | height       | "1.5em"        |
@@ -97,7 +93,7 @@ import { IconoirProvider, Check } from '@iconoir/vue';
 For the most part, the Vue components are named as PascalCase variations of their reference names (i.e. `add-circle-outline` becomes `AddCircleOutline`). However, some names have been altered slightly either because they start with numerical digits, which would lead to invalid Vue component names, or because they are organisations which use PascalCase in their brand names, such as `GitHub`. The altered names are as follows:
 
 | Iconoir Name     | Vue Component   |
-|------------------|-----------------|
+| ---------------- | --------------- |
 | `1st-medal`      | `Medal1St`      |
 | `4k-display`     | `Display4K`     |
 | `4x4-cell`       | `Cell4X4`       |
