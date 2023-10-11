@@ -41,7 +41,7 @@
   ],
   "scripts": {
     "dist": "vite build",
-    "prepublish": "npm run dist"
+    "prepublishOnly": "npm run dist"
   },
   "dependencies": {
     "vue-demi": "^0.14.6"

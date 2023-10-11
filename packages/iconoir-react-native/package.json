@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "dist": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
-    "prepublish": "npm run dist"
+    "prepublishOnly": "npm run dist"
   },
   "devDependencies": {
     "@types/react": "^18.2.22",
