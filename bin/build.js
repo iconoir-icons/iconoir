@@ -16,7 +16,6 @@ const ignoreCleanFilenames = ['IconoirContext.tsx', 'server'];
 
 // Targets for building icons
 const targets = {
-  'meta-data': { path: 'meta-data.json' },
   css: { path: 'css/iconoir.css' },
   'iconoir-flutter': { flutter: true, path: 'packages/iconoir-flutter' },
   'iconoir-react': { react: true, path: 'packages/iconoir-react' },
@@ -64,17 +63,6 @@ const tasks = new Listr(
       task: (_, task) =>
         task.newListr(
           [
-            {
-              title: 'Building meta-data file',
-              enabled: () =>
-                cliTargets.length === 0 || cliTargets.includes('meta-data'),
-              task: async (ctx) => {
-                await fs.writeFile(
-                  path.join(rootDir, targets['meta-data'].path),
-                  JSON.stringify({ icons: ctx.iconoirIconsFiles }),
-                );
-              },
-            },
             {
               title: 'Building CSS file',
               enabled: () =>

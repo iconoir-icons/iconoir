@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build meta-data and css
-        run: pnpm run build meta-data css
+        run: pnpm run build css
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
