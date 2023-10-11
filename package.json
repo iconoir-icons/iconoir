@@ -20,6 +20,12 @@
   },
   "license": "MIT",
   "type": "module",
+  "exports": {
+    "./icons/*.svg": "./icons/regular/*.svg",
+    "./icons/*-solid.svg": "./icons/solid/*.svg",
+    "./icons/regular/*.svg": "./icons/regular/*.svg",
+    "./icons/solid/*.svg": "./icons/solid/*.svg"
+  },
   "files": [
     "css",
     "icons"
