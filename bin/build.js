@@ -1,54 +1,33 @@
 import { execa } from 'execa';
 import { generateTemplateFilesBatch } from 'generate-template-files';
 import { Listr } from 'listr2';
-import { existsSync, promises as fs, readFileSync } from 'node:fs';
+import fs from 'node:fs/promises';
 import os from 'node:os';
 import path, { basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { flutterIncompatibleNames, incompatibleNames } from '../constants.js';
 import { buildVueIcons } from './buildVue.js';
 
-import { transform } from '@svgr/core';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Paths
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
-const iconoirIconsDir = path.join(rootDir, 'icons');
-const ignoreCleanFilenames = ['IconoirContext.tsx', 'server'];
+const iconsDir = path.join(rootDir, 'icons');
+
+const iconsVariants = ['regular', 'solid'];
+const defaultVariant = 'regular';
 
 // Targets for building icons
 const targets = {
-  css: { path: 'css/iconoir.css' },
-  'iconoir-flutter': { flutter: true, path: 'packages/iconoir-flutter' },
+  css: { path: 'css' },
+  'iconoir-flutter': { path: 'packages/iconoir-flutter' },
   'iconoir-react': { react: true, path: 'packages/iconoir-react' },
   'iconoir-react-native': {
     react: true,
     path: 'packages/iconoir-react-native',
   },
-  'iconoir-vue': {
-    vue: true,
-    path: 'packages/iconoir-vue',
-  },
+  'iconoir-vue': { path: 'packages/iconoir-vue' },
 };
-
-// Get targets from command line arguments
-// (build all targets if no arguments)
-const args = process.argv.slice(2);
-const cliTargets = [];
-
-args.forEach((target) => {
-  if (target in targets) {
-    cliTargets.push(target);
-  } else {
-    console.error(`Target '${target}' doesn't exist!\n\nPossible targets are:`);
-
-    for (const [targetName] of Object.entries(targets)) {
-      console.log(`- ${targetName}`);
-    }
-
-    process.exit(1);
-  }
-});
 
 // Build tasks
 const tasks = new Listr(
@@ -56,55 +35,92 @@ const tasks = new Listr(
     {
       title: 'Fetching icons',
       task: async (ctx) => {
-        const iconFiles = await fs.readdir(iconoirIconsDir);
+        ctx.icons = {};
 
-        ctx.iconoirIconsFiles = iconFiles.filter((file) =>
-          file.endsWith('.svg'),
-        );
+        for (const variant of iconsVariants) {
+          const iconsVariantDir = path.join(iconsDir, variant);
+          const files = await fs.readdir(iconsVariantDir);
+
+          const iconFiles = files
+            .filter((file) => file.endsWith('.svg'))
+            .map((file) => path.join(iconsVariantDir, file));
+
+          ctx.icons[variant] = iconFiles;
+        }
       },
     },
     {
       title: 'Building targets',
-      skip: (ctx) => !ctx.iconoirIconsFiles,
       task: (_, task) =>
         task.newListr(
           [
             {
-              title: 'Building CSS file',
-              enabled: () =>
-                cliTargets.length === 0 || cliTargets.includes('css'),
+              title: 'Building CSS files',
+              enabled: () => isTargetEnabled('css'),
               task: async (ctx) => {
-                const content = [
-                  (
-                    await fs.readFile(
-                      path.join(__dirname, 'header.css'),
-                      'utf8',
-                    )
-                  ).replace('[YEAR]', new Date().getFullYear()),
-                ];
+                const headerFile = await fs.readFile(
+                  path.join(__dirname, 'header.css'),
+                  'utf8',
+                );
 
-                ctx.iconoirIconsFiles.forEach((file) => {
-                  const fileContents = readFileSync(
-                    path.join(__dirname, '../icons/', file),
-                  )
-                    .toString()
-                    .replace(/\n/g, '')
-                    .replace(/(width|height)="[0-9]+px"/g, '')
-                    .replace(/[ ]+/g, ' ');
+                const header = headerFile.replace(
+                  '[YEAR]',
+                  new Date().getFullYear(),
+                );
 
-                  content.push(
-                    `.iconoir-${
-                      path.parse(file).name
-                    }::before{mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${fileContents}');}`,
+                const mainCssContent = [header];
+
+                for (const [variant, files] of Object.entries(ctx.icons)) {
+                  const variantCssContent = [header];
+
+                  for (const file of files) {
+                    const fileContent = await fs.readFile(file, 'utf8');
+
+                    const transformedContent = fileContent
+                      .replace(/\n/g, '')
+                      .replace(/(width|height)="[0-9]+px"/g, '')
+                      .replace(/[ ]+/g, ' ');
+
+                    const cssContent = `{mask-image:url('data:image/svg+xml;charset=utf-8,${transformedContent}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${transformedContent}');}`;
+                    const baseIconName = path.parse(file).name;
+
+                    const cssTarget = (iconName, suffixed) => {
+                      if (suffixed) {
+                        iconName =
+                          variant === defaultVariant
+                            ? iconName
+                            : `${iconName}-${variant}`;
+                      }
+
+                      return `.iconoir-${iconName}::before`;
+                    };
+
+                    mainCssContent.push(
+                      `${cssTarget(baseIconName)}${cssContent}`,
+                    );
+
+                    variantCssContent.push(
+                      `${cssTarget(baseIconName, true)}${cssContent}`,
+                    );
+                  }
+
+                  await fs.writeFile(
+                    path.join(
+                      rootDir,
+                      targets.css.path,
+                      `iconoir-${variant}.css`,
+                    ),
+                    variantCssContent,
                   );
-                });
+                }
 
                 await fs.writeFile(
-                  path.join(rootDir, targets.css.path),
-                  content,
+                  path.join(rootDir, targets.css.path, 'iconoir.css'),
+                  mainCssContent,
                 );
               },
             },
+
             {
               title: 'Building React libraries',
               enabled: () =>
@@ -134,10 +150,7 @@ const tasks = new Listr(
                       task: async (ctx) => {
                         try {
                           const promises = ctx.iconoirIconsFiles.map((file) => {
-                            const srcFilePath = path.join(
-                              iconoirIconsDir,
-                              file,
-                            );
+                            const srcFilePath = path.join(iconsDir, file);
 
                             const iconName = file.split('.')[0];
 
@@ -188,54 +201,6 @@ const tasks = new Listr(
                             task: (_, task) =>
                               task.newListr(
                                 [
-                                  {
-                                    title: 'Cleaning target directory',
-                                    task: async (ctx) => {
-                                      try {
-                                        const files =
-                                          await fs.readdir(builtIconsDir);
-
-                                        const serverFiles = existsSync(
-                                          path.join(builtIconsDir, 'server'),
-                                        )
-                                          ? (
-                                              await fs.readdir(
-                                                path.join(
-                                                  builtIconsDir,
-                                                  'server',
-                                                ),
-                                              )
-                                            ).map((file) => `server/${file}`)
-                                          : [];
-
-                                        const promises = [
-                                          ...files,
-                                          ...serverFiles,
-                                        ]
-                                          .filter(
-                                            (file) =>
-                                              !ignoreCleanFilenames.includes(
-                                                path.basename(file),
-                                              ),
-                                          )
-                                          .map((file) => {
-                                            return fs.unlink(
-                                              path.join(builtIconsDir, file),
-                                            );
-                                          });
-
-                                        return Promise.all(promises).catch(
-                                          (err) => {
-                                            ctx[target] = { skip: true };
-                                            throw new Error(err.message);
-                                          },
-                                        );
-                                      } catch (err) {
-                                        ctx[target] = { skip: true };
-                                        throw new Error(err.message);
-                                      }
-                                    },
-                                  },
                                   {
                                     title: 'Building icon files',
                                     skip: (ctx) => ctx[target]?.skip,
@@ -347,10 +312,7 @@ const tasks = new Listr(
                       task: async (ctx) => {
                         try {
                           const promises = ctx.iconoirIconsFiles.map((file) => {
-                            const srcFilePath = path.join(
-                              iconoirIconsDir,
-                              file,
-                            );
+                            const srcFilePath = path.join(iconsDir, file);
 
                             const iconName = file.split('.')[0];
 
@@ -472,10 +434,7 @@ const tasks = new Listr(
                       task: async (ctx) => {
                         try {
                           const promises = ctx.iconoirIconsFiles.map((file) => {
-                            const srcFilePath = path.join(
-                              iconoirIconsDir,
-                              file,
-                            );
+                            const srcFilePath = path.join(iconsDir, file);
 
                             const iconName = file.split('.')[0];
 
@@ -683,5 +642,28 @@ const tasks = new Listr(
     },
   },
 );
+
+// Get targets from command line arguments
+// (build all targets if no arguments)
+const args = process.argv.slice(2);
+const cliTargets = [];
+
+args.forEach((target) => {
+  if (target in targets) {
+    cliTargets.push(target);
+  } else {
+    console.error(`Target '${target}' doesn't exist!\n\nPossible targets are:`);
+
+    for (const [targetName] of Object.entries(targets)) {
+      console.error(`- ${targetName}`);
+    }
+
+    process.exit(1);
+  }
+});
+
+function isTargetEnabled(target) {
+  return cliTargets.length === 0 || cliTargets.includes(target);
+}
 
 await tasks.run();
