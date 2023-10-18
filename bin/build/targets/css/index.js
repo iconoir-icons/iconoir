@@ -42,13 +42,10 @@ export default async (ctx, target) => {
     }
 
     await fs.writeFile(
-      path.join(ctx.global.rootDir, target.path, `iconoir-${variant}.css`),
+      path.join(target.path, `iconoir-${variant}.css`),
       variantCssContent,
     );
   }
 
-  await fs.writeFile(
-    path.join(ctx.global.rootDir, target.path, 'iconoir.css'),
-    mainCssContent,
-  );
+  await fs.writeFile(path.join(target.path, 'iconoir.css'), mainCssContent);
 };

@@ -1,7 +1,8 @@
 import { transform } from '@svgr/core';
-import iconTemplate from './template.js';
-import path from 'node:path';
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { generateExport } from '../../lib/export.js';
+import iconTemplate from './template.js';
 
 const svgrOptions = {
   plugins: ['@svgr/plugin-jsx'],
@@ -111,7 +112,7 @@ export default async (ctx, target) => {
           : icon.pascalNameVariant;
 
       mainIndexContent.push(
-        genExport(
+        generateExport(
           `default as ${mainIndexComponentName}`,
           `./${variant}/${jsxFileName}`,
         ),
@@ -124,7 +125,7 @@ export default async (ctx, target) => {
       mainIndexDtsExports.push(mainIndexComponentName);
 
       variantIndexContent.push(
-        genExport(`default as ${icon.pascalName}`, `./${jsxFileName}`),
+        generateExport(`default as ${icon.pascalName}`, `./${jsxFileName}`),
       );
 
       variantIndexDtsContent.push(
@@ -133,7 +134,7 @@ export default async (ctx, target) => {
     }
 
     variantIndexDtsContent.push(
-      genExport(icons.map((icon) => icon.pascalName)),
+      generateExport(icons.map((icon) => icon.pascalName)),
     );
 
     promises.push(
@@ -145,7 +146,7 @@ export default async (ctx, target) => {
     );
   }
 
-  mainIndexDtsContent.push(genExport(mainIndexDtsExports));
+  mainIndexDtsContent.push(generateExport(mainIndexDtsExports));
 
   promises.push(
     fs.writeFile(path.join(outDir, 'index.js'), mainIndexContent),
@@ -155,14 +156,8 @@ export default async (ctx, target) => {
   return Promise.all(promises);
 };
 
-function genExport(name, from) {
-  const ex = `export {${name.toString()}}`;
-
-  return from ? `${ex} from "${from}";` : `${ex};`;
-}
-
 function genIconoirContextExport(path = '.') {
-  return genExport(
+  return generateExport(
     ['IconoirProvider', 'IconoirContext', 'IconoirContextValue'],
     `${path}/IconoirContext`,
   );

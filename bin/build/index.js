@@ -13,25 +13,28 @@ const iconsVariants = ['regular', 'solid'];
 const defaultVariant = iconsVariants[0];
 
 const targets = {
-  css: {
+  'css': {
     title: 'CSS files',
     path: 'css',
   },
-  flutter: {
+  'flutter': {
     title: 'Flutter library',
-    path: path.join('packages', 'iconoir-flutter'),
+    path: 'packages/iconoir-flutter',
   },
-  react: {
+  'react': {
     title: 'React library',
-    path: path.join('packages', 'iconoir-react'),
+    path: 'packages/iconoir-react',
   },
   'react-native': {
     title: 'React Native library',
     target: 'react',
     native: true,
-    path: path.join('packages', 'iconoir-react-native'),
+    path: 'packages/iconoir-react-native',
   },
-  vue: { title: 'Vue library', path: path.join('packages', 'iconoir-vue') },
+  'vue': {
+    title: 'Vue library',
+    path: 'packages/iconoir-vue',
+  },
 };
 
 const tasks = new Listr(
@@ -71,7 +74,7 @@ const tasks = new Listr(
           ctx.icons[variant] = icons;
         }
 
-        ctx.global = { rootDir, defaultVariant };
+        ctx.global = { defaultVariant };
       },
     },
     {
@@ -82,12 +85,18 @@ const tasks = new Listr(
             title: targetConfig.title,
             enabled: () =>
               cliTargets.length === 0 || cliTargets.includes(targetName),
-            task: async (ctx) =>
-              (
-                await import(
-                  `./targets/${targetConfig.target || targetName}/index.js`
-                )
-              ).default(ctx, targetConfig),
+            task: async (ctx) => {
+              const { default: task } = await import(
+                `./targets/${targetConfig.target || targetName}/index.js`
+              );
+
+              targetConfig.path = path.join(
+                rootDir,
+                ...targetConfig.path.split(path.posix.sep),
+              );
+
+              return task(ctx, targetConfig);
+            },
           })),
           { concurrent: true, exitOnError: false },
         ),
