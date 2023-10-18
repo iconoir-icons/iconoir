@@ -1,0 +1,4 @@
+dist/
+packages/iconoir-react/src/
+packages/iconoir-react-native/src/
+packages/iconoir-vue/src/

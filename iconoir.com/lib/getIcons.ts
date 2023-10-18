@@ -1,6 +1,7 @@
 import Case from 'case';
 import csv from 'csvtojson';
 import * as AllIcons from 'iconoir-react';
+import { Iconoir } from 'iconoir-react/regular';
 import { incompatibleNames } from '../../constants';
 import { Icon } from '../components/IconList';
 
@@ -14,11 +15,13 @@ function getIconComponentName(filename: string) {
     filename in typedIncompatibleNames
       ? typedIncompatibleNames[filename]
       : filename;
+
   return Case.pascal(dstFileName);
 }
 
 export async function getAllIcons(): Promise<Icon[]> {
   const rows = await csv().fromFile(ICONS_PATH);
+
   return rows.map<Icon>((row) => {
     const iconComponentName = getIconComponentName(row.filename);
     // Convert to lowercase to solve for differences in how the names are calculated.
@@ -31,6 +34,7 @@ export async function getAllIcons(): Promise<Icon[]> {
       throw new Error(
         `Cannot find icon '${iconComponentName}' in iconoir-react.`,
       );
+
     return {
       filename: row.filename,
       category: row.category,

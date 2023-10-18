@@ -18,7 +18,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Build meta-data and css
+      - name: Build CSS
         run: pnpm run build css
 
       - name: Commit changes

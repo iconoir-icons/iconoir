@@ -21,10 +21,7 @@ module.exports = {
           'export',
           'import',
           'multiline-block-like',
-          'multiline-const',
           'multiline-expression',
-          'multiline-let',
-          'multiline-var',
         ],
         next: '*',
       },
@@ -36,13 +33,7 @@ module.exports = {
       {
         blankLine: 'always',
         prev: '*',
-        next: [
-          'multiline-block-like',
-          'multiline-const',
-          'multiline-expression',
-          'multiline-let',
-          'multiline-var',
-        ],
+        next: ['multiline-block-like', 'multiline-expression', 'return'],
       },
       {
         blankLine: 'any',
