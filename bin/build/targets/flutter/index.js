@@ -21,7 +21,9 @@ export default async (ctx, target) => {
         generateIconFile(
           icon.path,
           path.join(outDir, dartPath),
-          icon.pascalNameVariant,
+          variant !== ctx.global.defaultVariant
+            ? icon.pascalNameVariant
+            : icon.pascalName,
         ),
       );
 
