@@ -17,6 +17,7 @@ export const LIBRARY_LINKS = {
   React: `${GITHUB_TREE_PREFIX}/packages/iconoir-react`,
   ReactNative: `${GITHUB_TREE_PREFIX}/packages/iconoir-react-native`,
   Flutter: `${GITHUB_TREE_PREFIX}/packages/iconoir-flutter`,
+  Vue: `${GITHUB_TREE_PREFIX}/packages/iconoir-vue`,
   Framer: 'https://framer.com/',
   Figma: 'https://www.figma.com/community/file/983248991460488027/Iconoir-Pack',
 } as const;
