@@ -88,11 +88,36 @@ const Home: NextPage<HomeProps> = ({
             <span>Donate</span>
           </LargeButton>
           <Supporters>
-          <Supporter data-tooltip='Pierre Olivier Marec' as={'a'} href={'https://github.com/pomarec'} src={'https://avatars.githubusercontent.com/u/802933?v=4'}></Supporter>
-            <Supporter data-tooltip='Tuan Hiep' as={'a'} href={'https://opencollective.com/iconoir/contribute'} src={'https://images.opencollective.com/tuan-hiep/17b1ef2/avatar.png?height=80'}></Supporter>
-            <Supporter data-tooltip='Justin Kendrick' as={'a'} href={'https://opencollective.com/iconoir/contribute'} src={'https://images.opencollective.com/guest-39c79745/avatar.png?height=80'}></Supporter>
-            <Supporter data-tooltip='Anon' as={'a'} href={'https://opencollective.com/iconoir/contribute'} src={'https://opencollective.com/static/images/default-guest-logo.svg'}></Supporter>
-            <Supporter data-tooltip='Luca Burgio' as={'a'} href={'https://twitter.com/burgioluca'} src={'https://lucaburgio.com/images/profile2.png'}></Supporter>
+            <Supporter
+              data-tooltip='Pierre Olivier Marec'
+              as={'a'}
+              href={'https://github.com/pomarec'}
+              src={'https://avatars.githubusercontent.com/u/802933?v=4'}
+            />
+            <Supporter
+              data-tooltip='Tuan Hiep'
+              as={'a'}
+              href={'https://opencollective.com/iconoir/contribute'}
+              src={'https://images.opencollective.com/tuan-hiep/17b1ef2/avatar.png?height=80'}
+            />
+            <Supporter
+              data-tooltip='Justin Kendrick'
+              as={'a'}
+              href={'https://opencollective.com/iconoir/contribute'}
+              src={'https://images.opencollective.com/guest-39c79745/avatar.png?height=80'}
+            />
+            <Supporter
+              data-tooltip='Anon'
+              as={'a'}
+              href={'https://opencollective.com/iconoir/contribute'}
+              src={'https://opencollective.com/static/images/default-guest-logo.svg'}
+            />
+            <Supporter
+            data-tooltip='Luca Burgio'
+            as={'a'}
+            href={'https://twitter.com/burgioluca'}
+            src={'https://lucaburgio.com/images/profile2.png'}
+            />
           </Supporters>
           <Text15>
             Join here our monthly supporters and help us continue developing Iconoir.
