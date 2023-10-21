@@ -23,7 +23,11 @@ export function AvailableFor() {
               title={'React'}
             />
           </a>
-          <a href={'https://github.com/iconoir-icons/iconoir#swift-package'} target={'_blank'} rel={'noreferrer'}>
+          <a
+            href={'https://github.com/iconoir-icons/iconoir#swift-package'}
+            target={'_blank'}
+            rel={'noreferrer'}
+          >
             <AvailableForImage
               src={'/logo-swift.svg'}
               alt={'Swift Logo'}
