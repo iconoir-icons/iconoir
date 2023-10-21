@@ -13,7 +13,7 @@ import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { Text18,Text15 } from '../components/Typography';
+import { Text18, Text15 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
@@ -137,7 +137,6 @@ const Home: NextPage<HomeProps> = ({
   );
 };
 
-
 export const HeroHead = styled.div`
   margin: 60px auto 40px auto;
   ${media.md} {
@@ -182,7 +181,7 @@ const Supporters = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px!important;
+  margin-bottom: 8px !important;
 `;
 const Supporter = styled.div<{ src?: string }>`
   width: 40px;
