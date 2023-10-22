@@ -13,7 +13,7 @@ import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { Text18 } from '../components/Typography';
+import { Text18, Text15 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
@@ -87,10 +87,48 @@ const Home: NextPage<HomeProps> = ({
           >
             <span>Donate</span>
           </LargeButton>
-          <Text18>
-            If you find Iconoir valuable for you, consider making a donation to
-            help us pursuing even bigger goals.
-          </Text18>
+          <Supporters>
+            <Supporter
+              data-tooltip="Pierre Olivier Marec"
+              as={'a'}
+              href={'https://github.com/pomarec'}
+              src={'https://avatars.githubusercontent.com/u/802933?v=4'}
+            />
+            <Supporter
+              data-tooltip="Tuan Hiep"
+              as={'a'}
+              href={'https://opencollective.com/iconoir/contribute'}
+              src={
+                'https://images.opencollective.com/tuan-hiep/17b1ef2/avatar.png?height=80'
+              }
+            />
+            <Supporter
+              data-tooltip="Justin Kendrick"
+              as={'a'}
+              href={'https://opencollective.com/iconoir/contribute'}
+              src={
+                'https://images.opencollective.com/guest-39c79745/avatar.png?height=80'
+              }
+            />
+            <Supporter
+              data-tooltip="Anon"
+              as={'a'}
+              href={'https://opencollective.com/iconoir/contribute'}
+              src={
+                'https://opencollective.com/static/images/default-guest-logo.svg'
+              }
+            />
+            <Supporter
+              data-tooltip="Luca Burgio"
+              as={'a'}
+              href={'https://twitter.com/burgioluca'}
+              src={'https://lucaburgio.com/images/profile2.png'}
+            />
+          </Supporters>
+          <Text15>
+            Join here our monthly supporters and help us continue developing
+            Iconoir.
+          </Text15>
         </SupportContainer>
         <Explore allIcons={allIcons} />
       </Layout>
@@ -138,6 +176,45 @@ export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
     margin-top: ${(props) => props.topMargin || 0}px;
   }
 `;
+const Supporters = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px !important;
+`;
+const Supporter = styled.div<{ src?: string }>`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  margin: 0 10px;
+  background-image: url(${(props) => props.src});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+  margin: 0 -4px;
+  transition: 0.2s;
+  &:hover {
+    scale: 1.1;
+    transition: 0.2s;
+    &:before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+  }
+`;
+
 const SupportContainer = styled.div`
   text-align: center;
   > * {

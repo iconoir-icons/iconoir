@@ -17,14 +17,15 @@ export const LIBRARY_LINKS = {
   React: `${GITHUB_TREE_PREFIX}/packages/iconoir-react`,
   ReactNative: `${GITHUB_TREE_PREFIX}/packages/iconoir-react-native`,
   Flutter: `${GITHUB_TREE_PREFIX}/packages/iconoir-flutter`,
+  Vue: `${GITHUB_TREE_PREFIX}/packages/iconoir-vue`,
   Framer: 'https://framer.com/',
   Figma: 'https://www.figma.com/community/file/983248991460488027/Iconoir-Pack',
 } as const;
 
 export const SHARE_LINK =
-  'https://twitter.com/intent/tweet?text=Check%20out%20Iconoir%20by%20%40burgioluca%20and%20the%20amazing%20team%20with%20%40therealsammarks%20%F0%9F%94%A5&url=https%3A%2F%2Ficonoir.com' as const;
+  'https://twitter.com/intent/tweet?text=Your%20new%20free%20icons%20library.%20No%20premium%20options%20or%20signups%20by%20%40burgioluca%20&url=https%3A%2F%2Ficonoir.com' as const;
 export const SUPPORT_LINK =
-  'https://opencollective.com/iconoir/donate' as const;
+  'https://opencollective.com/iconoir/donate?interval=month&amount=10' as const;
 export const DISCORD_LINK = 'https://discord.gg/c3uzjx6k' as const;
 export const FEEDBACK_LINK = 'https://forms.gle/3HvwVYow7D6T8zad7' as const;
 export const PRIVACY_LINK =
