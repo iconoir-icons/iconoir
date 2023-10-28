@@ -9,14 +9,14 @@
   },
   "dependencies": {
     "next": "14.0.0",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
     "iconoir-react": "workspace:*",
-    "typescript": "^5"
+    "typescript": "^5.2.2"
   }
 }
