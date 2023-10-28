@@ -20,26 +20,32 @@
   },
   "license": "MIT",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./regular": {
+      "import": "./dist/esm/regular/index.mjs",
+      "require": "./dist/regular/index.js"
+    },
+    "./solid": {
+      "import": "./dist/esm/solid/index.mjs",
+      "require": "./dist/solid/index.js"
+    }
+  },
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "scripts": {
-    "dist": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
-    "prepublishOnly": "npm run dist"
-  },
   "devDependencies": {
-    "@types/react": "^18.2.22",
-    "@types/react-native": "^0.72.2",
-    "react": "^18.2.0",
-    "react-native-svg": "^13.14.0",
-    "typescript": "^5.2.2"
+    "@types/react": "^18.2.33",
+    "react-native-svg": "^13.14.0"
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17 || ^18",
-    "react-native": ">=0.50.0",
-    "react-native-svg": ">=12.1.1"
+    "react-native": ">=0.50.0"
   }
 }

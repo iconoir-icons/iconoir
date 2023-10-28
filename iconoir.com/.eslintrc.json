@@ -1,5 +1,10 @@
 {
   "extends": ["next/core-web-vitals"],
+  "settings": {
+    "next": {
+      "rootDir": "iconoir.com"
+    }
+  },
   "rules": {
     "react/no-unescaped-entities": ["off"]
   },

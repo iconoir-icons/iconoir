@@ -90,19 +90,6 @@ import { IconoirProvider, Check } from '@iconoir/vue';
 
 ## Icon names
 
-For the most part, the Vue components are named as PascalCase variations of their reference names (i.e. `add-circle-outline` becomes `AddCircleOutline`). However, some names have been altered slightly either because they start with numerical digits, which would lead to invalid Vue component names, or because they are organisations which use PascalCase in their brand names, such as `GitHub`. The altered names are as follows:
-
-| Iconoir Name     | Vue Component   |
-| ---------------- | --------------- |
-| `1st-medal`      | `Medal1St`      |
-| `4k-display`     | `Display4K`     |
-| `4x4-cell`       | `Cell4X4`       |
-| `360-view`       | `View360`       |
-| `github`         | `GitHub`        |
-| `github-outline` | `GitHubOutline` |
-| `gitlab-full`    | `GitLabFull`    |
-| `linkedin`       | `LinkedIn`      |
-| `tiktok`         | `TikTok`        |
-| `youtube`        | `YouTube`       |
+The Vue components are named as PascalCase variations of their reference names (i.e. `add-circle-outline` becomes `AddCircleOutline`).
 
 <SuggestLibrary />

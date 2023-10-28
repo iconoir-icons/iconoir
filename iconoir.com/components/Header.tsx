@@ -15,6 +15,7 @@ export interface HeaderProps {
 }
 export function Header({ currentVersion }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
+
   return (
     <Container>
       <HeaderLeft>
@@ -69,6 +70,7 @@ export const LogoContainer = styled.div`
     transition: 0.2s;
   }
 `;
+
 const MobileMenuButton = styled(ResetButton)`
   &&& {
     z-index: 101;
@@ -156,6 +158,7 @@ const HeaderRight = styled(HeaderItem)`
     justify-content: flex-end;
   }
 `;
+
 export const Logo = styled.img`
   height: 24px;
   margin-top: -4px;
@@ -171,6 +174,7 @@ export const LogoIcon = styled.div`
     height: 36px;
   }
 `;
+
 const BuiltWith = styled(Text15)<{ $isMobile?: boolean }>`
   &&& {
     display: ${(props) => (props.$isMobile ? 'flex' : 'none')};

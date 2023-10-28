@@ -14,6 +14,7 @@ export interface FooterCategoryProps {
   category: string;
   links: { name: string; url: string }[];
 }
+
 function FooterCategory({ category, links }: FooterCategoryProps) {
   return (
     <FooterCategoryContainer>
@@ -28,6 +29,7 @@ function FooterCategory({ category, links }: FooterCategoryProps) {
     </FooterCategoryContainer>
   );
 }
+
 export function Footer() {
   return (
     <Container>

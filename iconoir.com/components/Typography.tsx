@@ -142,12 +142,14 @@ const CopyContainer = styled.div`
 export function Pre({ children, ...props }: React.PropsWithChildren<any>) {
   const containerRef = React.useRef<HTMLPreElement>(null);
   const [supportsClipboard, setSupportsClipboard] = React.useState(false);
+
   React.useEffect(() => {
     setSupportsClipboard(
       typeof window !== 'undefined' &&
         typeof window?.navigator?.clipboard?.writeText !== 'undefined',
     );
   }, []);
+
   return (
     <PreContainer {...props}>
       <pre ref={containerRef}>{children}</pre>

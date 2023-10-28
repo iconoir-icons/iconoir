@@ -25,6 +25,7 @@ interface DocumentationPageProps extends HeaderProps {
   navigationItem: DocumentationItem;
   navigationProps: DocumentationNavigationProps;
 }
+
 export default function DocumentationPage({
   source,
   title,
@@ -183,10 +184,12 @@ function structureItemsToPaths(
 ): ParsedUrlQuery[] {
   const result: ParsedUrlQuery[] = [];
   const filteredItems = items.filter((item) => !item.skip);
+
   for (const item of filteredItems) {
     if (item.filepath && item.path) {
       result.push({ slug: [...(slugPrefix || []), item.path].filter(Boolean) });
     }
+
     if (item.children?.length) {
       result.push(
         ...structureItemsToPaths(
@@ -234,11 +237,13 @@ function itemFromSlug(
   const item = flatItems.find((flatItem) => flatItem.path === joinedSlug);
   if (!item)
     throw new Error(`Cannot find item matching slug '${slug.join('/')}'`);
+
   return item;
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const structure = getDocumentationStructure();
+
   return {
     paths: structureItemsToPaths(structure).map((p) => ({ params: p })),
     fallback: false,
@@ -263,6 +268,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       remarkPlugins: [require('remark-prism'), remarkGfm],
     },
   });
+
   return {
     props: {
       source: mdxSource,

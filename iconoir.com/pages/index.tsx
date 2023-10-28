@@ -24,6 +24,7 @@ interface HomeProps {
   numStars: number;
   numDownloads: number;
 }
+
 const Home: NextPage<HomeProps> = ({
   allIcons,
   currentVersion,
@@ -176,6 +177,7 @@ export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
     margin-top: ${(props) => props.topMargin || 0}px;
   }
 `;
+
 const Supporters = styled.div`
   display: flex;
   flex-direction: row;

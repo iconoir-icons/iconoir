@@ -16,6 +16,7 @@ import { getHeaderProps } from '../lib/getHeaderProps';
 import { Praise } from '../components/Praise';
 
 interface SupportProps extends HeaderProps {}
+
 const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
     <Layout>
@@ -192,6 +193,7 @@ const PraiseTitle = styled(Heading2)`
 const DonateLeft = styled.div`
   max-width: 800px;
 `;
+
 export const DonateRight = styled.div`
   display: flex;
   align-items: center;
@@ -204,6 +206,7 @@ export const DonateRight = styled.div`
     margin-left: 30px;
   }
 `;
+
 const DonateButton = styled(LargeButton)`
   &&& {
     padding: 0 24px;
@@ -219,6 +222,7 @@ const CallToAction = styled(LargeButton)`
     }
   }
 `;
+
 export const DonateContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -244,6 +248,7 @@ export const DonateHeader = styled.div`
     font-size: 22px;
   }
 `;
+
 const PraiseContainer = styled.div`
   margin: 50px 0 64px 0;
   ${media.md} {

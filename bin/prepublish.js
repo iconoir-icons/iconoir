@@ -7,9 +7,16 @@ const PACKAGE_BASE = '';
 
 const newVersion = semver.valid(semver.coerce(process.env.TAG_NAME));
 console.info('New version is %s', newVersion);
+
 if (!newVersion) {
   throw new Error(`Tag name ${process.env.TAG_NAME} is not valid.`);
 }
+
+publishNpmPackage('iconoir');
+publishNpmPackage('iconoir-react');
+publishNpmPackage('iconoir-react-native');
+publishNpmPackage('iconoir-vue');
+publishPubPackage('iconoir-flutter');
 
 function publishNpmPackage(name) {
   console.info('Publishing %s', name);
@@ -20,9 +27,11 @@ function publishNpmPackage(name) {
       : path.join('packages', name, 'package.json');
   const contents = JSON.parse(fs.readFileSync(packageJsonPath).toString());
   contents.version = newVersion;
+
   if (PACKAGE_BASE) {
     contents.name = `${PACKAGE_BASE}/${name}`;
   }
+
   fs.writeFileSync(packageJsonPath, JSON.stringify(contents, undefined, 2));
   console.info('package.json updated');
 }
@@ -38,9 +47,3 @@ function publishPubPackage(name) {
 
   console.info('pubspec.yaml updated');
 }
-
-publishNpmPackage('iconoir');
-publishNpmPackage('iconoir-react');
-publishNpmPackage('iconoir-react-native');
-publishNpmPackage('iconoir-vue');
-publishPubPackage('iconoir-flutter');

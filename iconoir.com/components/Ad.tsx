@@ -4,19 +4,24 @@ import styled from 'styled-components';
 export function Ad() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const addedScript = React.useRef(false);
+
   React.useEffect(() => {
     const container = containerRef.current;
+
     if (container && !addedScript.current) {
       addedScript.current = true;
       const script = document.createElement('script');
       script.async = true;
       script.type = 'text/javascript';
+
       script.src =
         '//cdn.carbonads.com/carbon.js?serve=CESDK5QJ&placement=iconoircom';
+
       script.id = '_carbonads_js';
       container.appendChild(script);
     }
   }, []);
+
   return <AdContainer ref={containerRef} />;
 }
 

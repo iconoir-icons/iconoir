@@ -20,31 +20,40 @@
   },
   "license": "MIT",
   "type": "module",
+  "exports": {
+    "./icons/*.svg": "./icons/regular/*.svg",
+    "./icons/*-solid.svg": "./icons/solid/*.svg",
+    "./icons/regular/*.svg": "./icons/regular/*.svg",
+    "./icons/solid/*.svg": "./icons/solid/*.svg",
+    "./css/*.css": "./css/*.css"
+  },
   "files": [
-    "css",
+    "css/*.css",
     "icons"
   ],
   "scripts": {
-    "build": "node ./bin/build.js",
-    "dist": "pnpm -r --filter './packages/**' run dist",
-    "lint": "eslint \"./bin/**/*.{cjs,js}\"",
+    "build": "node ./bin/build/index.js",
+    "dist": "pnpm --filter './packages/**' run dist",
+    "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "prepublish-all": "node ./bin/prepublish.js"
   },
   "devDependencies": {
     "@atomist/yaml-updater": "^1.0.2",
-    "@svgr/cli": "^8.1.0",
-    "@types/svg-parser": "^2.0.3",
-    "eslint": "^8.50.0",
+    "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "execa": "^8.0.1",
-    "generate-template-files": "^3.2.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "hast-util-from-html": "^2.0.1",
     "hast-util-to-html": "^9.0.0",
-    "listr2": "^7.0.1",
+    "listr2": "^7.0.2",
     "prettier": "^3.0.3",
+    "scule": "^1.0.0",
     "semver": "^7.5.4",
-    "svg-parser": "^2.0.4"
+    "typescript": "^5.2.2"
   },
-  "packageManager": "pnpm@8.8.0"
+  "packageManager": "pnpm@8.9.2"
 }

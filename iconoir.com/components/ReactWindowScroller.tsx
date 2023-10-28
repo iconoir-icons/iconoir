@@ -52,6 +52,7 @@ interface ReactWindowScrollerProps<Props extends ListProps | GridProps> {
   throttleTime?: number;
   isGrid?: boolean;
 }
+
 export function ReactWindowScroller<
   Props extends ListProps | GridProps = ListProps,
 >({
@@ -85,6 +86,7 @@ export function ReactWindowScroller<
     }, throttleTime);
 
     targetElement.addEventListener('scroll', handleWindowScroll);
+
     return () => {
       handleWindowScroll.cancel();
       targetElement.removeEventListener('scroll', handleWindowScroll);
@@ -98,6 +100,7 @@ export function ReactWindowScroller<
     // We have to get rid of the scroll handlers here, because they will cause the list
     // to go blank whenever adjusting the number of items.
     ref.current._onScrollVertical = () => {};
+
     ref.current._onScrollHorizontal = () => {};
   }, [outerRef]);
 
