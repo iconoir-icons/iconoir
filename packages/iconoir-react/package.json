@@ -40,10 +40,10 @@
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "react": "^16.8.6 || ^17 || ^18"
-  },
   "devDependencies": {
     "@types/react": "^18.2.33"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17 || ^18"
   }
 }

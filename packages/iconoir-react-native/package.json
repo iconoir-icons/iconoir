@@ -40,12 +40,12 @@
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "react": "^16.8.6 || ^17 || ^18",
-    "react-native": ">=0.50.0"
-  },
   "devDependencies": {
     "@types/react": "^18.2.33",
     "react-native-svg": "^13.14.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17 || ^18",
+    "react-native": ">=0.50.0"
   }
 }
