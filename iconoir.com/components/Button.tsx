@@ -51,7 +51,7 @@ export const LargeButton = styled(ResetButton)`
 `;
 
 export const Button = styled(LargeButton)`
-  &&& {
+  &&&& {
     height: 40px;
     font-size: 13px;
     line-height: 21px;
@@ -70,7 +70,7 @@ export const Button = styled(LargeButton)`
 `;
 
 export const CopyButton = styled(Button)`
-  &&& {
+  &&&&& {
     text-transform: uppercase;
     background: var(--white);
     height: 30px;
