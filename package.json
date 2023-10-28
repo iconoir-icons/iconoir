@@ -34,7 +34,7 @@
   "scripts": {
     "build": "node ./bin/build/index.js",
     "dist": "pnpm --filter './packages/**' run dist",
-    "lint": "eslint './bin/**/*.js'",
+    "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "prepublish-all": "node ./bin/prepublish.js"
   },
@@ -43,15 +43,17 @@
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
-    "change-case": "^5.0.2",
-    "eslint": "^8.50.0",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "hast-util-from-html": "^2.0.1",
     "hast-util-to-html": "^9.0.0",
-    "listr2": "^7.0.1",
+    "listr2": "^7.0.2",
     "prettier": "^3.0.3",
-    "semver": "^7.5.4"
+    "scule": "^1.0.0",
+    "semver": "^7.5.4",
+    "typescript": "^5.2.2"
   },
-  "packageManager": "pnpm@8.9.1"
+  "packageManager": "pnpm@8.9.2"
 }

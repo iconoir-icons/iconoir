@@ -2,7 +2,7 @@ import { fromHtml } from 'hast-util-from-html';
 import { toHtml } from 'hast-util-to-html';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { generateExport } from '../../lib/export.js';
+import { generateExport } from '../../lib/import-export.js';
 import iconTemplate from './template.js';
 
 export default async (ctx, target) => {

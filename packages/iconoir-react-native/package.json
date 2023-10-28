@@ -40,20 +40,12 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "dist": "rm -rf dist && pnpm run '/^dist:.*/'",
-    "dist:cjs": "mkdist --minify --format=cjs --target=es6",
-    "dist:esm": "mkdist --pattern='**' --pattern='!**/index.d.ts' --minify --format=esm --dist=dist/esm",
-    "dist:esm-dts": "cpy './**/index.d.ts' '../dist/esm' --cwd=src --rename=index.d.mts",
-    "prepublishOnly": "npm run dist"
-  },
-  "devDependencies": {
-    "cpy-cli": "^5.0.0",
-    "mkdist": "^1.3.0"
-  },
   "peerDependencies": {
     "react": "^16.8.6 || ^17 || ^18",
-    "react-native": ">=0.50.0",
-    "react-native-svg": ">=12.1.1"
+    "react-native": ">=0.50.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.33",
+    "react-native-svg": "^13.14.0"
   }
 }

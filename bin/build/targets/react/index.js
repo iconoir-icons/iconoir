@@ -1,164 +1,248 @@
-import { transform } from '@svgr/core';
+import * as svgr from '@svgr/core';
+import * as esbuild from 'esbuild';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { generateExport } from '../../lib/export.js';
-import iconTemplate from './template.js';
+import {
+  generateExport,
+  generateImport,
+  toImportPath,
+} from '../../lib/import-export.js';
+import { getDts } from '../../lib/ts.js';
+import iconoirContextTemplate, {
+  exports as iconoirContextExports,
+} from './resources/context-template.js';
+import { getTemplate as getIconTemplate } from './resources/icon-template.js';
+import { nativeSvgrOptions, svgrOptions } from './resources/svgr-options.js';
 
-const svgrOptions = {
-  plugins: ['@svgr/plugin-jsx'],
-  icon: true,
-  ref: true,
-  template: iconTemplate,
-  svgProps: {
-    width: '1.5em',
-    height: '1.5em',
-    color: 'currentColor',
-  },
-  jsx: {
-    babelConfig: {
-      plugins: [
-        [
-          '@svgr/babel-plugin-remove-jsx-attribute',
-          {
-            elements: ['path'],
-            attributes: ['strokeWidth'],
-          },
-          'remove-stroke-width',
-        ],
-      ],
-    },
-  },
-};
+const outDir = 'dist';
 
-const nativeSvgrOptions = {
-  ...svgrOptions,
-  native: true,
-  jsx: {
-    babelConfig: {
-      plugins: [
-        ...svgrOptions.jsx.babelConfig.plugins,
-        [
-          '@svgr/babel-plugin-remove-jsx-attribute',
-          {
-            elements: ['Svg'],
-            attributes: ['xmlns'],
-          },
-        ],
-      ],
-    },
+const jsTargets = [
+  {
+    format: 'cjs',
+    module: 'commonjs',
+    dir: '.',
+    ext: 'js',
+    dtsExt: 'd.ts',
   },
-};
-
-const iconDts = [
-  'import { Ref, forwardRef, SVGProps } from "react";',
-  'type IconComponent = forwardRef<Ref<SVGSVGElement>, SVGProps<SVGSVGElement>>;',
+  {
+    format: 'esm',
+    module: 'esnext',
+    dir: 'esm',
+    ext: 'mjs',
+    dtsExt: 'd.mts',
+  },
 ];
 
-const nativeIconDts = [
-  'import { Ref, forwardRef } from "react";',
-  'import Svg, { SvgProps } from "react-native-svg";',
-  'type IconComponent = forwardRef<Ref<Svg>, SvgProps>;',
-];
+/** @type {import('esbuild').TransformOptions} */
+const defaultEsbuildOptions = { target: 'es6', minify: true };
+
+/** @type {import('typescript').CompilerOptions} */
+const defaultTsOptions = {
+  jsx: 'react',
+  declaration: true,
+  emitDeclarationOnly: true,
+  target: 'es6',
+  strict: true,
+  esModuleInterop: true,
+  skipLibCheck: true,
+};
 
 export default async (ctx, target) => {
+  const localJsTargets = jsTargets.map((jsTarget) => ({
+    ...jsTarget,
+    iconTemplate: getIconTemplate(target.native, jsTarget.ext),
+  }));
+
   const promises = [];
 
-  const outDir = path.join(target.path, 'src');
+  const outPath = path.join(target.path, outDir);
 
-  const mainIndexContent = [`"use client";`, genIconoirContextExport()];
-  const mainIndexDtsContent = [
-    ...(target.native ? nativeIconDts : iconDts),
-    genIconoirContextExport(),
-  ];
-  const mainIndexDtsExports = [];
+  // Preparation
+  // (needs to run in a separate loop, otherwise leads to uncaught exceptions in case of errors in main loop)
+  for (const jsTarget of localJsTargets) {
+    jsTarget.path = path.join(outPath, jsTarget.dir);
 
-  for (const [variant, icons] of Object.entries(ctx.icons)) {
-    const variantOutDir = path.join(outDir, variant);
-    await fs.mkdir(variantOutDir, { recursive: true });
+    await fs.mkdir(jsTarget.path, { recursive: true });
 
-    const variantIndexContent = [
-      `"use client";`,
-      genIconoirContextExport('..'),
-    ];
-    const variantIndexDtsContent = [
-      ...(target.native ? nativeIconDts : iconDts),
-      genIconoirContextExport('..'),
-    ];
+    const iconoirContext = iconoirContextTemplate(target.native);
 
-    const generateIconFile = async (src, componentName, jsxFileName) => {
-      const iconContent = await fs.readFile(src, 'utf8');
+    jsTarget.iconoirContextPath = path.join(
+      jsTarget.path,
+      `IconoirContext.${jsTarget.ext}`,
+    );
 
-      const componentContent = await transform(
-        iconContent,
-        target.native ? nativeSvgrOptions : svgrOptions,
-        {
-          componentName,
-        },
-      );
+    await generateJs(
+      jsTarget.iconoirContextPath,
+      iconoirContext,
+      jsTarget.format,
+    );
 
-      const jsxPath = path.join(variantOutDir, jsxFileName);
+    const iconoirContextTsxPath = path.join(
+      jsTarget.path,
+      'IconoirContext.tsx',
+    );
+    const iconoirContextDtsPath = path.join(
+      jsTarget.path,
+      `IconoirContext.${jsTarget.dtsExt}`,
+    );
 
-      return fs.writeFile(jsxPath, componentContent);
-    };
+    await generateDts(
+      iconoirContextTsxPath,
+      iconoirContextDtsPath,
+      iconoirContext,
+      jsTarget.module,
+    );
 
-    for (const icon of icons) {
-      const jsxFileName = `${icon.pascalName}.jsx`;
+    for (const variant of Object.keys(ctx.icons)) {
+      jsTarget.path = path.join(outPath, jsTarget.dir);
 
-      promises.push(generateIconFile(icon.path, icon.pascalName, jsxFileName));
-
-      const mainIndexComponentName =
-        variant === ctx.global.defaultVariant
-          ? icon.pascalName
-          : icon.pascalNameVariant;
-
-      mainIndexContent.push(
-        generateExport(
-          `default as ${mainIndexComponentName}`,
-          `./${variant}/${jsxFileName}`,
-        ),
-      );
-
-      mainIndexDtsContent.push(
-        `declare const ${mainIndexComponentName}: IconComponent;`,
-      );
-
-      mainIndexDtsExports.push(mainIndexComponentName);
-
-      variantIndexContent.push(
-        generateExport(`default as ${icon.pascalName}`, `./${jsxFileName}`),
-      );
-
-      variantIndexDtsContent.push(
-        `declare const ${icon.pascalName}: IconComponent;`,
-      );
+      await fs.mkdir(path.join(jsTarget.path, variant), { recursive: true });
     }
-
-    variantIndexDtsContent.push(
-      generateExport(icons.map((icon) => icon.pascalName)),
-    );
-
-    promises.push(
-      fs.writeFile(path.join(variantOutDir, 'index.js'), variantIndexContent),
-      fs.writeFile(
-        path.join(variantOutDir, 'index.d.ts'),
-        variantIndexDtsContent,
-      ),
-    );
   }
 
-  mainIndexDtsContent.push(generateExport(mainIndexDtsExports));
+  for (const jsTarget of localJsTargets) {
+    const mainIndex = prepareIndex(jsTarget);
 
-  promises.push(
-    fs.writeFile(path.join(outDir, 'index.js'), mainIndexContent),
-    fs.writeFile(path.join(outDir, 'index.d.ts'), mainIndexDtsContent),
-  );
+    for (const [variant, icons] of Object.entries(ctx.icons)) {
+      const variantIndex = prepareIndex(jsTarget, variant);
+
+      for (const icon of icons) {
+        const mainIndexComponentName =
+          variant === ctx.global.defaultVariant
+            ? icon.pascalName
+            : icon.pascalNameVariant;
+
+        const jsPath = path.join(
+          jsTarget.path,
+          variant,
+          `${icon.pascalName}.${jsTarget.ext}`,
+        );
+
+        mainIndex.add(mainIndexComponentName, jsPath);
+        variantIndex.add(icon.pascalName, jsPath);
+
+        const reactComponent = getReactComponent(
+          icon.path,
+          target.native,
+          jsTarget.iconTemplate,
+        );
+
+        // Only run for first icon, type is same and can be reused for all the others
+        if (!jsTarget.iconDts) {
+          jsTarget.iconDts = true;
+
+          // Virtual input path
+          const tsxPath = path.join(jsTarget.path, variant, 'icon.tsx');
+
+          const dtsPath = path.join(jsTarget.path, `icon.${jsTarget.dtsExt}`);
+
+          const iconDts = generateDts(
+            tsxPath,
+            dtsPath,
+            reactComponent,
+            jsTarget.module,
+          );
+
+          promises.push(iconDts);
+        }
+
+        const iconJs = generateJs(jsPath, reactComponent, jsTarget.format);
+
+        promises.push(iconJs);
+      }
+
+      promises.push(variantIndex.generate());
+    }
+
+    promises.push(mainIndex.generate());
+  }
 
   return Promise.all(promises);
 };
 
-function genIconoirContextExport(path = '.') {
-  return generateExport(
-    ['IconoirProvider', 'IconoirContext', 'IconoirContextValue'],
-    `${path}/IconoirContext`,
+async function getReactComponent(iconPath, native, template) {
+  const iconContent = await fs.readFile(iconPath, 'utf8');
+
+  const options = native ? nativeSvgrOptions : svgrOptions;
+  options.template = template;
+
+  return svgr.transform(iconContent, options);
+}
+
+async function generateDts(inputPath, outputPath, input, module) {
+  const dts = getDts(inputPath, await input, {
+    ...defaultTsOptions,
+    module,
+  });
+
+  return fs.writeFile(outputPath, dts);
+}
+
+async function generateJs(outputPath, input, format) {
+  const { code } = await esbuild.transform(await input, {
+    ...defaultEsbuildOptions,
+    loader: 'tsx',
+    format,
+  });
+
+  return fs.writeFile(outputPath, code);
+}
+
+function prepareIndex(jsTarget, variant) {
+  const outputPath = path.join(jsTarget.path, variant ?? '');
+
+  const iconoirContextPath = toImportPath(
+    path.relative(outputPath, jsTarget.iconoirContextPath),
   );
+
+  const iconoirContext = generateExport(
+    iconoirContextExports,
+    iconoirContextPath,
+  );
+
+  const content = [iconoirContext];
+
+  const iconJsPath = toImportPath(
+    path.relative(outputPath, path.join(jsTarget.path, `icon.${jsTarget.ext}`)),
+  );
+
+  const iconDtsImport = generateImport('Icon', iconJsPath);
+
+  const dtsContent = [iconoirContext, iconDtsImport, 'type I = typeof Icon;'];
+
+  function add(name, iconPath) {
+    const iconImportPath = toImportPath(path.relative(outputPath, iconPath));
+
+    content.push(generateExport(`default as ${name}`, iconImportPath));
+
+    dtsContent.push(`export declare const ${name}: I;`);
+  }
+
+  function generate() {
+    const indexJs = generateIndexJs(
+      outputPath,
+      content,
+      jsTarget.format,
+      jsTarget.ext,
+    );
+
+    const indexDts = generateIndexDts(outputPath, dtsContent, jsTarget.dtsExt);
+
+    return Promise.all([indexJs, indexDts]);
+  }
+
+  return { add, generate };
+}
+
+async function generateIndexJs(outputDir, content, format, ext) {
+  const { code } = await esbuild.transform(content.join(''), {
+    minify: true,
+    format,
+  });
+
+  return fs.writeFile(path.join(outputDir, `index.${ext}`), code);
+}
+
+async function generateIndexDts(outputDir, content, dtsExt) {
+  return fs.writeFile(path.join(outputDir, `index.${dtsExt}`), content);
 }
