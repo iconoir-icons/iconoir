@@ -1,11 +1,11 @@
 {
-  "name": "vue",
+  "name": "example-vue",
   "private": true,
   "scripts": {
-    "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
     "build-only": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
