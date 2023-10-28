@@ -113,6 +113,11 @@ export function getDocumentationStructure(): DocumentationItem[] {
           filepath: 'CONTRIBUTING.md',
           title: 'How to contribute',
         },
+        {
+          path: 'naming-conventions',
+          filepath: 'NAMING_CONVENTIONS.md',
+          title: 'Naming Conventions',
+        },
       ],
     },
     {
