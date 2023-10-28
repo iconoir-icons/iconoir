@@ -17,9 +17,11 @@ export function DocumentationNavigation({
   const router = useRouter();
   const activePath = router.asPath.replace('/docs/', '');
   const [expandedTitles, setExpandedTitles] = React.useState<string[]>([]);
+
   React.useEffect(() => {
     const expandedItems = documentationItems.filter((item) => {
       const normalized = activePath.replace((pathPrefix || []).join('/'), '');
+
       return (
         normalized === item.path ||
         item.children?.some((child) => {
@@ -31,20 +33,24 @@ export function DocumentationNavigation({
     });
     setExpandedTitles(expandedItems.map((item) => item.title));
   }, [activePath, pathPrefix, documentationItems]);
+
   return (
     <>
       {documentationItems.map((documentationItem) => {
         const path = [...(pathPrefix || []), documentationItem.path]
           .filter(Boolean)
           .join('/');
+
         if (documentationItem.children?.length) {
           const active = expandedTitles.includes(documentationItem.title);
+
           return (
             <React.Fragment key={documentationItem.title}>
               <HeaderItem
                 onClick={() => {
                   setExpandedTitles((et) => {
                     const includes = et.includes(documentationItem.title);
+
                     return includes
                       ? et.filter((i) => i !== documentationItem.title)
                       : [...et, documentationItem.title];

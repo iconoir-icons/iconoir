@@ -10,6 +10,7 @@ import { Text14 } from './Typography';
 
 export function AvailableFor() {
   const { ref, width } = useResizeObserver();
+
   return (
     <>
       <MobileHeader>Available For</MobileHeader>

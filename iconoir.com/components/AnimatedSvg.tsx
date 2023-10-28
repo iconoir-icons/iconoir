@@ -19,6 +19,7 @@ function playWithLines1(setInstances: SetInstances): anime.AnimeInstance[] {
     }),
   ];
 }
+
 function playWithLines2(setInstances: SetInstances): anime.AnimeInstance[] {
   return [
     anime({
@@ -34,6 +35,7 @@ function playWithLines2(setInstances: SetInstances): anime.AnimeInstance[] {
     }),
   ];
 }
+
 function playWithLines3(setInstances: SetInstances): anime.AnimeInstance[] {
   return [
     anime({
@@ -58,6 +60,7 @@ function playWithLines3(setInstances: SetInstances): anime.AnimeInstance[] {
     }),
   ];
 }
+
 function playWithLines4(setInstances: SetInstances): anime.AnimeInstance[] {
   return [
     anime({
@@ -76,16 +79,19 @@ function playWithLines4(setInstances: SetInstances): anime.AnimeInstance[] {
 
 export function AnimatedSvg() {
   const instancesRef = React.useRef<anime.AnimeInstance[] | null>(null);
+
   React.useEffect(() => {
     instancesRef.current = playWithLines1((instances) => {
       instancesRef.current = instances;
     });
+
     return () => {
       for (const instance of instancesRef.current || []) {
         instance.pause();
       }
     };
   }, []);
+
   return (
     <svg
       className="playWithLines2"

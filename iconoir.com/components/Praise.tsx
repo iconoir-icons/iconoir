@@ -4,9 +4,11 @@ import { PraiseItem } from './PraiseItem';
 import { media } from '../lib/responsive';
 
 const NUM_PRAISE_ITEMS = 3;
+
 export function Praise() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const indicatorContainerRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
     if (containerRef.current) {
       const handle = () => {
@@ -19,12 +21,14 @@ export function Praise() {
             containerRef.current.scrollWidth - window.innerWidth - 100
               ? indicatorContainerRef.current.children.length - 1
               : Math.round(currentScrollLeft / interval);
+
           for (
             let i = 0;
             i < indicatorContainerRef.current.children.length;
             i++
           ) {
             const child = indicatorContainerRef.current.children[i];
+
             if (currentIndex === i) {
               child.classList.add('active');
             } else {
@@ -33,13 +37,16 @@ export function Praise() {
           }
         }
       };
+
       const element = containerRef.current;
       element.addEventListener('scroll', handle);
+
       return () => {
         element.removeEventListener('scroll', handle);
       };
     }
   }, []);
+
   return (
     <>
       <Container ref={containerRef}>

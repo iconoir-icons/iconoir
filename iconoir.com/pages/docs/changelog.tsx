@@ -62,6 +62,7 @@ export async function getStaticProps() {
     ...REPO,
   });
   const entries: ChangelogEntryProps[] = [];
+
   for (const release of releases) {
     entries.push({
       name: release.name || release.tag_name,
@@ -76,7 +77,9 @@ export async function getStaticProps() {
       }),
     });
   }
+
   const items = getDocumentationStructure();
+
   return {
     props: {
       entries,

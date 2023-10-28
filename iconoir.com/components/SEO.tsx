@@ -7,6 +7,7 @@ export interface SEOProps {
 }
 export function SEO({ title }: SEOProps) {
   const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
+
   return (
     <Head>
       <title>{pageTitle}</title>

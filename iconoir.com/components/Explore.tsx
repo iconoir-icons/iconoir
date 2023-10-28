@@ -15,6 +15,7 @@ export interface ExploreProps {
 export function Explore({ allIcons }: ExploreProps) {
   const [filters, setFilters] = React.useState<IconListFilters>({});
   const [customizations, setCustomizations] = useCustomizationPersistence();
+
   return (
     <Container>
       <Left>

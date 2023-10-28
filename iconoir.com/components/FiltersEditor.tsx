@@ -14,12 +14,15 @@ export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
   // Keep track if the user hits tab before scrolling, so we can scroll the search
   // field to the top of the page automatically.
   const didScrollRef = React.useRef(false);
+
   React.useEffect(() => {
     const scrollEvent = () => {
       didScrollRef.current = true;
       window.removeEventListener('scroll', scrollEvent);
     };
+
     window.addEventListener('scroll', scrollEvent);
+
     return () => {
       window.removeEventListener('scroll', scrollEvent);
     };
