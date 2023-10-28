@@ -26,7 +26,7 @@ export function SEO({ title }: SEOProps) {
       <meta property="og:url" content="https://iconoir.com" />
       <meta
         property="og:image"
-        content="https://iconoir.com/iconoir-brand-03.png"
+        content="https://iconoir.com/iconoir-brand.png"
       />
       <meta
         property="og:description"
@@ -42,11 +42,11 @@ export function SEO({ title }: SEOProps) {
       <meta name="twitter:url" content="https://iconoir.com" />
       <meta
         name="twitter:image"
-        content="https://iconoir.com/iconoir-brand-03.png"
+        content="https://iconoir.com/iconoir-brand.png"
       />
       <meta
         name="twitter:image:secure_url"
-        content="https://iconoir.com/iconoir-brand-03.png"
+        content="https://iconoir.com/iconoir-brand.png"
       />
       <meta
         name="twitter:image:alt"
