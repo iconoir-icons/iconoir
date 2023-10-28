@@ -1,4 +1,4 @@
-import { Cancel, Heart, Menu } from 'iconoir-react';
+import { Xmark, Heart, Menu } from 'iconoir-react';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
@@ -52,7 +52,7 @@ export function Header({ currentVersion }: HeaderProps) {
           </a>{' '}
         </BuiltWith>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
-          {menuVisible ? <Cancel /> : <Menu />}
+          {menuVisible ? <Xmark /> : <Menu />}
         </MobileMenuButton>
       </HeaderRight>
     </Container>
