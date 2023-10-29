@@ -191,6 +191,7 @@ const Share = styled(Text15)<{ $isMobile?: boolean }>`
     ${media.lg} {
       display: ${(props) => (props.$isMobile ? 'none' : 'block')};
     }
+    color: var(--black-60);
     white-space: pre-wrap;
     a {
       display: inline-flex;
@@ -200,7 +201,7 @@ const Share = styled(Text15)<{ $isMobile?: boolean }>`
     }
     svg,
     span {
-      color: var(--g0);
+      color: var(--black);
     }
     a:hover {
       text-decoration: underline;
