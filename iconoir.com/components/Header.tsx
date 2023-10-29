@@ -43,10 +43,18 @@ export function Header({ currentVersion }: HeaderProps) {
               href={SHARE_LINK}
               target={'_blank'}
               rel={'noreferrer'}
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: 'unset', color: 'unset' }}
             >
-              Share with <Heart width={'1em'} height={'1em'} /> on{' '}
-              <span style={{ textDecoration: 'underline' }}>X</span>
+              Share with
+              <Heart
+                width={'1em'}
+                height={'1em'}
+                style={{ verticalAlign: 'sub' }}
+              />
+              on{' '}
+              <span style={{ textDecoration: 'underline', color: 'var(--g0)' }}>
+                X
+              </span>
             </a>
           </BuiltWith>
         </MobileMenuContainer>
@@ -57,10 +65,18 @@ export function Header({ currentVersion }: HeaderProps) {
             href={SHARE_LINK}
             target={'_blank'}
             rel={'noreferrer'}
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: 'unset', color: 'unset' }}
           >
-            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
-            <span style={{ textDecoration: 'underline' }}>X</span>
+            Share with
+            <Heart
+              width={'1em'}
+              height={'1em'}
+              style={{ verticalAlign: 'sub' }}
+            />
+            on{' '}
+            <span style={{ textDecoration: 'underline', color: 'var(--g0)' }}>
+              X
+            </span>
           </a>
         </BuiltWith>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
