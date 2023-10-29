@@ -89,7 +89,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "6.11.0"
+    version: "7.0.0"
   lints:
     dependency: transitive
     description:
