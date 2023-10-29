@@ -1,3 +1,5 @@
+# Naming Convention
+
 ## Hierarchy
 
 The foundation of the naming conventions in Iconoir is:
@@ -19,6 +21,14 @@ If a shape is directly part of an object, it's not considered a container.
 `user-minus` and `minus-square`. The second one looks different 
 because in this case the minus symbol is an [Object], followed 
 by the [Container].
+
+## Styles
+
+An optional rule is regarding icons style. Iconoir is actually offering Regular and Solid icons. With the latter, icons names end with `-solid`. An example here:
+```txt
+[Regular] check-circle
+[Solid] check-circle-solid
+```
 
 ## Object-oriented naming
 
