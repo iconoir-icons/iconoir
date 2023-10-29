@@ -18,9 +18,9 @@
 
 ### Vue 3
 
-```vue
+```js
 <script setup>
-import { Iconoir } from '@iconoir/vue';
+  import { Iconoir } from '@iconoir/vue';
 </script>
 
 <template>
@@ -30,15 +30,15 @@ import { Iconoir } from '@iconoir/vue';
 
 ### Vue 2
 
-```vue
+```js
 <script>
-import { Iconoir } from '@iconoir/vue';
+  import { Iconoir } from '@iconoir/vue';
 
-export default
-    components: {
-        Iconoir
-    }
-}
+  export default
+      components: {
+          Iconoir
+      }
+  }
 </script>
 
 <template>
@@ -67,7 +67,7 @@ Default values for the most common props are given below:
 
 Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider.
 
-```vue
+```js
 <script setup>
 import { IconoirProvider, Check } from '@iconoir/vue';
 </script>
@@ -75,10 +75,10 @@ import { IconoirProvider, Check } from '@iconoir/vue';
 <template>
   <IconoirProvider
     :icon-props="{
-      color: '#AAAAAA',
+      'color': '#AAAAAA',
       'stroke-width': 1,
-      width: '1em',
-      height: '1em',
+      'width': '1em',
+      'height': '1em',
     }"
   >
     <SomeOtherContainer>
