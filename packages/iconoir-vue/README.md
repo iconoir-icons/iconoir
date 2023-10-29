@@ -90,6 +90,6 @@ import { IconoirProvider, Check } from '@iconoir/vue';
 
 ## Icon names
 
-The Vue components are named as PascalCase variations of their reference names (i.e. `add-circle-outline` becomes `AddCircleOutline`).
+The Vue components are named as PascalCase variations of their reference names (i.e. `airplane-helix-45deg` becomes `AirplaneHelix45deg`).
 
 <SuggestLibrary />
