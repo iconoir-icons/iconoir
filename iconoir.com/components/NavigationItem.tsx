@@ -7,10 +7,16 @@ import { Text15 } from './Typography';
 
 export interface NavigationItemProps {
   href: string;
+  activeMatch?: string;
   children: React.ReactElement | string;
   style?: any;
 }
-export function NavigationItem({ href, children, style }: NavigationItemProps) {
+export function NavigationItem({
+  href,
+  activeMatch,
+  children,
+  style,
+}: NavigationItemProps) {
   const router = useRouter();
 
   return (
@@ -20,7 +26,9 @@ export function NavigationItem({ href, children, style }: NavigationItemProps) {
         style={style}
         $text={children.toString()}
         $isActive={
-          href.slice(1)
+          activeMatch
+            ? router.asPath.startsWith(activeMatch)
+            : href.slice(1)
             ? router.asPath.slice(1).startsWith(href.slice(1))
             : router.asPath === href
         }

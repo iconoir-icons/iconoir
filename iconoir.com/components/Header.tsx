@@ -32,7 +32,9 @@ export function Header({ currentVersion }: HeaderProps) {
       <HeaderCenter>
         <MobileMenuContainer $visible={menuVisible}>
           <NavigationItem href={'/'}>Icons</NavigationItem>
-          <NavigationItem href={'/docs'}>Documentation</NavigationItem>
+          <NavigationItem href={'/docs/introduction'} activeMatch={'/docs'}>
+            Documentation
+          </NavigationItem>
           <NavigationItem href={'/support'} style={{ marginRight: 0 }}>
             Donate &mdash; Our Mission
           </NavigationItem>
