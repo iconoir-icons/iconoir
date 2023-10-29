@@ -68,5 +68,3 @@ return (
 ## Icon names
 
 The React components are named as PascalCase variations of their reference names (i.e. `airplane-helix-45deg` becomes `AirplaneHelix45deg`).
-
-<SuggestLibrary />

@@ -18,6 +18,7 @@ import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { media } from '../../lib/responsive';
 import { SEO } from '../../components/SEO';
 import { getHeaderProps } from '../../lib/getHeaderProps';
+import { SuggestLibrary } from '@/components/SuggestLibrary';
 
 interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;
@@ -45,10 +46,10 @@ export default function DocumentationPage({
           <ContentContainer>
             <InnerContentContainer>
               <MDXRemote {...source} />
-              {navigationItem.noReadOnGitHub ||
-              !navigationItem.filepath ? null : (
+              {!navigationItem.noReadOnGitHub && navigationItem.filepath && (
                 <ReadOnGitHub path={navigationItem.filepath} />
               )}
+              {navigationItem.suggestLibrary && <SuggestLibrary />}
             </InnerContentContainer>
           </ContentContainer>
         </Container>
@@ -95,13 +96,17 @@ export const InnerContentContainer = styled.div`
   }
 `;
 
-export interface DocumentationItem {
+interface DocumentationItemProps {
+  suggestLibrary?: boolean;
+  noReadOnGitHub?: boolean;
+}
+export interface DocumentationItem extends DocumentationItemProps {
   path: string;
   filepath?: string;
+  childrenProps?: DocumentationItemProps;
   children?: DocumentationItem[];
   title: string;
   label?: string;
-  noReadOnGitHub?: boolean;
   skip?: boolean;
 }
 export function getDocumentationStructure(): DocumentationItem[] {
@@ -117,51 +122,46 @@ export function getDocumentationStructure(): DocumentationItem[] {
           title: 'How to contribute',
         },
         {
-          path: 'naming-conventions',
-          filepath: 'NAMING_CONVENTIONS.md',
-          title: 'Naming Conventions',
+          path: 'naming-convention',
+          filepath: 'NAMING_CONVENTION.md',
+          title: 'Naming Convention',
         },
       ],
     },
     {
       path: 'packages',
       title: 'Libraries',
+      childrenProps: { suggestLibrary: true, noReadOnGitHub: true },
       children: [
         {
           path: 'iconoir-react',
           filepath: 'packages/iconoir-react/README.md',
           title: 'React',
-          noReadOnGitHub: true,
         },
         {
           path: 'iconoir-react-native',
           filepath: 'packages/iconoir-react-native/README.md',
           title: 'React Native',
-          noReadOnGitHub: true,
         },
         {
           path: 'iconoir-vue',
           filepath: 'packages/iconoir-vue/README.md',
           title: 'Vue',
-          noReadOnGitHub: true,
         },
         {
           path: 'iconoir-flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
-          noReadOnGitHub: true,
         },
         {
           path: 'framer',
           filepath: 'docs/framer.md',
           title: 'Framer',
-          noReadOnGitHub: true,
         },
         {
           path: 'css',
           filepath: 'css/README.md',
           title: 'CSS',
-          noReadOnGitHub: true,
         },
       ],
     },
@@ -208,6 +208,7 @@ function structureItemsToPaths(
 function flattenItems(
   items: DocumentationItem[],
   prefix?: string[],
+  childrenProps?: DocumentationItemProps,
 ): DocumentationItem[] {
   return items.reduce<DocumentationItem[]>((acc, item) => {
     return [
@@ -215,6 +216,7 @@ function flattenItems(
       ...(item.filepath
         ? [
             {
+              ...childrenProps,
               ...item,
               path: [...(prefix || []), item.path].filter(Boolean).join('/'),
             },
@@ -224,6 +226,7 @@ function flattenItems(
         ? flattenItems(
             item.children,
             [...(prefix || []), item.path].filter(Boolean),
+            item.childrenProps,
           )
         : []),
     ];
@@ -235,6 +238,8 @@ function itemFromSlug(
   slug: string[],
 ): DocumentationItem {
   const flatItems = flattenItems(items);
+
+  console.log(flatItems);
   const joinedSlug = slug.filter(Boolean).join('/');
   const item = flatItems.find((flatItem) => flatItem.path === joinedSlug);
   if (!item)
@@ -260,6 +265,8 @@ function cleanSource(source: string): string {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const items = getDocumentationStructure();
+  console.log(items);
+
   const navigationItem = itemFromSlug(items, context.params!.slug as string[]);
   const repositoryRoot = path.join(process.cwd(), '..');
   const filepath = path.join(repositoryRoot, navigationItem.filepath!);

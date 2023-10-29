@@ -136,7 +136,7 @@ const HeaderItem = styled.div`
   }
 `;
 const NavigationItem = styled.div<{ $active?: boolean }>`
-  padding: 12px 45px 12px 75px;
+  padding: 12px 12px 12px 75px;
   transition:
     background 0.1s linear,
     color 0.1s linear;
@@ -163,7 +163,7 @@ const NavigationItem = styled.div<{ $active?: boolean }>`
     font-weight: 700;
   }
   ${media.lg} {
-    padding: 12px 45px 12px 65px;
+    padding: 12px 12px 12px 65px;
   }
 `;
 const NavigationItemLabel = styled.span`

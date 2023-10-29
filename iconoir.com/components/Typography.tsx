@@ -47,6 +47,12 @@ export const Heading2 = styled.h2`
   font-weight: 700;
 `;
 
+export const InlineCode = styled.span`
+  background: var(--g6);
+  border-radius: 6px;
+  padding: 4px;
+`;
+
 export const Code = styled.div`
   background: var(--g7);
   border: solid 1px var(--g6);
@@ -110,6 +116,14 @@ export const Body = styled.p`
   line-height: 30px;
   margin: 24px 0;
 `;
+
+export const Li = styled.li`
+  font-size: 18px;
+  color: var(--g1);
+  line-height: 30px;
+  margin: 4px 0;
+`;
+
 export const CodeElement = styled.code`
   &&& {
     display: inline-block;

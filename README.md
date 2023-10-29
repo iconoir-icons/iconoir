@@ -121,4 +121,4 @@ struct ContentView: View {
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT](./LICENSE)
