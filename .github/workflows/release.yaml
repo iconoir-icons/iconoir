@@ -40,7 +40,7 @@ jobs:
           TAG_NAME: ${{ github.ref_name }}
 
       - name: Commit release
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Release Version ${{ github.ref_name }}
           branch: main
@@ -55,7 +55,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-        continue-on-error: true
 
       - name: Publish Flutter
         uses: k-paxian/dart-package-publisher@v1.6
