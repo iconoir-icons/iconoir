@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch: {}
 
 jobs:
   release:
@@ -25,38 +24,38 @@ jobs:
         with:
           node-registry: https://registry.npmjs.org
 
-      # - name: Generate changelog file
-      #   uses: rhysd/changelog-from-release/action@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     file: packages/iconoir-flutter/CHANGELOG.md
-      #     commit: false
-      #     args: -d=false
+      - name: Generate changelog file
+        uses: rhysd/changelog-from-release/action@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          file: packages/iconoir-flutter/CHANGELOG.md
+          commit: false
+          args: -d=false
 
       - name: Build
         run: pnpm run build
 
-      # - name: Prepare packages
-      #   run: pnpm run prepublish-all
-      #   env:
-      #     TAG_NAME: ${{ github.ref_name }}
+      - name: Prepare packages
+        run: pnpm run prepublish-all
+        env:
+          TAG_NAME: ${{ github.ref_name }}
 
-      # - name: Commit release
-      #   uses: stefanzweifel/git-auto-commit-action@v5
-      #   with:
-      #     commit_message: Release Version ${{ github.ref_name }}
-      #     branch: main
+      - name: Commit release
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Release Version ${{ github.ref_name }}
+          branch: main
 
-      # - name: Update tag
-      #   run: |
-      #     git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
-      #     git push -f origin ${{ github.ref_name }}
+      - name: Update tag
+        run: |
+          git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
+          git push -f origin ${{ github.ref_name }}
 
-      # - name: Publish packages
-      #   run: pnpm -r publish --access public
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #     NPM_CONFIG_PROVENANCE: true
+      - name: Publish packages
+        run: pnpm -r publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Publish Flutter
         uses: k-paxian/dart-package-publisher@v1.6
@@ -64,13 +63,13 @@ jobs:
           credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
           relativePath: ./packages/iconoir-flutter
 
-      # - name: Trigger Website Workflow
-      #   uses: actions/github-script@v6
-      #   with:
-      #     script: |
-      #       github.rest.actions.createWorkflowDispatch({
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         workflow_id: 'website.yaml',
-      #         ref: 'main',
-      #       })
+      - name: Trigger Website Workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'website.yaml',
+              ref: 'main',
+            })
