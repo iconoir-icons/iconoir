@@ -39,18 +39,28 @@ export function Header({ currentVersion }: HeaderProps) {
             Donate &mdash; Our Mission
           </NavigationItem>
           <BuiltWith $isMobile>
-            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
-            <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
-              X
+            <a
+              href={SHARE_LINK}
+              target={'_blank'}
+              rel={'noreferrer'}
+              style={{ textDecoration: 'none' }}
+            >
+              Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+              <span style={{ textDecoration: 'underline' }}>X</span>
             </a>
           </BuiltWith>
         </MobileMenuContainer>
       </HeaderCenter>
       <HeaderRight>
         <BuiltWith>
-          Share with <Heart width={'1em'} height={'1em'} /> on{' '}
-          <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
-            X
+          <a
+            href={SHARE_LINK}
+            target={'_blank'}
+            rel={'noreferrer'}
+            style={{ textDecoration: 'none' }}
+          >
+            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+            <span style={{ textDecoration: 'underline' }}>X</span>
           </a>
         </BuiltWith>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
