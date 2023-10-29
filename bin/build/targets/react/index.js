@@ -50,7 +50,6 @@ const defaultTsOptions = {
 export default async (ctx, target) => {
   const localJsTargets = jsTargets.map((jsTarget) => ({
     ...jsTarget,
-    iconTemplate: getIconTemplate(target.native, jsTarget.ext),
   }));
 
   const promises = [];
@@ -120,6 +119,18 @@ export default async (ctx, target) => {
 
         mainIndex.add(mainIndexComponentName, jsPath);
         variantIndex.add(icon.pascalName, jsPath);
+
+        if (!jsTarget.iconTemplate) {
+          jsTarget.iconTemplate = getIconTemplate(
+            target.native,
+            toImportPath(
+              path.relative(
+                path.join(jsTarget.path, variant),
+                jsTarget.iconoirContextPath,
+              ),
+            ),
+          );
+        }
 
         const reactComponent = getReactComponent(
           icon.path,

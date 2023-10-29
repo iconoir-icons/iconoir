@@ -1,6 +1,6 @@
 import { generateImport } from '../../../lib/import-export.js';
 
-export function getTemplate(native, ext) {
+export function getTemplate(native, iconoirContextPath) {
   return (variables, { tpl }) => {
     variables.props[0].name = 'passedProps';
 
@@ -13,7 +13,7 @@ export function getTemplate(native, ext) {
     const useClientDirective = native ? '' : '"use client";';
     const iconoirContextImport = generateImport(
       ['IconoirContext'],
-      `../IconoirContext.${ext}`,
+      iconoirContextPath,
     );
 
     return tpl`
