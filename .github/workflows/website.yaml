@@ -32,10 +32,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Export website
-        run: ./node_modules/.bin/next export
-        working-directory: iconoir.com
-
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
 
