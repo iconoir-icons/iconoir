@@ -12,11 +12,11 @@
     "@expo/webpack-config": "^19.0.0",
     "expo": "~49.0.15",
     "expo-status-bar": "~1.6.0",
-    "iconoir-react-native": "^6.11.0",
+    "iconoir-react-native": "^7.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.6",
-    "react-native-svg": "^12.5.1",
+    "react-native-svg": "^13.9.0",
     "react-native-web": "~0.19.6"
   },
   "devDependencies": {

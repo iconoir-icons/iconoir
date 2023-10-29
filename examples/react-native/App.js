@@ -1,9 +1,4 @@
-import {
-  Check,
-  Iconoir,
-  IconoirProvider,
-  Medal1st,
-} from 'iconoir-react-native';
+import { Check, Iconoir, IconoirProvider } from 'iconoir-react-native';
 import { View } from 'react-native';
 
 export default function App() {
