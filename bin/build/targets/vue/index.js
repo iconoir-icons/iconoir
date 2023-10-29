@@ -1,7 +1,10 @@
+import vue from '@vitejs/plugin-vue';
 import { fromHtml } from 'hast-util-from-html';
 import { toHtml } from 'hast-util-to-html';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { build } from 'vite';
+import dts from 'vite-plugin-dts';
 import { generateExport } from '../../lib/import-export.js';
 import iconTemplate from './template.js';
 
@@ -68,5 +71,31 @@ export default async (ctx, target) => {
 
   promises.push(fs.writeFile(path.join(outDir, 'index.ts'), mainIndexContent));
 
-  return Promise.all(promises);
+  await Promise.all(promises);
+
+  return build({
+    root: target.path,
+    logLevel: 'silent',
+    build: {
+      outDir: 'dist',
+      lib: {
+        entry: path.join('src', 'index.ts'),
+        fileName: (format, name) =>
+          format === 'cjs' ? `${name}.js` : `esm/${name}.mjs`,
+        formats: ['cjs', 'es'],
+      },
+      rollupOptions: {
+        external: ['vue-demi', 'vue'],
+      },
+    },
+    optimizeDeps: {
+      exclude: ['vue-demi'],
+    },
+    plugins: [
+      vue({
+        isProduction: true,
+      }),
+      dts(),
+    ],
+  });
 };

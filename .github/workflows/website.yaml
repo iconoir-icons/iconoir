@@ -24,10 +24,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run build
-
-      - name: Build packages
-        run: pnpm run dist
+        run: pnpm run build react
 
       - name: Build website
         run: ./node_modules/.bin/next build

@@ -20,6 +20,9 @@ importers:
       '@svgr/plugin-jsx':
         specifier: ^8.1.0
         version: 8.1.0(@svgr/core@8.1.0)
+      '@vitejs/plugin-vue':
+        specifier: ^4.4.0
+        version: 4.4.0(vite@4.5.0)(vue@3.3.7)
       esbuild:
         specifier: ^0.19.5
         version: 0.19.5
@@ -53,6 +56,12 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+      vite:
+        specifier: ^4.5.0
+        version: 4.5.0(terser@5.22.0)
+      vite-plugin-dts:
+        specifier: ^3.6.2
+        version: 3.6.2(typescript@5.2.2)(vite@4.5.0)
 
   examples/next:
     dependencies:
@@ -254,23 +263,11 @@ importers:
         version: 1.7.2(vue@3.3.7)
       vue-demi:
         specifier: ^0.14.6
-        version: 0.14.6(@vue/composition-api@1.7.2)(vue@3.3.7)
+        version: 0.14.6(vue@3.3.7)
     devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.4.0
-        version: 4.4.0(vite@4.5.0)(vue@3.3.7)
-      terser:
-        specifier: ^5.22.0
-        version: 5.22.0
-      vite:
-        specifier: ^4.5.0
-        version: 4.5.0(terser@5.22.0)
-      vite-plugin-dts:
-        specifier: ^3.6.2
-        version: 3.6.2(typescript@5.2.2)(vite@4.5.0)
       vue:
         specifier: ^3.3.7
-        version: 3.3.7(typescript@5.2.2)
+        version: 3.3.7
 
 packages:
 
@@ -3437,7 +3434,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.0(@types/node@18.18.7)
+      vite: 4.5.0(terser@5.22.0)
       vue: 3.3.7(typescript@5.2.2)
     dev: true
 
@@ -3555,7 +3552,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.3.7
       '@vue/shared': 3.3.7
-      vue: 3.3.7(typescript@5.2.2)
+      vue: 3.3.7
 
   /@vue/shared@3.3.7:
     resolution: {integrity: sha512-N/tbkINRUDExgcPTBvxNkvHGu504k8lzlNQRITVnm6YjOjwa4r0nnbd4Jb01sNpur5hAllyRJzSK5PvB9PPwRg==}
@@ -9717,7 +9714,7 @@ packages:
   /vlq@1.0.1:
     resolution: {integrity: sha512-gQpnTgkubC6hQgdIcRdYGDSDc+SaujOdyesZQMv6JlfQee/9Mp0Qhnys6WxDWvQnL5WZdT7o2Ul187aSt0Rq+w==}
 
-  /vue-demi@0.14.6(@vue/composition-api@1.7.2)(vue@3.3.7):
+  /vue-demi@0.14.6(vue@3.3.7):
     resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
     engines: {node: '>=12'}
     hasBin: true
@@ -9729,8 +9726,7 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      '@vue/composition-api': 1.7.2(vue@3.3.7)
-      vue: 3.3.7(typescript@5.2.2)
+      vue: 3.3.7
     dev: false
 
   /vue-template-compiler@2.7.15:
@@ -9751,6 +9747,20 @@ packages:
       semver: 7.5.4
       typescript: 5.2.2
     dev: true
+
+  /vue@3.3.7:
+    resolution: {integrity: sha512-YEMDia1ZTv1TeBbnu6VybatmSteGOS3A3YgfINOfraCbf85wdKHzscD6HSS/vB4GAtI7sa1XPX7HcQaJ1l24zA==}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/compiler-dom': 3.3.7
+      '@vue/compiler-sfc': 3.3.7
+      '@vue/runtime-dom': 3.3.7
+      '@vue/server-renderer': 3.3.7(vue@3.3.7)
+      '@vue/shared': 3.3.7
 
   /vue@3.3.7(typescript@5.2.2):
     resolution: {integrity: sha512-YEMDia1ZTv1TeBbnu6VybatmSteGOS3A3YgfINOfraCbf85wdKHzscD6HSS/vB4GAtI7sa1XPX7HcQaJ1l24zA==}
