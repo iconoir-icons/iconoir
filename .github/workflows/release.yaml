@@ -10,6 +10,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       id-token: write
     steps:
       - name: Checkout repository
@@ -40,7 +41,7 @@ jobs:
           TAG_NAME: ${{ github.ref_name }}
 
       - name: Commit release
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Release Version ${{ github.ref_name }}
           branch: main
