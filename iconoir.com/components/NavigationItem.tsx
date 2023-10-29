@@ -49,7 +49,7 @@ export const NavigationItemContainer = styled(Text15)<{
     line-height: 28px;
     text-decoration: none;
     white-space: nowrap;
-    padding: 25px;
+    padding: 24px;
     color: var(--black);
     text-align: center;
     width: 100%;

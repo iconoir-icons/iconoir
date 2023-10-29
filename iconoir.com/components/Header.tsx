@@ -1,13 +1,14 @@
-import { Xmark, Heart, Menu } from 'iconoir-react';
+import { Menu, Xmark } from 'iconoir-react';
+import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { SHARE_LINK } from '../lib/constants';
+import { media } from '../lib/responsive';
 import { AnimatedSvg } from './AnimatedSvg';
 import { ResetButton } from './Button';
-import { SHARE_LINK } from '../lib/constants';
 import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem } from './NavigationItem';
-import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
 
 export interface HeaderProps {
@@ -38,47 +39,21 @@ export function Header({ currentVersion }: HeaderProps) {
           <NavigationItem href={'/support'} style={{ marginRight: 0 }}>
             Donate &mdash; Our Mission
           </NavigationItem>
-          <BuiltWith $isMobile>
-            <a
-              href={SHARE_LINK}
-              target={'_blank'}
-              rel={'noreferrer'}
-              style={{ textDecoration: 'unset', color: 'unset' }}
-            >
-              Share with
-              <Heart
-                width={'1em'}
-                height={'1em'}
-                style={{ verticalAlign: 'sub' }}
-              />
-              on{' '}
-              <span style={{ textDecoration: 'underline', color: 'var(--g0)' }}>
-                X
-              </span>
+          <Share $isMobile>
+            <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
+              Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+              <span>X (Twitter)</span>
             </a>
-          </BuiltWith>
+          </Share>
         </MobileMenuContainer>
       </HeaderCenter>
       <HeaderRight>
-        <BuiltWith>
-          <a
-            href={SHARE_LINK}
-            target={'_blank'}
-            rel={'noreferrer'}
-            style={{ textDecoration: 'unset', color: 'unset' }}
-          >
-            Share with
-            <Heart
-              width={'1em'}
-              height={'1em'}
-              style={{ verticalAlign: 'sub' }}
-            />
-            on{' '}
-            <span style={{ textDecoration: 'underline', color: 'var(--g0)' }}>
-              X
-            </span>
+        <Share>
+          <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
+            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+            <span>X (Twitter)</span>
           </a>
-        </BuiltWith>
+        </Share>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
           {menuVisible ? <Xmark /> : <Menu />}
         </MobileMenuButton>
@@ -203,35 +178,32 @@ export const LogoIcon = styled.div`
   }
 `;
 
-const BuiltWith = styled(Text15)<{ $isMobile?: boolean }>`
+const Share = styled(Text15)<{ $isMobile?: boolean }>`
   &&& {
-    display: ${(props) => (props.$isMobile ? 'flex' : 'none')};
+    display: none;
+    ${(props) =>
+      props.$isMobile &&
+      css`
+        display: flex;
+        justify-content: center;
+        padding: 12px 0;
+      `}
     ${media.lg} {
-      display: ${(props) => (props.$isMobile ? 'none' : 'flex')};
+      display: ${(props) => (props.$isMobile ? 'none' : 'block')};
     }
-    align-items: center;
-    justify-content: center;
-    color: var(--black-60);
-    border-bottom: none;
-    svg {
-      fill: var(--black);
-      margin: 0 0.22em;
-    }
-    > * {
-      margin: 0 0.22em;
-    }
+    white-space: pre-wrap;
     a {
-      color: var(--black);
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      color: unset;
+      text-decoration: unset;
     }
-    > :last-child {
-      margin-right: 0;
+    svg,
+    span {
+      color: var(--g0);
     }
-    ${media.lg} {
-      justify-content: flex-start;
-      a {
-        font-weight: normal;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   }
 `;
