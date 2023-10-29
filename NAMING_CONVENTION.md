@@ -30,8 +30,8 @@ by the _[Container]_.
 
 An optional rule is regarding icons style. Iconoir is actually offering Regular and Solid icons. With the latter, icons names end with `-solid`. An example here:
 
-- Regular\: `check-circle`
-- Solid\: `check-circle-solid`
+- Regular: `check-circle`
+- Solid: `check-circle-solid`
 
 ## Object-Oriented Naming
 

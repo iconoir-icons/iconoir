@@ -41,8 +41,8 @@ export function Header({ currentVersion }: HeaderProps) {
           <BuiltWith $isMobile>
             Share with <Heart width={'1em'} height={'1em'} /> on{' '}
             <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
-              Twitter
-            </a>{' '}
+              X
+            </a>
           </BuiltWith>
         </MobileMenuContainer>
       </HeaderCenter>
@@ -50,8 +50,8 @@ export function Header({ currentVersion }: HeaderProps) {
         <BuiltWith>
           Share with <Heart width={'1em'} height={'1em'} /> on{' '}
           <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
-            Twitter
-          </a>{' '}
+            X
+          </a>
         </BuiltWith>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
           {menuVisible ? <Xmark /> : <Menu />}
