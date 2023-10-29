@@ -34,25 +34,27 @@ export default function DocumentationPage({
   ...headerProps
 }: DocumentationPageProps) {
   return (
-    <Layout>
-      <SEO title={title} />
-      <Header {...headerProps} />
-      <Container>
-        <NavigationContainer>
-          <DocumentationNavigation {...navigationProps} />
-        </NavigationContainer>
-        <ContentContainer>
-          <InnerContentContainer>
-            <MDXRemote {...source} />
-            {navigationItem.noReadOnGitHub ||
-            !navigationItem.filepath ? null : (
-              <ReadOnGitHub path={navigationItem.filepath} />
-            )}
-          </InnerContentContainer>
-        </ContentContainer>
-      </Container>
+    <>
+      <Layout>
+        <SEO title={title} />
+        <Header {...headerProps} />
+        <Container>
+          <NavigationContainer>
+            <DocumentationNavigation {...navigationProps} />
+          </NavigationContainer>
+          <ContentContainer>
+            <InnerContentContainer>
+              <MDXRemote {...source} />
+              {navigationItem.noReadOnGitHub ||
+              !navigationItem.filepath ? null : (
+                <ReadOnGitHub path={navigationItem.filepath} />
+              )}
+            </InnerContentContainer>
+          </ContentContainer>
+        </Container>
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   );
 }
 

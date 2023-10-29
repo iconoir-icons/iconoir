@@ -19,85 +19,88 @@ interface SupportProps extends HeaderProps {}
 
 const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
-    <Layout>
-      <SEO title={'Donate - Our Mission'} />
-      <Header {...headerProps} />
-      <HeaderSecondary>
-        <SupportHead>
-          <HeroText>Our Goal</HeroText>
-          <HeroTextSecondary>
-            A free, complete, and open icon library.
-          </HeroTextSecondary>
-        </SupportHead>
-      </HeaderSecondary>
-      <PageContainer>
-        <PillarsContainer>
-          <Pillar>
-            <PillarIcon $R={'140'} $G={'26'} $B={'245'}>
-              <Flash />
-            </PillarIcon>
-            <PillarTitle>Free</PillarTitle>
-            <PillarDescription>
-              We want to give to developers and users high-quality free icons.
-              Hassle-free.
-            </PillarDescription>
-          </Pillar>
-          <Pillar>
-            <PillarIcon $R={'72'} $G={'88'} $B={'255'}>
-              <DesignNib />
-            </PillarIcon>
-            <PillarTitle>Complete</PillarTitle>
-            <PillarDescription>
-              We’re aiming at having as much unique icons as possible.
-            </PillarDescription>
-          </Pillar>
-          <Pillar>
-            <PillarIcon $R={'65'} $G={'209'} $B={'255'}>
-              <Globe />
-            </PillarIcon>
-            <PillarTitle>Ambitious</PillarTitle>
-            <PillarDescription>
-              We want to help and be part of as many projects as possible.
-            </PillarDescription>
-          </Pillar>
-        </PillarsContainer>
-        <WideSection>
-          <Heading2>Become part of the project.</Heading2>
-          <Text18>
-            If you consider this library valuable for you and your projects,
-            support Iconoir with a donation to help us sustain costs and
-            development time.
-          </Text18>
-          <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}>
-            <span>Donate</span>
-            <ArrowRight />
-          </CallToAction>
-        </WideSection>
-        <PraiseContainer>
-          <PraiseTitle>What our friends say</PraiseTitle>
-          <Praise />
-        </PraiseContainer>
-        <DonateContainer>
-          <DonateLeft>
-            <DonateHeader>Join us on Discord</DonateHeader>
+    <>
+      <Layout>
+        <SEO title={'Donate - Our Mission'} />
+        <Header {...headerProps} />
+        <HeaderSecondary>
+          <SupportHead>
+            <HeroText>Our Goal</HeroText>
+            <HeroTextSecondary>
+              A free, complete, and open icon library.
+            </HeroTextSecondary>
+          </SupportHead>
+        </HeaderSecondary>
+        <PageContainer>
+          <PillarsContainer>
+            <Pillar>
+              <PillarIcon $R={'140'} $G={'26'} $B={'245'}>
+                <Flash />
+              </PillarIcon>
+              <PillarTitle>Free</PillarTitle>
+              <PillarDescription>
+                We want to give to developers and users high-quality free icons.
+                Hassle-free.
+              </PillarDescription>
+            </Pillar>
+            <Pillar>
+              <PillarIcon $R={'72'} $G={'88'} $B={'255'}>
+                <DesignNib />
+              </PillarIcon>
+              <PillarTitle>Complete</PillarTitle>
+              <PillarDescription>
+                We’re aiming at having as much unique icons as possible.
+              </PillarDescription>
+            </Pillar>
+            <Pillar>
+              <PillarIcon $R={'65'} $G={'209'} $B={'255'}>
+                <Globe />
+              </PillarIcon>
+              <PillarTitle>Ambitious</PillarTitle>
+              <PillarDescription>
+                We want to help and be part of as many projects as possible.
+              </PillarDescription>
+            </Pillar>
+          </PillarsContainer>
+          <WideSection>
+            <Heading2>Become part of the project.</Heading2>
             <Text18>
-              Join the community and help us with your suggestions and feedback.
+              If you consider this library valuable for you and your projects,
+              support Iconoir with a donation to help us sustain costs and
+              development time.
             </Text18>
-          </DonateLeft>
-          <DonateRight>
-            <DonateButton
-              as={'a'}
-              href={DISCORD_LINK}
-              target={'_blank'}
-              rel={'noreferrer'}
-            >
-              <span>Join</span> <Discord />
-            </DonateButton>
-          </DonateRight>
-        </DonateContainer>
-      </PageContainer>
+            <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}>
+              <span>Donate</span>
+              <ArrowRight />
+            </CallToAction>
+          </WideSection>
+          <PraiseContainer>
+            <PraiseTitle>What our friends say</PraiseTitle>
+            <Praise />
+          </PraiseContainer>
+          <DonateContainer>
+            <DonateLeft>
+              <DonateHeader>Join us on Discord</DonateHeader>
+              <Text18>
+                Join the community and help us with your suggestions and
+                feedback.
+              </Text18>
+            </DonateLeft>
+            <DonateRight>
+              <DonateButton
+                as={'a'}
+                href={DISCORD_LINK}
+                target={'_blank'}
+                rel={'noreferrer'}
+              >
+                <span>Join</span> <Discord />
+              </DonateButton>
+            </DonateRight>
+          </DonateContainer>
+        </PageContainer>
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   );
 };
 
