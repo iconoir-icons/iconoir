@@ -64,7 +64,8 @@ const Home: NextPage<HomeProps> = ({
           }}
         />
         <Text15 style={{ textAlign: 'center', marginTop: '20px' }}>
-            Iconoir 7.0.0 is live now on Product Hunt. Check it out and show your support!
+          Iconoir 7.0.0 is live now on Product Hunt. Check it out and show your
+          support!
         </Text15>
 
         <StatsContainer>
