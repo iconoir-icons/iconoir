@@ -48,6 +48,25 @@ const Home: NextPage<HomeProps> = ({
           Figma resources. Available in SVG, Font, React, React Native, Flutter,
           Figma and Framer.
         </HeroDescription>
+
+        {/* Product Hunt Badge */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+  <a href="https://www.producthunt.com/posts/iconoir-7-0-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-iconoir-7-0-0" target="_blank">
+    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=423532&theme=dark" alt="Iconoir 7.0.0 - An open-source icons library with 1500+ icons and growing | Product Hunt" style={{ width: '250px', height: '54px' }} width="250" height="54" />
+  </a>
+`,
+          }}
+          style={{
+            textAlign: 'center',
+            marginTop: '40px',
+          }}
+        />
+        <Text15 style={{ textAlign: 'center', marginTop: '20px' }}>
+            Iconoir 7.0.0 is live now on Product Hunt. Check it out and show your support!
+        </Text15>
+
         <StatsContainer>
           <Stat
             value={new Intl.NumberFormat('en-US').format(allIcons.length)}
