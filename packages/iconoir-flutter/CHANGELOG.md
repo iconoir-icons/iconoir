@@ -1,3 +1,14 @@
+<a name="v7.0.1"></a>
+# [v7.0.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.1) - 09 Nov 2023
+
+## What's Changed
+* Fix CSS class names for solid icons by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/375
+
+**Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
+
+[Changes][v7.0.1]
+
+
 <a name="v7.0.0"></a>
 # [v7.0.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.0) - 29 Oct 2023
 
@@ -1394,6 +1405,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.0.1]: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
 [v7.0.0]: https://github.com/iconoir-icons/iconoir/compare/v6.11.0...v7.0.0
 [v6.11.0]: https://github.com/iconoir-icons/iconoir/compare/v6.10.0...v6.11.0
 [v6.10.0]: https://github.com/iconoir-icons/iconoir/compare/v6.9.0...v6.10.0
