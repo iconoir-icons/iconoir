@@ -36,9 +36,9 @@ export default async (ctx, target) => {
 
       const cssContent = `{mask-image:url('data:image/svg+xml;charset=utf-8,${transformedContent}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${transformedContent}');}`;
 
-      mainCssContent.push(`${cssTarget(icon)}${cssContent}`);
+      mainCssContent.push(`${cssTarget(icon, true)}${cssContent}`);
 
-      variantCssContent.push(`${cssTarget(icon, true)}${cssContent}`);
+      variantCssContent.push(`${cssTarget(icon)}${cssContent}`);
     }
 
     await fs.writeFile(
