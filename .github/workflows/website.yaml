@@ -10,7 +10,12 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Release
+    types:
+      - completed
 
 jobs:
   build:
