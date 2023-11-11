@@ -1,3 +1,13 @@
+<a name="v7.0.2"></a>
+# [v7.0.2](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.2) - 11 Nov 2023
+
+### What's Changed
+
+Fixed: refresh-circle icon stroke-width [PR](https://github.com/iconoir-icons/iconoir/pull/372)
+
+[Changes][v7.0.2]
+
+
 <a name="v7.0.1"></a>
 # [v7.0.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.1) - 09 Nov 2023
 
@@ -1405,6 +1415,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.0.2]: https://github.com/iconoir-icons/iconoir/compare/v7.0.1...v7.0.2
 [v7.0.1]: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
 [v7.0.0]: https://github.com/iconoir-icons/iconoir/compare/v6.11.0...v7.0.0
 [v6.11.0]: https://github.com/iconoir-icons/iconoir/compare/v6.10.0...v6.11.0
