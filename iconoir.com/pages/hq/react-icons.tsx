@@ -145,12 +145,6 @@ export const DonateRight = styled.div`
   }
 `;
 
-const DonateButton = styled(LargeButton)`
-  &&& {
-    padding: 0 24px;
-    height: 50px;
-  }
-`;
 const CallToAction = styled(LargeButton)`
   &&& {
     margin-top: 40px;
