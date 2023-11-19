@@ -4,9 +4,11 @@ const TITLE_SUFFIX = 'Iconoir | Free Icons';
 
 export interface SEOProps {
   title?: string;
+  description?: string;
 }
-export function SEO({ title }: SEOProps) {
+export function SEO({ title,description }: SEOProps) {
   const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
+  const pageDescription = description;
 
   return (
     <Head>
@@ -14,9 +16,7 @@ export function SEO({ title }: SEOProps) {
       <link rel="canonical" href="https://iconoir.com/" />
       <meta
         name="description"
-        content="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. 
-        No premium options or email sign-up required, free for real. Icons available in SVG, 
-        Font, React, React Native, and Flutter libraries, Figma and Framer."
+        content={pageDescription}
       />
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,9 +31,7 @@ export function SEO({ title }: SEOProps) {
       />
       <meta
         property="og:description"
-        content="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. 
-        No premium options or email sign-up required, free for real. Icons available in SVG, 
-        Font, React, React Native, and Flutter libraries, Figma and Framer."
+        content={pageDescription}
       />
       <meta property="og:image:width" content="1270" />
       <meta property="og:image:height" content="760" />
@@ -55,7 +53,7 @@ export function SEO({ title }: SEOProps) {
       />
       <meta
         name="twitter:description"
-        content="The biggest open source icon library with tons of free icons."
+        content={pageDescription}
       />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>

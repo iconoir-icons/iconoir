@@ -34,7 +34,7 @@ const Home: NextPage<HomeProps> = ({
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO description={'Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Nativ, and Flutter libraries, Figma and Framer.'} />
         <Header currentVersion={currentVersion} />
         <HeaderBackground>
           <HeroHead>
