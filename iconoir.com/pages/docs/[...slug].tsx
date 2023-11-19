@@ -37,7 +37,10 @@ export default function DocumentationPage({
   return (
     <>
       <Layout>
-        <SEO title={title} description='Our documentation to start using our free icons on React, React Native, Vue, Figma, and more.' />
+        <SEO
+          title={title}
+          description="Our documentation to start using our free icons on React, React Native, Vue, Figma, and more."
+        />
         <Header {...headerProps} />
         <Container>
           <NavigationContainer>
