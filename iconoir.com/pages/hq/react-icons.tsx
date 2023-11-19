@@ -1,11 +1,10 @@
-import { ArrowRight, Flash, Discord, Globe, DesignNib } from 'iconoir-react';
+import { ArrowRight } from 'iconoir-react';
 import { NextPage } from 'next';
 import styled from 'styled-components';
 import { HeroText } from '../.';
 import { Ad } from '../../components/Ad';
 import { HeroTextSecondary } from '../.';
 import { LargeButton } from '../../components/Button';
-import { DISCORD_LINK, SUPPORT_LINK } from '../../lib/constants';
 import { Footer } from '../../components/Footer';
 import { Header, HeaderProps } from '../../components/Header';
 import { HeaderSecondary } from '../../components/HeaderSecondary';
