@@ -21,7 +21,12 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
     <>
       <Layout>
-        <SEO title={'Donate - Our Mission'} description={'Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons.'} />
+        <SEO
+          title={'Donate - Our Mission'}
+          description={
+            'Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons.'
+          }
+        />
         <Header {...headerProps} />
         <HeaderSecondary>
           <SupportHead>

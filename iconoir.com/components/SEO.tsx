@@ -6,7 +6,7 @@ export interface SEOProps {
   title?: string;
   description?: string;
 }
-export function SEO({ title,description }: SEOProps) {
+export function SEO({ title, description }: SEOProps) {
   const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
   const pageDescription = description;
 
@@ -14,10 +14,7 @@ export function SEO({ title,description }: SEOProps) {
     <Head>
       <title>{pageTitle}</title>
       <link rel="canonical" href="https://iconoir.com/" />
-      <meta
-        name="description"
-        content={pageDescription}
-      />
+      <meta name="description" content={pageDescription} />
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -29,10 +26,7 @@ export function SEO({ title,description }: SEOProps) {
         property="og:image"
         content="https://iconoir.com/iconoir-brand.png"
       />
-      <meta
-        property="og:description"
-        content={pageDescription}
-      />
+      <meta property="og:description" content={pageDescription} />
       <meta property="og:image:width" content="1270" />
       <meta property="og:image:height" content="760" />
 
@@ -51,10 +45,7 @@ export function SEO({ title,description }: SEOProps) {
         name="twitter:image:alt"
         content="The biggest open source icon library with tons of free icons."
       />
-      <meta
-        name="twitter:description"
-        content={pageDescription}
-      />
+      <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );
