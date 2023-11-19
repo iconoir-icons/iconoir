@@ -62,7 +62,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
             <br></br>
             <br></br>Why Choose Iconoir for Your React Icons?
           </H2>
-          <Image src="/hq/building-iconoir.gif" alt="Building Iconoir" />
+          <Image src="/building-iconoir.gif" alt="Building Iconoir" />
           <Text18>
             <H3>Open-Source and Free</H3>Dive into a world where quality meets
             accessibility. Iconoir offers a comprehensive set of icons, entirely
