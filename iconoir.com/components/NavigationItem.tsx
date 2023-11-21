@@ -29,8 +29,8 @@ export function NavigationItem({
           activeMatch
             ? router.asPath.startsWith(activeMatch)
             : href.slice(1)
-            ? router.asPath.slice(1).startsWith(href.slice(1))
-            : router.asPath === href
+              ? router.asPath.slice(1).startsWith(href.slice(1))
+              : router.asPath === href
         }
       >
         {children}

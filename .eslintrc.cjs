@@ -41,7 +41,6 @@ module.exports = {
         next: ['export', 'import'],
       },
     ],
-
     'prettier/prettier': ['error'],
   },
 };
