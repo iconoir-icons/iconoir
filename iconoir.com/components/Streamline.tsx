@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { media } from '../lib/responsive';
 
 export function Streamline() {
   return (
