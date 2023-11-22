@@ -1,8 +1,7 @@
 import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
-import { Ad } from './Ad';
-import { Sponsor } from './Sponsor';
+import { Streamline } from './Streamline';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { Icon, IconList, IconListFilters } from './IconList';
@@ -39,8 +38,7 @@ export function Explore({ allIcons }: ExploreProps) {
         <FilterContainer>
           <FiltersEditor filters={filters} onChange={setFilters} />
         </FilterContainer>
-        <Sponsor />
-        <Ad />
+        <Streamline />
         <CustomizationEditor
           customizations={customizations}
           onChange={setCustomizations}
