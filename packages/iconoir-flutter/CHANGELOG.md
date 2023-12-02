@@ -1,3 +1,18 @@
+<a name="v7.1.0"></a>
+# [v7.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.1.0) - 02 Dec 2023
+
+Added 6 new icons:
+
+- `asterisk`
+- `dns`
+- `hashtag`
+- `peerlist`
+- `polar-sh`
+- `x`
+
+[Changes][v7.1.0]
+
+
 <a name="v7.0.3"></a>
 # [v7.0.3](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.3) - 21 Nov 2023
 
@@ -1426,6 +1441,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.1.0]: https://github.com/iconoir-icons/iconoir/compare/v7.0.3...v7.1.0
 [v7.0.3]: https://github.com/iconoir-icons/iconoir/compare/v7.0.2...v7.0.3
 [v7.0.2]: https://github.com/iconoir-icons/iconoir/compare/v7.0.1...v7.0.2
 [v7.0.1]: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
