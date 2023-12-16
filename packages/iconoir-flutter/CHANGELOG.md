@@ -1,3 +1,30 @@
+<a name="v7.2.0"></a>
+# [v7.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.2.0) - 16 Dec 2023
+
+8 new icons: 
+
+- `ice-cream-solid`
+- `ice-cream`
+- `mastodon`
+- `meter-arrow-down-right`
+- `rhombus-arrow-right-solid`
+- `rhombus-arrow-right`
+- `u-turn-arrow-left`
+- `u-turn-arrow-right`
+
+Fixed some SVG properties on:
+- `airplane-rotation`
+
+Updated 5 icons:
+- `headset-bolt`
+- `headset-help`
+- `headset-warning`
+- `headset`
+- `mac-os-window`
+
+[Changes][v7.2.0]
+
+
 <a name="v7.1.0"></a>
 # [v7.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.1.0) - 02 Dec 2023
 
@@ -1441,6 +1468,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.2.0]: https://github.com/iconoir-icons/iconoir/compare/v7.1.0...v7.2.0
 [v7.1.0]: https://github.com/iconoir-icons/iconoir/compare/v7.0.3...v7.1.0
 [v7.0.3]: https://github.com/iconoir-icons/iconoir/compare/v7.0.2...v7.0.3
 [v7.0.2]: https://github.com/iconoir-icons/iconoir/compare/v7.0.1...v7.0.2
