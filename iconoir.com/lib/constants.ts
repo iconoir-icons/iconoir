@@ -26,7 +26,7 @@ export const SHARE_LINK =
   'https://twitter.com/intent/tweet?text=Your%20new%20free%20icons%20library.%20No%20premium%20options%20or%20signups%20by%20%40burgioluca%20&url=https%3A%2F%2Ficonoir.com' as const;
 export const SUPPORT_LINK =
   'https://opencollective.com/iconoir/donate?interval=month&amount=10' as const;
-export const DISCORD_LINK = 'https://discord.gg/c3uzjx6k' as const;
+export const DISCORD_LINK = 'https://discord.gg/txXcKCAmKW' as const;
 export const FEEDBACK_LINK = 'https://forms.gle/3HvwVYow7D6T8zad7' as const;
 export const PRIVACY_LINK =
   'https://www.freeprivacypolicy.com/live/ba00d743-a0cd-44f8-8cb5-6f58911db0fb' as const;
