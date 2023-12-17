@@ -1,9 +1,9 @@
-import { Menu, Xmark } from 'iconoir-react';
+import { Menu, Xmark, Discord } from 'iconoir-react';
 import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { SHARE_LINK } from '../lib/constants';
+import { DISCORD_LINK, SHARE_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { AnimatedSvg } from './AnimatedSvg';
 import { ResetButton } from './Button';
@@ -54,6 +54,9 @@ export function Header({ currentVersion }: HeaderProps) {
             <span>X (Twitter)</span>
           </a>
         </Share>
+        <a href={DISCORD_LINK}>
+          <StyledDiscord $isMobile />
+        </a>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
           {menuVisible ? <Xmark /> : <Menu />}
         </MobileMenuButton>
@@ -61,6 +64,19 @@ export function Header({ currentVersion }: HeaderProps) {
     </Container>
   );
 }
+
+const StyledDiscord = styled(Discord)<{ $isMobile?: boolean }>`
+  display: none;
+  ${media.lg} {
+    display: flex;
+    margin: 0 0 0 16px;
+    &:hover {
+      scale: 1.1;
+      transition: 0.2s;
+      color: #7289da;
+    }
+  }
+`;
 
 export const LogoContainer = styled.div`
   position: relative;
