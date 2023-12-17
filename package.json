@@ -54,7 +54,7 @@
     "scule": "^1.1.1",
     "semver": "^7.5.4",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10",
+    "vite": "^4.5.1",
     "vite-plugin-dts": "^3.6.4"
   },
   "packageManager": "pnpm@8.10.0"
