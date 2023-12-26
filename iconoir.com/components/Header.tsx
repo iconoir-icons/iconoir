@@ -1,4 +1,4 @@
-import { Menu, Xmark, Discord } from 'iconoir-react';
+import { Menu, Xmark, Discord, Sparks } from 'iconoir-react';
 import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
@@ -19,6 +19,17 @@ export function Header({ currentVersion }: HeaderProps) {
 
   return (
     <Container>
+      <Banner>
+        <Sparks></Sparks>
+        <a
+          href={'https://lucaburgio.com/join/'}
+          target={'_blank'}
+          rel={'noreferrer'}
+        >
+          Access to the latest updates on new icons and ideas. Join the
+          newsletter.
+        </a>
+      </Banner>
       <HeaderLeft>
         <Link href={'/'}>
           <LogoContainer>
@@ -90,6 +101,26 @@ export const LogoContainer = styled.div`
   }
 `;
 
+export const Banner = styled(Text15)`
+  display: none;
+  ${media.lg} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background: var(--g5);
+    color: var(--g0);
+    font-weight: 500;
+    position: absolute;
+    width: 100%;
+    text-decoration: underline;
+    top: 0;
+  }
+  > * {
+    margin: 0 4px;
+  }
+`;
+
 const MobileMenuButton = styled(ResetButton)`
   &&& {
     z-index: 101;
@@ -152,6 +183,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${media.lg} {
+    margin-top: 40px;
+  }
 `;
 const HeaderItem = styled.div`
   flex: 1;
