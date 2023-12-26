@@ -142,6 +142,7 @@ export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
     margin-top: ${(props) => props.topMargin || 0}px;
   }
 `;
+
 const SupportContainer = styled.div`
   text-align: center;
   > * {
