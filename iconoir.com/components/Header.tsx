@@ -22,7 +22,9 @@ export function Header({ currentVersion }: HeaderProps) {
       <Banner>
         <Sparks></Sparks>
         <a
-          href={'https://lucaburgio.com/join?utm_source=iconoir&utm_medium=join-head-banner'}
+          href={
+            'https://lucaburgio.com/join?utm_source=iconoir&utm_medium=join-head-banner'
+          }
           target={'_blank'}
           rel={'noreferrer'}
         >
