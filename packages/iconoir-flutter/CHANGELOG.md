@@ -1,3 +1,43 @@
+<a name="v7.3.0"></a>
+# [v7.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.3.0) - 30 Dec 2023
+
+24 new icons: 
+
+- `app-notification-solid`
+- `bubble-xmark-solid`
+- `chat-bubble-check-solid`
+- `chat-bubble-empty-solid`
+- `chat-bubble-question-solid`
+- `chat-bubble-solid`
+- `chat-bubble-translate-solid`
+- `chat-bubble-warning-solid`
+- `chat-bubble-xmark-solid`
+- `chat-lines-solid`
+- `chat-minus-in-solid`
+- `chat-plus-in-solid`
+- `facetime-solid`
+- `mail-open-solid`
+- `mail-solid`
+- `message-alert-solid`
+- `message-solid`
+- `message-text-solid`
+- `multi-bubble-solid`
+- `podcast-solid`
+- `quote-message-solid`
+- `quote-solid`
+- `send-diagonal-solid`
+- `send-solid`
+
+4 icons fixed:
+
+- `web-window-energy-consumption`
+- `web-window-xmark`
+- `web-window`
+- `hand-brake`
+
+[Changes][v7.3.0]
+
+
 <a name="v7.2.0"></a>
 # [v7.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.2.0) - 16 Dec 2023
 
@@ -1468,6 +1508,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.3.0]: https://github.com/iconoir-icons/iconoir/compare/v7.2.0...v7.3.0
 [v7.2.0]: https://github.com/iconoir-icons/iconoir/compare/v7.1.0...v7.2.0
 [v7.1.0]: https://github.com/iconoir-icons/iconoir/compare/v7.0.3...v7.1.0
 [v7.0.3]: https://github.com/iconoir-icons/iconoir/compare/v7.0.2...v7.0.3
