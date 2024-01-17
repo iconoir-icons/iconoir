@@ -8,13 +8,14 @@ import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
 const HEADER = '<?xml version="1.0" encoding="UTF-8"?>';
 
 function bakeSvg(
-  svgString: string,
+  htmlString: string,
   color: string,
   strokeWidth: string | number,
 ) {
   return (
     HEADER +
-    svgString
+    htmlString
+      .match(/<svg[\s\S]*<\/svg>/)?.[0]
       .replace(
         /stroke="currentColor"/g,
         `stroke="currentColor" stroke-width="${strokeWidth}"`,
