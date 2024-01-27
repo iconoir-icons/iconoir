@@ -19,5 +19,3 @@ The class must always be "iconoir-" and then the name of the icon. You can find 
 
 The icons are `display: inline-block` and default to the current font size. You can control this
 by adjusting the `::before` styles of the element (which is where the icons are added as a mask).
-
-<SuggestLibrary />

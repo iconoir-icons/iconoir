@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
 export const Table = styled.table`
+  display: block;
+  overflow-x: auto;
   width: 100%;
   border-collapse: collapse;
   margin: 24px 0;

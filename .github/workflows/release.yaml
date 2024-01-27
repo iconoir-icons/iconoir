@@ -9,6 +9,9 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -38,7 +41,7 @@ jobs:
           TAG_NAME: ${{ github.ref_name }}
 
       - name: Commit release
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Release Version ${{ github.ref_name }}
           branch: main
@@ -52,21 +55,10 @@ jobs:
         run: pnpm -r publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        continue-on-error: true
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Publish Flutter
         uses: k-paxian/dart-package-publisher@v1.6
         with:
           credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
           relativePath: ./packages/iconoir-flutter
-
-      - name: Trigger Website Workflow
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'website.yaml',
-              ref: 'main',
-            })

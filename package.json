@@ -1,7 +1,7 @@
 {
   "name": "iconoir",
-  "version": "6.11.0",
-  "description": "The biggest open source icon library with tons of free icons.",
+  "version": "7.3.0",
+  "description": "Iconoir - The biggest open source icon library with tons of free icons.",
   "keywords": [
     "free",
     "icons",
@@ -20,31 +20,42 @@
   },
   "license": "MIT",
   "type": "module",
+  "exports": {
+    "./icons/*.svg": "./icons/regular/*.svg",
+    "./icons/*-solid.svg": "./icons/solid/*.svg",
+    "./icons/regular/*.svg": "./icons/regular/*.svg",
+    "./icons/solid/*.svg": "./icons/solid/*.svg",
+    "./css/*.css": "./css/*.css"
+  },
   "files": [
-    "css",
+    "css/*.css",
     "icons"
   ],
   "scripts": {
-    "build": "node ./bin/build.js",
-    "dist": "pnpm -r --filter './packages/**' run dist",
-    "lint": "eslint \"./bin/**/*.{cjs,js}\"",
+    "build": "node ./bin/build/index.js",
+    "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "prepublish-all": "node ./bin/prepublish.js"
   },
   "devDependencies": {
     "@atomist/yaml-updater": "^1.0.2",
-    "@svgr/cli": "^8.1.0",
-    "@types/svg-parser": "^2.0.3",
-    "eslint": "^8.50.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "execa": "^8.0.1",
-    "generate-template-files": "^3.2.1",
+    "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "esbuild": "^0.19.9",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "hast-util-from-html": "^2.0.1",
     "hast-util-to-html": "^9.0.0",
-    "listr2": "^7.0.1",
-    "prettier": "^3.0.3",
+    "listr2": "^8.0.0",
+    "prettier": "^3.1.1",
+    "scule": "^1.1.1",
     "semver": "^7.5.4",
-    "svg-parser": "^2.0.4"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vite-plugin-dts": "^3.6.4"
   },
-  "packageManager": "pnpm@8.8.0"
+  "packageManager": "pnpm@8.10.0"
 }

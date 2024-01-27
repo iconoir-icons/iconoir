@@ -10,6 +10,7 @@ import { Text14 } from './Typography';
 
 export function AvailableFor() {
   const { ref, width } = useResizeObserver();
+
   return (
     <>
       <MobileHeader>Available For</MobileHeader>
@@ -21,6 +22,17 @@ export function AvailableFor() {
               src={'/logo-react.svg'}
               alt={'React Logo'}
               title={'React'}
+            />
+          </a>
+          <a
+            href={'https://github.com/iconoir-icons/iconoir#swift-package'}
+            target={'_blank'}
+            rel={'noreferrer'}
+          >
+            <AvailableForImage
+              src={'/logo-swift.svg'}
+              alt={'Swift Logo'}
+              title={'Swift'}
             />
           </a>
           <a href={LIBRARY_LINKS.Flutter} target={'_blank'} rel={'noreferrer'}>
@@ -46,6 +58,13 @@ export function AvailableFor() {
               src={'/logo-react-native.svg'}
               alt={'React Native Logo'}
               title={'React Native'}
+            />
+          </a>
+          <a href={LIBRARY_LINKS.Vue} target={'_blank'} rel={'noreferrer'}>
+            <AvailableForImage
+              src={'/logo-vue.svg'}
+              alt={'Vue Logo'}
+              title={'Vue'}
             />
           </a>
           <a href={LIBRARY_LINKS.Framer} target={'_blank'} rel={'noreferrer'}>
@@ -138,7 +157,7 @@ const AvailableForContainer = styled.div<{ $contentWidth: number }>`
   }
   ${media.md} {
     > :not(:last-child) {
-      margin-right: 60px;
+      margin-right: 40px;
     }
   }
 `;

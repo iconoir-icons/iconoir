@@ -1,3 +1,392 @@
+<a name="v7.3.0"></a>
+# [v7.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.3.0) - 30 Dec 2023
+
+24 new icons: 
+
+- `app-notification-solid`
+- `bubble-xmark-solid`
+- `chat-bubble-check-solid`
+- `chat-bubble-empty-solid`
+- `chat-bubble-question-solid`
+- `chat-bubble-solid`
+- `chat-bubble-translate-solid`
+- `chat-bubble-warning-solid`
+- `chat-bubble-xmark-solid`
+- `chat-lines-solid`
+- `chat-minus-in-solid`
+- `chat-plus-in-solid`
+- `facetime-solid`
+- `mail-open-solid`
+- `mail-solid`
+- `message-alert-solid`
+- `message-solid`
+- `message-text-solid`
+- `multi-bubble-solid`
+- `podcast-solid`
+- `quote-message-solid`
+- `quote-solid`
+- `send-diagonal-solid`
+- `send-solid`
+
+4 icons fixed:
+
+- `web-window-energy-consumption`
+- `web-window-xmark`
+- `web-window`
+- `hand-brake`
+
+[Changes][v7.3.0]
+
+
+<a name="v7.2.0"></a>
+# [v7.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.2.0) - 16 Dec 2023
+
+8 new icons: 
+
+- `ice-cream-solid`
+- `ice-cream`
+- `mastodon`
+- `meter-arrow-down-right`
+- `rhombus-arrow-right-solid`
+- `rhombus-arrow-right`
+- `u-turn-arrow-left`
+- `u-turn-arrow-right`
+
+Fixed some SVG properties on:
+- `airplane-rotation`
+
+Updated 5 icons:
+- `headset-bolt`
+- `headset-help`
+- `headset-warning`
+- `headset`
+- `mac-os-window`
+
+[Changes][v7.2.0]
+
+
+<a name="v7.1.0"></a>
+# [v7.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.1.0) - 02 Dec 2023
+
+Added 6 new icons:
+
+- `asterisk`
+- `dns`
+- `hashtag`
+- `peerlist`
+- `polar-sh`
+- `x`
+
+[Changes][v7.1.0]
+
+
+<a name="v7.0.3"></a>
+# [v7.0.3](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.3) - 21 Nov 2023
+
+## What's Changed
+* fix: uningore flutter lib dir by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/380
+
+**Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v7.0.2...v7.0.3
+
+[Changes][v7.0.3]
+
+
+<a name="v7.0.2"></a>
+# [v7.0.2](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.2) - 11 Nov 2023
+
+### What's Changed
+
+Fixed: refresh-circle icon stroke-width [PR](https://github.com/iconoir-icons/iconoir/pull/372)
+
+[Changes][v7.0.2]
+
+
+<a name="v7.0.1"></a>
+# [v7.0.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.1) - 09 Nov 2023
+
+## What's Changed
+* Fix CSS class names for solid icons by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/375
+
+**Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
+
+[Changes][v7.0.1]
+
+
+<a name="v7.0.0"></a>
+# [v7.0.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.0) - 29 Oct 2023
+
+**Introducing Solid icons and a naming convention.**
+
+Regular and Solid icons are now placed in two different folders.
+Check the relative README for your coding language for more info.
+
+Accordingly to this new [naming convention](https://iconoir.com/docs/naming-convention), these icons have been renamed:
+
+`bookmark-empty` to `bookmark`
+`divide-selection-1` to `split-area`
+`cloud-book-alt` to `cloud-bookmark`
+`privacy policy` to `privacy-policy` 
+`save-floppy-disk` to `floppy-disk`
+`load-action-floppy` to `floppy-disk-arrow-out`
+`save-action-floppy` to `floppy-disk-arrow-in`
+`mail-opened` to `mail-open`
+`pin-alt` to `map-pin`
+`shopping-bag-alt` to `shopping-bag-pocket`
+`key-alt-back` to `key-back`
+`key-alt-minus` to `key-minus`
+`key-alt-plus` to `key-plus`
+`key-alt-remove` to `key-xmark`
+`key-alt` to `key`
+`card-issue` to `card-no-access`
+`no-access-window` to `window-no-access`
+`log-denied` to `log-no-access`
+`folder-alert` to `folder-warning`
+`wifi-issue` to `wifi-warning`
+`laptop-issue` to `laptop-warning`
+`tv-issue` to `tv-warning`
+`domotic-issue` to `domotic-warning`
+`headset-issue` to `headset-warning`
+`shopping-bag-issue` to `shopping-bag-warning`
+`card-locked` to `card-lock`
+`locked-book` to `book-lock`
+`locked-window` to `window-lock`
+`lock-key` to `lock-square`
+`coin` to `dollar-circle`
+`hospital-sign` to `hospital-circle`
+`info-empty` to `info-circle`
+`refresh-circular` to `refresh-circle`
+`card-security` to `card-shield`
+`check-window` to `window-check`
+`voice-ok` to `voice-check`
+`password-pass` to `password-check`
+`clean-water` to `water-check`
+`gas-tank-drop` to `gas-tank-droplet`
+`settings-cloud` to `cloud-square`
+`text-alt` to `text-square`
+`cooling` to `cooling-square`
+`selection` to `square-dashed`
+`git-command` to `slash-square`
+`divide-selection-2` to `split-square-dashed`
+`fast-arrow-down-box` to `fast-arrow-down-square`
+`fast-arrow-left-box` to `fast-arrow-left-square`
+`fast-arrow-right-box` to `fast-arrow-right-square`
+`fast-arrow-up-box` to `fast-arrow-up-square`
+`heating` to `heating-square`
+`carbon` to `c-square`
+`fluorine` to `f-square`
+`hydrogen` to `h-square`
+`nitrogen` to `n-square`
+`oxygen` to `o-square`
+`x-coordinate` to `x-square`
+`y-coordinate` to `y-square`
+`z-coordinate` to `z-square`
+`ar-symbol` to `ar-tag`
+`vr-symbol` to `vr-tag`
+`ip-address` to `ip-address-tag`
+`closed-captions` to `closed-captions-tag`
+`pharmacy-cross-square` to `pharmacy-cross-tag`
+`down-round-arrow` to `arrow-down-tag`
+`enlarge-round-arrow` to `arrow-enlarge-tag`
+`left-round-arrow` to `arrow-left-tag`
+`reduce-round-arrow` to `arrow-reduce-tag`
+`right-round-arrow` to `arrow-right-tag`
+`up-round-arrow` to `arrow-up-tag`
+`grid-remove` to `grid-xmark`
+`remove-pin-alt` to `map-pin-xmark`
+`remove-media-video` to `media-video-xmark`
+`remove-media-image` to `media-image-xmark`
+`remove-user` to `user-xmark`
+`remove-square` to `xmark-square`
+`multiple-pages-delete` to `multiple-pages-xmark`
+`phone-delete` to `phone-xmark`
+`delete-circle` to `xmark-circle`
+`cancel` to `xmark`
+`shield-cross` to `shield-xmark`
+`map-issue` to `map-xmark`
+`maps-arrow-issue` to `maps-arrow-xmark`
+`cloud-error` to `cloud-xmark`
+`bubble-error` to `bubble-xmark`
+`chat-bubble-error` to `chat-bubble-xmark`
+`wifi-error` to `wifi-xmark`
+`fingerprint-error-circle` to `fingerprint-xmark-circle`
+`voice-error` to `voice-xmark`
+`password-error` to `password-xmark`
+`shopping-code-error` to `shopping-code-xmark`
+`error-window` to `window-xmark`
+`drone-error` to `drone-xmark`
+`ev-plug-error` to `ev-plug-xmark`
+`web-window-close` to `web-window-xmark`
+`remove-folder` to `folder-minus`
+`remove-database-script` to `database-script-minus`
+`remove-frame` to `frame-minus-in`
+`ruler-remove` to `ruler-minus`
+`remove-from-cart` to `cart-minus`
+`remove-selection` to `minus-square-dashed`
+`minus-pin-alt` to `map-pin-minus`
+`shopping-bag-remove` to `shopping-bag-minus`
+`multiple-pages-remove` to `multiple-pages-minus`
+`green-bus` to `bus-green`
+`green-truck` to `truck-green`
+`green-vehicle` to `vehicle-green`
+`add-circle` to `plus-circle`
+`add-square` to `plus-square`
+`add-keyframe-alt` to `keyframe-plus-in`
+`add-keyframe` to `keyframe-plus`
+`add-keyframes` to `keyframes-plus`
+`add-circle` to `plus-circle`
+`add-square` to `plus-square`
+`add-keyframe-alt` to `keyframe-plus-in`
+`add-keyframe` to `keyframe-plus`
+`add-keyframes` to `keyframes-plus`
+`mic-add` to `microphone-plus`
+`chat-add` to `chat-plus-in`
+`phone-add` to `phone-plus`
+`add-database-script` to `database-script-plus`
+`add-frame` to `frame-plus-in`
+`add-lens` to `lens-plus`
+`ruler-add` to `ruler-plus`
+`add-folder` to `folder-plus`
+`add-page` to `page-plus-in`
+`multiple-pages-add` to `multiple-pages-plus`
+`add-page-alt` to `page-plus`
+`grid-add` to `grid-plus`
+`music-double-note-add` to `music-double-note-plus`
+`music-note-add` to `music-note-plus`
+`playlist-add` to `playlist-plus`
+`add-selection` to `plus-square-dashed`
+`add-media-image` to `media-image-plus`
+`add-media-video` to `media-video-plus`
+`shield-add` to `shield-plus-in`
+`add-hexagon` to `hexagon-plus`
+`add-to-cart` to `cart-plus`
+`shopping-bag-add` to `shopping-bag-plus`
+`bin-add` to `bin-plus`
+`add-user` to `user-plus`
+`add-pin-alt` to `map-pin-plus`
+`mic-remove` to `microphone-minus`
+`mic-check` to `microphone-check`
+`mic` to `microphone`
+`mic-speaking` to `microphone-speaking`
+`mic-warning` to `microphone-warning`
+`mic-mute` to `microphone-mute`
+`db-error` to `database-xmark`
+`move-ruler` to `ruler-arrows`
+`move-down` to `dot-arrow-down`
+`move-up` to `dot-arrow-up`
+`move-right` to `dot-arrow-right`
+`move-left` to `dot-arrow-left`
+`3d-select-solid` to `cube`
+`cut-solid-with-curve` to `cube-cut-with-curve`
+`bin-minus` to `bin-minus-in`
+`bin-plus` to `bin-plus-in`
+`3d-add-hole` to `cube-hole`
+`patch-holes-3d` to `cube-bandage`
+`search-font` to `text-magnifying-glass`
+`missing-font` to `font-question`
+`font-size` to `text-arrows-up-down`
+`arrow-bl-circle` to `arrow-down-left-circle`
+`arrow-bl-square` to `arrow-down-left-square`
+`arrow-br-circle` to `arrow-down-right-circle`
+`arrow-br-square` to `arrow-down-right-square`
+`arrow-tl-circle` to `arrow-top-left-circle`
+`arrow-tl-square` to `arrow-top-left-square`
+`arrow-tr-circle` to `arrow-top-right-circle`
+`arrow-tr-square` to `arrow-top-right-square`
+`arrow-bl` to `arrow-down-left`
+`arrow-br` to `arrow-down-right`
+`arrow-tl` to `arrow-top-left`
+`arrow-tr` to `arrow-top-right`
+`network-alt` to `network-reverse`
+`voice-phone` to `mobile-voice`
+`fingerprint-phone` to `mobile-fingerprint`
+`dev-mode-phone` to `mobile-dev-mode`
+`dev-mode-laptop` to `laptop-dev-mode`
+`db-check` to `database-check`
+`db-search` to `database-search`
+`db-warning` to `database-warning`
+`db` to `database`
+`eye-alt` to `eye`
+`eye-close` to `eye-closed`
+`clutery` to `cutlery`
+`verified-user` to `user-badge-check`
+`twitter-verified-badge` to `badge-check`
+`church-alt` to `church-side`
+`small-shop-alt` to `shop`
+`shop-alt` to `shop-four-tiles`
+`small-shop` to `shop-window`
+`shop` to `shop-four-tiles-window`
+`high-priority` to `priority-high`
+`medium-priority` to `priority-medium`
+`her-slips` to `slips`
+`large-suitcase` to `suitcase`
+`women-t-shirt` to `shirt-tank-top`
+`t-shirt` to `shirt`
+`umbrella-full` to `umbrella`
+`pants-alt` to `pants`
+`short-pants-alt` to `short-pants`
+`short-pants` to `short-pants-pockets`
+`pants` to `pants-pockets`
+`basketball-alt` to `basketball`
+`printer-alt` to `printer`
+`doc-star-alt` to `doc-star-in`
+`doc-search-alt` to `doc-magnifying-glass-in`
+`doc-search` to `doc-magnifying-glass`
+`water-check` to `droplet-check`
+`no-link` to `link-xmark`
+`no-lock` to `lock-slash`
+`no-battery` to `battery-slash`
+`no-coin` to `coin-slash`
+`no-credit-card` to `credit-card-slash`
+`no-smoking` to `cigarette-slash`
+`arrow-top-left-circle` to `arrow-up-left-circle`
+`arrow-top-left-square` to `arrow-up-left-square`
+`arrow-top-right-circle` to `arrow-up-right-circle`
+`arrow-top-right-square` to `arrow-up-right-square`
+`arrow-top-left` to `arrow-up-left`
+`arrow-top-right` to `arrow-up-right`
+`headset-charge` to `headset-bolt`
+`shortcut` to `shortcut-square`
+`1st-medal` to `medal-1st`
+`2x2-cell` to `cell-2x2`
+`360-view` to `view-360`
+`3d-arc-center-pt` to `arc-3d-center-point`
+`3d-arc` to `arc-3d`
+`3d-bridge` to `bridge-3d`
+`3d-center-box` to `box-3d-center`
+`3d-draft-face` to `face-3d-draft`
+`3d-ellipse-three-pts` to `ellipse-3d-three-points`
+`3d-ellipse` to `ellipse-3d`
+`3d-pt-box` to `box-3d-point`
+`3d-rect-corner-to-corner` to `square-3d-corner-to-corner`
+`3d-rect-from-center` to `square-3d-from-center`
+`3d-rect-three-pts` to `square-3d-three-points`
+`3d-select-edge` to `select-edge-3d`
+`3d-select-face` to `select-face-3d`
+`3d-select-point` to `select-point-3d`
+`3d-three-pts-box` to `box-3d-three-points`
+`4k-display` to `display-4k`
+
+
+Icons removed:
+
+`eye-empty`
+`eye-off`
+`verified-badge`
+`beach-bag-big`
+`apple-half-alt`
+`basketball`
+`hexagon-alt`
+`printer`
+`cut-alt`
+`color-picker-empty`
+
+Added 149 new SOLID icons:
+
+Changelog is too long. See the full changelog [here on Pastebin](https://pastebin.com/7GPHtPjD) or visit [iconoir.com](https://iconoir.com)
+
+[Changes][v7.0.0]
+
+
 <a name="v6.11.0"></a>
 # [v6.11.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.11.0) - 02 Aug 2023
 
@@ -1119,6 +1508,13 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.3.0]: https://github.com/iconoir-icons/iconoir/compare/v7.2.0...v7.3.0
+[v7.2.0]: https://github.com/iconoir-icons/iconoir/compare/v7.1.0...v7.2.0
+[v7.1.0]: https://github.com/iconoir-icons/iconoir/compare/v7.0.3...v7.1.0
+[v7.0.3]: https://github.com/iconoir-icons/iconoir/compare/v7.0.2...v7.0.3
+[v7.0.2]: https://github.com/iconoir-icons/iconoir/compare/v7.0.1...v7.0.2
+[v7.0.1]: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
+[v7.0.0]: https://github.com/iconoir-icons/iconoir/compare/v6.11.0...v7.0.0
 [v6.11.0]: https://github.com/iconoir-icons/iconoir/compare/v6.10.0...v6.11.0
 [v6.10.0]: https://github.com/iconoir-icons/iconoir/compare/v6.9.0...v6.10.0
 [v6.9.0]: https://github.com/iconoir-icons/iconoir/compare/v6.8.0...v6.9.0

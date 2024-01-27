@@ -18,9 +18,9 @@
 
 ### Vue 3
 
-```vue
+```js
 <script setup>
-import { Iconoir } from '@iconoir/vue';
+  import { Iconoir } from '@iconoir/vue';
 </script>
 
 <template>
@@ -30,15 +30,15 @@ import { Iconoir } from '@iconoir/vue';
 
 ### Vue 2
 
-```vue
+```js
 <script>
-import { Iconoir } from '@iconoir/vue';
+  import { Iconoir } from '@iconoir/vue';
 
-export default
-    components: {
-        Iconoir
-    }
-}
+  export default
+      components: {
+          Iconoir
+      }
+  }
 </script>
 
 <template>
@@ -67,7 +67,7 @@ Default values for the most common props are given below:
 
 Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider.
 
-```vue
+```js
 <script setup>
 import { IconoirProvider, Check } from '@iconoir/vue';
 </script>
@@ -75,10 +75,10 @@ import { IconoirProvider, Check } from '@iconoir/vue';
 <template>
   <IconoirProvider
     :icon-props="{
-      color: '#AAAAAA',
+      'color': '#AAAAAA',
       'stroke-width': 1,
-      width: '1em',
-      height: '1em',
+      'width': '1em',
+      'height': '1em',
     }"
   >
     <SomeOtherContainer>
@@ -90,19 +90,4 @@ import { IconoirProvider, Check } from '@iconoir/vue';
 
 ## Icon names
 
-For the most part, the Vue components are named as PascalCase variations of their reference names (i.e. `add-circle-outline` becomes `AddCircleOutline`). However, some names have been altered slightly either because they start with numerical digits, which would lead to invalid Vue component names, or because they are organisations which use PascalCase in their brand names, such as `GitHub`. The altered names are as follows:
-
-| Iconoir Name     | Vue Component   |
-| ---------------- | --------------- |
-| `1st-medal`      | `Medal1St`      |
-| `4k-display`     | `Display4K`     |
-| `4x4-cell`       | `Cell4X4`       |
-| `360-view`       | `View360`       |
-| `github`         | `GitHub`        |
-| `github-outline` | `GitHubOutline` |
-| `gitlab-full`    | `GitLabFull`    |
-| `linkedin`       | `LinkedIn`      |
-| `tiktok`         | `TikTok`        |
-| `youtube`        | `YouTube`       |
-
-<SuggestLibrary />
+The Vue components are named as PascalCase variations of their reference names (i.e. `airplane-helix-45deg` becomes `AirplaneHelix45deg`).

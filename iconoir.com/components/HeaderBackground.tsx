@@ -19,10 +19,12 @@ export function HeaderBackground({ children }: HeaderBackgroundProps) {
     const handleMouseMove = (event: MouseEvent) => {
       const x = event.clientX / window.innerWidth;
       const y = event.clientY / window.innerHeight;
+
       parallaxElements.forEach((el) => {
         const factor = parseFloat(
           el.getAttribute('data-parallax-factor') || '1',
         );
+
         (el as HTMLElement).style.transform = `translate3d(${
           x * factor * 40
         }px, ${y * factor * 80}px, 0)`;

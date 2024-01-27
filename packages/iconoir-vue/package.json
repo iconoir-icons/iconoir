@@ -1,7 +1,7 @@
 {
   "name": "@iconoir/vue",
-  "version": "6.11.0",
-  "description": "Vue library for Iconoir icon set",
+  "version": "7.3.0",
+  "description": "Vue library for Iconoir, the biggest open source icon library with tons of free icons.",
   "keywords": [
     "icons",
     "svg",
@@ -39,19 +39,11 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "dist": "vite build",
-    "prepublish": "npm run dist"
-  },
   "dependencies": {
     "vue-demi": "^0.14.6"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.3.4",
-    "terser": "^5.20.0",
-    "vite": "^4.4.9",
-    "vite-plugin-dts": "^3.5.4",
-    "vue": "^3.3.4"
+    "vue": "^3.3.12"
   },
   "peerDependencies": {
     "@vue/composition-api": ">=1.0.0-rc.1",

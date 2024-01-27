@@ -25,6 +25,7 @@ export function ChangelogEntry({
   const [expanded, setExpanded] = React.useState(false);
   const [shouldExpand, setShouldExpand] = React.useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
     if (
       containerRef.current &&
@@ -33,6 +34,7 @@ export function ChangelogEntry({
       setShouldExpand(true);
     }
   }, []);
+
   return (
     <Container ref={containerRef}>
       <ContainerLeft>

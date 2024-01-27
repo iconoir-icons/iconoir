@@ -11,8 +11,10 @@ export function useCustomizationPersistence(): [
   const [customizations, _setCustomizations] = React.useState(
     DEFAULT_CUSTOMIZATIONS,
   );
+
   React.useEffect(() => {
     const localStorageValue = localStorage.getItem(CUSTOMIZATIONS_KEY);
+
     if (localStorageValue) {
       try {
         const parsedValue = JSON.parse(localStorageValue);
@@ -30,6 +32,7 @@ export function useCustomizationPersistence(): [
         CUSTOMIZATIONS_KEY,
         JSON.stringify(newCustomizations),
       );
+
       _setCustomizations(newCustomizations);
     },
   ];

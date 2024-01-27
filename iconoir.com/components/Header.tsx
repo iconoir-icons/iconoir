@@ -1,13 +1,14 @@
-import { Cancel, Heart, Menu } from 'iconoir-react';
+import { Menu, Xmark, Discord, Sparks } from 'iconoir-react';
+import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { DISCORD_LINK, SHARE_LINK } from '../lib/constants';
+import { media } from '../lib/responsive';
 import { AnimatedSvg } from './AnimatedSvg';
 import { ResetButton } from './Button';
-import { SHARE_LINK } from '../lib/constants';
 import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem } from './NavigationItem';
-import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
 
 export interface HeaderProps {
@@ -15,8 +16,22 @@ export interface HeaderProps {
 }
 export function Header({ currentVersion }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
+
   return (
     <Container>
+      <Banner>
+        <Sparks></Sparks>
+        <a
+          href={
+            'https://lucaburgio.com/join?utm_source=iconoir&utm_medium=join-head-banner'
+          }
+          target={'_blank'}
+          rel={'noreferrer'}
+        >
+          Access to the latest updates on new icons and ideas. Join the
+          newsletter.
+        </a>
+      </Banner>
       <HeaderLeft>
         <Link href={'/'}>
           <LogoContainer>
@@ -31,32 +46,50 @@ export function Header({ currentVersion }: HeaderProps) {
       <HeaderCenter>
         <MobileMenuContainer $visible={menuVisible}>
           <NavigationItem href={'/'}>Icons</NavigationItem>
-          <NavigationItem href={'/docs'}>Documentation</NavigationItem>
+          <NavigationItem href={'/docs/introduction'} activeMatch={'/docs'}>
+            Documentation
+          </NavigationItem>
           <NavigationItem href={'/support'} style={{ marginRight: 0 }}>
             Donate &mdash; Our Mission
           </NavigationItem>
-          <BuiltWith $isMobile>
-            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+          <Share $isMobile>
             <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
-              Twitter
-            </a>{' '}
-          </BuiltWith>
+              Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+              <span>X (Twitter)</span>
+            </a>
+          </Share>
         </MobileMenuContainer>
       </HeaderCenter>
       <HeaderRight>
-        <BuiltWith>
-          Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+        <Share>
           <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
-            Twitter
-          </a>{' '}
-        </BuiltWith>
+            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+            <span>X (Twitter)</span>
+          </a>
+        </Share>
+        <a href={DISCORD_LINK}>
+          <StyledDiscord $isMobile />
+        </a>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
-          {menuVisible ? <Cancel /> : <Menu />}
+          {menuVisible ? <Xmark /> : <Menu />}
         </MobileMenuButton>
       </HeaderRight>
     </Container>
   );
 }
+
+const StyledDiscord = styled(Discord)<{ $isMobile?: boolean }>`
+  display: none;
+  ${media.lg} {
+    display: flex;
+    margin: 0 0 0 16px;
+    &:hover {
+      scale: 1.1;
+      transition: 0.2s;
+      color: #7289da;
+    }
+  }
+`;
 
 export const LogoContainer = styled.div`
   position: relative;
@@ -69,6 +102,27 @@ export const LogoContainer = styled.div`
     transition: 0.2s;
   }
 `;
+
+export const Banner = styled(Text15)`
+  display: none;
+  ${media.lg} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    background: var(--g5);
+    color: var(--g0);
+    font-weight: 500;
+    position: absolute;
+    width: 100%;
+    text-decoration: underline;
+    top: 0;
+  }
+  > * {
+    margin: 0 4px;
+  }
+`;
+
 const MobileMenuButton = styled(ResetButton)`
   &&& {
     z-index: 101;
@@ -131,6 +185,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${media.lg} {
+    margin-top: 40px;
+  }
 `;
 const HeaderItem = styled.div`
   flex: 1;
@@ -156,6 +213,7 @@ const HeaderRight = styled(HeaderItem)`
     justify-content: flex-end;
   }
 `;
+
 export const Logo = styled.img`
   height: 24px;
   margin-top: -4px;
@@ -171,35 +229,34 @@ export const LogoIcon = styled.div`
     height: 36px;
   }
 `;
-const BuiltWith = styled(Text15)<{ $isMobile?: boolean }>`
+
+const Share = styled(Text15)<{ $isMobile?: boolean }>`
   &&& {
-    display: ${(props) => (props.$isMobile ? 'flex' : 'none')};
+    display: none;
+    ${(props) =>
+      props.$isMobile &&
+      css`
+        display: flex;
+        justify-content: center;
+        padding: 12px 0;
+      `}
     ${media.lg} {
-      display: ${(props) => (props.$isMobile ? 'none' : 'flex')};
+      display: ${(props) => (props.$isMobile ? 'none' : 'block')};
     }
-    align-items: center;
-    justify-content: center;
     color: var(--black-60);
-    border-bottom: none;
-    svg {
-      fill: var(--black);
-      margin: 0 0.22em;
-    }
-    > * {
-      margin: 0 0.22em;
-    }
+    white-space: pre-wrap;
     a {
+      display: inline-flex;
+      align-items: center;
+      color: unset;
+      text-decoration: unset;
+    }
+    svg,
+    span {
       color: var(--black);
-      font-weight: 700;
     }
-    > :last-child {
-      margin-right: 0;
-    }
-    ${media.lg} {
-      justify-content: flex-start;
-      a {
-        font-weight: normal;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   }
 `;

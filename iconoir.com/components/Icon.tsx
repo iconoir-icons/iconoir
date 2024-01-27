@@ -6,6 +6,7 @@ import { ResetButton } from './Button';
 import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
 
 const HEADER = '<?xml version="1.0" encoding="UTF-8"?>';
+
 function bakeSvg(
   svgString: string,
   color: string,
@@ -33,12 +34,14 @@ export function Icon({ iconWidth, icon }: IconProps) {
   const htmlContentsRef = React.useRef<string>('');
   const iconContext = React.useContext(AllIcons.IconoirContext);
   const [supportsClipboard, setSupportsClipboard] = React.useState(false);
+
   React.useEffect(() => {
     setSupportsClipboard(
       typeof window !== 'undefined' &&
         typeof window?.navigator?.clipboard?.writeText !== 'undefined',
     );
   }, []);
+
   React.useEffect(() => {
     if (iconContainerRef.current) {
       htmlContentsRef.current = bakeSvg(
@@ -48,16 +51,19 @@ export function Icon({ iconWidth, icon }: IconProps) {
       );
     }
   }, [iconContext, supportsClipboard]);
+
   React.useEffect(() => {
     const element =
       downloadRef.current ||
       (iconContainerRef.current as unknown as HTMLAnchorElement);
+
     if (element) {
       element.href = `data:image/svg+xml;base64,${btoa(
         htmlContentsRef.current,
       )}`;
     }
   }, [iconContext, supportsClipboard]);
+
   return (
     <div className={'icon-container'}>
       <BorderContainer $iconWidth={iconWidth}>
@@ -73,6 +79,8 @@ export function Icon({ iconWidth, icon }: IconProps) {
               }) as any)}
         >
           <IconComponent />
+
+          {icon.filename.includes('-solid') ? <IconTag>SOLID</IconTag> : ''}
         </IconContainer>
         {supportsClipboard ? (
           <HoverContainer>
@@ -198,6 +206,18 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+const IconTag = styled.div`
+  background-color: var(--g6);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 5px 10px;
+  padding: 3px 6px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--g0);
 `;
 const Subtitle = styled.div<{ $iconWidth: number }>`
   font-size: 11px;

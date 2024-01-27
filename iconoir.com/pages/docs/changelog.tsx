@@ -35,25 +35,27 @@ export default function Changelog({
   ...headerProps
 }: ChangelogProps) {
   return (
-    <Layout>
-      <SEO title={'Changelog'} />
-      <Header {...headerProps} />
-      <Container>
-        <NavigationContainer>
-          <DocumentationNavigation {...documentationProps} />
-        </NavigationContainer>
-        <ContentContainer>
-          <InnerContentContainer>
-            <H1 style={{ marginBottom: 72 }}>Changelog</H1>
-            {entries.map((entry) => (
-              <ChangelogEntry key={entry.name} {...entry} />
-            ))}
-            <ReadOnGitHub path={'../../releases'} resource="the releases" />
-          </InnerContentContainer>
-        </ContentContainer>
-      </Container>
+    <>
+      <Layout>
+        <SEO title={'Changelog'} />
+        <Header {...headerProps} />
+        <Container>
+          <NavigationContainer>
+            <DocumentationNavigation {...documentationProps} />
+          </NavigationContainer>
+          <ContentContainer>
+            <InnerContentContainer>
+              <H1 style={{ marginBottom: 72 }}>Changelog</H1>
+              {entries.map((entry) => (
+                <ChangelogEntry key={entry.name} {...entry} />
+              ))}
+              <ReadOnGitHub path={'../../releases'} resource="the releases" />
+            </InnerContentContainer>
+          </ContentContainer>
+        </Container>
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   );
 }
 
@@ -62,6 +64,7 @@ export async function getStaticProps() {
     ...REPO,
   });
   const entries: ChangelogEntryProps[] = [];
+
   for (const release of releases) {
     entries.push({
       name: release.name || release.tag_name,
@@ -76,7 +79,9 @@ export async function getStaticProps() {
       }),
     });
   }
+
   const items = getDocumentationStructure();
+
   return {
     props: {
       entries,

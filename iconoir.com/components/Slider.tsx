@@ -47,6 +47,7 @@ interface ThumbProps {
   trackRef: React.RefObject<HTMLElement>;
   index: number;
 }
+
 function Thumb({ state, trackRef, index }: ThumbProps) {
   let inputRef = React.useRef(null);
   let { thumbProps, inputProps } = useSliderThumb(
@@ -59,6 +60,7 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
   );
 
   let { focusProps, isFocusVisible } = useFocusRing();
+
   return (
     <ThumbContainer
       style={{
@@ -71,13 +73,13 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
           backgroundColor: isFocusVisible
             ? 'var(--accent)'
             : state.isThumbDragging(index)
-            ? 'var(--g6)'
-            : 'var(--white)',
+              ? 'var(--g6)'
+              : 'var(--white)',
           scale: isFocusVisible
             ? '1.0'
             : state.isThumbDragging(index)
-            ? '1.3'
-            : '1.0',
+              ? '1.3'
+              : '1.0',
         }}
       >
         <VisuallyHidden>

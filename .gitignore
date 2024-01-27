@@ -1,13 +1,10 @@
+.DS_Store
+
 node_modules/
 dist/
 
 packages/iconoir-flutter/lib/
 
-packages/iconoir-react/src/
-!packages/iconoir-react/src/IconoirContext.tsx
-!packages/iconoir-react/src/server/IconoirContext.tsx
-
-packages/iconoir-react-native/src/
-!packages/iconoir-react-native/src/IconoirContext.tsx
-
-packages/iconoir-vue/src/
+packages/iconoir-vue/src/*
+!packages/iconoir-vue/src/IconoirProvider.vue
+!packages/iconoir-vue/src/providerKey.ts

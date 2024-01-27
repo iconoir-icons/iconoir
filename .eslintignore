@@ -1,0 +1,3 @@
+dist/
+/examples/react-native/**/*.js
+/iconoir.com/out/

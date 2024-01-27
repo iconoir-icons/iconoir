@@ -42,6 +42,7 @@ function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
   if (filters.search) {
     const normalSearch = normalizeString(filters.search!);
     let result = allIcons;
+
     for (const term of normalSearch.split(' ')) {
       result = result.filter((icon) => {
         return (
@@ -51,6 +52,7 @@ function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
         );
       });
     }
+
     return result;
   } else return allIcons;
 }
@@ -63,6 +65,7 @@ interface IconIconsRow {
   icons: Icon[];
 }
 type IconRow = IconCategoryRow | IconIconsRow;
+
 function isCategoryRow(iconRow: IconRow): iconRow is IconCategoryRow {
   return !!(iconRow as IconCategoryRow).category;
 }
@@ -72,6 +75,7 @@ function getRowsFromIcons(
   iconsPerRow: number,
 ): IconRow[] {
   const categoryGroups: Record<string, Icon[]> = {};
+
   for (const icon of filteredIcons) {
     if (!categoryGroups[icon.category]) categoryGroups[icon.category] = [];
     categoryGroups[icon.category].push(icon);
@@ -79,12 +83,15 @@ function getRowsFromIcons(
 
   const result: IconRow[] = [];
   const sortedCategories = Object.keys(categoryGroups).sort();
+
   for (const sortedCategory of sortedCategories) {
     result.push({
       category: sortedCategory,
       numIcons: categoryGroups[sortedCategory].length,
     });
+
     const iconRows = chunk(categoryGroups[sortedCategory], iconsPerRow);
+
     for (const iconRow of iconRows) {
       result.push({ icons: iconRow });
     }
@@ -97,6 +104,7 @@ const ICON_BOTTOM_PADDING = 65;
 const HEADER_HEIGHT = 150;
 const HEADER_INNER_HEIGHT = 15 + 40;
 const HEADER_TOP_PADDING = HEADER_HEIGHT - HEADER_INNER_HEIGHT;
+
 function getItemSize(row: IconRow, iconWidth: number): number {
   if (isCategoryRow(row)) {
     return HEADER_HEIGHT;
@@ -129,9 +137,11 @@ export function IconList({ filters, allIcons }: IconListProps) {
   const iconWidth = iconsPerRow
     ? Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE
     : null;
+
   React.useEffect(() => {
     setHeight(window.innerHeight);
   }, []);
+
   React.useEffect(() => {
     if (listRef.current) {
       listRef.current.resetAfterIndex(0, true);
@@ -140,6 +150,7 @@ export function IconList({ filters, allIcons }: IconListProps) {
 
   if (filteredIcons.length && iconsPerRow && width && iconWidth) {
     const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
+
     children = (
       <IconListContext.Provider value={{ iconsPerRow, iconWidth }}>
         <ReactWindowScroller>
@@ -187,6 +198,7 @@ const Row = React.memo(
   ({ data, index, style }: ListChildComponentProps<IconRow[]>) => {
     const { iconWidth } = React.useContext(IconListContext)!;
     const row = data[index];
+
     if (isCategoryRow(row)) {
       return (
         <CategoryRow

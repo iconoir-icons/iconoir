@@ -21,6 +21,7 @@ export function CustomizationEditor({
   const [strokeWidth, setStrokeWidth] = React.useState(
     customizations.strokeWidth,
   );
+
   React.useEffect(() => {
     setColor(customizations.hexColor);
     setSize(customizations.size);

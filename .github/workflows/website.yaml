@@ -10,7 +10,12 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Release
+    types:
+      - completed
 
 jobs:
   build:
@@ -24,20 +29,13 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run build
-
-      - name: Build packages
-        run: pnpm run dist
+        run: pnpm run build react
 
       - name: Build website
         run: ./node_modules/.bin/next build
         working-directory: iconoir.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Export website
-        run: ./node_modules/.bin/next export
-        working-directory: iconoir.com
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
@@ -57,4 +55,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3

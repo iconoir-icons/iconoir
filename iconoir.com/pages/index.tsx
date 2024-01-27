@@ -13,7 +13,7 @@ import { Layout } from '../components/Layout';
 import { media } from '../lib/responsive';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { Text18 } from '../components/Typography';
+import { Text18, Text15 } from '../components/Typography';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
@@ -24,6 +24,7 @@ interface HomeProps {
   numStars: number;
   numDownloads: number;
 }
+
 const Home: NextPage<HomeProps> = ({
   allIcons,
   currentVersion,
@@ -33,7 +34,11 @@ const Home: NextPage<HomeProps> = ({
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO
+          description={
+            'Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Nativ, and Flutter libraries, Figma and Framer.'
+          }
+        />
         <Header currentVersion={currentVersion} />
         <HeaderBackground>
           <HeroHead>
@@ -87,10 +92,9 @@ const Home: NextPage<HomeProps> = ({
           >
             <span>Donate</span>
           </LargeButton>
-          <Text18>
-            If you find Iconoir valuable for you, consider making a donation to
-            help us pursuing even bigger goals.
-          </Text18>
+          <Text15>
+            Join our supporters and help us continue developing Iconoir.
+          </Text15>
         </SupportContainer>
         <Explore allIcons={allIcons} />
       </Layout>
@@ -138,6 +142,7 @@ export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
     margin-top: ${(props) => props.topMargin || 0}px;
   }
 `;
+
 const SupportContainer = styled.div`
   text-align: center;
   > * {

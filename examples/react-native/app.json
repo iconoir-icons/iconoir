@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Iconoir",
+    "slug": "react-native-expo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

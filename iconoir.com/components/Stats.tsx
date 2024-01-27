@@ -36,6 +36,7 @@ const StatContainer = styled.div`
     margin-bottom: 0;
   }
 `;
+
 export const StatsContainer = styled.div`
   display: flex;
   align-items: flex-start;
