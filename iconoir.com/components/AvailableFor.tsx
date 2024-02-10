@@ -27,7 +27,7 @@ export function AvailableFor() {
           <a
             href={'https://github.com/iconoir-icons/iconoir#swift-package'}
             target={'_blank'}
-            rel={'noreferrer'}
+            rel={'nofollow noreferrer'}
           >
             <AvailableForImage
               src={'/logo-swift.svg'}
@@ -35,14 +35,22 @@ export function AvailableFor() {
               title={'Swift'}
             />
           </a>
-          <a href={LIBRARY_LINKS.Flutter} target={'_blank'} rel={'noreferrer'}>
+          <a
+            href={LIBRARY_LINKS.Flutter}
+            target={'_blank'}
+            rel={'nofollow noreferrer'}
+          >
             <AvailableForImage
               src={'/logo-flutter.svg'}
               alt={'Flutter Logo'}
               title={'Flutter'}
             />
           </a>
-          <a href={LIBRARY_LINKS.Figma} target={'_blank'} rel={'noreferrer'}>
+          <a
+            href={LIBRARY_LINKS.Figma}
+            target={'_blank'}
+            rel={'nofollow noreferrer'}
+          >
             <AvailableForImage
               src={'/logo-figma.svg'}
               alt={'Figma Logo'}
@@ -52,7 +60,7 @@ export function AvailableFor() {
           <a
             href={LIBRARY_LINKS.ReactNative}
             target={'_blank'}
-            rel={'noreferrer'}
+            rel={'nofollow noreferrer'}
           >
             <AvailableForImage
               src={'/logo-react-native.svg'}
@@ -60,14 +68,22 @@ export function AvailableFor() {
               title={'React Native'}
             />
           </a>
-          <a href={LIBRARY_LINKS.Vue} target={'_blank'} rel={'noreferrer'}>
+          <a
+            href={LIBRARY_LINKS.Vue}
+            target={'_blank'}
+            rel={'nofollow noreferrer'}
+          >
             <AvailableForImage
               src={'/logo-vue.svg'}
               alt={'Vue Logo'}
               title={'Vue'}
             />
           </a>
-          <a href={LIBRARY_LINKS.Framer} target={'_blank'} rel={'noreferrer'}>
+          <a
+            href={LIBRARY_LINKS.Framer}
+            target={'_blank'}
+            rel={'nofollow noreferrer'}
+          >
             <AvailableForImage
               src={'/logo-framer.svg'}
               alt={'Framer Logo'}
@@ -75,10 +91,18 @@ export function AvailableFor() {
             />
           </a>
           <AreYouUsing>
-            <a href={SUGGEST_LIBRARY_LINK} target={'_blank'} rel={'noreferrer'}>
+            <a
+              href={SUGGEST_LIBRARY_LINK}
+              target={'_blank'}
+              rel={'nofollow noreferrer'}
+            >
               <Text14>More?</Text14>
             </a>
-            <a href={FEEDBACK_LINK} target={'_blank'} rel={'noreferrer'}>
+            <a
+              href={FEEDBACK_LINK}
+              target={'_blank'}
+              rel={'nofollow noreferrer'}
+            >
               <Text14>Are you using the library?</Text14>
             </a>
           </AreYouUsing>

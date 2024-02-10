@@ -86,13 +86,13 @@ export function Footer() {
         <Text13 style={{ fontWeight: 400 }}>
           Parts of this content are &copy;2020-2023 by individual Iconoir
           contributors. Content available under a{' '}
-          <a href={LICENSE_LINK} target={'_blank'} rel={'noreferrer'}>
+          <a href={LICENSE_LINK} target={'_blank'} rel={'nofollow noreferrer'}>
             MIT License
           </a>
           .
         </Text13>
         <Text13 style={{ fontWeight: 400 }}>
-          <a href={PRIVACY_LINK} target={'_blank'} rel={'noreferrer'}>
+          <a href={PRIVACY_LINK} target={'_blank'} rel={'nofollow noreferrer'}>
             Privacy
           </a>
         </Text13>

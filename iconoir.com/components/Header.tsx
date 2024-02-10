@@ -67,7 +67,7 @@ export function Header({ currentVersion }: HeaderProps) {
             <span>X (Twitter)</span>
           </a>
         </Share>
-        <a href={DISCORD_LINK}>
+        <a href={DISCORD_LINK} rel={'nofollow noreferrer'}>
           <StyledDiscord $isMobile />
         </a>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
