@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 export function Streamline() {
   return (
-    <a rel="sponsored" href="https://bit.ly/3SNgpKo" style={{ textDecoration: 'none' }}>
+    <a
+      rel="sponsored"
+      href="https://bit.ly/3SNgpKo"
+      style={{ textDecoration: 'none' }}
+    >
       <PromoContainer>
         <PromoContent>
           <PromoInfo>
