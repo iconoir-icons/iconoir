@@ -2,6 +2,7 @@ import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
 import { Streamline } from './Streamline';
+import { Hono } from './Hono';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { Icon, IconList, IconListFilters } from './IconList';
@@ -39,6 +40,7 @@ export function Explore({ allIcons }: ExploreProps) {
           <FiltersEditor filters={filters} onChange={setFilters} />
         </FilterContainer>
         <Streamline />
+        <Hono />
         <CustomizationEditor
           customizations={customizations}
           onChange={setCustomizations}
@@ -66,7 +68,7 @@ const Left = styled.div`
 `;
 const Right = styled.div`
   position: sticky;
-  top: 50px;
+  top: 20px;
   width: 275px;
   display: block;
   z-index: -1;

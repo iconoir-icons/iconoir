@@ -112,7 +112,7 @@ const Header = styled.div`
   padding-bottom: 10px;
 `;
 const Field = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 `;
 const HorizontalField = styled(Field)`
   display: flex;
