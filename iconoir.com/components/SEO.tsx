@@ -13,7 +13,9 @@ export function SEO({ title, description }: SEOProps) {
   const pageDescription = description;
 
   const pathWithoutQuery = asPath.split(/[?#]/)[0];
-  const canonicalUrl = `https://iconoir.com${pathWithoutQuery !== '/' ? pathWithoutQuery : ''}`;
+  const canonicalUrl = `https://iconoir.com${
+    pathWithoutQuery !== '/' ? pathWithoutQuery : ''
+  }`;
 
   return (
     <Head>
