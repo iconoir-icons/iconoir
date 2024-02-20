@@ -15,6 +15,8 @@ export interface FooterCategoryProps {
   links: { name: string; url: string }[];
 }
 
+const year = new Date().getFullYear();
+
 function FooterCategory({ category, links }: FooterCategoryProps) {
   return (
     <FooterCategoryContainer>
@@ -84,7 +86,7 @@ export function Footer() {
       </FooterCategories>
       <FooterEnd>
         <Text13 style={{ fontWeight: 400 }}>
-          Parts of this content are &copy;2020-2023 by individual Iconoir
+          Parts of this content are &copy;2020-{year} by individual Iconoir
           contributors. Content available under a{' '}
           <a href={LICENSE_LINK} target={'_blank'} rel={'nofollow noreferrer'}>
             MIT License

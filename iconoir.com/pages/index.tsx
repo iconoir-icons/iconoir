@@ -43,14 +43,15 @@ const Home: NextPage<HomeProps> = ({
         <HeaderBackground>
           <HeroHead>
             <HeroText>Say hello</HeroText>
-            <HeroTextSecondary>to your new icon library.</HeroTextSecondary>
+            <HeroTextSecondary>
+              to your new free icon library.
+            </HeroTextSecondary>
           </HeroHead>
         </HeaderBackground>
         <HeroDescription>
-          A high-quality selection of free icons. No premium options or
-          sign-ups. Your new alternative to Noun Project, Flaticon, and all
-          Figma resources. Available in SVG, Font, React, React Native, Flutter,
-          Figma and Framer.
+          A high-quality selection of free icons. Your new alternative to Noun
+          Project, Flaticon, and all Figma resources. Available in SVG, Font,
+          React, React Native, Flutter, Figma and Framer.
         </HeroDescription>
         <StatsContainer>
           <Stat
@@ -174,7 +175,7 @@ export const HeroText = styled.h1`
 `;
 export const HeroTextSecondary = styled(HeroText)`
   color: var(--g4);
-  max-width: 1000px;
+  max-width: 1140px;
 `;
 export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
   display: block;
