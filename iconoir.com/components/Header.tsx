@@ -26,7 +26,6 @@ export function Header({ currentVersion }: HeaderProps) {
             'https://lucaburgio.com/join?utm_source=iconoir&utm_medium=join-head-banner'
           }
           target={'_blank'}
-          rel={'noreferrer'}
         >
           Access to the latest updates on new icons and ideas. Join the
           newsletter.
@@ -53,7 +52,7 @@ export function Header({ currentVersion }: HeaderProps) {
             Donate &mdash; Our Mission
           </NavigationItem>
           <Share $isMobile>
-            <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
+            <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer nofollow'}>
               Share with <Heart width={'1em'} height={'1em'} /> on{' '}
               <span>X (Twitter)</span>
             </a>
@@ -62,7 +61,7 @@ export function Header({ currentVersion }: HeaderProps) {
       </HeaderCenter>
       <HeaderRight>
         <Share>
-          <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer'}>
+          <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer nofollow'}>
             Share with <Heart width={'1em'} height={'1em'} /> on{' '}
             <span>X (Twitter)</span>
           </a>

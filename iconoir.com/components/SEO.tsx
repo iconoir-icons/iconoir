@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 const TITLE_SUFFIX = 'Iconoir | Free Icons';
 
@@ -7,13 +8,17 @@ export interface SEOProps {
   description?: string;
 }
 export function SEO({ title, description }: SEOProps) {
+  const { asPath } = useRouter();
   const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
   const pageDescription = description;
+
+  const pathWithoutQuery = asPath.split(/[?#]/)[0];
+  const canonicalUrl = `https://iconoir.com${pathWithoutQuery !== '/' ? pathWithoutQuery : ''}`;
 
   return (
     <Head>
       <title>{pageTitle}</title>
-      <link rel="canonical" href="https://iconoir.com/" />
+      <link rel="canonical" href={canonicalUrl} />
       <meta name="description" content={pageDescription} />
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
