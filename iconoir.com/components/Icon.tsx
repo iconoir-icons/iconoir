@@ -45,7 +45,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
   React.useEffect(() => {
     if (iconContainerRef.current) {
       htmlContentsRef.current = bakeSvg(
-        iconContainerRef.current.innerHTML,
+        (iconContainerRef.current.firstChild as SVGElement).outerHTML,
         iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
         iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth,
       );
