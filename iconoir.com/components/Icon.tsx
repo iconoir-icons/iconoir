@@ -8,14 +8,13 @@ import { DEFAULT_CUSTOMIZATIONS, Icon as IconType } from './IconList';
 const HEADER = '<?xml version="1.0" encoding="UTF-8"?>';
 
 function bakeSvg(
-  htmlString: string,
+  svgString: string,
   color: string,
   strokeWidth: string | number,
 ) {
   return (
     HEADER +
-    htmlString
-      .match(/<svg[\s\S]*<\/svg>/)?.[0]
+    svgString
       .replace(
         /stroke="currentColor"/g,
         `stroke="currentColor" stroke-width="${strokeWidth}"`,
@@ -46,7 +45,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
   React.useEffect(() => {
     if (iconContainerRef.current) {
       htmlContentsRef.current = bakeSvg(
-        iconContainerRef.current.innerHTML,
+        (iconContainerRef.current.firstChild as SVGElement).outerHTML,
         iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
         iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth,
       );
