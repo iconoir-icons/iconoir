@@ -1,3 +1,27 @@
+<a name="v7.5.0"></a>
+# [v7.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.5.0) - 02 Mar 2024
+
+15 new solid icons: 
+
+- `keyframe-align-center`
+- `keyframe-align-horizontal`
+- `keyframe-align-vertical`
+- `keyframe-minus-in`
+- `keyframe-minus`
+- `keyframe-plus-in`
+- `keyframe-plus`
+- `keyframe-position`
+- `keyframe`
+- `keyframes-couple`
+- `keyframes`
+- `transition-down`
+- `transition-left`
+- `transition-right`
+- `transition-up`
+
+[Changes][v7.5.0]
+
+
 <a name="v7.4.0"></a>
 # [v7.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.4.0) - 10 Feb 2024
 
@@ -1524,6 +1548,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.5.0]: https://github.com/iconoir-icons/iconoir/compare/v7.4.0...v7.5.0
 [v7.4.0]: https://github.com/iconoir-icons/iconoir/compare/v7.3.0...v7.4.0
 [v7.3.0]: https://github.com/iconoir-icons/iconoir/compare/v7.2.0...v7.3.0
 [v7.2.0]: https://github.com/iconoir-icons/iconoir/compare/v7.1.0...v7.2.0
