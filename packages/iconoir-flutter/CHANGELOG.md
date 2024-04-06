@@ -1,3 +1,26 @@
+<a name="v7.6.0"></a>
+# [v7.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.6.0) - 06 Apr 2024
+
+6 new solid icons: 
+
+- `camera`
+- `check-square`
+- `closed-captions-tag`
+- `flash`
+- `fx-tag`
+- `hd-display`
+
+1 new regular icon: 
+
+- `check-square`
+
+Fixes:
+
+- Removed an unnecessary clip path from `send-diagonal` icon.
+
+[Changes][v7.6.0]
+
+
 <a name="v7.5.0"></a>
 # [v7.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.5.0) - 02 Mar 2024
 
@@ -1548,6 +1571,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.6.0]: https://github.com/iconoir-icons/iconoir/compare/v7.5.0...v7.6.0
 [v7.5.0]: https://github.com/iconoir-icons/iconoir/compare/v7.4.0...v7.5.0
 [v7.4.0]: https://github.com/iconoir-icons/iconoir/compare/v7.3.0...v7.4.0
 [v7.3.0]: https://github.com/iconoir-icons/iconoir/compare/v7.2.0...v7.3.0
