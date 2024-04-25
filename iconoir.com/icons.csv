@@ -1331,6 +1331,7 @@ filename,category,tags
 "wind","Weather","weather,air,fresh",
 "window-check","System","browser,os",
 "window-lock","System","browser,os",
+"window-tabs","System","browser,os,tab,navigation",
 "window-no-access","System","browser,os",
 "window-xmark","System","browser,os,error,issue",
 "windows","System",
