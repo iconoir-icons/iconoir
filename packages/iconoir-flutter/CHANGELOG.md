@@ -1,3 +1,27 @@
+<a name="v7.7.0"></a>
+# [v7.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.7.0) - 25 Apr 2024
+
+9 new bold icons: 
+
+- `microphone-mute`
+- `sound-high`
+- `sound-low`
+- `sound-min`
+- `sound-off`
+- `web-window-energy-consumption`
+- `web-window-xmark`
+- `web-window`
+- `window-tabs`
+
+1 new regular icon:
+
+- `window-tabs`
+
+Minor fixes.
+
+[Changes][v7.7.0]
+
+
 <a name="v7.6.0"></a>
 # [v7.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.6.0) - 06 Apr 2024
 
@@ -1571,6 +1595,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.7.0]: https://github.com/iconoir-icons/iconoir/compare/v7.6.0...v7.7.0
 [v7.6.0]: https://github.com/iconoir-icons/iconoir/compare/v7.5.0...v7.6.0
 [v7.5.0]: https://github.com/iconoir-icons/iconoir/compare/v7.4.0...v7.5.0
 [v7.4.0]: https://github.com/iconoir-icons/iconoir/compare/v7.3.0...v7.4.0
