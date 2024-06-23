@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
-import { useRouter } from 'next/router';
 import { LargeButton } from '../components/Button';
 import { media } from '../lib/responsive';
 import { Sparks } from 'iconoir-react';
 
 export function DonationPopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const router = useRouter();
   const isInitialMount = useRef(true);
 
   useEffect(() => {
@@ -59,19 +57,6 @@ export function DonationPopup() {
 
 const Text = styled.span`
   color: #ffffffba;
-`;
-
-const PopupContainer = styled.div`
-  display: flex;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  justify-content: center;
-  align-items: center;
 `;
 
 export const PopupContent = styled.div`
