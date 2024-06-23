@@ -7,6 +7,7 @@ import { REPO, SUPPORT_LINK } from '../lib/constants';
 import { Explore } from '../components/Explore';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
+import { DonationPopup } from '../components/DonationPopup';
 import { HeaderBackground } from '../components/HeaderBackground';
 import { Icon } from '../components/IconList';
 import { Layout } from '../components/Layout';
@@ -140,6 +141,7 @@ const Home: NextPage<HomeProps> = ({
             Join our supporters and help us continue developing Iconoir.
           </Text15>
         </SupportContainer>
+        <DonationPopup />
         <Explore allIcons={allIcons} />
       </Layout>
       <Footer />
