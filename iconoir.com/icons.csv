@@ -545,6 +545,7 @@ filename,category,tags
 "gas-tank-droplet","Transport","fuel",
 "gif-format","Photos and Videos",
 "gift","Other",
+"git","Git","git",
 "git-branch","Git","git, github",
 "git-cherry-pick-commit","Git",
 "git-commit","Git","git, github",
