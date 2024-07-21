@@ -1,3 +1,27 @@
+<a name="v7.8.0"></a>
+# [v7.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.8.0) - 21 Jul 2024
+
+13 new solid icons: 
+- `bell-notification`
+- `git`
+- `mail-in`
+- `mail-out`
+- `phone-income`
+- `phone-minus`
+- `phone-outcome`
+- `phone-paused`
+- `phone-plus`
+- `phone-xmark`
+- `phone`
+- `send-mail`
+- `wolf`
+
+1 new regular icon: 
+- `git`
+
+[Changes][v7.8.0]
+
+
 <a name="v7.7.0"></a>
 # [v7.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.7.0) - 25 Apr 2024
 
@@ -1595,6 +1619,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.8.0]: https://github.com/iconoir-icons/iconoir/compare/v7.7.0...v7.8.0
 [v7.7.0]: https://github.com/iconoir-icons/iconoir/compare/v7.6.0...v7.7.0
 [v7.6.0]: https://github.com/iconoir-icons/iconoir/compare/v7.5.0...v7.6.0
 [v7.5.0]: https://github.com/iconoir-icons/iconoir/compare/v7.4.0...v7.5.0
