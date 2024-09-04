@@ -2,7 +2,7 @@ import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
 import { Streamline } from './Streamline';
-import { Hono } from './Hono';
+import { Sponsor } from './Sponsor';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { Icon, IconList, IconListFilters } from './IconList';
@@ -40,7 +40,7 @@ export function Explore({ allIcons }: ExploreProps) {
           <FiltersEditor filters={filters} onChange={setFilters} />
         </FilterContainer>
         <Streamline />
-        <Hono />
+        <Sponsor />
         <CustomizationEditor
           customizations={customizations}
           onChange={setCustomizations}

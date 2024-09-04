@@ -27,10 +27,10 @@ const SponsorContainer = styled.div`
   border: 1px solid var(--g7);
   background-color: var(--g7);
   border-radius: 10px;
-  width: 96%;
+  width: 88%;
   font-size: 14px;
   color: var(--g1);
-  padding: 2%;
+  padding: 6%;
   margin-top: 24px;
   & > a {
     text-decoration: none;
