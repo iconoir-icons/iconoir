@@ -1,3 +1,36 @@
+<a name="v7.9.0"></a>
+# [v7.9.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.9.0) - 07 Sep 2024
+
+7 new Regular icons: 
+
+- `calendar-arrow-down`
+- `calendar-arrow-up`
+- `calendar-check`
+- `calendar-rotate`
+- `calendar-xmark`
+- `cube-dots`
+- `cube-scan`
+
+9 new Solid icons: 
+
+- `calendar-arrow-down`
+- `calendar-arrow-up`
+- `calendar-check`
+- `calendar-minus`
+- `calendar-plus`
+- `calendar-rotate`
+- `calendar-xmark`
+- `cube-dots`
+- `cube-scan`
+
+2 Regular icons modified:
+
+- `calendar-minus`
+- `calendar-plus`
+
+[Changes][v7.9.0]
+
+
 <a name="v7.8.0"></a>
 # [v7.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.8.0) - 21 Jul 2024
 
@@ -1619,6 +1652,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.9.0]: https://github.com/iconoir-icons/iconoir/compare/v7.8.0...v7.9.0
 [v7.8.0]: https://github.com/iconoir-icons/iconoir/compare/v7.7.0...v7.8.0
 [v7.7.0]: https://github.com/iconoir-icons/iconoir/compare/v7.6.0...v7.7.0
 [v7.6.0]: https://github.com/iconoir-icons/iconoir/compare/v7.5.0...v7.6.0
