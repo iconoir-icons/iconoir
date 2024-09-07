@@ -3,5 +3,5 @@
 <path d="M3 10V6C3 4.89543 3.89543 4 5 4H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M7 2V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M21 10V6C21 4.89543 20.1046 4 19 4H18.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14.9922 18H17.9922M21 18H17.9922M17.9922 18V15M17.9922 18V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9922 19H18.9922M22 19H18.9922M18.9922 19V16M18.9922 19V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
