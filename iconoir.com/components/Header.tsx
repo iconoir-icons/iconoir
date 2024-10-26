@@ -23,12 +23,12 @@ export function Header({ currentVersion }: HeaderProps) {
         <Sparks></Sparks>
         <a
           href={
-            'https://lucaburgio.com/join?utm_source=iconoir&utm_medium=join-head-banner'
+            'https://opencollective.com/iconoir/donate?interval=month&amount=10'
           }
           target={'_blank'}
         >
-          Access to the latest updates on new icons and ideas. Join the
-          newsletter.
+          Your one-time or recurring contribution does a lot to keep Iconoir
+          going.
         </a>
       </Banner>
       <HeaderLeft>
