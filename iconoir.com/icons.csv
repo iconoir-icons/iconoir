@@ -1371,10 +1371,10 @@ filename,category,tags
 "rhombus-arrow-right","Maps","",
 "u-turn-arrow-left","Maps","",
 "u-turn-arrow-right","Maps","",
-"calendar-arrow-down","","",
-"calendar-arrow-up","","",
-"calendar-check","","",
-"calendar-rotate","","",
-"calendar-xmark","","",
-"cube-dots","","",
-"cube-scan","",""
+"calendar-arrow-down","System","",
+"calendar-arrow-up","System","",
+"calendar-check","System","",
+"calendar-rotate","System","",
+"calendar-xmark","System","",
+"cube-dots","3D Editor","",
+"cube-scan","3D Editor",""
