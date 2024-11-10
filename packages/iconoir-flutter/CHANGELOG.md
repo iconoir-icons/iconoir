@@ -1,5 +1,30 @@
-<a name="v7.9.0"></a>
-# [v7.9.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.9.0) - 07 Sep 2024
+<a id="v7.10.0"></a>
+# [v7.10.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.10.0) - 2024-11-10
+
+1 new regular icon:
+- `droplet-snow-flake-in`
+
+14 new solid icons: 
+- `cooling-square`
+- `diameter`
+- `droplet-snow-flake-in`
+- `flask`
+- `graduation-cap`
+- `heating-square`
+- `magnet`
+- `microscope`
+- `planet`
+- `radiation`
+- `radius`
+- `round-flask`
+- `test-tube`
+- `vials`
+
+[Changes][v7.10.0]
+
+
+<a id="v7.9.0"></a>
+# [v7.9.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.9.0) - 2024-09-07
 
 7 new Regular icons: 
 
@@ -31,8 +56,8 @@
 [Changes][v7.9.0]
 
 
-<a name="v7.8.0"></a>
-# [v7.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.8.0) - 21 Jul 2024
+<a id="v7.8.0"></a>
+# [v7.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.8.0) - 2024-07-21
 
 13 new solid icons: 
 - `bell-notification`
@@ -55,8 +80,8 @@
 [Changes][v7.8.0]
 
 
-<a name="v7.7.0"></a>
-# [v7.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.7.0) - 25 Apr 2024
+<a id="v7.7.0"></a>
+# [v7.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.7.0) - 2024-04-25
 
 9 new bold icons: 
 
@@ -79,8 +104,8 @@ Minor fixes.
 [Changes][v7.7.0]
 
 
-<a name="v7.6.0"></a>
-# [v7.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.6.0) - 06 Apr 2024
+<a id="v7.6.0"></a>
+# [v7.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.6.0) - 2024-04-06
 
 6 new solid icons: 
 
@@ -102,8 +127,8 @@ Fixes:
 [Changes][v7.6.0]
 
 
-<a name="v7.5.0"></a>
-# [v7.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.5.0) - 02 Mar 2024
+<a id="v7.5.0"></a>
+# [v7.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.5.0) - 2024-03-02
 
 15 new solid icons: 
 
@@ -126,8 +151,8 @@ Fixes:
 [Changes][v7.5.0]
 
 
-<a name="v7.4.0"></a>
-# [v7.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.4.0) - 10 Feb 2024
+<a id="v7.4.0"></a>
+# [v7.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.4.0) - 2024-02-10
 
 7 new solid icons: 
 
@@ -142,8 +167,8 @@ Fixes:
 [Changes][v7.4.0]
 
 
-<a name="v7.3.0"></a>
-# [v7.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.3.0) - 30 Dec 2023
+<a id="v7.3.0"></a>
+# [v7.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.3.0) - 2023-12-30
 
 24 new icons: 
 
@@ -182,8 +207,8 @@ Fixes:
 [Changes][v7.3.0]
 
 
-<a name="v7.2.0"></a>
-# [v7.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.2.0) - 16 Dec 2023
+<a id="v7.2.0"></a>
+# [v7.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.2.0) - 2023-12-16
 
 8 new icons: 
 
@@ -209,8 +234,8 @@ Updated 5 icons:
 [Changes][v7.2.0]
 
 
-<a name="v7.1.0"></a>
-# [v7.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.1.0) - 02 Dec 2023
+<a id="v7.1.0"></a>
+# [v7.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.1.0) - 2023-12-02
 
 Added 6 new icons:
 
@@ -224,19 +249,19 @@ Added 6 new icons:
 [Changes][v7.1.0]
 
 
-<a name="v7.0.3"></a>
-# [v7.0.3](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.3) - 21 Nov 2023
+<a id="v7.0.3"></a>
+# [v7.0.3](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.3) - 2023-11-21
 
 ## What's Changed
-* fix: uningore flutter lib dir by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/380
+* fix: uningore flutter lib dir by [@paescuj](https://github.com/paescuj) in [#380](https://github.com/iconoir-icons/iconoir/pull/380)
 
 **Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v7.0.2...v7.0.3
 
 [Changes][v7.0.3]
 
 
-<a name="v7.0.2"></a>
-# [v7.0.2](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.2) - 11 Nov 2023
+<a id="v7.0.2"></a>
+# [v7.0.2](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.2) - 2023-11-11
 
 ### What's Changed
 
@@ -245,19 +270,19 @@ Fixed: refresh-circle icon stroke-width [PR](https://github.com/iconoir-icons/ic
 [Changes][v7.0.2]
 
 
-<a name="v7.0.1"></a>
-# [v7.0.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.1) - 09 Nov 2023
+<a id="v7.0.1"></a>
+# [v7.0.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.1) - 2023-11-09
 
 ## What's Changed
-* Fix CSS class names for solid icons by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/375
+* Fix CSS class names for solid icons by [@paescuj](https://github.com/paescuj) in [#375](https://github.com/iconoir-icons/iconoir/pull/375)
 
 **Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v7.0.0...v7.0.1
 
 [Changes][v7.0.1]
 
 
-<a name="v7.0.0"></a>
-# [v7.0.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.0) - 29 Oct 2023
+<a id="v7.0.0"></a>
+# [v7.0.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.0.0) - 2023-10-29
 
 **Introducing Solid icons and a naming convention.**
 
@@ -531,8 +556,8 @@ Changelog is too long. See the full changelog [here on Pastebin](https://pastebi
 [Changes][v7.0.0]
 
 
-<a name="v6.11.0"></a>
-# [v6.11.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.11.0) - 02 Aug 2023
+<a id="v6.11.0"></a>
+# [v6.11.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.11.0) - 2023-08-02
 
 Added 12 new icons:
 - `number-0-square`
@@ -551,8 +576,8 @@ Added 12 new icons:
 [Changes][v6.11.0]
 
 
-<a name="v6.10.0"></a>
-# [v6.10.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.10.0) - 14 Jul 2023
+<a id="v6.10.0"></a>
+# [v6.10.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.10.0) - 2023-07-14
 
 Added 6 new icons:
 
@@ -566,8 +591,8 @@ Added 6 new icons:
 [Changes][v6.10.0]
 
 
-<a name="v6.9.0"></a>
-# [v6.9.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.9.0) - 21 Jun 2023
+<a id="v6.9.0"></a>
+# [v6.9.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.9.0) - 2023-06-21
 
 Added 3 new icons:
 
@@ -578,8 +603,8 @@ Added 3 new icons:
 [Changes][v6.9.0]
 
 
-<a name="v6.8.0"></a>
-# [v6.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.8.0) - 06 May 2023
+<a id="v6.8.0"></a>
+# [v6.8.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.8.0) - 2023-05-06
 
 Added 8 new icons:
 - `comp-align-bottom`
@@ -594,25 +619,25 @@ Added 8 new icons:
 [Changes][v6.8.0]
 
 
-<a name="v6.7.0"></a>
-# [v6.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.7.0) - 03 May 2023
+<a id="v6.7.0"></a>
+# [v6.7.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.7.0) - 2023-05-03
 
 ## What's Changed
 * **New Iconoir Vue package** (thanks [@Scalamando](https://github.com/Scalamando)!)
 * **New Iconoir Swift package** (thanks [@mkaulfers](https://github.com/mkaulfers)!)
-* fix: correct footer links by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/293
+* fix: correct footer links by [@sammarks](https://github.com/sammarks) in [#293](https://github.com/iconoir-icons/iconoir/pull/293)
 
 ## New Contributors
-* [@mkaulfers](https://github.com/mkaulfers) made their first contribution in https://github.com/iconoir-icons/iconoir/pull/285
-* [@Scalamando](https://github.com/Scalamando) made their first contribution in https://github.com/iconoir-icons/iconoir/pull/294
+* [@mkaulfers](https://github.com/mkaulfers) made their first contribution in [#285](https://github.com/iconoir-icons/iconoir/pull/285)
+* [@Scalamando](https://github.com/Scalamando) made their first contribution in [#294](https://github.com/iconoir-icons/iconoir/pull/294)
 
 **Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v6.6.0...v6.7.0
 
 [Changes][v6.7.0]
 
 
-<a name="v6.6.0"></a>
-# [v6.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.6.0) - 12 Apr 2023
+<a id="v6.6.0"></a>
+# [v6.6.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.6.0) - 2023-04-12
 
 Added 7 new icons:
 - `3d-draft-face`
@@ -626,8 +651,8 @@ Added 7 new icons:
 [Changes][v6.6.0]
 
 
-<a name="v6.5.0"></a>
-# [v6.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.5.0) - 26 Mar 2023
+<a id="v6.5.0"></a>
+# [v6.5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.5.0) - 2023-03-26
 
 Added 21 new icons:
 - `bitcoin-circle`
@@ -655,8 +680,8 @@ Added 21 new icons:
 [Changes][v6.5.0]
 
 
-<a name="v6.4.1"></a>
-# [v6.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.1) - 24 Mar 2023
+<a id="v6.4.1"></a>
+# [v6.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.1) - 2023-03-24
 
 Optimized the optical size of 6 icons:
 - `arrow-down`
@@ -672,8 +697,8 @@ Minor fix of 1 icon:
 [Changes][v6.4.1]
 
 
-<a name="v6.4.0"></a>
-# [v6.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.0) - 04 Mar 2023
+<a id="v6.4.0"></a>
+# [v6.4.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.4.0) - 2023-03-04
 
 Added 9 new icons:
 - `cut-solid-with-curve`
@@ -689,8 +714,8 @@ Added 9 new icons:
 [Changes][v6.4.0]
 
 
-<a name="v6.3.0"></a>
-# [v6.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.3.0) - 22 Feb 2023
+<a id="v6.3.0"></a>
+# [v6.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.3.0) - 2023-02-22
 
 Added 46 new icons:
 - `adobe-after-effects`
@@ -743,8 +768,8 @@ Added 46 new icons:
 [Changes][v6.3.0]
 
 
-<a name="v6.2.1"></a>
-# [v6.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.2.1) - 06 Feb 2023
+<a id="v6.2.1"></a>
+# [v6.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.2.1) - 2023-02-06
 
 Renewed 50 new icons and optimized their optical size:
 (Accessibility icons have been updated following [#207](https://github.com/iconoir-icons/iconoir/issues/207)).
@@ -802,12 +827,12 @@ Renewed 50 new icons and optimized their optical size:
 [Changes][v6.2.1]
 
 
-<a name="v6.2.0"></a>
-# [v6.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.2.0) - 29 Jan 2023
+<a id="v6.2.0"></a>
+# [v6.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.2.0) - 2023-01-29
 
 ## What's Changed
-* Astro Support by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/240
-* NextJS 13 Server Components Support by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/240
+* Astro Support by [@sammarks](https://github.com/sammarks) in [#240](https://github.com/iconoir-icons/iconoir/pull/240)
+* NextJS 13 Server Components Support by [@sammarks](https://github.com/sammarks) in [#240](https://github.com/iconoir-icons/iconoir/pull/240)
 
 
 **Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v6.1.1...v6.2.0
@@ -815,8 +840,8 @@ Renewed 50 new icons and optimized their optical size:
 [Changes][v6.2.0]
 
 
-<a name="v6.1.1"></a>
-# [v6.1.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.1) - 28 Jan 2023
+<a id="v6.1.1"></a>
+# [v6.1.1](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.1) - 2023-01-28
 
 Fixed the optical size of 3 icons:
 - `search`
@@ -826,8 +851,8 @@ Fixed the optical size of 3 icons:
 [Changes][v6.1.1]
 
 
-<a name="v6.1.0"></a>
-# [v6.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.0) - 26 Jan 2023
+<a id="v6.1.0"></a>
+# [v6.1.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.1.0) - 2023-01-26
 
 Added 24 new icons:
 - `agile`
@@ -858,8 +883,8 @@ Added 24 new icons:
 [Changes][v6.1.0]
 
 
-<a name="v6.0"></a>
-# [v6.0.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.0) - 08 Jan 2023
+<a id="v6.0"></a>
+# [v6.0.0](https://github.com/iconoir-icons/iconoir/releases/tag/v6.0) - 2023-01-08
 
 In this major release, we made some old icons' names more consistent and removed one icon.
 **Please double-check this list before updating to Iconoir v6.0.**
@@ -967,19 +992,19 @@ In this major release, we made some old icons' names more consistent and removed
 [Changes][v6.0]
 
 
-<a name="v5.5.2"></a>
-# [v5.5.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.2) - 08 Dec 2022
+<a id="v5.5.2"></a>
+# [v5.5.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.2) - 2022-12-08
 
 Use a different Action for Flutter publishing.
 
 [Changes][v5.5.2]
 
 
-<a name="v5.5.1"></a>
-# [v5.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.1) - 08 Dec 2022
+<a id="v5.5.1"></a>
+# [v5.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5.1) - 2022-12-08
 
 ## What's Changed
-* Refactor workflows by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/222
+* Refactor workflows by [@paescuj](https://github.com/paescuj) in [#222](https://github.com/iconoir-icons/iconoir/pull/222)
 * Fix Flutter publishing workflow
 
 
@@ -988,8 +1013,8 @@ Use a different Action for Flutter publishing.
 [Changes][v5.5.1]
 
 
-<a name="v5.5"></a>
-# [v5.5](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5) - 07 Dec 2022
+<a id="v5.5"></a>
+# [v5.5](https://github.com/iconoir-icons/iconoir/releases/tag/v5.5) - 2022-12-07
 
 Added 27 new icons:
 
@@ -1024,8 +1049,8 @@ Added 27 new icons:
 [Changes][v5.5]
 
 
-<a name="v5.4.1"></a>
-# [v5.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4.1) - 18 Nov 2022
+<a id="v5.4.1"></a>
+# [v5.4.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4.1) - 2022-11-18
 
 Added 3 new icons:
 - `auto-flash`
@@ -1037,8 +1062,8 @@ Added 3 new icons:
 [Changes][v5.4.1]
 
 
-<a name="v5.4"></a>
-# [v5.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4) - 01 Nov 2022
+<a id="v5.4"></a>
+# [v5.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.4) - 2022-11-01
 
 Added 21 new icons:
 - `arrow-bl-circled`
@@ -1066,8 +1091,8 @@ Added 21 new icons:
 [Changes][v5.4]
 
 
-<a name="v5.3.2"></a>
-# [v5.3.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.2) - 15 Oct 2022
+<a id="v5.3.2"></a>
+# [v5.3.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.2) - 2022-10-15
 
 Optimized 23 new icons:
 - `album-carousel`
@@ -1097,8 +1122,8 @@ Optimized 23 new icons:
 [Changes][v5.3.2]
 
 
-<a name="v5.3.1"></a>
-# [v5.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.1) - 23 Sep 2022
+<a id="v5.3.1"></a>
+# [v5.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.1) - 2022-09-23
 
 Optimized 19 new icons:
 - `add-page`
@@ -1123,8 +1148,8 @@ Optimized 19 new icons:
 [Changes][v5.3.1]
 
 
-<a name="v5.3.0"></a>
-# [v5.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.0) - 10 Sep 2022
+<a id="v5.3.0"></a>
+# [v5.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.3.0) - 2022-09-10
 
 Added 37 new icons:
 
@@ -1170,13 +1195,13 @@ Added 37 new icons:
 [Changes][v5.3.0]
 
 
-<a name="v5.2.0"></a>
-# [v5.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.2.0) - 28 Aug 2022
+<a id="v5.2.0"></a>
+# [v5.2.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.2.0) - 2022-08-28
 
 ## What's Changed
-* feat: add Flutter package to README by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/178
-* Remove old changelogs from react packages by [@paescuj](https://github.com/paescuj) in https://github.com/iconoir-icons/iconoir/pull/191
-* feat: add iconoir.com and React contexts by [@sammarks](https://github.com/sammarks) in https://github.com/iconoir-icons/iconoir/pull/185
+* feat: add Flutter package to README by [@sammarks](https://github.com/sammarks) in [#178](https://github.com/iconoir-icons/iconoir/pull/178)
+* Remove old changelogs from react packages by [@paescuj](https://github.com/paescuj) in [#191](https://github.com/iconoir-icons/iconoir/pull/191)
+* feat: add iconoir.com and React contexts by [@sammarks](https://github.com/sammarks) in [#185](https://github.com/iconoir-icons/iconoir/pull/185)
 
 
 **Full Changelog**: https://github.com/iconoir-icons/iconoir/compare/v5.1.4...v5.2.0
@@ -1184,54 +1209,54 @@ Added 37 new icons:
 [Changes][v5.2.0]
 
 
-<a name="v5.1.4"></a>
-# [v5.1.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.4) - 05 Jul 2022
+<a id="v5.1.4"></a>
+# [v5.1.4](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.4) - 2022-07-05
 
 Give the release one more try!
 
 [Changes][v5.1.4]
 
 
-<a name="v5.1.3"></a>
-# [v5.1.3](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.3) - 05 Jul 2022
+<a id="v5.1.3"></a>
+# [v5.1.3](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.3) - 2022-07-05
 
 Don't automatically commit Flutter package changelog updates.
 
 [Changes][v5.1.3]
 
 
-<a name="v5.1.2"></a>
-# [v5.1.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.2) - 05 Jul 2022
+<a id="v5.1.2"></a>
+# [v5.1.2](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.2) - 2022-07-05
 
 Automatically generate Flutter release notes from GitHub releases.
 
 [Changes][v5.1.2]
 
 
-<a name="v5.1.1"></a>
-# [v5.1.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.1) - 05 Jul 2022
+<a id="v5.1.1"></a>
+# [v5.1.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1.1) - 2022-07-05
 
 Fixes for Flutter publish script.
 
 [Changes][v5.1.1]
 
 
-<a name="v5.1"></a>
-# [v5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1) - 05 Jul 2022
+<a id="v5.1"></a>
+# [v5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v5.1) - 2022-07-05
 
 ## What's Changed
-* feat(flutter): create package by [@heavybeard](https://github.com/heavybeard) in https://github.com/lucaburgio/iconoir/pull/173
+* feat(flutter): create package by [@heavybeard](https://github.com/heavybeard) in [lucaburgio/iconoir#173](https://github.com/lucaburgio/iconoir/pull/173)
 
 ## New Contributors
-* [@heavybeard](https://github.com/heavybeard) made their first contribution in https://github.com/lucaburgio/iconoir/pull/173
+* [@heavybeard](https://github.com/heavybeard) made their first contribution in [lucaburgio/iconoir#173](https://github.com/lucaburgio/iconoir/pull/173)
 
 **Full Changelog**: https://github.com/lucaburgio/iconoir/compare/v5.0...v5.1-2
 
 [Changes][v5.1]
 
 
-<a name="v5.0"></a>
-# [v5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.0) - 08 Jun 2022
+<a id="v5.0"></a>
+# [v5.0](https://github.com/iconoir-icons/iconoir/releases/tag/v5.0) - 2022-06-08
 
 Fixed 8 icons:
 - `git-branch`
@@ -1308,16 +1333,16 @@ Added 60 new icons:
 [Changes][v5.0]
 
 
-<a name="v4.9.2"></a>
-# [v4.9.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9.2) - 21 May 2022
+<a id="v4.9.2"></a>
+# [v4.9.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9.2) - 2022-05-21
 
 - Updated peerDependecies to include React 18.
 
 [Changes][v4.9.2]
 
 
-<a name="v4.9.1"></a>
-# [v4.9.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9.1) - 23 Apr 2022
+<a id="v4.9.1"></a>
+# [v4.9.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9.1) - 2022-04-23
 
 - The CSS file has been optimized.
 - NPM Iconoir core is now auto-updated after every release.
@@ -1325,8 +1350,8 @@ Added 60 new icons:
 [Changes][v4.9.1]
 
 
-<a name="v4.9"></a>
-# [v4.9](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9) - 23 Apr 2022
+<a id="v4.9"></a>
+# [v4.9](https://github.com/iconoir-icons/iconoir/releases/tag/v4.9) - 2022-04-23
 
 Optimized 3 icons:
 - `one-point-circle`
@@ -1380,8 +1405,8 @@ Added 42 new icons:
 [Changes][v4.9]
 
 
-<a name="v4.8.1"></a>
-# [v4.8.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.8.1) - 10 Apr 2022
+<a id="v4.8.1"></a>
+# [v4.8.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.8.1) - 2022-04-10
 
 Fixed 5 icons stroke:
 - `add-frame`
@@ -1393,8 +1418,8 @@ Fixed 5 icons stroke:
 [Changes][v4.8.1]
 
 
-<a name="v4.8"></a>
-# [v4.8](https://github.com/iconoir-icons/iconoir/releases/tag/v4.8) - 02 Apr 2022
+<a id="v4.8"></a>
+# [v4.8](https://github.com/iconoir-icons/iconoir/releases/tag/v4.8) - 2022-04-02
 
 Fixed 1 icon:
 - `dialpad`
@@ -1436,16 +1461,16 @@ Added 32 new icons:
 [Changes][v4.8]
 
 
-<a name="v4.7.1"></a>
-# [v4.7.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.7.1) - 10 Mar 2022
+<a id="v4.7.1"></a>
+# [v4.7.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.7.1) - 2022-03-10
 
 Fix: Auto-update React libraries.
 
 [Changes][v4.7.1]
 
 
-<a name="v4.7"></a>
-# [v4.7](https://github.com/iconoir-icons/iconoir/releases/tag/v4.7) - 10 Mar 2022
+<a id="v4.7"></a>
+# [v4.7](https://github.com/iconoir-icons/iconoir/releases/tag/v4.7) - 2022-03-10
 
 Renamed 1 icon:
 - `electronics-transister` to `electronics-transistor`
@@ -1467,8 +1492,8 @@ Added 10 new icons:
 [Changes][v4.7]
 
 
-<a name="v4.6"></a>
-# [v4.6](https://github.com/iconoir-icons/iconoir/releases/tag/v4.6) - 09 Jan 2022
+<a id="v4.6"></a>
+# [v4.6](https://github.com/iconoir-icons/iconoir/releases/tag/v4.6) - 2022-01-09
 
 Renamed 2 icons:
 - `basket-ball-alt` to `basketball-alt`
@@ -1512,8 +1537,8 @@ Added 33 new icons:
 [Changes][v4.6]
 
 
-<a name="v4.5.1"></a>
-# [v4.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.5.1) - 06 Dec 2021
+<a id="v4.5.1"></a>
+# [v4.5.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.5.1) - 2021-12-06
 
 Updated 1 icon:
 - `qr-code`
@@ -1521,8 +1546,8 @@ Updated 1 icon:
 [Changes][v4.5.1]
 
 
-<a name="v4.5"></a>
-# [v4.5](https://github.com/iconoir-icons/iconoir/releases/tag/v4.5) - 11 Oct 2021
+<a id="v4.5"></a>
+# [v4.5](https://github.com/iconoir-icons/iconoir/releases/tag/v4.5) - 2021-10-11
 
 Added 27 new icons:
 - `apple-wallet`
@@ -1562,8 +1587,8 @@ Added 27 new icons:
 [Changes][v4.5]
 
 
-<a name="v4.4"></a>
-# [v4.4](https://github.com/iconoir-icons/iconoir/releases/tag/v4.4) - 03 Jul 2021
+<a id="v4.4"></a>
+# [v4.4](https://github.com/iconoir-icons/iconoir/releases/tag/v4.4) - 2021-07-03
 
 - Update React library.
 - Add React Native library.
@@ -1603,8 +1628,8 @@ Added 27 new icons:
 [Changes][v4.4]
 
 
-<a name="v4.3.1"></a>
-# [v4.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.3.1) - 01 Jun 2021
+<a id="v4.3.1"></a>
+# [v4.3.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.3.1) - 2021-06-01
 
 - Update React library.
 - Fix issue on paths on `cloud-sync` and `cloud-desync` icons
@@ -1614,8 +1639,8 @@ Added 27 new icons:
 [Changes][v4.3.1]
 
 
-<a name="v4.3.0"></a>
-# [v4.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v4.3.0) - 22 May 2021
+<a id="v4.3.0"></a>
+# [v4.3.0](https://github.com/iconoir-icons/iconoir/releases/tag/v4.3.0) - 2021-05-22
 
 add: React library.
 
@@ -1626,16 +1651,16 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.3.0]
 
 
-<a name="v4.2.2"></a>
-# [v4.2.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.2) - 16 May 2021
+<a id="v4.2.2"></a>
+# [v4.2.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.2) - 2021-05-16
 
 - add: .EOT, .SVG, .TTF, and .WOFF fonts.
 
 [Changes][v4.2.2]
 
 
-<a name="v4.2.1"></a>
-# [v4.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.1) - 14 May 2021
+<a id="v4.2.1"></a>
+# [v4.2.1](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2.1) - 2021-05-14
 
 - fix: renamed 4 icons from categories Edit and Album.
 - add: IconJar pack.
@@ -1643,8 +1668,8 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2.1]
 
 
-<a name="v4.2"></a>
-# [v4.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2) - 11 May 2021
+<a id="v4.2"></a>
+# [v4.2](https://github.com/iconoir-icons/iconoir/releases/tag/v4.2) - 2021-05-11
 
 - 40 new icons.
 - The library is now open-source.
@@ -1652,6 +1677,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.10.0]: https://github.com/iconoir-icons/iconoir/compare/v7.9.0...v7.10.0
 [v7.9.0]: https://github.com/iconoir-icons/iconoir/compare/v7.8.0...v7.9.0
 [v7.8.0]: https://github.com/iconoir-icons/iconoir/compare/v7.7.0...v7.8.0
 [v7.7.0]: https://github.com/iconoir-icons/iconoir/compare/v7.6.0...v7.7.0
@@ -1712,4 +1738,4 @@ fix: changed stroke property from `black` to `currentColor`.
 [v4.2.1]: https://github.com/iconoir-icons/iconoir/compare/v4.2...v4.2.1
 [v4.2]: https://github.com/iconoir-icons/iconoir/tree/v4.2
 
-<!-- Generated by https://github.com/rhysd/changelog-from-release v3.7.2 -->
+<!-- Generated by https://github.com/rhysd/changelog-from-release v3.8.0 -->
