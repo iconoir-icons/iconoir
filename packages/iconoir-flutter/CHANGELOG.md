@@ -1,3 +1,11 @@
+<a id="v7.10.1"></a>
+# [v7.10.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.10.1) - 2024-11-28
+
+Hotfix: The regular icon droplet-snow-flake has been renamed to droplet-snow-flake-in to match the solid version. Marked as minor release as the icon has been recently released and the name change shouldn't disrupt anyone.
+
+[Changes][v7.10.1]
+
+
 <a id="v7.10.0"></a>
 # [v7.10.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.10.0) - 2024-11-10
 
@@ -1677,6 +1685,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.10.1]: https://github.com/iconoir-icons/iconoir/compare/v7.10.0...v7.10.1
 [v7.10.0]: https://github.com/iconoir-icons/iconoir/compare/v7.9.0...v7.10.0
 [v7.9.0]: https://github.com/iconoir-icons/iconoir/compare/v7.8.0...v7.9.0
 [v7.8.0]: https://github.com/iconoir-icons/iconoir/compare/v7.7.0...v7.8.0
