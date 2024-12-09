@@ -88,7 +88,6 @@ export default async (ctx, target) => {
     root: target.path,
     logLevel: 'silent',
     build: {
-      minify: false,
       outDir: 'dist',
       lib: {
         entry: path.join('src', 'index.ts'),
