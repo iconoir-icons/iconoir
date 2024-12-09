@@ -8,3 +8,5 @@ packages/iconoir-flutter/lib/
 packages/iconoir-vue/src/*
 !packages/iconoir-vue/src/IconoirProvider.vue
 !packages/iconoir-vue/src/providerKey.ts
+
+packages/iconoir-solid-js/src/*

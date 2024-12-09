@@ -1,4 +1,5 @@
 import ts from 'typescript';
+import * as pathlib from 'path';
 
 export function getDts(path, content, options) {
   let output;
@@ -8,7 +9,10 @@ export function getDts(path, content, options) {
   const _readFile = host.readFile;
 
   host.readFile = (filename) => {
-    if (filename === path) return content;
+    const normalizedFilename = pathlib.normalize(filename).replace(/\\/g, '/');
+    const normalizedPath = pathlib.normalize(path).replace(/\\/g, '/');
+
+    if (normalizedFilename === normalizedPath) return content;
 
     return _readFile(filename);
   };
@@ -16,7 +20,11 @@ export function getDts(path, content, options) {
   const dtsFilename = path.replace(/\.(m|c)?(ts|js)x?$/, '.d.$1ts');
 
   host.writeFile = (filename, contents) => {
-    if (filename === dtsFilename) output = contents;
+    const normalizedFilename = pathlib.normalize(filename).replace(/\\/g, '/');
+    const normalizedDtsFilename = pathlib
+      .normalize(dtsFilename)
+      .replace(/\\/g, '/');
+    if (normalizedFilename === normalizedDtsFilename) output = contents;
   };
 
   const program = ts.createProgram([path], options, host);
