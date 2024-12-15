@@ -242,7 +242,6 @@ function itemFromSlug(
 ): DocumentationItem {
   const flatItems = flattenItems(items);
 
-  console.log(flatItems);
   const joinedSlug = slug.filter(Boolean).join('/');
   const item = flatItems.find((flatItem) => flatItem.path === joinedSlug);
   if (!item)
@@ -268,7 +267,6 @@ function cleanSource(source: string): string {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const items = getDocumentationStructure();
-  console.log(items);
 
   const navigationItem = itemFromSlug(items, context.params!.slug as string[]);
   const repositoryRoot = path.join(process.cwd(), '..');
