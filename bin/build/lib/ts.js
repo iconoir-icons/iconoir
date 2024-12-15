@@ -1,6 +1,14 @@
 import ts from 'typescript';
 
+/**
+ *
+ * @param {string} path
+ * @param {string} content
+ * @param {import('types-tsconfig').TSConfigJSON['compilerOptions']} options
+ */
 export function getDts(path, content, options) {
+  options = ts.convertCompilerOptionsFromJson(options, '').options;
+
   let output;
 
   const host = ts.createCompilerHost(options);
