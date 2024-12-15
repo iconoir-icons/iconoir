@@ -36,9 +36,8 @@ const jsTargets = [
 /** @type {import('esbuild').TransformOptions} */
 const defaultEsbuildOptions = { target: 'es6', minify: true };
 
-/** @type {import('typescript').CompilerOptions} */
+/** @type {import('types-tsconfig').TSConfigJSON['compilerOptions']} */
 const defaultTsOptions = {
-  jsx: 'react',
   declaration: true,
   emitDeclarationOnly: true,
   target: 'es6',
@@ -90,6 +89,7 @@ export default async (ctx, target) => {
       iconoirContextDtsPath,
       iconoirContext,
       jsTarget.module,
+      target.native,
     );
 
     for (const variant of Object.keys(ctx.icons)) {
@@ -152,6 +152,7 @@ export default async (ctx, target) => {
             dtsPath,
             reactComponent,
             jsTarget.module,
+            target.native,
           );
 
           promises.push(iconDts);
@@ -180,10 +181,12 @@ async function getReactComponent(iconPath, native, template) {
   return svgr.transform(iconContent, options);
 }
 
-async function generateDts(inputPath, outputPath, input, module) {
+async function generateDts(inputPath, outputPath, input, module, native) {
   const dts = getDts(inputPath, await input, {
     ...defaultTsOptions,
+    jsx: native ? 'react-native' : 'react',
     module,
+    ...(module === 'esnext' && { moduleResolution: 'bundler' }),
   });
 
   return fs.writeFile(outputPath, dts);
