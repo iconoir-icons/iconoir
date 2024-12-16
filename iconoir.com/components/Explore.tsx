@@ -9,47 +9,6 @@ import { IconList } from './IconList';
 import { Streamline } from './Streamline';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
 
-export interface ExploreProps {
-  allIcons: Icon[];
-}
-
-export function Explore({ allIcons }: ExploreProps) {
-  const [filters, setFilters] = React.useState<IconListFilters>({});
-  const [customizations, setCustomizations] = useCustomizationPersistence();
-
-  return (
-    <Container>
-      <Left>
-        <FilterContainer $isMobile>
-          <FiltersEditor filters={filters} onChange={setFilters} />
-        </FilterContainer>
-        <IconoirProvider
-          iconProps={{
-            color: customizations.hexColor,
-            width: customizations.size ? `${customizations.size}px` : undefined,
-            height: customizations.size
-              ? `${customizations.size}px`
-              : undefined,
-            strokeWidth: customizations.strokeWidth,
-          }}
-        >
-          <IconList filters={filters} allIcons={allIcons} />
-        </IconoirProvider>
-      </Left>
-      <Right>
-        <FilterContainer>
-          <FiltersEditor filters={filters} onChange={setFilters} />
-        </FilterContainer>
-        <Streamline />
-        <CustomizationEditor
-          customizations={customizations}
-          onChange={setCustomizations}
-        />
-      </Right>
-    </Container>
-  );
-}
-
 const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -95,3 +54,44 @@ const FilterContainer = styled.div<{ $isMobile?: boolean }>`
     margin-bottom: 10px;
   }
 `;
+
+export interface ExploreProps {
+  allIcons: Icon[];
+}
+
+export function Explore({ allIcons }: ExploreProps) {
+  const [filters, setFilters] = React.useState<IconListFilters>({});
+  const [customizations, setCustomizations] = useCustomizationPersistence();
+
+  return (
+    <Container>
+      <Left>
+        <FilterContainer $isMobile>
+          <FiltersEditor filters={filters} onChange={setFilters} />
+        </FilterContainer>
+        <IconoirProvider
+          iconProps={{
+            color: customizations.hexColor,
+            width: customizations.size ? `${customizations.size}px` : undefined,
+            height: customizations.size
+              ? `${customizations.size}px`
+              : undefined,
+            strokeWidth: customizations.strokeWidth,
+          }}
+        >
+          <IconList filters={filters} allIcons={allIcons} />
+        </IconoirProvider>
+      </Left>
+      <Right>
+        <FilterContainer>
+          <FiltersEditor filters={filters} onChange={setFilters} />
+        </FilterContainer>
+        <Streamline />
+        <CustomizationEditor
+          customizations={customizations}
+          onChange={setCustomizations}
+        />
+      </Right>
+    </Container>
+  );
+}

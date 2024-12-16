@@ -5,6 +5,64 @@ import { PraiseItem } from './PraiseItem';
 
 const NUM_PRAISE_ITEMS = 3;
 
+const Container = styled.div`
+  max-width: 100%;
+  margin: 0 -30px;
+  padding: 0 30px;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  > :not(:last-child) {
+    margin-right: 20px;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  > :last-child {
+    padding-right: 30px;
+  }
+
+  ${media.xl} {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: visible;
+    > :not(:last-child) {
+      margin-right: 48px;
+    }
+    > :last-child {
+      padding-right: 0;
+    }
+  }
+`;
+
+const Indicator = styled.div`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gray);
+  transition: background 0.25s linear;
+  &.active {
+    background: var(--black);
+  }
+`;
+
+const IndicatorContainer = styled.div`
+  margin: 40px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > :not(:last-child) {
+    margin-right: 14px;
+  }
+  ${media.xl} {
+    display: none;
+  }
+`;
+
 export function Praise() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const indicatorContainerRef = React.useRef<HTMLDivElement>(null);
@@ -69,7 +127,7 @@ export function Praise() {
           position="Mailbrew and Typefully founder"
           description={(
             <>
-              There's no shortage of icon packs, and yet I always find myself
+              There&apos;s no shortage of icon packs, and yet I always find myself
               browsing iconoir. I love the style and attention to detail, and
               how easy it is to grab the perfect icons for my projects.
             </>
@@ -84,9 +142,9 @@ export function Praise() {
           position="Entrepreneur and # inventor"
           description={(
             <>
-              It's the tiny details that determine the degree of delight your
+              It&apos;s the tiny details that determine the degree of delight your
               customers experience from your product. Adopting Iconoir icons
-              will easily boost your app's delight by a factor of 10!
+              will easily boost your app&apos;s delight by a factor of 10!
             </>
           )}
           imageUrl="./chris-messina.png"
@@ -103,61 +161,3 @@ export function Praise() {
     </>
   );
 }
-
-const Container = styled.div`
-  max-width: 100%;
-  margin: 0 -30px;
-  padding: 0 30px;
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  scrollbar-width: none;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  > :not(:last-child) {
-    margin-right: 20px;
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  > :last-child {
-    padding-right: 30px;
-  }
-
-  ${media.xl} {
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    overflow-x: visible;
-    > :not(:last-child) {
-      margin-right: 48px;
-    }
-    > :last-child {
-      padding-right: 0;
-    }
-  }
-`;
-
-const Indicator = styled.div`
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gray);
-  transition: background 0.25s linear;
-  &.active {
-    background: var(--black);
-  }
-`;
-
-const IndicatorContainer = styled.div`
-  margin: 40px auto 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  > :not(:last-child) {
-    margin-right: 14px;
-  }
-  ${media.xl} {
-    display: none;
-  }
-`;

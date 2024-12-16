@@ -1,26 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function Hono() {
-  return (
-    <a
-      href="https://wearehono.com/?utm_source=iconoir&utm_medium=sidebar"
-      style={{ textDecoration: 'none' }}
-    >
-      <PromoContainer>
-        <PromoContent>
-          <PromoInfo>
-            <PromoTitle>Buy high-quality logos</PromoTitle>
-            <PromoSub>with Hono.</PromoSub>
-            <PromoImage src="./hono-ad.png" />
-            <SponsorLabel>Our sponsor</SponsorLabel>
-          </PromoInfo>
-        </PromoContent>
-      </PromoContainer>
-    </a>
-  );
-}
-
 const PromoContainer = styled.div`
   border-radius: 12px;
   border: 1px solid var(--g6);
@@ -61,3 +41,23 @@ const PromoSub = styled.h2`
   font-size: 14px;
   margin: 0 auto 10px auto;
 `;
+
+export function Hono() {
+  return (
+    <a
+      href="https://wearehono.com/?utm_source=iconoir&utm_medium=sidebar"
+      style={{ textDecoration: 'none' }}
+    >
+      <PromoContainer>
+        <PromoContent>
+          <PromoInfo>
+            <PromoTitle>Buy high-quality logos</PromoTitle>
+            <PromoSub>with Hono.</PromoSub>
+            <PromoImage src="./hono-ad.png" />
+            <SponsorLabel>Our sponsor</SponsorLabel>
+          </PromoInfo>
+        </PromoContent>
+      </PromoContainer>
+    </a>
+  );
+}

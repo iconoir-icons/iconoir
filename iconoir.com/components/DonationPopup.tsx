@@ -1,63 +1,13 @@
 import { Sparks } from 'iconoir-react';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { LargeButton } from '../components/Button';
 import { media } from '../lib/responsive';
-
-export function DonationPopup() {
-  const [isVisible, setIsVisible] = useState(false);
-  const isInitialMount = useRef(true);
-
-  useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      const isReturningUser = localStorage.getItem('returningUser');
-      const isReturningUserAge = localStorage.getItem('returningUserAge');
-      console.log('isReturningUser:', isReturningUser); // Debugging line
-      console.log('isReturningUserAge:', isReturningUserAge); // Debugging line
-
-      if (isReturningUser === 'true' && isReturningUserAge === 'false') {
-        setTimeout(() => setIsVisible(true), 15000);
-        localStorage.setItem('returningUserAge', 'true');
-      } else {
-        localStorage.setItem('returningUser', 'true');
-        localStorage.setItem('returningUserAge', 'false');
-        console.log('Set returningUser to true'); // Debugging line
-      }
-    }
-  }, []);
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
-
-  return (
-    <>
-      {isVisible && (
-        <PopupContent>
-          <Sparks></Sparks>
-          <Text>
-            Your one-time or recurring contribution does a lot to keep Iconoir
-            going.
-          </Text>
-          <a
-            href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
-            target="_blank"
-          >
-            Support the project!
-          </a>
-          <CloseButton onClick={handleClose}>&times;</CloseButton>
-        </PopupContent>
-      )}
-    </>
-  );
-}
 
 const Text = styled.span`
   color: #ffffffba;
 `;
 
-export const PopupContent = styled.div`
+const PopupContent = styled.div`
   display: none;
   ${media.lg} {
     display: flex;
@@ -99,6 +49,48 @@ const CloseButton = styled.span`
   }
 `;
 
-export const LargeButtonModal = styled(LargeButton)`
-  margin-top: 30px;
-`;
+export function DonationPopup() {
+  const [isVisible, setIsVisible] = useState(false);
+  const isInitialMount = useRef(true);
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      const isReturningUser = localStorage.getItem('returningUser');
+      const isReturningUserAge = localStorage.getItem('returningUserAge');
+
+      if (isReturningUser === 'true' && isReturningUserAge === 'false') {
+        setTimeout(() => setIsVisible(true), 15000);
+        localStorage.setItem('returningUserAge', 'true');
+      } else {
+        localStorage.setItem('returningUser', 'true');
+        localStorage.setItem('returningUserAge', 'false');
+      }
+    }
+  }, []);
+
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+
+  return (
+    <>
+      {isVisible && (
+        <PopupContent>
+          <Sparks></Sparks>
+          <Text>
+            Your one-time or recurring contribution does a lot to keep Iconoir
+            going.
+          </Text>
+          <a
+            href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
+            target="_blank"
+          >
+            Support the project!
+          </a>
+          <CloseButton onClick={handleClose}>&times;</CloseButton>
+        </PopupContent>
+      )}
+    </>
+  );
+}

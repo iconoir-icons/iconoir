@@ -5,42 +5,7 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
 
-export interface NavigationItemProps {
-  href: string;
-  activeMatch?: string;
-  children: React.ReactElement | string;
-  style?: any;
-}
-
-export function NavigationItem({
-  href,
-  activeMatch,
-  children,
-  style,
-}: NavigationItemProps) {
-  const router = useRouter();
-
-  return (
-    <Link href={href} passHref legacyBehavior>
-      <NavigationItemContainer
-        as="a"
-        style={style}
-        $text={children.toString()}
-        $isActive={
-          activeMatch
-            ? router.asPath.startsWith(activeMatch)
-            : href.slice(1)
-              ? router.asPath.slice(1).startsWith(href.slice(1))
-              : router.asPath === href
-        }
-      >
-        {children}
-      </NavigationItemContainer>
-    </Link>
-  );
-}
-
-export const NavigationItemContainer = styled(Text15)<{
+const NavigationItemContainer = styled(Text15)<{
   $text: string;
   $isActive?: boolean;
 }>`
@@ -110,3 +75,38 @@ export const NavigationItemContainer = styled(Text15)<{
     }
   }
 `;
+
+export interface NavigationItemProps {
+  href: string;
+  activeMatch?: string;
+  children: React.ReactElement | string;
+  style?: any;
+}
+
+export function NavigationItem({
+  href,
+  activeMatch,
+  children,
+  style,
+}: NavigationItemProps) {
+  const router = useRouter();
+
+  return (
+    <Link href={href} passHref legacyBehavior>
+      <NavigationItemContainer
+        as="a"
+        style={style}
+        $text={children.toString()}
+        $isActive={
+          activeMatch
+            ? router.asPath.startsWith(activeMatch)
+            : href.slice(1)
+              ? router.asPath.slice(1).startsWith(href.slice(1))
+              : router.asPath === href
+        }
+      >
+        {children}
+      </NavigationItemContainer>
+    </Link>
+  );
+}

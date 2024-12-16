@@ -3,40 +3,6 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 import { Text14, Text18 } from './Typography';
 
-export interface PraiseItemProps {
-  name: string;
-  position: string;
-  description: string | React.ReactElement;
-  logoUrl: string;
-  logoLink: string;
-  logoAlt: string;
-  imageUrl: string;
-}
-
-export function PraiseItem({
-  name,
-  position,
-  description,
-  logoUrl,
-  logoLink,
-  logoAlt,
-  imageUrl,
-}: PraiseItemProps) {
-  return (
-    <Container>
-      <AuthorImage src={imageUrl} alt={`Picture of ${name}`} />
-      <div>
-        <Header>{name}</Header>
-        <Text14>{position}</Text14>
-        <Body>{description}</Body>
-        <a href={logoLink} target="_blank" rel="noreferrer">
-          <Logo src={logoUrl} alt={logoAlt} />
-        </a>
-      </div>
-    </Container>
-  );
-}
-
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
@@ -70,3 +36,37 @@ const Header = styled(Text18)`
 const Body = styled(Text18)`
   margin-top: 8px;
 `;
+
+export interface PraiseItemProps {
+  name: string;
+  position: string;
+  description: string | React.ReactElement;
+  logoUrl: string;
+  logoLink: string;
+  logoAlt: string;
+  imageUrl: string;
+}
+
+export function PraiseItem({
+  name,
+  position,
+  description,
+  logoUrl,
+  logoLink,
+  logoAlt,
+  imageUrl,
+}: PraiseItemProps) {
+  return (
+    <Container>
+      <AuthorImage src={imageUrl} alt={`Picture of ${name}`} />
+      <div>
+        <Header>{name}</Header>
+        <Text14>{position}</Text14>
+        <Body>{description}</Body>
+        <a href={logoLink} target="_blank" rel="noreferrer">
+          <Logo src={logoUrl} alt={logoAlt} />
+        </a>
+      </div>
+    </Container>
+  );
+}

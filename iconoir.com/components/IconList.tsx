@@ -122,9 +122,41 @@ interface IconListContextValue {
   iconWidth: number;
   iconsPerRow: number;
 }
-export const IconListContext = React.createContext<
-  IconListContextValue | undefined
->(undefined);
+
+const IconListContext = React.createContext<IconListContextValue | undefined>(undefined);
+
+const Container = styled.div`
+  width: 100%;
+  margin-top: -${HEADER_TOP_PADDING}px;
+  > :first-child {
+    overflow: visible !important;
+    > :first-child {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+`;
+
+const Row = React.memo(
+  ({ data, index, style }: ListChildComponentProps<IconRow[]>) => {
+    const { iconWidth } = React.useContext(IconListContext)!;
+    const row = data[index];
+
+    if (isCategoryRow(row)) {
+      return (
+        <CategoryRow
+          category={row.category}
+          numIcons={row.numIcons}
+          style={style}
+        />
+      );
+    } else {
+      return <IconsRow icons={row.icons} style={style} iconWidth={iconWidth} />;
+    }
+  },
+  areEqual,
+);
+
+Row.displayName = 'Row';
 
 export interface IconListProps {
   filters: IconListFilters;
@@ -193,36 +225,3 @@ export function IconList({ filters, allIcons }: IconListProps) {
 
   return <Container ref={ref}>{children}</Container>;
 }
-
-const Container = styled.div`
-  width: 100%;
-  margin-top: -${HEADER_TOP_PADDING}px;
-  > :first-child {
-    overflow: visible !important;
-    > :first-child {
-      -webkit-overflow-scrolling: touch;
-    }
-  }
-`;
-
-const Row = React.memo(
-  ({ data, index, style }: ListChildComponentProps<IconRow[]>) => {
-    const { iconWidth } = React.useContext(IconListContext)!;
-    const row = data[index];
-
-    if (isCategoryRow(row)) {
-      return (
-        <CategoryRow
-          category={row.category}
-          numIcons={row.numIcons}
-          style={style}
-        />
-      );
-    } else {
-      return <IconsRow icons={row.icons} style={style} iconWidth={iconWidth} />;
-    }
-  },
-  areEqual,
-);
-
-Row.displayName = 'Row';

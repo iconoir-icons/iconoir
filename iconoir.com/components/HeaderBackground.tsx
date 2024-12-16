@@ -2,55 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
-export interface HeaderBackgroundProps {
-  children: React.ReactElement;
-}
-
-export function HeaderBackground({ children }: HeaderBackgroundProps) {
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!parallaxRef.current)
-      return;
-
-    const parallaxElements = parallaxRef.current.querySelectorAll(
-      '[data-parallax-factor]',
-    );
-
-    const handleMouseMove = (event: MouseEvent) => {
-      const x = event.clientX / window.innerWidth;
-      const y = event.clientY / window.innerHeight;
-
-      parallaxElements.forEach((el) => {
-        const factor = Number.parseFloat(
-          el.getAttribute('data-parallax-factor') || '1',
-        );
-
-        (el as HTMLElement).style.transform = `translate3d(${
-          x * factor * 40
-        }px, ${y * factor * 80}px, 0)`;
-      });
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return (
-    <HeaderContainer ref={parallaxRef}>
-      <FloatingIconCellar data-parallax-factor="0.75" />
-      <FloatingIconPay data-parallax-factor="1.5" />
-      <FloatingFaceID data-parallax-factor="0.5" />
-      <FloatingCommand data-parallax-factor="1.25" />
-      <FloatingFill data-parallax-factor="2" />
-      {children}
-    </HeaderContainer>
-  );
-}
-
 const HeaderContainer = styled.div`
   position: relative;
   width: fit-content;
@@ -134,3 +85,52 @@ const FloatingFill = styled(FloatingIcon)`
   ${media.lg} {
   }
 `;
+
+export interface HeaderBackgroundProps {
+  children: React.ReactElement;
+}
+
+export function HeaderBackground({ children }: HeaderBackgroundProps) {
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!parallaxRef.current)
+      return;
+
+    const parallaxElements = parallaxRef.current.querySelectorAll(
+      '[data-parallax-factor]',
+    );
+
+    const handleMouseMove = (event: MouseEvent) => {
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+
+      parallaxElements.forEach((el) => {
+        const factor = Number.parseFloat(
+          el.getAttribute('data-parallax-factor') || '1',
+        );
+
+        (el as HTMLElement).style.transform = `translate3d(${
+          x * factor * 40
+        }px, ${y * factor * 80}px, 0)`;
+      });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return (
+    <HeaderContainer ref={parallaxRef}>
+      <FloatingIconCellar data-parallax-factor="0.75" />
+      <FloatingIconPay data-parallax-factor="1.5" />
+      <FloatingFaceID data-parallax-factor="0.5" />
+      <FloatingCommand data-parallax-factor="1.25" />
+      <FloatingFill data-parallax-factor="2" />
+      {children}
+    </HeaderContainer>
+  );
+}

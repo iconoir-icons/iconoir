@@ -124,14 +124,6 @@ export const Li = styled.li`
   margin: 4px 0;
 `;
 
-export const CodeElement = styled.code`
-  &&& {
-    display: inline-block;
-    padding: 0 4px;
-    color: var(--g0);
-  }
-`;
-
 const PreContainer = styled(Code)`
   &&& {
     position: relative;
@@ -173,9 +165,9 @@ export function Pre({ children, ...props }: React.PropsWithChildren<any>) {
             <CopyContainer>
               <CopyButton
                 onClick={() => {
-                  if (containerRef.current) {
+                  if (containerRef.current?.textContent) {
                     navigator.clipboard
-                      .writeText(containerRef.current.innerText)
+                      .writeText(containerRef.current.textContent)
                       .then(() => {
                         showNotification('Code copied!');
                       })

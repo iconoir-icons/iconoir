@@ -6,6 +6,94 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
+const HeaderItemIcon = styled.div<{ $active?: boolean }>`
+  font-size: 13px;
+  transition: transform 0.25s linear;
+  transform: rotate(${(props) => (props.$active ? 180 : 0)}deg);
+  margin-right: 7px;
+  position: relative;
+  top: 6px;
+  svg {
+    display: block;
+  }
+  ${media.lg} {
+    display: none;
+  }
+`;
+
+const ChildrenContainer = styled.div<{ $expanded?: boolean }>`
+  display: ${(props) => (props.$expanded ? 'block' : 'none')};
+  ${media.lg} {
+    display: block;
+  }
+`;
+
+const HeaderItem = styled.div`
+  padding: 10px 30px;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--g0);
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+  ${media.lg} {
+    padding: 22px 45px;
+    cursor: default;
+    pointer-events: none;
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+`;
+
+const NavigationItem = styled.div<{ $active?: boolean }>`
+  padding: 12px 12px 12px 75px;
+  transition:
+    background 0.1s linear,
+    color 0.1s linear;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14.5px;
+  letter-spacing: -0.02em;
+  color: var(--g1);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  span {
+    font-weight: 500;
+  }
+  > :not(:last-child) {
+    margin-right: 14px;
+  }
+  &:hover,
+  ${(props) => (props.$active ? '&' : '&.noop')} {
+    color: var(--g0);
+    text-decoration: underline;
+  }
+  ${(props) => (props.$active ? 'span' : '&.noop')} {
+    font-weight: 700;
+  }
+  ${media.lg} {
+    padding: 12px 12px 12px 65px;
+  }
+`;
+
+const NavigationItemLabel = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 17.6px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--g1);
+  background: var(--g5);
+`;
+
 export interface DocumentationNavigationProps {
   documentationItems: DocumentationItem[];
   pathPrefix?: string[];
@@ -100,91 +188,3 @@ export function DocumentationNavigation({
     </>
   );
 }
-
-const HeaderItemIcon = styled.div<{ $active?: boolean }>`
-  font-size: 13px;
-  transition: transform 0.25s linear;
-  transform: rotate(${(props) => (props.$active ? 180 : 0)}deg);
-  margin-right: 7px;
-  position: relative;
-  top: 6px;
-  svg {
-    display: block;
-  }
-  ${media.lg} {
-    display: none;
-  }
-`;
-
-const ChildrenContainer = styled.div<{ $expanded?: boolean }>`
-  display: ${(props) => (props.$expanded ? 'block' : 'none')};
-  ${media.lg} {
-    display: block;
-  }
-`;
-
-const HeaderItem = styled.div`
-  padding: 10px 30px;
-  font-size: 15px;
-  line-height: 19px;
-  color: var(--g0);
-  font-weight: 700;
-  display: flex;
-  align-items: baseline;
-  cursor: pointer;
-  ${media.lg} {
-    padding: 22px 45px;
-    cursor: default;
-    pointer-events: none;
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
-  }
-`;
-
-const NavigationItem = styled.div<{ $active?: boolean }>`
-  padding: 12px 12px 12px 75px;
-  transition:
-    background 0.1s linear,
-    color 0.1s linear;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 14.5px;
-  letter-spacing: -0.02em;
-  color: var(--g1);
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  span {
-    font-weight: 500;
-  }
-  > :not(:last-child) {
-    margin-right: 14px;
-  }
-  &:hover,
-  ${(props) => (props.$active ? '&' : '&.noop')} {
-    color: var(--g0);
-    text-decoration: underline;
-  }
-  ${(props) => (props.$active ? 'span' : '&.noop')} {
-    font-weight: 700;
-  }
-  ${media.lg} {
-    padding: 12px 12px 12px 65px;
-  }
-`;
-
-const NavigationItemLabel = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 11px;
-  line-height: 17.6px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--g1);
-  background: var(--g5);
-`;

@@ -7,6 +7,51 @@ import { ColorButton, ColorInput } from './Input';
 import { Slider } from './Slider';
 import { Text13, Text15 } from './Typography';
 
+const CustomizationBox = styled.div`
+  background-color: var(--g7);
+  width: 84%;
+  padding: 8%;
+  border-radius: 10px;
+  margin: 24px 0;
+  display: none;
+  ${media.md} {
+    display: block;
+  }
+`;
+
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: solid 1px var(--g6);
+  padding-bottom: 10px;
+`;
+
+const Field = styled.div`
+  margin-bottom: 18px;
+`;
+
+const HorizontalField = styled(Field)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const ResetButton = styled(Field)`
+  &&& {
+    margin: initial;
+    text-decoration: underline;
+    color: var(--dark-gray);
+    font-size: 13px;
+
+    &:hover {
+      color: var(--black);
+      cursor: pointer;
+    }
+  }
+`;
+
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;
   onChange: (customizations: IconListCustomizations) => void;
@@ -93,48 +138,3 @@ export function CustomizationEditor({
     </>
   );
 }
-
-const CustomizationBox = styled.div`
-  background-color: var(--g7);
-  width: 84%;
-  padding: 8%;
-  border-radius: 10px;
-  margin: 24px 0;
-  display: none;
-  ${media.md} {
-    display: block;
-  }
-`;
-
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  border-bottom: solid 1px var(--g6);
-  padding-bottom: 10px;
-`;
-
-const Field = styled.div`
-  margin-bottom: 18px;
-`;
-
-const HorizontalField = styled(Field)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const ResetButton = styled(Field)`
-  &&& {
-    margin: initial;
-    text-decoration: underline;
-    color: var(--dark-gray);
-    font-size: 13px;
-
-    &:hover {
-      color: var(--black);
-      cursor: pointer;
-    }
-  }
-`;

@@ -1,29 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function Streamline() {
-  return (
-    <a
-      rel="sponsored"
-      href="https://bit.ly/3SNgpKo"
-      style={{ textDecoration: 'none' }}
-    >
-      <PromoContainer>
-        <PromoContent>
-          <PromoInfo>
-            <PromoLogo />
-            <PromoTitle>Expand Your Icon Collection</PromoTitle>
-            <PromoSub>with Streamline</PromoSub>
-            <PromoImage src="./streamline-ad.png" />
-            <PromoDescription>170,000 Vector Icons</PromoDescription>
-            <SponsorLabel>Our sponsor</SponsorLabel>
-          </PromoInfo>
-        </PromoContent>
-      </PromoContainer>
-    </a>
-  );
-}
-
 const PromoContainer = styled.div`
   border-radius: 12px;
   border: 1px solid var(--g6);
@@ -110,3 +87,26 @@ const PromoDescription = styled.p`
   padding: 10px 0;
   font-weight: 600;
 `;
+
+export function Streamline() {
+  return (
+    <a
+      rel="sponsored"
+      href="https://bit.ly/3SNgpKo"
+      style={{ textDecoration: 'none' }}
+    >
+      <PromoContainer>
+        <PromoContent>
+          <PromoInfo>
+            <PromoLogo />
+            <PromoTitle>Expand Your Icon Collection</PromoTitle>
+            <PromoSub>with Streamline</PromoSub>
+            <PromoImage src="./streamline-ad.png" />
+            <PromoDescription>170,000 Vector Icons</PromoDescription>
+            <SponsorLabel>Our sponsor</SponsorLabel>
+          </PromoInfo>
+        </PromoContent>
+      </PromoContainer>
+    </a>
+  );
+}

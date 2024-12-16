@@ -10,66 +10,6 @@ import { Code, Text15, Text18 } from './Typography';
 
 const EXPAND_HEIGHT = 400;
 
-export interface ChangelogEntryProps {
-  name: string;
-  url: string;
-  created_at: string;
-  body?: MDXRemoteSerializeResult;
-}
-
-export function ChangelogEntry({
-  name,
-  url,
-  body,
-  created_at,
-}: ChangelogEntryProps) {
-  const [expanded, setExpanded] = React.useState(false);
-  const [shouldExpand, setShouldExpand] = React.useState(false);
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    if (
-      containerRef.current
-      && containerRef.current.clientHeight > EXPAND_HEIGHT
-    ) {
-      setShouldExpand(true);
-    }
-  }, []);
-
-  return (
-    <Container ref={containerRef}>
-      <ContainerLeft>
-        <ContainerIcon>
-          <BoxIso />
-        </ContainerIcon>
-        <TitleContainer>
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            style={{ textDecoration: 'none' }}
-          >
-            <EntryTitle>{name}</EntryTitle>
-          </a>
-          <Text15>{moment(created_at).format('MMM DD, YYYY')}</Text15>
-        </TitleContainer>
-      </ContainerLeft>
-      <EntryBody $expanded={expanded}>
-        {body ? <MDXRemote {...body} /> : 'No changelog'}
-        {shouldExpand
-          ? (
-              <ExpandContainer>
-                <CopyButton onClick={() => setExpanded((e) => !e)}>
-                  {expanded ? 'Collapse' : 'Expand'}
-                </CopyButton>
-              </ExpandContainer>
-            )
-          : null}
-      </EntryBody>
-    </Container>
-  );
-}
-
 const Container = styled.div`
   margin: 40px 0;
   display: flex;
@@ -144,3 +84,63 @@ const EntryBody = styled(Code)<{ $expanded?: boolean }>`
     }
   }
 `;
+
+export interface ChangelogEntryProps {
+  name: string;
+  url: string;
+  created_at: string;
+  body?: MDXRemoteSerializeResult;
+}
+
+export function ChangelogEntry({
+  name,
+  url,
+  body,
+  created_at,
+}: ChangelogEntryProps) {
+  const [expanded, setExpanded] = React.useState(false);
+  const [shouldExpand, setShouldExpand] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (
+      containerRef.current
+      && containerRef.current.clientHeight > EXPAND_HEIGHT
+    ) {
+      setShouldExpand(true);
+    }
+  }, []);
+
+  return (
+    <Container ref={containerRef}>
+      <ContainerLeft>
+        <ContainerIcon>
+          <BoxIso />
+        </ContainerIcon>
+        <TitleContainer>
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: 'none' }}
+          >
+            <EntryTitle>{name}</EntryTitle>
+          </a>
+          <Text15>{moment(created_at).format('MMM DD, YYYY')}</Text15>
+        </TitleContainer>
+      </ContainerLeft>
+      <EntryBody $expanded={expanded}>
+        {body ? <MDXRemote {...body} /> : 'No changelog'}
+        {shouldExpand
+          ? (
+              <ExpandContainer>
+                <CopyButton onClick={() => setExpanded((e) => !e)}>
+                  {expanded ? 'Collapse' : 'Expand'}
+                </CopyButton>
+              </ExpandContainer>
+            )
+          : null}
+      </EntryBody>
+    </Container>
+  );
+}

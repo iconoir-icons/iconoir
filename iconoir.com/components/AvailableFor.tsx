@@ -8,6 +8,98 @@ import {
 import { media } from '../lib/responsive';
 import { Text14 } from './Typography';
 
+const AreYouUsing = styled.div`
+  * {
+    white-space: nowrap;
+  }
+`;
+
+const MobileHeader = styled(Text14)`
+  &&& {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    ${media.lg} {
+      display: none;
+    }
+  }
+`;
+
+const DesktopHeader = styled(Text14)`
+  &&& {
+    display: none;
+    ${media.lg} {
+      display: block;
+    }
+  }
+`;
+
+const AvailableForAnimation = keyframes`
+  5% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(calc((var(--content-width) + 60px - 100vw) * -1));
+  }
+  55% {
+    transform: translateX(calc((var(--content-width) + 60px - 100vw) * -1));
+  }
+  95% {
+    transform: translateX(0);
+  }
+`;
+
+const AvailableForOuter = styled.div`
+  max-width: 100vw;
+  margin: 16px -30px 70px -30px;
+  padding: 0 30px;
+  overflow: hidden;
+  ${media.lg} {
+    margin: 80px auto;
+    padding: 0;
+  }
+`;
+
+const AvailableForContainer = styled.div<{ $contentWidth: number }>`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  --content-width: ${(props) => props.$contentWidth}px;
+  ${(props) =>
+    props.$contentWidth
+    && css`
+      animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
+        infinite;
+    `}
+  > :not(:last-child) {
+    margin-right: 30px;
+  }
+  ${media.sm} {
+    justify-content: center;
+    animation: none;
+    width: auto;
+  }
+  ${media.md} {
+    > :not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+`;
+
+const AvailableForImage = styled.img`
+  height: 40px;
+  display: block;
+  transition: 0.2s;
+  &:hover {
+    scale: 1.2;
+    transition: 0.2s;
+  }
+  ${media.lg} {
+    height: 50px;
+  }
+`;
+
 export function AvailableFor() {
   const { ref, width } = useResizeObserver();
 
@@ -111,95 +203,3 @@ export function AvailableFor() {
     </>
   );
 }
-
-const AreYouUsing = styled.div`
-  * {
-    white-space: nowrap;
-  }
-`;
-
-const MobileHeader = styled(Text14)`
-  &&& {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
-    ${media.lg} {
-      display: none;
-    }
-  }
-`;
-
-const DesktopHeader = styled(Text14)`
-  &&& {
-    display: none;
-    ${media.lg} {
-      display: block;
-    }
-  }
-`;
-
-const AvailableForAnimation = keyframes`
-  5% {
-    transform: translateX(0);
-  }
-  45% {
-    transform: translateX(calc((var(--content-width) + 60px - 100vw) * -1));
-  }
-  55% {
-    transform: translateX(calc((var(--content-width) + 60px - 100vw) * -1));
-  }
-  95% {
-    transform: translateX(0);
-  }
-`;
-
-const AvailableForOuter = styled.div`
-  max-width: 100vw;
-  margin: 16px -30px 70px -30px;
-  padding: 0 30px;
-  overflow: hidden;
-  ${media.lg} {
-    margin: 80px auto;
-    padding: 0;
-  }
-`;
-
-const AvailableForContainer = styled.div<{ $contentWidth: number }>`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: max-content;
-  --content-width: ${(props) => props.$contentWidth}px;
-  ${(props) =>
-    props.$contentWidth
-    && css`
-      animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
-        infinite;
-    `}
-  > :not(:last-child) {
-    margin-right: 30px;
-  }
-  ${media.sm} {
-    justify-content: center;
-    animation: none;
-    width: auto;
-  }
-  ${media.md} {
-    > :not(:last-child) {
-      margin-right: 40px;
-    }
-  }
-`;
-
-const AvailableForImage = styled.img`
-  height: 40px;
-  display: block;
-  transition: 0.2s;
-  &:hover {
-    scale: 1.2;
-    transition: 0.2s;
-  }
-  ${media.lg} {
-    height: 50px;
-  }
-`;

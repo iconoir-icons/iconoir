@@ -1,7 +1,7 @@
 export function showNotification(message: string) {
   const element = document.createElement('div');
   element.classList.add('bottom-notification');
-  element.innerText = message;
+  element.textContent = message;
   document.body.appendChild(element);
 
   setTimeout(() => {

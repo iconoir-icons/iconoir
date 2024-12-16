@@ -18,6 +18,103 @@ import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
 import { media } from '../lib/responsive';
 
+const HeroHead = styled.div`
+  margin: 60px auto 40px auto;
+  ${media.md} {
+    margin: 160px auto 80px auto;
+  }
+`;
+
+export const HeroText = styled.h1`
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--g0);
+  margin: 0 auto;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-align: center;
+  transition: 0.3s;
+  ${media.md} {
+    font-size: 90px;
+    padding: 0 20px;
+    letter-spacing: -0.045em;
+    -webkit-text-stroke: 2.5px;
+  }
+  &:hover {
+    transform: scale(1.04);
+    transition: 0.3s;
+  }
+`;
+export const HeroTextSecondary = styled(HeroText)`
+  color: var(--g4);
+  max-width: 1140px;
+`;
+
+const HeroDescription = styled(Text18)<{ topMargin?: number }>`
+  display: block;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  ${media.lg} {
+    margin-top: ${(props) => props.topMargin || 0}px;
+  }
+`;
+
+const Supporters = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px !important;
+`;
+
+const Supporter = styled.div<{ src?: string }>`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  margin: 0 10px;
+  background-image: url(${(props) => props.src});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid white;
+  margin: 0 -4px;
+  transition: 0.2s;
+  &:hover {
+    scale: 1.1;
+    transition: 0.2s;
+    &:before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+  }
+`;
+
+const SupportContainer = styled.div`
+  text-align: center;
+  > * {
+    margin: 0 auto;
+    max-width: 750px;
+  }
+  > :not(:last-child) {
+    margin-bottom: 30px;
+  }
+  margin-bottom: 50px;
+  ${media.sm} {
+    margin-bottom: 110px;
+  }
+`;
+
 interface HomeProps {
   allIcons: Icon[];
   currentVersion: string;
@@ -130,101 +227,6 @@ const Home: NextPage<HomeProps> = ({
     </>
   );
 };
-
-export const HeroHead = styled.div`
-  margin: 60px auto 40px auto;
-  ${media.md} {
-    margin: 160px auto 80px auto;
-  }
-`;
-export const HeroText = styled.h1`
-  font-size: 50px;
-  font-weight: 700;
-  color: var(--g0);
-  margin: 0 auto;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  text-align: center;
-  transition: 0.3s;
-  ${media.md} {
-    font-size: 90px;
-    padding: 0 20px;
-    letter-spacing: -0.045em;
-    -webkit-text-stroke: 2.5px;
-  }
-  &:hover {
-    transform: scale(1.04);
-    transition: 0.3s;
-  }
-`;
-export const HeroTextSecondary = styled(HeroText)`
-  color: var(--g4);
-  max-width: 1140px;
-`;
-export const HeroDescription = styled(Text18)<{ topMargin?: number }>`
-  display: block;
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
-  ${media.lg} {
-    margin-top: ${(props) => props.topMargin || 0}px;
-  }
-`;
-
-const Supporters = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 8px !important;
-`;
-
-const Supporter = styled.div<{ src?: string }>`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #000;
-  margin: 0 10px;
-  background-image: url(${(props) => props.src});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid white;
-  margin: 0 -4px;
-  transition: 0.2s;
-  &:hover {
-    scale: 1.1;
-    transition: 0.2s;
-    &:before {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: black;
-      color: white;
-      padding: 5px;
-      border-radius: 3px;
-      white-space: nowrap;
-      font-size: 12px;
-    }
-  }
-`;
-
-const SupportContainer = styled.div`
-  text-align: center;
-  > * {
-    margin: 0 auto;
-    max-width: 750px;
-  }
-  > :not(:last-child) {
-    margin-bottom: 30px;
-  }
-  margin-bottom: 50px;
-  ${media.sm} {
-    margin-bottom: 110px;
-  }
-`;
 
 export default Home;
 

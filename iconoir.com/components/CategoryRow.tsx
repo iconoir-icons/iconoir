@@ -2,29 +2,6 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
 
-export interface CategoryRowProps {
-  category: string;
-  numIcons: number;
-  style?: any;
-}
-
-export function CategoryRow({ category, numIcons, style }: CategoryRowProps) {
-  return (
-    <Container style={style}>
-      <InnerContainer>
-        <Title>{category}</Title>
-        <Text15>
-          {numIcons}
-          {' '}
-          Icon
-          {numIcons === 1 ? '' : 's'}
-        </Text15>
-        <Separator />
-      </InnerContainer>
-    </Container>
-  );
-}
-
 const InnerContainer = styled.div`
   display: flex;
   align-items: center;
@@ -62,3 +39,26 @@ const Separator = styled.div`
   flex: 1;
   background: var(--g6);
 `;
+
+export interface CategoryRowProps {
+  category: string;
+  numIcons: number;
+  style?: any;
+}
+
+export function CategoryRow({ category, numIcons, style }: CategoryRowProps) {
+  return (
+    <Container style={style}>
+      <InnerContainer>
+        <Title>{category}</Title>
+        <Text15>
+          {numIcons}
+          {' '}
+          Icon
+          {numIcons === 1 ? '' : 's'}
+        </Text15>
+        <Separator />
+      </InnerContainer>
+    </Container>
+  );
+}

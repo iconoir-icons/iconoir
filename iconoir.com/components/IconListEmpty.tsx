@@ -3,32 +3,6 @@ import styled from 'styled-components';
 import { SUGGEST_ICON_LINK } from '../lib/constants';
 import { Text18 } from './Typography';
 
-export interface IconListEmptyProps {
-  searchTerm: string;
-}
-
-export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
-  return (
-    <Container>
-      <IconContainer>
-        <SpockHandGesture />
-      </IconContainer>
-      <Title>
-        Unfortunately there are no icons for &apos;
-        {searchTerm}
-        &apos;
-      </Title>
-      <Text18 style={{ color: 'var(--black-60)' }}>
-        If you can't find the icon, you can make a
-        <br />
-        <a href={SUGGEST_ICON_LINK} target="_blank" rel="noreferrer">
-          suggestion on GitHub.
-        </a>
-      </Text18>
-    </Container>
-  );
-}
-
 const Container = styled.div`
   margin-top: 90px;
   display: flex;
@@ -53,3 +27,29 @@ const Title = styled(Text18)`
     color: var(--black);
   }
 `;
+
+export interface IconListEmptyProps {
+  searchTerm: string;
+}
+
+export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
+  return (
+    <Container>
+      <IconContainer>
+        <SpockHandGesture />
+      </IconContainer>
+      <Title>
+        Unfortunately there are no icons for &apos;
+        {searchTerm}
+        &apos;
+      </Title>
+      <Text18 style={{ color: 'var(--black-60)' }}>
+        If you can&apos;t find the icon, you can make a
+        <br />
+        <a href={SUGGEST_ICON_LINK} target="_blank" rel="noreferrer">
+          suggestion on GitHub.
+        </a>
+      </Text18>
+    </Container>
+  );
+}

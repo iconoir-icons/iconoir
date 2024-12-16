@@ -1,5 +1,8 @@
+/* eslint-disable no-console */
+
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 import { updateYamlKey } from '@atomist/yaml-updater';
 import semver from 'semver';
 

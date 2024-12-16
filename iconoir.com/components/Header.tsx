@@ -11,81 +11,6 @@ import { CurrentVersion } from './CurrentVersion';
 import { NavigationItem } from './NavigationItem';
 import { Text15 } from './Typography';
 
-export interface HeaderProps {
-  currentVersion: string;
-}
-
-export function Header({ currentVersion }: HeaderProps) {
-  const [menuVisible, setMenuVisible] = React.useState(false);
-
-  return (
-    <Container>
-      <Banner>
-        <Sparks></Sparks>
-        <a
-          href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
-          target="_blank"
-        >
-          Your one-time or recurring contribution does a lot to keep Iconoir
-          going.
-        </a>
-      </Banner>
-      <HeaderLeft>
-        <Link href="/">
-          <LogoContainer>
-            <LogoIcon>
-              <AnimatedSvg />
-            </LogoIcon>
-            <Logo src="/iconoir-logo.svg" alt="Iconoir Logo" />
-          </LogoContainer>
-        </Link>
-        <CurrentVersion version={currentVersion} />
-      </HeaderLeft>
-      <HeaderCenter>
-        <MobileMenuContainer $visible={menuVisible}>
-          <NavigationItem href="/">Icons</NavigationItem>
-          <NavigationItem href="/docs/introduction" activeMatch="/docs">
-            Documentation
-          </NavigationItem>
-          <NavigationItem href="/support" style={{ marginRight: 0 }}>
-            Donate &mdash; Our Mission
-          </NavigationItem>
-          <Share $isMobile>
-            <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
-              Share with
-              {' '}
-              <Heart width="1em" height="1em" />
-              {' '}
-              on
-              {' '}
-              <span>X (Twitter)</span>
-            </a>
-          </Share>
-        </MobileMenuContainer>
-      </HeaderCenter>
-      <HeaderRight>
-        <Share>
-          <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
-            Share with
-            {' '}
-            <Heart width="1em" height="1em" />
-            {' '}
-            on
-            {' '}
-            <span>X (Twitter)</span>
-          </a>
-        </Share>
-        <a href={DISCORD_LINK} rel="nofollow noreferrer">
-          <StyledDiscord $isMobile />
-        </a>
-        <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
-          {menuVisible ? <Xmark /> : <Menu />}
-        </MobileMenuButton>
-      </HeaderRight>
-    </Container>
-  );
-}
-
 const StyledDiscord = styled(Discord)<{ $isMobile?: boolean }>`
   display: none;
   ${media.lg} {
@@ -111,7 +36,7 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const Banner = styled(Text15)`
+const Banner = styled(Text15)`
   display: none;
   ${media.lg} {
     display: flex;
@@ -274,3 +199,78 @@ const Share = styled(Text15)<{ $isMobile?: boolean }>`
     }
   }
 `;
+
+export interface HeaderProps {
+  currentVersion: string;
+}
+
+export function Header({ currentVersion }: HeaderProps) {
+  const [menuVisible, setMenuVisible] = React.useState(false);
+
+  return (
+    <Container>
+      <Banner>
+        <Sparks></Sparks>
+        <a
+          href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
+          target="_blank"
+        >
+          Your one-time or recurring contribution does a lot to keep Iconoir
+          going.
+        </a>
+      </Banner>
+      <HeaderLeft>
+        <Link href="/">
+          <LogoContainer>
+            <LogoIcon>
+              <AnimatedSvg />
+            </LogoIcon>
+            <Logo src="/iconoir-logo.svg" alt="Iconoir Logo" />
+          </LogoContainer>
+        </Link>
+        <CurrentVersion version={currentVersion} />
+      </HeaderLeft>
+      <HeaderCenter>
+        <MobileMenuContainer $visible={menuVisible}>
+          <NavigationItem href="/">Icons</NavigationItem>
+          <NavigationItem href="/docs/introduction" activeMatch="/docs">
+            Documentation
+          </NavigationItem>
+          <NavigationItem href="/support" style={{ marginRight: 0 }}>
+            Donate &mdash; Our Mission
+          </NavigationItem>
+          <Share $isMobile>
+            <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
+              Share with
+              {' '}
+              <Heart width="1em" height="1em" />
+              {' '}
+              on
+              {' '}
+              <span>X (Twitter)</span>
+            </a>
+          </Share>
+        </MobileMenuContainer>
+      </HeaderCenter>
+      <HeaderRight>
+        <Share>
+          <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
+            Share with
+            {' '}
+            <Heart width="1em" height="1em" />
+            {' '}
+            on
+            {' '}
+            <span>X (Twitter)</span>
+          </a>
+        </Share>
+        <a href={DISCORD_LINK} rel="nofollow noreferrer">
+          <StyledDiscord $isMobile />
+        </a>
+        <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
+          {menuVisible ? <Xmark /> : <Menu />}
+        </MobileMenuButton>
+      </HeaderRight>
+    </Container>
+  );
+}

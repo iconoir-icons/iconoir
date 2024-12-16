@@ -10,6 +10,58 @@ import React from 'react';
 import styled from 'styled-components';
 import { Text13 } from './Typography';
 
+const SliderContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  touch-action: none;
+`;
+
+const SliderHeader = styled.div`
+  display: flex;
+  align-self: stretch;
+`;
+
+const Output = styled(Text13)`
+  flex: 1 0 auto;
+  text-align: end;
+  margin-bottom: 6px;
+`;
+
+const Track = styled.div`
+  position: relative;
+  height: 30px;
+  width: 100%;
+`;
+
+const TrackBackground = styled.div`
+  position: absolute;
+  height: 2px;
+  top: 15px;
+  background: var(--black);
+  width: 100%;
+`;
+
+const ThumbContainer = styled.div`
+  position: absolute;
+  transform: translateX(-50%);
+`;
+
+const ThumbInner = styled.div`
+  width: 24px;
+  height: 24px;
+  border: solid 2px var(--black);
+  box-shadow: 0px 3px 0px 0px var(--g0);
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    transition: 0.2s;
+    scale: 1.2;
+  }
+`;
+
 export interface SliderProps extends ReactSliderProps<number[]> {
   formatOptions?: Parameters<typeof useNumberFormatter>[0];
 }
@@ -93,55 +145,3 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
     </ThumbContainer>
   );
 }
-
-const SliderContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  touch-action: none;
-`;
-
-const SliderHeader = styled.div`
-  display: flex;
-  align-self: stretch;
-`;
-
-const Output = styled(Text13)`
-  flex: 1 0 auto;
-  text-align: end;
-  margin-bottom: 6px;
-`;
-
-const Track = styled.div`
-  position: relative;
-  height: 30px;
-  width: 100%;
-`;
-
-const TrackBackground = styled.div`
-  position: absolute;
-  height: 2px;
-  top: 15px;
-  background: var(--black);
-  width: 100%;
-`;
-
-const ThumbContainer = styled.div`
-  position: absolute;
-  transform: translateX(-50%);
-`;
-
-const ThumbInner = styled.div`
-  width: 24px;
-  height: 24px;
-  border: solid 2px var(--black);
-  box-shadow: 0px 3px 0px 0px var(--g0);
-  border-radius: 50%;
-  cursor: pointer;
-  &:hover {
-    transition: 0.2s;
-    scale: 1.2;
-  }
-`;

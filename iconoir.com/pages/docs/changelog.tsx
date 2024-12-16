@@ -1,20 +1,16 @@
-import type {
-  ChangelogEntryProps,
-} from '../../components/ChangelogEntry';
-import type {
-  DocumentationNavigationProps,
-} from '../../components/DocumentationNavigation';
-import type { HeaderProps } from '../../components/Header';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
+import remarkPrism from 'remark-prism';
 import {
   ChangelogEntry,
+  type ChangelogEntryProps,
 } from '../../components/ChangelogEntry';
 import {
   DocumentationNavigation,
+  type DocumentationNavigationProps,
 } from '../../components/DocumentationNavigation';
 import { Footer } from '../../components/Footer';
-import { Header } from '../../components/Header';
+import { Header, type HeaderProps } from '../../components/Header';
 import { Layout } from '../../components/Layout';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
@@ -80,7 +76,7 @@ export async function getStaticProps() {
       ...(release.body && {
         body: await serialize(release.body, {
           mdxOptions: {
-            remarkPlugins: [require('remark-prism'), remarkGfm],
+            remarkPlugins: [remarkPrism, remarkGfm],
           },
         }),
       }),

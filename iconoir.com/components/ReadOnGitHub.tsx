@@ -5,6 +5,19 @@ import { DonateContainer, DonateHeader, DonateRight } from '../pages/support';
 import { LargeButton } from './Button';
 import { Text18 } from './Typography';
 
+export const DonateIconButton = styled(LargeButton)`
+  &&& {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    &::after {
+      border-radius: 50%;
+    }
+  }
+`;
+
 export interface ReadOnGitHubProps {
   path: string;
   resource?: string;
@@ -43,16 +56,3 @@ export function ReadOnGitHub({
     </DonateContainer>
   );
 }
-
-export const DonateIconButton = styled(LargeButton)`
-  &&& {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    justify-content: center;
-    &::after {
-      border-radius: 50%;
-    }
-  }
-`;
