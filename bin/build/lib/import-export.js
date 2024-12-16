@@ -1,7 +1,8 @@
 import path from 'node:path';
 
 export function generateImport(name, from) {
-  if (Array.isArray(name)) name = `{${name.toString()}}`;
+  if (Array.isArray(name))
+    name = `{${name.toString()}}`;
 
   return `import ${name} from "${from}";`;
 }

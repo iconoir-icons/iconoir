@@ -1,6 +1,9 @@
-import { updateYamlKey } from '@atomist/yaml-updater';
+/* eslint-disable no-console */
+
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
+import { updateYamlKey } from '@atomist/yaml-updater';
 import semver from 'semver';
 
 const PACKAGE_BASE = '';
@@ -21,10 +24,10 @@ publishPubPackage('iconoir-flutter');
 function publishNpmPackage(name) {
   console.info('Publishing %s', name);
 
-  const packageJsonPath =
-    name === 'iconoir'
-      ? 'package.json'
-      : path.join('packages', name, 'package.json');
+  const packageJsonPath = name === 'iconoir'
+    ? 'package.json'
+    : path.join('packages', name, 'package.json');
+
   const contents = JSON.parse(fs.readFileSync(packageJsonPath).toString());
   contents.version = newVersion;
 

@@ -1,7 +1,7 @@
-import * as svgr from '@svgr/core';
-import * as esbuild from 'esbuild';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import * as svgr from '@svgr/core';
+import * as esbuild from 'esbuild';
 import {
   generateExport,
   generateImport,
@@ -79,6 +79,7 @@ export default async (ctx, target) => {
       jsTarget.path,
       'IconoirContext.tsx',
     );
+
     const iconoirContextDtsPath = path.join(
       jsTarget.path,
       `IconoirContext.${jsTarget.dtsExt}`,
@@ -106,10 +107,9 @@ export default async (ctx, target) => {
       const variantIndex = prepareIndex(jsTarget, variant);
 
       for (const icon of icons) {
-        const mainIndexComponentName =
-          variant === ctx.global.defaultVariant
-            ? icon.pascalName
-            : icon.pascalNameVariant;
+        const mainIndexComponentName = variant === ctx.global.defaultVariant
+          ? icon.pascalName
+          : icon.pascalNameVariant;
 
         const jsPath = path.join(
           jsTarget.path,

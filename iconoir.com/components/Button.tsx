@@ -50,7 +50,7 @@ export const LargeButton = styled(ResetButton)`
   }
 `;
 
-export const Button = styled(LargeButton)`
+const Button = styled(LargeButton)`
   &&&& {
     height: 40px;
     font-size: 13px;

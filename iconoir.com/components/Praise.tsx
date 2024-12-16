@@ -1,109 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PraiseItem } from './PraiseItem';
 import { media } from '../lib/responsive';
+import { PraiseItem } from './PraiseItem';
 
 const NUM_PRAISE_ITEMS = 3;
-
-export function Praise() {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const indicatorContainerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    if (containerRef.current) {
-      const handle = () => {
-        if (indicatorContainerRef.current && containerRef.current) {
-          const currentScrollLeft = containerRef.current.scrollLeft;
-          const totalScroll = containerRef.current.scrollWidth;
-          const interval = totalScroll / NUM_PRAISE_ITEMS;
-          const currentIndex =
-            currentScrollLeft >=
-            containerRef.current.scrollWidth - window.innerWidth - 100
-              ? indicatorContainerRef.current.children.length - 1
-              : Math.round(currentScrollLeft / interval);
-
-          for (
-            let i = 0;
-            i < indicatorContainerRef.current.children.length;
-            i++
-          ) {
-            const child = indicatorContainerRef.current.children[i];
-
-            if (currentIndex === i) {
-              child.classList.add('active');
-            } else {
-              child.classList.remove('active');
-            }
-          }
-        }
-      };
-
-      const element = containerRef.current;
-      element.addEventListener('scroll', handle);
-
-      return () => {
-        element.removeEventListener('scroll', handle);
-      };
-    }
-  }, []);
-
-  return (
-    <>
-      <Container ref={containerRef}>
-        <PraiseItem
-          name={'Riccardo Suardi'}
-          position={'Nibol CEO'}
-          description={
-            <>
-              In Nibol we decided to use Iconoir to speed up the design process.
-              We want to focus on the product and let Iconoir help us with the
-              design.
-            </>
-          }
-          imageUrl={'./riccardo-suardi.png'}
-          logoUrl={'./nibol-logo.svg'}
-          logoLink={'https://www.nibol.com/'}
-          logoAlt={'Nibol Logo'}
-        />
-        <PraiseItem
-          name={'Fabrizio Rinaldi'}
-          position={'Mailbrew and Typefully founder'}
-          description={
-            <>
-              There's no shortage of icon packs, and yet I always find myself
-              browsing iconoir. I love the style and attention to detail, and
-              how easy it is to grab the perfect icons for my projects.
-            </>
-          }
-          imageUrl={'./fabrizio-rinaldi.png'}
-          logoUrl={'./typefully-logo.png'}
-          logoLink={'https://typefully.com/'}
-          logoAlt={'Typefully Logo'}
-        />
-        <PraiseItem
-          name={'Chris Messina'}
-          position={'Entrepreneur and # inventor'}
-          description={
-            <>
-              It's the tiny details that determine the degree of delight your
-              customers experience from your product. Adopting Iconoir icons
-              will easily boost your app's delight by a factor of 10!
-            </>
-          }
-          imageUrl={'./chris-messina.png'}
-          logoUrl={'./twitter-logo.png'}
-          logoLink={'https://twitter.com/chrismessina'}
-          logoAlt={'Twitter Logo'}
-        />
-      </Container>
-      <IndicatorContainer ref={indicatorContainerRef}>
-        <Indicator className={'active'} />
-        <Indicator />
-        <Indicator />
-      </IndicatorContainer>
-    </>
-  );
-}
 
 const Container = styled.div`
   max-width: 100%;
@@ -138,6 +38,7 @@ const Container = styled.div`
     }
   }
 `;
+
 const Indicator = styled.div`
   width: 6px;
   height: 6px;
@@ -148,6 +49,7 @@ const Indicator = styled.div`
     background: var(--black);
   }
 `;
+
 const IndicatorContainer = styled.div`
   margin: 40px auto 0 auto;
   display: flex;
@@ -160,3 +62,102 @@ const IndicatorContainer = styled.div`
     display: none;
   }
 `;
+
+export function Praise() {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const indicatorContainerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (containerRef.current) {
+      const handle = () => {
+        if (indicatorContainerRef.current && containerRef.current) {
+          const currentScrollLeft = containerRef.current.scrollLeft;
+          const totalScroll = containerRef.current.scrollWidth;
+          const interval = totalScroll / NUM_PRAISE_ITEMS;
+
+          const currentIndex = currentScrollLeft >= containerRef.current.scrollWidth - window.innerWidth - 100
+            ? indicatorContainerRef.current.children.length - 1
+            : Math.round(currentScrollLeft / interval);
+
+          for (
+            let i = 0;
+            i < indicatorContainerRef.current.children.length;
+            i++
+          ) {
+            const child = indicatorContainerRef.current.children[i];
+
+            if (currentIndex === i) {
+              child.classList.add('active');
+            } else {
+              child.classList.remove('active');
+            }
+          }
+        }
+      };
+
+      const element = containerRef.current;
+      element.addEventListener('scroll', handle);
+
+      return () => {
+        element.removeEventListener('scroll', handle);
+      };
+    }
+  }, []);
+
+  return (
+    <>
+      <Container ref={containerRef}>
+        <PraiseItem
+          name="Riccardo Suardi"
+          position="Nibol CEO"
+          description={(
+            <>
+              In Nibol we decided to use Iconoir to speed up the design process.
+              We want to focus on the product and let Iconoir help us with the
+              design.
+            </>
+          )}
+          imageUrl="./riccardo-suardi.png"
+          logoUrl="./nibol-logo.svg"
+          logoLink="https://www.nibol.com/"
+          logoAlt="Nibol Logo"
+        />
+        <PraiseItem
+          name="Fabrizio Rinaldi"
+          position="Mailbrew and Typefully founder"
+          description={(
+            <>
+              There&apos;s no shortage of icon packs, and yet I always find myself
+              browsing iconoir. I love the style and attention to detail, and
+              how easy it is to grab the perfect icons for my projects.
+            </>
+          )}
+          imageUrl="./fabrizio-rinaldi.png"
+          logoUrl="./typefully-logo.png"
+          logoLink="https://typefully.com/"
+          logoAlt="Typefully Logo"
+        />
+        <PraiseItem
+          name="Chris Messina"
+          position="Entrepreneur and # inventor"
+          description={(
+            <>
+              It&apos;s the tiny details that determine the degree of delight your
+              customers experience from your product. Adopting Iconoir icons
+              will easily boost your app&apos;s delight by a factor of 10!
+            </>
+          )}
+          imageUrl="./chris-messina.png"
+          logoUrl="./twitter-logo.png"
+          logoLink="https://twitter.com/chrismessina"
+          logoAlt="Twitter Logo"
+        />
+      </Container>
+      <IndicatorContainer ref={indicatorContainerRef}>
+        <Indicator className="active" />
+        <Indicator />
+        <Indicator />
+      </IndicatorContainer>
+    </>
+  );
+}

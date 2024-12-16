@@ -17,17 +17,17 @@
 ## Usage
 
 ```javascript
+import { Iconoir } from 'iconoir-react-native';
 import React from 'react';
 import { View } from 'react-native';
-import { Iconoir } from 'iconoir-react-native';
 
-const App = () => {
+function App() {
   return (
     <View>
       <Iconoir />
     </View>
   );
-};
+}
 
 export default App;
 ```
@@ -35,7 +35,7 @@ export default App;
 Icons can take any `react-native-svg` properties as optional props, e.g.
 
 ```javascript
-<Iconoir color="red" height={36} width={36} />
+<Iconoir color="red" height={36} width={36} />;
 ```
 
 Default values for the most common props are given below:
@@ -53,7 +53,7 @@ Default values for the most common props are given below:
 Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider.
 
 ```tsx
-import { IconoirProvider, Check } from 'iconoir-react-native';
+import { Check, IconoirProvider } from 'iconoir-react-native';
 
 return (
   <IconoirProvider

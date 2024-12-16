@@ -2,19 +2,6 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 import { Text15 } from './Typography';
 
-export interface StatProps {
-  value: string;
-  description: string;
-}
-export function Stat({ value, description }: StatProps) {
-  return (
-    <StatContainer>
-      <StatText>{value}</StatText>
-      <Text15>{description}</Text15>
-    </StatContainer>
-  );
-}
-
 const StatText = styled.div`
   font-size: 38px;
   font-weight: 700;
@@ -27,6 +14,7 @@ const StatText = styled.div`
     text-stroke: 1.5px;
   }
 `;
+
 const StatContainer = styled.div`
   text-align: center;
   width: 45%;
@@ -52,3 +40,17 @@ export const StatsContainer = styled.div`
     margin: 60px auto;
   }
 `;
+
+export interface StatProps {
+  value: string;
+  description: string;
+}
+
+export function Stat({ value, description }: StatProps) {
+  return (
+    <StatContainer>
+      <StatText>{value}</StatText>
+      <Text15>{description}</Text15>
+    </StatContainer>
+  );
+}

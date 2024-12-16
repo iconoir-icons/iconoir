@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '../lib/responsive';
 import { showNotification } from '../lib/showNotification';
 import { CopyButton } from './Button';
-import { media } from '../lib/responsive';
 
 export const Text15 = styled.div`
   font-size: 15px;
@@ -124,14 +124,6 @@ export const Li = styled.li`
   margin: 4px 0;
 `;
 
-export const CodeElement = styled.code`
-  &&& {
-    display: inline-block;
-    padding: 0 4px;
-    color: var(--g0);
-  }
-`;
-
 const PreContainer = styled(Code)`
   &&& {
     position: relative;
@@ -147,6 +139,7 @@ const PreContainer = styled(Code)`
     }
   }
 `;
+
 const CopyContainer = styled.div`
   position: absolute;
   top: 16px;
@@ -159,34 +152,36 @@ export function Pre({ children, ...props }: React.PropsWithChildren<any>) {
 
   React.useEffect(() => {
     setSupportsClipboard(
-      typeof window !== 'undefined' &&
-        typeof window?.navigator?.clipboard?.writeText !== 'undefined',
+      typeof window !== 'undefined'
+      && typeof window?.navigator?.clipboard?.writeText !== 'undefined',
     );
   }, []);
 
   return (
     <PreContainer {...props}>
       <pre ref={containerRef}>{children}</pre>
-      {supportsClipboard ? (
-        <CopyContainer>
-          <CopyButton
-            onClick={() => {
-              if (containerRef.current) {
-                navigator.clipboard
-                  .writeText(containerRef.current.innerText)
-                  .then(() => {
-                    showNotification('Code copied!');
-                  })
-                  .catch((err) => {
-                    console.error(err);
-                  });
-              }
-            }}
-          >
-            Copy
-          </CopyButton>
-        </CopyContainer>
-      ) : null}
+      {supportsClipboard
+        ? (
+            <CopyContainer>
+              <CopyButton
+                onClick={() => {
+                  if (containerRef.current?.textContent) {
+                    navigator.clipboard
+                      .writeText(containerRef.current.textContent)
+                      .then(() => {
+                        showNotification('Code copied!');
+                      })
+                      .catch((err) => {
+                        console.error(err);
+                      });
+                  }
+                }}
+              >
+                Copy
+              </CopyButton>
+            </CopyContainer>
+          )
+        : null}
     </PreContainer>
   );
 }

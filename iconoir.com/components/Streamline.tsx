@@ -1,31 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function Streamline() {
-  return (
-    <a
-      rel="sponsored"
-      href="https://bit.ly/3SNgpKo"
-      style={{ textDecoration: 'none' }}
-    >
-      <PromoContainer>
-        <PromoContent>
-          <PromoInfo>
-            <PromoLogo />
-            <PromoTitle>Expand Your Icon Collection</PromoTitle>
-            <PromoSub>with Streamline</PromoSub>
-            <PromoImage src="./streamline-ad.png" />
-            <PromoDescription>170,000 Vector Icons</PromoDescription>
-            <SponsorLabel>Our sponsor</SponsorLabel>
-          </PromoInfo>
-        </PromoContent>
-      </PromoContainer>
-    </a>
-  );
-}
-
-// Styled components go here
-
 const PromoContainer = styled.div`
   border-radius: 12px;
   border: 1px solid var(--g6);
@@ -36,6 +11,7 @@ const PromoContainer = styled.div`
     background-color: var(--g7);
   }
 `;
+
 const SponsorLabel = styled.div`
   font-size: 12px;
   font-weight: 400;
@@ -43,9 +19,7 @@ const SponsorLabel = styled.div`
   margin: 10px 0;
 `;
 
-const PromoContent = styled.div`
-  // Your content styles here, similar to SponsorText
-`;
+const PromoContent = styled.div``;
 
 const PromoLogo = styled.div`
   @keyframes my-animation {
@@ -92,9 +66,7 @@ const PromoImage = styled.img`
   width: 70%;
 `;
 
-const PromoInfo = styled.div`
-  // Styles for the text container, similar to SponsorRight
-`;
+const PromoInfo = styled.div``;
 
 const PromoTitle = styled.h2`
   font-size: 16px;
@@ -115,3 +87,26 @@ const PromoDescription = styled.p`
   padding: 10px 0;
   font-weight: 600;
 `;
+
+export function Streamline() {
+  return (
+    <a
+      rel="sponsored"
+      href="https://bit.ly/3SNgpKo"
+      style={{ textDecoration: 'none' }}
+    >
+      <PromoContainer>
+        <PromoContent>
+          <PromoInfo>
+            <PromoLogo />
+            <PromoTitle>Expand Your Icon Collection</PromoTitle>
+            <PromoSub>with Streamline</PromoSub>
+            <PromoImage src="./streamline-ad.png" />
+            <PromoDescription>170,000 Vector Icons</PromoDescription>
+            <SponsorLabel>Our sponsor</SponsorLabel>
+          </PromoInfo>
+        </PromoContent>
+      </PromoContainer>
+    </a>
+  );
+}

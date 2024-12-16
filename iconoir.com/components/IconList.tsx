@@ -1,14 +1,16 @@
+import type {
+  ListChildComponentProps,
+} from 'react-window';
 import { chunk } from 'lodash';
 import React from 'react';
 import {
   areEqual,
-  ListChildComponentProps,
   VariableSizeList as List,
 } from 'react-window';
 import styled from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
-import { CategoryRow } from './CategoryRow';
 import { ICON_SPACE, ICON_WIDTH } from '../lib/constants';
+import { CategoryRow } from './CategoryRow';
 import { IconListEmpty } from './IconListEmpty';
 import { IconsRow } from './IconsRow';
 import { ReactWindowScroller } from './ReactWindowScroller';
@@ -46,15 +48,17 @@ function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
     for (const term of normalSearch.split(' ')) {
       result = result.filter((icon) => {
         return (
-          normalizeString(icon.filename).includes(term) ||
-          normalizeString(icon.category).includes(term) ||
-          icon.tags.some((tag) => normalizeString(tag).includes(term))
+          normalizeString(icon.filename).includes(term)
+          || normalizeString(icon.category).includes(term)
+          || icon.tags.some((tag) => normalizeString(tag).includes(term))
         );
       });
     }
 
     return result;
-  } else return allIcons;
+  } else {
+    return allIcons;
+  }
 }
 
 interface IconCategoryRow {
@@ -77,7 +81,8 @@ function getRowsFromIcons(
   const categoryGroups: Record<string, Icon[]> = {};
 
   for (const icon of filteredIcons) {
-    if (!categoryGroups[icon.category]) categoryGroups[icon.category] = [];
+    if (!categoryGroups[icon.category])
+      categoryGroups[icon.category] = [];
     categoryGroups[icon.category].push(icon);
   }
 
@@ -117,71 +122,8 @@ interface IconListContextValue {
   iconWidth: number;
   iconsPerRow: number;
 }
-export const IconListContext = React.createContext<
-  IconListContextValue | undefined
->(undefined);
 
-export interface IconListProps {
-  filters: IconListFilters;
-  allIcons: Icon[];
-}
-export function IconList({ filters, allIcons }: IconListProps) {
-  const filteredIcons = filterIcons(allIcons, filters);
-  const { ref, width = 400 } = useResizeObserver();
-  const iconsPerRow = width
-    ? Math.floor((width + ICON_SPACE) / (ICON_WIDTH + ICON_SPACE))
-    : null;
-  let children = null;
-  const listRef = React.useRef<List<IconRow[]> | null>();
-  const [height, setHeight] = React.useState(400);
-  const iconWidth = iconsPerRow
-    ? Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE
-    : null;
-
-  React.useEffect(() => {
-    setHeight(window.innerHeight);
-  }, []);
-
-  React.useEffect(() => {
-    if (listRef.current) {
-      listRef.current.resetAfterIndex(0, true);
-    }
-  }, [iconWidth, height]);
-
-  if (filteredIcons.length && iconsPerRow && width && iconWidth) {
-    const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
-
-    children = (
-      <IconListContext.Provider value={{ iconsPerRow, iconWidth }}>
-        <ReactWindowScroller>
-          {({ ref, outerRef, style, onScroll }: any) => (
-            <List<IconRow[]>
-              ref={(c) => {
-                if (typeof ref === 'function') ref(c);
-                else ref.current = c;
-                listRef.current = c;
-              }}
-              itemData={iconRows}
-              width={width}
-              outerRef={outerRef}
-              style={style}
-              height={height}
-              itemCount={iconRows.length}
-              onScroll={onScroll}
-              itemSize={(index) => getItemSize(iconRows[index], iconWidth)}
-            >
-              {Row}
-            </List>
-          )}
-        </ReactWindowScroller>
-      </IconListContext.Provider>
-    );
-  } else if (width && filters.search) {
-    return <IconListEmpty searchTerm={filters.search} />;
-  }
-
-  return <Container ref={ref}>{children}</Container>;
-}
+const IconListContext = React.createContext<IconListContextValue | undefined>(undefined);
 
 const Container = styled.div`
   width: 100%;
@@ -213,4 +155,73 @@ const Row = React.memo(
   },
   areEqual,
 );
+
 Row.displayName = 'Row';
+
+export interface IconListProps {
+  filters: IconListFilters;
+  allIcons: Icon[];
+}
+
+export function IconList({ filters, allIcons }: IconListProps) {
+  const filteredIcons = filterIcons(allIcons, filters);
+  const { ref, width = 400 } = useResizeObserver();
+
+  const iconsPerRow = width
+    ? Math.floor((width + ICON_SPACE) / (ICON_WIDTH + ICON_SPACE))
+    : null;
+
+  let children = null;
+  const listRef = React.useRef<List<IconRow[]> | null>();
+  const [height, setHeight] = React.useState(400);
+
+  const iconWidth = iconsPerRow
+    ? Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE
+    : null;
+
+  React.useEffect(() => {
+    setHeight(window.innerHeight);
+  }, []);
+
+  React.useEffect(() => {
+    if (listRef.current) {
+      listRef.current.resetAfterIndex(0, true);
+    }
+  }, [iconWidth, height]);
+
+  if (filteredIcons.length && iconsPerRow && width && iconWidth) {
+    const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
+
+    children = (
+      <IconListContext.Provider value={{ iconsPerRow, iconWidth }}>
+        <ReactWindowScroller>
+          {({ ref, outerRef, style, onScroll }: any) => (
+            <List<IconRow[]>
+              ref={(c) => {
+                if (typeof ref === 'function')
+                  ref(c);
+                else
+                  ref.current = c;
+                listRef.current = c;
+              }}
+              itemData={iconRows}
+              width={width}
+              outerRef={outerRef}
+              style={style}
+              height={height}
+              itemCount={iconRows.length}
+              onScroll={onScroll}
+              itemSize={(index) => getItemSize(iconRows[index], iconWidth)}
+            >
+              {Row}
+            </List>
+          )}
+        </ReactWindowScroller>
+      </IconListContext.Provider>
+    );
+  } else if (width && filters.search) {
+    return <IconListEmpty searchTerm={filters.search} />;
+  }
+
+  return <Container ref={ref}>{children}</Container>;
+}

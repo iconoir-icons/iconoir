@@ -18,7 +18,7 @@
 
 ### Vue 3
 
-```js
+```html
 <script setup>
   import { Iconoir } from '@iconoir/vue';
 </script>
@@ -30,7 +30,7 @@
 
 ### Vue 2
 
-```js
+```html
 <script>
   import { Iconoir } from '@iconoir/vue';
 
@@ -50,7 +50,7 @@
 
 Icons can take any standard SVG properties as optional props, e.g.
 
-```jsx
+```html
 <Iconoir color="red" height="36" width="36" />
 ```
 
@@ -67,9 +67,9 @@ Default values for the most common props are given below:
 
 Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider.
 
-```js
+```html
 <script setup>
-import { IconoirProvider, Check } from '@iconoir/vue';
+  import { IconoirProvider, Check } from '@iconoir/vue';
 </script>
 
 <template>

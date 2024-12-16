@@ -1,113 +1,19 @@
-import { ArrowRight, Flash, Discord, Globe, DesignNib } from 'iconoir-react';
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
+import type { HeaderProps } from '../components/Header';
+import { ArrowRight, DesignNib, Discord, Flash, Globe } from 'iconoir-react';
 import styled from 'styled-components';
-import { HeroText } from '.';
-import { HeroTextSecondary } from '.';
+import { HeroText, HeroTextSecondary } from '.';
 import { LargeButton } from '../components/Button';
-import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { Footer } from '../components/Footer';
-import { Header, HeaderProps } from '../components/Header';
+import { Header } from '../components/Header';
 import { HeaderSecondary } from '../components/HeaderSecondary';
 import { Layout } from '../components/Layout';
-import { media } from '../lib/responsive';
+import { Praise } from '../components/Praise';
 import { SEO } from '../components/SEO';
 import { Body, Heading2, Text18 } from '../components/Typography';
+import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
-import { Praise } from '../components/Praise';
-
-interface SupportProps extends HeaderProps {}
-
-const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
-  return (
-    <>
-      <Layout>
-        <SEO
-          title={'Donate - Our Mission'}
-          description={
-            'Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons.'
-          }
-        />
-        <Header {...headerProps} />
-        <HeaderSecondary>
-          <SupportHead>
-            <HeroText>Our Goal</HeroText>
-            <HeroTextSecondary>
-              A free, complete, and open icon library.
-            </HeroTextSecondary>
-          </SupportHead>
-        </HeaderSecondary>
-        <PageContainer>
-          <PillarsContainer>
-            <Pillar>
-              <PillarIcon $R={'140'} $G={'26'} $B={'245'}>
-                <Flash />
-              </PillarIcon>
-              <PillarTitle>Free</PillarTitle>
-              <PillarDescription>
-                We want to give to developers and users high-quality free icons.
-                Hassle-free.
-              </PillarDescription>
-            </Pillar>
-            <Pillar>
-              <PillarIcon $R={'72'} $G={'88'} $B={'255'}>
-                <DesignNib />
-              </PillarIcon>
-              <PillarTitle>Complete</PillarTitle>
-              <PillarDescription>
-                We’re aiming at having as much unique icons as possible.
-              </PillarDescription>
-            </Pillar>
-            <Pillar>
-              <PillarIcon $R={'65'} $G={'209'} $B={'255'}>
-                <Globe />
-              </PillarIcon>
-              <PillarTitle>Ambitious</PillarTitle>
-              <PillarDescription>
-                We want to help and be part of as many projects as possible.
-              </PillarDescription>
-            </Pillar>
-          </PillarsContainer>
-          <WideSection>
-            <Heading2>Become part of the project.</Heading2>
-            <Text18>
-              If you consider this library valuable for you and your projects,
-              support Iconoir with a donation to help us sustain costs and
-              development time.
-            </Text18>
-            <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}>
-              <span>Donate</span>
-              <ArrowRight />
-            </CallToAction>
-          </WideSection>
-          <PraiseContainer>
-            <PraiseTitle>What our friends say</PraiseTitle>
-            <Praise />
-          </PraiseContainer>
-          <DonateContainer>
-            <DonateLeft>
-              <DonateHeader>Join us on Discord</DonateHeader>
-              <Text18>
-                Join the community and help us with your suggestions and
-                feedback.
-              </Text18>
-            </DonateLeft>
-            <DonateRight>
-              <DonateButton
-                as={'a'}
-                href={DISCORD_LINK}
-                target={'_blank'}
-                rel={'noreferrer'}
-              >
-                <span>Join</span> <Discord />
-              </DonateButton>
-            </DonateRight>
-          </DonateContainer>
-        </PageContainer>
-      </Layout>
-      <Footer />
-    </>
-  );
-};
+import { media } from '../lib/responsive';
 
 const PillarsContainer = styled.div`
   display: flex;
@@ -167,7 +73,7 @@ const PillarIcon = styled.span<{ $R?: string; $G?: string; $B?: string }>`
   border-radius: 18px;
 `;
 
-export const SupportHead = styled.div`
+const SupportHead = styled.div`
   margin: 60px auto 40px auto;
   ${media.md} {
     margin: 100px auto 80px auto;
@@ -181,6 +87,7 @@ const PageContainer = styled.div`
     margin: 110px auto 0 auto;
   }
 `;
+
 const WideSection = styled.div`
   width: 60%;
   background: var(--g7);
@@ -192,12 +99,14 @@ const WideSection = styled.div`
     padding: 80px 20%;
   }
 `;
+
 const PraiseTitle = styled(Heading2)`
   &&& {
     margin: 100px 0 80px 0;
     text-align: center;
   }
 `;
+
 const DonateLeft = styled.div`
   max-width: 800px;
 `;
@@ -221,6 +130,7 @@ const DonateButton = styled(LargeButton)`
     height: 50px;
   }
 `;
+
 const CallToAction = styled(LargeButton)`
   &&& {
     margin-top: 40px;
@@ -264,6 +174,100 @@ const PraiseContainer = styled.div`
   }
   width: 100%;
 `;
+
+interface SupportProps extends HeaderProps {}
+
+const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
+  return (
+    <>
+      <Layout>
+        <SEO
+          title="Donate - Our Mission"
+          description="Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons."
+        />
+        <Header {...headerProps} />
+        <HeaderSecondary>
+          <SupportHead>
+            <HeroText>Our Goal</HeroText>
+            <HeroTextSecondary>
+              A free, complete, and open icon library.
+            </HeroTextSecondary>
+          </SupportHead>
+        </HeaderSecondary>
+        <PageContainer>
+          <PillarsContainer>
+            <Pillar>
+              <PillarIcon $R="140" $G="26" $B="245">
+                <Flash />
+              </PillarIcon>
+              <PillarTitle>Free</PillarTitle>
+              <PillarDescription>
+                We want to give to developers and users high-quality free icons.
+                Hassle-free.
+              </PillarDescription>
+            </Pillar>
+            <Pillar>
+              <PillarIcon $R="72" $G="88" $B="255">
+                <DesignNib />
+              </PillarIcon>
+              <PillarTitle>Complete</PillarTitle>
+              <PillarDescription>
+                We’re aiming at having as much unique icons as possible.
+              </PillarDescription>
+            </Pillar>
+            <Pillar>
+              <PillarIcon $R="65" $G="209" $B="255">
+                <Globe />
+              </PillarIcon>
+              <PillarTitle>Ambitious</PillarTitle>
+              <PillarDescription>
+                We want to help and be part of as many projects as possible.
+              </PillarDescription>
+            </Pillar>
+          </PillarsContainer>
+          <WideSection>
+            <Heading2>Become part of the project.</Heading2>
+            <Text18>
+              If you consider this library valuable for you and your projects,
+              support Iconoir with a donation to help us sustain costs and
+              development time.
+            </Text18>
+            <CallToAction as="a" href={SUPPORT_LINK} target="_blank">
+              <span>Donate</span>
+              <ArrowRight />
+            </CallToAction>
+          </WideSection>
+          <PraiseContainer>
+            <PraiseTitle>What our friends say</PraiseTitle>
+            <Praise />
+          </PraiseContainer>
+          <DonateContainer>
+            <DonateLeft>
+              <DonateHeader>Join us on Discord</DonateHeader>
+              <Text18>
+                Join the community and help us with your suggestions and
+                feedback.
+              </Text18>
+            </DonateLeft>
+            <DonateRight>
+              <DonateButton
+                as="a"
+                href={DISCORD_LINK}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Join</span>
+                {' '}
+                <Discord />
+              </DonateButton>
+            </DonateRight>
+          </DonateContainer>
+        </PageContainer>
+      </Layout>
+      <Footer />
+    </>
+  );
+};
 
 export default Support;
 

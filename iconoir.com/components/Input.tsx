@@ -19,7 +19,7 @@ const ResetInput = styled.input`
   }
 `;
 
-export const Input = styled(ResetInput)`
+const Input = styled(ResetInput)`
   &&& {
     min-height: 35px;
     background: var(--white);

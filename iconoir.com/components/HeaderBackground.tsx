@@ -1,16 +1,101 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
-import { useRef, useEffect } from 'react';
+
+const HeaderContainer = styled.div`
+  position: relative;
+  width: fit-content;
+  margin: auto;
+`;
+
+const FloatingIcon = styled.div`
+  position: absolute;
+  display: none;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+  align-items: center;
+  justify-content: center;
+  ${media.md} {
+    display: flex;
+  }
+`;
+
+const FloatingIconCellar = styled(FloatingIcon)`
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  top: -120px;
+  right: 0px;
+  width: 200px;
+  height: 200px;
+  background-image: url(/cellar.gif);
+  background-size: 70%;
+  ${media.lg} {
+  }
+`;
+
+const FloatingIconPay = styled(FloatingIcon)`
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  top: -50px;
+  right: -100px;
+  width: 130px;
+  height: 130px;
+  background-image: url(/pay-bitcoin.gif);
+  background-size: 70%;
+  ${media.lg} {
+  }
+`;
+
+const FloatingFaceID = styled(FloatingIcon)`
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  top: -130px;
+  right: 380px;
+  width: 110px;
+  height: 110px;
+  background-image: url(/face-id.gif);
+  background-size: 70%;
+  ${media.lg} {
+  }
+`;
+
+const FloatingCommand = styled(FloatingIcon)`
+  -webkit-transform: rotate(-7deg);
+  -moz-transform: rotate(-7deg);
+  top: -94px;
+  left: 150px;
+  width: 110px;
+  height: 110px;
+  background-image: url(/command.gif);
+  background-size: 70%;
+  ${media.lg} {
+  }
+`;
+
+const FloatingFill = styled(FloatingIcon)`
+  -webkit-transform: rotate(-14deg);
+  -moz-transform: rotate(-14deg);
+  top: -64px;
+  left: -75px;
+  width: 110px;
+  height: 110px;
+  background-image: url(/fill.gif);
+  background-size: 70%;
+  ${media.lg} {
+  }
+`;
 
 export interface HeaderBackgroundProps {
   children: React.ReactElement;
 }
+
 export function HeaderBackground({ children }: HeaderBackgroundProps) {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!parallaxRef.current) return;
+    if (!parallaxRef.current)
+      return;
 
     const parallaxElements = parallaxRef.current.querySelectorAll(
       '[data-parallax-factor]',
@@ -21,7 +106,7 @@ export function HeaderBackground({ children }: HeaderBackgroundProps) {
       const y = event.clientY / window.innerHeight;
 
       parallaxElements.forEach((el) => {
-        const factor = parseFloat(
+        const factor = Number.parseFloat(
           el.getAttribute('data-parallax-factor') || '1',
         );
 
@@ -49,81 +134,3 @@ export function HeaderBackground({ children }: HeaderBackgroundProps) {
     </HeaderContainer>
   );
 }
-
-const HeaderContainer = styled.div`
-  position: relative;
-  width: fit-content;
-  margin: auto;
-`;
-const FloatingIcon = styled.div`
-  position: absolute;
-  display: none;
-  background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
-  align-items: center;
-  justify-content: center;
-  ${media.md} {
-    display: flex;
-  }
-`;
-const FloatingIconCellar = styled(FloatingIcon)`
-  -webkit-transform: rotate(6deg);
-  -moz-transform: rotate(6deg);
-  top: -120px;
-  right: 0px;
-  width: 200px;
-  height: 200px;
-  background-image: url(/cellar.gif);
-  background-size: 70%;
-  ${media.lg} {
-  }
-`;
-const FloatingIconPay = styled(FloatingIcon)`
-  -webkit-transform: rotate(18deg);
-  -moz-transform: rotate(18deg);
-  top: -50px;
-  right: -100px;
-  width: 130px;
-  height: 130px;
-  background-image: url(/pay-bitcoin.gif);
-  background-size: 70%;
-  ${media.lg} {
-  }
-`;
-const FloatingFaceID = styled(FloatingIcon)`
-  -webkit-transform: rotate(6deg);
-  -moz-transform: rotate(6deg);
-  top: -130px;
-  right: 380px;
-  width: 110px;
-  height: 110px;
-  background-image: url(/face-id.gif);
-  background-size: 70%;
-  ${media.lg} {
-  }
-`;
-const FloatingCommand = styled(FloatingIcon)`
-  -webkit-transform: rotate(-7deg);
-  -moz-transform: rotate(-7deg);
-  top: -94px;
-  left: 150px;
-  width: 110px;
-  height: 110px;
-  background-image: url(/command.gif);
-  background-size: 70%;
-  ${media.lg} {
-  }
-`;
-const FloatingFill = styled(FloatingIcon)`
-  -webkit-transform: rotate(-14deg);
-  -moz-transform: rotate(-14deg);
-  top: -64px;
-  left: -75px;
-  width: 110px;
-  height: 110px;
-  background-image: url(/fill.gif);
-  background-size: 70%;
-  ${media.lg} {
-  }
-`;

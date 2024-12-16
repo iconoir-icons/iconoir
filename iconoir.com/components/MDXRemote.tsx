@@ -1,6 +1,7 @@
-import { MDXRemote as CoreMDXRemote, MDXRemoteProps } from 'next-mdx-remote';
+import type { MDXRemoteProps } from 'next-mdx-remote';
+import { MDXRemote as CoreMDXRemote } from 'next-mdx-remote';
 import { Table } from './Table';
-import { Body, Code, InlineCode, H1, H2, H3, Pre, Li } from './Typography';
+import { Body, Code, H1, H2, H3, InlineCode, Li, Pre } from './Typography';
 
 export function MDXRemote(props: MDXRemoteProps) {
   return (

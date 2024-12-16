@@ -1,12 +1,12 @@
+import type { IconListFilters } from './IconList';
 import React from 'react';
-import { IconListFilters } from './IconList';
 import { LargeInput } from './Input';
 
 export interface FiltersEditorProps {
   filters: IconListFilters;
-  // eslint-disable-next-line no-unused-vars
   onChange: (filters: IconListFilters) => void;
 }
+
 export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
   const [, startTransition] = (React as any).useTransition();
   const [search, setSearch] = React.useState(filters.search);
@@ -43,10 +43,10 @@ export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
 
   return (
     <LargeInput
-      placeholder={'Search...'}
+      placeholder="Search..."
       value={search}
-      type={'search'}
-      autoCapitalize={'none'}
+      type="search"
+      autoCapitalize="none"
       tabIndex={1}
       onFocus={(e) => {
         if (!didScrollRef.current) {

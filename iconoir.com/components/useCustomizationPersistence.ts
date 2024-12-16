@@ -1,11 +1,11 @@
+import type { IconListCustomizations } from './IconList';
 import React from 'react';
-import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
+import { DEFAULT_CUSTOMIZATIONS } from './IconList';
 
 const CUSTOMIZATIONS_KEY = 'iconoir-customize';
 
 export function useCustomizationPersistence(): [
   IconListCustomizations,
-  // eslint-disable-next-line no-unused-vars
   (customizations: IconListCustomizations) => void,
 ] {
   const [customizations, _setCustomizations] = React.useState(

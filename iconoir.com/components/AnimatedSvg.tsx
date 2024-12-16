@@ -1,7 +1,6 @@
 import anime from 'animejs';
 import React from 'react';
 
-// eslint-disable-next-line no-unused-vars
 type SetInstances = (instances: anime.AnimeInstance[]) => void;
 
 function playWithLines1(setInstances: SetInstances): anime.AnimeInstance[] {
@@ -11,7 +10,7 @@ function playWithLines1(setInstances: SetInstances): anime.AnimeInstance[] {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
-      delay: function (el, i) {
+      delay(_el, i) {
         return i * 250;
       },
       direction: 'alternate',
@@ -27,7 +26,7 @@ function playWithLines2(setInstances: SetInstances): anime.AnimeInstance[] {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
-      delay: function (el, i) {
+      delay(_el, i) {
         return i * 250;
       },
       direction: 'alternate',
@@ -43,7 +42,7 @@ function playWithLines3(setInstances: SetInstances): anime.AnimeInstance[] {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
-      delay: function (el, i) {
+      delay(_el, i) {
         return i * 250;
       },
       direction: 'alternate',
@@ -68,7 +67,7 @@ function playWithLines4(setInstances: SetInstances): anime.AnimeInstance[] {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
-      delay: function (el, i) {
+      delay(_el, i) {
         return i * 250;
       },
       direction: 'alternate',

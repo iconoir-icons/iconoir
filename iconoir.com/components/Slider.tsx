@@ -1,22 +1,77 @@
+import type { SliderState } from '@react-stately/slider';
+import type { SliderProps as ReactSliderProps } from '@react-types/slider';
 import { useFocusRing } from '@react-aria/focus';
 import { useNumberFormatter } from '@react-aria/i18n';
 import { useSlider, useSliderThumb } from '@react-aria/slider';
 import { mergeProps } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { SliderState, useSliderState } from '@react-stately/slider';
-import { SliderProps as ReactSliderProps } from '@react-types/slider';
+import { useSliderState } from '@react-stately/slider';
 import React from 'react';
 import styled from 'styled-components';
 import { Text13 } from './Typography';
 
+const SliderContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  touch-action: none;
+`;
+
+const SliderHeader = styled.div`
+  display: flex;
+  align-self: stretch;
+`;
+
+const Output = styled(Text13)`
+  flex: 1 0 auto;
+  text-align: end;
+  margin-bottom: 6px;
+`;
+
+const Track = styled.div`
+  position: relative;
+  height: 30px;
+  width: 100%;
+`;
+
+const TrackBackground = styled.div`
+  position: absolute;
+  height: 2px;
+  top: 15px;
+  background: var(--black);
+  width: 100%;
+`;
+
+const ThumbContainer = styled.div`
+  position: absolute;
+  transform: translateX(-50%);
+`;
+
+const ThumbInner = styled.div`
+  width: 24px;
+  height: 24px;
+  border: solid 2px var(--black);
+  box-shadow: 0px 3px 0px 0px var(--g0);
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    transition: 0.2s;
+    scale: 1.2;
+  }
+`;
+
 export interface SliderProps extends ReactSliderProps<number[]> {
   formatOptions?: Parameters<typeof useNumberFormatter>[0];
 }
+
 export function Slider(props: SliderProps) {
-  let trackRef = React.useRef(null);
-  let numberFormatter = useNumberFormatter(props.formatOptions);
-  let state = useSliderState({ ...props, numberFormatter });
-  let { groupProps, trackProps, labelProps, outputProps } = useSlider(
+  const trackRef = React.useRef(null);
+  const numberFormatter = useNumberFormatter(props.formatOptions);
+  const state = useSliderState({ ...props, numberFormatter });
+
+  const { groupProps, trackProps, labelProps, outputProps } = useSlider(
     props,
     state,
     trackRef,
@@ -26,11 +81,11 @@ export function Slider(props: SliderProps) {
     <SliderContainer {...groupProps}>
       <SliderHeader>
         {props.label && (
-          <Text13 as={'label'} {...labelProps}>
+          <Text13 as="label" {...labelProps}>
             {props.label}
           </Text13>
         )}
-        <Output as={'output'} {...outputProps}>
+        <Output as="output" {...outputProps}>
           {state.getThumbValueLabel(0)}
         </Output>
       </SliderHeader>
@@ -49,8 +104,9 @@ interface ThumbProps {
 }
 
 function Thumb({ state, trackRef, index }: ThumbProps) {
-  let inputRef = React.useRef(null);
-  let { thumbProps, inputProps } = useSliderThumb(
+  const inputRef = React.useRef(null);
+
+  const { thumbProps, inputProps } = useSliderThumb(
     {
       index,
       trackRef,
@@ -59,7 +115,7 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
     state,
   );
 
-  let { focusProps, isFocusVisible } = useFocusRing();
+  const { focusProps, isFocusVisible } = useFocusRing();
 
   return (
     <ThumbContainer
@@ -89,49 +145,3 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
     </ThumbContainer>
   );
 }
-
-const SliderContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  touch-action: none;
-`;
-const SliderHeader = styled.div`
-  display: flex;
-  align-self: stretch;
-`;
-const Output = styled(Text13)`
-  flex: 1 0 auto;
-  text-align: end;
-  margin-bottom: 6px;
-`;
-const Track = styled.div`
-  position: relative;
-  height: 30px;
-  width: 100%;
-`;
-const TrackBackground = styled.div`
-  position: absolute;
-  height: 2px;
-  top: 15px;
-  background: var(--black);
-  width: 100%;
-`;
-const ThumbContainer = styled.div`
-  position: absolute;
-  transform: translateX(-50%);
-`;
-const ThumbInner = styled.div`
-  width: 24px;
-  height: 24px;
-  border: solid 2px var(--black);
-  box-shadow: 0px 3px 0px 0px var(--g0);
-  border-radius: 50%;
-  cursor: pointer;
-  &:hover {
-    transition: 0.2s;
-    scale: 1.2;
-  }
-`;

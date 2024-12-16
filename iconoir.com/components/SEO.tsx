@@ -7,12 +7,14 @@ export interface SEOProps {
   title?: string;
   description?: string;
 }
+
 export function SEO({ title, description }: SEOProps) {
   const { asPath } = useRouter();
   const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
   const pageDescription = description;
 
   const pathWithoutQuery = asPath.split(/[?#]/)[0];
+
   const canonicalUrl = `https://iconoir.com${
     pathWithoutQuery !== '/' ? pathWithoutQuery : ''
   }`;

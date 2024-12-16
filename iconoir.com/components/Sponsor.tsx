@@ -2,27 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
-export function Sponsor() {
-  return (
-    <SponsorContainer>
-      <SponsorText>
-        <SponsorLeft>
-          <SponsorLogo />
-        </SponsorLeft>
-        <SponsorRight>
-          <SponsorTitle>Get 3 months free of Framer with Iconoir.</SponsorTitle>
-          <SponsorDescr>
-            Click the link and use the code “pro-yearly-partner”.
-          </SponsorDescr>
-        </SponsorRight>
-      </SponsorText>
-      <a href="https://www.framer.com?via=iconoir">
-        <SponsorCTA>Get the offer</SponsorCTA>
-      </a>
-    </SponsorContainer>
-  );
-}
-
 const SponsorContainer = styled.div`
   border: 1px solid var(--g7);
   background-color: var(--g7);
@@ -111,3 +90,24 @@ const SponsorCTA = styled.div`
     color: var(--white);
   }
 `;
+
+export function Sponsor() {
+  return (
+    <SponsorContainer>
+      <SponsorText>
+        <SponsorLeft>
+          <SponsorLogo />
+        </SponsorLeft>
+        <SponsorRight>
+          <SponsorTitle>Get 3 months free of Framer with Iconoir.</SponsorTitle>
+          <SponsorDescr>
+            Click the link and use the code “pro-yearly-partner”.
+          </SponsorDescr>
+        </SponsorRight>
+      </SponsorText>
+      <a href="https://www.framer.com?via=iconoir">
+        <SponsorCTA>Get the offer</SponsorCTA>
+      </a>
+    </SponsorContainer>
+  );
+}

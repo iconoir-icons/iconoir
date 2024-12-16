@@ -1,16 +1,62 @@
+import type { IconListCustomizations } from './IconList';
 import React from 'react';
 import styled from 'styled-components';
-import { DEFAULT_CUSTOMIZATIONS, IconListCustomizations } from './IconList';
+import { media } from '../lib/responsive';
+import { DEFAULT_CUSTOMIZATIONS } from './IconList';
 import { ColorButton, ColorInput } from './Input';
 import { Slider } from './Slider';
 import { Text13, Text15 } from './Typography';
-import { media } from '../lib/responsive';
+
+const CustomizationBox = styled.div`
+  background-color: var(--g7);
+  width: 84%;
+  padding: 8%;
+  border-radius: 10px;
+  margin: 24px 0;
+  display: none;
+  ${media.md} {
+    display: block;
+  }
+`;
+
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: solid 1px var(--g6);
+  padding-bottom: 10px;
+`;
+
+const Field = styled.div`
+  margin-bottom: 18px;
+`;
+
+const HorizontalField = styled(Field)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const ResetButton = styled(Field)`
+  &&& {
+    margin: initial;
+    text-decoration: underline;
+    color: var(--dark-gray);
+    font-size: 13px;
+
+    &:hover {
+      color: var(--black);
+      cursor: pointer;
+    }
+  }
+`;
 
 export interface CustomizationEditorProps {
   customizations: IconListCustomizations;
-  // eslint-disable-next-line no-unused-vars
   onChange: (customizations: IconListCustomizations) => void;
 }
+
 export function CustomizationEditor({
   customizations,
   onChange,
@@ -18,6 +64,7 @@ export function CustomizationEditor({
   const [, startTransition] = (React as any).useTransition();
   const [color, setColor] = React.useState(customizations.hexColor);
   const [size, setSize] = React.useState(customizations.size);
+
   const [strokeWidth, setStrokeWidth] = React.useState(
     customizations.strokeWidth,
   );
@@ -50,7 +97,7 @@ export function CustomizationEditor({
         </Header>
         <Field>
           <Slider
-            label={'Optical Size'}
+            label="Optical Size"
             minValue={16}
             maxValue={64}
             value={[size]}
@@ -63,7 +110,7 @@ export function CustomizationEditor({
         </Field>
         <Field>
           <Slider
-            label={'Stroke Weight'}
+            label="Stroke Weight"
             minValue={0.5}
             maxValue={3}
             value={[strokeWidth]}
@@ -78,7 +125,7 @@ export function CustomizationEditor({
         <HorizontalField>
           <Text13>Color</Text13>
           <ColorInput
-            type={'color'}
+            type="color"
             value={color}
             onChange={(e) => {
               setColor(e.target.value);
@@ -91,44 +138,3 @@ export function CustomizationEditor({
     </>
   );
 }
-
-const CustomizationBox = styled.div`
-  background-color: var(--g7);
-  width: 84%;
-  padding: 8%;
-  border-radius: 10px;
-  margin: 24px 0;
-  display: none;
-  ${media.md} {
-    display: block;
-  }
-`;
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  border-bottom: solid 1px var(--g6);
-  padding-bottom: 10px;
-`;
-const Field = styled.div`
-  margin-bottom: 18px;
-`;
-const HorizontalField = styled(Field)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-const ResetButton = styled(Field)`
-  &&& {
-    margin: initial;
-    text-decoration: underline;
-    color: var(--dark-gray);
-    font-size: 13px;
-
-    &:hover {
-      color: var(--black);
-      cursor: pointer;
-    }
-  }
-`;

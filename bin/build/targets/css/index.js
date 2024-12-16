@@ -18,10 +18,9 @@ export default async (ctx, target) => {
     const variantCssContent = [header];
 
     const cssTarget = (icon, suffixed) => {
-      const iconName =
-        suffixed && variant !== ctx.global.defaultVariant
-          ? icon.nameVariant
-          : icon.name;
+      const iconName = suffixed && variant !== ctx.global.defaultVariant
+        ? icon.nameVariant
+        : icon.name;
 
       return `.iconoir-${iconName}::before`;
     };
@@ -31,8 +30,8 @@ export default async (ctx, target) => {
 
       const transformedContent = fileContent
         .replace(/\n/g, '')
-        .replace(/(width|height)="[0-9]+px"/g, '')
-        .replace(/[ ]+/g, ' ');
+        .replace(/(width|height)="\d+px"/g, '')
+        .replace(/ +/g, ' ');
 
       const cssContent = `{mask-image:url('data:image/svg+xml;charset=utf-8,${transformedContent}');-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,${transformedContent}');}`;
 

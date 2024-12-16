@@ -28,11 +28,11 @@
  * --syntax-cursor-line: hsla(230, 8%, 24%, 0.05);
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   background: hsl(230, 1%, 98%);
   color: hsl(230, 8%, 24%);
-  font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -49,22 +49,22 @@ pre[class*="language-"] {
 }
 
 /* Selection */
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] *::-moz-selection,
-pre[class*="language-"] *::-moz-selection {
+code[class*='language-']::-moz-selection,
+code[class*='language-'] *::-moz-selection,
+pre[class*='language-'] *::-moz-selection {
   background: hsl(230, 1%, 90%);
   color: inherit;
 }
 
-code[class*="language-"]::selection,
-code[class*="language-"] *::selection,
-pre[class*="language-"] *::selection {
+code[class*='language-']::selection,
+code[class*='language-'] *::selection,
+pre[class*='language-'] *::selection {
   background: hsl(230, 1%, 90%);
   color: inherit;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
@@ -72,7 +72,7 @@ pre[class*="language-"] {
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.2em 0.3em;
   border-radius: 0.3em;
   white-space: normal;
@@ -118,7 +118,7 @@ pre[class*="language-"] {
 .token.inserted,
 .token.regex,
 .token.attr-value,
-.token.attr-value>.token.punctuation {
+.token.attr-value > .token.punctuation {
   color: hsl(119, 34%, 47%);
 }
 
@@ -133,8 +133,8 @@ pre[class*="language-"] {
 }
 
 /* HTML overrides */
-.token.attr-value>.token.punctuation.attr-equals,
-.token.special-attr>.token.attr-value>.token.value.css {
+.token.attr-value > .token.punctuation.attr-equals,
+.token.special-attr > .token.attr-value > .token.value.css {
   color: hsl(230, 8%, 24%);
 }
 
@@ -148,11 +148,11 @@ pre[class*="language-"] {
 }
 
 .language-css .token.function,
-.language-css .token.url>.token.function {
+.language-css .token.url > .token.function {
   color: hsl(198, 99%, 37%);
 }
 
-.language-css .token.url>.token.string.url {
+.language-css .token.url > .token.string.url {
   color: hsl(119, 34%, 47%);
 }
 
@@ -166,7 +166,7 @@ pre[class*="language-"] {
   color: hsl(301, 63%, 40%);
 }
 
-.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation {
+.language-javascript .token.template-string > .token.interpolation > .token.interpolation-punctuation.punctuation {
   color: hsl(344, 84%, 43%);
 }
 
@@ -181,16 +181,16 @@ pre[class*="language-"] {
 
 /* MD overrides */
 .language-markdown .token.url,
-.language-markdown .token.url>.token.operator,
-.language-markdown .token.url-reference.url>.token.string {
+.language-markdown .token.url > .token.operator,
+.language-markdown .token.url-reference.url > .token.string {
   color: hsl(230, 8%, 24%);
 }
 
-.language-markdown .token.url>.token.content {
+.language-markdown .token.url > .token.content {
   color: hsl(221, 87%, 60%);
 }
 
-.language-markdown .token.url>.token.url,
+.language-markdown .token.url > .token.url,
 .language-markdown .token.url-reference.url {
   color: hsl(198, 99%, 37%);
 }
@@ -216,7 +216,7 @@ pre[class*="language-"] {
 .language-markdown .token.strike .token.content,
 .language-markdown .token.strike .token.punctuation,
 .language-markdown .token.list.punctuation,
-.language-markdown .token.title.important>.token.punctuation {
+.language-markdown .token.title.important > .token.punctuation {
   color: hsl(5, 74%, 59%);
 }
 
@@ -251,26 +251,26 @@ pre[class*="language-"] {
 
 /* Toolbar plugin overrides */
 /* Space out all buttons and move them away from the right edge of the code block */
-div.code-toolbar>.toolbar.toolbar>.toolbar-item {
+div.code-toolbar > .toolbar.toolbar > .toolbar-item {
   margin-right: 0.4em;
 }
 
 /* Styling the buttons */
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>span {
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span {
   background: hsl(230, 1%, 90%);
   color: hsl(230, 6%, 44%);
   padding: 0.1em 0.4em;
   border-radius: 0.3em;
 }
 
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus {
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus {
   background: hsl(230, 1%, 78%);
   /* custom: darken(--syntax-bg, 20%) */
   color: hsl(230, 8%, 24%);
@@ -295,7 +295,7 @@ div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus {
 
 /* Hovering over a linkable line number (in the gutter area) */
 /* Requires Line Numbers plugin as well */
-pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before {
+pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows > span:hover:before {
   background-color: hsla(230, 8%, 24%, 0.05);
 }
 
@@ -307,8 +307,8 @@ pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:
 }
 
 /* Stuff in the gutter */
-.line-numbers .line-numbers-rows>span:before,
-.command-line .command-line-prompt>span:before {
+.line-numbers .line-numbers-rows > span:before,
+.command-line .command-line-prompt > span:before {
   color: hsl(230, 1%, 62%);
 }
 
@@ -340,41 +340,41 @@ pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:
 
 /* Diff Highlight plugin overrides */
 /* Taken from https://github.com/atom/github/blob/master/styles/variables.less */
-pre.diff-highlight>code .token.token.deleted:not(.prefix),
-pre>code.diff-highlight .token.token.deleted:not(.prefix) {
+pre.diff-highlight > code .token.token.deleted:not(.prefix),
+pre > code.diff-highlight .token.token.deleted:not(.prefix) {
   background-color: hsla(353, 100%, 66%, 0.15);
 }
 
-pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,
-pre.diff-highlight>code .token.token.deleted:not(.prefix) *::-moz-selection,
-pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection,
-pre>code.diff-highlight .token.token.deleted:not(.prefix) *::-moz-selection {
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::-moz-selection,
+pre.diff-highlight > code .token.token.deleted:not(.prefix) *::-moz-selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix) *::-moz-selection {
   background-color: hsla(353, 95%, 66%, 0.25);
 }
 
-pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,
-pre.diff-highlight>code .token.token.deleted:not(.prefix) *::selection,
-pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection,
-pre>code.diff-highlight .token.token.deleted:not(.prefix) *::selection {
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::selection,
+pre.diff-highlight > code .token.token.deleted:not(.prefix) *::selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix)::selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix) *::selection {
   background-color: hsla(353, 95%, 66%, 0.25);
 }
 
-pre.diff-highlight>code .token.token.inserted:not(.prefix),
-pre>code.diff-highlight .token.token.inserted:not(.prefix) {
+pre.diff-highlight > code .token.token.inserted:not(.prefix),
+pre > code.diff-highlight .token.token.inserted:not(.prefix) {
   background-color: hsla(137, 100%, 55%, 0.15);
 }
 
-pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,
-pre.diff-highlight>code .token.token.inserted:not(.prefix) *::-moz-selection,
-pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection,
-pre>code.diff-highlight .token.token.inserted:not(.prefix) *::-moz-selection {
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::-moz-selection,
+pre.diff-highlight > code .token.token.inserted:not(.prefix) *::-moz-selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix) *::-moz-selection {
   background-color: hsla(135, 73%, 55%, 0.25);
 }
 
-pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,
-pre.diff-highlight>code .token.token.inserted:not(.prefix) *::selection,
-pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection,
-pre>code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::selection,
+pre.diff-highlight > code .token.token.inserted:not(.prefix) *::selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix)::selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
   background-color: hsla(135, 73%, 55%, 0.25);
 }
 
