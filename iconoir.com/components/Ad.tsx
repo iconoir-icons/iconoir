@@ -13,9 +13,7 @@ export function Ad() {
       const script = document.createElement('script');
       script.async = true;
       script.type = 'text/javascript';
-
       script.src = '//cdn.carbonads.com/carbon.js?serve=CESDK5QJ&placement=iconoircom';
-
       script.id = '_carbonads_js';
       container.appendChild(script);
     }

@@ -42,9 +42,7 @@ const SponsorLabel = styled.div`
   margin: 10px 0;
 `;
 
-const PromoContent = styled.div`
-  // Your content styles here, similar to SponsorText
-`;
+const PromoContent = styled.div``;
 
 const PromoLogo = styled.div`
   @keyframes my-animation {
@@ -91,9 +89,7 @@ const PromoImage = styled.img`
   width: 70%;
 `;
 
-const PromoInfo = styled.div`
-  // Styles for the text container, similar to SponsorRight
-`;
+const PromoInfo = styled.div``;
 
 const PromoTitle = styled.h2`
   font-size: 16px;

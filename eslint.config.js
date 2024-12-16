@@ -93,6 +93,8 @@ export default antfu({
     ...nextPlugin.configs['core-web-vitals'].rules,
     ...reactPlugin.configs.recommended.rules,
     ...hooksPlugin.configs.recommended.rules,
+
+    // rules from "eslint-config-next"
     'import/no-anonymous-default-export': 'warn',
     'react/no-unknown-property': 'off',
     'react/react-in-jsx-scope': 'off',

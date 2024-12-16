@@ -168,7 +168,8 @@ export function IconList({ filters, allIcons }: IconListProps) {
               ref={(c) => {
                 if (typeof ref === 'function')
                   ref(c);
-                else ref.current = c;
+                else
+                  ref.current = c;
                 listRef.current = c;
               }}
               itemData={iconRows}
