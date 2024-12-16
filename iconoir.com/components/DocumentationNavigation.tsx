@@ -1,15 +1,16 @@
+import type { DocumentationItem } from '../pages/docs/[...slug]';
 import { NavArrowUp } from 'iconoir-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
-import { DocumentationItem } from '../pages/docs/[...slug]';
 import { media } from '../lib/responsive';
 
 export interface DocumentationNavigationProps {
   documentationItems: DocumentationItem[];
   pathPrefix?: string[];
 }
+
 export function DocumentationNavigation({
   documentationItems,
   pathPrefix,
@@ -23,14 +24,15 @@ export function DocumentationNavigation({
       const normalized = activePath.replace((pathPrefix || []).join('/'), '');
 
       return (
-        normalized === item.path ||
-        item.children?.some((child) => {
+        normalized === item.path
+        || item.children?.some((child) => {
           return activePath.startsWith(
             [item.path, child.path].filter(Boolean).join('/'),
           );
         })
       );
     });
+
     setExpandedTitles(expandedItems.map((item) => item.title));
   }, [activePath, pathPrefix, documentationItems]);
 
@@ -81,13 +83,15 @@ export function DocumentationNavigation({
               legacyBehavior
               key={documentationItem.path}
             >
-              <NavigationItem as={'a'} $active={activePath === path}>
+              <NavigationItem as="a" $active={activePath === path}>
                 <span>{documentationItem.title}</span>
-                {documentationItem.label ? (
-                  <NavigationItemLabel>
-                    {documentationItem.label}
-                  </NavigationItemLabel>
-                ) : null}
+                {documentationItem.label
+                  ? (
+                      <NavigationItemLabel>
+                        {documentationItem.label}
+                      </NavigationItemLabel>
+                    )
+                  : null}
               </NavigationItem>
             </Link>
           );
@@ -111,12 +115,14 @@ const HeaderItemIcon = styled.div<{ $active?: boolean }>`
     display: none;
   }
 `;
+
 const ChildrenContainer = styled.div<{ $expanded?: boolean }>`
   display: ${(props) => (props.$expanded ? 'block' : 'none')};
   ${media.lg} {
     display: block;
   }
 `;
+
 const HeaderItem = styled.div`
   padding: 10px 30px;
   font-size: 15px;
@@ -135,6 +141,7 @@ const HeaderItem = styled.div`
     }
   }
 `;
+
 const NavigationItem = styled.div<{ $active?: boolean }>`
   padding: 12px 12px 12px 75px;
   transition:
@@ -166,6 +173,7 @@ const NavigationItem = styled.div<{ $active?: boolean }>`
     padding: 12px 12px 12px 65px;
   }
 `;
+
 const NavigationItemLabel = styled.span`
   display: flex;
   align-items: center;

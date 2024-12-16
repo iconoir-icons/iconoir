@@ -1,19 +1,19 @@
-import { ArrowRight, Flash, Discord, Globe, DesignNib } from 'iconoir-react';
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
+import type { HeaderProps } from '../components/Header';
+import { ArrowRight, DesignNib, Discord, Flash, Globe } from 'iconoir-react';
 import styled from 'styled-components';
-import { HeroText } from '.';
-import { HeroTextSecondary } from '.';
+import { HeroText, HeroTextSecondary } from '.';
 import { LargeButton } from '../components/Button';
-import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { Footer } from '../components/Footer';
-import { Header, HeaderProps } from '../components/Header';
+import { Header } from '../components/Header';
 import { HeaderSecondary } from '../components/HeaderSecondary';
 import { Layout } from '../components/Layout';
-import { media } from '../lib/responsive';
+import { Praise } from '../components/Praise';
 import { SEO } from '../components/SEO';
 import { Body, Heading2, Text18 } from '../components/Typography';
+import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
-import { Praise } from '../components/Praise';
+import { media } from '../lib/responsive';
 
 interface SupportProps extends HeaderProps {}
 
@@ -22,10 +22,8 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
     <>
       <Layout>
         <SEO
-          title={'Donate - Our Mission'}
-          description={
-            'Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons.'
-          }
+          title="Donate - Our Mission"
+          description="Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons."
         />
         <Header {...headerProps} />
         <HeaderSecondary>
@@ -39,7 +37,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
         <PageContainer>
           <PillarsContainer>
             <Pillar>
-              <PillarIcon $R={'140'} $G={'26'} $B={'245'}>
+              <PillarIcon $R="140" $G="26" $B="245">
                 <Flash />
               </PillarIcon>
               <PillarTitle>Free</PillarTitle>
@@ -49,7 +47,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
               </PillarDescription>
             </Pillar>
             <Pillar>
-              <PillarIcon $R={'72'} $G={'88'} $B={'255'}>
+              <PillarIcon $R="72" $G="88" $B="255">
                 <DesignNib />
               </PillarIcon>
               <PillarTitle>Complete</PillarTitle>
@@ -58,7 +56,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
               </PillarDescription>
             </Pillar>
             <Pillar>
-              <PillarIcon $R={'65'} $G={'209'} $B={'255'}>
+              <PillarIcon $R="65" $G="209" $B="255">
                 <Globe />
               </PillarIcon>
               <PillarTitle>Ambitious</PillarTitle>
@@ -74,7 +72,7 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
               support Iconoir with a donation to help us sustain costs and
               development time.
             </Text18>
-            <CallToAction as={'a'} href={SUPPORT_LINK} target={'_blank'}>
+            <CallToAction as="a" href={SUPPORT_LINK} target="_blank">
               <span>Donate</span>
               <ArrowRight />
             </CallToAction>
@@ -93,12 +91,14 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
             </DonateLeft>
             <DonateRight>
               <DonateButton
-                as={'a'}
+                as="a"
                 href={DISCORD_LINK}
-                target={'_blank'}
-                rel={'noreferrer'}
+                target="_blank"
+                rel="noreferrer"
               >
-                <span>Join</span> <Discord />
+                <span>Join</span>
+                {' '}
+                <Discord />
               </DonateButton>
             </DonateRight>
           </DonateContainer>
@@ -181,6 +181,7 @@ const PageContainer = styled.div`
     margin: 110px auto 0 auto;
   }
 `;
+
 const WideSection = styled.div`
   width: 60%;
   background: var(--g7);
@@ -192,12 +193,14 @@ const WideSection = styled.div`
     padding: 80px 20%;
   }
 `;
+
 const PraiseTitle = styled(Heading2)`
   &&& {
     margin: 100px 0 80px 0;
     text-align: center;
   }
 `;
+
 const DonateLeft = styled.div`
   max-width: 800px;
 `;
@@ -221,6 +224,7 @@ const DonateButton = styled(LargeButton)`
     height: 50px;
   }
 `;
+
 const CallToAction = styled(LargeButton)`
   &&& {
     margin-top: 40px;

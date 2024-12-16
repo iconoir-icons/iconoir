@@ -6,6 +6,7 @@ import { Text18 } from './Typography';
 export interface IconListEmptyProps {
   searchTerm: string;
 }
+
 export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
   return (
     <Container>
@@ -13,12 +14,14 @@ export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
         <SpockHandGesture />
       </IconContainer>
       <Title>
-        Unfortunately there are no icons for &apos;{searchTerm}&apos;
+        Unfortunately there are no icons for &apos;
+        {searchTerm}
+        &apos;
       </Title>
       <Text18 style={{ color: 'var(--black-60)' }}>
-        {"If you can't find the icon, you can make a"}
+        If you can't find the icon, you can make a
         <br />
-        <a href={SUGGEST_ICON_LINK} target={'_blank'} rel={'noreferrer'}>
+        <a href={SUGGEST_ICON_LINK} target="_blank" rel="noreferrer">
           suggestion on GitHub.
         </a>
       </Text18>
@@ -33,6 +36,7 @@ const Container = styled.div`
   flex-direction: column;
   text-align: center;
 `;
+
 const IconContainer = styled.div`
   svg {
     width: 60px;
@@ -41,6 +45,7 @@ const IconContainer = styled.div`
   margin-bottom: 65px;
   color: var(--black);
 `;
+
 const Title = styled(Text18)`
   &&& {
     font-weight: 700;

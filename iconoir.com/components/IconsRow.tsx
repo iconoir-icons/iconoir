@@ -1,13 +1,14 @@
+import type { Icon } from './IconList';
 import styled from 'styled-components';
 import { ICON_SPACE } from '../lib/constants';
 import { Icon as IconC } from './Icon';
-import { Icon } from './IconList';
 
 export interface IconsRowProps {
   icons: Icon[];
   style?: any;
   iconWidth: number;
 }
+
 export function IconsRow({ icons, style, iconWidth }: IconsRowProps) {
   return (
     <RowContainer style={style}>

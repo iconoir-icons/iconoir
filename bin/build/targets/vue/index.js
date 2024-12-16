@@ -1,8 +1,8 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import vue from '@vitejs/plugin-vue';
 import { fromHtml } from 'hast-util-from-html';
 import { toHtml } from 'hast-util-to-html';
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import { build } from 'vite';
 import dts from 'vite-plugin-dts';
 import { generateExport } from '../../lib/import-export.js';
@@ -44,10 +44,9 @@ export default async (ctx, target) => {
 
       promises.push(generateIconFile(icon.path, vueFileName));
 
-      const mainIndexComponentName =
-        variant === ctx.global.defaultVariant
-          ? icon.pascalName
-          : icon.pascalNameVariant;
+      const mainIndexComponentName = variant === ctx.global.defaultVariant
+        ? icon.pascalName
+        : icon.pascalNameVariant;
 
       mainIndexContent.push(
         generateExport(

@@ -1,14 +1,15 @@
 import { ArrowRight } from 'iconoir-react';
 import styled from 'styled-components';
-import { DonateContainer, DonateHeader, DonateRight } from '../pages/support';
 import { GITHUB_TREE_PREFIX } from '../lib/constants';
-import { Text18 } from './Typography';
+import { DonateContainer, DonateHeader, DonateRight } from '../pages/support';
 import { LargeButton } from './Button';
+import { Text18 } from './Typography';
 
 export interface ReadOnGitHubProps {
   path: string;
   resource?: string;
 }
+
 export function ReadOnGitHub({
   path,
   resource = 'our documentation',
@@ -18,7 +19,11 @@ export function ReadOnGitHub({
       <div>
         <DonateHeader>Read it on GitHub</DonateHeader>
         <Text18>
-          If you prefer, you can take a look at {resource} on our GitHub
+          If you prefer, you can take a look at
+          {' '}
+          {resource}
+          {' '}
+          on our GitHub
           repository.
         </Text18>
       </div>
@@ -27,8 +32,8 @@ export function ReadOnGitHub({
           href={`${GITHUB_TREE_PREFIX}/${
             path.startsWith('/') ? path.slice(1) : path
           }`}
-          target={'_blank'}
-          rel={'noreferrer'}
+          target="_blank"
+          rel="noreferrer"
         >
           <DonateIconButton>
             <ArrowRight />

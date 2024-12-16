@@ -1,24 +1,27 @@
-import fs from 'fs';
-import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { GetStaticPathsResult, GetStaticPropsContext } from 'next';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { ParsedUrlQuery } from 'node:querystring';
+import type {
+  DocumentationNavigationProps,
+} from '../../components/DocumentationNavigation';
+import type { HeaderProps } from '../../components/Header';
+import fs from 'node:fs';
+import path from 'node:path';
+import { SuggestLibrary } from '@/components/SuggestLibrary';
 import { serialize } from 'next-mdx-remote/serialize';
-import path from 'path';
-import { ParsedUrlQuery } from 'querystring';
 import remarkGfm from 'remark-gfm';
 import styled from 'styled-components';
 import {
   DocumentationNavigation,
-  DocumentationNavigationProps,
 } from '../../components/DocumentationNavigation';
 import { Footer } from '../../components/Footer';
-import { Header, HeaderProps } from '../../components/Header';
+import { Header } from '../../components/Header';
 import { Layout } from '../../components/Layout';
 import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
-import { media } from '../../lib/responsive';
 import { SEO } from '../../components/SEO';
 import { getHeaderProps } from '../../lib/getHeaderProps';
-import { SuggestLibrary } from '@/components/SuggestLibrary';
+import { media } from '../../lib/responsive';
 
 interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;
@@ -112,6 +115,7 @@ export interface DocumentationItem extends DocumentationItemProps {
   label?: string;
   skip?: boolean;
 }
+
 export function getDocumentationStructure(): DocumentationItem[] {
   return [
     {
@@ -272,6 +276,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const repositoryRoot = path.join(process.cwd(), '..');
   const filepath = path.join(repositoryRoot, navigationItem.filepath!);
   const source = cleanSource(fs.readFileSync(filepath).toString());
+
   const mdxSource = await serialize(source, {
     parseFrontmatter: true,
     mdxOptions: {

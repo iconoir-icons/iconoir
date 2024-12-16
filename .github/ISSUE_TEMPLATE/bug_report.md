@@ -13,21 +13,21 @@ Before reporting an issue, please search to see if someone has filed a similar i
 
 ## Prerequisites
 
-* Version:
-* Are you running from source/main:
-* Are you using a released build:
-* Operating system:
+- Version:
+- Are you running from source/main:
+- Are you using a released build:
+- Operating system:
 
 ## Step to reproduce
 
-*(Type here)*
+_(Type here)_
 
 ### Actual behavior
 
 ## Any message or error
 
-*(Type here)*
+_(Type here)_
 
 ## Additional info or screenshots
 
-* Screenshots
+- Screenshots

@@ -5,9 +5,9 @@ export function GA() {
     <>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=UA-33344001-9"
-        strategy={'afterInteractive'}
+        strategy="afterInteractive"
       />
-      <Script id={'google-analytics'} strategy={'afterInteractive'}>
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

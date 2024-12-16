@@ -1,4 +1,5 @@
-const template = (name, svg) => `
+function template(name, svg) {
+  return `
 import 'package:flutter/widgets.dart' as widgets;
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -21,5 +22,6 @@ ${svg}''',
       );
 }
 `;
+}
 
 export default template;

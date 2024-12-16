@@ -51,7 +51,7 @@
 Icons can take any standard SVG properties as optional props, e.g.
 
 ```jsx
-<Iconoir color="red" height="36" width="36" />
+<Iconoir color="red" height="36" width="36" />;
 ```
 
 Default values for the most common props are given below:

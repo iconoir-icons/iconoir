@@ -16,7 +16,8 @@ export function getDts(path, content, options) {
   const _readFile = host.readFile;
 
   host.readFile = (filename) => {
-    if (filename === path) return content;
+    if (filename === path)
+      return content;
 
     return _readFile(filename);
   };
@@ -24,7 +25,8 @@ export function getDts(path, content, options) {
   const dtsFilename = path.replace(/\.(m|c)?(ts|js)x?$/, '.d.$1ts');
 
   host.writeFile = (filename, contents) => {
-    if (filename === dtsFilename) output = contents;
+    if (filename === dtsFilename)
+      output = contents;
   };
 
   const program = ts.createProgram([path], options, host);
@@ -40,6 +42,7 @@ export function getDts(path, content, options) {
         diagnostic.file,
         diagnostic.start,
       );
+
       const message = ts.flattenDiagnosticMessageText(
         diagnostic.messageText,
         '\n',

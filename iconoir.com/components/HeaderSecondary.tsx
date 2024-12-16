@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export interface HeaderSecondaryProps {
   children: React.ReactElement;
 }
+
 export function HeaderSecondary({ children }: HeaderSecondaryProps) {
   return <HeaderContainer>{children}</HeaderContainer>;
 }

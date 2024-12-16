@@ -11,6 +11,7 @@ export interface NavigationItemProps {
   children: React.ReactElement | string;
   style?: any;
 }
+
 export function NavigationItem({
   href,
   activeMatch,
@@ -22,7 +23,7 @@ export function NavigationItem({
   return (
     <Link href={href} passHref legacyBehavior>
       <NavigationItemContainer
-        as={'a'}
+        as="a"
         style={style}
         $text={children.toString()}
         $isActive={

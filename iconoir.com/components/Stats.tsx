@@ -6,6 +6,7 @@ export interface StatProps {
   value: string;
   description: string;
 }
+
 export function Stat({ value, description }: StatProps) {
   return (
     <StatContainer>
@@ -27,6 +28,7 @@ const StatText = styled.div`
     text-stroke: 1.5px;
   }
 `;
+
 const StatContainer = styled.div`
   text-align: center;
   width: 45%;

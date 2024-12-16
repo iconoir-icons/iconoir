@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { Sparks } from 'iconoir-react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { LargeButton } from '../components/Button';
 import { media } from '../lib/responsive';
-import { Sparks } from 'iconoir-react';
 
 export function DonationPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,10 +41,8 @@ export function DonationPopup() {
             going.
           </Text>
           <a
-            href={
-              'https://opencollective.com/iconoir/donate?interval=month&amount=10'
-            }
-            target={'_blank'}
+            href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
+            target="_blank"
           >
             Support the project!
           </a>

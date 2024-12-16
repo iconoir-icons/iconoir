@@ -4,6 +4,7 @@ import { media } from '../lib/responsive';
 import { GA } from './GA';
 
 export interface LayoutProps {}
+
 export function Layout({ children }: React.PropsWithChildren<LayoutProps>) {
   return (
     <Container>

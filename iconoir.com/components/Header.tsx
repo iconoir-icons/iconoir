@@ -1,4 +1,4 @@
-import { Menu, Xmark, Discord, Sparks } from 'iconoir-react';
+import { Discord, Menu, Sparks, Xmark } from 'iconoir-react';
 import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
@@ -14,6 +14,7 @@ import { Text15 } from './Typography';
 export interface HeaderProps {
   currentVersion: string;
 }
+
 export function Header({ currentVersion }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
 
@@ -22,38 +23,41 @@ export function Header({ currentVersion }: HeaderProps) {
       <Banner>
         <Sparks></Sparks>
         <a
-          href={
-            'https://opencollective.com/iconoir/donate?interval=month&amount=10'
-          }
-          target={'_blank'}
+          href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
+          target="_blank"
         >
           Your one-time or recurring contribution does a lot to keep Iconoir
           going.
         </a>
       </Banner>
       <HeaderLeft>
-        <Link href={'/'}>
+        <Link href="/">
           <LogoContainer>
             <LogoIcon>
               <AnimatedSvg />
             </LogoIcon>
-            <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
+            <Logo src="/iconoir-logo.svg" alt="Iconoir Logo" />
           </LogoContainer>
         </Link>
         <CurrentVersion version={currentVersion} />
       </HeaderLeft>
       <HeaderCenter>
         <MobileMenuContainer $visible={menuVisible}>
-          <NavigationItem href={'/'}>Icons</NavigationItem>
-          <NavigationItem href={'/docs/introduction'} activeMatch={'/docs'}>
+          <NavigationItem href="/">Icons</NavigationItem>
+          <NavigationItem href="/docs/introduction" activeMatch="/docs">
             Documentation
           </NavigationItem>
-          <NavigationItem href={'/support'} style={{ marginRight: 0 }}>
+          <NavigationItem href="/support" style={{ marginRight: 0 }}>
             Donate &mdash; Our Mission
           </NavigationItem>
           <Share $isMobile>
-            <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer nofollow'}>
-              Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+            <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
+              Share with
+              {' '}
+              <Heart width="1em" height="1em" />
+              {' '}
+              on
+              {' '}
               <span>X (Twitter)</span>
             </a>
           </Share>
@@ -61,12 +65,17 @@ export function Header({ currentVersion }: HeaderProps) {
       </HeaderCenter>
       <HeaderRight>
         <Share>
-          <a href={SHARE_LINK} target={'_blank'} rel={'noreferrer nofollow'}>
-            Share with <Heart width={'1em'} height={'1em'} /> on{' '}
+          <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
+            Share with
+            {' '}
+            <Heart width="1em" height="1em" />
+            {' '}
+            on
+            {' '}
             <span>X (Twitter)</span>
           </a>
         </Share>
-        <a href={DISCORD_LINK} rel={'nofollow noreferrer'}>
+        <a href={DISCORD_LINK} rel="nofollow noreferrer">
           <StyledDiscord $isMobile />
         </a>
         <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
@@ -139,6 +148,7 @@ const MobileMenuButton = styled(ResetButton)`
     }
   }
 `;
+
 const MobileMenuContainer = styled.div<{ $visible?: boolean }>`
   position: absolute;
   top: 0;
@@ -158,8 +168,8 @@ const MobileMenuContainer = styled.div<{ $visible?: boolean }>`
   flex-direction: column;
   align-items: stretch;
   ${(props) =>
-    props.$visible &&
-    css`
+    props.$visible
+    && css`
       pointer-events: all;
       transform: translateY(0);
       opacity: 1;
@@ -180,6 +190,7 @@ const MobileMenuContainer = styled.div<{ $visible?: boolean }>`
     }
   }
 `;
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -188,6 +199,7 @@ const Container = styled.div`
     margin-top: 40px;
   }
 `;
+
 const HeaderItem = styled.div`
   flex: 1;
   width: 33%;
@@ -196,17 +208,20 @@ const HeaderItem = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const HeaderCenter = styled(HeaderItem)`
   padding: 0 16px;
   > :not(:last-child) {
     margin-right: 16px;
   }
 `;
+
 const HeaderLeft = styled(HeaderItem)`
   &&& {
     justify-content: flex-start;
   }
 `;
+
 const HeaderRight = styled(HeaderItem)`
   &&& {
     justify-content: flex-end;
@@ -233,8 +248,8 @@ const Share = styled(Text15)<{ $isMobile?: boolean }>`
   &&& {
     display: none;
     ${(props) =>
-      props.$isMobile &&
-      css`
+      props.$isMobile
+      && css`
         display: flex;
         justify-content: center;
         padding: 12px 0;

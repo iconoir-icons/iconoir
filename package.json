@@ -1,7 +1,19 @@
 {
   "name": "iconoir",
+  "type": "module",
   "version": "7.10.1",
+  "packageManager": "pnpm@9.15.0",
   "description": "Iconoir - The biggest open source icon library with tons of free icons.",
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
+  "homepage": "https://iconoir.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconoir-icons/iconoir.git"
+  },
   "keywords": [
     "free",
     "icons",
@@ -9,17 +21,6 @@
     "svg",
     "css"
   ],
-  "homepage": "https://iconoir.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/iconoir-icons/iconoir.git"
-  },
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/iconoir"
-  },
-  "license": "MIT",
-  "type": "module",
   "exports": {
     "./icons/*.svg": "./icons/regular/*.svg",
     "./icons/*-solid.svg": "./icons/solid/*.svg",
@@ -57,6 +58,5 @@
     "typescript": "^5.7.2",
     "vite": "^6.0.3",
     "vite-plugin-dts": "^4.3.0"
-  },
-  "packageManager": "pnpm@9.15.0"
+  }
 }

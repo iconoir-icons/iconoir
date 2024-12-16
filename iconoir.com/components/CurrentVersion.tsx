@@ -5,10 +5,11 @@ import { Text13 } from './Typography';
 export interface CurrentVersionProps {
   version: string;
 }
+
 export function CurrentVersion({ version }: CurrentVersionProps) {
   return (
-    <Link href={'/docs/changelog'} passHref legacyBehavior>
-      <Container as={'a'}>{version}</Container>
+    <Link href="/docs/changelog" passHref legacyBehavior>
+      <Container as="a">{version}</Container>
     </Link>
   );
 }

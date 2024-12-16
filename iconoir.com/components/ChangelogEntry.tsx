@@ -1,12 +1,12 @@
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { BoxIso } from 'iconoir-react';
 import moment from 'moment';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import React from 'react';
 import styled from 'styled-components';
-import { MDXRemote } from './MDXRemote';
 import { media } from '../lib/responsive';
-import { Code, Text15, Text18 } from './Typography';
 import { CopyButton } from './Button';
+import { MDXRemote } from './MDXRemote';
+import { Code, Text15, Text18 } from './Typography';
 
 const EXPAND_HEIGHT = 400;
 
@@ -16,6 +16,7 @@ export interface ChangelogEntryProps {
   created_at: string;
   body?: MDXRemoteSerializeResult;
 }
+
 export function ChangelogEntry({
   name,
   url,
@@ -28,8 +29,8 @@ export function ChangelogEntry({
 
   React.useEffect(() => {
     if (
-      containerRef.current &&
-      containerRef.current.clientHeight > EXPAND_HEIGHT
+      containerRef.current
+      && containerRef.current.clientHeight > EXPAND_HEIGHT
     ) {
       setShouldExpand(true);
     }
@@ -44,8 +45,8 @@ export function ChangelogEntry({
         <TitleContainer>
           <a
             href={url}
-            target={'_blank'}
-            rel={'noreferrer'}
+            target="_blank"
+            rel="noreferrer"
             style={{ textDecoration: 'none' }}
           >
             <EntryTitle>{name}</EntryTitle>
@@ -55,13 +56,15 @@ export function ChangelogEntry({
       </ContainerLeft>
       <EntryBody $expanded={expanded}>
         {body ? <MDXRemote {...body} /> : 'No changelog'}
-        {shouldExpand ? (
-          <ExpandContainer>
-            <CopyButton onClick={() => setExpanded((e) => !e)}>
-              {expanded ? 'Collapse' : 'Expand'}
-            </CopyButton>
-          </ExpandContainer>
-        ) : null}
+        {shouldExpand
+          ? (
+              <ExpandContainer>
+                <CopyButton onClick={() => setExpanded((e) => !e)}>
+                  {expanded ? 'Collapse' : 'Expand'}
+                </CopyButton>
+              </ExpandContainer>
+            )
+          : null}
       </EntryBody>
     </Container>
   );
@@ -79,6 +82,7 @@ const Container = styled.div`
     margin: 24px 0;
   }
 `;
+
 const ContainerLeft = styled.div`
   display: flex;
   align-items: flex-start;
@@ -88,25 +92,30 @@ const ContainerLeft = styled.div`
     margin-right: 30px;
   }
 `;
+
 const ContainerIcon = styled.div`
   font-size: 18px;
   color: var(--black);
   margin-right: 18px;
 `;
+
 const TitleContainer = styled.div`
   width: 100px;
 `;
+
 const EntryTitle = styled(Text18)`
   &&& {
     color: var(--black);
     font-weight: 700;
   }
 `;
+
 const ExpandContainer = styled.div`
   position: absolute;
   bottom: 16px;
   right: 23px;
 `;
+
 const EntryBody = styled(Code)<{ $expanded?: boolean }>`
   &&& {
     flex: 1;

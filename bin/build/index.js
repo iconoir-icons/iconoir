@@ -1,7 +1,7 @@
-import { Listr } from 'listr2';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Listr } from 'listr2';
 import { pascalCase, snakeCase } from 'scule';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

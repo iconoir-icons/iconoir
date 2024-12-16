@@ -1,4 +1,4 @@
-const template = (native) => {
+function template(native) {
   const useClientDirective = native ? '' : '"use client";';
 
   const imports = [
@@ -11,8 +11,8 @@ ${useClientDirective}
 ${imports}
 
 type IconoirContextValue = Partial<${
-    native ? 'SvgProps' : 'React.SVGProps<SVGSVGElement>'
-  }>;
+  native ? 'SvgProps' : 'React.SVGProps<SVGSVGElement>'
+}>;
 
 export const IconoirContext = React.createContext<IconoirContextValue>({});
 
@@ -29,7 +29,7 @@ export function IconoirProvider({ iconProps, children }: IconoirProviderProps) {
   );
 }
 `;
-};
+}
 
 export default template;
 

@@ -39,11 +39,11 @@ export function Footer() {
         <LogoIcon>
           <PeaceHand />
         </LogoIcon>
-        <Logo src={'/iconoir-logo.svg'} alt={'Iconoir Logo'} />
+        <Logo src="/iconoir-logo.svg" alt="Iconoir Logo" />
       </LogoContainer>
       <FooterCategories>
         <FooterCategory
-          category={'Project'}
+          category="Project"
           links={[
             { name: 'Our Mission', url: '/support' },
             { name: 'Contribute', url: '/docs/contributing' },
@@ -54,7 +54,7 @@ export function Footer() {
           ]}
         />
         <FooterCategory
-          category={'Support'}
+          category="Support"
           links={[
             {
               name: 'License',
@@ -71,7 +71,7 @@ export function Footer() {
           ]}
         />
         <FooterCategory
-          category={'Developers'}
+          category="Developers"
           links={[
             { name: 'Changelog', url: '/docs/changelog' },
             {
@@ -86,15 +86,19 @@ export function Footer() {
       </FooterCategories>
       <FooterEnd>
         <Text13 style={{ fontWeight: 400 }}>
-          Parts of this content are &copy;2020-{year} by individual Iconoir
-          contributors. Content available under a{' '}
-          <a href={LICENSE_LINK} target={'_blank'} rel={'nofollow noreferrer'}>
+          Parts of this content are &copy;2020-
+          {year}
+          {' '}
+          by individual Iconoir
+          contributors. Content available under a
+          {' '}
+          <a href={LICENSE_LINK} target="_blank" rel="nofollow noreferrer">
             MIT License
           </a>
           .
         </Text13>
         <Text13 style={{ fontWeight: 400 }}>
-          <a href={PRIVACY_LINK} target={'_blank'} rel={'nofollow noreferrer'}>
+          <a href={PRIVACY_LINK} target="_blank" rel="nofollow noreferrer">
             Privacy
           </a>
         </Text13>
@@ -115,6 +119,7 @@ const Container = styled.div`
     margin-right: 50px;
   }
 `;
+
 const FooterEnd = styled.div`
   border-top: 1px solid var(--g5);
   padding-top: 20px;
@@ -123,15 +128,18 @@ const FooterEnd = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 const FooterCategories = styled.div`
   width: 100%;
   margin-top: 54px;
   display: flex;
 `;
+
 const FooterCategoryContainer = styled.div`
   width: 28%;
   margin-right: 20px;
 `;
+
 const FooterCategoryTitle = styled(Text17)`
   &&& {
     margin-bottom: 24px;
@@ -140,7 +148,9 @@ const FooterCategoryTitle = styled(Text17)`
     color: var(--g0);
   }
 `;
+
 const FooterCategoryLinks = styled.div``;
+
 const FooterCategoryLink = styled.a`
   display: block;
   font-size: 17px;

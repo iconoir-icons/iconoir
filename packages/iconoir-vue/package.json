@@ -2,23 +2,23 @@
   "name": "@iconoir/vue",
   "version": "7.10.1",
   "description": "Vue library for Iconoir, the biggest open source icon library with tons of free icons.",
-  "keywords": [
-    "icons",
-    "svg",
-    "library",
-    "vue"
-  ],
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
   "homepage": "https://iconoir.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/iconoir-icons/iconoir.git",
     "directory": "packages/iconoir-vue"
   },
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/iconoir"
-  },
-  "license": "MIT",
+  "keywords": [
+    "icons",
+    "svg",
+    "library",
+    "vue"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -39,12 +39,6 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "vue-demi": "^0.14.6"
-  },
-  "devDependencies": {
-    "vue": "^3.3.12"
-  },
   "peerDependencies": {
     "@vue/composition-api": ">=1.0.0-rc.1",
     "vue": "^2.6.11 || >=3.0.0"
@@ -53,5 +47,11 @@
     "@vue/composition-api": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "vue-demi": "^0.14.6"
+  },
+  "devDependencies": {
+    "vue": "^3.3.12"
   }
 }

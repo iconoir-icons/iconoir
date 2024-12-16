@@ -31,6 +31,7 @@ const PromoContainer = styled.div`
     background-color: var(--g7);
   }
 `;
+
 const SponsorLabel = styled.div`
   font-size: 12px;
   font-weight: 400;

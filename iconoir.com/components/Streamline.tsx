@@ -24,8 +24,6 @@ export function Streamline() {
   );
 }
 
-// Styled components go here
-
 const PromoContainer = styled.div`
   border-radius: 12px;
   border: 1px solid var(--g6);
@@ -36,6 +34,7 @@ const PromoContainer = styled.div`
     background-color: var(--g7);
   }
 `;
+
 const SponsorLabel = styled.div`
   font-size: 12px;
   font-weight: 400;

@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
-import { useRef, useEffect } from 'react';
 
 export interface HeaderBackgroundProps {
   children: React.ReactElement;
 }
+
 export function HeaderBackground({ children }: HeaderBackgroundProps) {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!parallaxRef.current) return;
+    if (!parallaxRef.current)
+      return;
 
     const parallaxElements = parallaxRef.current.querySelectorAll(
       '[data-parallax-factor]',
@@ -21,7 +22,7 @@ export function HeaderBackground({ children }: HeaderBackgroundProps) {
       const y = event.clientY / window.innerHeight;
 
       parallaxElements.forEach((el) => {
-        const factor = parseFloat(
+        const factor = Number.parseFloat(
           el.getAttribute('data-parallax-factor') || '1',
         );
 
@@ -55,6 +56,7 @@ const HeaderContainer = styled.div`
   width: fit-content;
   margin: auto;
 `;
+
 const FloatingIcon = styled.div`
   position: absolute;
   display: none;
@@ -67,6 +69,7 @@ const FloatingIcon = styled.div`
     display: flex;
   }
 `;
+
 const FloatingIconCellar = styled(FloatingIcon)`
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
@@ -79,6 +82,7 @@ const FloatingIconCellar = styled(FloatingIcon)`
   ${media.lg} {
   }
 `;
+
 const FloatingIconPay = styled(FloatingIcon)`
   -webkit-transform: rotate(18deg);
   -moz-transform: rotate(18deg);
@@ -91,6 +95,7 @@ const FloatingIconPay = styled(FloatingIcon)`
   ${media.lg} {
   }
 `;
+
 const FloatingFaceID = styled(FloatingIcon)`
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
@@ -103,6 +108,7 @@ const FloatingFaceID = styled(FloatingIcon)`
   ${media.lg} {
   }
 `;
+
 const FloatingCommand = styled(FloatingIcon)`
   -webkit-transform: rotate(-7deg);
   -moz-transform: rotate(-7deg);
@@ -115,6 +121,7 @@ const FloatingCommand = styled(FloatingIcon)`
   ${media.lg} {
   }
 `;
+
 const FloatingFill = styled(FloatingIcon)`
   -webkit-transform: rotate(-14deg);
   -moz-transform: rotate(-14deg);

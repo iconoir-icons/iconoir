@@ -1,16 +1,18 @@
+import type { Icon, IconListFilters } from './IconList';
 import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
-import { Streamline } from './Streamline';
+import { media } from '../lib/responsive';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
-import { Icon, IconList, IconListFilters } from './IconList';
-import { media } from '../lib/responsive';
+import { IconList } from './IconList';
+import { Streamline } from './Streamline';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
 
 export interface ExploreProps {
   allIcons: Icon[];
 }
+
 export function Explore({ allIcons }: ExploreProps) {
   const [filters, setFilters] = React.useState<IconListFilters>({});
   const [customizations, setCustomizations] = useCustomizationPersistence();
@@ -56,6 +58,7 @@ const Container = styled.div`
     flex-direction: row;
   }
 `;
+
 const Left = styled.div`
   flex: 1;
   min-height: calc(100vh - 100px);
@@ -64,6 +67,7 @@ const Left = styled.div`
     background: none;
   }
 `;
+
 const Right = styled.div`
   position: sticky;
   top: 20px;
@@ -76,6 +80,7 @@ const Right = styled.div`
     z-index: 1;
   }
 `;
+
 const FilterContainer = styled.div<{ $isMobile?: boolean }>`
   display: ${(props) => (props.$isMobile ? 'block' : 'none')};
   margin-bottom: 40px;

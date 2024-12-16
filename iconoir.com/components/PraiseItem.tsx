@@ -12,6 +12,7 @@ export interface PraiseItemProps {
   logoAlt: string;
   imageUrl: string;
 }
+
 export function PraiseItem({
   name,
   position,
@@ -28,7 +29,7 @@ export function PraiseItem({
         <Header>{name}</Header>
         <Text14>{position}</Text14>
         <Body>{description}</Body>
-        <a href={logoLink} target={'_blank'} rel={'noreferrer'}>
+        <a href={logoLink} target="_blank" rel="noreferrer">
           <Logo src={logoUrl} alt={logoAlt} />
         </a>
       </div>
@@ -47,21 +48,25 @@ const Container = styled.div`
     width: 428px;
   }
 `;
+
 const AuthorImage = styled.img`
   height: 60px;
   width: 60px;
   margin-right: 28px;
 `;
+
 const Logo = styled.img`
   height: 23px;
   margin-top: 36px;
 `;
+
 const Header = styled(Text18)`
   &&& {
     font-weight: 700;
     color: var(--black);
   }
 `;
+
 const Body = styled(Text18)`
   margin-top: 8px;
 `;

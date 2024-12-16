@@ -13,6 +13,6 @@ Before creating an icon request, please search to see if someone has requested t
 
 ## Icon Request
 
-* Icon name:
-* Use case:
-* Screenshots of similar icons:
+- Icon name:
+- Use case:
+- Screenshots of similar icons:

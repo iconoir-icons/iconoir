@@ -2,23 +2,23 @@
   "name": "iconoir-react",
   "version": "7.10.1",
   "description": "React library for Iconoir, the biggest open source icon library with tons of free icons.",
-  "keywords": [
-    "icons",
-    "svg",
-    "library",
-    "react"
-  ],
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
   "homepage": "https://iconoir.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/iconoir-icons/iconoir.git",
     "directory": "packages/iconoir-react"
   },
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/iconoir"
-  },
-  "license": "MIT",
+  "keywords": [
+    "icons",
+    "svg",
+    "library",
+    "react"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -40,10 +40,10 @@
   "files": [
     "dist"
   ],
-  "devDependencies": {
-    "@types/react": "^18.2.45"
-  },
   "peerDependencies": {
     "react": "^16.8.6 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45"
   }
 }

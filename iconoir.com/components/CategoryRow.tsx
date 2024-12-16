@@ -7,13 +7,17 @@ export interface CategoryRowProps {
   numIcons: number;
   style?: any;
 }
+
 export function CategoryRow({ category, numIcons, style }: CategoryRowProps) {
   return (
     <Container style={style}>
       <InnerContainer>
         <Title>{category}</Title>
         <Text15>
-          {numIcons} Icon{numIcons === 1 ? '' : 's'}
+          {numIcons}
+          {' '}
+          Icon
+          {numIcons === 1 ? '' : 's'}
         </Text15>
         <Separator />
       </InnerContainer>
@@ -32,6 +36,7 @@ const InnerContainer = styled.div`
     margin-right: 10px;
   }
 `;
+
 const Container = styled.div`
   display: flex;
   align-items: flex-end;
@@ -41,6 +46,7 @@ const Container = styled.div`
     padding-bottom: 40px;
   }
 `;
+
 const Title = styled(Text15)`
   &&& {
     font-weight: 700;
@@ -50,6 +56,7 @@ const Title = styled(Text15)`
     padding: 6px 10px;
   }
 `;
+
 const Separator = styled.div`
   height: 1px;
   flex: 1;

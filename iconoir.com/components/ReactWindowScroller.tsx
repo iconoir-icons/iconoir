@@ -2,9 +2,9 @@
 // Modified to remove scrollTo callback to support momentum scroll on iOS. We don't need it
 // in this implementation anyway.
 
+import type { GridProps, ListProps } from 'react-window';
 import { throttle } from 'lodash';
 import React, { useEffect, useRef } from 'react';
-import { GridProps, ListProps } from 'react-window';
 
 function isHtmlElement(
   element: HTMLElement | typeof window,
@@ -16,6 +16,7 @@ interface PositionKey {
   x: string;
   y: string;
 }
+
 const windowScrollPositionKey: PositionKey = {
   y: 'pageYOffset',
   x: 'pageXOffset',
@@ -26,19 +27,16 @@ const documentScrollPositionKey: PositionKey = {
   x: 'scrollLeft',
 };
 
-const getScrollPosition = (
-  axis: keyof PositionKey,
-  element?: HTMLElement | null,
-): number =>
-  // @ts-ignore indexing as string
-  element?.[documentScrollPositionKey[axis] as any] ||
-  // @ts-ignore indexing as string
-  window[windowScrollPositionKey[axis] as any] ||
-  // @ts-ignore indexing as string
-  document.documentElement[documentScrollPositionKey[axis] as any] ||
-  // @ts-ignore indexing as string
-  document.body[documentScrollPositionKey[axis] as any] ||
-  0;
+function getScrollPosition(axis: keyof PositionKey, element?: HTMLElement | null): number {
+  // @ts-expect-error indexing as string
+  return element?.[documentScrollPositionKey[axis] as any]
+    || window[windowScrollPositionKey[axis] as any]
+    // @ts-expect-error indexing as string
+    || document.documentElement[documentScrollPositionKey[axis] as any]
+    // @ts-expect-error indexing as string
+    || document.body[documentScrollPositionKey[axis] as any]
+    || 0;
+}
 
 interface ChildOpts<Props extends ListProps | GridProps> {
   ref: React.MutableRefObject<any>;
@@ -47,7 +45,7 @@ interface ChildOpts<Props extends ListProps | GridProps> {
   onScroll: Props['onScroll'];
 }
 interface ReactWindowScrollerProps<Props extends ListProps | GridProps> {
-  // eslint-disable-next-line no-unused-vars
+
   children: (opts: ChildOpts<Props>) => React.ReactElement;
   throttleTime?: number;
   isGrid?: boolean;
@@ -62,27 +60,28 @@ export function ReactWindowScroller<
 }: ReactWindowScrollerProps<Props>) {
   const ref = useRef<any>();
   const outerRef = useRef<HTMLElement>();
-  const targetElement =
-    typeof window === 'undefined' ? (undefined as any) : window;
+  const targetElement = typeof window === 'undefined' ? (undefined as any) : window;
 
   useEffect(() => {
     const handleWindowScroll = throttle(() => {
       const rect = outerRef.current?.parentElement?.getBoundingClientRect();
-      const offsetTop =
-        (rect?.top || 0) +
-        (isHtmlElement(targetElement)
+
+      const offsetTop = (rect?.top || 0)
+        + (isHtmlElement(targetElement)
           ? targetElement.scrollTop
           : targetElement.scrollY);
-      const offsetLeft =
-        (rect?.left || 0) +
-        (isHtmlElement(targetElement)
+
+      const offsetLeft = (rect?.left || 0)
+        + (isHtmlElement(targetElement)
           ? targetElement.scrollLeft
           : targetElement.scrollX);
+
       const scrollTop = getScrollPosition('y') - offsetTop;
       const scrollLeft = getScrollPosition('x') - offsetLeft;
       if (isGrid)
         ref.current && ref.current!.scrollTo({ scrollLeft, scrollTop });
-      if (!isGrid) ref.current && ref.current!.scrollTo(scrollTop);
+      if (!isGrid)
+        ref.current && ref.current!.scrollTo(scrollTop);
     }, throttleTime);
 
     targetElement.addEventListener('scroll', handleWindowScroll);

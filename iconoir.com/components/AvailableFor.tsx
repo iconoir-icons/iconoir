@@ -17,91 +17,91 @@ export function AvailableFor() {
       <AvailableForOuter>
         <AvailableForContainer $contentWidth={width || 0} ref={ref}>
           <DesktopHeader>Available for</DesktopHeader>
-          <a href={LIBRARY_LINKS.React} target={'_blank'} rel={'noreferrer'}>
+          <a href={LIBRARY_LINKS.React} target="_blank" rel="noreferrer">
             <AvailableForImage
-              src={'/logo-react.svg'}
-              alt={'React Logo'}
-              title={'React'}
+              src="/logo-react.svg"
+              alt="React Logo"
+              title="React"
             />
           </a>
           <a
-            href={'https://github.com/iconoir-icons/iconoir#swift-package'}
-            target={'_blank'}
-            rel={'nofollow noreferrer'}
+            href="https://github.com/iconoir-icons/iconoir#swift-package"
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             <AvailableForImage
-              src={'/logo-swift.svg'}
-              alt={'Swift Logo'}
-              title={'Swift'}
+              src="/logo-swift.svg"
+              alt="Swift Logo"
+              title="Swift"
             />
           </a>
           <a
             href={LIBRARY_LINKS.Flutter}
-            target={'_blank'}
-            rel={'nofollow noreferrer'}
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             <AvailableForImage
-              src={'/logo-flutter.svg'}
-              alt={'Flutter Logo'}
-              title={'Flutter'}
+              src="/logo-flutter.svg"
+              alt="Flutter Logo"
+              title="Flutter"
             />
           </a>
           <a
             href={LIBRARY_LINKS.Figma}
-            target={'_blank'}
-            rel={'nofollow noreferrer'}
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             <AvailableForImage
-              src={'/logo-figma.svg'}
-              alt={'Figma Logo'}
-              title={'Figma'}
+              src="/logo-figma.svg"
+              alt="Figma Logo"
+              title="Figma"
             />
           </a>
           <a
             href={LIBRARY_LINKS.ReactNative}
-            target={'_blank'}
-            rel={'nofollow noreferrer'}
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             <AvailableForImage
-              src={'/logo-react-native.svg'}
-              alt={'React Native Logo'}
-              title={'React Native'}
+              src="/logo-react-native.svg"
+              alt="React Native Logo"
+              title="React Native"
             />
           </a>
           <a
             href={LIBRARY_LINKS.Vue}
-            target={'_blank'}
-            rel={'nofollow noreferrer'}
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             <AvailableForImage
-              src={'/logo-vue.svg'}
-              alt={'Vue Logo'}
-              title={'Vue'}
+              src="/logo-vue.svg"
+              alt="Vue Logo"
+              title="Vue"
             />
           </a>
           <a
             href={LIBRARY_LINKS.Framer}
-            target={'_blank'}
-            rel={'nofollow noreferrer'}
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             <AvailableForImage
-              src={'/logo-framer.svg'}
-              alt={'Framer Logo'}
-              title={'Framer'}
+              src="/logo-framer.svg"
+              alt="Framer Logo"
+              title="Framer"
             />
           </a>
           <AreYouUsing>
             <a
               href={SUGGEST_LIBRARY_LINK}
-              target={'_blank'}
-              rel={'nofollow noreferrer'}
+              target="_blank"
+              rel="nofollow noreferrer"
             >
               <Text14>More?</Text14>
             </a>
             <a
               href={FEEDBACK_LINK}
-              target={'_blank'}
-              rel={'nofollow noreferrer'}
+              target="_blank"
+              rel="nofollow noreferrer"
             >
               <Text14>Are you using the library?</Text14>
             </a>
@@ -117,6 +117,7 @@ const AreYouUsing = styled.div`
     white-space: nowrap;
   }
 `;
+
 const MobileHeader = styled(Text14)`
   &&& {
     display: block;
@@ -127,6 +128,7 @@ const MobileHeader = styled(Text14)`
     }
   }
 `;
+
 const DesktopHeader = styled(Text14)`
   &&& {
     display: none;
@@ -135,6 +137,7 @@ const DesktopHeader = styled(Text14)`
     }
   }
 `;
+
 const AvailableForAnimation = keyframes`
   5% {
     transform: translateX(0);
@@ -149,6 +152,7 @@ const AvailableForAnimation = keyframes`
     transform: translateX(0);
   }
 `;
+
 const AvailableForOuter = styled.div`
   max-width: 100vw;
   margin: 16px -30px 70px -30px;
@@ -159,6 +163,7 @@ const AvailableForOuter = styled.div`
     padding: 0;
   }
 `;
+
 const AvailableForContainer = styled.div<{ $contentWidth: number }>`
   display: flex;
   align-items: center;
@@ -166,8 +171,8 @@ const AvailableForContainer = styled.div<{ $contentWidth: number }>`
   width: max-content;
   --content-width: ${(props) => props.$contentWidth}px;
   ${(props) =>
-    props.$contentWidth &&
-    css`
+    props.$contentWidth
+    && css`
       animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
         infinite;
     `}
@@ -185,6 +190,7 @@ const AvailableForContainer = styled.div<{ $contentWidth: number }>`
     }
   }
 `;
+
 const AvailableForImage = styled.img`
   height: 40px;
   display: block;
