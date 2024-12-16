@@ -25,7 +25,7 @@
     "@types/react-window": "^1.8.8",
     "animejs": "^3.2.2",
     "csvtojson": "^2.0.10",
-    "eslint-config-next": "^14.0.4",
+    "eslint-config-next": "^15.1.0",
     "iconoir-react": "workspace:*",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
