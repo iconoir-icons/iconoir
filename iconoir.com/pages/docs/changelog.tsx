@@ -1,5 +1,6 @@
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
+// @ts-expect-error untyped
 import remarkPrism from 'remark-prism';
 import {
   ChangelogEntry,
