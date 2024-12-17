@@ -1,6 +1,6 @@
 import 'package:example/main.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:iconoir_flutter/iconoir_flutter.dart';
+import 'package:iconoir_flutter/regular/iconoir.dart';
 
 void main() {
   testWidgets('Find icon', (WidgetTester tester) async {

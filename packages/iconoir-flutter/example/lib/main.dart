@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:iconoir_flutter/iconoir_flutter.dart';
+import 'package:iconoir_flutter/regular/iconoir.dart';
 
 void main() {
   runApp(const App());
