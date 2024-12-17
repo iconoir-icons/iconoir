@@ -44,6 +44,6 @@
     "react": "^16.8.6 || ^17 || ^18"
   },
   "devDependencies": {
-    "@types/react": "^18.2.45"
+    "@types/react": "^19.0.1"
   }
 }

@@ -45,7 +45,6 @@ interface ChildOpts<Props extends ListProps | GridProps> {
   onScroll: Props['onScroll'];
 }
 interface ReactWindowScrollerProps<Props extends ListProps | GridProps> {
-
   children: (opts: ChildOpts<Props>) => React.ReactElement;
   throttleTime?: number;
   isGrid?: boolean;
@@ -58,8 +57,8 @@ export function ReactWindowScroller<
   throttleTime = 10,
   isGrid = false,
 }: ReactWindowScrollerProps<Props>) {
-  const ref = useRef<any>();
-  const outerRef = useRef<HTMLElement>();
+  const ref = useRef<any>(null);
+  const outerRef = useRef<HTMLElement>(null);
   const targetElement = typeof window === 'undefined' ? (undefined as any) : window;
 
   useEffect(() => {
