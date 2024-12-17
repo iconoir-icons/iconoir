@@ -67,7 +67,7 @@ export interface SliderProps extends ReactSliderProps<number[]> {
 }
 
 export function Slider(props: SliderProps) {
-  const trackRef = React.useRef(null);
+  const trackRef = React.useRef<HTMLDivElement>(null);
   const numberFormatter = useNumberFormatter(props.formatOptions);
   const state = useSliderState({ ...props, numberFormatter });
 
@@ -99,7 +99,7 @@ export function Slider(props: SliderProps) {
 
 interface ThumbProps {
   state: SliderState;
-  trackRef: React.RefObject<HTMLElement>;
+  trackRef: React.RefObject<HTMLElement | null>;
   index: number;
 }
 

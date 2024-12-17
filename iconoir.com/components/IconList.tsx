@@ -172,7 +172,7 @@ export function IconList({ filters, allIcons }: IconListProps) {
     : null;
 
   let children = null;
-  const listRef = React.useRef<List<IconRow[]> | null>();
+  const listRef = React.useRef<List<IconRow[]> | null>(null);
   const [height, setHeight] = React.useState(400);
 
   const iconWidth = iconsPerRow
