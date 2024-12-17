@@ -18,7 +18,7 @@ export function getTemplate(native, iconoirContextPath) {
     return tpl`
   ${useClientDirective}
   ${variables.imports};
-  ${iconoirContextImport};
+  ${iconoirContextImport}
  
   ${variables.interfaces};
   

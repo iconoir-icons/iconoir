@@ -1,5 +1,4 @@
 packages:
   - packages/*
   - examples/*
-  - '!examples/react-native'
   - iconoir.com
