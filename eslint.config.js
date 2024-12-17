@@ -22,8 +22,8 @@ export default antfu({
   },
   ignores: [
     'css/*.css',
-    'examples/react-native/',
     'iconoir.com/out/',
+    '**/.expo/',
     'packages/iconoir-flutter/.dart_tool/',
     'packages/iconoir-flutter/build/',
     'packages/iconoir-flutter/example/',

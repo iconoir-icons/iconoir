@@ -8,15 +8,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.1.0",
+    "next": "15.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
     "iconoir-react": "workspace:*",
-    "typescript": "^5"
+    "typescript": "^5.7.2"
   }
 }
