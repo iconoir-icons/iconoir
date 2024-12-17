@@ -41,7 +41,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "^16.8.6 || ^17 || ^18"
+    "react": "^16.8.6 || ^17 || ^18 || ^19"
   },
   "devDependencies": {
     "@types/react": "^19.0.1"
