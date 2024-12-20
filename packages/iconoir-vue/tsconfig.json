@@ -1,28 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "es2018",
-    "jsx": "preserve",
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
-    "baseUrl": ".",
-    "rootDir": "src",
-    "module": "esnext",
-    "moduleResolution": "node",
-    // "isolatedModules": true,
-    "types": [
-      "vite/client"
-    ],
-    "strict": true,
-    "declarationMap": false,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue"
-  ]
+  "extends": "@vue/tsconfig/tsconfig.dom.json"
 }

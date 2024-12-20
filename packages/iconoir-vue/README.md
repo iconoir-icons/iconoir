@@ -16,29 +16,9 @@
 
 ## Usage
 
-### Vue 3
-
 ```html
 <script setup>
   import { Iconoir } from '@iconoir/vue';
-</script>
-
-<template>
-  <Iconoir />
-</template>
-```
-
-### Vue 2
-
-```html
-<script>
-  import { Iconoir } from '@iconoir/vue';
-
-  export default
-      components: {
-          Iconoir
-      }
-  }
 </script>
 
 <template>
@@ -88,6 +68,6 @@ Tired of specifying the same props for every single icon, every time you use the
 </template>
 ```
 
-## Icon names
+## Icon Names
 
 The Vue components are named as PascalCase variations of their reference names (i.e. `airplane-helix-45deg` becomes `AirplaneHelix45deg`).

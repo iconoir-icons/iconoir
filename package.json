@@ -56,8 +56,8 @@
     "semver": "^7.6.3",
     "types-tsconfig": "2.1.1",
     "typescript": "~5.7.2",
-    "vite": "^6.0.3",
-    "vite-plugin-dts": "^4.3.0"
+    "vite": "^6.0.4",
+    "vite-plugin-dts": "^4.4.0"
   },
   "pnpm": {
     "packageExtensions": {

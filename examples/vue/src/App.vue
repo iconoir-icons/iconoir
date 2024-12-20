@@ -21,8 +21,6 @@ import {
       'height': '2em',
     }"
   >
-    <SomeOtherContainer>
-      <Check />
-    </SomeOtherContainer>
+    <Check />
   </IconoirProvider>
 </template>
