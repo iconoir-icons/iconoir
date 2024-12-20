@@ -29,8 +29,7 @@
       "require": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
-      },
-      "default": "./dist/index.js"
+      }
     }
   },
   "main": "./dist/index.js",
@@ -40,18 +39,9 @@
     "dist"
   ],
   "peerDependencies": {
-    "@vue/composition-api": ">=1.0.0-rc.1",
-    "vue": "^2.6.11 || >=3.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "vue-demi": "^0.14.6"
+    "vue": "3"
   },
   "devDependencies": {
-    "vue": "^3.3.12"
+    "@vue/tsconfig": "^0.7.0"
   }
 }

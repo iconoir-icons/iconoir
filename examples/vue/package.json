@@ -15,13 +15,13 @@
   "devDependencies": {
     "@iconoir/vue": "workspace:*",
     "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.9.3",
+    "@types/node": "^22.10.2",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
-    "npm-run-all2": "^7.0.1",
+    "npm-run-all2": "^7.0.2",
     "typescript": "~5.7.2",
-    "vite": "^6.0.1",
-    "vite-plugin-vue-devtools": "^7.6.5",
+    "vite": "^6.0.4",
+    "vite-plugin-vue-devtools": "^7.6.8",
     "vue-tsc": "^2.1.10"
   }
 }

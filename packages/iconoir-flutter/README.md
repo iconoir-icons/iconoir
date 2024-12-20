@@ -57,6 +57,6 @@ Default values for the most common props are given below:
 | width     | "1.5em"        |
 | height    | "1.5em"        |
 
-## Icon names
+## Icon Names
 
 The Flutter widges are named as PascalCase variations of their reference names (i.e. `airplane-helix-45deg` becomes `AirplaneHelix45deg`).
