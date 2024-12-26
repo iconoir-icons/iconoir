@@ -44,7 +44,7 @@ const tasks = new Listr(
     {
       title: 'Fetching icons',
       task: async (ctx) => {
-        ctx.tasks = { global: { rootDir, defaultVariant }, icons: {} };
+        ctx.tasks = { global: { defaultVariant }, icons: {} };
 
         const iconsVariantsDirs = Object.fromEntries(
           iconsVariants.map((variant) => [
@@ -84,7 +84,14 @@ const tasks = new Listr(
           Object.entries(targets).map(([targetName, targetConfig]) => ({
             title: targetConfig.title,
             enabled: () => ctx.cliTargets.length === 0 || ctx.cliTargets.includes(targetName),
-            task: async (ctx) => ctx.pool.run({ targetName, config: ctx.tasks, targetConfig }),
+            task: (ctx) => {
+              targetConfig.path = path.join(
+                rootDir,
+                ...targetConfig.path.split(path.posix.sep),
+              );
+
+              return ctx.pool.run({ targetName, config: ctx.tasks, targetConfig });
+            },
           })),
           { concurrent: true, exitOnError: false },
         ),
