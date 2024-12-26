@@ -4,7 +4,7 @@ import ts from 'typescript';
  *
  * @param {string} path
  * @param {string} content
- * @param {import('types-tsconfig').TSConfigJSON['compilerOptions']} options
+ * @param {object} options
  */
 export function getDts(path, content, options) {
   options = ts.convertCompilerOptionsFromJson(options, '').options;

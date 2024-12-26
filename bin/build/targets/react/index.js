@@ -36,7 +36,6 @@ const jsTargets = [
 /** @type {import('esbuild').TransformOptions} */
 const defaultEsbuildOptions = { target: 'es6', minify: true };
 
-/** @type {import('types-tsconfig').TSConfigJSON['compilerOptions']} */
 const defaultTsOptions = {
   declaration: true,
   emitDeclarationOnly: true,

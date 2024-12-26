@@ -55,9 +55,6 @@ importers:
       semver:
         specifier: ^7.6.3
         version: 7.6.3
-      types-tsconfig:
-        specifier: 2.1.1
-        version: 2.1.1
       typescript:
         specifier: ~5.7.2
         version: 5.7.2
@@ -6600,10 +6597,6 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
 
-  type-fest@4.31.0:
-    resolution: {integrity: sha512-yCxltHW07Nkhv/1F6wWBr8kz+5BGMfP+RbRSYFnegVb0qV/UMT0G0ElBloPVerqn4M2ZV80Ir1FtCcYv1cT6vQ==}
-    engines: {node: '>=16'}
-
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
     engines: {node: '>= 0.4'}
@@ -6619,10 +6612,6 @@ packages:
   typed-array-length@1.0.7:
     resolution: {integrity: sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg==}
     engines: {node: '>= 0.4'}
-
-  types-tsconfig@2.1.1:
-    resolution: {integrity: sha512-ermKWxVKVtnZDLoL1UicnYbu9/Z79TX4lskTHPCy3t32XcVkNOCVdeT9WicpZzgovBeBOMXUVtLYLNLgc59ymg==}
-    engines: {node: ^14.13.1 || >=16.0.0}
 
   typescript@5.4.2:
     resolution: {integrity: sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==}
@@ -7115,9 +7104,6 @@ packages:
   yoctocolors@2.1.1:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
-
-  zod@3.24.1:
-    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -14960,8 +14946,6 @@ snapshots:
 
   type-fest@0.8.1: {}
 
-  type-fest@4.31.0: {}
-
   typed-array-buffer@1.0.3:
     dependencies:
       call-bound: 1.0.3
@@ -14994,11 +14978,6 @@ snapshots:
       is-typed-array: 1.1.15
       possible-typed-array-names: 1.0.0
       reflect.getprototypeof: 1.0.9
-
-  types-tsconfig@2.1.1:
-    dependencies:
-      type-fest: 4.31.0
-      zod: 3.24.1
 
   typescript@5.4.2: {}
 
@@ -15487,7 +15466,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yoctocolors@2.1.1: {}
-
-  zod@3.24.1: {}
 
   zwitch@2.0.4: {}
