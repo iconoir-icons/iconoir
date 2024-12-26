@@ -6,8 +6,6 @@ import process from 'node:process';
 import { updateYamlKey } from '@atomist/yaml-updater';
 import semver from 'semver';
 
-const PACKAGE_BASE = '';
-
 const newVersion = semver.valid(semver.coerce(process.env.TAG_NAME));
 console.info('New version is %s', newVersion);
 
@@ -30,10 +28,6 @@ function publishNpmPackage(name) {
 
   const contents = JSON.parse(fs.readFileSync(packageJsonPath).toString());
   contents.version = newVersion;
-
-  if (PACKAGE_BASE) {
-    contents.name = `${PACKAGE_BASE}/${name}`;
-  }
 
   fs.writeFileSync(packageJsonPath, JSON.stringify(contents, undefined, 2));
   console.info('package.json updated');

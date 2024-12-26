@@ -55,6 +55,9 @@ importers:
       semver:
         specifier: ^7.6.3
         version: 7.6.3
+      tinypool:
+        specifier: 1.0.2
+        version: 1.0.2
       typescript:
         specifier: ~5.7.2
         version: 5.7.2
@@ -6506,6 +6509,10 @@ packages:
 
   tinyexec@0.3.1:
     resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
+
+  tinypool@1.0.2:
+    resolution: {integrity: sha512-al6n+QEANGFOMf/dmUMsuS5/r9B06uwlyNjZZql/zv8J7ybHCgoihBNORZCY2mzUuAnomQa2JdhyHKzZxPCrFA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
 
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
@@ -14875,6 +14882,8 @@ snapshots:
   through@2.3.8: {}
 
   tinyexec@0.3.1: {}
+
+  tinypool@1.0.2: {}
 
   tmp@0.0.33:
     dependencies:

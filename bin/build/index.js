@@ -4,6 +4,7 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { Listr } from 'listr2';
 import { pascalCase, snakeCase } from 'scule';
+import Tinypool from 'tinypool';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -38,14 +39,12 @@ const targets = {
   },
 };
 
-const cliTargets = [];
-
 const tasks = new Listr(
   [
     {
       title: 'Fetching icons',
       task: async (ctx) => {
-        ctx.icons = {};
+        ctx.tasks = { global: { rootDir, defaultVariant }, icons: {} };
 
         const iconsVariantsDirs = Object.fromEntries(
           iconsVariants.map((variant) => [
@@ -74,32 +73,18 @@ const tasks = new Listr(
               };
             });
 
-          ctx.icons[variant] = icons;
+          ctx.tasks.icons[variant] = icons;
         }
-
-        ctx.global = { defaultVariant };
       },
     },
     {
       title: 'Building targets',
-      task: (_, task) =>
+      task: (ctx, task) =>
         task.newListr(
           Object.entries(targets).map(([targetName, targetConfig]) => ({
             title: targetConfig.title,
-            enabled: () =>
-              cliTargets.length === 0 || cliTargets.includes(targetName),
-            task: async (ctx) => {
-              const { default: task } = await import(
-                `./targets/${targetConfig.target || targetName}/index.js`
-              );
-
-              targetConfig.path = path.join(
-                rootDir,
-                ...targetConfig.path.split(path.posix.sep),
-              );
-
-              return task(ctx, targetConfig);
-            },
+            enabled: () => ctx.cliTargets.length === 0 || ctx.cliTargets.includes(targetName),
+            task: async (ctx) => ctx.pool.run({ targetName, config: ctx.tasks, targetConfig }),
           })),
           { concurrent: true, exitOnError: false },
         ),
@@ -112,6 +97,8 @@ const tasks = new Listr(
     },
   },
 );
+
+const cliTargets = [];
 
 // Get targets from command line arguments
 // (build all targets if no arguments given)
@@ -131,4 +118,15 @@ for (const arg of process.argv.slice(2)) {
   }
 }
 
-await tasks.run();
+const pool = new Tinypool({
+  filename: new URL('./worker.js', import.meta.url).href,
+  minThreads: 0,
+  resourceLimits: {
+    // Vue target (Vite/Rollup) takes up a lot of memory
+    maxOldGenerationSizeMb: 8192,
+  },
+});
+
+await tasks.run({ cliTargets, pool });
+
+await pool.destroy();
