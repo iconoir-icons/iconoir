@@ -65,6 +65,11 @@
         "peerDependencies": {
           "@types/react": "18"
         }
+      },
+      "@types/react-window": {
+        "dependencies": {
+          "@types/react": "19"
+        }
       }
     }
   }
