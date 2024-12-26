@@ -2,7 +2,7 @@
   "name": "iconoir",
   "type": "module",
   "version": "7.10.1",
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.1",
   "description": "Iconoir - The biggest open source icon library with tons of free icons.",
   "license": "MIT",
   "funding": {
