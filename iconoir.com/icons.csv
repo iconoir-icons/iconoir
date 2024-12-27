@@ -1378,4 +1378,7 @@ filename,category,tags
 "calendar-xmark","System","",
 "cube-dots","3D Editor","",
 "cube-scan","3D Editor","",
-"droplet-snow-flake-in","Science","defrost"
+"droplet-snow-flake-in","Science","defrost",
+"dots-grid-3x3","Navigation","",
+"bug","Development","malware",
+"whatsapp","Social","chat,text,texting,chatting,bubble"
