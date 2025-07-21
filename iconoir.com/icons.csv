@@ -506,7 +506,7 @@ filename,category,tags
 "fish","Animals",
 "fishing","Activities",
 "flare","Shapes",
-"flash","Photos and Videos",
+"flash","Photos and Videos","trigger,ray,bolt,lightning",
 "flash-off","Photos and Videos",
 "flask","Science",
 "flip","Design Tools",
