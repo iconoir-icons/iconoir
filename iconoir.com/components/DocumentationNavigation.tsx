@@ -52,7 +52,6 @@ const NavigationItem = styled.div<{ $active?: boolean }>`
   transition:
     background 0.1s linear,
     color 0.1s linear;
-  font-weight: 500;
   font-size: 16px;
   line-height: 14.5px;
   letter-spacing: -0.02em;
@@ -61,7 +60,7 @@ const NavigationItem = styled.div<{ $active?: boolean }>`
   align-items: center;
   text-decoration: none;
   span {
-    font-weight: 500;
+    font-weight: 400;
   }
   > :not(:last-child) {
     margin-right: 14px;
@@ -72,7 +71,7 @@ const NavigationItem = styled.div<{ $active?: boolean }>`
     text-decoration: underline;
   }
   ${(props) => (props.$active ? 'span' : '&.noop')} {
-    font-weight: 700;
+    font-weight: 500;
   }
   ${media.lg} {
     padding: 12px 12px 12px 65px;
@@ -175,10 +174,10 @@ export function DocumentationNavigation({
                 <span>{documentationItem.title}</span>
                 {documentationItem.label
                   ? (
-                      <NavigationItemLabel>
-                        {documentationItem.label}
-                      </NavigationItemLabel>
-                    )
+                    <NavigationItemLabel>
+                      {documentationItem.label}
+                    </NavigationItemLabel>
+                  )
                   : null}
               </NavigationItem>
             </Link>
