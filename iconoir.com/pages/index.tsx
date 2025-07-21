@@ -11,7 +11,7 @@ import { HeaderBackground } from '../components/HeaderBackground';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { Text15, Text18 } from '../components/Typography';
+import { Text18 } from '../components/Typography';
 import { REPO, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';

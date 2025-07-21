@@ -174,10 +174,10 @@ export function DocumentationNavigation({
                 <span>{documentationItem.title}</span>
                 {documentationItem.label
                   ? (
-                    <NavigationItemLabel>
-                      {documentationItem.label}
-                    </NavigationItemLabel>
-                  )
+                      <NavigationItemLabel>
+                        {documentationItem.label}
+                      </NavigationItemLabel>
+                    )
                   : null}
               </NavigationItem>
             </Link>
