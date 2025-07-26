@@ -174,8 +174,10 @@ export default async (ctx, target) => {
 async function getReactComponent(iconPath, native, template) {
   const iconContent = await fs.readFile(iconPath, 'utf8');
 
-  const options = native ? nativeSvgrOptions : svgrOptions;
-  options.template = template;
+  const options = {
+    ...(native ? nativeSvgrOptions : svgrOptions),
+    template,
+  };
 
   return svgr.transform(iconContent, options);
 }

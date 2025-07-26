@@ -2,3 +2,21 @@ packages:
   - packages/*
   - examples/*
   - iconoir.com
+
+injectWorkspacePackages: false
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - unrs-resolver
+
+packageExtensions:
+  '@types/react-window':
+    dependencies:
+      '@types/react': '19'
+
+publicHoistPattern:
+  - '@next/eslint-plugin-next'
+  - eslint-plugin-jsx-a11y
+  - eslint-plugin-react
+  - eslint-plugin-react-hooks

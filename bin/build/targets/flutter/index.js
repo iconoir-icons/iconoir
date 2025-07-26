@@ -7,7 +7,7 @@ export default async (ctx, target) => {
 
   const outDir = path.join(target.path, 'lib');
 
-  const entryContent = ['library iconoir_flutter;'];
+  const entryContent = ['library;'];
 
   for (const [variant, icons] of Object.entries(ctx.icons)) {
     const variantOutDir = path.join(outDir, variant);

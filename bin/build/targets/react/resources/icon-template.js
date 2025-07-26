@@ -8,7 +8,7 @@ export function getTemplate(native, iconoirContextPath) {
     if (native)
       variables.props[1].typeAnnotation.typeAnnotation.typeParameters.params[0].typeName.name = 'Svg';
 
-    const useClientDirective = native ? '' : '"use client";';
+    const useClientDirective = native ? [] : '"use client"';
 
     const iconoirContextImport = generateImport(
       ['IconoirContext'],
@@ -16,19 +16,19 @@ export function getTemplate(native, iconoirContextPath) {
     );
 
     return tpl`
-  ${useClientDirective}
-  ${variables.imports};
-  ${iconoirContextImport}
- 
-  ${variables.interfaces};
+${useClientDirective};
+${variables.imports};
+${iconoirContextImport}
+
+${variables.interfaces};
+
+const ${variables.componentName} = (${variables.props}) => {
+  const context = React.useContext(IconoirContext);
+  const props = { ...context, ...passedProps };
+  return ${variables.jsx};
+};
   
-  const ${variables.componentName} = (${variables.props}) => {
-    const context = React.useContext(IconoirContext);
-    const props = { ...context, ...passedProps };
-    return ${variables.jsx};
-  };
-  
-  ${variables.exports};
+${variables.exports};
   `;
   };
 }
