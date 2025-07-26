@@ -14,7 +14,8 @@ export default defineComponent<SVGAttributes>({
 
 <template>
   ${svg}
-</template>`;
+</template>
+  `;
 }
 
 export default template;
