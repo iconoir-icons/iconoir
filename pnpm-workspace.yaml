@@ -3,12 +3,6 @@ packages:
   - examples/*
   - iconoir.com
 
-publicHoistPattern:
-  - '@next/eslint-plugin-next'
-  - eslint-plugin-jsx-a11y
-  - eslint-plugin-react
-  - eslint-plugin-react-hooks
-
 injectWorkspacePackages: false
 
 onlyBuiltDependencies:
@@ -20,6 +14,9 @@ packageExtensions:
   '@types/react-window':
     dependencies:
       '@types/react': '19'
-  react-native-svg:
-    peerDependencies:
-      '@types/react': '18'
+
+publicHoistPattern:
+  - '@next/eslint-plugin-next'
+  - eslint-plugin-jsx-a11y
+  - eslint-plugin-react
+  - eslint-plugin-react-hooks
