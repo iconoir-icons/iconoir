@@ -95,7 +95,6 @@ export default antfu({
     ...hooksPlugin.configs.recommended.rules,
 
     // rules from "eslint-config-next"
-    'import/no-anonymous-default-export': 'warn',
     'react/no-unknown-property': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',

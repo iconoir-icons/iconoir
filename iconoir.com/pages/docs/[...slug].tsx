@@ -1,19 +1,20 @@
 import type { GetStaticPathsResult, GetStaticPropsContext } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import type { ParsedUrlQuery } from 'node:querystring';
+import type { DocumentationNavigationProps } from '../../components/DocumentationNavigation';
 import type { HeaderProps } from '../../components/Header';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { SuggestLibrary } from '@/components/SuggestLibrary';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
 // @ts-expect-error untyped
 import remarkPrism from 'remark-prism';
 import styled from 'styled-components';
+import { SuggestLibrary } from '@/components/SuggestLibrary';
 import {
   DocumentationNavigation,
-  type DocumentationNavigationProps,
+
 } from '../../components/DocumentationNavigation';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';

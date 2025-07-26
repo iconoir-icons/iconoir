@@ -3,6 +3,12 @@ packages:
   - examples/*
   - iconoir.com
 
+publicHoistPattern:
+  - '@next/eslint-plugin-next'
+  - eslint-plugin-jsx-a11y
+  - eslint-plugin-react
+  - eslint-plugin-react-hooks
+
 injectWorkspacePackages: false
 
 onlyBuiltDependencies:
