@@ -3,7 +3,6 @@ lockfileVersion: '9.0'
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
-  injectWorkspacePackages: true
 
 packageExtensionsChecksum: sha256-9nRye6vXZUAw0jsDiIififmS/WK0zCjPB7oHcUgv/bo=
 
@@ -151,7 +150,7 @@ importers:
     devDependencies:
       '@iconoir/vue':
         specifier: workspace:*
-        version: file:packages/iconoir-vue(vue@3.5.18(typescript@5.7.3))
+        version: link:../../packages/iconoir-vue
       '@tsconfig/node22':
         specifier: ^22.0.0
         version: 22.0.2
@@ -1368,7 +1367,7 @@ packages:
 
   '@expo/bunyan@4.0.1':
     resolution: {integrity: sha512-+Lla7nYSiHZirgK+U/uYzsLv/X+HaJienbD5AKX1UQZHYfWaP+9uuQluRB4GrEVWF0GZ7vEVp/jzaOT9k/SQlg==}
-    engines: {node: '>=0.10.0'}
+    engines: {'0': node >=0.10.0}
 
   '@expo/cli@0.22.26':
     resolution: {integrity: sha512-I689wc8Fn/AX7aUGiwrh3HnssiORMJtR2fpksX+JIe8Cj/EDleblYMSwRPd0025wrwOV9UN1KM/RuEt/QjCS3Q==}
@@ -1479,11 +1478,6 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
-
-  '@iconoir/vue@file:packages/iconoir-vue':
-    resolution: {directory: packages/iconoir-vue, type: directory}
-    peerDependencies:
-      vue: '3'
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -9043,10 +9037,6 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
-
-  '@iconoir/vue@file:packages/iconoir-vue(vue@3.5.18(typescript@5.7.3))':
-    dependencies:
-      vue: 3.5.18(typescript@5.7.3)
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

@@ -2,3 +2,18 @@ packages:
   - packages/*
   - examples/*
   - iconoir.com
+
+injectWorkspacePackages: false
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - unrs-resolver
+
+packageExtensions:
+  '@types/react-window':
+    dependencies:
+      '@types/react': '19'
+  react-native-svg:
+    peerDependencies:
+      '@types/react': '18'
