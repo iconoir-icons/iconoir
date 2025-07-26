@@ -1,8 +1,8 @@
 import { generateImport } from '../../../lib/import-export.js';
 
-const injectProps = (svg) => {
+function injectProps(svg) {
   return svg.replace(/<svg([^>]*)>/, `<svg$1 {...rest} ref={props.ref}>`);
-};
+}
 
 export function getTemplate(iconoirContextPath, componentName, svgContent) {
   const useIconoirImport = generateImport(['useIconoir'], iconoirContextPath);

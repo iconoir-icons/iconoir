@@ -1,11 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import iconTemplate from './resources/icon-template.js';
-import contextTemplate from './resources/context-template.js';
-import { generateExport } from '../../lib/import-export.js';
 import { build, defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
 import dts from 'vite-plugin-dts';
+import solidPlugin from 'vite-plugin-solid';
+import { generateExport } from '../../lib/import-export.js';
+import contextTemplate from './resources/context-template.js';
+import iconTemplate from './resources/icon-template.js';
 
 export default async (ctx, target) => {
   const promises = [];
@@ -58,8 +58,8 @@ export default async (ctx, target) => {
         generateIconFile(icon.path, icon.pascalName, solidFileName),
       );
 
-      const mainIndexComponentName =
-        variant === ctx.global.defaultVariant
+      const mainIndexComponentName
+        = variant === ctx.global.defaultVariant
           ? icon.pascalName
           : [icon.pascalName, 'as', icon.pascalNameVariant].join(' ');
 
@@ -84,7 +84,7 @@ export default async (ctx, target) => {
 
   await Promise.all(promises);
 
-  let config = {
+  const config = {
     root: target.path,
     logLevel: 'silent',
     build: {

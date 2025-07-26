@@ -19,9 +19,9 @@
 ```javascript
 import { Iconoir } from 'iconoir-solid-js';
 
-const App = () => {
+function App() {
   return <Iconoir />;
-};
+}
 
 export default App;
 ```
@@ -29,7 +29,7 @@ export default App;
 Icons can take any standard SVG properties as optional props, e.g.
 
 ```javascript
-<Iconoir color="red" height={36} width={36} />
+<Iconoir color="red" height={36} width={36} />;
 ```
 
 Default values for the most common props are given below:
@@ -46,7 +46,7 @@ Default values for the most common props are given below:
 Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider. You can set any prop that an svg tag may have, more specifically any prop from `JSX.SvgSVGAttributes<SVGSVGElement>`. These props will be used then as defaults and can be overriden on any specific icon.
 
 ```tsx
-import { IconoirProvider, Check } from 'iconoir-solid-js';
+import { Check, IconoirProvider } from 'iconoir-solid-js';
 
 return (
   <IconoirProvider color="#AAAAAA" stroke-width="1" width="1em" height="1em">

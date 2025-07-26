@@ -1,4 +1,4 @@
-const template = () => {
+function template() {
   return `
 import { useContext, createContext, type JSX, splitProps, mergeProps } from "solid-js";
 
@@ -31,6 +31,6 @@ export function useIconoir() {
   return useContext(IconoirContext);
 }
 `;
-};
+}
 
 export default template;
