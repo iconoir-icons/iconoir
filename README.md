@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/github/v/release/iconoir-icons/iconoir?style=flat-square)](https://github.com/iconoir-icons/iconoir/releases)
 [![Project Stars](https://img.shields.io/github/stars/iconoir-icons/iconoir?style=flat-square)](https://github.com/iconoir-icons/iconoir)
 [![License](https://img.shields.io/github/license/iconoir-icons/iconoir?style=flat-square)](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE)
-[![Discord](https://img.shields.io/discord/998909400234348615?color=5865f2&label=Discord&style=flat-square)](https://discord.gg/txXcKCAmKW)
+[![Discord](https://img.shields.io/discord/998909400234348615?color=5865f2&label=discord&style=flat-square)](https://discord.gg/txXcKCAmKW)
 
 ## What is Iconoir?
 
