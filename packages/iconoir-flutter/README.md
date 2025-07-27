@@ -1,7 +1,7 @@
 # Iconoir - Flutter
 
 [![Pub Version](https://img.shields.io/pub/v/iconoir_flutter?style=flat-square)](https://pub.dev/packages/iconoir_flutter)
-[![Pub Popularity](https://img.shields.io/pub/popularity/iconoir_flutter?style=flat-square)](https://pub.dev/packages/iconoir_flutter/score)
+[![Pub Monthly Downloads](https://img.shields.io/pub/dm/iconoir_flutter?style=flat-square)](https://pub.dev/packages/iconoir_flutter)
 [![License](https://img.shields.io/github/license/iconoir-icons/iconoir?style=flat-square)](https://github.com/iconoir-icons/iconoir/blob/main/packages/iconoir-flutter/LICENSE)
 
 [Iconoir](https://iconoir.com/) is an open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.

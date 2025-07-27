@@ -6,7 +6,7 @@
 
 [Iconoir](https://iconoir.com/) is an open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid. No premium icons, no email sign-up, no newsletters.
 
-`@iconoir/vue` is an open source package that exports these icons as Vue.js components that can be used in all of your Vue projects. Thanks to `vue-demi`, both Vue 2 and Vue 3 are supported.
+`@iconoir/vue` is an open source package that exports these icons as Vue.js components that can be used in your Vue project.
 
 ## Installation
 
