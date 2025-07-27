@@ -1,3 +1,4 @@
+import { normalize } from 'node:path';
 import ts from 'typescript';
 
 /**
@@ -16,7 +17,7 @@ export function getDts(path, content, options) {
   const _readFile = host.readFile;
 
   host.readFile = (filename) => {
-    if (filename === path)
+    if (normalize(filename) === path)
       return content;
 
     return _readFile(filename);
@@ -25,7 +26,7 @@ export function getDts(path, content, options) {
   const dtsFilename = path.replace(/\.(m|c)?(ts|js)x?$/, '.d.$1ts');
 
   host.writeFile = (filename, contents) => {
-    if (filename === dtsFilename)
+    if (normalize(filename) === dtsFilename)
       output = contents;
   };
 

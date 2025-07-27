@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { EOL } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -29,7 +30,7 @@ export default async (ctx, target) => {
       const fileContent = await fs.readFile(icon.path, 'utf8');
 
       const transformedContent = fileContent
-        .replace(/\n/g, '')
+        .replaceAll(EOL, '')
         .replace(/(width|height)="\d+px"/g, '')
         .replace(/ +/g, ' ');
 
