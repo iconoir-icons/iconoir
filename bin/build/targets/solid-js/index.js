@@ -11,11 +11,8 @@ export default async (ctx, target) => {
   const promises = [];
 
   const outDir = path.join(target.path, 'src');
-  const distDir = path.join(target.path, 'dist');
 
-  await fs.rm(outDir, { recursive: true });
-  await fs.rm(distDir, { recursive: true });
-
+  await fs.rm(outDir, { recursive: true, force: true });
   await fs.mkdir(outDir, { recursive: true });
 
   await fs.writeFile(
@@ -99,7 +96,6 @@ export default async (ctx, target) => {
       rollupOptions: {
         external: ['solid-js'],
       },
-      emptyOutDir: false,
     },
     plugins: [
       solidPlugin(),
