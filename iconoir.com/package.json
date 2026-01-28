@@ -29,7 +29,7 @@
     "iconoir-react": "workspace:*",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
-    "next": "^15.4.4",
+    "next": "^16.1.5",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
