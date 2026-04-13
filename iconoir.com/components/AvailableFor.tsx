@@ -1,18 +1,12 @@
-import styled, { css, keyframes } from 'styled-components';
-import useResizeObserver from 'use-resize-observer';
+import styled, { css, keyframes } from "styled-components";
+import useResizeObserver from "use-resize-observer";
 import {
   FEEDBACK_LINK,
   LIBRARY_LINKS,
   SUGGEST_LIBRARY_LINK,
-} from '../lib/constants';
-import { media } from '../lib/responsive';
-import { Text14 } from './Typography';
-
-const AreYouUsing = styled.div`
-  * {
-    white-space: nowrap;
-  }
-`;
+} from "../lib/constants";
+import { media } from "../lib/responsive";
+import { Text14 } from "./Typography";
 
 const MobileHeader = styled(Text14)`
   &&& {
@@ -67,8 +61,8 @@ const AvailableForContainer = styled.div<{ $contentWidth: number }>`
   width: max-content;
   --content-width: ${(props) => props.$contentWidth}px;
   ${(props) =>
-    props.$contentWidth
-    && css`
+    props.$contentWidth &&
+    css`
       animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
         infinite;
     `}
@@ -160,16 +154,8 @@ export function AvailableFor() {
               title="React Native"
             />
           </a>
-          <a
-            href={LIBRARY_LINKS.Vue}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            <AvailableForImage
-              src="/logo-vue.svg"
-              alt="Vue Logo"
-              title="Vue"
-            />
+          <a href={LIBRARY_LINKS.Vue} target="_blank" rel="nofollow noreferrer">
+            <AvailableForImage src="/logo-vue.svg" alt="Vue Logo" title="Vue" />
           </a>
           <a
             href={LIBRARY_LINKS.Framer}
@@ -182,22 +168,6 @@ export function AvailableFor() {
               title="Framer"
             />
           </a>
-          <AreYouUsing>
-            <a
-              href={SUGGEST_LIBRARY_LINK}
-              target="_blank"
-              rel="nofollow noreferrer"
-            >
-              <Text14>More?</Text14>
-            </a>
-            <a
-              href={FEEDBACK_LINK}
-              target="_blank"
-              rel="nofollow noreferrer"
-            >
-              <Text14>Are you using the library?</Text14>
-            </a>
-          </AreYouUsing>
         </AvailableForContainer>
       </AvailableForOuter>
     </>

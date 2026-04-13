@@ -23,7 +23,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   border-bottom: solid 1px var(--g6);
   padding-bottom: 10px;
 `;

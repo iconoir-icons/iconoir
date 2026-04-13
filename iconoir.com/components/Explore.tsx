@@ -3,6 +3,7 @@ import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
+import { CarbonCoverAd } from './CarbonCoverAd';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { IconList } from './IconList';
@@ -32,8 +33,9 @@ const Right = styled.div`
   top: 20px;
   width: 275px;
   display: block;
-  z-index: -1;
-  margin: 110px auto;
+  /* Avoid painting the sidebar behind the main column (was -1; hid content in some layouts) */
+  z-index: 0;
+  margin: 0 auto;
   ${media.md} {
     margin-left: 68px;
     z-index: 1;
@@ -87,6 +89,7 @@ export function Explore({ allIcons }: ExploreProps) {
           <FiltersEditor filters={filters} onChange={setFilters} />
         </FilterContainer>
         <Streamline />
+        <CarbonCoverAd />
         <CustomizationEditor
           customizations={customizations}
           onChange={setCustomizations}
