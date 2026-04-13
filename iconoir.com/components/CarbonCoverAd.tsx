@@ -18,15 +18,16 @@ const CarbonCoverAdContainer = styled.div`
   }
 `;
 
-const CARBON_SCRIPT_SRC =
-  'https://cdn.carbonads.com/carbon.js?serve=CWBDKK7J&placement=iconoircom&format=responsive';
+const CARBON_SCRIPT_SRC
+  = 'https://cdn.carbonads.com/carbon.js?serve=CWBDKK7J&placement=iconoircom&format=responsive';
 
 export function CarbonCoverAd() {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container)
+      return;
 
     // Clear before inject (recommended for React SPAs; avoids stale markup on remount / Strict Mode)
     container.innerHTML = '';

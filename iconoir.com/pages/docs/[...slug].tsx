@@ -11,10 +11,11 @@ import remarkGfm from 'remark-gfm';
 // @ts-expect-error untyped
 import remarkPrism from 'remark-prism';
 import styled from 'styled-components';
+// SuggestLibrary imports pages/support → index; hoisting it above breaks Next dev (circular graph).
+// eslint-disable-next-line perfectionist/sort-imports -- must follow styled-components (see above)
 import { SuggestLibrary } from '@/components/SuggestLibrary';
 import {
   DocumentationNavigation,
-
 } from '../../components/DocumentationNavigation';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';

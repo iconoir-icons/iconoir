@@ -1,12 +1,8 @@
-import styled, { css, keyframes } from "styled-components";
-import useResizeObserver from "use-resize-observer";
-import {
-  FEEDBACK_LINK,
-  LIBRARY_LINKS,
-  SUGGEST_LIBRARY_LINK,
-} from "../lib/constants";
-import { media } from "../lib/responsive";
-import { Text14 } from "./Typography";
+import styled, { css, keyframes } from 'styled-components';
+import useResizeObserver from 'use-resize-observer';
+import { LIBRARY_LINKS } from '../lib/constants';
+import { media } from '../lib/responsive';
+import { Text14 } from './Typography';
 
 const MobileHeader = styled(Text14)`
   &&& {
@@ -61,8 +57,8 @@ const AvailableForContainer = styled.div<{ $contentWidth: number }>`
   width: max-content;
   --content-width: ${(props) => props.$contentWidth}px;
   ${(props) =>
-    props.$contentWidth &&
-    css`
+    props.$contentWidth
+    && css`
       animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
         infinite;
     `}
