@@ -4,7 +4,17 @@ import * as AllIcons from 'iconoir-react';
 import { kebabCase, pascalCase } from 'scule';
 
 const ICONS_PATH = 'icons.csv';
-const TAG_SEPARATOR = '|';
+
+function parseTags(raw: string | undefined): string[] {
+  if (!raw?.trim()) {
+    return [];
+  }
+
+  return raw
+    .split(/[|,]/)
+    .map((item: string) => item.trim())
+    .filter(Boolean);
+}
 
 export async function getAllIcons(): Promise<Icon[]> {
   const rows = await csv().fromFile(ICONS_PATH);
@@ -29,9 +39,7 @@ export async function getAllIcons(): Promise<Icon[]> {
       icons.push({
         filename: kebabCase(iconComponent),
         category: row.category,
-        tags:
-          row.tags?.split(TAG_SEPARATOR).map((item: string) => item.trim())
-          || [],
+        tags: parseTags(row.tags),
         iconComponentName: iconComponent,
       });
     }

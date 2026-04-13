@@ -1,1384 +1,1384 @@
-filename,category,tags
-"accessibility","System","assistance,assistant,impaired",
-"accessibility-sign","System","assistance,assistant,impaired",
-"accessibility-tech","System","assistance,assistant,impaired",
-"activity","Other",
-"adobe-after-effects","Design Tools",
-"adobe-illustrator","Design Tools",
-"adobe-indesign","Design Tools",
-"adobe-lightroom","Design Tools",
-"adobe-photoshop","Design Tools",
-"adobe-xd","Design Tools",
-"african-tree","Nature",
-"agile","Business",
-"air-conditioner","Home",
-"airplane","Transport","fly,jet",
-"airplane-helix","Transport","fly,jet",
-"airplane-helix-45deg","Transport","fly,jet",
-"airplane-off","Transport","fly,jet",
-"airplane-rotation","Transport","fly,jet",
-"airplay","Connectivity",
-"alarm","Other",
-"album","Music",
-"album-carousel","Music",
-"album-list","Music",
-"album-open","Music",
-"align-bottom-box","Design Tools",
-"align-center","Editor",
-"align-horizontal-centers","Design Tools","figma, design",
-"align-horizontal-spacing","Design Tools","figma, design",
-"align-justify","Editor",
-"align-left","Editor",
-"align-left-box","Design Tools",
-"align-right","Editor",
-"align-right-box","Design Tools",
-"align-top-box","Design Tools",
-"align-vertical-centers","Design Tools","figma, design",
-"align-vertical-spacing","Design Tools","figma, design",
-"angle-tool","Tools",
-"antenna","Connectivity",
-"antenna-off","Connectivity",
-"antenna-signal","Connectivity",
-"antenna-signal-tag","Connectivity",
-"app-notification","Communication",
-"app-store","Social","apple, iphone, ios",
-"app-window","System",
-"apple","Food",
-"apple-half","Food",
-"apple-imac-2021","Devices",
-"apple-imac-2021-side","Devices",
-"apple-mac","System",
-"apple-shortcuts","System",
-"apple-swift","Development",
-"apple-wallet","Finance",
-"ar-tag","Devices",
-"arc-3d","3D Editor","modeling,blender,4d",
-"arc-3d-center-point","3D Editor","modeling,blender,4d",
-"arcade","Gaming",
-"archery","Activities","sport,activity,arrows",
-"archery-match","Gaming","sport,activity,arrows",
-"archive","Docs",
-"area-search","Organization",
-"arrow-archery","Activities","sport,activity,arrows",
-"arrow-down","Navigation",
-"arrow-down-circle","Navigation",
-"arrow-down-left","Navigation",
-"arrow-down-left-circle","Navigation",
-"arrow-down-left-square","Navigation",
-"arrow-down-right","Navigation",
-"arrow-down-right-circle","Navigation",
-"arrow-down-right-square","Navigation",
-"arrow-down-tag","Navigation",
-"arrow-email-forward","Communication",
-"arrow-enlarge-tag","Navigation",
-"arrow-left","Navigation",
-"arrow-left-circle","Navigation",
-"arrow-left-tag","Navigation",
-"arrow-reduce-tag","Navigation",
-"arrow-right","Navigation",
-"arrow-right-circle","Navigation",
-"arrow-right-tag","Navigation",
-"arrow-separate","Navigation",
-"arrow-separate-vertical","Navigation",
-"arrow-union","Navigation",
-"arrow-union-vertical","Navigation",
-"arrow-up","Navigation",
-"arrow-up-circle","Navigation",
-"arrow-up-left","Navigation",
-"arrow-up-left-circle","Navigation",
-"arrow-up-left-square","Navigation",
-"arrow-up-right","Navigation",
-"arrow-up-right-circle","Navigation",
-"arrow-up-right-square","Navigation",
-"arrow-up-tag","Navigation",
-"arrows-up-from-line","Shopping",
-"asana","Development",
-"at-sign","Communication",
-"at-sign-circle","Communication",
-"atom","Science",
-"attachment","Docs",
-"augmented-reality","Gaming","ar,tech",
-"auto-flash","Photos and Videos",
-"avi-format","Photos and Videos",
-"axes","Design Tools",
-"backward-15-seconds","Music",
-"badge-check","Social","social,twitter,instagram,share",
-"bag","Clothing","",
-"balcony","Buildings","",
-"bank","Finance","",
-"barcode","Shopping","",
-"basketball","Activities",
-"basketball-field","Activities",
-"bathroom","Buildings","",
-"battery-25","System","energy,source,charge",
-"battery-50","System","energy,source,charge",
-"battery-75","System","energy,source,charge",
-"battery-charging","System","energy,source,charge",
-"battery-empty","System","energy,source,charge",
-"battery-full","System","energy,source,charge",
-"battery-indicator","Other","energy,source,charge",
-"battery-slash","System",
-"battery-warning","System","energy,source,charge",
-"bbq","Food",
-"beach-bag","Clothing",
-"bed","Home","sleep, home, sleeping",
-"bed-ready","Home","sleep, home, sleeping",
-"behance","Social",
-"behance-tag","Social",
-"bell","Communication",
-"bell-notification","Communication",
-"bell-off","Communication",
-"bicycle","Transport","cycle,bike,transport,sport,life,activity",
-"bin","System","trash",
-"bin-full","System","trash",
-"bin-half","System","trash",
-"bin-minus-in","System","trash, remove, delete, clean",
-"bin-plus-in","System","trash, add",
-"binocular","Organization",
-"birthday-cake","Activities",
-"bishop","Gaming","game,chess",
-"bitbucket","Git","git, repository, github",
-"bitcoin-circle","Finance",
-"bitcoin-rotate-out","Finance",
-"bluetooth","Connectivity",
-"bluetooth-tag","Connectivity",
-"bold","Editor",
-"bold-square","Editor",
-"bonfire","Activities",
-"book","Activities",
-"book-lock","Activities",
-"book-stack","Activities",
-"bookmark","Organization",
-"bookmark-book","Activities",
-"bookmark-circle","Organization",
-"border-bl","Design Tools",
-"border-bottom","Design Tools",
-"border-br","Design Tools",
-"border-inner","Design Tools",
-"border-left","Design Tools",
-"border-out","Design Tools",
-"border-right","Design Tools",
-"border-tl","Design Tools",
-"border-top","Design Tools",
-"border-tr","Design Tools",
-"bounce-left","Animations",
-"bounce-right","Animations",
-"bowling-ball","Activities",
-"box","Home",
-"box-3d-center","3D Editor","modeling,blender,4d",
-"box-3d-point","3D Editor","modeling,blender,4d",
-"box-3d-three-points","3D Editor","modeling,blender,4d",
-"box-iso","Home",
-"boxing-glove","Activities",
-"brain","Science",
-"brain-electricity","Science",
-"brain-research","Science",
-"brain-warning","Science",
-"bread-slice","Food",
-"bridge-3d","3D Editor","modeling,blender,4d",
-"bridge-surface","3D Editor",
-"bright-crown","Gaming",
-"bright-star","Gaming",
-"brightness","System","setting,light,contrast",
-"brightness-window","System","browser,os,setting,light,contrast",
-"bubble-download","Communication",
-"bubble-income","Communication",
-"bubble-outcome","Communication",
-"bubble-search","Communication",
-"bubble-star","Communication",
-"bubble-upload","Communication",
-"bubble-warning","Communication",
-"bubble-xmark","Communication","error,issue",
-"building","Buildings",
-"bus","Transport","transport,station,track,public,shuttle",
-"bus-green","Transport","clean, environment, nature, energy",
-"bus-stop","Transport","transport,station,track,public,shuttle",
-"c-square","Typography","carbon,element",
-"cable-tag","Connectivity",
-"calculator","System","math,operation",
-"calendar","System","organization,organisation,plan,planning,date,day,month,year",
-"calendar-minus","System",
-"calendar-plus","System",
-"camera","Photos and Videos",
-"candlestick-chart","Finance",
-"car","Transport","vehicle,auto,drive,driving",
-"card-lock","Finance",
-"card-no-access","Finance",
-"card-reader","Finance",
-"card-shield","Finance",
-"card-wallet","Finance",
-"cart","Shopping",
-"cart-alt","Shopping",
-"cart-minus","Shopping","remove",
-"cart-plus","Shopping",
-"cash","Finance",
-"cell-2x2","Layout",
-"cellar","Buildings",
-"center-align","Design Tools",
-"chat-bubble","Communication",
-"chat-bubble-check","Communication",
-"chat-bubble-empty","Communication",
-"chat-bubble-question","Communication",
-"chat-bubble-translate","Communication",
-"chat-bubble-warning","Communication",
-"chat-bubble-xmark","Communication","error,issue,remove,delete",
-"chat-lines","Communication",
-"chat-minus-in","Communication",
-"chat-plus-in","Communication",
-"check","Actions",
-"check-circle","Actions",
-"check-square","Actions",
-"chocolate","Food",
-"chromecast","Devices",
-"chromecast-active","Devices",
-"church","Buildings",
-"church-side","Buildings",
-"cigarette-slash","Activities","smoking, smoke, tobacco, cigarette, health, cancer, forbidden, prohibited",
-"cinema-old","Activities",
-"circle","Shapes",
-"circle-spark","Other","ai, artificial, intelligence",
-"city","Buildings",
-"clipboard-check","Actions",
-"clock","Other",
-"clock-rotate-right","Shopping",
-"closed-captions-tag","Photos and Videos",
-"closet","Home",
-"cloud","Weather",
-"cloud-bookmark","Cloud",
-"cloud-check","Cloud",
-"cloud-desync","Cloud",
-"cloud-download","Cloud",
-"cloud-square","Cloud",
-"cloud-sunny","Weather","weather,clouds",
-"cloud-sync","Cloud",
-"cloud-upload","Cloud",
-"cloud-xmark","Cloud","error,issue",
-"code","Development",
-"code-brackets","Development",
-"code-brackets-square","Development",
-"codepen","Development",
-"coffee-cup","Food",
-"coin-slash","Finance",
-"coins","Finance",
-"coins-swap","Finance","conversion, currency, exchange",
-"collage-frame","Design Tools",
-"collapse","Photos and Videos",
-"color-filter","Design Tools",
-"color-picker","Design Tools",
-"color-wheel","Design Tools",
-"combine","Design Tools",
-"commodity","Finance","gold, ingot, bar",
-"community","Users",
-"comp-align-bottom","Design Tools","figma, design",
-"comp-align-left","Design Tools","figma, design",
-"comp-align-right","Design Tools","figma, design",
-"comp-align-top","Design Tools","figma, design",
-"compact-disc","Music",
-"compass","Navigation",
-"component","Design Tools","figma, design",
-"compress","Other",
-"compress-lines","Editor",
-"computer","Devices",
-"constrained-surface","3D Editor",
-"consumable","Shopping",
-"contactless","Finance","pay, payment",
-"control-slider","System","controller,ui,element,dashboard,panel,setting",
-"cookie","System","biscuit,food,privacy,data",
-"cooling-square","Science",
-"copy","Design Tools",
-"copyright","Other",
-"corner-bottom-left","Layout",
-"corner-bottom-right","Layout",
-"corner-top-left","Layout",
-"corner-top-right","Layout",
-"cpu","System","processor,computer,pc,tech",
-"cpu-warning","System","processor,alert,caution,danger,computer,pc,tech,error,issue",
-"cracked-egg","Food",
-"creative-commons","Development",
-"credit-card","Finance",
-"credit-card-slash","Finance",
-"credit-cards","Finance",
-"crib","Home",
-"crop","Design Tools",
-"crop-rotate-bl","Design Tools","cut, edit, image",
-"crop-rotate-br","Design Tools","cut, edit, image",
-"crop-rotate-tl","Design Tools","cut, edit, image",
-"crop-rotate-tr","Design Tools","cut, edit, image",
-"crown","Gaming",
-"crown-circle","Gaming",
-"css3","Development",
-"cube","3D Editor","modeling, blender, 4d, solid, model, object, 3d",
-"cube-bandage","3D Editor","patch, fix, band, aid",
-"cube-cut-with-curve","3D Editor","solid, 3d, object, blender",
-"cube-hole","3D Editor","modeling,blender,4d",
-"cube-replace-face","3D Editor",
-"cursor-pointer","System","desktop,mouse",
-"curve-array","3D Editor",
-"cut","Design Tools",
-"cutlery","Food",
-"cycling","Activities",
-"cylinder","3D Editor","shape,geometry",
-"dash-flag","Other",
-"dashboard","System","accelerate,acceleration,panel,speed",
-"dashboard-dots","System","accelerate,acceleration,panel,speed",
-"dashboard-speed","System","accelerate,acceleration,panel",
-"data-transfer-both","Connectivity","connection, computer, network, information",
-"data-transfer-check","Connectivity","connection, computer, network, information",
-"data-transfer-down","Connectivity","connection, computer, network, information",
-"data-transfer-up","Connectivity","connection, computer, network, information",
-"data-transfer-warning","Connectivity","connection, computer, network, information",
-"database","Database","db, storage, repo",
-"database-backup","Database","db, storage, repo",
-"database-check","Database","db, storage, repo",
-"database-export","Database","db, storage, repo",
-"database-monitor","Database","db, storage, repo",
-"database-restore","Database","db, storage, repo",
-"database-script","Database","db, storage, repo",
-"database-script-minus","Database","remove",
-"database-script-plus","Database",
-"database-search","Database","db, storage, repo",
-"database-settings","Database","db, storage, repo",
-"database-star","Database","db, storage, repo",
-"database-stats","Database","db, storage, repo",
-"database-tag","Database","db, storage, repo",
-"database-warning","Database","db, storage, repo",
-"database-xmark","Database","db, storage, repo, error",
-"de-compress","Other",
-"delivery","Transport","ship,shipment,amazon",
-"delivery-truck","Transport","ship,semitruck,shipment,amazon",
-"depth","Science",
-"design-nib","Design Tools",
-"design-pencil","Design Tools",
-"desk","Home",
-"developer","Development",
-"dew-point","Weather",
-"dialpad","Other",
-"diameter","Science",
-"dice-five","Gaming",
-"dice-four","Gaming",
-"dice-one","Gaming",
-"dice-six","Gaming",
-"dice-three","Gaming",
-"dice-two","Gaming",
-"dimmer-switch","Home","light, intensity, setting, house, device, remote, controller",
-"director-chair","Home","movie, cinema, hollywood, film, filming",
-"discord","Social",
-"dishwasher","Home",
-"display-4k","Devices",
-"divide","Navigation",
-"divide-three","Navigation",
-"dna","Science",
-"doc-magnifying-glass","Docs","search",
-"doc-magnifying-glass-in","Docs","search",
-"doc-star","Docs",
-"doc-star-in","Docs",
-"dogecoin-circle","Finance",
-"dogecoin-rotate-out","Finance",
-"dollar","Finance",
-"dollar-circle","Finance",
-"domotic-warning","Home",
-"donate","Health",
-"dot-arrow-down","Animations",
-"dot-arrow-left","Animations",
-"dot-arrow-right","Animations",
-"dot-arrow-up","Animations",
-"double-check","Actions",
-"download","Actions",
-"download-circle","Actions",
-"download-data-window","System","browser,os",
-"download-square","Actions",
-"drag","Navigation",
-"drag-hand-gesture","Gestures",
-"drawer","Home",
-"dribbble","Social","social,design,designers",
-"drone","Transport","air, device, fly",
-"drone-charge-full","Transport","air, device, fly",
-"drone-charge-half","Transport","air, device, fly",
-"drone-charge-low","Transport","air, device, fly",
-"drone-check","Transport","air, device, fly",
-"drone-landing","Transport","air, device, fly",
-"drone-refresh","Transport","air, device, fly",
-"drone-take-off","Transport","air, device, fly",
-"drone-xmark","Transport","air,device,fly,error,issue",
-"droplet","Design Tools",
-"droplet-check","Nature","check, safe, water, clean, pure",
-"droplet-half","Design Tools",
-"ease-curve-control-points","Animations",
-"ease-in","Animations",
-"ease-in-control-point","Animations",
-"ease-in-out","Animations",
-"ease-out","Animations",
-"ease-out-control-point","Animations",
-"ecology-book","Nature","clean, environment, nature",
-"edit","Editor",
-"edit-pencil","Editor",
-"egg","Food",
-"eject","System","disk,compact,player,vhs,cassette,tape,remove",
-"electronics-chip","Development",
-"electronics-transistor","Development",
-"elevator","Buildings",
-"ellipse-3d","3D Editor","modeling,blender,4d",
-"ellipse-3d-three-points","3D Editor","modeling,blender,4d",
-"emoji","Emojis",
-"emoji-ball","Emojis",
-"emoji-blink-left","Emojis",
-"emoji-blink-right","Emojis",
-"emoji-look-down","Emojis",
-"emoji-look-left","Emojis",
-"emoji-look-right","Emojis",
-"emoji-look-up","Emojis",
-"emoji-puzzled","Emojis",
-"emoji-quite","Emojis",
-"emoji-really","Emojis",
-"emoji-sad","Emojis",
-"emoji-satisfied","Emojis",
-"emoji-sing-left","Emojis",
-"emoji-sing-left-note","Emojis",
-"emoji-sing-right","Emojis",
-"emoji-sing-right-note","Emojis",
-"emoji-surprise","Emojis",
-"emoji-surprise-alt","Emojis",
-"emoji-talking-angry","Emojis",
-"emoji-talking-happy","Emojis",
-"emoji-think-left","Emojis",
-"emoji-think-right","Emojis",
-"empty-page","Docs",
-"energy-usage-window","System","browser,os,consuption,economy",
-"enlarge","Photos and Videos",
-"erase","Actions",
-"ethereum-circle","Finance",
-"ethereum-rotate-out","Finance",
-"euro","Finance",
-"euro-square","Finance",
-"ev-charge","Transport","port, charge, recharge, electricity, vehicle, car",
-"ev-charge-alt","Transport","port, charge, recharge, electricity, vehicle, car",
-"ev-plug","Transport","port, charge, recharge, electricity, vehicle, car",
-"ev-plug-charging","Transport","port, charge, recharge, electricity, vehicle, car",
-"ev-plug-xmark","Transport","port,charge,recharge,electricity,vehicle,car,error,issue",
-"ev-station","Transport","port, charge, recharge, electricity, vehicle, car",
-"ev-tag","Transport","port, charge, recharge, electricity, vehicle, car",
-"exclude","Design Tools",
-"expand","Photos and Videos",
-"expand-lines","Editor",
-"extrude","3D Editor",
-"eye","Actions",
-"eye-closed","Actions",
-"f-square","Typography","fluorine,element",
-"face-3d-draft","3D Editor",
-"face-id","Identity",
-"facebook","Social",
-"facebook-tag","Social",
-"facetime","Communication",
-"farm","Buildings",
-"fast-arrow-down","Navigation",
-"fast-arrow-down-square","Navigation",
-"fast-arrow-left","Navigation",
-"fast-arrow-left-square","Navigation",
-"fast-arrow-right","Navigation",
-"fast-arrow-right-square","Navigation",
-"fast-arrow-up","Navigation",
-"fast-arrow-up-square","Navigation",
-"fast-down-circle","Navigation",
-"fast-left-circle","Navigation",
-"fast-right-circle","Navigation",
-"fast-up-circle","Navigation",
-"favourite-book","Activities",
-"favourite-window","System","browser,os",
-"female","Health",
-"figma","Design Tools",
-"file-not-found","Other",
-"fill-color","Design Tools",
-"fillet-3d","3D Editor",
-"filter","Organization",
-"filter-alt","Organization",
-"filter-list","Navigation",
-"filter-list-circle","Navigation",
-"finder","System","mac,apple,folder,file,os,operative,system",
-"fingerprint","Identity",
-"fingerprint-check-circle","Identity",
-"fingerprint-circle","Identity",
-"fingerprint-lock-circle","Identity",
-"fingerprint-scan","Identity",
-"fingerprint-square","Identity",
-"fingerprint-window","System","browser,os",
-"fingerprint-xmark-circle","Identity","error,issue",
-"fire-flame","Activities",
-"fish","Animals",
-"fishing","Activities",
-"flare","Shapes",
-"flash","Photos and Videos","trigger,ray,bolt,lightning",
-"flash-off","Photos and Videos",
-"flask","Science",
-"flip","Design Tools",
-"flip-reverse","Design Tools",
-"floppy-disk","Devices","save",
-"floppy-disk-arrow-in","Actions","save",
-"floppy-disk-arrow-out","Actions","load",
-"flower","Activities",
-"fog","Weather",
-"folder","Docs",
-"folder-minus","Docs","remove",
-"folder-plus","Docs",
-"folder-settings","Docs",
-"folder-warning","Docs",
-"font-question","Editor","missing, not, found, text",
-"football","Activities",
-"football-ball","Activities",
-"forward","Music",
-"forward-15-seconds","Music",
-"forward-message","Communication",
-"frame","Design Tools",
-"frame-alt","Design Tools",
-"frame-alt-empty","Design Tools",
-"frame-minus-in","Design Tools","remove",
-"frame-plus-in","Design Tools",
-"frame-select","Design Tools",
-"frame-simple","Design Tools",
-"frame-tool","Design Tools",
-"fridge","Home",
-"fx","Photos and Videos",
-"fx-tag","Photos and Videos",
-"gamepad","Gaming",
-"garage","Buildings",
-"gas","Other",
-"gas-tank","Transport","fuel",
-"gas-tank-droplet","Transport","fuel",
-"gif-format","Photos and Videos",
-"gift","Other",
-"git","Git","git",
-"git-branch","Git","git, github",
-"git-cherry-pick-commit","Git",
-"git-commit","Git","git, github",
-"git-compare","Git","git, github",
-"git-fork","Git","git, github",
-"git-merge","Git","git, github",
-"git-pull-request","Git","git, github",
-"git-pull-request-closed","Git",
-"github","Git","git, github",
-"github-circle","Git","git, github",
-"gitlab-full","Git","git, github",
-"glass-empty","Food",
-"glass-fragile","Shopping",
-"glass-half","Food",
-"glass-half-alt","Food",
-"glasses","Clothing",
-"globe","Communication",
-"golf","Activities",
-"google","Social","alphabet,search",
-"google-circle","Social","alphabet,search",
-"google-docs","Docs","alphabet,search,cloud,editor",
-"google-drive","Cloud","alphabet,search",
-"google-drive-check","Cloud","alphabet,search,cloud",
-"google-drive-sync","Cloud","alphabet,search,cloud",
-"google-drive-warning","Cloud","alphabet,search",
-"google-home","Home","alphabet,search",
-"google-one","Cloud","alphabet,search,cloud",
-"gps","Maps",
-"graduation-cap","Science",
-"graph-down","Activities",
-"graph-up","Activities",
-"grid-minus","Layout",
-"grid-plus","Layout",
-"grid-xmark","Layout","remove",
-"group","Users","people,society,person",
-"gym","Activities",
-"h-square","Typography","hydrogen,element",
-"half-cookie","System","biscuit,food,privacy,data",
-"half-moon","Other",
-"hammer","Tools",
-"hand-brake","Transport","car,drive,driving,auto,vehicle",
-"hand-card","Finance","pay, payment",
-"hand-cash","Finance","pay, payment",
-"hand-contactless","Finance","pay, payment",
-"handbag","Clothing",
-"hard-drive","Devices",
-"hat","Clothing",
-"hd","Photos and Videos",
-"hd-display","Photos and Videos",
-"hdr","Photos and Videos",
-"headset","Music","earphones,earbuds,listenings,audio",
-"headset-bolt","Music","charge,energy,electricity,audio,listenings,earphones,earbuds",
-"headset-help","Communication","earphones,earbuds,listenings,audio",
-"headset-warning","Music","earphones,earbuds,listenings,audio,issue,error",
-"health-shield","Health",
-"healthcare","Health",
-"heart","Health",
-"heart-arrow-down","System",
-"heating-square","Science",
-"heavy-rain","Weather","weather,storm",
-"help-circle","Actions",
-"help-square","Actions",
-"heptagon","Shapes",
-"hexagon","Shapes",
-"hexagon-dice","Gaming",
-"hexagon-plus","Shapes",
-"historic-shield","Security",
-"historic-shield-alt","Security",
-"home","Home",
-"home-alt","Home",
-"home-alt-slim","Home",
-"home-alt-slim-horiz","Home",
-"home-hospital","Health",
-"home-sale","Home",
-"home-secure","Home",
-"home-shield","Home",
-"home-simple","Home",
-"home-simple-door","Home",
-"home-table","Home",
-"home-temperature-in","Home",
-"home-temperature-out","Home",
-"home-user","Home",
-"horiz-distribution-left","Design Tools",
-"horiz-distribution-right","Design Tools",
-"horizontal-merge","Navigation",
-"horizontal-split","Navigation",
-"hospital","Buildings",
-"hospital-circle","Health",
-"hot-air-balloon","Transport","fly, airship",
-"hourglass","Activities",
-"house-rooms","Buildings",
-"html5","Development",
-"iconoir","Development",
-"import","Other",
-"inclination","Science",
-"industry","Buildings",
-"infinite","Science","limitless, endless, boundless, unbounded, unlimited",
-"info-circle","Actions",
-"input-field","System","element,ui,textbox",
-"input-output","System",
-"input-search","Organization",
-"instagram","Social","social,share,story,video,photos,fb,meta",
-"internet","Communication",
-"intersect","Design Tools",
-"intersect-alt","Design Tools",
-"ios-settings","System","apple,iphone,ios",
-"ip-address-tag","Security",
-"iris-scan","Identity",
-"italic","Editor",
-"italic-square","Editor",
-"jellyfish","Animals",
-"journal","Docs",
-"journal-page","Docs",
-"jpeg-format","Photos and Videos",
-"jpg-format","Photos and Videos",
-"kanban-board","Development",
-"key","Security",
-"key-back","Security",
-"key-command","System",
-"key-minus","Security",
-"key-plus","Security",
-"key-xmark","Security",
-"keyframe","Animations",
-"keyframe-align-center","Animations",
-"keyframe-align-horizontal","Animations",
-"keyframe-align-vertical","Animations",
-"keyframe-minus","Animations",
-"keyframe-minus-in","Animations",
-"keyframe-plus","Animations","add",
-"keyframe-plus-in","Animations","add",
-"keyframe-position","Animations",
-"keyframes","Animations",
-"keyframes-couple","Animations",
-"keyframes-minus","Animations",
-"keyframes-plus","Animations","add",
-"label","Organization",
-"lamp","Home","light, home, house",
-"language","Other",
-"laptop","Devices",
-"laptop-charging","Devices",
-"laptop-dev-mode","Development",
-"laptop-fix","Devices",
-"laptop-warning","Devices",
-"layout-left","Layout","layout,tiled,windows,tiling,window",
-"layout-right","Layout","layout,tiled,windows,tiling,window",
-"leaderboard","Activities",
-"leaderboard-star","Activities",
-"leaf","Nature",
-"learning","Users",
-"lens","Design Tools",
-"lens-plus","Design Tools",
-"lifebelt","Other",
-"light-bulb","Home",
-"light-bulb-off","Home",
-"light-bulb-on","Home",
-"line-space","Actions",
-"linear","Animations",
-"link","Other",
-"link-slash","Other",
-"link-xmark","Other","connection, lost, disabled, error, issue, url, address",
-"linkedin","Social","social,work,connection",
-"linux","System","os,operative,system",
-"list","Editor",
-"list-select","Editor",
-"litecoin-circle","Finance",
-"litecoin-rotate-out","Finance",
-"lock","Security",
-"lock-slash","Security",
-"lock-square","System","locked,access,security,block,restricted"
-"loft-3d","3D Editor",
-"log-in","System","sign,access",
-"log-no-access","System","sign,access,error",
-"log-out","System","sign,access",
-"long-arrow-down-left","Navigation",
-"long-arrow-down-right","Navigation",
-"long-arrow-left-down","Navigation",
-"long-arrow-left-up","Navigation",
-"long-arrow-right-down","Navigation",
-"long-arrow-right-up","Navigation",
-"long-arrow-up-left","Navigation",
-"long-arrow-up-right","Navigation",
-"lot-of-cash","Finance",
-"lullaby","Music",
-"mac-control-key","System","input,keyboard,mac,apple,os,operative,system",
-"mac-dock","System","mac,apple,os,operative,system",
-"mac-option-key","System","input,keyboard,mac,apple,os,operative,system",
-"mac-os-window","System","mac,apple,os,operative,system",
-"magic-wand","Design Tools",
-"magnet","Science",
-"magnet-energy","Science",
-"mail","Communication",
-"mail-in","Communication",
-"mail-open","Communication",
-"mail-out","Communication",
-"male","Health",
-"map","Maps",
-"map-pin","Maps",
-"map-pin-minus","Maps",
-"map-pin-plus","Maps",
-"map-pin-xmark","Maps",
-"map-xmark","Maps","issue,error",
-"maps-arrow","Maps",
-"maps-arrow-diagonal","Maps",
-"maps-arrow-xmark","Maps","issue",
-"maps-go-straight","Maps",
-"maps-turn-back","Maps",
-"maps-turn-left","Maps",
-"maps-turn-right","Maps",
-"mask-square","Design Tools",
-"mastercard-card","Finance",
-"math-book","Activities",
-"maximize","Other",
-"medal","Activities",
-"medal-1st","Activities","prize,place,first,winner,champion",
-"media-image","Photos and Videos",
-"media-image-folder","Photos and Videos",
-"media-image-list","Photos and Videos",
-"media-image-plus","Photos and Videos",
-"media-image-xmark","Photos and Videos",
-"media-video","Photos and Videos",
-"media-video-folder","Photos and Videos",
-"media-video-list","Photos and Videos",
-"media-video-plus","Photos and Videos",
-"media-video-xmark","Photos and Videos",
-"medium","Social","write,writing,blog,news",
-"megaphone","Devices",
-"menu","Actions",
-"menu-scale","Actions",
-"message","Communication",
-"message-alert","Communication",
-"message-text","Communication",
-"metro","Transport","transport,train,station,track,public",
-"microphone","Audio",
-"microphone-check","Audio",
-"microphone-minus","Audio",
-"microphone-mute","Audio",
-"microphone-plus","Audio",
-"microphone-speaking","Audio",
-"microphone-warning","Audio",
-"microscope","Science",
-"minus","Actions",
-"minus-circle","Actions",
-"minus-hexagon","Shapes",
-"minus-square","Actions",
-"minus-square-dashed","Other","remove,selection,select",
-"mirror","Home",
-"mobile-dev-mode","Development",
-"mobile-fingerprint","Identity",
-"mobile-voice","Identity",
-"modern-tv","Devices",
-"modern-tv-4k","Devices",
-"money-square","Finance",
-"moon-sat","Science",
-"more-horiz","Navigation",
-"more-horiz-circle","Navigation",
-"more-vert","Navigation",
-"more-vert-circle","Navigation",
-"motorcycle","Transport",
-"mouse-button-left","System","controller,device,input",
-"mouse-button-right","System","controller,device,input",
-"mouse-scroll-wheel","System","controller,device,input",
-"movie","Activities",
-"mpeg-format","Photos and Videos",
-"multi-bubble","Communication",
-"multi-mac-os-window","System","mac,apple,os,operative,system",
-"multi-window","System","mac,apple,os,operative,system,windows,microsoft",
-"multiple-pages","Docs",
-"multiple-pages-empty","Docs",
-"multiple-pages-minus","Docs",
-"multiple-pages-plus","Docs",
-"multiple-pages-xmark","Docs","delete,remove",
-"music-double-note","Music",
-"music-double-note-plus","Music",
-"music-note","Music",
-"music-note-plus","Music",
-"n-square","Typography","nitrogen,element",
-"nav-arrow-down","Navigation",
-"nav-arrow-left","Navigation",
-"nav-arrow-right","Navigation",
-"nav-arrow-up","Navigation",
-"navigator","Maps",
-"navigator-alt","Maps",
-"neighbourhood","Buildings",
-"network","Connectivity","connection, computer, network, information",
-"network-left","Connectivity","connection, computer, network, information",
-"network-reverse","Connectivity","connection, computer, network, information",
-"network-right","Connectivity","connection, computer, network, information",
-"new-tab","System",
-"nintendo-switch","Gaming","game,console,portable",
-"no-smoking-circle","Activities",
-"non-binary","Health",
-"notes","Other",
-"npm","Development",
-"npm-square","Development",
-"number-0-square","Other",
-"number-1-square","Other",
-"number-2-square","Other",
-"number-3-square","Other",
-"number-4-square","Other",
-"number-5-square","Other",
-"number-6-square","Other",
-"number-7-square","Other",
-"number-8-square","Other",
-"number-9-square","Other",
-"numbered-list-left","Editor",
-"numbered-list-right","Editor",
-"o-square","Typography","oxygen,element",
-"octagon","Shapes",
-"off-tag","System","switch,toggle,enable",
-"oil-industry","Buildings",
-"okrs","Business",
-"on-tag","System","switch,toggle,enable",
-"one-finger-select-hand-gesture","Gestures",
-"one-point-circle","3D Editor",
-"open-book","Activities",
-"open-in-browser","Actions",
-"open-in-window","Actions",
-"open-new-window","Actions",
-"open-select-hand-gesture","Gestures",
-"open-vpn","Security",
-"orange-half","Food",
-"orange-slice","Food",
-"orange-slice-alt","Food",
-"organic-food","Nature",
-"organic-food-square","Nature",
-"orthogonal-view","3D Editor",
-"package","Transport","ship,shipment,amazon,box",
-"package-lock","Transport","ship,shipment,amazon,secure,box",
-"packages","Transport","ship,shipment,amazon,stockage,deposit,boxes,box",
-"pacman","Gaming",
-"page","Docs",
-"page-down","Navigation",
-"page-edit","Docs",
-"page-flip","Other",
-"page-left","Navigation",
-"page-minus","Docs",
-"page-minus-in","Docs",
-"page-plus","Docs",
-"page-plus-in","Docs",
-"page-right","Navigation",
-"page-search","Docs",
-"page-star","Docs",
-"page-up","Navigation",
-"palette","Activities",
-"panorama-enlarge","Photos and Videos",
-"panorama-reduce","Photos and Videos",
-"pants","Clothing",
-"pants-pockets","Clothing",
-"parking","Transport","drive,car,spot,place,auto,vehicle",
-"password-check","Security",
-"password-cursor","Security",
-"password-xmark","Security","error,issue",
-"paste-clipboard","Actions",
-"path-arrow","Navigation",
-"pause","Music",
-"pause-window","System","browser,os,hold,wait,freeze",
-"paypal","Finance",
-"pc-check","Security",
-"pc-firewall","Security",
-"pc-mouse","System","controller,device,input",
-"pc-no-entry","Security",
-"pc-warning","Security",
-"peace-hand","Gestures",
-"pen-connect-bluetooth","Devices",
-"pen-connect-wifi","Devices",
-"pen-tablet","Devices",
-"pen-tablet-connect-usb","Devices",
-"pen-tablet-connect-wifi","Devices",
-"pentagon","Shapes",
-"people-tag","Users","people,society,person",
-"percent-rotate-out","Finance",
-"percentage","Activities",
-"percentage-circle","Activities",
-"percentage-square","Activities",
-"perspective-view","3D Editor",
-"pharmacy-cross-circle","Health","hospital,health,emergency",
-"pharmacy-cross-tag","Health","hospital,health,emergency",
-"phone","Communication",
-"phone-disabled","Communication",
-"phone-income","Communication",
-"phone-minus","Communication",
-"phone-outcome","Communication",
-"phone-paused","Communication",
-"phone-plus","Communication",
-"phone-xmark","Communication","remove,error",
-"piggy-bank","Finance",
-"pillow","Home",
-"pin","Organization",
-"pin-slash","Organization",
-"pine-tree","Nature",
-"pinterest","Social",
-"pipe-3d","3D Editor",
-"pizza-slice","Food",
-"planet","Science",
-"planet-alt","Science",
-"planet-sat","Science",
-"planimetry","Buildings",
-"play","Music",
-"playlist","Music",
-"playlist-play","Music",
-"playlist-plus","Music",
-"playstation-gamepad","Gaming",
-"plug-type-a","Connectivity","port, access, connection, cable",
-"plug-type-c","Connectivity","port, access, connection, cable",
-"plug-type-g","Connectivity","port, access, connection, cable",
-"plug-type-l","Connectivity","port, access, connection, cable",
-"plus","Actions",
-"plus-circle","Actions","add",
-"plus-square","Actions","add",
-"plus-square-dashed","Other",
-"png-format","Photos and Videos",
-"pocket","Social","save,tool,app",
-"podcast","Communication",
-"pokeball","Gaming","pokemon",
-"position","Maps",
-"position-align","Design Tools",
-"post","Social",
-"potion","Gaming","power,superpower,energy",
-"pound","Finance",
-"precision-tool","Design Tools",
-"presentation","Business",
-"printer","Devices",
-"printing-page","Devices",
-"priority-down","Business",
-"priority-high","Business",
-"priority-medium","Business",
-"priority-up","Business",
-"privacy-policy","Docs",
-"private-wifi","Connectivity",
-"profile-circle","Users","user,round,person",
-"prohibition","Actions",
-"project-curve-3d","3D Editor",
-"puzzle","Development",
-"qr-code","Other",
-"question-mark","Actions",
-"quote","Communication",
-"quote-message","Communication",
-"radiation","Science",
-"radius","Science",
-"rain","Weather","weather",
-"raw-format","Photos and Videos",
-"receive-dollars","Finance",
-"receive-euros","Finance",
-"receive-pounds","Finance",
-"receive-yens","Finance",
-"redo","Actions",
-"redo-action","Actions",
-"redo-circle","Actions",
-"reduce","Photos and Videos",
-"refresh","Actions",
-"refresh-circle","Actions",
-"refresh-double","Actions",
-"reload-window","System","refresh,browser,os",
-"reminder-hand-gesture","Gestures",
-"repeat","Music",
-"repeat-once","Music",
-"reply","Communication",
-"reply-to-message","Communication",
-"report-columns","Activities",
-"reports","Activities",
-"repository","Git","git, github",
-"restart","Actions",
-"rewind","Music",
-"rhombus","Shapes",
-"rings","Activities",
-"rocket","Science","space, nasa, esa, spacex, missile",
-"rook","Gaming",
-"rotate-camera-left","Photos and Videos",
-"rotate-camera-right","Photos and Videos",
-"round-flask","Science",
-"rounded-mirror","Home",
-"rss-feed","Social","news",
-"rss-feed-tag","Social","news",
-"rubik-cube","Science",
-"ruler","Design Tools",
-"ruler-arrows","Design Tools","move, expand, measure",
-"ruler-combine","Design Tools",
-"ruler-minus","Design Tools","remove",
-"ruler-plus","Design Tools",
-"running","Activities",
-"safari","System","browser,web,internet,apple",
-"safe","Finance",
-"safe-arrow-left","Finance",
-"safe-arrow-right","Finance",
-"safe-open","Finance",
-"sandals","Clothing",
-"scale-frame-enlarge","Design Tools",
-"scale-frame-reduce","Design Tools",
-"scan-barcode","Shopping",
-"scan-qr-code","Other",
-"scanning","Identity",
-"scarf","Clothing",
-"scissor","Editor",
-"scissor-alt","Editor",
-"screenshot","Photos and Videos",
-"sea-and-sun","Activities",
-"sea-waves","Activities",
-"search","Organization",
-"search-engine","System","google,duckduckgo,bing",
-"search-window","System","find",
-"secure-window","System","find",
-"security-pass","Security",
-"select-edge-3d","3D Editor","modeling,blender,4d",
-"select-face-3d","3D Editor","modeling,blender,4d",
-"select-point-3d","3D Editor","modeling,blender,4d",
-"select-window","System","find",
-"selective-tool","Design Tools",
-"send","Communication",
-"send-diagonal","Communication",
-"send-dollars","Finance",
-"send-euros","Finance",
-"send-mail","Communication",
-"send-pounds","Finance",
-"send-yens","Finance",
-"server","Connectivity","connection, computer, network",
-"server-connection","Connectivity","connection, computer, network",
-"settings","System",
-"settings-profiles","System",
-"share-android","Actions",
-"share-ios","Actions",
-"shield","Security","security,protection,firewall",
-"shield-alert","Security","security,protection,firewall",
-"shield-alt","Security","security,protection,firewall",
-"shield-broken","Security","security,protection,firewall",
-"shield-check","Security","security,protection,firewall",
-"shield-download","Security","security,protection,firewall",
-"shield-eye","Security","security,protection,firewall",
-"shield-loading","Security","security,protection,firewall",
-"shield-minus","Security","security,protection,firewall",
-"shield-plus-in","Security","security,protection,firewall",
-"shield-question","Security","security,protection,firewall",
-"shield-search","Security","security,protection,firewall",
-"shield-upload","Security","security,protection,firewall",
-"shield-xmark","Security","security,protection,firewall",
-"shirt","Clothing",
-"shirt-tank-top","Clothing",
-"shop","Buildings",
-"shop-four-tiles","Buildings",
-"shop-four-tiles-window","Buildings",
-"shop-window","Buildings",
-"shopping-bag","Shopping",
-"shopping-bag-arrow-down","Shopping",
-"shopping-bag-arrow-up","Shopping",
-"shopping-bag-check","Shopping",
-"shopping-bag-minus","Shopping",
-"shopping-bag-plus","Shopping",
-"shopping-bag-pocket","Shopping",
-"shopping-bag-warning","Shopping",
-"shopping-code","Shopping",
-"shopping-code-check","Shopping",
-"shopping-code-xmark","Shopping","error,issue",
-"short-pants","Clothing",
-"short-pants-pockets","Clothing",
-"shortcut-square","Navigation",
-"shuffle","Music",
-"sidebar-collapse","Navigation",
-"sidebar-expand","Navigation",
-"sigma-function","3D Editor","greek,math,symbol",
-"simple-cart","Shopping",
-"sine-wave","Science",
-"single-tap-gesture","Gestures",
-"skateboard","Activities",
-"skateboarding","Activities",
-"skip-next","Music",
-"skip-prev","Music",
-"slash","Development",
-"slash-square","Git","git, github, command",
-"sleeper-chair","Home",
-"slips","Clothing",
-"small-lamp","Home","light, home, house",
-"small-lamp-alt","Home","light, home, house",
-"smartphone-device","Devices",
-"smoking","Activities",
-"snapchat","Social","message,messaging,chat,share,ghost",
-"snow","Weather",
-"snow-flake","Weather","weather,storm,ac,air,conditioner,freeze,freezer",
-"soap","Other",
-"soccer-ball","Activities",
-"sofa","Home",
-"soil","Nature","terrain, ground, nature, vegetation",
-"soil-alt","Nature","terrain, ground, nature, vegetation",
-"sort","Editor",
-"sort-down","Editor",
-"sort-up","Editor",
-"sound-high","Audio",
-"sound-low","Audio",
-"sound-min","Audio",
-"sound-off","Audio",
-"spades","Gaming","poker,game,cards,gambling,vegas",
-"spark","Other","ai, artificial, intelligence",
-"sparks","Other","ai, artificial, intelligence",
-"sphere","3D Editor","modeling,blender,4d,geometry",
-"spiral","3D Editor","modeling,blender,4d,geometry",
-"split-area","Other",
-"split-square-dashed","Other",
-"spock-hand-gesture","Gestures",
-"spotify","Music",
-"square","Shapes",
-"square-3d-corner-to-corner","3D Editor","modeling,blender,4d",
-"square-3d-from-center","3D Editor","modeling,blender,4d",
-"square-3d-three-points","3D Editor","modeling,blender,4d",
-"square-cursor","System",
-"square-dashed","Other","selection",
-"square-wave","Science",
-"stackoverflow","Social",
-"star","Organization",
-"star-dashed","Organization",
-"star-half-dashed","Organization",
-"stat-down","Activities",
-"stat-up","Activities",
-"stats-down-square","Business",
-"stats-report","Business",
-"stats-up-square","Business",
-"strategy","Business",
-"stretching","Activities",
-"strikethrough","Editor",
-"stroller","Health",
-"style-border","Design Tools",
-"submit-document","Docs",
-"substract","Design Tools",
-"suggestion","Maps",
-"suitcase","Clothing",
-"sun-light","Weather",
-"svg-format","Photos and Videos",
-"sweep-3d","3D Editor",
-"swimming","Activities",
-"swipe-down-gesture","Gestures",
-"swipe-left-gesture","Gestures",
-"swipe-right-gesture","Gestures",
-"swipe-two-fingers-down-gesture","Gestures",
-"swipe-two-fingers-left-gesture","Gestures",
-"swipe-two-fingers-right-gesture","Gestures",
-"swipe-two-fingers-up-gesture","Gestures",
-"swipe-up-gesture","Gestures",
-"switch-off","System","toggle",
-"switch-on","System","toggle",
-"system-restart","System","restart,start,login,logout,sign",
-"system-shut","System","restart,start,login,logout,sign",
-"table","Layout",
-"table-2-columns","Layout",
-"table-rows","Layout",
-"task-list","Editor",
-"telegram","Social","message,messaging,chat,private,secure,security,encrypt",
-"telegram-circle","Social","message,messaging,chat,private,secure,security,encrypt",
-"temperature-down","Weather",
-"temperature-high","Weather",
-"temperature-low","Weather",
-"temperature-up","Weather",
-"tennis-ball","Activities",
-"tennis-ball-alt","Activities",
-"terminal","System",
-"terminal-tag","System",
-"test-tube","Science",
-"text","Editor",
-"text-arrows-up-down","Editor","font, size, scale, resize",
-"text-box","Editor",
-"text-magnifying-glass","Editor","search",
-"text-size","Editor",
-"text-square","Editor",
-"threads","Social",
-"three-points-circle","3D Editor",
-"three-stars","Organization",
-"thumbs-down","Social","disapprove,dislike,facebook,fb,meta,no",
-"thumbs-up","Social","approve,like,facebook,fb,meta,yes",
-"thunderstorm","Weather",
-"tif-format","Photos and Videos",
-"tiff-format","Photos and Videos",
-"tiktok","Social","social,video,shorts,story,share",
-"time-zone","Communication",
-"timer","Other",
-"timer-off","Other",
-"tools","Tools",
-"tournament","Gaming",
-"tower","Security",
-"tower-check","Security",
-"tower-no-access","Security",
-"tower-warning","Security",
-"trademark","Other",
-"train","Transport","transport,train,station,track,public",
-"tram","Transport","transport,train,station,track,public",
-"transition-down","Animations",
-"transition-left","Animations",
-"transition-right","Animations",
-"transition-up","Animations",
-"translate","Other",
-"trash","Actions",
-"treadmill","Activities",
-"tree","Nature",
-"trekking","Activities",
-"trello","Development",
-"triangle","Shapes",
-"triangle-flag","Other",
-"triangle-flag-circle","Other",
-"triangle-flag-two-stripes","Other",
-"trophy","Activities",
-"truck","Transport","ship,semitruck,shipment,amazon",
-"truck-green","Transport","clean, environment, nature, energy",
-"truck-length","Transport","size,transport,semitruck,rule,condition",
-"tunnel","Buildings",
-"tv","Devices",
-"tv-fix","Devices",
-"tv-warning","Devices",
-"twitter","Social","bird,social,share",
-"two-points-circle","3D Editor",
-"two-seater-sofa","Home",
-"type","System",
-"umbrella","Clothing",
-"underline","Editor",
-"underline-square","Editor",
-"undo","Actions",
-"undo-action","Actions",
-"undo-circle","Actions",
-"union","Design Tools",
-"union-alt","Design Tools",
-"union-horiz-alt","Design Tools",
-"unity","Development",
-"unity-5","Development",
-"unjoin-3d","3D Editor",
-"upload","Actions","upload,arrow,data,cloud,save",
-"upload-data-window","System","os,browser",
-"upload-square","Actions",
-"usb","Connectivity","port, access, connection, cable",
-"user","Users","person,people,ux",
-"user-badge-check","Users","profile,person",
-"user-bag","Shopping",
-"user-cart","Shopping",
-"user-circle","Users",
-"user-crown","Users",
-"user-love","Users",
-"user-plus","Users",
-"user-scan","Identity",
-"user-square","Users","person,people,ux",
-"user-star","Users",
-"user-xmark","Users","delete,cancel,profile,person,remove",
-"vegan","Nature",
-"vegan-circle","Nature",
-"vegan-square","Nature",
-"vehicle-green","Transport","clean, environment, nature, energy",
-"vertical-merge","Navigation",
-"vertical-split","Navigation",
-"vials","Science",
-"video-camera","Photos and Videos",
-"video-camera-off","Photos and Videos",
-"video-projector","Devices",
-"view-360","Maps",
-"view-columns-2","Layout","layout,tiled,windows,tiling,window",
-"view-columns-3","Layout","layout,tiled,windows,tiling,window",
-"view-grid","Layout",
-"view-structure-down","Layout",
-"view-structure-up","Layout",
-"voice","Identity",
-"voice-check","Identity",
-"voice-circle","Identity",
-"voice-lock-circle","Identity",
-"voice-scan","Identity",
-"voice-square","Identity",
-"voice-xmark","Identity","error,issue",
-"vr-tag","Devices",
-"vue-js","Development",
-"waist","Activities",
-"walking","Activities",
-"wallet","Finance",
-"warning-circle","Actions",
-"warning-hexagon","Devices",
-"warning-square","Actions",
-"warning-triangle","Actions",
-"warning-window","System","alert,danger",
-"wash","Home",
-"washing-machine","Home",
-"watering-soil","Nature","gardening, garden, terrain, ground, plants",
-"web-window","System",
-"web-window-energy-consumption","System",
-"web-window-xmark","System","close,error,issue",
-"webp-format","Photos and Videos",
-"weight","Health",
-"weight-alt","Health",
-"white-flag","Other",
-"wifi","Connectivity","signal, connection, network",
-"wifi-off","Connectivity","signal, connection, network",
-"wifi-signal-none","Connectivity","signal, connection, network",
-"wifi-tag","Connectivity","signal, connection, network",
-"wifi-warning","Connectivity","signal, connection, network",
-"wifi-xmark","Connectivity","signal,connection,network,error",
-"wind","Weather","weather,air,fresh",
-"window-check","System","browser,os",
-"window-lock","System","browser,os",
-"window-tabs","System","browser,os,tab,navigation",
-"window-no-access","System","browser,os",
-"window-xmark","System","browser,os,error,issue",
-"windows","System",
-"wolf","Animals",
-"wrap-text","Actions",
-"wrench","Tools",
-"wristwatch","Devices",
-"www","Communication",
-"x-square","Typography","coordinate,axis",
-"xbox-a","Gaming",
-"xbox-b","Gaming",
-"xbox-x","Gaming",
-"xbox-y","Gaming",
-"xmark","Actions","cancel,delete,remove",
-"xmark-circle","Actions","delete",
-"xmark-square","Actions","remove",
-"xray-view","3D Editor",
-"y-square","Typography","coordinate,axis",
-"yelp","Social",
-"yen","Finance",
-"yen-square","Finance",
-"yoga","Activities",
-"youtube","Social","google,video,social,share",
-"z-square","Typography","coordinate,axis",
-"zoom-in","Organization",
-"zoom-out","Organization",
-"asterisk","Typography","",
-"dns","Connectivity","",
-"hashtag","Social","",
-"peerlist","Social","",
-"polar-sh","Development","",
-"x","Social","twitter",
-"ice-cream","Food","gelato",
-"mastodon","Social","",
-"meter-arrow-down-right","Maps","",
-"rhombus-arrow-right","Maps","",
-"u-turn-arrow-left","Maps","",
-"u-turn-arrow-right","Maps","",
-"calendar-arrow-down","System","",
-"calendar-arrow-up","System","",
-"calendar-check","System","",
-"calendar-rotate","System","",
-"calendar-xmark","System","",
-"cube-dots","3D Editor","",
-"cube-scan","3D Editor","",
-"droplet-snow-flake-in","Science","defrost",
-"dots-grid-3x3","Navigation","",
-"bug","Development","malware",
-"whatsapp","Social","chat,text,texting,chatting,bubble"
+"filename","category","tags"
+"accessibility","System","assistance,assistant,impaired,a11y,wheelchair,inclusive,wcag"
+"accessibility-sign","System","assistance,assistant,impaired,a11y,wheelchair,inclusive,wcag,signature,board,street,wayfinding"
+"accessibility-tech","System","assistance,assistant,impaired,a11y,wheelchair,inclusive,wcag"
+"activity","Other","pulse,fitness,exercise,chart,graph,workout,sport,steps"
+"adobe-after-effects","Design Tools","creative,suite,design,layout,figma"
+"adobe-illustrator","Design Tools","creative,suite,design,layout,figma"
+"adobe-indesign","Design Tools","creative,suite,design,layout,figma"
+"adobe-lightroom","Design Tools","creative,suite,design,layout,figma"
+"adobe-photoshop","Design Tools","creative,suite,design,layout,figma"
+"adobe-xd","Design Tools","creative,suite,design,layout,figma"
+"african-tree","Nature","nature,plant,forest,green"
+"agile","Business","scrum,sprint,methodology,team"
+"air-conditioner","Home","ac,hvac,cooling,climate"
+"airplane","Transport","fly,jet,plane,flight,travel,airline"
+"airplane-helix","Transport","fly,jet,plane,flight,travel,airline"
+"airplane-helix-45deg","Transport","fly,jet,plane,flight,travel,airline"
+"airplane-off","Transport","fly,jet,plane,flight,travel,airline,disabled,inactive,muted,disconnected"
+"airplane-rotation","Transport","fly,jet,plane,flight,travel,airline"
+"airplay","Connectivity","cast,stream,apple,tv,screen mirror"
+"alarm","Other","clock,wake,timer,morning,schedule"
+"album","Music","photos,music,record,collection,gallery"
+"album-carousel","Music","photos,music,record,collection,gallery"
+"album-list","Music","photos,music,record,collection,gallery,bullet,menu,rows,items"
+"album-open","Music","photos,music,record,collection,gallery,door,access,launch,expand"
+"align-bottom-box","Design Tools","alignment,layout,text,edge"
+"align-center","Editor","alignment,layout,text,edge"
+"align-horizontal-centers","Design Tools","figma,design,center,layout,alignment,text,edge"
+"align-horizontal-spacing","Design Tools","figma,design,alignment,layout,text,edge"
+"align-justify","Editor","alignment,layout,text,edge"
+"align-left","Editor","alignment,layout,text,edge"
+"align-left-box","Design Tools","alignment,layout,text,edge"
+"align-right","Editor","alignment,layout,text,edge"
+"align-right-box","Design Tools","alignment,layout,text,edge"
+"align-top-box","Design Tools","alignment,layout,text,edge"
+"align-vertical-centers","Design Tools","figma,design,middle,layout,alignment,text,edge,portrait,column,upright"
+"align-vertical-spacing","Design Tools","figma,design,alignment,layout,text,edge,portrait,column,upright"
+"angle-tool","Tools","wrench,settings,build,repair"
+"antenna","Connectivity","radio,signal,tower,broadcast,reception"
+"antenna-off","Connectivity","radio,signal,tower,broadcast,reception,disabled,inactive,muted,disconnected"
+"antenna-signal","Connectivity","radio,signal,tower,broadcast,reception"
+"antenna-signal-tag","Connectivity","radio,signal,tower,broadcast,reception,label,badge,chip,price"
+"app-notification","Communication","push,inbox,badge,alert,application,software,program"
+"app-store","Social","apple,iphone,ios,application,software,program,shop,market,appstore,retail"
+"app-window","System","desktop,gui,application,software,program"
+"apple","Food","fruit,food,ios,mac"
+"apple-half","Food","fruit,food,ios,mac"
+"apple-imac-2021","Devices","fruit,food,ios,mac"
+"apple-imac-2021-side","Devices","fruit,food,ios,mac"
+"apple-mac","System","fruit,food,ios,mac,apple,keyboard,shortcut,osx"
+"apple-shortcuts","System","fruit,food,ios,mac"
+"apple-swift","Development","fruit,food,ios,mac"
+"apple-wallet","Finance","fruit,food,ios,mac,money,cards,purse,finance"
+"ar-tag","Devices","label,badge,chip,price"
+"arc-3d","3D Editor","modeling,blender,4d,3d,mesh,render"
+"arc-3d-center-point","3D Editor","modeling,blender,4d,3d,mesh,render,anchor,handle,node,bezier"
+"arcade","Gaming","game,joystick,retro,coinop"
+"archery","Activities","sport,activity,arrows,bow,arrow,target"
+"archery-match","Gaming","sport,activity,arrows,bow,arrow,target"
+"archive","Docs","storage,zip,backup,box"
+"area-search","Organization","region,selection,lasso,find,magnify,lookup,query"
+"arrow-archery","Activities","sport,activity,arrows,direction,navigate,pointer,chevron,move,bow,arrow,target"
+"arrow-down","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-down-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-down-left","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-down-left-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-down-left-square","Navigation","direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"arrow-down-right","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-down-right-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-down-right-square","Navigation","direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"arrow-down-tag","Navigation","direction,navigate,pointer,chevron,move,label,badge,chip,price"
+"arrow-email-forward","Communication","direction,navigate,pointer,chevron,move"
+"arrow-enlarge-tag","Navigation","direction,navigate,pointer,chevron,move,label,badge,chip,price"
+"arrow-left","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-left-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-left-tag","Navigation","direction,navigate,pointer,chevron,move,label,badge,chip,price"
+"arrow-reduce-tag","Navigation","direction,navigate,pointer,chevron,move,label,badge,chip,price"
+"arrow-right","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-right-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-right-tag","Navigation","direction,navigate,pointer,chevron,move,label,badge,chip,price"
+"arrow-separate","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-separate-vertical","Navigation","direction,navigate,pointer,chevron,move,portrait,column,upright"
+"arrow-union","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-union-vertical","Navigation","direction,navigate,pointer,chevron,move,portrait,column,upright"
+"arrow-up","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-up-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-up-left","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-up-left-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-up-left-square","Navigation","direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"arrow-up-right","Navigation","direction,navigate,pointer,chevron,move"
+"arrow-up-right-circle","Navigation","direction,navigate,pointer,chevron,move,round,radio,dot,shape"
+"arrow-up-right-square","Navigation","direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"arrow-up-tag","Navigation","direction,navigate,pointer,chevron,move,label,badge,chip,price"
+"arrows-up-from-line","Shopping","cart,buy,store,ecommerce"
+"asana","Development","code,dev,programming,software"
+"at-sign","Communication","signature,board,street,wayfinding"
+"at-sign-circle","Communication","signature,board,street,wayfinding,round,radio,dot,shape"
+"atom","Science","science,chemistry,physics,nuclear"
+"attachment","Docs","document,file,paper,text"
+"augmented-reality","Gaming","ar,tech,game,play,controller,fun"
+"auto-flash","Photos and Videos","lightning,photo,speed,bolt"
+"avi-format","Photos and Videos","media,image,camera,record"
+"axes","Design Tools","design,creative,layout,figma"
+"backward-15-seconds","Music","audio,song,instrument,sound"
+"badge-check","Social","social,twitter,instagram,share,done,success,tick,approve,ok,complete"
+"bag","Clothing","luggage,suitcase,travel,pack"
+"balcony","Buildings","architecture,city,place,urban"
+"bank","Finance","money,finance,building,cash"
+"barcode","Shopping","scan,sku,product,inventory"
+"basketball","Activities","sport,hobby,leisure,outdoor"
+"basketball-field","Activities","sport,hobby,leisure,outdoor"
+"bathroom","Buildings","architecture,city,place,urban"
+"battery-25","System","energy,source,charge,power,level,electric"
+"battery-50","System","energy,source,charge,power,level,electric"
+"battery-75","System","energy,source,charge,power,level,electric"
+"battery-charging","System","energy,source,charge,power,level,electric"
+"battery-empty","System","energy,source,charge,power,level,electric"
+"battery-full","System","energy,source,charge,power,level,electric"
+"battery-indicator","Other","energy,source,charge,power,level,electric"
+"battery-slash","System","power,charge,energy,level,electric"
+"battery-warning","System","energy,source,charge,power,level,electric,alert,caution,danger,attention"
+"bbq","Food","meal,restaurant,cooking,kitchen"
+"beach-bag","Clothing","sea,ocean,vacation,sand,luggage,suitcase,travel,pack"
+"bed","Home","sleep,home,sleeping,house,domestic,appliance,interior"
+"bed-ready","Home","sleep,home,sleeping,house,domestic,appliance,interior"
+"behance","Social","network,share,community,people"
+"behance-tag","Social","label,badge,chip,price"
+"bell","Communication","notification,alert,ring,sound,reminder"
+"bell-notification","Communication","notification,alert,ring,sound,reminder"
+"bell-off","Communication","notification,alert,ring,sound,reminder,disabled,inactive,muted,disconnected"
+"bicycle","Transport","cycle,bike,transport,sport,life,activity,cycling,pedal"
+"bin","System","trash,computer,os,settings,desktop"
+"bin-full","System","trash,computer,os,settings,desktop"
+"bin-half","System","trash,computer,os,settings,desktop"
+"bin-minus-in","System","trash,remove,delete,clean,subtract,collapse"
+"bin-plus-in","System","trash,add,new,create,increase"
+"binocular","Organization","sort,manage,structure,productivity"
+"birthday-cake","Activities","birthday,dessert,sweet,party"
+"bishop","Gaming","game,chess,play,controller,fun"
+"bitbucket","Git","git,repository,github"
+"bitcoin-circle","Finance","crypto,currency,blockchain,btc,round,radio,dot,shape"
+"bitcoin-rotate-out","Finance","crypto,currency,blockchain,btc,spin,turn,orientation,pivot"
+"bluetooth","Connectivity","wireless,pairing,peripheral,network,internet,signal,online"
+"bluetooth-tag","Connectivity","wireless,pairing,peripheral,label,badge,chip,price"
+"bold","Editor","text,writing,format,content"
+"bold-square","Editor","shape,box,checkbox,region"
+"bonfire","Activities","sport,hobby,leisure,outdoor"
+"book","Activities","read,education,library,learn"
+"book-lock","Activities","read,education,library,learn,secure,password,private,encrypt"
+"book-stack","Activities","read,education,library,learn"
+"bookmark","Organization","save,favorite,marker,tab"
+"bookmark-book","Activities","save,favorite,marker,tab,read,education,library,learn"
+"bookmark-circle","Organization","save,favorite,marker,tab,round,radio,dot,shape"
+"border-bl","Design Tools","outline,stroke,frame,edge"
+"border-bottom","Design Tools","outline,stroke,frame,edge"
+"border-br","Design Tools","outline,stroke,frame,edge"
+"border-inner","Design Tools","outline,stroke,frame,edge"
+"border-left","Design Tools","outline,stroke,frame,edge"
+"border-out","Design Tools","outline,stroke,frame,edge"
+"border-right","Design Tools","outline,stroke,frame,edge"
+"border-tl","Design Tools","outline,stroke,frame,edge"
+"border-top","Design Tools","outline,stroke,frame,edge"
+"border-tr","Design Tools","outline,stroke,frame,edge"
+"bounce-left","Animations","spring,easing,oscillate,elastic,animation"
+"bounce-right","Animations","spring,easing,oscillate,elastic,animation"
+"bowling-ball","Activities","sport,hobby,leisure,outdoor"
+"box","Home","house,domestic,appliance,interior"
+"box-3d-center","3D Editor","modeling,blender,4d,3d,mesh,render"
+"box-3d-point","3D Editor","modeling,blender,4d,3d,mesh,render,anchor,handle,node,bezier"
+"box-3d-three-points","3D Editor","modeling,blender,4d,3,triple,triangle,menu"
+"box-iso","Home","house,domestic,appliance,interior"
+"boxing-glove","Activities","sport,hobby,leisure,outdoor"
+"brain","Science","mind,ai,think,mental"
+"brain-electricity","Science","mind,ai,think,mental"
+"brain-research","Science","mind,ai,think,mental"
+"brain-warning","Science","mind,ai,think,mental,alert,caution,danger,attention"
+"bread-slice","Food","meal,restaurant,cooking,kitchen"
+"bridge-3d","3D Editor","modeling,blender,4d,3d,mesh,render"
+"bridge-surface","3D Editor","3d,modeling,mesh,render"
+"bright-crown","Gaming","king,winner,vip,premium"
+"bright-star","Gaming","favorite,rating,review,bookmark"
+"brightness","System","setting,light,contrast,computer,os,settings,desktop"
+"brightness-window","System","browser,os,setting,light,contrast,computer,settings,desktop"
+"bubble-download","Communication","save,import,fetch,get,file"
+"bubble-income","Communication","chat,message,contact,talk"
+"bubble-outcome","Communication","chat,message,contact,talk"
+"bubble-search","Communication","find,magnify,lookup,query"
+"bubble-star","Communication","favorite,rating,review,bookmark"
+"bubble-upload","Communication","cloud,send,export,share"
+"bubble-warning","Communication","alert,caution,danger,attention"
+"bubble-xmark","Communication","error,issue,close,cancel,delete,remove,dismiss,clear,wrong"
+"building","Buildings","city,office,architecture,place"
+"bus","Transport","transport,station,track,public,shuttle,transit,vehicle"
+"bus-green","Transport","clean,environment,nature,energy,transport,public,transit,vehicle"
+"bus-stop","Transport","transport,station,track,public,shuttle,transit,vehicle,halt,square,media,end"
+"c-square","Typography","carbon,element,shape,box,checkbox,region"
+"cable-tag","Connectivity","label,badge,chip,price"
+"calculator","System","math,operation,computer,os,settings,desktop"
+"calendar","System","organization,organisation,plan,planning,date,day,month,year,schedule,event,planner"
+"calendar-minus","System","date,schedule,event,planner,month,subtract,remove,delete,collapse"
+"calendar-plus","System","date,schedule,event,planner,month,add,new,create,increase"
+"camera","Photos and Videos","photo,picture,lens,shoot,selfie"
+"candlestick-chart","Finance","trading,stocks,chart,finance"
+"car","Transport","vehicle,auto,drive,driving,transport"
+"card-lock","Finance","secure,password,private,encrypt"
+"card-no-access","Finance","forbidden,stop,banned,block"
+"card-reader","Finance","money,payment,banking,budget"
+"card-shield","Finance","security,safe,protection,trust"
+"card-wallet","Finance","money,cards,purse,finance"
+"cart","Shopping","shopping,basket,ecommerce,checkout"
+"cart-alt","Shopping","shopping,basket,ecommerce,checkout"
+"cart-minus","Shopping","remove,shopping,basket,ecommerce,checkout,subtract,delete,collapse"
+"cart-plus","Shopping","shopping,basket,ecommerce,checkout,add,new,create,increase"
+"cash","Finance","money,bills,currency,payment"
+"cell-2x2","Layout","grid,structure,template,spacing"
+"cellar","Buildings","architecture,city,place,urban"
+"center-align","Design Tools","alignment,layout,text,edge"
+"chat-bubble","Communication","message,sms,conversation,texting,talk,support"
+"chat-bubble-check","Communication","message,sms,conversation,texting,talk,support,done,success,tick,approve,ok,complete"
+"chat-bubble-empty","Communication","message,sms,conversation,texting,talk,support"
+"chat-bubble-question","Communication","message,sms,conversation,texting,talk,support,help,faq,unknown"
+"chat-bubble-translate","Communication","message,sms,conversation,texting,talk,support,language,i18n,locale,global"
+"chat-bubble-warning","Communication","message,sms,conversation,texting,talk,support,alert,caution,danger,attention"
+"chat-bubble-xmark","Communication","error,issue,remove,delete,message,sms,conversation,texting,talk,support,close,cancel,dismiss,clear,wrong"
+"chat-lines","Communication","message,talk,conversation,support"
+"chat-minus-in","Communication","message,talk,conversation,support,subtract,remove,delete,collapse"
+"chat-plus-in","Communication","message,talk,conversation,support,add,new,create,increase"
+"check","Actions","done,success,tick,approve,ok,complete"
+"check-circle","Actions","done,success,tick,approve,ok,complete,round,radio,dot,shape"
+"check-square","Actions","done,success,tick,approve,ok,complete,shape,box,checkbox,region"
+"chocolate","Food","meal,restaurant,cooking,kitchen"
+"chromecast","Devices","hardware,gadget,electronics,tech"
+"chromecast-active","Devices","hardware,gadget,electronics,tech"
+"church","Buildings","religion,wedding,building,faith"
+"church-side","Buildings","religion,wedding,building,faith"
+"cigarette-slash","Activities","smoking,smoke,tobacco,cigarette,health,cancer,forbidden,prohibited,sport,hobby,leisure,outdoor"
+"cinema-old","Activities","movie,film,theater,video"
+"circle","Shapes","round,radio,dot,shape"
+"circle-spark","Other","ai,artificial,intelligence,round,radio,dot,shape,magic,new,highlight"
+"city","Buildings","architecture,city,place,urban"
+"clipboard-check","Actions","paste,copy,notes,task,done,success,tick,approve,ok,complete"
+"clock","Other","time,watch,hour,schedule"
+"clock-rotate-right","Shopping","time,watch,hour,schedule,spin,turn,orientation,pivot"
+"closed-captions-tag","Photos and Videos","label,badge,chip,price"
+"closet","Home","house,domestic,appliance,interior"
+"cloud","Weather","sync,storage,online,backup,weather"
+"cloud-bookmark","Cloud","sync,storage,online,backup,weather,save,favorite,marker,tab"
+"cloud-check","Cloud","sync,storage,online,backup,weather,done,success,tick,approve,ok,complete"
+"cloud-desync","Cloud","sync,storage,online,backup,weather"
+"cloud-download","Cloud","sync,storage,online,backup,weather,save,import,fetch,get,file"
+"cloud-square","Cloud","sync,storage,online,backup,weather,shape,box,checkbox,region"
+"cloud-sunny","Weather","weather,clouds,sync,storage,online,backup"
+"cloud-sync","Cloud","sync,storage,online,backup,weather"
+"cloud-upload","Cloud","sync,storage,online,backup,weather,cloud,send,export,share"
+"cloud-xmark","Cloud","error,issue,sync,storage,online,backup,weather,close,cancel,delete,remove,dismiss,clear,wrong"
+"code","Development","develop,programming,source,script"
+"code-brackets","Development","develop,programming,source,script"
+"code-brackets-square","Development","develop,programming,source,script,shape,box,checkbox,region"
+"codepen","Development","code,dev,programming,software"
+"coffee-cup","Food","cafe,drink,morning,caffeine"
+"coin-slash","Finance","money,currency,crypto,token"
+"coins","Finance","money,payment,banking,budget"
+"coins-swap","Finance","conversion,currency,exchange,money,payment,banking,budget"
+"collage-frame","Design Tools","border,art,picture,layout"
+"collapse","Photos and Videos","media,image,camera,record"
+"color-filter","Design Tools","palette,paint,tint,hue,sort,refine,funnel"
+"color-picker","Design Tools","palette,paint,tint,hue"
+"color-wheel","Design Tools","palette,paint,tint,hue,car,tire,rim,vehicle"
+"combine","Design Tools","design,creative,layout,figma"
+"commodity","Finance","gold,ingot,bar,money,payment,banking,budget"
+"community","Users","people,group,social,team"
+"comp-align-bottom","Design Tools","figma,design,alignment,layout,text,edge"
+"comp-align-left","Design Tools","figma,design,alignment,layout,text,edge"
+"comp-align-right","Design Tools","figma,design,alignment,layout,text,edge"
+"comp-align-top","Design Tools","figma,design,alignment,layout,text,edge"
+"compact-disc","Music","audio,song,instrument,sound"
+"compass","Navigation","navigation,direction,map,orient"
+"component","Design Tools","figma,design,creative,layout"
+"compress","Other","squeeze,zip,shrink,minimize"
+"compress-lines","Editor","squeeze,zip,shrink,minimize"
+"computer","Devices","desktop,pc,monitor,workstation"
+"constrained-surface","3D Editor","3d,modeling,mesh,render"
+"consumable","Shopping","cart,buy,store,ecommerce"
+"contactless","Finance","pay,payment,money,banking,budget"
+"control-slider","System","controller,ui,element,dashboard,panel,setting,computer,os,settings,desktop,slider,handle,adjust,parameter"
+"cookie","System","biscuit,food,privacy,data,tracking,site"
+"cooling-square","Science","shape,box,checkbox,region"
+"copy","Design Tools","duplicate,clipboard,clone,design,creative,layout,figma"
+"copyright","Other","legal,license,ip,rights"
+"corner-bottom-left","Layout","radius,edge,curve,layout"
+"corner-bottom-right","Layout","radius,edge,curve,layout"
+"corner-top-left","Layout","radius,edge,curve,layout"
+"corner-top-right","Layout","radius,edge,curve,layout"
+"cpu","System","processor,computer,pc,tech,os,settings,desktop"
+"cpu-warning","System","processor,alert,caution,danger,computer,pc,tech,error,issue,attention"
+"cracked-egg","Food","meal,restaurant,cooking,kitchen"
+"creative-commons","Development","code,dev,programming,software"
+"credit-card","Finance","payment,visa,checkout,billing"
+"credit-card-slash","Finance","payment,visa,checkout,billing"
+"credit-cards","Finance","money,payment,banking,budget"
+"crib","Home","house,domestic,appliance,interior"
+"crop","Design Tools","trim,edit,image,frame"
+"crop-rotate-bl","Design Tools","cut,edit,image,trim,frame,spin,turn,orientation,pivot"
+"crop-rotate-br","Design Tools","cut,edit,image,trim,frame,spin,turn,orientation,pivot"
+"crop-rotate-tl","Design Tools","cut,edit,image,trim,frame,spin,turn,orientation,pivot"
+"crop-rotate-tr","Design Tools","cut,edit,image,trim,frame,spin,turn,orientation,pivot"
+"crown","Gaming","king,winner,vip,premium"
+"crown-circle","Gaming","king,winner,vip,premium,round,radio,dot,shape"
+"css3","Development","code,dev,programming,software"
+"cube","3D Editor","modeling,blender,4d,solid,model,object,3d,box,volume"
+"cube-bandage","3D Editor","patch,fix,band,aid,3d,box,volume,solid"
+"cube-cut-with-curve","3D Editor","solid,3d,object,blender,box,volume,scissors,clip,edit,slice,bezier,spline,path,smooth"
+"cube-hole","3D Editor","modeling,blender,4d,3d,box,volume,solid"
+"cube-replace-face","3D Editor","3d,box,volume,solid"
+"cursor-pointer","System","desktop,mouse,pointer,click,select"
+"curve-array","3D Editor","bezier,spline,path,smooth"
+"cut","Design Tools","scissors,clip,edit,slice"
+"cutlery","Food","meal,restaurant,cooking,kitchen"
+"cycling","Activities","bike,bicycle,sport,pedal"
+"cylinder","3D Editor","shape,geometry,3d,modeling,mesh,render"
+"dash-flag","Other","country,mark,pin,report"
+"dashboard","System","accelerate,acceleration,panel,speed,metrics,analytics,home"
+"dashboard-dots","System","accelerate,acceleration,panel,speed,metrics,analytics,home"
+"dashboard-speed","System","accelerate,acceleration,panel,metrics,analytics,home"
+"data-transfer-both","Connectivity","connection,computer,network,information,internet,signal,online"
+"data-transfer-check","Connectivity","connection,computer,network,information,done,success,tick,approve,ok,complete"
+"data-transfer-down","Connectivity","connection,computer,network,information,internet,signal,online"
+"data-transfer-up","Connectivity","connection,computer,network,information,internet,signal,online"
+"data-transfer-warning","Connectivity","connection,computer,network,information,alert,caution,danger,attention"
+"database","Database","db,storage,repo,sql,server,data"
+"database-backup","Database","db,storage,repo,sql,server,data"
+"database-check","Database","db,storage,repo,sql,server,data,done,success,tick,approve,ok,complete"
+"database-export","Database","db,storage,repo,sql,server,data"
+"database-monitor","Database","db,storage,repo,sql,server,data"
+"database-restore","Database","db,storage,repo,sql,server,data"
+"database-script","Database","db,storage,repo,sql,server,data"
+"database-script-minus","Database","remove,db,sql,storage,server,data,subtract,delete,collapse"
+"database-script-plus","Database","db,sql,storage,server,data,add,new,create,increase"
+"database-search","Database","db,storage,repo,sql,server,data,find,magnify,lookup,query"
+"database-settings","Database","db,storage,repo,sql,server,data,gear,preferences,options,config"
+"database-star","Database","db,storage,repo,sql,server,data,favorite,rating,review,bookmark"
+"database-stats","Database","db,storage,repo,sql,server,data,chart,analytics,metrics,graph"
+"database-tag","Database","db,storage,repo,sql,server,data,label,badge,chip,price"
+"database-warning","Database","db,storage,repo,sql,server,data,alert,caution,danger,attention"
+"database-xmark","Database","db,storage,repo,error,sql,server,data,close,cancel,delete,remove,dismiss,clear,wrong"
+"de-compress","Other","squeeze,zip,shrink,minimize"
+"delivery","Transport","ship,shipment,amazon,shipping,parcel,courier,package"
+"delivery-truck","Transport","ship,semitruck,shipment,amazon,shipping,parcel,courier,package,delivery,vehicle,cargo"
+"depth","Science","lab,research,experiment,study"
+"design-nib","Design Tools","draw,sketch,prototype,ui"
+"design-pencil","Design Tools","draw,sketch,prototype,ui"
+"desk","Home","house,domestic,appliance,interior"
+"developer","Development","code,dev,programming,software"
+"dew-point","Weather","forecast,climate,rain,sun,anchor,handle,node,bezier"
+"dialpad","Other","misc,general,utility,ui"
+"diameter","Science","lab,research,experiment,study"
+"dice-five","Gaming","random,game,chance,roll"
+"dice-four","Gaming","random,game,chance,roll"
+"dice-one","Gaming","random,game,chance,roll"
+"dice-six","Gaming","random,game,chance,roll"
+"dice-three","Gaming","random,game,chance,roll,3,triple,triangle,menu"
+"dice-two","Gaming","random,game,chance,roll,2,double,pair,both"
+"dimmer-switch","Home","light,intensity,setting,house,device,remote,controller,domestic,appliance,interior"
+"director-chair","Home","movie,cinema,hollywood,film,filming,house,domestic,appliance,interior"
+"discord","Social","chat,gaming,voice,community"
+"dishwasher","Home","house,domestic,appliance,interior"
+"display-4k","Devices","hardware,gadget,electronics,tech"
+"divide","Navigation","menu,move,ui,wayfinding"
+"divide-three","Navigation","3,triple,triangle,menu"
+"dna","Science","genetics,biology,science,helix"
+"doc-magnifying-glass","Docs","search,lens,magnify,look"
+"doc-magnifying-glass-in","Docs","search,lens,magnify,look"
+"doc-star","Docs","favorite,rating,review,bookmark"
+"doc-star-in","Docs","favorite,rating,review,bookmark"
+"dogecoin-circle","Finance","round,radio,dot,shape"
+"dogecoin-rotate-out","Finance","spin,turn,orientation,pivot"
+"dollar","Finance","money,usd,currency,cash"
+"dollar-circle","Finance","money,usd,currency,cash,round,radio,dot,shape"
+"domotic-warning","Home","alert,caution,danger,attention"
+"donate","Health","charity,gift,support,heart"
+"dot-arrow-down","Animations","direction,navigate,pointer,chevron,move"
+"dot-arrow-left","Animations","direction,navigate,pointer,chevron,move"
+"dot-arrow-right","Animations","direction,navigate,pointer,chevron,move"
+"dot-arrow-up","Animations","direction,navigate,pointer,chevron,move"
+"double-check","Actions","done,success,tick,approve,ok,complete"
+"download","Actions","save,import,fetch,get,file"
+"download-circle","Actions","save,import,fetch,get,file,round,radio,dot,shape"
+"download-data-window","System","browser,os,save,import,fetch,get,file"
+"download-square","Actions","save,import,fetch,get,file,shape,box,checkbox,region"
+"drag","Navigation","move,grab,gesture,pan"
+"drag-hand-gesture","Gestures","move,grab,gesture,pan,touch,swipe,hand,mobile"
+"drawer","Home","house,domestic,appliance,interior"
+"dribbble","Social","social,design,designers,network,share,community,people"
+"drone","Transport","air,device,fly,quadcopter,uav,remote"
+"drone-charge-full","Transport","air,device,fly,quadcopter,uav,remote"
+"drone-charge-half","Transport","air,device,fly,quadcopter,uav,remote"
+"drone-charge-low","Transport","air,device,fly,quadcopter,uav,remote"
+"drone-check","Transport","air,device,fly,quadcopter,uav,remote,done,success,tick,approve,ok,complete"
+"drone-landing","Transport","air,device,fly,quadcopter,uav,remote"
+"drone-refresh","Transport","air,device,fly,quadcopter,uav,remote,reload,update,sync,rotate"
+"drone-take-off","Transport","air,device,fly,quadcopter,uav,remote,disabled,inactive,muted,disconnected"
+"drone-xmark","Transport","air,device,fly,error,issue,quadcopter,uav,remote,close,cancel,delete,remove,dismiss,clear,wrong"
+"droplet","Design Tools","design,creative,layout,figma"
+"droplet-check","Nature","check,safe,water,clean,pure,done,success,tick,approve,ok,complete"
+"droplet-half","Design Tools","design,creative,layout,figma"
+"ease-curve-control-points","Animations","bezier,spline,path,smooth,easing,curve,interpolation,css,tween,slider,handle,adjust,parameter"
+"ease-in","Animations","easing,curve,bezier,interpolation,css,tween"
+"ease-in-control-point","Animations","easing,curve,bezier,interpolation,css,tween,slider,handle,adjust,parameter,anchor,node"
+"ease-in-out","Animations","easing,curve,bezier,interpolation,css,tween"
+"ease-out","Animations","easing,curve,bezier,interpolation,css,tween"
+"ease-out-control-point","Animations","easing,curve,bezier,interpolation,css,tween,slider,handle,adjust,parameter,anchor,node"
+"ecology-book","Nature","clean,environment,nature,read,education,library,learn"
+"edit","Editor","text,writing,format,content"
+"edit-pencil","Editor","text,writing,format,content"
+"egg","Food","meal,restaurant,cooking,kitchen"
+"eject","System","disk,compact,player,vhs,cassette,tape,remove,computer,os,settings,desktop"
+"electronics-chip","Development","code,dev,programming,software"
+"electronics-transistor","Development","code,dev,programming,software"
+"elevator","Buildings","architecture,city,place,urban"
+"ellipse-3d","3D Editor","modeling,blender,4d,3d,mesh,render"
+"ellipse-3d-three-points","3D Editor","modeling,blender,4d,3,triple,triangle,menu"
+"emoji","Emojis","emotion,face,reaction,sticker"
+"emoji-ball","Emojis","emotion,face,reaction,sticker"
+"emoji-blink-left","Emojis","emotion,face,reaction,sticker"
+"emoji-blink-right","Emojis","emotion,face,reaction,sticker"
+"emoji-look-down","Emojis","emotion,face,reaction,sticker"
+"emoji-look-left","Emojis","emotion,face,reaction,sticker"
+"emoji-look-right","Emojis","emotion,face,reaction,sticker"
+"emoji-look-up","Emojis","emotion,face,reaction,sticker"
+"emoji-puzzled","Emojis","emotion,face,reaction,sticker"
+"emoji-quite","Emojis","emotion,face,reaction,sticker"
+"emoji-really","Emojis","emotion,face,reaction,sticker"
+"emoji-sad","Emojis","emotion,face,reaction,sticker"
+"emoji-satisfied","Emojis","emotion,face,reaction,sticker"
+"emoji-sing-left","Emojis","emotion,face,reaction,sticker"
+"emoji-sing-left-note","Emojis","emotion,face,reaction,sticker"
+"emoji-sing-right","Emojis","emotion,face,reaction,sticker"
+"emoji-sing-right-note","Emojis","emotion,face,reaction,sticker"
+"emoji-surprise","Emojis","emotion,face,reaction,sticker"
+"emoji-surprise-alt","Emojis","emotion,face,reaction,sticker"
+"emoji-talking-angry","Emojis","emotion,face,reaction,sticker"
+"emoji-talking-happy","Emojis","emotion,face,reaction,sticker"
+"emoji-think-left","Emojis","emotion,face,reaction,sticker"
+"emoji-think-right","Emojis","emotion,face,reaction,sticker"
+"empty-page","Docs","document,paper,file,site"
+"energy-usage-window","System","browser,os,consuption,economy,computer,settings,desktop"
+"enlarge","Photos and Videos","media,image,camera,record"
+"erase","Actions","ui,button,control,interface"
+"ethereum-circle","Finance","round,radio,dot,shape"
+"ethereum-rotate-out","Finance","spin,turn,orientation,pivot"
+"euro","Finance","money,payment,banking,budget"
+"euro-square","Finance","shape,box,checkbox,region"
+"ev-charge","Transport","port,charge,recharge,electricity,vehicle,car,electric,charging"
+"ev-charge-alt","Transport","port,charge,recharge,electricity,vehicle,car,electric,charging"
+"ev-plug","Transport","port,charge,recharge,electricity,vehicle,car,electric,charging,socket,power,cable,connect"
+"ev-plug-charging","Transport","port,charge,recharge,electricity,vehicle,car,electric,charging,socket,power,cable,connect"
+"ev-plug-xmark","Transport","port,charge,recharge,electricity,vehicle,car,error,issue,electric,charging,socket,power,cable,connect,close,cancel,delete,remove,dismiss,clear,wrong"
+"ev-station","Transport","port,charge,recharge,electricity,vehicle,car,electric,charging"
+"ev-tag","Transport","port,charge,recharge,electricity,vehicle,car,electric,charging,label,badge,chip,price"
+"exclude","Design Tools","design,creative,layout,figma"
+"expand","Photos and Videos","media,image,camera,record"
+"expand-lines","Editor","text,writing,format,content"
+"extrude","3D Editor","3d,modeling,mesh,render"
+"eye","Actions","view,watch,visibility,privacy"
+"eye-closed","Actions","view,watch,visibility,privacy"
+"f-square","Typography","fluorine,element,shape,box,checkbox,region"
+"face-3d-draft","3D Editor","3d,modeling,mesh,render"
+"face-id","Identity","auth,login,security,person"
+"facebook","Social","network,share,community,people"
+"facebook-tag","Social","label,badge,chip,price"
+"facetime","Communication","chat,message,contact,talk"
+"farm","Buildings","architecture,city,place,urban"
+"fast-arrow-down","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move"
+"fast-arrow-down-square","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"fast-arrow-left","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move"
+"fast-arrow-left-square","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"fast-arrow-right","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move"
+"fast-arrow-right-square","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"fast-arrow-up","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move"
+"fast-arrow-up-square","Navigation","speed,quick,running,performance,direction,navigate,pointer,chevron,move,shape,box,checkbox,region"
+"fast-down-circle","Navigation","speed,quick,running,performance,round,radio,dot,shape"
+"fast-left-circle","Navigation","speed,quick,running,performance,round,radio,dot,shape"
+"fast-right-circle","Navigation","speed,quick,running,performance,round,radio,dot,shape"
+"fast-up-circle","Navigation","speed,quick,running,performance,round,radio,dot,shape"
+"favourite-book","Activities","read,education,library,learn"
+"favourite-window","System","browser,os,computer,settings,desktop"
+"female","Health","medical,wellness,care,fitness"
+"figma","Design Tools","design,creative,layout,figma"
+"file-not-found","Other","misc,general,utility,ui"
+"fill-color","Design Tools","palette,paint,tint,hue"
+"fillet-3d","3D Editor","3d,modeling,mesh,render"
+"filter","Organization","sort,refine,funnel,manage,structure,productivity"
+"filter-alt","Organization","sort,refine,funnel,manage,structure,productivity"
+"filter-list","Navigation","sort,refine,funnel,bullet,menu,rows,items"
+"filter-list-circle","Navigation","sort,refine,funnel,bullet,menu,rows,items,round,radio,dot,shape"
+"finder","System","mac,apple,folder,file,os,operative,system,computer,settings,desktop"
+"fingerprint","Identity","biometric,identity,touchid,auth"
+"fingerprint-check-circle","Identity","biometric,identity,touchid,auth,done,success,tick,approve,ok,complete,round,radio,dot,shape"
+"fingerprint-circle","Identity","biometric,identity,touchid,auth,round,radio,dot,shape"
+"fingerprint-lock-circle","Identity","biometric,identity,touchid,auth,secure,password,private,encrypt,round,radio,dot,shape"
+"fingerprint-scan","Identity","biometric,identity,touchid,auth,qr,barcode,camera,detect"
+"fingerprint-square","Identity","biometric,identity,touchid,auth,shape,box,checkbox,region"
+"fingerprint-window","System","browser,os,biometric,identity,touchid,auth"
+"fingerprint-xmark-circle","Identity","error,issue,close,cancel,invalid,biometric,identity,touchid,auth,delete,remove,dismiss,clear,wrong,round,radio,dot,shape"
+"fire-flame","Activities","flame,hot,burn,trending,fire,streak"
+"fish","Animals","seafood,animal,ocean,swim"
+"fishing","Activities","sport,hobby,leisure,outdoor"
+"flare","Shapes","geometry,figure,vector,draw"
+"flash","Photos and Videos","trigger,ray,bolt,lightning,photo,speed"
+"flash-off","Photos and Videos","lightning,photo,speed,bolt,disabled,inactive,muted,disconnected"
+"flask","Science","science,lab,chemistry,experiment"
+"flip","Design Tools","design,creative,layout,figma"
+"flip-reverse","Design Tools","design,creative,layout,figma"
+"floppy-disk","Devices","save,hardware,gadget,electronics,tech"
+"floppy-disk-arrow-in","Actions","save,direction,navigate,pointer,chevron,move"
+"floppy-disk-arrow-out","Actions","load,direction,navigate,pointer,chevron,move"
+"flower","Activities","plant,bloom,garden,nature"
+"fog","Weather","forecast,climate,rain,sun"
+"folder","Docs","directory,files,organize,project"
+"folder-minus","Docs","remove,directory,files,organize,project,subtract,delete,collapse"
+"folder-plus","Docs","directory,files,organize,project,add,new,create,increase"
+"folder-settings","Docs","directory,files,organize,project,gear,preferences,options,config"
+"folder-warning","Docs","directory,files,organize,project,alert,caution,danger,attention"
+"font-question","Editor","missing,not,found,text,help,faq,unknown,support"
+"football","Activities","soccer,sport,ball,game"
+"football-ball","Activities","soccer,sport,ball,game"
+"forward","Music","audio,song,instrument,sound"
+"forward-15-seconds","Music","audio,song,instrument,sound"
+"forward-message","Communication","chat,mail,dm,conversation"
+"frame","Design Tools","border,art,picture,layout"
+"frame-alt","Design Tools","border,art,picture,layout"
+"frame-alt-empty","Design Tools","border,art,picture,layout"
+"frame-minus-in","Design Tools","remove,border,art,picture,layout,subtract,delete,collapse"
+"frame-plus-in","Design Tools","border,art,picture,layout,add,new,create,increase"
+"frame-select","Design Tools","border,art,picture,layout"
+"frame-simple","Design Tools","border,art,picture,layout"
+"frame-tool","Design Tools","border,art,picture,layout,wrench,settings,build,repair"
+"fridge","Home","kitchen,appliance,cold,food"
+"fx","Photos and Videos","media,image,camera,record"
+"fx-tag","Photos and Videos","label,badge,chip,price"
+"gamepad","Gaming","game,play,controller,fun"
+"garage","Buildings","architecture,city,place,urban"
+"gas","Other","misc,general,utility,ui"
+"gas-tank","Transport","fuel,travel,vehicle,commute,trip"
+"gas-tank-droplet","Transport","fuel,travel,vehicle,commute,trip"
+"gif-format","Photos and Videos","media,image,camera,record"
+"gift","Other","misc,general,utility,ui"
+"git","Git","git,version,branch,commit,merge,github"
+"git-branch","Git","git,github,version,branch,commit,merge"
+"git-cherry-pick-commit","Git","version,branch,commit,merge,github"
+"git-commit","Git","git,github,version,branch,commit,merge"
+"git-compare","Git","git,github,version,branch,commit,merge"
+"git-fork","Git","git,github,version,branch,commit,merge,food,repo"
+"git-merge","Git","git,github,version,branch,commit,merge"
+"git-pull-request","Git","git,github,version,branch,commit,merge"
+"git-pull-request-closed","Git","version,branch,commit,merge,github"
+"github","Git","git,github"
+"github-circle","Git","git,github,round,radio,dot,shape"
+"gitlab-full","Git","git,github"
+"glass-empty","Food","lens,magnify,search,look"
+"glass-fragile","Shopping","lens,magnify,search,look"
+"glass-half","Food","lens,magnify,search,look"
+"glass-half-alt","Food","lens,magnify,search,look"
+"glasses","Clothing","eyeglasses,spectacles,sunglasses,vision,reading"
+"globe","Communication","world,earth,international,map"
+"golf","Activities","sport,hobby,leisure,outdoor"
+"google","Social","alphabet,search,gmail,drive,workspace"
+"google-circle","Social","alphabet,search,gmail,drive,workspace,round,radio,dot,shape"
+"google-docs","Docs","alphabet,search,cloud,editor,gmail,drive,workspace"
+"google-drive","Cloud","alphabet,search,gmail,drive,workspace"
+"google-drive-check","Cloud","alphabet,search,cloud,gmail,drive,workspace,done,success,tick,approve,ok,complete"
+"google-drive-sync","Cloud","alphabet,search,cloud,gmail,drive,workspace"
+"google-drive-warning","Cloud","alphabet,search,gmail,drive,workspace,alert,caution,danger,attention"
+"google-home","Home","alphabet,search,gmail,drive,workspace,house,main,start,residence"
+"google-one","Cloud","alphabet,search,cloud,gmail,drive,workspace"
+"gps","Maps","location,gps,travel,directions"
+"graduation-cap","Science","school,education,diploma,student"
+"graph-down","Activities","sport,hobby,leisure,outdoor"
+"graph-up","Activities","sport,hobby,leisure,outdoor"
+"grid-minus","Layout","table,layout,matrix,cells,subtract,remove,delete,collapse"
+"grid-plus","Layout","table,layout,matrix,cells,add,new,create,increase"
+"grid-xmark","Layout","remove,table,layout,matrix,cells,close,cancel,delete,dismiss,clear,wrong"
+"group","Users","people,society,person,profile,account,team"
+"gym","Activities","fitness,workout,dumbbell,weights"
+"h-square","Typography","hydrogen,element,shape,box,checkbox,region"
+"half-cookie","System","biscuit,food,privacy,data,tracking,site"
+"half-moon","Other","night,dark,mode,sleep"
+"hammer","Tools","utility,build,repair,wrench"
+"hand-brake","Transport","car,drive,driving,auto,vehicle,travel,commute,trip"
+"hand-card","Finance","pay,payment,money,banking,budget"
+"hand-cash","Finance","pay,payment,money,bills,currency"
+"hand-contactless","Finance","pay,payment,money,banking,budget"
+"handbag","Clothing","purse,bag,womens,fashion,accessory"
+"hard-drive","Devices","hardware,gadget,electronics,tech"
+"hat","Clothing","cap,headwear,fashion,style"
+"hd","Photos and Videos","media,image,camera,record"
+"hd-display","Photos and Videos","media,image,camera,record"
+"hdr","Photos and Videos","media,image,camera,record"
+"headset","Music","earphones,earbuds,listenings,audio,headphones,support,call"
+"headset-bolt","Music","charge,energy,electricity,audio,listenings,earphones,earbuds,headphones,support,call"
+"headset-help","Communication","earphones,earbuds,listenings,audio,headphones,support,call"
+"headset-warning","Music","earphones,earbuds,listenings,audio,issue,error,headphones,support,call,alert,caution,danger,attention"
+"health-shield","Health","security,safe,protection,trust"
+"healthcare","Health","medical,wellness,care,fitness"
+"heart","Health","love,favorite,like,health"
+"heart-arrow-down","System","love,favorite,like,health,direction,navigate,pointer,chevron,move"
+"heating-square","Science","shape,box,checkbox,region"
+"heavy-rain","Weather","weather,storm,bold,weight,thick,water,wet"
+"help-circle","Actions","round,radio,dot,shape"
+"help-square","Actions","shape,box,checkbox,region"
+"heptagon","Shapes","geometry,figure,vector,draw"
+"hexagon","Shapes","shape,polygon,six,sides"
+"hexagon-dice","Gaming","shape,polygon,six,sides,random,game,chance,roll"
+"hexagon-plus","Shapes","shape,polygon,six,sides,add,new,create,increase"
+"historic-shield","Security","security,safe,protection,trust"
+"historic-shield-alt","Security","security,safe,protection,trust"
+"home","Home","house,main,start,residence"
+"home-alt","Home","house,main,start,residence"
+"home-alt-slim","Home","house,main,start,residence"
+"home-alt-slim-horiz","Home","house,main,start,residence"
+"home-hospital","Health","house,main,start,residence,medical,health,clinic,care"
+"home-sale","Home","house,main,start,residence"
+"home-secure","Home","house,main,start,residence"
+"home-shield","Home","house,main,start,residence,security,safe,protection,trust"
+"home-simple","Home","house,main,start,residence"
+"home-simple-door","Home","house,main,start,residence"
+"home-table","Home","house,main,start,residence"
+"home-temperature-in","Home","house,main,start,residence"
+"home-temperature-out","Home","house,main,start,residence"
+"home-user","Home","house,main,start,residence,person,account,profile,avatar"
+"horiz-distribution-left","Design Tools","design,creative,layout,figma"
+"horiz-distribution-right","Design Tools","design,creative,layout,figma"
+"horizontal-merge","Navigation","menu,move,ui,wayfinding"
+"horizontal-split","Navigation","menu,move,ui,wayfinding"
+"hospital","Buildings","medical,health,clinic,care"
+"hospital-circle","Health","medical,health,clinic,care,round,radio,dot,shape"
+"hot-air-balloon","Transport","fly,airship,party,celebration,float,travel,vehicle,commute,trip"
+"hourglass","Activities","loading,wait,time,sand"
+"house-rooms","Buildings","architecture,city,place,urban"
+"html5","Development","code,dev,programming,software"
+"iconoir","Development","code,dev,programming,software"
+"import","Other","upload,bring,inbound,misc,general,utility,ui"
+"inclination","Science","lab,research,experiment,study"
+"industry","Buildings","architecture,city,place,urban"
+"infinite","Science","limitless,endless,boundless,unbounded,unlimited,loop,forever,repeat"
+"info-circle","Actions","help,about,details,hint,round,radio,dot,shape"
+"input-field","System","element,ui,textbox,computer,os,settings,desktop"
+"input-output","System","computer,os,settings,desktop"
+"input-search","Organization","find,magnify,lookup,query"
+"instagram","Social","social,share,story,video,photos,fb,meta,network,community,people"
+"internet","Communication","web,online,www,browser"
+"intersect","Design Tools","design,creative,layout,figma"
+"intersect-alt","Design Tools","design,creative,layout,figma"
+"ios-settings","System","apple,iphone,ios,gear,preferences,options,config"
+"ip-address-tag","Security","label,badge,chip,price"
+"iris-scan","Identity","qr,barcode,camera,detect"
+"italic","Editor","text,style,editor,font"
+"italic-square","Editor","text,style,editor,font,shape,box,checkbox,region"
+"jellyfish","Animals","creature,wildlife,nature,pet"
+"journal","Docs","diary,notes,book,log"
+"journal-page","Docs","diary,notes,book,log,document,paper,file,site"
+"jpeg-format","Photos and Videos","media,image,camera,record"
+"jpg-format","Photos and Videos","media,image,camera,record"
+"kanban-board","Development","board,tasks,workflow,agile"
+"key","Security","password,unlock,security,login"
+"key-back","Security","password,unlock,security,login"
+"key-command","System","password,unlock,security,login"
+"key-minus","Security","password,unlock,security,login,subtract,remove,delete,collapse"
+"key-plus","Security","password,unlock,security,login,add,new,create,increase"
+"key-xmark","Security","password,unlock,security,login,close,cancel,delete,remove,dismiss,clear,wrong"
+"keyframe","Animations","animation,timeline,motion,ae"
+"keyframe-align-center","Animations","animation,timeline,motion,ae,alignment,layout,text,edge"
+"keyframe-align-horizontal","Animations","animation,timeline,motion,ae,alignment,layout,text,edge"
+"keyframe-align-vertical","Animations","animation,timeline,motion,ae,alignment,layout,text,edge,portrait,column,upright"
+"keyframe-minus","Animations","animation,timeline,motion,ae,subtract,remove,delete,collapse"
+"keyframe-minus-in","Animations","animation,timeline,motion,ae,subtract,remove,delete,collapse"
+"keyframe-plus","Animations","add,animation,timeline,motion,ae,new,create,increase"
+"keyframe-plus-in","Animations","add,animation,timeline,motion,ae,new,create,increase"
+"keyframe-position","Animations","animation,timeline,motion,ae"
+"keyframes","Animations","animation,timeline,motion,ae,curve"
+"keyframes-couple","Animations","animation,timeline,motion,ae,curve,pair,two,double,twin"
+"keyframes-minus","Animations","subtract,remove,delete,collapse,animation,timeline,motion,ae,curve"
+"keyframes-plus","Animations","add,new,create,increase,animation,timeline,motion,ae,curve"
+"label","Organization","tag,ticket,name,badge"
+"lamp","Home","light,home,house,desk,brightness,fixture"
+"language","Other","misc,general,utility,ui"
+"laptop","Devices","notebook,computer,macbook,work"
+"laptop-charging","Devices","notebook,computer,macbook,work"
+"laptop-dev-mode","Development","notebook,computer,macbook,work"
+"laptop-fix","Devices","notebook,computer,macbook,work"
+"laptop-warning","Devices","notebook,computer,macbook,work,alert,caution,danger,attention"
+"layout-left","Layout","layout,tiled,windows,tiling,window,grid,structure,template,spacing"
+"layout-right","Layout","layout,tiled,windows,tiling,window,grid,structure,template,spacing"
+"leaderboard","Activities","sport,hobby,leisure,outdoor"
+"leaderboard-star","Activities","favorite,rating,review,bookmark"
+"leaf","Nature","eco,nature,plant,green"
+"learning","Users","people,profile,account,team"
+"lens","Design Tools","design,creative,layout,figma"
+"lens-plus","Design Tools","add,new,create,increase"
+"lifebelt","Other","misc,general,utility,ui"
+"light-bulb","Home","idea,brightness,lamp,insight,bulb"
+"light-bulb-off","Home","idea,brightness,lamp,insight,bulb,disabled,inactive,muted,disconnected"
+"light-bulb-on","Home","idea,brightness,lamp,insight,bulb"
+"line-space","Actions","ui,button,control,interface"
+"linear","Animations","interpolation,ramp,constant,animation,curve"
+"link","Other","url,hyperlink,chain,attach"
+"link-slash","Other","url,hyperlink,chain,attach"
+"link-xmark","Other","connection,lost,disabled,error,issue,url,address,hyperlink,chain,attach,close,cancel,delete,remove,dismiss,clear,wrong"
+"linkedin","Social","social,work,connection,network,share,community,people"
+"linux","System","os,operative,system,ubuntu,terminal,open source,tux"
+"list","Editor","bullet,menu,rows,items"
+"list-select","Editor","bullet,menu,rows,items"
+"litecoin-circle","Finance","round,radio,dot,shape"
+"litecoin-rotate-out","Finance","spin,turn,orientation,pivot"
+"lock","Security","secure,password,private,encrypt"
+"lock-slash","Security","secure,password,private,encrypt"
+"lock-square","System","locked,access,security,block,restricted,secure,password,private,encrypt,shape,box,checkbox,region"
+"loft-3d","3D Editor","3d,modeling,mesh,render"
+"log-in","System","sign,access,signin,login,enter,auth"
+"log-no-access","System","sign,access,error,forbidden,stop,banned,block"
+"log-out","System","sign,access,signout,logout,exit,auth"
+"long-arrow-down-left","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-down-right","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-left-down","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-left-up","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-right-down","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-right-up","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-up-left","Navigation","direction,navigate,pointer,chevron,move"
+"long-arrow-up-right","Navigation","direction,navigate,pointer,chevron,move"
+"lot-of-cash","Finance","money,cash,stack,bills,currency,payment"
+"lullaby","Music","audio,song,instrument,sound"
+"mac-control-key","System","input,keyboard,mac,apple,os,operative,system,shortcut,osx,password,unlock,security,login,slider,handle,adjust,parameter"
+"mac-dock","System","mac,apple,os,operative,system,keyboard,shortcut,osx"
+"mac-option-key","System","input,keyboard,mac,apple,os,operative,system,shortcut,osx,password,unlock,security,login"
+"mac-os-window","System","mac,apple,os,operative,system,keyboard,shortcut,osx"
+"magic-wand","Design Tools","wand,effect,auto,enhance"
+"magnet","Science","attract,science,polarity,lab,research,experiment,study"
+"magnet-energy","Science","attract,science,polarity,lab,research,experiment,study"
+"mail","Communication","email,message,inbox,letter"
+"mail-in","Communication","email,message,inbox,letter"
+"mail-open","Communication","email,message,inbox,letter,door,access,launch,expand"
+"mail-out","Communication","email,message,inbox,letter"
+"male","Health","man,gender,people,person"
+"map","Maps","location,gps,travel,directions"
+"map-pin","Maps","location,marker,place,gps,travel,directions,map,attach"
+"map-pin-minus","Maps","location,marker,place,gps,travel,directions,map,attach,subtract,remove,delete,collapse"
+"map-pin-plus","Maps","location,marker,place,gps,travel,directions,map,attach,add,new,create,increase"
+"map-pin-xmark","Maps","location,marker,place,gps,travel,directions,map,attach,close,cancel,delete,remove,dismiss,clear,wrong"
+"map-xmark","Maps","issue,error,location,gps,travel,directions,close,cancel,delete,remove,dismiss,clear,wrong"
+"maps-arrow","Maps","direction,navigate,pointer,chevron,move"
+"maps-arrow-diagonal","Maps","direction,navigate,pointer,chevron,move"
+"maps-arrow-xmark","Maps","issue,direction,navigate,pointer,chevron,move,close,cancel,delete,remove,dismiss,clear,wrong"
+"maps-go-straight","Maps","location,gps,travel,directions"
+"maps-turn-back","Maps","location,gps,travel,directions"
+"maps-turn-left","Maps","location,gps,travel,directions"
+"maps-turn-right","Maps","location,gps,travel,directions"
+"mask-square","Design Tools","privacy,crop,layer,photo,shape,box,checkbox,region"
+"mastercard-card","Finance","money,payment,banking,budget"
+"math-book","Activities","read,education,library,learn"
+"maximize","Other","misc,general,utility,ui"
+"medal","Activities","award,prize,winner,achievement"
+"medal-1st","Activities","prize,place,first,winner,champion,award,achievement"
+"media-image","Photos and Videos","media,image,camera,record"
+"media-image-folder","Photos and Videos","directory,files,organize,project"
+"media-image-list","Photos and Videos","bullet,menu,rows,items"
+"media-image-plus","Photos and Videos","add,new,create,increase"
+"media-image-xmark","Photos and Videos","close,cancel,delete,remove,dismiss,clear,wrong"
+"media-video","Photos and Videos","film,record,camera,clip"
+"media-video-folder","Photos and Videos","film,record,camera,clip,directory,files,organize,project"
+"media-video-list","Photos and Videos","film,record,camera,clip,bullet,menu,rows,items"
+"media-video-plus","Photos and Videos","film,record,camera,clip,add,new,create,increase"
+"media-video-xmark","Photos and Videos","film,record,camera,clip,close,cancel,delete,remove,dismiss,clear,wrong"
+"medium","Social","write,writing,blog,news,network,share,community,people"
+"megaphone","Devices","announce,broadcast,speak,marketing"
+"menu","Actions","hamburger,navigation,drawer,list"
+"menu-scale","Actions","hamburger,navigation,drawer,list"
+"message","Communication","chat,mail,dm,conversation"
+"message-alert","Communication","chat,mail,dm,conversation"
+"message-text","Communication","chat,mail,dm,conversation,typography,type,font,paragraph"
+"metro","Transport","transport,train,station,track,public,subway,underground,transit"
+"microphone","Audio","sound,music,speaker,listen"
+"microphone-check","Audio","done,success,tick,approve,ok,complete"
+"microphone-minus","Audio","subtract,remove,delete,collapse"
+"microphone-mute","Audio","sound,music,speaker,listen"
+"microphone-plus","Audio","add,new,create,increase"
+"microphone-speaking","Audio","sound,music,speaker,listen"
+"microphone-warning","Audio","alert,caution,danger,attention"
+"microscope","Science","lab,research,experiment,study"
+"minus","Actions","subtract,remove,delete,collapse"
+"minus-circle","Actions","subtract,remove,delete,collapse,round,radio,dot,shape"
+"minus-hexagon","Shapes","subtract,remove,delete,collapse,shape,polygon,six,sides"
+"minus-square","Actions","subtract,remove,delete,collapse,shape,box,checkbox,region"
+"minus-square-dashed","Other","remove,selection,select,subtract,delete,collapse,shape,box,checkbox,region"
+"mirror","Home","reflect,symmetry,flip,house,domestic,appliance,interior"
+"mobile-dev-mode","Development","phone,cell,smartphone,ios,android"
+"mobile-fingerprint","Identity","phone,cell,smartphone,ios,android,biometric,identity,touchid,auth"
+"mobile-voice","Identity","phone,cell,smartphone,ios,android,speech,mic,audio,assistant"
+"modern-tv","Devices","tv,screen,display,entertainment"
+"modern-tv-4k","Devices","tv,screen,display,entertainment"
+"money-square","Finance","shape,box,checkbox,region"
+"moon-sat","Science","night,dark,mode,sleep"
+"more-horiz","Navigation","menu,move,ui,wayfinding"
+"more-horiz-circle","Navigation","round,radio,dot,shape"
+"more-vert","Navigation","menu,move,ui,wayfinding"
+"more-vert-circle","Navigation","round,radio,dot,shape"
+"motorcycle","Transport","travel,vehicle,commute,trip"
+"mouse-button-left","System","controller,device,input,pointer,click,computer,pc"
+"mouse-button-right","System","controller,device,input,pointer,click,computer,pc"
+"mouse-scroll-wheel","System","controller,device,input,pointer,click,computer,pc,car,tire,rim,vehicle"
+"movie","Activities","film,video,cinema,play"
+"mpeg-format","Photos and Videos","media,image,camera,record"
+"multi-bubble","Communication","chat,message,contact,talk"
+"multi-mac-os-window","System","mac,apple,os,operative,system,keyboard,shortcut,osx"
+"multi-window","System","mac,apple,os,operative,system,windows,microsoft,computer,settings,desktop"
+"multiple-pages","Docs","document,file,paper,text"
+"multiple-pages-empty","Docs","document,file,paper,text"
+"multiple-pages-minus","Docs","subtract,remove,delete,collapse"
+"multiple-pages-plus","Docs","add,new,create,increase"
+"multiple-pages-xmark","Docs","delete,remove,close,cancel,dismiss,clear,wrong"
+"music-double-note","Music","audio,song,note,sound"
+"music-double-note-plus","Music","audio,song,note,sound,add,new,create,increase"
+"music-note","Music","audio,song,note,sound"
+"music-note-plus","Music","audio,song,note,sound,add,new,create,increase"
+"n-square","Typography","nitrogen,element,shape,box,checkbox,region"
+"nav-arrow-down","Navigation","direction,navigate,pointer,chevron,move"
+"nav-arrow-left","Navigation","direction,navigate,pointer,chevron,move"
+"nav-arrow-right","Navigation","direction,navigate,pointer,chevron,move"
+"nav-arrow-up","Navigation","direction,navigate,pointer,chevron,move"
+"navigator","Maps","location,gps,travel,directions"
+"navigator-alt","Maps","location,gps,travel,directions"
+"neighbourhood","Buildings","architecture,city,place,urban"
+"network","Connectivity","connection,computer,network,information,lan,internet,nodes,topology"
+"network-left","Connectivity","connection,computer,network,information,lan,internet,nodes,topology"
+"network-reverse","Connectivity","connection,computer,network,information,lan,internet,nodes,topology"
+"network-right","Connectivity","connection,computer,network,information,lan,internet,nodes,topology"
+"new-tab","System","computer,os,settings,desktop"
+"nintendo-switch","Gaming","game,console,portable,play,controller,fun"
+"no-smoking-circle","Activities","forbidden,stop,banned,block,round,radio,dot,shape"
+"non-binary","Health","medical,wellness,care,fitness"
+"notes","Other","music,memo,postit,song"
+"npm","Development","code,dev,programming,software"
+"npm-square","Development","shape,box,checkbox,region"
+"number-0-square","Other","shape,box,checkbox,region"
+"number-1-square","Other","shape,box,checkbox,region"
+"number-2-square","Other","shape,box,checkbox,region"
+"number-3-square","Other","shape,box,checkbox,region"
+"number-4-square","Other","shape,box,checkbox,region"
+"number-5-square","Other","shape,box,checkbox,region"
+"number-6-square","Other","shape,box,checkbox,region"
+"number-7-square","Other","shape,box,checkbox,region"
+"number-8-square","Other","shape,box,checkbox,region"
+"number-9-square","Other","shape,box,checkbox,region"
+"numbered-list-left","Editor","bullet,menu,rows,items"
+"numbered-list-right","Editor","bullet,menu,rows,items"
+"o-square","Typography","oxygen,element,shape,box,checkbox,region"
+"octagon","Shapes","geometry,figure,vector,draw"
+"off-tag","System","switch,toggle,enable,disabled,inactive,muted,disconnected,label,badge,chip,price"
+"oil-industry","Buildings","fuel,energy,gas,car"
+"okrs","Business","work,office,company,meeting"
+"on-tag","System","switch,toggle,enable,label,badge,chip,price"
+"one-finger-select-hand-gesture","Gestures","touch,swipe,hand,mobile"
+"one-point-circle","3D Editor","round,radio,dot,shape,anchor,handle,node,bezier"
+"open-book","Activities","door,access,launch,expand,read,education,library,learn"
+"open-in-browser","Actions","door,access,launch,expand"
+"open-in-window","Actions","door,access,launch,expand"
+"open-new-window","Actions","door,access,launch,expand"
+"open-select-hand-gesture","Gestures","door,access,launch,expand,touch,swipe,hand,mobile"
+"open-vpn","Security","door,access,launch,expand"
+"orange-half","Food","meal,restaurant,cooking,kitchen"
+"orange-slice","Food","meal,restaurant,cooking,kitchen"
+"orange-slice-alt","Food","meal,restaurant,cooking,kitchen"
+"organic-food","Nature","natural,eco,leaf,healthy"
+"organic-food-square","Nature","natural,eco,leaf,healthy,shape,box,checkbox,region"
+"orthogonal-view","3D Editor","3d,modeling,mesh,render"
+"package","Transport","ship,shipment,amazon,box,travel,vehicle,commute,trip"
+"package-lock","Transport","ship,shipment,amazon,secure,box,password,private,encrypt"
+"packages","Transport","ship,shipment,amazon,stockage,deposit,boxes,box,travel,vehicle,commute,trip"
+"pacman","Gaming","game,play,controller,fun"
+"page","Docs","document,paper,file,site"
+"page-down","Navigation","document,paper,file,site"
+"page-edit","Docs","document,paper,file,site"
+"page-flip","Other","document,paper,file,site"
+"page-left","Navigation","document,paper,file,site"
+"page-minus","Docs","document,paper,file,site,subtract,remove,delete,collapse"
+"page-minus-in","Docs","document,paper,file,site,subtract,remove,delete,collapse"
+"page-plus","Docs","document,paper,file,site,add,new,create,increase"
+"page-plus-in","Docs","document,paper,file,site,add,new,create,increase"
+"page-right","Navigation","document,paper,file,site"
+"page-search","Docs","document,paper,file,site,find,magnify,lookup,query"
+"page-star","Docs","document,paper,file,site,favorite,rating,review,bookmark"
+"page-up","Navigation","document,paper,file,site"
+"palette","Activities","colors,swatch,theme,design"
+"panorama-enlarge","Photos and Videos","media,image,camera,record"
+"panorama-reduce","Photos and Videos","media,image,camera,record"
+"pants","Clothing","trousers,legs,clothing,fashion,bottom"
+"pants-pockets","Clothing","trousers,legs,clothing,fashion,bottom,cargo,detail,storage"
+"parking","Transport","drive,car,spot,place,auto,vehicle,lot,space,garage"
+"password-check","Security","done,success,tick,approve,ok,complete"
+"password-cursor","Security","mouse,pointer,click,select"
+"password-xmark","Security","error,issue,close,cancel,delete,remove,dismiss,clear,wrong"
+"paste-clipboard","Actions","paste,copy,notes,task"
+"path-arrow","Navigation","direction,navigate,pointer,chevron,move"
+"pause","Music","stop,wait,hold,interrupt"
+"pause-window","System","browser,os,hold,wait,freeze,stop,interrupt"
+"paypal","Finance","money,payment,banking,budget"
+"pc-check","Security","done,success,tick,approve,ok,complete"
+"pc-firewall","Security","safe,lock,protect,privacy"
+"pc-mouse","System","controller,device,input,pointer,click,computer,pc"
+"pc-no-entry","Security","forbidden,stop,banned,block"
+"pc-warning","Security","alert,caution,danger,attention"
+"peace-hand","Gestures","touch,swipe,mobile,hand"
+"pen-connect-bluetooth","Devices","write,draw,edit,signature,wireless,pairing,peripheral"
+"pen-connect-wifi","Devices","write,draw,edit,signature,wireless,internet,signal,network"
+"pen-tablet","Devices","write,draw,edit,signature"
+"pen-tablet-connect-usb","Devices","write,draw,edit,signature"
+"pen-tablet-connect-wifi","Devices","write,draw,edit,signature,wireless,internet,signal,network"
+"pentagon","Shapes","geometry,figure,vector,draw"
+"people-tag","Users","people,society,person,users,group,team,crowd,label,badge,chip,price"
+"percent-rotate-out","Finance","discount,sale,ratio,math,spin,turn,orientation,pivot"
+"percentage","Activities","sport,hobby,leisure,outdoor"
+"percentage-circle","Activities","round,radio,dot,shape"
+"percentage-square","Activities","shape,box,checkbox,region"
+"perspective-view","3D Editor","3d,modeling,mesh,render"
+"pharmacy-cross-circle","Health","hospital,health,emergency,round,radio,dot,shape"
+"pharmacy-cross-tag","Health","hospital,health,emergency,label,badge,chip,price"
+"phone","Communication","call,mobile,contact,dial"
+"phone-disabled","Communication","call,mobile,contact,dial"
+"phone-income","Communication","call,mobile,contact,dial"
+"phone-minus","Communication","call,mobile,contact,dial,subtract,remove,delete,collapse"
+"phone-outcome","Communication","call,mobile,contact,dial"
+"phone-paused","Communication","call,mobile,contact,dial"
+"phone-plus","Communication","call,mobile,contact,dial,add,new,create,increase"
+"phone-xmark","Communication","remove,error,call,mobile,contact,dial,close,cancel,delete,dismiss,clear,wrong"
+"piggy-bank","Finance","money,finance,building,cash"
+"pillow","Home","house,domestic,appliance,interior"
+"pin","Organization","location,map,marker,attach"
+"pin-slash","Organization","location,map,marker,attach"
+"pine-tree","Nature","nature,plant,forest,green"
+"pinterest","Social","network,share,community,people"
+"pipe-3d","3D Editor","3d,modeling,mesh,render"
+"pizza-slice","Food","food,slice,italian,meal"
+"planet","Science","space,orbit,astro,science"
+"planet-alt","Science","space,orbit,astro,science"
+"planet-sat","Science","space,orbit,astro,science"
+"planimetry","Buildings","architecture,city,place,urban"
+"play","Music","start,run,media,video"
+"playlist","Music","audio,song,instrument,sound"
+"playlist-play","Music","start,run,media,video"
+"playlist-plus","Music","add,new,create,increase"
+"playstation-gamepad","Gaming","game,play,controller,fun"
+"plug-type-a","Connectivity","port,access,connection,cable,socket,power,connect"
+"plug-type-c","Connectivity","port,access,connection,cable,socket,power,connect"
+"plug-type-g","Connectivity","port,access,connection,cable,socket,power,connect"
+"plug-type-l","Connectivity","port,access,connection,cable,socket,power,connect"
+"plus","Actions","add,new,create,increase"
+"plus-circle","Actions","add,new,create,increase,round,radio,dot,shape"
+"plus-square","Actions","add,new,create,increase,shape,box,checkbox,region"
+"plus-square-dashed","Other","add,new,create,increase,shape,box,checkbox,region"
+"png-format","Photos and Videos","media,image,camera,record"
+"pocket","Social","save,tool,app,network,share,community,people"
+"podcast","Communication","chat,message,contact,talk"
+"pokeball","Gaming","pokemon,game,play,controller,fun"
+"position","Maps","location,gps,travel,directions"
+"position-align","Design Tools","alignment,layout,text,edge"
+"post","Social","blog,article,mail,letter"
+"potion","Gaming","power,superpower,energy,game,play,controller,fun"
+"pound","Finance","money,payment,banking,budget"
+"precision-tool","Design Tools","wrench,settings,build,repair"
+"presentation","Business","slides,deck,keynote,pitch"
+"printer","Devices","print,paper,office,device"
+"printing-page","Devices","document,paper,file,site"
+"priority-down","Business","important,flag,urgent,star"
+"priority-high","Business","important,flag,urgent,star"
+"priority-medium","Business","important,flag,urgent,star"
+"priority-up","Business","important,flag,urgent,star"
+"privacy-policy","Docs","document,file,paper,text"
+"private-wifi","Connectivity","wireless,internet,signal,network"
+"profile-circle","Users","user,round,person,radio,dot,shape"
+"prohibition","Actions","ui,button,control,interface"
+"project-curve-3d","3D Editor","bezier,spline,path,smooth"
+"puzzle","Development","piece,game,solve,extension"
+"qr-code","Other","code,scan,mobile,link,develop,programming,source,script"
+"question-mark","Actions","help,faq,unknown,support"
+"quote","Communication","chat,message,contact,talk"
+"quote-message","Communication","chat,mail,dm,conversation"
+"radiation","Science","lab,research,experiment,study"
+"radius","Science","lab,research,experiment,study"
+"rain","Weather","weather,storm,water,wet"
+"raw-format","Photos and Videos","media,image,camera,record"
+"receive-dollars","Finance","inbox,download,get,import"
+"receive-euros","Finance","inbox,download,get,import"
+"receive-pounds","Finance","inbox,download,get,import"
+"receive-yens","Finance","inbox,download,get,import"
+"redo","Actions","ui,button,control,interface"
+"redo-action","Actions","ui,button,control,interface"
+"redo-circle","Actions","round,radio,dot,shape"
+"reduce","Photos and Videos","media,image,camera,record"
+"refresh","Actions","reload,update,sync,rotate"
+"refresh-circle","Actions","reload,update,sync,rotate,round,radio,dot,shape"
+"refresh-double","Actions","reload,update,sync,rotate"
+"reload-window","System","refresh,browser,os,computer,settings,desktop"
+"reminder-hand-gesture","Gestures","touch,swipe,hand,mobile"
+"repeat","Music","audio,song,instrument,sound"
+"repeat-once","Music","audio,song,instrument,sound"
+"reply","Communication","chat,message,contact,talk"
+"reply-to-message","Communication","chat,mail,dm,conversation"
+"report-columns","Activities","analytics,chart,summary,data"
+"reports","Activities","sport,hobby,leisure,outdoor"
+"repository","Git","git,github"
+"restart","Actions","ui,button,control,interface"
+"rewind","Music","back,previous,undo,media"
+"rhombus","Shapes","diamond,shape,geometry,figure,vector,draw"
+"rings","Activities","sport,hobby,leisure,outdoor"
+"rocket","Science","space,nasa,esa,spacex,missile,launch,startup,ship"
+"rook","Gaming","game,play,controller,fun"
+"rotate-camera-left","Photos and Videos","spin,turn,orientation,pivot,photo,picture,lens,shoot,selfie"
+"rotate-camera-right","Photos and Videos","spin,turn,orientation,pivot,photo,picture,lens,shoot,selfie"
+"round-flask","Science","science,lab,chemistry,experiment"
+"rounded-mirror","Home","reflect,symmetry,flip,house,domestic,appliance,interior"
+"rss-feed","Social","news,network,share,community,people"
+"rss-feed-tag","Social","news,label,badge,chip,price"
+"rubik-cube","Science","3d,box,volume,solid"
+"ruler","Design Tools","measure,size,distance,design"
+"ruler-arrows","Design Tools","move,expand,measure,size,distance,design"
+"ruler-combine","Design Tools","measure,size,distance,design"
+"ruler-minus","Design Tools","remove,measure,size,distance,design,subtract,delete,collapse"
+"ruler-plus","Design Tools","measure,size,distance,design,add,new,create,increase"
+"running","Activities","run,jog,sport,fitness"
+"safari","System","browser,web,internet,apple,computer,os,settings,desktop"
+"safe","Finance","vault,security,deposit,lock"
+"safe-arrow-left","Finance","vault,security,deposit,lock,direction,navigate,pointer,chevron,move"
+"safe-arrow-right","Finance","vault,security,deposit,lock,direction,navigate,pointer,chevron,move"
+"safe-open","Finance","vault,security,deposit,lock,door,access,launch,expand"
+"sandals","Clothing","shoes,summer,footwear,fashion,apparel,outfit,wear,style"
+"scale-frame-enlarge","Design Tools","border,art,picture,layout"
+"scale-frame-reduce","Design Tools","border,art,picture,layout"
+"scan-barcode","Shopping","qr,barcode,camera,detect,scan,sku,product,inventory"
+"scan-qr-code","Other","qr,barcode,camera,detect,code,scan,mobile,link,develop,programming,source,script"
+"scanning","Identity","auth,login,security,person"
+"scarf","Clothing","neck,winter,warm,fashion,wrap"
+"scissor","Editor","text,writing,format,content"
+"scissor-alt","Editor","text,writing,format,content"
+"screenshot","Photos and Videos","media,image,camera,record"
+"sea-and-sun","Activities","day,brightness,weather,light"
+"sea-waves","Activities","sport,hobby,leisure,outdoor"
+"search","Organization","find,magnify,lookup,query"
+"search-engine","System","google,duckduckgo,bing,find,magnify,lookup,query"
+"search-window","System","find,magnify,lookup,query"
+"secure-window","System","find,computer,os,settings,desktop"
+"security-pass","Security","safe,lock,protect,privacy"
+"select-edge-3d","3D Editor","modeling,blender,4d,3d,mesh,render"
+"select-face-3d","3D Editor","modeling,blender,4d,3d,mesh,render"
+"select-point-3d","3D Editor","modeling,blender,4d,3d,mesh,render,anchor,handle,node,bezier"
+"select-window","System","find,computer,os,settings,desktop"
+"selective-tool","Design Tools","wrench,settings,build,repair"
+"send","Communication","share,submit,mail,deliver"
+"send-diagonal","Communication","share,submit,mail,deliver"
+"send-dollars","Finance","share,submit,mail,deliver"
+"send-euros","Finance","share,submit,mail,deliver"
+"send-mail","Communication","share,submit,mail,deliver,email,message,inbox,letter"
+"send-pounds","Finance","share,submit,mail,deliver"
+"send-yens","Finance","share,submit,mail,deliver"
+"server","Connectivity","connection,computer,network,hosting,backend,cloud,database"
+"server-connection","Connectivity","connection,computer,network,hosting,backend,cloud,database"
+"settings","System","gear,preferences,options,config"
+"settings-profiles","System","gear,preferences,options,config"
+"share-android","Actions","export,social,link,send"
+"share-ios","Actions","export,social,link,send"
+"shield","Security","security,protection,firewall,safe,trust"
+"shield-alert","Security","security,protection,firewall,safe,trust"
+"shield-alt","Security","security,protection,firewall,safe,trust"
+"shield-broken","Security","security,protection,firewall,safe,trust"
+"shield-check","Security","security,protection,firewall,safe,trust,done,success,tick,approve,ok,complete"
+"shield-download","Security","security,protection,firewall,safe,trust,save,import,fetch,get,file"
+"shield-eye","Security","security,protection,firewall,safe,trust,view,watch,visibility,privacy"
+"shield-loading","Security","security,protection,firewall,safe,trust"
+"shield-minus","Security","security,protection,firewall,safe,trust,subtract,remove,delete,collapse"
+"shield-plus-in","Security","security,protection,firewall,safe,trust,add,new,create,increase"
+"shield-question","Security","security,protection,firewall,safe,trust,help,faq,unknown,support"
+"shield-search","Security","security,protection,firewall,safe,trust,find,magnify,lookup,query"
+"shield-upload","Security","security,protection,firewall,safe,trust,cloud,send,export,share"
+"shield-xmark","Security","security,protection,firewall,safe,trust,close,cancel,delete,remove,dismiss,clear,wrong"
+"shirt","Clothing","clothes,fashion,apparel,cotton"
+"shirt-tank-top","Clothing","clothes,fashion,apparel,cotton"
+"shop","Buildings","store,buy,market,retail"
+"shop-four-tiles","Buildings","store,buy,market,retail"
+"shop-four-tiles-window","Buildings","store,buy,market,retail"
+"shop-window","Buildings","store,buy,market,retail"
+"shopping-bag","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack"
+"shopping-bag-arrow-down","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack,direction,navigate,pointer,chevron,move"
+"shopping-bag-arrow-up","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack,direction,navigate,pointer,chevron,move"
+"shopping-bag-check","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack,done,success,tick,approve,ok,complete"
+"shopping-bag-minus","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack,subtract,remove,delete,collapse"
+"shopping-bag-plus","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack,add,new,create,increase"
+"shopping-bag-pocket","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack"
+"shopping-bag-warning","Shopping","cart,buy,store,checkout,bag,ecommerce,luggage,suitcase,travel,pack,alert,caution,danger,attention"
+"shopping-code","Shopping","cart,bag,buy,ecommerce,develop,programming,source,script"
+"shopping-code-check","Shopping","cart,bag,buy,ecommerce,develop,programming,source,script,done,success,tick,approve,ok,complete"
+"shopping-code-xmark","Shopping","error,issue,cart,bag,buy,ecommerce,develop,programming,source,script,close,cancel,delete,remove,dismiss,clear,wrong"
+"short-pants","Clothing","shorts,summer,casual,legwear,trousers,legs,clothing,fashion,bottom"
+"short-pants-pockets","Clothing","shorts,summer,casual,legwear,cargo,trousers,legs,clothing,fashion,bottom,detail,storage"
+"shortcut-square","Navigation","shape,box,checkbox,region"
+"shuffle","Music","random,music,order,mix"
+"sidebar-collapse","Navigation","panel,drawer,layout,navigation"
+"sidebar-expand","Navigation","panel,drawer,layout,navigation"
+"sigma-function","3D Editor","greek,math,symbol,3d,modeling,mesh,render"
+"simple-cart","Shopping","shopping,basket,ecommerce,checkout"
+"sine-wave","Science","lab,research,experiment,study"
+"single-tap-gesture","Gestures","touch,swipe,hand,mobile"
+"skateboard","Activities","sport,street,wheel,ride"
+"skateboarding","Activities","sport,hobby,leisure,outdoor"
+"skip-next","Music","next,forward,media,chapter"
+"skip-prev","Music","next,forward,media,chapter"
+"slash","Development","code,dev,programming,software"
+"slash-square","Git","git,github,command,shape,box,checkbox,region"
+"sleeper-chair","Home","house,domestic,appliance,interior"
+"slips","Clothing","lingerie,underwear,clothing,inner"
+"small-lamp","Home","light,home,house,desk,brightness,fixture"
+"small-lamp-alt","Home","light,home,house,desk,brightness,fixture"
+"smartphone-device","Devices","phone,mobile,touch,device"
+"smoking","Activities","sport,hobby,leisure,outdoor"
+"snapchat","Social","message,messaging,chat,share,ghost,network,community,people"
+"snow","Weather","winter,cold,flake,weather"
+"snow-flake","Weather","weather,storm,ac,air,conditioner,freeze,freezer,winter,cold,flake"
+"soap","Other","wash,clean,bathroom,hygiene"
+"soccer-ball","Activities","football,sport,ball,game"
+"sofa","Home","house,domestic,appliance,interior"
+"soil","Nature","terrain,ground,nature,vegetation,outdoor,plant,environment,earth"
+"soil-alt","Nature","terrain,ground,nature,vegetation,outdoor,plant,environment,earth"
+"sort","Editor","text,writing,format,content"
+"sort-down","Editor","text,writing,format,content"
+"sort-up","Editor","text,writing,format,content"
+"sound-high","Audio","audio,volume,speaker,listen"
+"sound-low","Audio","audio,volume,speaker,listen"
+"sound-min","Audio","audio,volume,speaker,listen"
+"sound-off","Audio","audio,volume,speaker,listen,disabled,inactive,muted,disconnected"
+"spades","Gaming","poker,game,cards,gambling,vegas,play,controller,fun"
+"spark","Other","ai,artificial,intelligence,magic,new,highlight"
+"sparks","Other","ai,artificial,intelligence,stars,celebrate,glitter,effect"
+"sphere","3D Editor","modeling,blender,4d,geometry,ball,3d,globe,shape"
+"spiral","3D Editor","modeling,blender,4d,geometry,twist,curl,hypnosis,shape"
+"split-area","Other","misc,general,utility,ui"
+"split-square-dashed","Other","shape,box,checkbox,region"
+"spock-hand-gesture","Gestures","touch,swipe,hand,mobile"
+"spotify","Music","audio,song,instrument,sound"
+"square","Shapes","shape,box,checkbox,region"
+"square-3d-corner-to-corner","3D Editor","modeling,blender,4d,shape,box,checkbox,region,radius,edge,curve,layout"
+"square-3d-from-center","3D Editor","modeling,blender,4d,shape,box,checkbox,region"
+"square-3d-three-points","3D Editor","modeling,blender,4d,shape,box,checkbox,region,3,triple,triangle,menu"
+"square-cursor","System","shape,box,checkbox,region,mouse,pointer,click,select"
+"square-dashed","Other","selection,shape,box,checkbox,region"
+"square-wave","Science","shape,box,checkbox,region"
+"stackoverflow","Social","network,share,community,people"
+"star","Organization","favorite,rating,review,bookmark"
+"star-dashed","Organization","favorite,rating,review,bookmark"
+"star-half-dashed","Organization","favorite,rating,review,bookmark"
+"stat-down","Activities","sport,hobby,leisure,outdoor"
+"stat-up","Activities","sport,hobby,leisure,outdoor"
+"stats-down-square","Business","chart,analytics,metrics,graph,shape,box,checkbox,region"
+"stats-report","Business","chart,analytics,metrics,graph,summary,data"
+"stats-up-square","Business","chart,analytics,metrics,graph,shape,box,checkbox,region"
+"strategy","Business","work,office,company,meeting"
+"stretching","Activities","sport,hobby,leisure,outdoor"
+"strikethrough","Editor","text,writing,format,content"
+"stroller","Health","medical,wellness,care,fitness"
+"style-border","Design Tools","outline,stroke,frame,edge"
+"submit-document","Docs","document,file,paper,text"
+"substract","Design Tools","design,creative,layout,figma"
+"suggestion","Maps","location,gps,travel,directions"
+"suitcase","Clothing","luggage,travel,bag,rollaboard"
+"sun-light","Weather","day,brightness,weather,light,lamp,bulb,idea"
+"svg-format","Photos and Videos","media,image,camera,record"
+"sweep-3d","3D Editor","3d,modeling,mesh,render"
+"swimming","Activities","sport,hobby,leisure,outdoor"
+"swipe-down-gesture","Gestures","touch,swipe,hand,mobile"
+"swipe-left-gesture","Gestures","touch,swipe,hand,mobile"
+"swipe-right-gesture","Gestures","touch,swipe,hand,mobile"
+"swipe-two-fingers-down-gesture","Gestures","2,double,pair,both,touch,swipe,hand,mobile"
+"swipe-two-fingers-left-gesture","Gestures","2,double,pair,both,touch,swipe,hand,mobile"
+"swipe-two-fingers-right-gesture","Gestures","2,double,pair,both,touch,swipe,hand,mobile"
+"swipe-two-fingers-up-gesture","Gestures","2,double,pair,both,touch,swipe,hand,mobile"
+"swipe-up-gesture","Gestures","touch,swipe,hand,mobile"
+"switch-off","System","toggle,disabled,inactive,muted,disconnected"
+"switch-on","System","toggle,computer,os,settings,desktop"
+"system-restart","System","restart,start,login,logout,sign,computer,os,settings,desktop"
+"system-shut","System","restart,start,login,logout,sign,computer,os,settings,desktop"
+"table","Layout","grid,structure,template,spacing"
+"table-2-columns","Layout","grid,structure,template,spacing"
+"table-rows","Layout","grid,structure,template,spacing"
+"task-list","Editor","bullet,menu,rows,items"
+"telegram","Social","message,messaging,chat,private,secure,security,encrypt,network,share,community,people"
+"telegram-circle","Social","message,messaging,chat,private,secure,security,encrypt,round,radio,dot,shape"
+"temperature-down","Weather","forecast,climate,rain,sun"
+"temperature-high","Weather","forecast,climate,rain,sun"
+"temperature-low","Weather","forecast,climate,rain,sun"
+"temperature-up","Weather","forecast,climate,rain,sun"
+"tennis-ball","Activities","sport,racket,ball,court"
+"tennis-ball-alt","Activities","sport,racket,ball,court"
+"terminal","System","computer,os,settings,desktop"
+"terminal-tag","System","label,badge,chip,price"
+"test-tube","Science","lab,research,experiment,study"
+"text","Editor","typography,type,font,paragraph"
+"text-arrows-up-down","Editor","font,size,scale,resize,typography,type,paragraph"
+"text-box","Editor","typography,type,font,paragraph"
+"text-magnifying-glass","Editor","search,typography,type,font,paragraph,lens,magnify,look"
+"text-size","Editor","typography,font,scale,aa,type,paragraph"
+"text-square","Editor","typography,type,font,paragraph,shape,box,checkbox,region"
+"threads","Social","network,share,community,people"
+"three-points-circle","3D Editor","3,triple,triangle,menu,round,radio,dot,shape"
+"three-stars","Organization","3,triple,triangle,menu"
+"thumbs-down","Social","disapprove,dislike,facebook,fb,meta,no,network,share,community,people"
+"thumbs-up","Social","approve,like,facebook,fb,meta,yes,network,share,community,people"
+"thunderstorm","Weather","forecast,climate,rain,sun"
+"tif-format","Photos and Videos","media,image,camera,record"
+"tiff-format","Photos and Videos","media,image,camera,record"
+"tiktok","Social","social,video,shorts,story,share,network,community,people"
+"time-zone","Communication","chat,message,contact,talk"
+"timer","Other","countdown,stopwatch,clock,alarm"
+"timer-off","Other","countdown,stopwatch,clock,alarm,disabled,inactive,muted,disconnected"
+"tools","Tools","utility,build,repair,wrench"
+"tournament","Gaming","game,play,controller,fun"
+"tower","Security","safe,lock,protect,privacy"
+"tower-check","Security","done,success,tick,approve,ok,complete"
+"tower-no-access","Security","forbidden,stop,banned,block"
+"tower-warning","Security","alert,caution,danger,attention"
+"trademark","Other","misc,general,utility,ui"
+"train","Transport","transport,train,station,track,public,rail,metro,locomotive"
+"tram","Transport","transport,train,station,track,public,streetcar,travel,vehicle,commute,trip"
+"transition-down","Animations","css,animate,morph,blend,crossfade"
+"transition-left","Animations","css,animate,morph,blend,crossfade"
+"transition-right","Animations","css,animate,morph,blend,crossfade"
+"transition-up","Animations","css,animate,morph,blend,crossfade"
+"translate","Other","language,i18n,locale,global"
+"trash","Actions","delete,bin,remove,garbage"
+"treadmill","Activities","sport,hobby,leisure,outdoor"
+"tree","Nature","nature,plant,forest,green"
+"trekking","Activities","sport,hobby,leisure,outdoor"
+"trello","Development","code,dev,programming,software"
+"triangle","Shapes","geometry,figure,vector,draw"
+"triangle-flag","Other","country,mark,pin,report"
+"triangle-flag-circle","Other","country,mark,pin,report,round,radio,dot,shape"
+"triangle-flag-two-stripes","Other","country,mark,pin,report,2,double,pair,both"
+"trophy","Activities","winner,award,achievement,prize"
+"truck","Transport","ship,semitruck,shipment,amazon,delivery,shipping,vehicle,cargo"
+"truck-green","Transport","clean,environment,nature,energy,delivery,shipping,vehicle,cargo"
+"truck-length","Transport","size,transport,semitruck,rule,condition,delivery,shipping,vehicle,cargo"
+"tunnel","Buildings","architecture,city,place,urban"
+"tv","Devices","hardware,gadget,electronics,tech"
+"tv-fix","Devices","hardware,gadget,electronics,tech"
+"tv-warning","Devices","alert,caution,danger,attention"
+"twitter","Social","bird,social,share,network,community,people"
+"two-points-circle","3D Editor","2,double,pair,both,round,radio,dot,shape"
+"two-seater-sofa","Home","2,double,pair,both"
+"type","System","computer,os,settings,desktop"
+"umbrella","Clothing","rain,parasol,weather,cover,sunshade"
+"underline","Editor","text,writing,format,content"
+"underline-square","Editor","shape,box,checkbox,region"
+"undo","Actions","ui,button,control,interface"
+"undo-action","Actions","ui,button,control,interface"
+"undo-circle","Actions","round,radio,dot,shape"
+"union","Design Tools","design,creative,layout,figma"
+"union-alt","Design Tools","design,creative,layout,figma"
+"union-horiz-alt","Design Tools","design,creative,layout,figma"
+"unity","Development","code,dev,programming,software"
+"unity-5","Development","code,dev,programming,software"
+"unjoin-3d","3D Editor","3d,modeling,mesh,render"
+"upload","Actions","upload,arrow,data,cloud,save,send,export,share"
+"upload-data-window","System","os,browser,cloud,send,export,share"
+"upload-square","Actions","cloud,send,export,share,shape,box,checkbox,region"
+"usb","Connectivity","port,access,connection,cable,network,internet,signal,online"
+"user","Users","person,people,ux,account,profile,avatar"
+"user-badge-check","Users","profile,person,account,avatar,done,success,tick,approve,ok,complete"
+"user-bag","Shopping","person,account,profile,avatar,luggage,suitcase,travel,pack"
+"user-cart","Shopping","person,account,profile,avatar,shopping,basket,ecommerce,checkout"
+"user-circle","Users","profile,avatar,account,person,round,radio,dot,shape"
+"user-crown","Users","person,account,profile,avatar,king,winner,vip,premium"
+"user-love","Users","person,account,profile,avatar,heart,romance,valentine"
+"user-plus","Users","person,account,profile,avatar,add,new,create,increase"
+"user-scan","Identity","person,account,profile,avatar,qr,barcode,camera,detect"
+"user-square","Users","person,people,ux,profile,avatar,account,shape,box,checkbox,region"
+"user-star","Users","person,account,profile,avatar,favorite,rating,review,bookmark"
+"user-xmark","Users","delete,cancel,profile,person,remove,account,avatar,close,dismiss,clear,wrong"
+"vegan","Nature","plant,leaf,food,diet"
+"vegan-circle","Nature","plant,leaf,food,diet,round,radio,dot,shape"
+"vegan-square","Nature","plant,leaf,food,diet,shape,box,checkbox,region"
+"vehicle-green","Transport","clean,environment,nature,energy,travel,vehicle,commute,trip"
+"vertical-merge","Navigation","portrait,column,upright,menu,move,ui,wayfinding"
+"vertical-split","Navigation","portrait,column,upright,menu,move,ui,wayfinding"
+"vials","Science","lab,research,experiment,study"
+"video-camera","Photos and Videos","film,record,camera,clip,photo,picture,lens,shoot,selfie"
+"video-camera-off","Photos and Videos","film,record,camera,clip,photo,picture,lens,shoot,selfie,disabled,inactive,muted,disconnected"
+"video-projector","Devices","film,record,camera,clip"
+"view-360","Maps","location,gps,travel,directions"
+"view-columns-2","Layout","layout,tiled,windows,tiling,window,grid,structure,template,spacing"
+"view-columns-3","Layout","layout,tiled,windows,tiling,window,grid,structure,template,spacing"
+"view-grid","Layout","table,layout,matrix,cells"
+"view-structure-down","Layout","grid,structure,template,spacing"
+"view-structure-up","Layout","grid,structure,template,spacing"
+"voice","Identity","speech,mic,audio,assistant"
+"voice-check","Identity","biometric,speaker,verification,speech,mic,audio,assistant,done,success,tick,approve,ok,complete"
+"voice-circle","Identity","speech,mic,audio,assistant,round,radio,dot,shape"
+"voice-lock-circle","Identity","speech,mic,audio,assistant,secure,password,private,encrypt,round,radio,dot,shape"
+"voice-scan","Identity","speech,mic,audio,assistant,qr,barcode,camera,detect"
+"voice-square","Identity","speech,mic,audio,assistant,shape,box,checkbox,region"
+"voice-xmark","Identity","error,issue,speech,mic,audio,assistant,close,cancel,delete,remove,dismiss,clear,wrong"
+"vr-tag","Devices","virtual,reality,headset,immersive,label,badge,chip,price"
+"vue-js","Development","code,dev,programming,software"
+"waist","Activities","sport,hobby,leisure,outdoor"
+"walking","Activities","sport,hobby,leisure,outdoor"
+"wallet","Finance","money,cards,purse,finance"
+"warning-circle","Actions","alert,caution,danger,attention,round,radio,dot,shape"
+"warning-hexagon","Devices","alert,caution,danger,attention,shape,polygon,six,sides"
+"warning-square","Actions","alert,caution,danger,attention,shape,box,checkbox,region"
+"warning-triangle","Actions","alert,caution,danger,attention"
+"warning-window","System","alert,danger,caution,attention"
+"wash","Home","laundry,clean,soap,clothes"
+"washing-machine","Home","house,domestic,appliance,interior"
+"watering-soil","Nature","gardening,garden,terrain,ground,plants,outdoor,plant,environment,earth"
+"web-window","System","browser,internet,site,page"
+"web-window-energy-consumption","System","browser,internet,site,page"
+"web-window-xmark","System","close,error,issue,browser,internet,site,page,cancel,delete,remove,dismiss,clear,wrong"
+"webp-format","Photos and Videos","media,image,camera,record"
+"weight","Health","scale,kg,fitness,health"
+"weight-alt","Health","scale,kg,fitness,health"
+"white-flag","Other","flag,surrender,peace,truce,country,mark,pin,report"
+"wifi","Connectivity","signal,connection,network,wireless,internet"
+"wifi-off","Connectivity","signal,connection,network,wireless,internet,disabled,inactive,muted,disconnected"
+"wifi-signal-none","Connectivity","signal,connection,network,internet,wireless,lan,hotspot"
+"wifi-tag","Connectivity","signal,connection,network,wireless,internet,label,badge,chip,price"
+"wifi-warning","Connectivity","signal,connection,network,wireless,internet,alert,caution,danger,attention"
+"wifi-xmark","Connectivity","signal,connection,network,error,wireless,internet,close,cancel,delete,remove,dismiss,clear,wrong"
+"wind","Weather","weather,air,fresh,breeze,forecast"
+"window-check","System","browser,os,done,success,tick,approve,ok,complete"
+"window-lock","System","browser,os,secure,password,private,encrypt"
+"window-tabs","System","browser,os,tab,navigation,computer,settings,desktop"
+"window-no-access","System","browser,os,forbidden,stop,banned,block"
+"window-xmark","System","browser,os,error,issue,close,cancel,delete,remove,dismiss,clear,wrong"
+"windows","System","microsoft,os,desktop,pc"
+"wolf","Animals","animal,dog,wild,nature"
+"wrap-text","Actions","text,line,break,paragraph,typography,type,font"
+"wrench","Tools","tool,settings,repair,fix"
+"wristwatch","Devices","time,clock,wearable,watch"
+"www","Communication","website,internet,browser,url"
+"x-square","Typography","coordinate,axis,twitter,social,close,letter,shape,box,checkbox,region"
+"xbox-a","Gaming","game,play,controller,fun"
+"xbox-b","Gaming","game,play,controller,fun"
+"xbox-x","Gaming","twitter,social,close,letter"
+"xbox-y","Gaming","game,play,controller,fun"
+"xmark","Actions","cancel,delete,remove,close,dismiss,clear,wrong"
+"xmark-circle","Actions","delete,close,cancel,error,invalid,remove,dismiss,clear,wrong,round,radio,dot,shape"
+"xmark-square","Actions","remove,close,cancel,delete,dismiss,clear,wrong,shape,box,checkbox,region"
+"xray-view","3D Editor","3d,modeling,mesh,render"
+"y-square","Typography","coordinate,axis,shape,box,checkbox,region"
+"yelp","Social","network,share,community,people"
+"yen","Finance","jpy,currency,money,japan"
+"yen-square","Finance","jpy,currency,money,japan,shape,box,checkbox,region"
+"yoga","Activities","meditation,fitness,pose,wellness"
+"youtube","Social","google,video,social,share,stream,channel"
+"z-square","Typography","coordinate,axis,math,plane,shape,box,checkbox,region"
+"zoom-in","Organization","magnify,scale,enlarge,search"
+"zoom-out","Organization","magnify,scale,shrink,overview"
+"asterisk","Typography","star,wildcard,required,footnote"
+"dns","Connectivity","domain,network,lookup,server"
+"hashtag","Social","pound,trend,topic,social,tag"
+"peerlist","Social","social,network,profile,directory,community"
+"polar-sh","Development","polar,coordinates,math,graph,axis"
+"x","Social","twitter,social,logo,brand,close,letter"
+"ice-cream","Food","gelato,dessert,sweet,summer,cold,winter,frozen,cream"
+"mastodon","Social","fediverse,toot,social,opensource"
+"meter-arrow-down-right","Maps","gauge,trend,decrease,metric,direction,navigate,pointer,chevron,move"
+"rhombus-arrow-right","Maps","diamond,direction,map,navigate,shape,geometry,pointer,chevron,move"
+"u-turn-arrow-left","Maps","reverse,return,back,direction,turn,uturn,navigate,pointer,chevron,move"
+"u-turn-arrow-right","Maps","reverse,return,back,direction,turn,uturn,navigate,pointer,chevron,move"
+"calendar-arrow-down","System","schedule,scroll,pick date,datepicker,date,event,planner,month,direction,navigate,pointer,chevron,move"
+"calendar-arrow-up","System","schedule,scroll,pick date,datepicker,date,event,planner,month,direction,navigate,pointer,chevron,move"
+"calendar-check","System","event,rsvp,appointment,confirmed,date,schedule,planner,month,done,success,tick,approve,ok,complete"
+"calendar-rotate","System","sync,refresh,timezone,reschedule,date,schedule,event,planner,month,spin,turn,orientation,pivot"
+"calendar-xmark","System","cancel,delete event,remove,busy,date,schedule,event,planner,month,close,delete,dismiss,clear,wrong"
+"cube-dots","3D Editor","3d,vertices,model,scan,box,volume,solid"
+"cube-scan","3D Editor","3d,measure,ar,lidar,box,volume,solid,qr,barcode,camera,detect"
+"droplet-snow-flake-in","Science","defrost,winter,cold,flake,weather"
+"dots-grid-3x3","Navigation","app drawer,menu,launcher,grid,kebab,app grid,table,layout,matrix,cells"
+"bug","Development","malware,insect,issue,defect,debug,error"
+"whatsapp","Social","chat,text,texting,chatting,bubble,messaging,meta"
