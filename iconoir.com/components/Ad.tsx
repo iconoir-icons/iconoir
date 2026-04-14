@@ -20,13 +20,11 @@ const AdContainer = styled.div`
       }
     }
     .carbon-text {
-      color: var(--black-80);
       font-size: 14px;
     }
     .carbon-poweredby {
       text-align: center;
       font-size: 12px;
-      color: var(--black-40);
     }
   }
 `;
