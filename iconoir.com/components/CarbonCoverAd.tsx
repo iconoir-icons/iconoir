@@ -8,12 +8,10 @@ const CarbonCoverAdContainer = styled.div`
       text-decoration: none;
     }
     .carbon-text {
-      color: var(--black-80);
       font-size: 14px;
     }
     .carbon-poweredby {
       font-size: 12px;
-      color: var(--black-40);
     }
   }
 `;
