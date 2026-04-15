@@ -2,6 +2,35 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import iconTemplate from './template.js';
 
+/**
+ * PascalCase icon names that match Dart or Flutter SDK types/widgets cause
+ * ambiguous import errors (e.g. `Text` vs Flutter's `Text`).
+ * @see https://github.com/iconoir-icons/iconoir/issues/559
+ */
+const FLUTTER_SDK_CLASS_CONFLICTS = new Set([
+  // dart:core
+  'List',
+  'Map',
+  'Type',
+  // Flutter SDK (widgets, material, rendering, painting, gestures, …)
+  'Drag',
+  'Drawer',
+  'Key',
+  'Menu',
+  'Navigator',
+  'Page',
+  'Position',
+  'Radius',
+  'Table',
+  'Text',
+]);
+
+function flutterWidgetClassName(pascalName) {
+  return FLUTTER_SDK_CLASS_CONFLICTS.has(pascalName)
+    ? `${pascalName}Icon`
+    : pascalName;
+}
+
 export default async (ctx, target) => {
   const promises = [];
 
@@ -21,9 +50,11 @@ export default async (ctx, target) => {
         generateIconFile(
           icon.path,
           path.join(outDir, dartPath),
-          variant !== ctx.global.defaultVariant
-            ? icon.pascalNameVariant
-            : icon.pascalName,
+          flutterWidgetClassName(
+            variant !== ctx.global.defaultVariant
+              ? icon.pascalNameVariant
+              : icon.pascalName,
+          ),
         ),
       );
 
