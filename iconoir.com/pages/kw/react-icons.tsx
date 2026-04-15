@@ -3,7 +3,6 @@ import type { HeaderProps } from '../../components/Header';
 import { ArrowRight } from 'iconoir-react';
 import styled from 'styled-components';
 import { HeroText, HeroTextSecondary } from '../.';
-import { Ad } from '../../components/Ad';
 import { LargeButton } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
@@ -109,7 +108,6 @@ const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
           </SupportHead>
         </HeaderSecondary>
         <PageContainer>
-          <Ad />
           <Text18>
             Iconoir has a React library, where we blend creativity with
             functionality to elevate your React projects.
