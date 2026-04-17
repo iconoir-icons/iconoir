@@ -33,6 +33,10 @@ const targets = {
     native: true,
     path: 'packages/iconoir-react-native',
   },
+  'solid-js': {
+    title: 'SolidJS library',
+    path: 'packages/iconoir-solid-js',
+  },
   'vue': {
     title: 'Vue library',
     path: 'packages/iconoir-vue',

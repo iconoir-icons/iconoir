@@ -1,0 +1,47 @@
+{
+  "name": "iconoir-solid-js",
+  "version": "7.10.1",
+  "description": "solid-js library for Iconoir, the biggest open source icon library with tons of free icons.",
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/iconoir"
+  },
+  "homepage": "https://iconoir.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconoir-icons/iconoir.git",
+    "directory": "packages/iconoir-solid-js"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "library",
+    "solid-js"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./regular": {
+      "import": "./dist/regular/esm/index.mjs",
+      "require": "./dist/regular/index.js"
+    },
+    "./solid": {
+      "import": "./dist/solid/esm/index.mjs",
+      "require": "./dist/solid/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "solid-js": "^1.7 || ^1.8 || ^1.9"
+  },
+  "devDependencies": {}
+}
