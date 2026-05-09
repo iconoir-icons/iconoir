@@ -54,13 +54,15 @@ export function FiltersSuggestions({ search, setSearch }: FiltersSuggestionsProp
 
   return (
     <Container>
-      {CATEGORIES.map((category) => <FilterSuggestion
-        key={category}
-        onClick={() => acceptSuggestion(category)}
-        className={search === category ? "active" : ""}
-      >
-        {category}
-      </FilterSuggestion>)}
+      {CATEGORIES.map((category) => (
+        <FilterSuggestion
+          key={category}
+          onClick={() => acceptSuggestion(category)}
+          className={search === category ? 'active' : ''}
+        >
+          {category}
+        </FilterSuggestion>
+      ))}
     </Container>
   );
 }

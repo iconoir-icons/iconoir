@@ -1,8 +1,8 @@
 import type { IconListFilters } from './IconList';
 import React from 'react';
-import { LargeInput } from './Input';
 import styled from 'styled-components';
 import { FiltersSuggestions } from '@/components/FilterSuggestions';
+import { LargeInput } from './Input';
 
 const Container = styled.div`
   display: flex;
