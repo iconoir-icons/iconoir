@@ -12,4 +12,3 @@ export function dtsExport(module, name) {
   const typeName = `FunctionalComponent<JSX.SVGAttributes<SVGSVGElement>>`;
   return `export const ${name}: ${typeName};\n`;
 }
-

@@ -3,10 +3,13 @@
   "version": "7.11.0",
   "description": "Preact library for Iconoir.",
   "license": "MIT",
+  "keywords": [
+    "icons",
+    "svg",
+    "preact",
+    "iconoir"
+  ],
   "sideEffects": false,
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.mjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -24,16 +27,13 @@
       "require": "./dist/cjs/solid/index.js"
     }
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "peerDependencies": {
     "preact": "^10.0.0"
-  },
-  "keywords": [
-    "icons",
-    "svg",
-    "preact",
-    "iconoir"
-  ]
+  }
 }
