@@ -3,6 +3,11 @@ import { join } from 'node:path';
 import { transform as transformESM } from '@svgr/core';
 import { transform as transformCJS } from 'esbuild';
 import {
+  cjsContext,
+  dtsContext,
+  esmContext,
+} from './templates/context.mjs';
+import {
   cjsExport,
   dtsExport,
   esmExport,
@@ -87,32 +92,32 @@ async function buildIcons(distPath, icons) {
 
       esmIndex += esmExport(
         `./${variant}/${icon.pascalName}.mjs`,
-        icon.pascalName,
+        icon.pascalNameVariant,
       );
 
       cjsIndex += cjsExport(
         `./${variant}/${icon.pascalName}.js`,
-        icon.pascalName,
+        icon.pascalNameVariant,
       );
 
       dtsIndex += dtsExport(
         `./${variant}/${icon.pascalName}`,
-        icon.pascalName,
+        icon.pascalNameVariant,
       );
 
       variantEsmIndex += esmExport(
         `./${icon.pascalName}.mjs`,
-        icon.pascalName,
+        icon.pascalNameVariant,
       );
 
       variantCjsIndex += cjsExport(
         `./${icon.pascalName}.js`,
-        icon.pascalName,
+        icon.pascalNameVariant,
       );
 
       variantDtsIndex += dtsExport(
         `./${icon.pascalName}`,
-        icon.pascalName,
+        icon.pascalNameVariant,
       );
     }
 
@@ -131,10 +136,80 @@ async function buildIcons(distPath, icons) {
   await writeFile(join(distDir, 'index.d.ts'), dtsIndex);
 }
 
+async function addDefaultVariants(distPath, icons, defaultVariant) {
+  const distDir = join(distPath, 'dist');
+  const esmDist = join(distDir, 'esm');
+  const cjsDist = join(distDir, 'cjs');
+
+  const esmIndexPath = join(esmDist, 'index.mjs');
+  const cjsIndexPath = join(cjsDist, 'index.js');
+  const dtsIndexPath = join(distDir, 'index.d.ts');
+
+  let esmIndex = await readFile(esmIndexPath, 'utf-8');
+  let cjsIndex = await readFile(cjsIndexPath, 'utf-8');
+  let dtsIndex = await readFile(dtsIndexPath, 'utf-8');
+
+  for (const icon of icons[defaultVariant]) {
+    esmIndex += esmExport(
+      `./${defaultVariant}/${icon.pascalName}.mjs`,
+      icon.pascalName,
+    );
+
+    cjsIndex += cjsExport(
+      `./${defaultVariant}/${icon.pascalName}.js`,
+      icon.pascalName,
+    );
+
+    dtsIndex += dtsExport(
+      `./${defaultVariant}/${icon.pascalName}`,
+      icon.pascalName,
+    );
+  }
+
+  await writeFile(esmIndexPath, esmIndex);
+  await writeFile(cjsIndexPath, cjsIndex);
+  await writeFile(dtsIndexPath, dtsIndex);
+}
+
+async function addContexts(distPath) {
+  const distDir = join(distPath, 'dist');
+  const esmDist = join(distDir, 'esm');
+  const cjsDist = join(distDir, 'cjs');
+
+  const esmContextPath = join(esmDist, 'context.mjs');
+  const cjsContextPath = join(cjsDist, 'context.js');
+  const dtsContextPath = join(distDir, 'context.d.ts');
+
+  await writeFile(esmContextPath, esmContext());
+  await writeFile(cjsContextPath, cjsContext());
+  await writeFile(dtsContextPath, dtsContext());
+
+  const esmIndexPath = join(esmDist, 'index.mjs');
+  const cjsIndexPath = join(cjsDist, 'index.js');
+  const dtsIndexPath = join(distDir, 'index.d.ts');
+
+  let esmIndex = await readFile(esmIndexPath, 'utf-8');
+  let cjsIndex = await readFile(cjsIndexPath, 'utf-8');
+  let dtsIndex = await readFile(dtsIndexPath, 'utf-8');
+
+  esmIndex += `export * from "./context.mjs";`;
+  cjsIndex += `exports.Context = require("./context.js");`;
+  dtsIndex += `export * from "./context.d.ts";`;
+
+  await writeFile(esmIndexPath, esmIndex);
+  await writeFile(cjsIndexPath, cjsIndex);
+  await writeFile(dtsIndexPath, dtsIndex);
+}
+
 export default async function build(...args) {
-  const [{ icons }, { path: distPath }] = args;
+  const [
+    { icons, global: { defaultVariant } },
+    { path: distPath },
+  ] = args;
 
   await setupDist(distPath);
   await addRootFiles(distPath);
   await buildIcons(distPath, icons);
+  await addDefaultVariants(distPath, icons, defaultVariant);
+  await addContexts(distPath);
 }
