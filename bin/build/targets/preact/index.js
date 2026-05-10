@@ -73,7 +73,7 @@ async function buildIcons(distPath, icons) {
       const jsxContent = await transformSVG(svgContent, {
         plugins: ['@svgr/plugin-jsx'],
         icon: true,
-        jsxRuntime: 'automatic',
+        jsxRuntime: 'classic-preact',
         importSource: 'preact',
       }, { componentName: icon.pascalNameVariant });
 
@@ -81,12 +81,16 @@ async function buildIcons(distPath, icons) {
         loader: 'jsx',
         format: 'esm',
         target: 'es2020',
+        jsxFactory: 'h',
+        jsxFragment: 'Fragment',
       })).code;
 
       const cjsContent = (await transformJSX(jsxContent, {
         loader: 'jsx',
         format: 'cjs',
         target: 'es2020',
+        jsxFactory: 'h',
+        jsxFragment: 'Fragment',
       })).code;
 
       const esmFilePath = join(esmPath, `${icon.pascalName}.mjs`);
@@ -191,12 +195,16 @@ async function addContexts(distPath) {
     loader: 'jsx',
     format: 'esm',
     target: 'es2020',
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
   })).code;
 
   const cjsContextContent = (await transformJSX(jsxContext, {
     loader: 'jsx',
     format: 'cjs',
     target: 'es2020',
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
   })).code;
 
   await writeFile(esmContextPath, esmContextContent);

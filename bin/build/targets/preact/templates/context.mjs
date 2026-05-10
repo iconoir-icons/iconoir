@@ -1,6 +1,6 @@
 export function esmContext() {
   return `
-import { createContext } from "preact";
+import { h, createContext } from "preact";
 
 export const IconoirContext =
   createContext({});
