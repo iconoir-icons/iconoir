@@ -1,9 +1,8 @@
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { transform as transformESM } from '@svgr/core';
-import { transform as transformCJS } from 'esbuild';
+import { transform as transformSVG } from '@svgr/core';
+import { transform as transformJSX } from 'esbuild';
 import {
-  cjsContext,
   dtsContext,
   esmContext,
 } from './templates/context.mjs';
@@ -71,14 +70,20 @@ async function buildIcons(distPath, icons) {
     for (const icon of icons[variant]) {
       const svgContent = await readFile(icon.path);
 
-      const esmContent = await transformESM(svgContent, {
+      const jsxContent = await transformSVG(svgContent, {
         plugins: ['@svgr/plugin-jsx'],
         icon: true,
         jsxRuntime: 'automatic',
         importSource: 'preact',
       }, { componentName: icon.pascalNameVariant });
 
-      const cjsContent = (await transformCJS(esmContent, {
+      const esmContent = (await transformJSX(jsxContent, {
+        loader: 'jsx',
+        format: 'esm',
+        target: 'es2020',
+      })).code;
+
+      const cjsContent = (await transformJSX(jsxContent, {
         loader: 'jsx',
         format: 'cjs',
         target: 'es2020',
@@ -180,8 +185,22 @@ async function addContexts(distPath) {
   const cjsContextPath = join(cjsDist, 'context.js');
   const dtsContextPath = join(distDir, 'context.d.ts');
 
-  await writeFile(esmContextPath, esmContext());
-  await writeFile(cjsContextPath, cjsContext());
+  const jsxContext = esmContext();
+
+  const esmContextContent = (await transformJSX(jsxContext, {
+    loader: 'jsx',
+    format: 'esm',
+    target: 'es2020',
+  })).code;
+
+  const cjsContextContent = (await transformJSX(jsxContext, {
+    loader: 'jsx',
+    format: 'cjs',
+    target: 'es2020',
+  })).code;
+
+  await writeFile(esmContextPath, esmContextContent);
+  await writeFile(cjsContextPath, cjsContextContent);
   await writeFile(dtsContextPath, dtsContext());
 
   const esmIndexPath = join(esmDist, 'index.mjs');
@@ -192,9 +211,9 @@ async function addContexts(distPath) {
   let cjsIndex = await readFile(cjsIndexPath, 'utf-8');
   let dtsIndex = await readFile(dtsIndexPath, 'utf-8');
 
-  esmIndex += `export * from "./context.mjs";`;
-  cjsIndex += `exports.Context = require("./context.js");`;
-  dtsIndex += `export * from "./context.d.ts";`;
+  esmIndex += '\nexport * from "./context.mjs";\n';
+  cjsIndex += '\nObject.assign(exports, require("./context.js"));\n';
+  dtsIndex += '\nexport * from "./context";\n';
 
   await writeFile(esmIndexPath, esmIndex);
   await writeFile(cjsIndexPath, cjsIndex);

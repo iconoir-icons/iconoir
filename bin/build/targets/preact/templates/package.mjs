@@ -42,5 +42,8 @@ export function packageJson(version) {
     peerDependencies: {
       preact: '^10.0.0',
     },
+    devDependencies: {
+      preact: '^10.0.0',
+    },
   }, null, 2);
 }
