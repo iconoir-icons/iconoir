@@ -32,6 +32,14 @@
     "./solid": {
       "import": "./dist/esm/solid/index.mjs",
       "require": "./dist/solid/index.js"
+    },
+    "./regular/*": {
+      "import": "./dist/esm/regular/*.mjs",
+      "require": "./dist/regular/*.js"
+    },
+    "./solid/*": {
+      "import": "./dist/esm/solid/*.mjs",
+      "require": "./dist/solid/*.js"
     }
   },
   "main": "./dist/index.js",
