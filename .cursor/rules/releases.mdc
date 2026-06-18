@@ -1,0 +1,67 @@
+---
+description: How to cut and publish Iconoir releases (npm + pub.dev)
+alwaysApply: true
+---
+
+# Iconoir releases
+
+## Version format
+
+Use semver tags like `v7.11.1` (patch) or `v7.12.0` (minor). The tag must match `version` in root and package `package.json` files after the release workflow runs.
+
+## What a release does
+
+Pushing a `v*` tag triggers two workflows:
+
+1. **`release.yaml`** — builds all targets, bumps versions on `main`, publishes npm packages (`iconoir`, `iconoir-react`, `iconoir-react-native`, `iconoir-vue`). Skips npm publish if that version is already on the registry (safe to re-tag).
+2. **`publish-flutter.yml`** — builds Flutter icons and publishes `iconoir_flutter` to pub.dev via **GitHub OIDC** (no stored OAuth tokens).
+
+## Secrets required
+
+| Secret | Used for |
+|--------|----------|
+| `NPM_TOKEN` | npm publish (granular or classic automation token; **not** the org section on npm) |
+
+Do **not** use `PUB_CREDENTIAL_JSON` — Flutter publishing uses OIDC configured on pub.dev.
+
+## One-time pub.dev setup (already done)
+
+At https://pub.dev/packages/iconoir_flutter/admin → **Automated publishing**:
+
+- Repository: `iconoir-icons/iconoir`
+- Tag pattern: `v{{version}}`
+
+## Cutting a release
+
+1. Ensure changes are merged to `main`.
+2. Create a GitHub release with title/body like `v7.11.1` (see prior releases for format).
+3. Create and push the tag:
+
+```bash
+git checkout main && git pull
+git tag v7.11.1
+git push origin v7.11.1
+```
+
+Or create the release/tag from GitHub UI — both trigger the workflows.
+
+## Re-publishing Flutter only
+
+If npm succeeded but Flutter failed, merge any workflow fixes to `main`, then re-push the same tag:
+
+```bash
+git checkout main && git pull
+git tag -fa v7.11.1 -m "v7.11.1"
+git push -f origin v7.11.1
+```
+
+npm publish will be skipped; Flutter publish will retry.
+
+## CI / lockfile
+
+If `peerDependencies` or workspace `package.json` files change, run `pnpm install` and commit `pnpm-lock.yaml` before merging — CI uses `--frozen-lockfile`.
+
+## React 19
+
+- `iconoir-react`: `react: "18 || 19"`
+- `iconoir-react-native`: `react: "18 || 19"`
