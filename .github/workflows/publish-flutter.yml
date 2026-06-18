@@ -1,0 +1,37 @@
+name: Publish Flutter to pub.dev
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    name: Publish Flutter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build Flutter package
+        run: pnpm run build flutter
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
+
+      - name: Setup Flutter
+        uses: flutter-actions/setup-flutter@18c66a64fb6f6d3338c63cabbc5cd6da395e7f1d
+
+      - name: Publish to pub.dev
+        working-directory: packages/iconoir-flutter
+        run: |
+          dart pub get
+          dart pub publish --dry-run
+          dart pub publish -f

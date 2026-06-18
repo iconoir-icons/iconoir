@@ -52,13 +52,14 @@ jobs:
           git push -f origin ${{ github.ref_name }}
 
       - name: Publish packages
-        run: pnpm -r publish --access public
+        run: |
+          ROOT_VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED=$(npm view iconoir@"$ROOT_VERSION" version 2>/dev/null || true)
+          if [ "$PUBLISHED" = "$ROOT_VERSION" ]; then
+            echo "npm packages already at $ROOT_VERSION, skipping publish"
+          else
+            pnpm -r publish --access public
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-
-      - name: Publish Flutter
-        uses: k-paxian/dart-package-publisher@v1.6
-        with:
-          credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
-          relativePath: ./packages/iconoir-flutter
