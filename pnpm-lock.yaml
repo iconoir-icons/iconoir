@@ -291,7 +291,7 @@ importers:
   packages/iconoir-react-native:
     dependencies:
       react:
-        specifier: '19'
+        specifier: 18 || 19
         version: 19.1.0
       react-native:
         specifier: '>=0.78.0'
