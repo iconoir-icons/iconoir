@@ -26,3 +26,19 @@ jobs:
 
       - name: Run Linter
         run: pnpm exec eslint ${{ steps.changed-files.outputs.all_changed_files }}
+
+  react-19:
+    name: React 19
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build packages
+        run: pnpm run build react react-native
+
+      - name: Build Next.js example
+        run: pnpm --filter example-next build
