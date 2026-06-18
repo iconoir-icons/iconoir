@@ -37,6 +37,8 @@ Guidelines for pull requests:
 Before creating an icon request, please search to see if someone has requested the icon already. If
 there is an open request, please upvote it.
 
+⚠️ **Icons related to Brands or product logos are no longer accepted for different reasons. Only main tools and social networks are kept at the moment.**
+
 If the icon has not already been requested, [create an
 issue](https://github.com/iconoir-icons/iconoir/issues/new/choose) and add as much information as
 possible. Follow the rules you see when opening a new bug report.
