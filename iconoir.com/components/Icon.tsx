@@ -8,14 +8,27 @@ import { DEFAULT_CUSTOMIZATIONS } from './IconList';
 
 const HEADER = '<?xml version="1.0" encoding="UTF-8"?>';
 
+function svgToDataUrl(svg: string) {
+  // RFC 2397: encode as a URI component so `#`, `<`, non-Latin1, etc. stay valid.
+  // `btoa` is Latin-1 only and breaks Safari/Arc downloads for some SVGs (#515).
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
 function bakeSvg(
   svgString: string,
   color: string,
   strokeWidth: string | number,
 ) {
+  // Serialized SVG from the DOM already includes stroke-width on stroked
+  // elements; blindly appending after stroke="currentColor" duplicates the
+  // attribute and breaks strict XML parsers (e.g. network-* icons).
+  const withoutStrokeWidth = svgString.replace(
+    /\sstroke-width=(["'])[^"']*\1/g,
+    '',
+  );
   return (
     HEADER
-    + svgString
+    + withoutStrokeWidth
       .replace(
         /stroke="currentColor"/g,
         `stroke="currentColor" stroke-width="${strokeWidth}"`,
@@ -163,24 +176,25 @@ export function Icon({ iconWidth, icon }: IconProps) {
   }, []);
 
   React.useEffect(() => {
-    if (iconContainerRef.current) {
-      htmlContentsRef.current = bakeSvg(
-        (iconContainerRef.current.firstChild as SVGElement).outerHTML,
-        iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
-        iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth,
-      );
-    }
-  }, [iconContext, supportsClipboard]);
+    const container = iconContainerRef.current;
+    const svgEl = container?.firstChild as SVGElement | undefined;
+    if (!svgEl) return;
 
-  React.useEffect(() => {
-    const element = downloadRef.current || (iconContainerRef.current as unknown as HTMLAnchorElement);
+    const baked = bakeSvg(
+      svgEl.outerHTML,
+      iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
+      iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth,
+    );
+    htmlContentsRef.current = baked;
 
-    if (element) {
-      element.href = `data:image/svg+xml;base64,${btoa(
-        htmlContentsRef.current,
-      )}`;
+    const downloadTarget = supportsClipboard
+      ? downloadRef.current
+      : (container as unknown as HTMLAnchorElement | null);
+
+    if (downloadTarget) {
+      downloadTarget.href = svgToDataUrl(baked);
     }
-  }, [iconContext, supportsClipboard]);
+  }, [icon, iconContext, supportsClipboard]);
 
   return (
     <div className="icon-container">
