@@ -10,21 +10,21 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^53.0.20",
-    "expo-status-bar": "^2.0.0",
+    "expo": "^53.0.27",
+    "expo-status-bar": "^2.2.3",
     "iconoir-react-native": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-native": "^0.79.5",
-    "react-native-svg": "^15.11.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-native": "^0.79.7",
+    "react-native-svg": "^15.15.5",
     "react-native-web": "^0.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@react-native/metro-config": "^0.79.5",
-    "@rnx-kit/metro-config": "^2.0.1",
-    "@rnx-kit/metro-resolver-symlinks": "^0.2.1",
-    "@types/react": "^19.0.14",
+    "@babel/core": "^7.29.7",
+    "@react-native/metro-config": "^0.79.7",
+    "@rnx-kit/metro-config": "^2.2.4",
+    "@rnx-kit/metro-resolver-symlinks": "^0.2.11",
+    "@types/react": "^19.2.17",
     "typescript": "~5.8.3"
   }
 }

@@ -39,25 +39,32 @@
     "prepublish-all": "node ./bin/prepublish.js"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.0.0",
+    "@antfu/eslint-config": "^5.4.1",
     "@atomist/yaml-updater": "^1.0.2",
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
-    "@vitejs/plugin-vue": "^6.0.0",
-    "esbuild": "^0.25.8",
-    "eslint": "^9.32.0",
-    "eslint-plugin-format": "^1.0.1",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.39.5",
+    "eslint-plugin-format": "^1.5.0",
     "hast-util-from-html": "^2.0.3",
     "hast-util-to-html": "^9.0.5",
-    "listr2": "^9.0.1",
-    "prettier": "^3.6.2",
+    "listr2": "^9.0.5",
+    "prettier": "^3.9.6",
     "scule": "^1.3.0",
-    "semver": "^7.7.2",
+    "semver": "^7.8.5",
     "tinypool": "1.1.1",
     "typescript": "~5.8.3",
-    "vite": "^7.0.6",
+    "vite": "^7.3.6",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-solid": "2.11.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "@tootallnate/once@<2.0.1": "^2.0.1",
+      "postcss@<8.5.18": "^8.5.23",
+      "sharp@<0.35.0": "^0.35.3"
+    }
   }
 }

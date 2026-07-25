@@ -10,18 +10,18 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "vue": "^3.5.18"
+    "vue": "^3.5.40"
   },
   "devDependencies": {
     "@iconoir/vue": "workspace:*",
-    "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^22.16.5",
-    "@vitejs/plugin-vue": "^6.0.0",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^22.20.1",
+    "@vitejs/plugin-vue": "^6.0.8",
     "@vue/tsconfig": "^0.7.0",
     "npm-run-all2": "^8.0.4",
     "typescript": "~5.8.3",
-    "vite": "^7.0.6",
-    "vite-plugin-vue-devtools": "^7.7.7",
-    "vue-tsc": "^3.0.4"
+    "vite": "^7.3.6",
+    "vite-plugin-vue-devtools": "^7.7.10",
+    "vue-tsc": "^3.3.8"
   }
 }

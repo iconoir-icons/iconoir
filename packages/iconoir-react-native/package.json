@@ -46,6 +46,6 @@
     "react-native-svg": "^15.12.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.8"
+    "@types/react": "^19.2.17"
   }
 }

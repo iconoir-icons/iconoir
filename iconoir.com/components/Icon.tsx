@@ -26,6 +26,7 @@ function bakeSvg(
     /\sstroke-width=(["'])[^"']*\1/g,
     '',
   );
+
   return (
     HEADER
     + withoutStrokeWidth
@@ -178,13 +179,15 @@ export function Icon({ iconWidth, icon }: IconProps) {
   React.useEffect(() => {
     const container = iconContainerRef.current;
     const svgEl = container?.firstChild as SVGElement | undefined;
-    if (!svgEl) return;
+    if (!svgEl)
+      return;
 
     const baked = bakeSvg(
       svgEl.outerHTML,
       iconContext.color || DEFAULT_CUSTOMIZATIONS.hexColor,
       iconContext.strokeWidth || DEFAULT_CUSTOMIZATIONS.strokeWidth,
     );
+
     htmlContentsRef.current = baked;
 
     const downloadTarget = supportsClipboard
