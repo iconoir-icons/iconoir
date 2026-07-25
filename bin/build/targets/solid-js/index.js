@@ -43,9 +43,9 @@ export default async (ctx, target) => {
         iconContent,
       );
 
-      const vuePath = path.join(variantOutDir, solidFileName);
+      const solidPath = path.join(variantOutDir, solidFileName);
 
-      return fs.writeFile(vuePath, componentContent);
+      return fs.writeFile(solidPath, componentContent);
     };
 
     for (const icon of icons) {
