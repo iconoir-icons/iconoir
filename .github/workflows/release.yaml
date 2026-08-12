@@ -51,15 +51,50 @@ jobs:
           git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
           git push -f origin ${{ github.ref_name }}
 
-      - name: Publish packages
+      # Publish package by package, skipping the ones already on the registry, so
+      # that re-pushing a tag retries only what is missing. Keep the directory
+      # list in sync with bin/prepublish.js.
+      - name: Publish npm packages
         run: |
-          ROOT_VERSION=$(node -p "require('./package.json').version")
-          PUBLISHED=$(npm view iconoir@"$ROOT_VERSION" version 2>/dev/null || true)
-          if [ "$PUBLISHED" = "$ROOT_VERSION" ]; then
-            echo "npm packages already at $ROOT_VERSION, skipping publish"
-          else
-            pnpm -r publish --access public
-          fi
+          FAILED=0
+          for DIR in . packages/iconoir-react packages/iconoir-react-native packages/iconoir-solid-js packages/iconoir-vue; do
+            NAME=$(node -p "require('./$DIR/package.json').name")
+            VERSION=$(node -p "require('./$DIR/package.json').version")
+            if [ "$(npm view "$NAME@$VERSION" version 2>/dev/null || true)" = "$VERSION" ]; then
+              echo "::notice::$NAME@$VERSION already published, skipping"
+              continue
+            fi
+            echo "Publishing $NAME@$VERSION"
+            (cd "$DIR" && pnpm publish --access public --no-git-checks) \
+              || { echo "::error::Failed to publish $NAME@$VERSION"; FAILED=1; }
+          done
+          exit $FAILED
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
+
+      - name: Setup Flutter
+        uses: flutter-actions/setup-flutter@18c66a64fb6f6d3338c63cabbc5cd6da395e7f1d
+
+      # Must run in this workflow rather than a separate one: pub.dev validates
+      # the OIDC `ref` claim against the `v{{version}}` tag pattern, so the job
+      # has to be triggered by the tag push. It also has to run *after* the
+      # version bump above, which is what pubspec.yaml is read from.
+      - name: Publish to pub.dev
+        working-directory: packages/iconoir-flutter
+        run: |
+          if ! echo "$GITHUB_REF_NAME" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "$GITHUB_REF_NAME is not a release tag, skipping pub.dev publish"
+            exit 0
+          fi
+          VERSION=$(grep -m1 '^version:' pubspec.yaml | awk '{print $2}')
+          if curl -sfo /dev/null "https://pub.dev/api/packages/iconoir_flutter/versions/$VERSION"; then
+            echo "::notice::iconoir_flutter $VERSION already published, skipping"
+            exit 0
+          fi
+          dart pub get
+          dart pub publish --dry-run
+          dart pub publish -f
