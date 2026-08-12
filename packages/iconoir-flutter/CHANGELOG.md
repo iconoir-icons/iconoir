@@ -1,3 +1,11 @@
+<a id="v7.12.1"></a>
+# [v7.12.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.12.1) - 2026-08-12
+
+Completes the v7.12.0 rollout: `iconoir-solid-js`, `@iconoir/vue` and `iconoir_flutter` were missing from that release due to a publishing failure. No icon or API changes.
+
+[Changes][v7.12.1]
+
+
 <a id="v7.12.0"></a>
 # [v7.12.0](https://github.com/iconoir-icons/iconoir/releases/tag/v7.12.0) - 2026-08-11
 
@@ -1757,6 +1765,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.12.1]: https://github.com/iconoir-icons/iconoir/compare/v7.12.0...v7.12.1
 [v7.12.0]: https://github.com/iconoir-icons/iconoir/compare/v7.11.1...v7.12.0
 [v7.11.1]: https://github.com/iconoir-icons/iconoir/compare/v7.11.0...v7.11.1
 [v7.11.0]: https://github.com/iconoir-icons/iconoir/compare/v7.10.1...v7.11.0
