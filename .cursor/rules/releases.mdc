@@ -11,10 +11,16 @@ Use semver tags like `v7.11.1` (patch) or `v7.12.0` (minor). The tag must match 
 
 ## What a release does
 
-Pushing a `v*` tag triggers two workflows:
+Pushing a `v*` tag triggers **`release.yaml`**, which does everything: builds all targets, bumps versions on `main`, commits and force-moves the tag onto that commit, then publishes
 
-1. **`release.yaml`** — builds all targets, bumps versions on `main`, publishes npm packages (`iconoir`, `iconoir-react`, `iconoir-react-native`, `iconoir-vue`). Skips npm publish if that version is already on the registry (safe to re-tag).
-2. **`publish-flutter.yml`** — builds Flutter icons and publishes `iconoir_flutter` to pub.dev via **GitHub OIDC** (no stored OAuth tokens).
+- npm: `iconoir`, `iconoir-react`, `iconoir-react-native`, `iconoir-solid-js`, `@iconoir/vue`
+- pub.dev: `iconoir_flutter`, via **GitHub OIDC** (no stored OAuth tokens)
+
+Every publish is per-package and idempotent — anything already on the registry is skipped — so re-pushing a tag retries only what is missing.
+
+Flutter publishing has to live in this workflow and after the version bump. pub.dev validates the OIDC `ref` claim against the `v{{version}}` tag pattern, so the job must be triggered by the tag push itself, and it reads the version from the bumped `pubspec.yaml`.
+
+**Gotcha:** the `Update tag` step pushes with the persisted `GITHUB_TOKEN`, and pushes made with `GITHUB_TOKEN` do not trigger workflows. Never rely on that force-push to re-trigger anything — a separate tag-triggered workflow would only ever see the *pre-bump* commit. (That's what broke `v7.12.0`.)
 
 ## Secrets required
 
@@ -43,11 +49,11 @@ git tag v7.11.1
 git push origin v7.11.1
 ```
 
-Or create the release/tag from GitHub UI — both trigger the workflows.
+Or create the release/tag from GitHub UI — both trigger the workflow.
 
-## Re-publishing Flutter only
+## Retrying a partial release
 
-If npm succeeded but Flutter failed, merge any workflow fixes to `main`, then re-push the same tag:
+If some packages published and others failed, merge any fixes to `main`, then re-push the same tag:
 
 ```bash
 git checkout main && git pull
@@ -55,7 +61,15 @@ git tag -fa v7.11.1 -m "v7.11.1"
 git push -f origin v7.11.1
 ```
 
-npm publish will be skipped; Flutter publish will retry.
+Already-published packages are skipped; only the missing ones are retried. Push the tag yourself — a re-push from within the workflow would not re-trigger it.
+
+## Adding a new package
+
+`NPM_TOKEN` is a granular token scoped to selected packages, so **CI cannot create a package that does not exist yet** — the first publish 403s with `You may not perform that action with these credentials`. For a brand-new package:
+
+1. Build it locally (`pnpm run build <target>`) and publish once by hand from its directory: `npm publish --access public`.
+2. Add the new package to the granular token's package list at npmjs.com → Access Tokens.
+3. Add its directory to the publish loop in `release.yaml` and to `bin/prepublish.js` (the two lists must stay in sync).
 
 ## CI / lockfile
 
