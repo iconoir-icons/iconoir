@@ -238,5 +238,7 @@ export default async function build(...args) {
   await addRootFiles(distPath);
   await buildIcons(distPath, icons);
   await addDefaultVariants(distPath, icons, defaultVariant);
-  // await addContexts(distPath);
+
+  if (false)
+    await addContexts(distPath);
 }
