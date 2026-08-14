@@ -9,8 +9,6 @@ overrides:
   '@tootallnate/once@<2.0.1': ^2.0.1
   sharp@<0.35.0: ^0.35.3
 
-packageExtensionsChecksum: sha256-cBTyUPq+IGZAZgWgvReLGDDDIq+QC1sEPJbt4H4UmnQ=
-
 importers:
 
   .:
@@ -285,6 +283,12 @@ importers:
       use-resize-observer:
         specifier: ^9.1.0
         version: 9.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+
+  packages/iconoir-preact:
+    devDependencies:
+      preact:
+        specifier: ^10.0.0
+        version: 10.29.1
 
   packages/iconoir-react:
     dependencies:
@@ -6074,6 +6078,9 @@ packages:
   postcss@8.5.23:
     resolution: {integrity: sha512-g50586zr4bZmwFiTlflMu8E0bDTb5I5gertgwAKmsdUlTQIhZtunzUlD1WSzwcVWPoAVpsrA6vlfCD7oXvRwgg==}
     engines: {node: ^10 || ^12 || >=14}
+
+  preact@10.29.1:
+    resolution: {integrity: sha512-gQCLc/vWroE8lIpleXtdJhTFDogTdZG9AjMUpVkDf2iTCNwYNWA+u16dL41TqUDJO4gm2IgrcMv3uTpjd4Pwmg==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -14472,6 +14479,8 @@ snapshots:
       nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  preact@10.29.1: {}
 
   prelude-ls@1.2.1: {}
 
