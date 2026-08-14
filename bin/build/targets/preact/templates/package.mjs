@@ -1,5 +1,5 @@
 export function packageJson(version) {
-  return JSON.stringify({
+  const json = {
     name: 'iconoir-preact',
     version,
     description: 'Preact library for Iconoir.',
@@ -45,5 +45,7 @@ export function packageJson(version) {
     devDependencies: {
       preact: '^10.0.0',
     },
-  }, null, 2);
+  };
+
+  return `${JSON.stringify(json, null, 2)}\n`;
 }

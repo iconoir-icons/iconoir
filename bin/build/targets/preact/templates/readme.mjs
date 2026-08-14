@@ -10,8 +10,8 @@ export const readme = `# Iconoir - Preact
 
 ## Installation
 
-| npm                      | Yarn                        | pnpm                        |
-| ------------------------ | --------------------------- | --------------------------- |
+| npm                    | Yarn                      | pnpm                      |
+| ---------------------- | ------------------------- | ------------------------- |
 | \`npm i iconoir-preact\` | \`yarn add iconoir-preact\` | \`pnpm add iconoir-preact\` |
 
 ## Usage
