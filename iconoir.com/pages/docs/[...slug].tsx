@@ -12,7 +12,6 @@ import remarkGfm from 'remark-gfm';
 import remarkPrism from 'remark-prism';
 import styled from 'styled-components';
 // SuggestLibrary imports pages/support → index; hoisting it above breaks Next dev (circular graph).
-
 import { SuggestLibrary } from '@/components/SuggestLibrary';
 import {
   DocumentationNavigation,

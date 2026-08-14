@@ -1,6 +1,6 @@
 {
   "name": "iconoir-react-native",
-  "version": "7.11.0",
+  "version": "7.12.1",
   "description": "React Native library for Iconoir, the biggest open source icon library with tons of free icons.",
   "license": "MIT",
   "funding": {
@@ -41,11 +41,11 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "19",
+    "react": "18 || 19",
     "react-native": ">=0.78.0",
     "react-native-svg": "^15.12.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.8"
+    "@types/react": "^19.2.17"
   }
 }

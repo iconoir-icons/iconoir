@@ -1,0 +1,81 @@
+---
+description: How to cut and publish Iconoir releases (npm + pub.dev)
+alwaysApply: true
+---
+
+# Iconoir releases
+
+## Version format
+
+Use semver tags like `v7.11.1` (patch) or `v7.12.0` (minor). The tag must match `version` in root and package `package.json` files after the release workflow runs.
+
+## What a release does
+
+Pushing a `v*` tag triggers **`release.yaml`**, which does everything: builds all targets, bumps versions on `main`, commits and force-moves the tag onto that commit, then publishes
+
+- npm: `iconoir`, `iconoir-react`, `iconoir-react-native`, `iconoir-solid-js`, `@iconoir/vue`
+- pub.dev: `iconoir_flutter`, via **GitHub OIDC** (no stored OAuth tokens)
+
+Every publish is per-package and idempotent — anything already on the registry is skipped — so re-pushing a tag retries only what is missing.
+
+Flutter publishing has to live in this workflow and after the version bump. pub.dev validates the OIDC `ref` claim against the `v{{version}}` tag pattern, so the job must be triggered by the tag push itself, and it reads the version from the bumped `pubspec.yaml`.
+
+**Gotcha:** the `Update tag` step pushes with the persisted `GITHUB_TOKEN`, and pushes made with `GITHUB_TOKEN` do not trigger workflows. Never rely on that force-push to re-trigger anything — a separate tag-triggered workflow would only ever see the *pre-bump* commit. (That's what broke `v7.12.0`.)
+
+## Secrets required
+
+| Secret | Used for |
+|--------|----------|
+| `NPM_TOKEN` | npm publish (granular or classic automation token; **not** the org section on npm) |
+
+Do **not** use `PUB_CREDENTIAL_JSON` — Flutter publishing uses OIDC configured on pub.dev.
+
+## One-time pub.dev setup (already done)
+
+At https://pub.dev/packages/iconoir_flutter/admin → **Automated publishing**:
+
+- Repository: `iconoir-icons/iconoir`
+- Tag pattern: `v{{version}}`
+
+## Cutting a release
+
+1. Ensure changes are merged to `main`.
+2. Create a GitHub release with title/body like `v7.11.1` (see prior releases for format).
+3. Create and push the tag:
+
+```bash
+git checkout main && git pull
+git tag v7.11.1
+git push origin v7.11.1
+```
+
+Or create the release/tag from GitHub UI — both trigger the workflow.
+
+## Retrying a partial release
+
+If some packages published and others failed, merge any fixes to `main`, then re-push the same tag:
+
+```bash
+git checkout main && git pull
+git tag -fa v7.11.1 -m "v7.11.1"
+git push -f origin v7.11.1
+```
+
+Already-published packages are skipped; only the missing ones are retried. Push the tag yourself — a re-push from within the workflow would not re-trigger it.
+
+## Adding a new package
+
+`NPM_TOKEN` is a granular token scoped to selected packages, so **CI cannot create a package that does not exist yet** — the first publish 403s with `You may not perform that action with these credentials`. For a brand-new package:
+
+1. Build it locally (`pnpm run build <target>`) and publish once by hand from its directory: `npm publish --access public`.
+2. Add the new package to the granular token's package list at npmjs.com → Access Tokens.
+3. Add its directory to the publish loop in `release.yaml` and to `bin/prepublish.js` (the two lists must stay in sync).
+
+## CI / lockfile
+
+If `peerDependencies` or workspace `package.json` files change, run `pnpm install` and commit `pnpm-lock.yaml` before merging — CI uses `--frozen-lockfile`.
+
+## React 19
+
+- `iconoir-react`: `react: "18 || 19"`
+- `iconoir-react-native`: `react: "18 || 19"`

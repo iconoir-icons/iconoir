@@ -25,7 +25,9 @@ export interface IconoirProviderProps {
 
 export function IconoirProvider({ iconProps, children }: IconoirProviderProps) {
   return (
-    <IconoirContext.Provider value={iconProps || {}} children={children} />
+    <IconoirContext.Provider value={iconProps || {}}>
+      {children}
+    </IconoirContext.Provider>
   );
 }
 `;

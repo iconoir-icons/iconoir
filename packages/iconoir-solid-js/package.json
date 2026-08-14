@@ -1,7 +1,7 @@
 {
-  "name": "iconoir-react",
+  "name": "iconoir-solid-js",
   "version": "7.12.1",
-  "description": "React library for Iconoir, the biggest open source icon library with tons of free icons.",
+  "description": "solid-js library for Iconoir, the biggest open source icon library with tons of free icons.",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -11,13 +11,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/iconoir-icons/iconoir.git",
-    "directory": "packages/iconoir-react"
+    "directory": "packages/iconoir-solid-js"
   },
   "keywords": [
     "icons",
     "svg",
     "library",
-    "react"
+    "solid-js"
   ],
   "sideEffects": false,
   "exports": {
@@ -26,11 +26,11 @@
       "require": "./dist/index.js"
     },
     "./regular": {
-      "import": "./dist/esm/regular/index.mjs",
+      "import": "./dist/regular/esm/index.mjs",
       "require": "./dist/regular/index.js"
     },
     "./solid": {
-      "import": "./dist/esm/solid/index.mjs",
+      "import": "./dist/solid/esm/index.mjs",
       "require": "./dist/solid/index.js"
     }
   },
@@ -41,9 +41,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "18 || 19"
+    "solid-js": "^1.7 || ^1.8 || ^1.9"
   },
-  "devDependencies": {
-    "@types/react": "^19.2.17"
-  }
+  "devDependencies": {}
 }
