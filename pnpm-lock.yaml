@@ -9,8 +9,6 @@ overrides:
   '@tootallnate/once@<2.0.1': ^2.0.1
   sharp@<0.35.0: ^0.35.3
 
-packageExtensionsChecksum: sha256-cBTyUPq+IGZAZgWgvReLGDDDIq+QC1sEPJbt4H4UmnQ=
-
 importers:
 
   .:

@@ -10,8 +10,8 @@ export const readme = `# Iconoir - Preact
 
 ## Installation
 
-| npm                   | Yarn                     | pnpm                     |
-| --------------------- | ------------------------ | ------------------------ |
+| npm                      | Yarn                        | pnpm                        |
+| ------------------------ | --------------------------- | --------------------------- |
 | \`npm i iconoir-preact\` | \`yarn add iconoir-preact\` | \`pnpm add iconoir-preact\` |
 
 ## Usage
@@ -38,29 +38,6 @@ Default values for the most common props are given below:
 | width       | "1.5em"        |
 | height      | "1.5em"        |
 | strokeWidth | 1.5            |
-
-### IconoirProvider
-
-Tired of specifying the same props for every single icon, every time you use them? So were we. Use IconoirProvider to set the default icon props for everything inside IconoirProvider.
-
-\`\`\`tsx
-import { Check, IconoirProvider } from 'iconoir-preact';
-
-return (
-  <IconoirProvider
-    iconProps={{
-      color: '#AAAAAA',
-      strokeWidth: 1,
-      width: '1em',
-      height: '1em',
-    }}
-  >
-    <SomeOtherContainer>
-      <Check />
-    </SomeOtherContainer>
-  </IconoirProvider>
-);
-\`\`\`
 
 ## Icon Names
 
