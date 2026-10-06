@@ -12,6 +12,8 @@ import { useCustomizationPersistence } from './useCustomizationPersistence';
 
 /** Matches the `top` offset the sidebar sticks at. */
 const STICKY_TOP = 20;
+/** Room around the sidebar's content for hover effects that grow past its edges. */
+const SCROLL_GUTTER = 4;
 
 const Container = styled.div`
   display: flex;
@@ -40,11 +42,16 @@ const Right = styled.div`
   z-index: 0;
   margin: 0 auto;
   ${media.md} {
-    margin-left: 68px;
     z-index: 1;
     /* Sticky sidebars clip their overflow past the fold: cap the height to the
        viewport so taller content (ads + customization panel) stays reachable. */
     max-height: calc(100vh - 40px);
+    /* The scroll container also clips horizontally, cutting off the search
+       input's hover scale. Pad it so the scaled input fits, and offset the
+       padding with negative margins so the layout doesn't shift. */
+    padding: ${SCROLL_GUTTER}px;
+    margin: -${SCROLL_GUTTER}px -${SCROLL_GUTTER}px 0 ${68 - SCROLL_GUTTER}px;
+    top: ${STICKY_TOP - SCROLL_GUTTER}px;
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
