@@ -7,11 +7,25 @@ const CarbonCoverAdContainer = styled.div`
     a {
       text-decoration: none;
     }
+    /* Match the sponsor card (Streamline PromoContainer) instead of Carbon's
+       default grey box and #333 text. */
+    #carbon-responsive {
+      --carbon-text-color: var(--g0);
+    }
+    #carbon-responsive .carbon-responsive-wrap {
+      background-color: transparent;
+      border: 1px solid var(--g6);
+      border-radius: 12px;
+      &:hover {
+        background-color: var(--g7);
+      }
+    }
     .carbon-text {
       font-size: 14px;
     }
     .carbon-poweredby {
       font-size: 12px;
+      color: var(--g4);
     }
   }
 `;
