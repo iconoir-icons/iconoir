@@ -3,9 +3,9 @@ import { IconoirProvider } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
+import { CarbonCoverAd } from './CarbonCoverAd';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
-import { FrontlinesAd } from './FrontlinesAd';
 import { IconList } from './IconList';
 import { Streamline } from './Streamline';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
@@ -130,9 +130,7 @@ export function Explore({ allIcons }: ExploreProps) {
           <FiltersEditor filters={filters} onChange={setFilters} />
         </FilterContainer>
         <Streamline />
-        {/* CarbonAds temporarily disabled while testing the Frontlines ad */}
-        {/* <CarbonCoverAd /> */}
-        <FrontlinesAd />
+        <CarbonCoverAd />
         <CustomizationEditor
           customizations={customizations}
           onChange={setCustomizations}
