@@ -11,6 +11,19 @@ Iconoir is an open-source library with 1600+ unique SVG icons, designed on a 24x
 
 <a href="https://iconoir.com"><strong>Browse at iconoir.com &rarr;</strong></a>
 
+### Support the project
+
+Iconoir is free to use, but designing, reviewing and maintaining 1600+ icons and their libraries
+takes time. If Iconoir saves you or your company work, please consider supporting it on
+[Open Collective](https://opencollective.com/iconoir/contribute). Your contribution goes directly
+toward new icons, library maintenance and keeping the project sustainable.
+
+<a href="https://opencollective.com/iconoir/contribute"><strong>Support Iconoir on Open Collective &rarr;</strong></a>
+
+Thanks to everyone who supports the project!
+
+<a href="https://opencollective.com/iconoir/contribute"><img src="https://opencollective.com/iconoir/backers.svg?width=890&button=false" alt="Iconoir supporters" /></a>
+
 ## Basic Usage
 
 You can download any icon of the pack directly from https://iconoir.com or get them from this repository.
