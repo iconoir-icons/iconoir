@@ -1,6 +1,15 @@
 import type { IconListFilters } from './IconList';
 import React from 'react';
+import styled from 'styled-components';
+import { FiltersSuggestions } from '@/components/FilterSuggestions';
 import { LargeInput } from './Input';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+`;
 
 export interface FiltersEditorProps {
   filters: IconListFilters;
@@ -42,25 +51,35 @@ export function FiltersEditor({ filters, onChange }: FiltersEditorProps) {
   }
 
   return (
-    <LargeInput
-      placeholder="Search..."
-      value={search}
-      type="search"
-      autoCapitalize="none"
-      tabIndex={1}
-      onFocus={(e) => {
-        if (!didScrollRef.current) {
-          e.target.scrollIntoView({
-            block: 'start',
-            behavior: 'auto',
-          });
-        }
-      }}
-      onChange={(e) => {
-        const value = e.target.value;
-        setSearch(value);
-        updateFilters({ search: value });
-      }}
-    />
+    <Container>
+      <LargeInput
+        placeholder="Search..."
+        value={search}
+        type="search"
+        autoCapitalize="none"
+        tabIndex={1}
+        onFocus={(e) => {
+          if (!didScrollRef.current) {
+            e.target.scrollIntoView({
+              block: 'start',
+              behavior: 'auto',
+            });
+          }
+        }}
+        onChange={(e) => {
+          const value = e.target.value;
+          setSearch(value);
+          updateFilters({ search: value });
+        }}
+      />
+
+      <FiltersSuggestions
+        search={search}
+        setSearch={(search) => {
+          setSearch(search);
+          updateFilters({ search });
+        }}
+      />
+    </Container>
   );
 }
