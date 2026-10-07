@@ -27,6 +27,10 @@ const targets = {
     title: 'React library',
     path: 'packages/iconoir-react',
   },
+  'preact': {
+    title: 'Preact library',
+    path: 'packages/iconoir-preact',
+  },
   'react-native': {
     title: 'React Native library',
     target: 'react',
