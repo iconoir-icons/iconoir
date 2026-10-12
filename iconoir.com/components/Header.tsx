@@ -48,14 +48,31 @@ const Banner = styled(Text15)`
     font-weight: 500;
     position: absolute;
     width: 100%;
-    text-decoration: underline;
     top: 0;
   }
   > * {
     margin: 0 4px;
   }
-  a {
-    color: inherit;
+  strong {
+    font-weight: 700;
+  }
+`;
+
+const BannerButton = styled.a`
+  &&& {
+    margin-left: 16px;
+    margin-block: -3px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: #fff;
+    color: #8072ff;
+    font-weight: 600;
+    line-height: 30px;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  &:hover {
+    scale: 1.05;
   }
 `;
 
@@ -214,10 +231,18 @@ export function Header({ currentVersion }: HeaderProps) {
     <Container>
       <Banner>
         <Sparks></Sparks>
-        <a href="https://pro.iconoir.com/?utm_source=iconoir" target="_blank">
-          Iconoir Pro is coming to help you create new custom icons and sets
-          quickly. Check it out!
-        </a>
+        <span>
+          Can&apos;t find the icon you need?
+          {' '}
+          <strong>Create it with Iconoir Pro</strong>
+          , coming soon.
+        </span>
+        <BannerButton
+          href="https://pro.iconoir.com/?utm_source=iconoir"
+          target="_blank"
+        >
+          Get a first look →
+        </BannerButton>
       </Banner>
       <HeaderLeft>
         <Link href="/">
