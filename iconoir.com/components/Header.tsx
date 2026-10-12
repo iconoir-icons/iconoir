@@ -42,9 +42,9 @@ const Banner = styled(Text15)`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 0;
-    background: var(--g5);
-    color: var(--g0);
+    padding: 22px 0;
+    background: #8072ff;
+    color: #fff;
     font-weight: 500;
     position: absolute;
     width: 100%;
@@ -53,6 +53,9 @@ const Banner = styled(Text15)`
   }
   > * {
     margin: 0 4px;
+  }
+  a {
+    color: inherit;
   }
 `;
 
@@ -121,7 +124,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   ${media.lg} {
-    margin-top: 40px;
+    margin-top: 52px;
   }
 `;
 
@@ -211,12 +214,9 @@ export function Header({ currentVersion }: HeaderProps) {
     <Container>
       <Banner>
         <Sparks></Sparks>
-        <a
-          href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
-          target="_blank"
-        >
-          Your one-time or recurring contribution does a lot to keep Iconoir
-          going.
+        <a href="https://pro.iconoir.com/?utm_source=iconoir" target="_blank">
+          Iconoir Pro is coming to help you create new custom icons and sets
+          quickly. Check it out!
         </a>
       </Banner>
       <HeaderLeft>
