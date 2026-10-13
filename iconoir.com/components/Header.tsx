@@ -3,6 +3,7 @@ import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { trackEvent } from '../lib/analytics';
 import { DISCORD_LINK, SHARE_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { AnimatedSvg } from './AnimatedSvg';
@@ -240,6 +241,7 @@ export function Header({ currentVersion }: HeaderProps) {
         <BannerButton
           href="https://pro.iconoir.com/?utm_source=iconoir"
           target="_blank"
+          onClick={() => trackEvent('pro_banner_click')}
         >
           Get a first look →
         </BannerButton>

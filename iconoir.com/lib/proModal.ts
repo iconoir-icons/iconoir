@@ -1,5 +1,6 @@
 const EVENT = 'iconoir:icon-used';
 const COUNT_COOKIE = 'proModalCount';
+const VARIANT_COOKIE = 'proModalVariant';
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 // After the first showing, the modal comes back every this many icon uses.
 const SHOW_EVERY = 10;
@@ -9,16 +10,36 @@ export interface IconUseDetail {
   filename: string;
 }
 
-function readCount() {
-  const match = document.cookie.match(
-    new RegExp(`(?:^|;\\s*)${COUNT_COOKIE}=(\\d+)`),
-  );
+export const PRO_MODAL_VARIANTS = ['a', 'b'] as const;
+export type ProModalVariant = (typeof PRO_MODAL_VARIANTS)[number];
 
-  return match ? Number(match[1]) : 0;
+function readCookie(name: string) {
+  const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
+  return match ? match[1] : undefined;
 }
 
-function writeCount(count: number) {
-  document.cookie = `${COUNT_COOKIE}=${count}; max-age=${COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
+function writeCookie(name: string, value: string | number) {
+  document.cookie = `${name}=${value}; max-age=${COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
+}
+
+function readCount() {
+  return Number(readCookie(COUNT_COOKIE)) || 0;
+}
+
+/**
+ * The copy variant this visitor sees in the modal for the A/B test. Picked at
+ * random on first call and kept in a cookie so it stays the same across visits.
+ */
+export function getProModalVariant(): ProModalVariant {
+  const stored = readCookie(VARIANT_COOKIE);
+  if (PRO_MODAL_VARIANTS.includes(stored as ProModalVariant))
+    return stored as ProModalVariant;
+
+  const variant
+    = PRO_MODAL_VARIANTS[Math.floor(Math.random() * PRO_MODAL_VARIANTS.length)];
+
+  writeCookie(VARIANT_COOKIE, variant);
+  return variant;
 }
 
 /**
@@ -31,7 +52,7 @@ export function notifyIconUsed(detail: IconUseDetail) {
     return;
 
   const count = readCount() + 1;
-  writeCount(count);
+  writeCookie(COUNT_COOKIE, count);
 
   if ((count - 1) % SHOW_EVERY !== 0)
     return;

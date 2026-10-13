@@ -1,15 +1,33 @@
-import type { IconUseDetail } from '../lib/proModal';
+import type { IconUseDetail, ProModalVariant } from '../lib/proModal';
 import * as AllIcons from 'iconoir-react';
 import React from 'react';
 import { createPortal } from 'react-dom';
 import styled, { keyframes } from 'styled-components';
 import { trackEvent } from '../lib/analytics';
-import { onIconUsed } from '../lib/proModal';
+import { getProModalVariant, onIconUsed } from '../lib/proModal';
 
 // Mirrors the design system of pro.iconoir.com (landing.css): Inter with tight
 // tracking, IBM Plex Mono eyebrows, black/gray pill buttons, 24px white cards.
 const PRO_URL
   = 'https://pro.iconoir.com/?utm_source=iconoir&utm_medium=download_modal';
+
+// Copy under A/B test. The variant is sent with every pro_modal_* event and as
+// utm_content on the link, so results can be split by it in GA.
+const COPY: Record<
+  ProModalVariant,
+  { title: string; body: string; cta: string }
+> = {
+  a: {
+    title: 'Can\'t find the icon you need?',
+    body: 'Create the icons Iconoir doesn\'t have yet, collect them with the ones it does, and ship the whole set to your codebase.',
+    cta: 'Join the waitlist',
+  },
+  b: {
+    title: 'Make new icons that match this one',
+    body: 'Iconoir Pro lets you create icons in the Iconoir style, keep them in one set with the ones you use, and ship them straight to your codebase.',
+    cta: 'Get early access',
+  },
+};
 
 const NEW_TILES = [
   { Icon: AllIcons.CloudSync, label: 'cloud-sync' },
@@ -224,18 +242,31 @@ export function ProModal() {
     null,
   );
 
+  const [variant, setVariant] = React.useState<ProModalVariant>('a');
+
   const primaryRef = React.useRef<HTMLAnchorElement>(null);
 
   React.useEffect(
     () =>
       onIconUsed((detail) => {
+        const assigned = getProModalVariant();
+        setVariant(assigned);
         setDownload(detail);
-        trackEvent('pro_modal_view', { icon: detail.filename });
+
+        trackEvent('pro_modal_view', {
+          icon: detail.filename,
+          variant: assigned,
+        });
       }),
     [],
   );
 
   const close = React.useCallback(() => setDownload(null), []);
+
+  const dismiss = React.useCallback(() => {
+    trackEvent('pro_modal_dismiss', { variant });
+    close();
+  }, [close, variant]);
 
   React.useEffect(() => {
     if (!download)
@@ -245,15 +276,17 @@ export function ProModal() {
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape')
-        close();
+        dismiss();
     };
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [download, close]);
+  }, [download, dismiss]);
 
   if (!download)
     return null;
+
+  const copy = COPY[variant];
 
   const DownloadedIcon
     = (AllIcons as any)[download.iconComponentName] ?? AllIcons.Iconoir;
@@ -262,19 +295,16 @@ export function ProModal() {
     <Backdrop
       onClick={(event) => {
         if (event.target === event.currentTarget)
-          close();
+          dismiss();
       }}
     >
       <Card role="dialog" aria-modal="true" aria-labelledby="pro-modal-title">
-        <Close type="button" aria-label="Close" onClick={close}>
+        <Close type="button" aria-label="Close" onClick={dismiss}>
           <AllIcons.Xmark width={20} height={20} />
         </Close>
         <Eyebrow>Iconoir Pro · Coming soon</Eyebrow>
-        <Title id="pro-modal-title">Can&apos;t find the icon you need?</Title>
-        <Body>
-          Create the icons Iconoir doesn&apos;t have yet, collect them with the ones
-          it does, and ship the whole set to your codebase.
-        </Body>
+        <Title id="pro-modal-title">{copy.title}</Title>
+        <Body>{copy.body}</Body>
         <Tiles aria-hidden="true">
           <Tile>
             <DownloadedIcon />
@@ -291,17 +321,21 @@ export function ProModal() {
         <Actions>
           <PrimaryBtn
             ref={primaryRef}
-            href={PRO_URL}
+            href={`${PRO_URL}&utm_content=${variant}`}
             target="_blank"
             rel="noopener"
             onClick={() => {
-              trackEvent('pro_modal_click', { icon: download.filename });
+              trackEvent('pro_modal_click', {
+                icon: download.filename,
+                variant,
+              });
+
               close();
             }}
           >
-            Join the waitlist
+            {copy.cta}
           </PrimaryBtn>
-          <SecondaryBtn as="button" type="button" onClick={close}>
+          <SecondaryBtn as="button" type="button" onClick={dismiss}>
             Maybe later
           </SecondaryBtn>
         </Actions>
