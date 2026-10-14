@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { documentationHref, getDocumentationStructure } from '../lib/docs';
 import { media } from '../lib/responsive';
 import { Eyebrow } from './Typography';
@@ -76,10 +76,35 @@ const Container = styled.div`
   }
 `;
 
+/**
+ * Dims the page while the menu is open. Drawn from body rather than inside the
+ * header, whose backdrop-filter would trap a fixed overlay in its own box; the
+ * header (z-index 100) stays above it.
+ */
+const PageOverlay = createGlobalStyle`
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(128, 128, 128, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  ${media.lg} {
+    body:has([data-docs-menu]:hover)::after,
+    body:has([data-docs-menu]:focus-within)::after {
+      opacity: 1;
+    }
+  }
+`;
+
 /** Wraps the Documentation nav link with a menu of every docs page. */
 export function DocsMenu({ children }: React.PropsWithChildren) {
   return (
-    <Container>
+    <Container data-docs-menu>
+      <PageOverlay />
       {children}
       <Panel>
         <Card>
