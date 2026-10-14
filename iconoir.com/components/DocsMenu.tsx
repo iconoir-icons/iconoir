@@ -27,9 +27,8 @@ const Card = styled.div`
   grid-template-columns: repeat(${SECTIONS.length}, max-content);
   gap: 40px;
   padding: 24px 28px;
-  border: 1px solid var(--line);
   border-radius: 20px;
-  background: var(--white);
+  background: #f2f2f2;
   /* The second shadow dims the whole viewport, top bar included, while the
      card stays bright; it fades in and out with the panel. */
   box-shadow:
