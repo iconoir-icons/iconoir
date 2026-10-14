@@ -64,18 +64,28 @@ const POOL = [
 
 type IconName = (typeof POOL)[number];
 
-/** The three selection boxes: fixed size and spot, as on the live site. */
+/** Where the three selection boxes sit, as on the live site. */
 const SLOTS = [
-  { x: -128, y: 82, box: 32, icon: 18, tilt: [-14, -5] },
-  { x: 12, y: 50, box: 56, icon: 40, tilt: [3, 9] },
-  { x: 137, y: 88, box: 56, icon: 44, tilt: [10, 20] },
+  { x: -128, y: 82 },
+  { x: 12, y: 50 },
+  { x: 137, y: 88 },
 ] as const;
 
-/** First render matches the server and the original design. */
-const INITIAL: { name: IconName; tilt: number }[] = [
-  { name: 'FillColor', tilt: -10 },
-  { name: 'Cellar', tilt: 5 },
-  { name: 'HandCard', tilt: 16 },
+/** The central box's look is the default every new icon varies around. */
+const BASE_BOX = 56;
+const BASE_ICON = 40;
+const BASE_TILT = 5;
+/** Every icon's stroke renders at this many px, whatever its size. */
+const STROKE_PX = 3;
+/** New icons get up to ±10% size and ±10° rotation around the default. */
+const SIZE_JITTER = 0.1;
+const TILT_JITTER = 10;
+
+/** First render matches the server: the original trio, varied within range. */
+const INITIAL: { name: IconName; tilt: number; scale: number }[] = [
+  { name: 'FillColor', tilt: -4, scale: 0.92 },
+  { name: 'Cellar', tilt: BASE_TILT, scale: 1 },
+  { name: 'HandCard', tilt: 13, scale: 1.08 },
 ];
 
 const INTERVAL_MS = 2000;
@@ -88,8 +98,9 @@ function label(name: string) {
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
-function randomBetween([min, max]: readonly [number, number]) {
-  return Math.round(min + Math.random() * (max - min));
+/** A random value within ±spread of center. */
+function jitter(center: number, spread: number) {
+  return center + (Math.random() * 2 - 1) * spread;
 }
 
 const popIn = keyframes`
@@ -201,6 +212,7 @@ const Root = styled.div`
 interface SelectionState {
   name: IconName;
   tilt: number;
+  scale: number;
   /** Bumped on every swap so React remounts the box and replays the pop. */
   id: number;
 }
@@ -226,7 +238,8 @@ export function HeroIcons() {
       const slot = Math.floor(Math.random() * SLOTS.length);
       const id = nextId++;
       const roll = Math.random();
-      const tilt = randomBetween(SLOTS[slot].tilt);
+      const tilt = Math.round(jitter(BASE_TILT, TILT_JITTER));
+      const scale = jitter(1, SIZE_JITTER);
 
       setState((state) => {
         const shown = new Set(state.current.map((item) => item.name));
@@ -235,7 +248,7 @@ export function HeroIcons() {
 
         return {
           current: state.current.map((item, i) =>
-            i === slot ? { name, tilt, id } : item,
+            i === slot ? { name, tilt, scale, id } : item,
           ),
           leaving: state.leaving.map((item, i) =>
             i === slot ? state.current[i] : item,
@@ -247,8 +260,9 @@ export function HeroIcons() {
     return () => clearInterval(timer);
   }, []);
 
-  function renderSelection(item: SelectionState, slot: number, isLeaving: boolean) {
-    const { box, icon } = SLOTS[slot];
+  function renderSelection(item: SelectionState, isLeaving: boolean) {
+    const box = Math.round(BASE_BOX * item.scale);
+    const icon = BASE_ICON * item.scale;
     const Icon = (AllIcons as unknown as Record<string, React.ComponentType<any>>)[item.name];
 
     return (
@@ -269,7 +283,8 @@ export function HeroIcons() {
           <Handle />
           <Handle />
           <Handle />
-          <Icon width={icon} height={icon} strokeWidth={1.8} />
+          {/* Scale the stroke inversely so it renders at STROKE_PX at any size. */}
+          <Icon width={icon} height={icon} strokeWidth={(STROKE_PX * 24) / icon} />
         </Box>
       </Selection>
     );
@@ -280,8 +295,8 @@ export function HeroIcons() {
       <Stage aria-hidden>
         {SLOTS.map((slot, i) => (
           <Slot key={slot.x} style={{ transform: `translate(${slot.x}px, ${slot.y}px)` }}>
-            {leaving[i] && renderSelection(leaving[i]!, i, true)}
-            {renderSelection(current[i], i, false)}
+            {leaving[i] && renderSelection(leaving[i]!, true)}
+            {renderSelection(current[i], false)}
           </Slot>
         ))}
       </Stage>
