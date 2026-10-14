@@ -9,6 +9,7 @@ import { Explore } from '../components/Explore';
 import { Footer } from '../components/Footer';
 import { Header, NAV_HEIGHT } from '../components/Header';
 import { Actions, Hero } from '../components/Hero';
+import { HeroIcon } from '../components/HeroIcon';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
@@ -48,6 +49,7 @@ const Home: NextPage<HomeProps> = ({
       />
       <Header currentVersion={currentVersion} />
       <Hero
+        visual={<HeroIcon />}
         eyebrow="Free · Open source · MIT"
         title="Say hello to your new free icon library"
         lede={(

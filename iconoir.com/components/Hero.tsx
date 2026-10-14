@@ -36,16 +36,19 @@ export const Actions = styled.div`
 `;
 
 export interface HeroProps {
+  /** Optional artwork shown above the eyebrow. */
+  visual?: React.ReactNode;
   eyebrow: string;
   title: React.ReactNode;
   lede?: React.ReactNode;
   children?: React.ReactNode;
 }
 
-export function Hero({ eyebrow, title, lede, children }: HeroProps) {
+export function Hero({ visual, eyebrow, title, lede, children }: HeroProps) {
   return (
     <Section>
       <Wrap>
+        {visual}
         <Eyebrow>{eyebrow}</Eyebrow>
         <Display>{title}</Display>
         {lede && <Lede>{lede}</Lede>}
