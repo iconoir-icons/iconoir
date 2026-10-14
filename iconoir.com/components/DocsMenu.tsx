@@ -1,11 +1,22 @@
 import Link from 'next/link';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { documentationHref, getDocumentationStructure } from '../lib/docs';
 import { media } from '../lib/responsive';
 import { Eyebrow } from './Typography';
 
 const SECTIONS = getDocumentationStructure();
+
+/** Stagger for the intro: each column and each row starts a little later. */
+const COLUMN_DELAY_MS = 40;
+const ROW_DELAY_MS = 30;
+
+const rise = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+`;
 
 /** Appears under the nav link; the top padding bridges the gap so hover holds. */
 const Panel = styled.div`
@@ -76,8 +87,24 @@ const Container = styled.div`
       pointer-events: all;
       transform: translate(-50%, 0);
     }
+    /* Soft intro for every entry. Filling only backwards hands opacity back to
+       the hover fade once it ends, and closing the menu resets it to replay. */
+    &:hover [data-intro],
+    &:focus-within [data-intro] {
+      animation: ${rise} 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+      animation-delay: var(--delay);
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
   }
 `;
+
+function introDelay(column: number, row: number) {
+  return {
+    '--delay': `${column * COLUMN_DELAY_MS + row * ROW_DELAY_MS}ms`,
+  } as React.CSSProperties;
+}
 
 /** Wraps the Documentation nav link with a menu of every docs page. */
 export function DocsMenu({ children }: React.PropsWithChildren) {
@@ -86,17 +113,19 @@ export function DocsMenu({ children }: React.PropsWithChildren) {
       {children}
       <Panel>
         <Card>
-          {SECTIONS.map((section) => (
+          {SECTIONS.map((section, column) => (
             <div key={section.title}>
-              <Eyebrow>{section.title}</Eyebrow>
-              {section.children?.map((item) => (
+              <Eyebrow data-intro style={introDelay(column, 0)}>
+                {section.title}
+              </Eyebrow>
+              {section.children?.map((item, row) => (
                 <Link
                   key={item.path}
                   href={documentationHref(section.path, item.path)}
                   passHref
                   legacyBehavior
                 >
-                  <PageLink>
+                  <PageLink data-intro style={introDelay(column, row + 1)}>
                     {item.title}
                     {item.label && <PageLabel>{item.label}</PageLabel>}
                   </PageLink>
