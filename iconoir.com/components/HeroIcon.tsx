@@ -12,7 +12,6 @@ import {
 } from 'iconoir-react/solid';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { media } from '../lib/responsive';
 
 const ICONS = [
   Flash,
@@ -72,14 +71,9 @@ const Stage = styled.div`
   --gx: 0px;
   --gy: 0px;
   position: relative;
-  width: 88px;
-  height: 88px;
-  margin: 0 auto 32px;
-  ${media.md} {
-    width: 112px;
-    height: 112px;
-    margin-bottom: 40px;
-  }
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 40px;
 `;
 
 const Layer = styled.div<{ $leaving?: boolean }>`
@@ -193,17 +187,17 @@ export function HeroIcon() {
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <filter
           id={FILTER_ID}
-          x="-75%"
-          y="-75%"
-          width="250%"
-          height="250%"
+          x="-200%"
+          y="-200%"
+          width="500%"
+          height="500%"
           colorInterpolationFilters="sRGB"
         >
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="near" />
-          <feOffset in="near" dy="-5" result="nearUp" />
-          <feGaussianBlur in="SourceAlpha" stdDeviation="24" result="far" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="16" result="near" />
+          <feOffset in="near" dy="-10" result="nearUp" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="48" result="far" />
           <feComponentTransfer in="far" result="farSoft">
-            <feFuncA type="linear" slope="0.7" />
+            <feFuncA type="linear" slope="0.55" />
           </feComponentTransfer>
           <feMerge result="glow">
             <feMergeNode in="farSoft" />
@@ -220,7 +214,7 @@ export function HeroIcon() {
             in="glow"
             in2="noise"
             operator="arithmetic"
-            k1="1.8"
+            k1="1.3"
             k2="0"
             k3="0"
             k4="0"
