@@ -21,10 +21,10 @@ const Nav = styled.header`
   -webkit-backdrop-filter: blur(12px);
 `;
 
-/** Full width with the same 16px margin as the icon toolbar and grid. */
+/** Full width with the shared side margin, like the icon toolbar and grid. */
 const NavInner = styled.div`
   height: ${NAV_HEIGHT}px;
-  padding: 0 16px;
+  padding: 0 var(--gutter);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -89,7 +89,7 @@ const Links = styled.nav<{ $visible?: boolean }>`
   right: 0;
   display: flex;
   flex-direction: column;
-  padding: 8px 16px 24px;
+  padding: 8px var(--gutter) 24px;
   background: var(--white);
   box-shadow: 0 30px 40px -30px rgba(0, 0, 0, 0.18);
   transition:

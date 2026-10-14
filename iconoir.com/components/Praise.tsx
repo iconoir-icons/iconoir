@@ -7,8 +7,8 @@ const NUM_PRAISE_ITEMS = 3;
 
 const Container = styled.div`
   /* Bleed into the page margin so cards scroll edge to edge. */
-  margin: 40px -16px 0;
-  padding: 0 16px;
+  margin: 40px calc(var(--gutter) * -1) 0;
+  padding: 0 var(--gutter);
   ${media.sm} {
     margin-top: 56px;
   }

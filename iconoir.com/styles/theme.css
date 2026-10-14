@@ -31,7 +31,22 @@
   --font: InterVariable, 'Inter', system-ui, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
 
+  /* Side margin shared by the nav, icon grid and every page section. */
+  --gutter: 16px;
+
   color-scheme: light;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --gutter: 64px;
+  }
 }
 
 * {

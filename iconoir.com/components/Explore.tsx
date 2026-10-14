@@ -34,7 +34,7 @@ const ToolbarInner = styled.div`
   align-items: center;
   gap: 32px;
   height: ${TOOLBAR_HEIGHT}px;
-  padding: 0 16px;
+  padding: 0 var(--gutter);
   > :first-child {
     flex: 1;
     max-width: 520px;
@@ -50,7 +50,7 @@ const ToolbarInner = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column-reverse;
-  padding: 24px 16px 0;
+  padding: 24px var(--gutter) 0;
   ${media.md} {
     flex-direction: row;
     align-items: flex-start;
