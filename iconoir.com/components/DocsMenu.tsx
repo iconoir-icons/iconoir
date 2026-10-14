@@ -33,7 +33,7 @@ const Card = styled.div`
      card stays bright; it fades in and out with the panel. */
   box-shadow:
     0 30px 80px -30px rgba(0, 0, 0, 0.18),
-    0 0 0 100vmax rgba(128, 128, 128, 0.5);
+    0 0 0 100vmax rgba(170, 170, 170, 0.5);
   ${Eyebrow} {
     margin-bottom: 12px;
   }
