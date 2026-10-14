@@ -91,7 +91,7 @@ export async function getStaticProps() {
   return {
     props: {
       entries,
-      ...getHeaderProps(),
+      ...(await getHeaderProps()),
       documentationProps: { documentationItems: items },
     },
   };

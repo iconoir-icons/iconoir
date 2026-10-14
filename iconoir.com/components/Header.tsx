@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
+import { GITHUB_LINK, SUPPORT_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { Button } from './Button';
 import { CurrentVersion } from './CurrentVersion';
@@ -124,6 +124,11 @@ const Links = styled.nav<{ $visible?: boolean }>`
   }
 `;
 
+/** Star count beside the GitHub link, a shade lighter than the label. */
+const Stars = styled.span`
+  color: var(--muted);
+`;
+
 const Actions = styled.div`
   display: flex;
   align-items: center;
@@ -144,9 +149,10 @@ const MenuButton = styled(Button)`
 
 export interface HeaderProps {
   currentVersion: string;
+  numStars: number;
 }
 
-export function Header({ currentVersion }: HeaderProps) {
+export function Header({ currentVersion, numStars }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
   const closeMenu = () => setMenuVisible(false);
   const { asPath } = useRouter();
@@ -183,12 +189,14 @@ export function Header({ currentVersion }: HeaderProps) {
           <NavigationItem href="/support" onClick={closeMenu}>
             Our mission
           </NavigationItem>
-          <NavigationLink
-            href={DISCORD_LINK}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            Discord
+          <NavigationLink href={GITHUB_LINK} target="_blank" rel="noreferrer">
+            GitHub
+            {' '}
+            <Stars>
+              {new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
+                numStars,
+              )}
+            </Stars>
           </NavigationLink>
         </Links>
         <Actions>

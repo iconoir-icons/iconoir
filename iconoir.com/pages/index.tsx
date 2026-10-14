@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import type { Icon } from '../components/IconList';
-import { downloads as npmDownloads } from '@nodesecure/npm-registry-sdk';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { AvailableFor } from '../components/AvailableFor';
@@ -13,11 +12,11 @@ import { HeroIcons } from '../components/HeroIcons';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { REPO, SUPPORT_LINK } from '../lib/constants';
+import { SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
-import { octokit } from '../lib/octokit';
 import { media } from '../lib/responsive';
+import { getNumDownloads } from '../lib/stats';
 
 const IconsSection = styled.section`
   margin-top: 72px;
@@ -47,7 +46,7 @@ const Home: NextPage<HomeProps> = ({
       <SEO
         description="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Nativ, and Flutter libraries, Figma and Framer."
       />
-      <Header currentVersion={currentVersion} />
+      <Header currentVersion={currentVersion} numStars={numStars} />
       <Hero
         visual={<HeroIcons />}
         eyebrow="Free · Open source · MIT"
@@ -119,62 +118,12 @@ const Home: NextPage<HomeProps> = ({
 
 export default Home;
 
-// Last known values, used when the GitHub or npm API is too slow or fails,
-// so a flaky API never blocks a deploy.
-const FALLBACK_NUM_STARS = 4580;
-const FALLBACK_NUM_DOWNLOADS = 691733;
-const FETCH_TIMEOUT_MS = 10_000;
-
-async function withFallback(
-  promise: Promise<number | undefined>,
-  fallback: number,
-  label: string,
-): Promise<number> {
-  let timer: Parameters<typeof clearTimeout>[0];
-
-  const timeout = new Promise<undefined>((resolve) => {
-    timer = setTimeout(resolve, FETCH_TIMEOUT_MS);
-  });
-
-  try {
-    const value = await Promise.race([promise, timeout]);
-    if (value)
-      return value;
-    console.warn(`Could not fetch ${label} in time, using fallback`);
-  } catch (error) {
-    console.warn(`Could not fetch ${label}, using fallback`, error);
-  } finally {
-    clearTimeout(timer);
-  }
-
-  return fallback;
-}
-
 export async function getStaticProps() {
-  const headerProps = getHeaderProps();
-
-  const numStars = await withFallback(
-    octokit.rest.repos
-      .get({ ...REPO })
-      .then(({ data }) => data.stargazers_count),
-    FALLBACK_NUM_STARS,
-    'GitHub stars',
-  );
-
-  const numDownloads = await withFallback(
-    npmDownloads('iconoir-react', 'last-month').then(
-      ({ downloads }) => downloads,
-    ),
-    FALLBACK_NUM_DOWNLOADS,
-    'NPM downloads',
-  );
-
   return {
     props: {
-      ...headerProps,
+      ...(await getHeaderProps()),
       allIcons: await getAllIcons(),
-      numStars,
-      numDownloads,
+      numDownloads: await getNumDownloads(),
     },
   };
 }

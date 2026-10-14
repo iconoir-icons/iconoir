@@ -181,6 +181,6 @@ export default ReactIcons;
 
 export async function getStaticProps() {
   return {
-    props: getHeaderProps(),
+    props: await getHeaderProps(),
   };
 }

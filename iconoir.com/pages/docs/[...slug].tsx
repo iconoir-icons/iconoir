@@ -302,7 +302,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   return {
     props: {
       source: mdxSource,
-      ...getHeaderProps(),
+      ...(await getHeaderProps()),
       title: context.params!.title?.toString() || null,
       navigationItem,
       navigationProps: { documentationItems: items },

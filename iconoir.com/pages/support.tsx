@@ -224,6 +224,6 @@ export default Support;
 
 export async function getStaticProps() {
   return {
-    props: getHeaderProps(),
+    props: await getHeaderProps(),
   };
 }
