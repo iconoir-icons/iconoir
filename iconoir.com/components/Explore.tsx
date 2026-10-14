@@ -8,6 +8,8 @@ import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { NAV_HEIGHT } from './Header';
 import { IconList } from './IconList';
+import { IconSelectionContext } from './IconSelection';
+import { IconSheet } from './IconSheet';
 import { LargeInput } from './Input';
 import { Streamline } from './Streamline';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
@@ -89,6 +91,14 @@ export interface ExploreProps {
 
 export function Explore({ allIcons }: ExploreProps) {
   const [filters, setFilters] = React.useState<IconListFilters>({});
+  const [selected, setSelected] = React.useState<Icon | null>(null);
+  const closeSheet = React.useCallback(() => setSelected(null), []);
+
+  const selection = React.useMemo(
+    () => ({ selected, select: setSelected }),
+    [selected],
+  );
+
   const [customizations, setCustomizations] = useCustomizationPersistence();
   const containerRef = React.useRef<HTMLDivElement>(null);
   const rightRef = React.useRef<HTMLDivElement>(null);
@@ -134,26 +144,27 @@ export function Explore({ allIcons }: ExploreProps) {
           />
         </ToolbarInner>
       </Toolbar>
-      <Body ref={containerRef}>
-        <Left>
-          <IconoirProvider
-            iconProps={{
-              color: customizations.hexColor,
-              width: customizations.size ? `${customizations.size}px` : undefined,
-              height: customizations.size
-                ? `${customizations.size}px`
-                : undefined,
-              strokeWidth: customizations.strokeWidth,
-            }}
-          >
-            <IconList filters={filters} allIcons={allIcons} />
-          </IconoirProvider>
-        </Left>
-        <Right ref={rightRef}>
-          <Streamline />
-          <CarbonCoverAd />
-        </Right>
-      </Body>
+      <IconoirProvider
+        iconProps={{
+          color: customizations.hexColor,
+          width: customizations.size ? `${customizations.size}px` : undefined,
+          height: customizations.size ? `${customizations.size}px` : undefined,
+          strokeWidth: customizations.strokeWidth,
+        }}
+      >
+        <IconSelectionContext.Provider value={selection}>
+          <Body ref={containerRef}>
+            <Left>
+              <IconList filters={filters} allIcons={allIcons} />
+            </Left>
+            <Right ref={rightRef}>
+              <Streamline />
+              <CarbonCoverAd />
+            </Right>
+          </Body>
+        </IconSelectionContext.Provider>
+        {selected && <IconSheet icon={selected} onClose={closeSheet} />}
+      </IconoirProvider>
     </>
   );
 }
