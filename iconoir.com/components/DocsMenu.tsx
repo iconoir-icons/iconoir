@@ -1,3 +1,4 @@
+import { Book, PlusCircle, TextBox } from 'iconoir-react';
 import Link from 'next/link';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
@@ -6,6 +7,13 @@ import { media } from '../lib/responsive';
 import { Eyebrow } from './Typography';
 
 const SECTIONS = getDocumentationStructure();
+
+/** Icons shown beside specific pages, keyed by their path. */
+const PAGE_ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement> & { strokeWidth?: number }>> = {
+  'introduction': Book,
+  'contributing': PlusCircle,
+  'naming-convention': TextBox,
+};
 
 /** Stagger for the intro: each column and each row starts a little later. */
 const COLUMN_DELAY_MS = 40;
@@ -100,6 +108,12 @@ const Container = styled.div`
   }
 `;
 
+function renderPageIcon(path: string) {
+  const Icon = PAGE_ICONS[path];
+
+  return Icon ? <Icon width={18} height={18} strokeWidth={2} /> : null;
+}
+
 function introDelay(column: number, row: number) {
   return {
     '--delay': `${column * COLUMN_DELAY_MS + row * ROW_DELAY_MS}ms`,
@@ -126,6 +140,7 @@ export function DocsMenu({ children }: React.PropsWithChildren) {
                   legacyBehavior
                 >
                   <PageLink data-intro style={introDelay(column, row + 1)}>
+                    {renderPageIcon(item.path)}
                     {item.title}
                     {item.label && <PageLabel>{item.label}</PageLabel>}
                   </PageLink>
