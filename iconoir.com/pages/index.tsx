@@ -13,7 +13,7 @@ import { HeroIcons } from '../components/HeroIcons';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { REPO } from '../lib/constants';
+import { REPO, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
@@ -67,6 +67,15 @@ const Home: NextPage<HomeProps> = ({
             {numIcons}
             {' '}
             icons
+          </Button>
+          <Button
+            as="a"
+            href={SUPPORT_LINK}
+            target="_blank"
+            rel="noreferrer"
+            $variant="secondary"
+          >
+            Donate
           </Button>
           <Link href="/docs/introduction" passHref legacyBehavior>
             <Button as="a" $variant="secondary">
