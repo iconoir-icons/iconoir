@@ -27,6 +27,7 @@ const Output = styled(Mono)`
   min-width: 26px;
   text-align: end;
   color: var(--black);
+  font-weight: 600;
 `;
 
 const Track = styled.div`
@@ -69,7 +70,7 @@ const ThumbInner = styled.div`
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.08),
     0 1px 4px rgba(0, 0, 0, 0.2);
-  cursor: grab;
+  cursor: var(--cursor-pointer);
   transition: scale 0.15s;
   &:hover {
     scale: 1.1;

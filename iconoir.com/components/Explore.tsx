@@ -39,7 +39,8 @@ const ToolbarInner = styled.div`
   padding: 0 var(--gutter);
   > :first-child {
     flex: 1;
-    max-width: 520px;
+    min-width: 0;
+    max-width: 820px;
   }
   > :last-child {
     margin-left: auto;
@@ -91,6 +92,12 @@ export interface ExploreProps {
 
 export function Explore({ allIcons }: ExploreProps) {
   const [filters, setFilters] = React.useState<IconListFilters>({});
+
+  const categories = React.useMemo(
+    () => Array.from(new Set(allIcons.map((icon) => icon.category))).sort(),
+    [allIcons],
+  );
+
   const [selected, setSelected] = React.useState<Icon | null>(null);
   const closeSheet = React.useCallback(() => setSelected(null), []);
 
@@ -137,7 +144,11 @@ export function Explore({ allIcons }: ExploreProps) {
     <>
       <Toolbar>
         <ToolbarInner>
-          <FiltersEditor filters={filters} onChange={setFilters} />
+          <FiltersEditor
+            filters={filters}
+            categories={categories}
+            onChange={setFilters}
+          />
           <CustomizationEditor
             customizations={customizations}
             onChange={setCustomizations}

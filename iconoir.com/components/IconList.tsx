@@ -15,8 +15,11 @@ import { IconListEmpty } from './IconListEmpty';
 import { IconsRow } from './IconsRow';
 import { ReactWindowScroller } from './ReactWindowScroller';
 
+export type IconStyle = 'outline' | 'solid';
 export interface IconListFilters {
   search?: string;
+  style?: IconStyle;
+  category?: string;
 }
 export interface IconListCustomizations {
   size: number;
@@ -40,10 +43,21 @@ function normalizeString(s: string) {
   return s.toLowerCase().replace(/[!@#$%^&*(),.\][-]/g, '');
 }
 
+function isSolid(icon: Icon) {
+  return icon.iconComponentName.endsWith('Solid');
+}
+
 function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
+  let result = allIcons;
+
+  if (filters.style)
+    result = result.filter((icon) => isSolid(icon) === (filters.style === 'solid'));
+
+  if (filters.category)
+    result = result.filter((icon) => icon.category === filters.category);
+
   if (filters.search) {
     const normalSearch = normalizeString(filters.search!);
-    let result = allIcons;
 
     for (const term of normalSearch.split(' ')) {
       result = result.filter((icon) => {
@@ -54,11 +68,9 @@ function filterIcons(allIcons: Icon[], filters: IconListFilters): Icon[] {
         );
       });
     }
-
-    return result;
-  } else {
-    return allIcons;
   }
+
+  return result;
 }
 
 interface IconCategoryRow {
@@ -178,13 +190,13 @@ export function IconList({ filters, allIcons }: IconListProps) {
     setHeight(window.innerHeight);
   }, []);
 
-  // Row sizes are cached by index; a new search shifts which index is a
+  // Row sizes are cached by index; new filters shift which index is a
   // category header and which an icon row, so drop the cache then too.
   React.useEffect(() => {
     if (listRef.current) {
       listRef.current.resetAfterIndex(0, true);
     }
-  }, [iconWidth, height, filters.search]);
+  }, [iconWidth, height, filters.search, filters.style, filters.category]);
 
   if (filteredIcons.length && iconsPerRow && width && iconWidth) {
     const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
@@ -216,7 +228,7 @@ export function IconList({ filters, allIcons }: IconListProps) {
         </ReactWindowScroller>
       </IconListContext.Provider>
     );
-  } else if (width && filters.search) {
+  } else if (width && (filters.search || filters.style || filters.category)) {
     return <IconListEmpty searchTerm={filters.search} />;
   }
 

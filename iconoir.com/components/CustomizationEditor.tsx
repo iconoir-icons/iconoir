@@ -19,7 +19,7 @@ const Controls = styled.div`
 `;
 
 const SliderField = styled.div`
-  width: 200px;
+  width: 160px;
 `;
 
 const ColorRow = styled.div`

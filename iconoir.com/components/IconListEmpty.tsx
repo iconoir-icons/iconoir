@@ -34,7 +34,7 @@ const IconContainer = styled.div`
 `;
 
 export interface IconListEmptyProps {
-  searchTerm: string;
+  searchTerm?: string;
 }
 
 export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
@@ -45,9 +45,15 @@ export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
         <SpockHandGesture color="currentColor" />
       </IconContainer>
       <CardTitle>
-        No icons for &lsquo;
-        {searchTerm}
-        &rsquo; yet
+        {searchTerm
+          ? (
+              <>
+                No icons for &lsquo;
+                {searchTerm}
+                &rsquo; yet
+              </>
+            )
+          : 'No icons match these filters yet'}
       </CardTitle>
       <Text15>
         If you can&apos;t find the icon you need, suggest it on GitHub and
