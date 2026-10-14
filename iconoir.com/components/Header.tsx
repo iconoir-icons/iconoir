@@ -1,15 +1,14 @@
-import { Discord, Menu, Xmark } from 'iconoir-react';
+import { Menu, PeaceHand, Xmark } from 'iconoir-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
-import { AnimatedSvg } from './AnimatedSvg';
 import { Button } from './Button';
 import { CurrentVersion } from './CurrentVersion';
 import { PAGE_MAX_WIDTH } from './Layout';
-import { NavigationItem } from './NavigationItem';
+import { NavigationItem, NavigationLink } from './NavigationItem';
 
 /** Height of the sticky nav, so sticky content below can clear it. */
 export const NAV_HEIGHT = 68;
@@ -42,10 +41,25 @@ const Brand = styled.div`
   align-items: center;
 `;
 
+const wave = keyframes`
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-14deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(-8deg); }
+  80% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+`;
+
 export const LogoContainer = styled.a`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  /* The peace hand gives a little wave on hover. */
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover svg {
+      animation: ${wave} 0.7s cubic-bezier(0.36, 0, 0.2, 1);
+    }
+  }
 `;
 
 export const LogoIcon = styled.div`
@@ -53,6 +67,7 @@ export const LogoIcon = styled.div`
   color: var(--black);
   margin-right: 4px;
   svg {
+    transform-origin: 50% 85%;
     width: 26px;
     height: 26px;
     ${media.sm} {
@@ -112,19 +127,6 @@ const Links = styled.nav<{ $visible?: boolean }>`
   }
 `;
 
-const DiscordLink = styled.a`
-  display: none;
-  ${media.lg} {
-    display: flex;
-    color: var(--black);
-    transition: opacity 0.15s;
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-`;
-
 const Actions = styled.div`
   display: flex;
   align-items: center;
@@ -163,7 +165,7 @@ export function Header({ currentVersion }: HeaderProps) {
           <Link href="/" passHref legacyBehavior>
             <LogoContainer aria-label="Iconoir home">
               <LogoIcon>
-                <AnimatedSvg />
+                <PeaceHand />
               </LogoIcon>
               <Logo src="/iconoir-logo.svg" alt="Iconoir" />
             </LogoContainer>
@@ -184,17 +186,13 @@ export function Header({ currentVersion }: HeaderProps) {
           <NavigationItem href="/support" onClick={closeMenu}>
             Our mission
           </NavigationItem>
-          {menuVisible && (
-            <NavigationItem href={DISCORD_LINK}>Discord</NavigationItem>
-          )}
-          <DiscordLink
+          <NavigationLink
             href={DISCORD_LINK}
+            target="_blank"
             rel="nofollow noreferrer"
-            aria-label="Join us on Discord"
-            title="Discord"
           >
-            <Discord />
-          </DiscordLink>
+            Discord
+          </NavigationLink>
         </Links>
         <Actions>
           <Button

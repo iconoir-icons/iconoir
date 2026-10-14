@@ -4,7 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
-const NavigationItemContainer = styled.a`
+/** Nav link styles, exported for links that leave the site. */
+export const NavigationLink = styled.a`
   display: block;
   padding: 16px 0;
   font-size: 22px;
@@ -49,12 +50,12 @@ export function NavigationItem({
 
   return (
     <Link href={href} passHref legacyBehavior>
-      <NavigationItemContainer
+      <NavigationLink
         onClick={onClick}
         aria-current={isActive ? 'page' : undefined}
       >
         {children}
-      </NavigationItemContainer>
+      </NavigationLink>
     </Link>
   );
 }

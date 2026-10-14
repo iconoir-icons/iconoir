@@ -216,9 +216,6 @@ importers:
       '@react-types/slider':
         specifier: ^3.9.0
         version: 3.9.0(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@types/animejs':
-        specifier: ^3.1.13
-        version: 3.1.13
       '@types/lodash':
         specifier: ^4.17.24
         version: 4.17.24
@@ -234,9 +231,6 @@ importers:
       '@types/react-window':
         specifier: ^1.8.8
         version: 1.8.8
-      animejs:
-        specifier: ^3.2.2
-        version: 3.2.2
       csvtojson:
         specifier: ^2.0.14
         version: 2.0.14
@@ -2556,9 +2550,6 @@ packages:
   '@tybys/wasm-util@0.10.3':
     resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
 
-  '@types/animejs@3.1.13':
-    resolution: {integrity: sha512-yWg9l1z7CAv/TKpty4/vupEh24jDGUZXv4r26StRkpUPQm04ztJaftgpto8vwdFs8SiTq6XfaPKCSI+wjzNMvQ==}
-
   '@types/argparse@1.0.38':
     resolution: {integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==}
 
@@ -3032,9 +3023,6 @@ packages:
 
   alien-signals@3.2.1:
     resolution: {integrity: sha512-I8FjmltrfnDFoZedi5CG8DghVYNhzb/Ijluz7tCSJH0xpd0484Kowhbb1XDYOxfJpU1p5wnM2X54dA+IfGyD1g==}
-
-  animejs@3.2.2:
-    resolution: {integrity: sha512-Ao95qWLpDPXXM+WrmwcKbl6uNlC5tjnowlaRYtuVDHHoygjtIPfDUoK9NthrlZsQSKjZXlmji2TrBUAVbiH0LQ==}
 
   anser@1.4.10:
     resolution: {integrity: sha512-hCv9AqTQ8ycjpSd3upOJd7vFwW1JaoYQ7tpham03GJ1ca8/65rqn0RpaWpItOAd6ylW9wAw6luXYPJIyPFVOww==}
@@ -9963,8 +9951,6 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@types/animejs@3.1.13': {}
-
   '@types/argparse@1.0.38': {}
 
   '@types/babel__core@7.20.5':
@@ -10502,8 +10488,6 @@ snapshots:
   alien-signals@0.4.14: {}
 
   alien-signals@3.2.1: {}
-
-  animejs@3.2.2: {}
 
   anser@1.4.10: {}
 
