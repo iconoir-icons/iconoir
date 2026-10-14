@@ -44,6 +44,7 @@ const ResetButton = styled(BaseResetButton)`
     height: 28px;
     padding: 0 12px;
     border-radius: 999px;
+    corner-shape: superellipse(1.6);
     background: var(--gray-btn);
     color: var(--black);
     font-size: 13px;

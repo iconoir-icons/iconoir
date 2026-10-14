@@ -63,6 +63,7 @@ const HoverButton = styled(ResetButton)<{ $primary?: boolean }>`
     justify-content: center;
     height: 34px;
     border-radius: 999px;
+    corner-shape: superellipse(1.6);
     background: ${(props) => (props.$primary ? 'var(--black)' : 'var(--gray-btn)')};
     color: ${(props) => (props.$primary ? 'var(--white)' : 'var(--black)')};
     font-size: 13px;

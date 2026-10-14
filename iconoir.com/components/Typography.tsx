@@ -23,18 +23,21 @@ export const Mono = styled.span`
   color: var(--mono-ink);
 `;
 
+/** Hero title, sized like the mollie.com h1 at its 810px and 1200px breakpoints. */
 export const Display = styled.h1`
   margin: 0;
-  font-size: 40px;
+  font-size: 28px;
   line-height: 1;
   font-weight: 360;
-  letter-spacing: -0.04em;
+  font-variation-settings: 'opsz' 32;
+  letter-spacing: -0.84px;
   color: var(--black);
-  ${media.sm} {
-    font-size: 48px;
+  @media (min-width: 810px) {
+    font-size: 62px;
+    letter-spacing: -2.4px;
   }
-  ${media.md} {
-    font-size: 64px;
+  @media (min-width: 1200px) {
+    font-size: 82px;
   }
 `;
 

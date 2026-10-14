@@ -54,6 +54,7 @@ export const Button = styled(ResetButton)<{
     height: 50px;
     padding: 0 24px;
     border-radius: 999px;
+    corner-shape: superellipse(1.6);
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
@@ -99,6 +100,7 @@ export const CopyButton = styled(ResetButton)`
     height: 30px;
     padding: 0 12px;
     border-radius: 999px;
+    corner-shape: superellipse(1.6);
     background: var(--white);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     color: var(--black);
