@@ -42,7 +42,6 @@ const POOL = [
   'MagicWand',
   'Map',
   'Megaphone',
-  'Microphone',
   'Palette',
   'PeaceHand',
   'Planet',
