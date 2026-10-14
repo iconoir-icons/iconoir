@@ -6,7 +6,7 @@ const PromoContainer = styled.a`
   display: block;
   padding: 20px 20px 16px;
   border-radius: 20px;
-  background: var(--white);
+  background: var(--band);
   text-align: center;
   text-decoration: none;
   color: var(--black);
@@ -60,7 +60,7 @@ const PromoDescription = styled.div`
   margin: 12px 0;
   padding: 10px 0;
   border-radius: 12px;
-  background: var(--band);
+  background: var(--white);
   font-size: 13px;
   font-weight: 500;
 `;

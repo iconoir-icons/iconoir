@@ -10,7 +10,7 @@ const Container = styled.div`
   align-items: center;
   padding: 64px 24px;
   border-radius: 24px;
-  background: var(--white);
+  background: var(--band);
   text-align: center;
   ${Text15} {
     max-width: 360px;

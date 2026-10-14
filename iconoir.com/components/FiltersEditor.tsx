@@ -2,6 +2,7 @@ import type { IconListFilters } from './IconList';
 import { Search } from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
+import { NAV_HEIGHT } from './Header';
 import { LargeInput } from './Input';
 
 const Container = styled.div`
@@ -18,6 +19,8 @@ const Container = styled.div`
   }
   ${LargeInput} {
     padding-left: 46px;
+    /* Focusing scrolls the toolbar up to sit just under the sticky nav. */
+    scroll-margin-top: ${NAV_HEIGHT + 10}px;
   }
 `;
 

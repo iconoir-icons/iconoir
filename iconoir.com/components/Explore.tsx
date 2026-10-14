@@ -8,20 +8,52 @@ import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
 import { NAV_HEIGHT } from './Header';
 import { IconList } from './IconList';
+import { LargeInput } from './Input';
 import { Streamline } from './Streamline';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
 
-/** Matches the `top` offset the sidebar sticks at, just below the sticky nav. */
-const STICKY_TOP = NAV_HEIGHT + 8;
-/** Room around the sidebar's content for focus rings that grow past its edges. */
-const SCROLL_GUTTER = 4;
+/** Height of the sticky toolbar holding search and customization. */
+const TOOLBAR_HEIGHT = 64;
+/** Matches the `top` offset the sidebar sticks at, just below the toolbar. */
+const STICKY_TOP = NAV_HEIGHT + TOOLBAR_HEIGHT + 24;
 
-const Container = styled.div`
+/** Sticks under the site nav while the icons scroll, like phosphoricons.com. */
+const Toolbar = styled.div`
+  position: sticky;
+  top: ${NAV_HEIGHT}px;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+`;
+
+const ToolbarInner = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: ${TOOLBAR_HEIGHT}px;
+  padding: 0 16px;
+  > :first-child {
+    flex: 1;
+    max-width: 520px;
+  }
+  > :last-child {
+    margin-left: auto;
+  }
+  ${LargeInput} {
+    height: 44px;
+  }
+`;
+
+const Body = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  padding: 24px 16px 0;
   ${media.md} {
-    align-items: flex-start;
     flex-direction: row;
+    align-items: flex-start;
   }
 `;
 
@@ -33,38 +65,21 @@ const Left = styled.div`
 
 const Right = styled.div`
   width: 280px;
-  display: block;
   margin: 0 auto 32px;
   ${media.md} {
     position: sticky;
-    z-index: 1;
+    top: ${STICKY_TOP}px;
+    flex: none;
+    margin: 0 0 0 24px;
     /* Sticky sidebars clip their overflow past the fold: cap the height to the
-       viewport so taller content (ads + customization panel) stays reachable. */
-    max-height: calc(100vh - ${STICKY_TOP + 20}px);
-    /* The scroll container also clips horizontally, cutting off the search
-       input's focus ring. Pad it so the ring fits, and offset the padding with
-       negative margins so the layout doesn't shift. */
-    padding: ${SCROLL_GUTTER}px;
-    margin: -${SCROLL_GUTTER}px -${SCROLL_GUTTER}px 0 ${40 - SCROLL_GUTTER}px;
-    top: ${STICKY_TOP - SCROLL_GUTTER}px;
+       viewport so taller sponsor content stays reachable. */
+    max-height: calc(100vh - ${STICKY_TOP + 24}px);
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
   }
-`;
-
-const FilterContainer = styled.div<{ $isMobile?: boolean }>`
-  display: ${(props) => (props.$isMobile ? 'block' : 'none')};
-  margin-bottom: 32px;
-  position: sticky;
-  top: ${STICKY_TOP}px;
-  z-index: 100;
-  width: 100%;
-  ${media.md} {
-    position: relative;
-    top: 0;
-    display: ${(props) => (props.$isMobile ? 'none' : 'block')};
-    margin-bottom: 10px;
+  > :first-child {
+    margin-top: 0;
   }
 `;
 
@@ -79,7 +94,7 @@ export function Explore({ allIcons }: ExploreProps) {
   const rightRef = React.useRef<HTMLDivElement>(null);
 
   // Once the list scrolls back under the sidebar's sticky offset the sidebar is
-  // no longer pinned, so rewind it to the top and bring the search back first.
+  // no longer pinned, so rewind it to the top.
   React.useEffect(() => {
     let frame = 0;
 
@@ -109,35 +124,36 @@ export function Explore({ allIcons }: ExploreProps) {
   }, []);
 
   return (
-    <Container ref={containerRef}>
-      <Left>
-        <FilterContainer $isMobile>
+    <>
+      <Toolbar>
+        <ToolbarInner>
           <FiltersEditor filters={filters} onChange={setFilters} />
-        </FilterContainer>
-        <IconoirProvider
-          iconProps={{
-            color: customizations.hexColor,
-            width: customizations.size ? `${customizations.size}px` : undefined,
-            height: customizations.size
-              ? `${customizations.size}px`
-              : undefined,
-            strokeWidth: customizations.strokeWidth,
-          }}
-        >
-          <IconList filters={filters} allIcons={allIcons} />
-        </IconoirProvider>
-      </Left>
-      <Right ref={rightRef}>
-        <FilterContainer>
-          <FiltersEditor filters={filters} onChange={setFilters} />
-        </FilterContainer>
-        <Streamline />
-        <CarbonCoverAd />
-        <CustomizationEditor
-          customizations={customizations}
-          onChange={setCustomizations}
-        />
-      </Right>
-    </Container>
+          <CustomizationEditor
+            customizations={customizations}
+            onChange={setCustomizations}
+          />
+        </ToolbarInner>
+      </Toolbar>
+      <Body ref={containerRef}>
+        <Left>
+          <IconoirProvider
+            iconProps={{
+              color: customizations.hexColor,
+              width: customizations.size ? `${customizations.size}px` : undefined,
+              height: customizations.size
+                ? `${customizations.size}px`
+                : undefined,
+              strokeWidth: customizations.strokeWidth,
+            }}
+          >
+            <IconList filters={filters} allIcons={allIcons} />
+          </IconoirProvider>
+        </Left>
+        <Right ref={rightRef}>
+          <Streamline />
+          <CarbonCoverAd />
+        </Right>
+      </Body>
+    </>
   );
 }

@@ -13,7 +13,7 @@ const CarbonCoverAdContainer = styled.div`
       --carbon-text-color: var(--black);
     }
     #carbon-responsive .carbon-responsive-wrap {
-      background-color: var(--white);
+      background-color: var(--band);
       border: none;
       border-radius: 20px;
       transition: box-shadow 0.15s;

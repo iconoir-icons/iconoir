@@ -10,32 +10,30 @@ import React from 'react';
 import styled from 'styled-components';
 import { Mono, Text14 } from './Typography';
 
+/** One row: label, track, value. */
 const SliderContainer = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 12px;
   width: 100%;
   touch-action: none;
-`;
-
-const SliderHeader = styled.div`
-  display: flex;
-  align-items: baseline;
-  align-self: stretch;
-  margin-bottom: 4px;
+  label {
+    white-space: nowrap;
+  }
 `;
 
 const Output = styled(Mono)`
-  flex: 1 0 auto;
+  min-width: 26px;
   text-align: end;
   color: var(--black);
 `;
 
 const Track = styled.div`
   position: relative;
+  flex: 1;
+  min-width: 64px;
   height: 28px;
-  width: 100%;
   cursor: pointer;
 `;
 
@@ -95,21 +93,19 @@ export function Slider(props: SliderProps) {
 
   return (
     <SliderContainer {...groupProps}>
-      <SliderHeader>
-        {props.label && (
-          <Text14 as="label" {...labelProps}>
-            {props.label}
-          </Text14>
-        )}
-        <Output as="output" {...outputProps}>
-          {state.getThumbValueLabel(0)}
-        </Output>
-      </SliderHeader>
+      {props.label && (
+        <Text14 as="label" {...labelProps}>
+          {props.label}
+        </Text14>
+      )}
       <Track {...trackProps} ref={trackRef}>
         <TrackBackground />
         <TrackFill style={{ width: `${state.getThumbPercent(0) * 100}%` }} />
         <Thumb index={0} state={state} trackRef={trackRef} />
       </Track>
+      <Output as="output" {...outputProps}>
+        {state.getThumbValueLabel(0)}
+      </Output>
     </SliderContainer>
   );
 }

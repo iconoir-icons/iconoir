@@ -9,7 +9,7 @@ import {
 } from 'react-window';
 import styled from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
-import { ICON_SPACE, ICON_WIDTH } from '../lib/constants';
+import { ICON_WIDTH } from '../lib/constants';
 import { CategoryRow } from './CategoryRow';
 import { IconListEmpty } from './IconListEmpty';
 import { IconsRow } from './IconsRow';
@@ -105,16 +105,15 @@ function getRowsFromIcons(
   return result;
 }
 
-const ICON_BOTTOM_PADDING = 65;
-const HEADER_HEIGHT = 150;
-const HEADER_INNER_HEIGHT = 15 + 40;
+const HEADER_HEIGHT = 120;
+const HEADER_INNER_HEIGHT = 15 + 28;
 const HEADER_TOP_PADDING = HEADER_HEIGHT - HEADER_INNER_HEIGHT;
 
 function getItemSize(row: IconRow, iconWidth: number): number {
   if (isCategoryRow(row)) {
     return HEADER_HEIGHT;
   } else {
-    return iconWidth + ICON_BOTTOM_PADDING;
+    return iconWidth;
   }
 }
 
@@ -167,17 +166,13 @@ export function IconList({ filters, allIcons }: IconListProps) {
   const filteredIcons = filterIcons(allIcons, filters);
   const { ref, width = 400 } = useResizeObserver();
 
-  const iconsPerRow = width
-    ? Math.floor((width + ICON_SPACE) / (ICON_WIDTH + ICON_SPACE))
-    : null;
+  const iconsPerRow = width ? Math.max(1, Math.floor(width / ICON_WIDTH)) : null;
 
   let children = null;
   const listRef = React.useRef<List<IconRow[]> | null>(null);
   const [height, setHeight] = React.useState(400);
 
-  const iconWidth = iconsPerRow
-    ? Math.floor((width + ICON_SPACE) / iconsPerRow) - ICON_SPACE
-    : null;
+  const iconWidth = iconsPerRow ? Math.floor(width / iconsPerRow) : null;
 
   React.useEffect(() => {
     setHeight(window.innerHeight);

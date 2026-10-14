@@ -6,43 +6,32 @@ import { ResetButton as BaseResetButton } from './Button';
 import { DEFAULT_CUSTOMIZATIONS } from './IconList';
 import { ColorInput } from './Input';
 import { Slider } from './Slider';
-import { Eyebrow, Mono, Text14 } from './Typography';
+import { Mono } from './Typography';
 
-const CustomizationBox = styled.div`
+/** Size, stroke and color controls, laid out in a row for the explorer toolbar. */
+const Controls = styled.div`
   display: none;
-  margin: 16px 0;
-  padding: 20px;
-  border-radius: 20px;
-  background: var(--white);
+  align-items: center;
+  gap: 24px;
   ${media.md} {
-    display: block;
+    display: flex;
   }
 `;
 
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  ${Eyebrow} {
-    margin: 0;
-  }
+const SliderField = styled.div`
+  width: 200px;
 `;
 
-const Field = styled.div`
-  margin-bottom: 16px;
-`;
-
-const HorizontalField = styled.div`
+const ColorRow = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
 `;
 
 const ResetButton = styled(BaseResetButton)`
   &&& {
-    height: 28px;
-    padding: 0 12px;
+    height: 36px;
+    padding: 0 14px;
     border-radius: 999px;
     corner-shape: superellipse(1.6);
     background: var(--gray-btn);
@@ -62,8 +51,8 @@ const ColorField = styled.label`
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 32px;
-  padding: 0 12px 0 6px;
+  height: 36px;
+  padding: 0 14px 0 8px;
   border-radius: 999px;
   background: var(--gray-btn);
   transition: background 0.15s;
@@ -120,16 +109,10 @@ export function CustomizationEditor({
   }
 
   return (
-    <CustomizationBox>
-      <Header>
-        <Eyebrow>Customize</Eyebrow>
-        <ResetButton onClick={() => onChange(DEFAULT_CUSTOMIZATIONS)}>
-          Reset
-        </ResetButton>
-      </Header>
-      <Field>
+    <Controls>
+      <SliderField>
         <Slider
-          label="Optical size"
+          label="Size"
           minValue={16}
           maxValue={64}
           value={[size]}
@@ -139,10 +122,10 @@ export function CustomizationEditor({
             updateCustomizations({ size: values[0] });
           }}
         />
-      </Field>
-      <Field>
+      </SliderField>
+      <SliderField>
         <Slider
-          label="Stroke weight"
+          label="Stroke"
           minValue={0.5}
           maxValue={3}
           value={[strokeWidth]}
@@ -153,9 +136,8 @@ export function CustomizationEditor({
             updateCustomizations({ strokeWidth: values[0] });
           }}
         />
-      </Field>
-      <HorizontalField>
-        <Text14>Color</Text14>
+      </SliderField>
+      <ColorRow>
         <ColorField>
           <Swatch style={{ background: color }} />
           <Mono>{color}</Mono>
@@ -169,7 +151,10 @@ export function CustomizationEditor({
             }}
           />
         </ColorField>
-      </HorizontalField>
-    </CustomizationBox>
+        <ResetButton onClick={() => onChange(DEFAULT_CUSTOMIZATIONS)}>
+          Reset
+        </ResetButton>
+      </ColorRow>
+    </Controls>
   );
 }

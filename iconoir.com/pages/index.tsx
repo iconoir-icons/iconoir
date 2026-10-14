@@ -7,7 +7,7 @@ import { AvailableFor } from '../components/AvailableFor';
 import { Button } from '../components/Button';
 import { Explore } from '../components/Explore';
 import { Footer } from '../components/Footer';
-import { Header } from '../components/Header';
+import { Header, NAV_HEIGHT } from '../components/Header';
 import { Actions, Hero } from '../components/Hero';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
@@ -18,13 +18,11 @@ import { getAllIcons } from '../lib/getIcons';
 import { octokit } from '../lib/octokit';
 import { media } from '../lib/responsive';
 
-const Band = styled.section`
+const IconsSection = styled.section`
   margin-top: 72px;
-  padding: 72px 0;
-  background: var(--band);
+  scroll-margin-top: ${NAV_HEIGHT}px;
   ${media.sm} {
     margin-top: 112px;
-    padding: 112px 0;
   }
 `;
 
@@ -100,11 +98,9 @@ const Home: NextPage<HomeProps> = ({
         </StatsContainer>
         <AvailableFor />
       </Wrap>
-      <Band id="icons">
-        <Wrap>
-          <Explore allIcons={allIcons} />
-        </Wrap>
-      </Band>
+      <IconsSection id="icons">
+        <Explore allIcons={allIcons} />
+      </IconsSection>
       <Footer />
     </Layout>
   );

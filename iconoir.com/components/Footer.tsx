@@ -50,6 +50,10 @@ const Categories = styled.div`
   ${media.md} {
     display: contents;
   }
+  /* Like the header nav: hovering a link fades all the others. */
+  &:has(a:hover) a:not(:hover) {
+    opacity: 0.4;
+  }
 `;
 
 const FooterCategoryLink = styled.a`
@@ -60,13 +64,6 @@ const FooterCategoryLink = styled.a`
   color: var(--black);
   text-decoration: none;
   transition: opacity 0.15s;
-`;
-
-/** Like the header nav: hovering a link fades the others in its column. */
-const FooterCategoryLinks = styled.div`
-  &:has(a:hover) a:not(:hover) {
-    opacity: 0.4;
-  }
 `;
 
 const FooterEnd = styled.div`
@@ -94,13 +91,11 @@ function FooterCategory({ category, links }: FooterCategoryProps) {
   return (
     <div>
       <Eyebrow>{category}</Eyebrow>
-      <FooterCategoryLinks>
-        {links.map((link) => (
-          <FooterCategoryLink key={link.url} href={link.url}>
-            {link.name}
-          </FooterCategoryLink>
-        ))}
-      </FooterCategoryLinks>
+      {links.map((link) => (
+        <FooterCategoryLink key={link.url} href={link.url}>
+          {link.name}
+        </FooterCategoryLink>
+      ))}
     </div>
   );
 }

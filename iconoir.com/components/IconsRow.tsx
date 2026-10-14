@@ -1,14 +1,10 @@
 import type { Icon } from './IconList';
 import styled from 'styled-components';
-import { ICON_SPACE } from '../lib/constants';
 import { Icon as IconC } from './Icon';
 
 const RowContainer = styled.div`
   display: flex;
-  align-items: center;
-  > :not(:last-child) {
-    margin-right: ${ICON_SPACE}px;
-  }
+  align-items: stretch;
 `;
 
 export interface IconsRowProps {

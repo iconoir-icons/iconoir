@@ -46,9 +46,8 @@ const HoverContainer = styled.div`
   align-items: stretch;
   justify-content: center;
   gap: 6px;
-  padding: 12px;
-  border-radius: inherit;
-  background: rgba(255, 255, 255, 0.92);
+  padding: 20px;
+  background: var(--band);
 
   transform: translateZ(0px); // Safari Fix
   transition: opacity 0.15s linear;
@@ -83,18 +82,38 @@ const HoverButton = styled(ResetButton)<{ $primary?: boolean }>`
   }
 `;
 
+/** Thin L-shaped crop marks in each corner of a cell. */
+const BRACKET = 'linear-gradient(var(--bracket), var(--bracket))';
+const BRACKET_LENGTH = 10;
+
 const BorderContainer = styled.div<{ $iconWidth: number }>`
+  --bracket: #dcdcdc;
   width: ${(props) => props.$iconWidth}px;
   padding-bottom: 100%;
   position: relative;
-  background: var(--white);
-  border-radius: 14px;
-  margin-bottom: 10px;
   color: var(--black);
-  transition: box-shadow 0.15s;
+  transition: background 0.15s;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      ${BRACKET} top left / ${BRACKET_LENGTH}px 1px,
+      ${BRACKET} top left / 1px ${BRACKET_LENGTH}px,
+      ${BRACKET} top right / ${BRACKET_LENGTH}px 1px,
+      ${BRACKET} top right / 1px ${BRACKET_LENGTH}px,
+      ${BRACKET} bottom left / ${BRACKET_LENGTH}px 1px,
+      ${BRACKET} bottom left / 1px ${BRACKET_LENGTH}px,
+      ${BRACKET} bottom right / ${BRACKET_LENGTH}px 1px,
+      ${BRACKET} bottom right / 1px ${BRACKET_LENGTH}px;
+    background-repeat: no-repeat;
+  }
   @media (hover: hover) {
     &:hover {
-      box-shadow: 0 0 0 1.5px var(--black);
+      --bracket: var(--black);
+      background: var(--band);
     }
     &:hover ${HoverContainer} {
       opacity: 1;
@@ -105,7 +124,7 @@ const BorderContainer = styled.div<{ $iconWidth: number }>`
 
 const IconContainer = styled.div`
   position: absolute;
-  inset: 0;
+  inset: 0 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,8 +133,8 @@ const IconContainer = styled.div`
 
 const IconTag = styled.div`
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 14px;
+  right: 14px;
   padding: 1px 5px;
   border-radius: 4px;
   background: var(--black);
@@ -127,7 +146,11 @@ const IconTag = styled.div`
   text-transform: uppercase;
 `;
 
-const Subtitle = styled.div<{ $iconWidth: number }>`
+const Subtitle = styled.div`
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 18px;
   font-family: var(--mono);
   font-size: 11px;
   line-height: 15px;
@@ -137,7 +160,6 @@ const Subtitle = styled.div<{ $iconWidth: number }>`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: ${(props) => props.$iconWidth}px;
 `;
 
 export interface IconProps {
@@ -201,6 +223,7 @@ export function Icon({ iconWidth, icon }: IconProps) {
 
           {icon.filename.includes('-solid') ? <IconTag>Solid</IconTag> : ''}
         </IconContainer>
+        <Subtitle title={icon.filename}>{icon.filename}</Subtitle>
         {supportsClipboard
           ? (
               <HoverContainer>
@@ -234,9 +257,6 @@ export function Icon({ iconWidth, icon }: IconProps) {
             )
           : null}
       </BorderContainer>
-      <Subtitle $iconWidth={iconWidth} title={icon.filename}>
-        {icon.filename}
-      </Subtitle>
     </div>
   );
 }
