@@ -28,6 +28,8 @@ const ICONS = [
 ];
 
 const INTERVAL_MS = 2600;
+/** How far, in px, the glow leans toward the cursor. */
+const MAX_GLOW_SHIFT = 10;
 const FILTER_ID = 'hero-icon-backlight';
 
 const enter = keyframes`
@@ -66,13 +68,16 @@ const breathe = keyframes`
 `;
 
 const Stage = styled.div`
+  /* Cursor offset, set from JS without re-rendering. */
+  --gx: 0px;
+  --gy: 0px;
   position: relative;
-  width: 112px;
-  height: 112px;
+  width: 88px;
+  height: 88px;
   margin: 0 auto 32px;
   ${media.md} {
-    width: 152px;
-    height: 152px;
+    width: 112px;
+    height: 112px;
     margin-bottom: 40px;
   }
 `;
@@ -101,6 +106,8 @@ const Layer = styled.div<{ $leaving?: boolean }>`
 const Halo = styled.div`
   color: var(--black);
   filter: url(#${FILTER_ID});
+  transform: translate(var(--gx), var(--gy));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   animation: ${breathe} 4s ease-in-out infinite;
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -112,7 +119,11 @@ const Rim = styled.div`
   color: var(--black);
   opacity: 0.55;
   filter: blur(2px);
-  transform: translateY(-1.5px);
+  transform: translate(
+    calc(var(--gx) * 0.25),
+    calc(-1.5px + var(--gy) * 0.25)
+  );
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 `;
 
 const Face = styled.div`
@@ -140,10 +151,45 @@ export function HeroIcon() {
     return () => clearInterval(timer);
   }, []);
 
+  // Lean the glow toward the cursor, scaled by how far it is across the page.
+  const stageRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+      return;
+
+    let frame = 0;
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (frame)
+        return;
+
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const rect = stage.getBoundingClientRect();
+        const dx = (event.clientX - (rect.left + rect.width / 2)) / window.innerWidth;
+        const dy = (event.clientY - (rect.top + rect.height / 2)) / window.innerHeight;
+        const clamp = (v: number) => Math.max(-1, Math.min(1, v * 2));
+
+        stage.style.setProperty('--gx', `${clamp(dx) * MAX_GLOW_SHIFT}px`);
+        stage.style.setProperty('--gy', `${clamp(dy) * MAX_GLOW_SHIFT}px`);
+      });
+    };
+
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('pointermove', onPointerMove);
+      if (frame)
+        cancelAnimationFrame(frame);
+    };
+  }, []);
+
   const layers = previous === null ? [index] : [previous, index];
 
   return (
-    <Stage aria-hidden>
+    <Stage ref={stageRef} aria-hidden>
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <filter
           id={FILTER_ID}
@@ -153,9 +199,9 @@ export function HeroIcon() {
           height="250%"
           colorInterpolationFilters="sRGB"
         >
-          <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="near" />
-          <feOffset in="near" dy="-6" result="nearUp" />
-          <feGaussianBlur in="SourceAlpha" stdDeviation="30" result="far" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="near" />
+          <feOffset in="near" dy="-5" result="nearUp" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="24" result="far" />
           <feComponentTransfer in="far" result="farSoft">
             <feFuncA type="linear" slope="0.7" />
           </feComponentTransfer>
