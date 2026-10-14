@@ -18,10 +18,11 @@ import { Header } from '../../components/Header';
 import { Layout } from '../../components/Layout';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
-import { Eyebrow, H1 } from '../../components/Typography';
-import { REPO } from '../../lib/constants';
+import { Body, Eyebrow, H1 } from '../../components/Typography';
+import { GITHUB_LINK, REPO } from '../../lib/constants';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { octokit } from '../../lib/octokit';
+import { withFallback } from '../../lib/stats';
 import {
   Container,
   ContentContainer,
@@ -29,6 +30,8 @@ import {
   InnerContentContainer,
   NavigationContainer,
 } from './[...slug]';
+
+const RELEASES_LINK = `${GITHUB_LINK}/releases`;
 
 export interface ChangelogProps extends HeaderProps {
   documentationProps: DocumentationNavigationProps;
@@ -52,9 +55,21 @@ export default function Changelog({
           <InnerContentContainer>
             <Eyebrow>Releases</Eyebrow>
             <H1>Changelog</H1>
-            {entries.map((entry) => (
-              <ChangelogEntry key={entry.name} {...entry} />
-            ))}
+            {entries.length
+              ? entries.map((entry) => (
+                  <ChangelogEntry key={entry.name} {...entry} />
+                ))
+              : (
+                  <Body>
+                    The release notes couldn&apos;t be loaded right now. You can
+                    read them on
+                    {' '}
+                    <a href={RELEASES_LINK} target="_blank" rel="noreferrer">
+                      GitHub
+                    </a>
+                    .
+                  </Body>
+                )}
             <ReadOnGitHub path="../../releases" resource="the releases" />
           </InnerContentContainer>
         </ContentContainer>
@@ -65,9 +80,13 @@ export default function Changelog({
 }
 
 export async function getStaticProps() {
-  const { data: releases } = await octokit.rest.repos.listReleases({
-    ...REPO,
-  });
+  // An empty list (with a pointer to GitHub) beats a failed build when the
+  // API is down or rate limited.
+  const releases = await withFallback(
+    octokit.rest.repos.listReleases({ ...REPO }).then(({ data }) => data),
+    [],
+    'GitHub releases',
+  );
 
   const entries: ChangelogEntryProps[] = [];
 

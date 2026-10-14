@@ -8,11 +8,15 @@ const FALLBACK_NUM_STARS = 4580;
 const FALLBACK_NUM_DOWNLOADS = 691733;
 const FETCH_TIMEOUT_MS = 10_000;
 
-async function withFallback(
-  promise: Promise<number | undefined>,
-  fallback: number,
+/**
+ * Resolves to the promise's value, or to `fallback` when it fails, comes back
+ * empty, or takes longer than FETCH_TIMEOUT_MS.
+ */
+export async function withFallback<T>(
+  promise: Promise<T | undefined>,
+  fallback: T,
   label: string,
-): Promise<number> {
+): Promise<T> {
   let timer: Parameters<typeof clearTimeout>[0];
 
   const timeout = new Promise<undefined>((resolve) => {

@@ -124,11 +124,6 @@ const Links = styled.nav<{ $visible?: boolean }>`
   }
 `;
 
-/** Star count beside the GitHub link, a shade lighter than the label. */
-const Stars = styled.span`
-  color: var(--muted);
-`;
-
 const Actions = styled.div`
   display: flex;
   align-items: center;
@@ -190,13 +185,11 @@ export function Header({ currentVersion, numStars }: HeaderProps) {
             Our mission
           </NavigationItem>
           <NavigationLink href={GITHUB_LINK} target="_blank" rel="noreferrer">
-            GitHub
-            {' '}
-            <Stars>
-              {new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
-                numStars,
-              )}
-            </Stars>
+            GitHub (
+            {new Intl.NumberFormat('en-US', { notation: 'compact' }).format(
+              numStars,
+            )}
+            )
           </NavigationLink>
         </Links>
         <Actions>
