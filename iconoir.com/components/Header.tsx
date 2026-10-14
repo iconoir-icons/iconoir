@@ -105,6 +105,10 @@ const Links = styled.nav<{ $visible?: boolean }>`
     transform: none;
     opacity: 1;
     pointer-events: all;
+    /* Hovering a link fades the others back. */
+    &:has(a:hover) a:not(:hover) {
+      opacity: 0.4;
+    }
   }
 `;
 
@@ -112,11 +116,8 @@ const DiscordLink = styled.a`
   display: none;
   ${media.lg} {
     display: flex;
-    color: var(--text);
-    transition: color 0.15s;
-    &:hover {
-      color: var(--black);
-    }
+    color: var(--black);
+    transition: opacity 0.15s;
     svg {
       width: 20px;
       height: 20px;

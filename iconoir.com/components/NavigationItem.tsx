@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
-const NavigationItemContainer = styled.a<{ $isActive?: boolean }>`
+const NavigationItemContainer = styled.a`
   display: block;
   padding: 16px 0;
   font-size: 22px;
@@ -23,10 +23,6 @@ const NavigationItemContainer = styled.a<{ $isActive?: boolean }>`
     font-weight: 500;
     letter-spacing: -0.01em;
     border-bottom: none;
-    color: ${(props) => (props.$isActive ? 'var(--black)' : 'var(--text)')};
-    &:hover {
-      color: var(--black);
-    }
   }
 `;
 
@@ -45,17 +41,17 @@ export function NavigationItem({
 }: NavigationItemProps) {
   const router = useRouter();
 
+  const isActive = activeMatch
+    ? router.asPath.startsWith(activeMatch)
+    : href.slice(1)
+      ? router.asPath.slice(1).startsWith(href.slice(1))
+      : router.asPath === href || router.asPath.startsWith('/#');
+
   return (
     <Link href={href} passHref legacyBehavior>
       <NavigationItemContainer
         onClick={onClick}
-        $isActive={
-          activeMatch
-            ? router.asPath.startsWith(activeMatch)
-            : href.slice(1)
-              ? router.asPath.slice(1).startsWith(href.slice(1))
-              : router.asPath === href || router.asPath.startsWith('/#')
-        }
+        aria-current={isActive ? 'page' : undefined}
       >
         {children}
       </NavigationItemContainer>
