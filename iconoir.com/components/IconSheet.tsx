@@ -114,7 +114,7 @@ const CloseButton = styled(ResetButton)`
 
 const Summary = styled.div`
   display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
+  grid-template-columns: 64px minmax(0, 1fr);
   gap: 16px;
   align-content: start;
 `;
@@ -122,11 +122,15 @@ const Summary = styled.div`
 const Preview = styled.div`
   display: grid;
   place-items: center;
-  width: 88px;
-  height: 88px;
-  border-radius: 16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
   /* Stays light so any chosen icon color, black included, remains visible. */
   background: var(--white);
+  /* Thick strokes run past the 24px viewBox; let them show instead of clipping. */
+  svg {
+    overflow: visible;
+  }
 `;
 
 const Name = styled.div`
@@ -288,7 +292,7 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
         </CloseButton>
         <Summary>
           <Preview>
-            <IconComponent width={44} height={44} />
+            <IconComponent width={32} height={32} />
           </Preview>
           <div>
             <Name>{icon.filename}</Name>

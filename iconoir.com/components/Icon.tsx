@@ -35,6 +35,10 @@ const IconContainer = styled.span`
   align-items: center;
   justify-content: center;
   color: inherit;
+  /* Thick strokes run past the 24px viewBox; let them show instead of clipping. */
+  svg {
+    overflow: visible;
+  }
 `;
 
 const IconTag = styled.span`
