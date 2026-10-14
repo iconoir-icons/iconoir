@@ -178,11 +178,13 @@ export function IconList({ filters, allIcons }: IconListProps) {
     setHeight(window.innerHeight);
   }, []);
 
+  // Row sizes are cached by index; a new search shifts which index is a
+  // category header and which an icon row, so drop the cache then too.
   React.useEffect(() => {
     if (listRef.current) {
       listRef.current.resetAfterIndex(0, true);
     }
-  }, [iconWidth, height]);
+  }, [iconWidth, height, filters.search]);
 
   if (filteredIcons.length && iconsPerRow && width && iconWidth) {
     const iconRows = getRowsFromIcons(filteredIcons, iconsPerRow);
