@@ -12,7 +12,6 @@ import { Actions, Hero } from '../components/Hero';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { Eyebrow, Lede, SectionTitle } from '../components/Typography';
 import { REPO } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
@@ -26,18 +25,6 @@ const Band = styled.section`
   ${media.sm} {
     margin-top: 112px;
     padding: 112px 0;
-  }
-`;
-
-const LibraryHead = styled.div`
-  text-align: center;
-  margin-bottom: 40px;
-  ${media.sm} {
-    margin-bottom: 56px;
-  }
-  ${Lede} {
-    max-width: 620px;
-    margin: 16px auto 0;
   }
 `;
 
@@ -115,14 +102,6 @@ const Home: NextPage<HomeProps> = ({
       </Wrap>
       <Band id="icons">
         <Wrap>
-          <LibraryHead>
-            <Eyebrow>The library</Eyebrow>
-            <SectionTitle>Every icon, free to copy</SectionTitle>
-            <Lede>
-              Search, tweak the size, stroke and color, then copy the SVG or
-              download it. No account needed.
-            </Lede>
-          </LibraryHead>
           <Explore allIcons={allIcons} />
         </Wrap>
       </Band>
