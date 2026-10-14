@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import type { Icon } from '../components/IconList';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { AvailableFor } from '../components/AvailableFor';
 import { Button } from '../components/Button';
 import { Explore } from '../components/Explore';
 import { Footer } from '../components/Footer';
@@ -59,7 +58,6 @@ const Home: NextPage<HomeProps> = ({
           </>
         )}
       >
-        <AvailableFor />
         <Actions>
           <Button as="a" href="#icons">
             Browse
