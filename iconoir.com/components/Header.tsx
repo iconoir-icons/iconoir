@@ -3,7 +3,6 @@ import { Heart } from 'iconoir-react/solid';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { trackEvent } from '../lib/analytics';
 import { DISCORD_LINK, SHARE_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { AnimatedSvg } from './AnimatedSvg';
@@ -43,37 +42,17 @@ const Banner = styled(Text15)`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 22px 0;
-    background: #8072ff;
-    color: #fff;
+    padding: 16px 0;
+    background: var(--g5);
+    color: var(--g0);
     font-weight: 500;
     position: absolute;
     width: 100%;
+    text-decoration: underline;
     top: 0;
   }
   > * {
     margin: 0 4px;
-  }
-  strong {
-    font-weight: 700;
-  }
-`;
-
-const BannerButton = styled.a`
-  &&& {
-    margin-left: 16px;
-    margin-block: -3px;
-    padding: 0 14px;
-    border-radius: 999px;
-    background: #fff;
-    color: #8072ff;
-    font-weight: 600;
-    line-height: 30px;
-    text-decoration: none;
-    transition: 0.2s;
-  }
-  &:hover {
-    scale: 1.05;
   }
 `;
 
@@ -142,7 +121,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   ${media.lg} {
-    margin-top: 52px;
+    margin-top: 40px;
   }
 `;
 
@@ -232,19 +211,13 @@ export function Header({ currentVersion }: HeaderProps) {
     <Container>
       <Banner>
         <Sparks></Sparks>
-        <span>
-          Can&apos;t find the icon you need?
-          {' '}
-          <strong>Create it with Iconoir Pro</strong>
-          , coming soon.
-        </span>
-        <BannerButton
-          href="https://pro.iconoir.com/?utm_source=iconoir"
+        <a
+          href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
           target="_blank"
-          onClick={() => trackEvent('pro_banner_click')}
         >
-          Get a first look →
-        </BannerButton>
+          Your one-time or recurring contribution does a lot to keep Iconoir
+          going.
+        </a>
       </Banner>
       <HeaderLeft>
         <Link href="/">

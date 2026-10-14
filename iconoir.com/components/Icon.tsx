@@ -2,7 +2,6 @@ import type { Icon as IconType } from './IconList';
 import * as AllIcons from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
-import { notifyIconUsed } from '../lib/proModal';
 import { showNotification } from '../lib/showNotification';
 import { ResetButton } from './Button';
 import { DEFAULT_CUSTOMIZATIONS } from './IconList';
@@ -200,12 +199,6 @@ export function Icon({ iconWidth, icon }: IconProps) {
     }
   }, [icon, iconContext, supportsClipboard]);
 
-  const handleIconUse = () =>
-    notifyIconUsed({
-      iconComponentName: icon.iconComponentName,
-      filename: icon.filename,
-    });
-
   return (
     <div className="icon-container">
       <BorderContainer $iconWidth={iconWidth}>
@@ -218,7 +211,6 @@ export function Icon({ iconWidth, icon }: IconProps) {
                 href: '#',
                 rel: 'noreferrer',
                 download: `${icon.filename}.svg`,
-                onClick: handleIconUse,
               }) as any)}
         >
           <IconComponent />
@@ -239,7 +231,6 @@ export function Icon({ iconWidth, icon }: IconProps) {
                         .writeText(htmlContentsRef.current)
                         .then(() => {
                           showNotification('SVG code copied!');
-                          handleIconUse();
                         })
                         .catch((err) => {
                           console.error(err);
@@ -255,7 +246,6 @@ export function Icon({ iconWidth, icon }: IconProps) {
                   href="#"
                   rel="noreferrer"
                   download={`${icon.filename}.svg`}
-                  onClick={handleIconUse}
                 >
                   Download
                 </HoverButton>
