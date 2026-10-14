@@ -1,0 +1,290 @@
+import * as AllIcons from 'iconoir-react';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import { media } from '../lib/responsive';
+
+/** Icons that read well at small sizes, picked from at random. */
+const POOL = [
+  'Airplane',
+  'Apple',
+  'Bag',
+  'Basketball',
+  'Bicycle',
+  'Bonfire',
+  'Book',
+  'Brain',
+  'BrightCrown',
+  'Camera',
+  'Cellar',
+  'Cloud',
+  'ColorFilter',
+  'Compass',
+  'Crown',
+  'Cube',
+  'DesignNib',
+  'FillColor',
+  'Fish',
+  'Flash',
+  'Flower',
+  'Gift',
+  'Glasses',
+  'Globe',
+  'HalfMoon',
+  'Hammer',
+  'HandCard',
+  'Headset',
+  'Heart',
+  'Home',
+  'Lamp',
+  'Leaf',
+  'LightBulb',
+  'Lock',
+  'MagicWand',
+  'Map',
+  'Megaphone',
+  'Microphone',
+  'Palette',
+  'PeaceHand',
+  'Planet',
+  'Puzzle',
+  'Rocket',
+  'Running',
+  'SeaWaves',
+  'Shop',
+  'Sparks',
+  'Tram',
+  'Tree',
+  'Trophy',
+  'Umbrella',
+  'Wallet',
+  'Weight',
+  'Wolf',
+  'Yoga',
+] as const;
+
+type IconName = (typeof POOL)[number];
+
+/** The three selection boxes: fixed size and spot, as on the live site. */
+const SLOTS = [
+  { x: -128, y: 82, box: 32, icon: 18, tilt: [-14, -5] },
+  { x: 12, y: 50, box: 56, icon: 40, tilt: [3, 9] },
+  { x: 137, y: 88, box: 56, icon: 44, tilt: [10, 20] },
+] as const;
+
+/** First render matches the server and the original design. */
+const INITIAL: { name: IconName; tilt: number }[] = [
+  { name: 'FillColor', tilt: -10 },
+  { name: 'Cellar', tilt: 5 },
+  { name: 'HandCard', tilt: 16 },
+];
+
+const INTERVAL_MS = 2000;
+const HANDLE = 10;
+
+/** "MagicWand" → "Magic wand" */
+function label(name: string) {
+  const words = name.replace(/([a-z])([A-Z0-9])/g, '$1 $2').toLowerCase();
+
+  return words.charAt(0).toUpperCase() + words.slice(1);
+}
+
+function randomBetween([min, max]: readonly [number, number]) {
+  return Math.round(min + Math.random() * (max - min));
+}
+
+const popIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`;
+
+const fadeOut = keyframes`
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+`;
+
+const Stage = styled.div`
+  position: relative;
+  width: 320px;
+  height: 130px;
+  margin: 0 auto 24px;
+  transform: scale(0.85);
+  transform-origin: 50% 100%;
+  ${media.sm} {
+    transform: none;
+    margin-bottom: 32px;
+  }
+`;
+
+/** Positions a slot; its center sits at (x, y) from the stage's top center. */
+const Slot = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0;
+`;
+
+const Selection = styled.div<{ $leaving?: boolean }>`
+  position: absolute;
+  animation: ${(props) => (props.$leaving ? fadeOut : popIn)}
+    ${(props) => (props.$leaving ? '0.25s' : '0.55s')}
+    cubic-bezier(0.34, 1.2, 0.64, 1) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01s;
+  }
+`;
+
+/** The Figma-like bounding box with a handle in each corner. */
+const Box = styled.div`
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--selection);
+  color: var(--black);
+  svg {
+    display: block;
+  }
+`;
+
+const Handle = styled.span`
+  position: absolute;
+  width: ${HANDLE}px;
+  height: ${HANDLE}px;
+  border: 1.5px solid var(--selection);
+  border-radius: 50%;
+  background: var(--white);
+  &:nth-of-type(1) {
+    top: -${HANDLE / 2 + 1}px;
+    left: -${HANDLE / 2 + 1}px;
+  }
+  &:nth-of-type(2) {
+    top: -${HANDLE / 2 + 1}px;
+    right: -${HANDLE / 2 + 1}px;
+  }
+  &:nth-of-type(3) {
+    bottom: -${HANDLE / 2 + 1}px;
+    left: -${HANDLE / 2 + 1}px;
+  }
+  &:nth-of-type(4) {
+    bottom: -${HANDLE / 2 + 1}px;
+    right: -${HANDLE / 2 + 1}px;
+  }
+`;
+
+const Label = styled.span`
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: var(--selection-text);
+`;
+
+const Root = styled.div`
+  --selection: #c3cad4;
+  --selection-text: #aab3be;
+`;
+
+interface SelectionState {
+  name: IconName;
+  tilt: number;
+  /** Bumped on every swap so React remounts the box and replays the pop. */
+  id: number;
+}
+
+/**
+ * Three icons in selection boxes, slightly tilted, recreating the live site's
+ * hero artwork in code. Every two seconds one of them swaps for a new icon.
+ */
+export function HeroIcons() {
+  const [{ current, leaving }, setState] = React.useState<{
+    current: SelectionState[];
+    /** The box on its way out in each slot, if any. */
+    leaving: (SelectionState | null)[];
+  }>(() => ({
+    current: INITIAL.map((item, id) => ({ ...item, id })),
+    leaving: [null, null, null],
+  }));
+
+  React.useEffect(() => {
+    let nextId = INITIAL.length;
+
+    const timer = setInterval(() => {
+      const slot = Math.floor(Math.random() * SLOTS.length);
+      const id = nextId++;
+      const roll = Math.random();
+      const tilt = randomBetween(SLOTS[slot].tilt);
+
+      setState((state) => {
+        const shown = new Set(state.current.map((item) => item.name));
+        const choices = POOL.filter((name) => !shown.has(name));
+        const name = choices[Math.floor(roll * choices.length)];
+
+        return {
+          current: state.current.map((item, i) =>
+            i === slot ? { name, tilt, id } : item,
+          ),
+          leaving: state.leaving.map((item, i) =>
+            i === slot ? state.current[i] : item,
+          ),
+        };
+      });
+    }, INTERVAL_MS);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  function renderSelection(item: SelectionState, slot: number, isLeaving: boolean) {
+    const { box, icon } = SLOTS[slot];
+    const Icon = (AllIcons as unknown as Record<string, React.ComponentType<any>>)[item.name];
+
+    return (
+      <Selection
+        key={item.id}
+        $leaving={isLeaving}
+        style={{
+          width: box,
+          height: box,
+          left: -box / 2,
+          top: -box / 2,
+          rotate: `${item.tilt}deg`,
+        }}
+      >
+        <Label>{label(item.name)}</Label>
+        <Box>
+          <Handle />
+          <Handle />
+          <Handle />
+          <Handle />
+          <Icon width={icon} height={icon} strokeWidth={1.8} />
+        </Box>
+      </Selection>
+    );
+  }
+
+  return (
+    <Root>
+      <Stage aria-hidden>
+        {SLOTS.map((slot, i) => (
+          <Slot key={slot.x} style={{ transform: `translate(${slot.x}px, ${slot.y}px)` }}>
+            {leaving[i] && renderSelection(leaving[i]!, i, true)}
+            {renderSelection(current[i], i, false)}
+          </Slot>
+        ))}
+      </Stage>
+    </Root>
+  );
+}
