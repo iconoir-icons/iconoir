@@ -11,7 +11,7 @@ import {
   Star,
 } from 'iconoir-react';
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 /** Each icon sits on its own orb: a base color and three drifting blobs. */
 const ORBS = [
@@ -27,37 +27,57 @@ const ORBS = [
   { Icon: Spark, colors: ['#1aa9b8', '#9ef0ff', '#2a5fe0', '#4fd8d0'] },
 ];
 
+/** Blob positions (x, y in %) the gradient morphs between, one per orb in turn. */
+const LAYOUTS = [
+  [30, 30, 72, 40, 45, 75],
+  [68, 26, 28, 52, 62, 80],
+  [40, 70, 76, 30, 22, 32],
+  [55, 45, 25, 25, 78, 72],
+];
+
 const INTERVAL_MS = 2600;
+/** How long the colors take to morph from one orb to the next. */
+const MORPH_MS = 1400;
 /** How far, in px, the colors and highlight shift toward the cursor. */
 const MAX_SHIFT = 10;
 
 /** Static film grain, tiled over the orb. */
 const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
 
-const enter = keyframes`
+const iconIn = keyframes`
   from {
     opacity: 0;
-    transform: scale(0.92);
-    filter: blur(6px);
+    transform: scale(0.8);
   }
   to {
     opacity: 1;
     transform: none;
-    filter: none;
   }
 `;
 
-const leave = keyframes`
+const iconOut = keyframes`
   from {
     opacity: 1;
     transform: none;
-    filter: none;
   }
   to {
     opacity: 0;
-    transform: scale(1.04);
-    filter: blur(6px);
+    transform: scale(1.15);
   }
+`;
+
+/** Registered so the browser can interpolate the orb's colors and blob positions. */
+const OrbProperties = createGlobalStyle`
+  @property --orb-base { syntax: '<color>'; inherits: true; initial-value: #e2531b; }
+  @property --orb-a { syntax: '<color>'; inherits: true; initial-value: #ffb36b; }
+  @property --orb-b { syntax: '<color>'; inherits: true; initial-value: #b8300c; }
+  @property --orb-c { syntax: '<color>'; inherits: true; initial-value: #ff7a2e; }
+  @property --orb-ax { syntax: '<percentage>'; inherits: true; initial-value: 30%; }
+  @property --orb-ay { syntax: '<percentage>'; inherits: true; initial-value: 30%; }
+  @property --orb-bx { syntax: '<percentage>'; inherits: true; initial-value: 72%; }
+  @property --orb-by { syntax: '<percentage>'; inherits: true; initial-value: 40%; }
+  @property --orb-cx { syntax: '<percentage>'; inherits: true; initial-value: 45%; }
+  @property --orb-cy { syntax: '<percentage>'; inherits: true; initial-value: 75%; }
 `;
 
 const drift = keyframes`
@@ -76,22 +96,20 @@ const Stage = styled.div`
   margin: 0 auto 40px;
 `;
 
-const Layer = styled.div<{ $leaving?: boolean }>`
-  position: absolute;
-  inset: 0;
-  animation: ${(props) => (props.$leaving ? leave : enter)} 0.7s
-    cubic-bezier(0.16, 1, 0.3, 1) both;
-  @media (prefers-reduced-motion: reduce) {
-    animation-duration: 0.01s;
-  }
-`;
-
 const Orb = styled.div`
   position: absolute;
   inset: 0;
   border-radius: 50%;
   overflow: hidden;
   isolation: isolate;
+  background: var(--orb-base);
+  transition-property: --orb-base, --orb-a, --orb-b, --orb-c, --orb-ax, --orb-ay,
+    --orb-bx, --orb-by, --orb-cx, --orb-cy;
+  transition-duration: ${MORPH_MS}ms;
+  transition-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 0.01s;
+  }
   /* Soft contact shadow so the sphere sits on the page. */
   box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.35);
 `;
@@ -106,6 +124,10 @@ const Blobs = styled.div`
   > div {
     position: absolute;
     inset: 0;
+    background:
+      radial-gradient(circle at var(--orb-ax) var(--orb-ay), var(--orb-a) 0, transparent 55%),
+      radial-gradient(circle at var(--orb-bx) var(--orb-by), var(--orb-b) 0, transparent 58%),
+      radial-gradient(circle at var(--orb-cx) var(--orb-cy), var(--orb-c) 0, transparent 55%);
     animation: ${drift} 18s linear infinite;
     @media (prefers-reduced-motion: reduce) {
       animation: none;
@@ -113,22 +135,16 @@ const Blobs = styled.div`
   }
 `;
 
-/** Volume: a highlight that drifts against the cursor, and darker edges. */
+/** Volume: a soft highlight that drifts against the cursor. */
 const Shading = styled.div`
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background:
-    radial-gradient(
-      circle at calc(32% - var(--gx)) calc(28% - var(--gy)),
-      rgba(255, 255, 255, 0.28),
-      rgba(255, 255, 255, 0) 40%
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(0, 0, 0, 0) 55%,
-      rgba(0, 0, 0, 0.28) 100%
-    );
+  background: radial-gradient(
+    circle at calc(32% - var(--gx)) calc(28% - var(--gy)),
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0) 40%
+  );
 `;
 
 const Grain = styled.div`
@@ -140,13 +156,18 @@ const Grain = styled.div`
   opacity: 0.6;
 `;
 
-const IconWrap = styled.div`
+const IconWrap = styled.div<{ $leaving?: boolean }>`
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
   color: var(--white);
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.18));
+  animation: ${(props) => (props.$leaving ? iconOut : iconIn)} 0.5s
+    cubic-bezier(0.16, 1, 0.3, 1) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01s;
+  }
   svg {
     width: 44px;
     height: 44px;
@@ -155,7 +176,8 @@ const IconWrap = styled.div`
 
 /**
  * A white outline icon on a grainy gradient orb, cycling through ten icons.
- * The colors and highlight lean toward the cursor.
+ * The orb stays put while its colors and blobs morph to the next palette;
+ * the colors and highlight lean toward the cursor.
  */
 export function HeroIcon() {
   const [{ index, previous }, setState] = React.useState<{
@@ -209,35 +231,40 @@ export function HeroIcon() {
     };
   }, []);
 
-  const layers = previous === null ? [index] : [previous, index];
+  const icons = previous === null ? [index] : [previous, index];
+  const [base, a, b, c] = ORBS[index].colors;
+  const [ax, ay, bx, by, cx, cy] = LAYOUTS[index % LAYOUTS.length];
+
+  const orbStyle = {
+    '--orb-base': base,
+    '--orb-a': a,
+    '--orb-b': b,
+    '--orb-c': c,
+    '--orb-ax': `${ax}%`,
+    '--orb-ay': `${ay}%`,
+    '--orb-bx': `${bx}%`,
+    '--orb-by': `${by}%`,
+    '--orb-cx': `${cx}%`,
+    '--orb-cy': `${cy}%`,
+  } as React.CSSProperties;
 
   return (
     <Stage ref={stageRef} aria-hidden>
-      {layers.map((orbIndex) => {
-        const { Icon, colors } = ORBS[orbIndex];
-        const [base, a, b, c] = colors;
+      <OrbProperties />
+      <Orb style={orbStyle}>
+        <Blobs>
+          <div />
+        </Blobs>
+        <Shading />
+        <Grain />
+      </Orb>
+      {icons.map((iconIndex) => {
+        const { Icon } = ORBS[iconIndex];
 
         return (
-          <Layer key={orbIndex} $leaving={orbIndex !== index}>
-            <Orb style={{ background: base }}>
-              <Blobs>
-                <div
-                  style={{
-                    background: `
-                      radial-gradient(circle at 30% 30%, ${a} 0, transparent 55%),
-                      radial-gradient(circle at 72% 40%, ${b} 0, transparent 58%),
-                      radial-gradient(circle at 45% 75%, ${c} 0, transparent 55%)
-                    `,
-                  }}
-                />
-              </Blobs>
-              <Shading />
-              <Grain />
-            </Orb>
-            <IconWrap>
-              <Icon />
-            </IconWrap>
-          </Layer>
+          <IconWrap key={iconIndex} $leaving={iconIndex !== index}>
+            <Icon />
+          </IconWrap>
         );
       })}
     </Stage>
