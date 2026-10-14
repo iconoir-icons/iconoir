@@ -9,7 +9,7 @@ const Container = styled.a`
   color: var(--black);
   font-family: var(--mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
   letter-spacing: 0.02em;
   text-decoration: none;
