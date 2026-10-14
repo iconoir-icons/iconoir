@@ -6,18 +6,16 @@ import { PraiseItem } from './PraiseItem';
 const NUM_PRAISE_ITEMS = 3;
 
 const Container = styled.div`
-  max-width: none;
+  /* Bleed into the page margin so cards scroll edge to edge. */
   margin: 40px -16px 0;
   padding: 0 16px;
   ${media.sm} {
-    margin: 56px -40px 0;
-    padding: 0 40px;
+    margin-top: 56px;
   }
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scrollbar-width: none;
   display: flex;
-  align-items: flex-start;
   flex-direction: row;
   align-items: stretch;
   gap: 12px;
