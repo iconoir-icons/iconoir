@@ -7,7 +7,6 @@ import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { Button } from './Button';
 import { CurrentVersion } from './CurrentVersion';
-import { PAGE_MAX_WIDTH } from './Layout';
 import { NavigationItem, NavigationLink } from './NavigationItem';
 
 /** Height of the sticky nav, so sticky content below can clear it. */
@@ -22,16 +21,14 @@ const Nav = styled.header`
   -webkit-backdrop-filter: blur(12px);
 `;
 
+/** Full width with the same 16px margin as the icon toolbar and grid. */
 const NavInner = styled.div`
-  max-width: ${PAGE_MAX_WIDTH}px;
   height: ${NAV_HEIGHT}px;
-  margin: 0 auto;
   padding: 0 16px;
   display: flex;
   align-items: center;
   gap: 12px;
   ${media.sm} {
-    padding: 0 40px;
     gap: 32px;
   }
 `;
