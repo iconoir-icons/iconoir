@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { LIBRARY_LINKS } from '../lib/constants';
-import { media } from '../lib/responsive';
 import { Eyebrow } from './Typography';
 
+/** Sits in the hero, between the description and the buttons. */
 const Container = styled.div`
-  margin-top: 56px;
+  margin-top: 24px;
   text-align: center;
-  ${media.sm} {
-    margin-top: 72px;
+  ${Eyebrow} {
+    margin-bottom: 8px;
   }
 `;
 

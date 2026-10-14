@@ -96,7 +96,7 @@ const BorderContainer = styled.div<{ $iconWidth: number }>`
   &::before {
     content: '';
     position: absolute;
-    inset: 8px;
+    inset: 0;
     z-index: 1;
     pointer-events: none;
     background:
@@ -133,8 +133,8 @@ const IconContainer = styled.div`
 
 const IconTag = styled.div`
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 10px;
+  right: 10px;
   padding: 1px 5px;
   border-radius: 4px;
   background: var(--black);

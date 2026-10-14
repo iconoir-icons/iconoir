@@ -59,6 +59,7 @@ const Home: NextPage<HomeProps> = ({
           </>
         )}
       >
+        <AvailableFor />
         <Actions>
           <Button as="a" href="#icons">
             Browse
@@ -106,7 +107,6 @@ const Home: NextPage<HomeProps> = ({
             description="people starred the project on GitHub. Show your support and be one of them."
           />
         </StatsContainer>
-        <AvailableFor />
       </Wrap>
       <IconsSection id="icons">
         <Explore allIcons={allIcons} />
