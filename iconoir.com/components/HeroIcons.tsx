@@ -64,12 +64,18 @@ const POOL = [
 
 type IconName = (typeof POOL)[number];
 
-/** Where the three selection boxes sit, as on the live site. */
+/**
+ * Where the three selection boxes sit, as on the live site. `depth` scales how
+ * far each one drifts with the cursor, so they move at slightly different rates.
+ */
 const SLOTS = [
-  { x: -128, y: 82 },
-  { x: 12, y: 50 },
-  { x: 137, y: 88 },
+  { x: -128, y: 82, depth: 1.4 },
+  { x: 12, y: 50, depth: 0.8 },
+  { x: 137, y: 88, depth: 1.1 },
 ] as const;
+
+/** How far, in px, a box at depth 1 drifts toward the cursor. */
+const MAX_SHIFT = 10;
 
 /** The central box's look is the default every new icon varies around. */
 const BASE_BOX = 56;
@@ -126,6 +132,9 @@ const fadeOut = keyframes`
 `;
 
 const Stage = styled.div`
+  /* Cursor offset, set from JS without re-rendering. */
+  --gx: 0px;
+  --gy: 0px;
   position: relative;
   width: 320px;
   height: 130px;
@@ -139,10 +148,13 @@ const Stage = styled.div`
 `;
 
 /** Positions a slot; its center sits at (x, y) from the stage's top center. */
-const Slot = styled.div`
+const Slot = styled.div<{ $depth: number }>`
   position: absolute;
   left: 50%;
   top: 0;
+  translate: calc(var(--gx) * ${(props) => props.$depth})
+    calc(var(--gy) * ${(props) => props.$depth});
+  transition: translate 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 `;
 
 const Selection = styled.div<{ $leaving?: boolean }>`
@@ -260,6 +272,41 @@ export function HeroIcons() {
     return () => clearInterval(timer);
   }, []);
 
+  // Drift the boxes toward the cursor, scaled by how far it is across the page.
+  const stageRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+      return;
+
+    let frame = 0;
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (frame)
+        return;
+
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const rect = stage.getBoundingClientRect();
+        const dx = (event.clientX - (rect.left + rect.width / 2)) / window.innerWidth;
+        const dy = (event.clientY - (rect.top + rect.height / 2)) / window.innerHeight;
+        const clamp = (v: number) => Math.max(-1, Math.min(1, v * 2));
+
+        stage.style.setProperty('--gx', `${clamp(dx) * MAX_SHIFT}px`);
+        stage.style.setProperty('--gy', `${clamp(dy) * MAX_SHIFT}px`);
+      });
+    };
+
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('pointermove', onPointerMove);
+      if (frame)
+        cancelAnimationFrame(frame);
+    };
+  }, []);
+
   function renderSelection(item: SelectionState, isLeaving: boolean) {
     const box = Math.round(BASE_BOX * item.scale);
     const icon = BASE_ICON * item.scale;
@@ -292,9 +339,13 @@ export function HeroIcons() {
 
   return (
     <Root>
-      <Stage aria-hidden>
+      <Stage ref={stageRef} aria-hidden>
         {SLOTS.map((slot, i) => (
-          <Slot key={slot.x} style={{ transform: `translate(${slot.x}px, ${slot.y}px)` }}>
+          <Slot
+            key={slot.x}
+            $depth={slot.depth}
+            style={{ transform: `translate(${slot.x}px, ${slot.y}px)` }}
+          >
             {leaving[i] && renderSelection(leaving[i]!, true)}
             {renderSelection(current[i], false)}
           </Slot>
