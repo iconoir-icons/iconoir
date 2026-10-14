@@ -216,10 +216,10 @@ const Label = styled.span`
   color: var(--selection-text);
 `;
 
-/** Box, handles and label share the secondary button gray. */
+/** Neutral grays, a step stronger than the secondary button gray. */
 const Root = styled.div`
-  --selection: var(--gray-btn);
-  --selection-text: var(--gray-btn);
+  --selection: #d4d4d4;
+  --selection-text: #b0b0b0;
 `;
 
 interface SelectionState {
