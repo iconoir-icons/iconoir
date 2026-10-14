@@ -77,10 +77,11 @@ const Card = styled.div`
   display: grid;
   gap: 20px;
   padding: 20px;
-  border: 1px solid var(--line);
   border-radius: 24px;
-  background: var(--white);
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.25);
+  /* Inverted, like the dark card on pro.iconoir.com, so it reads over the grid. */
+  background: var(--dark);
+  color: var(--white);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.45);
   animation: ${slideUp} 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
   ${media.md} {
     grid-template-columns: 320px minmax(0, 1fr);
@@ -98,11 +99,11 @@ const CloseButton = styled(ResetButton)`
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--gray-btn);
-    color: var(--black);
+    background: var(--dark-raised);
+    color: var(--white);
     cursor: pointer;
     &:hover {
-      background: var(--gray-btn-hover);
+      background: var(--dark-hover);
     }
     svg {
       width: 18px;
@@ -124,7 +125,8 @@ const Preview = styled.div`
   width: 88px;
   height: 88px;
   border-radius: 16px;
-  background: var(--band);
+  /* Stays light so any chosen icon color, black included, remains visible. */
+  background: var(--white);
 `;
 
 const Name = styled.div`
@@ -132,8 +134,12 @@ const Name = styled.div`
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--black);
+  color: var(--white);
   overflow-wrap: anywhere;
+`;
+
+const Category = styled(Mono)`
+  color: var(--dark-text);
 `;
 
 const Tags = styled.div`
@@ -144,7 +150,8 @@ const Tags = styled.div`
   ${Mono} {
     padding: 2px 7px;
     border-radius: 999px;
-    background: var(--gray-btn);
+    background: var(--dark-raised);
+    color: var(--dark-text);
     font-size: 11px;
   }
 `;
@@ -155,6 +162,17 @@ const Downloads = styled.div`
   gap: 8px;
   > * {
     flex: 1;
+  }
+`;
+
+/** Secondary button for the dark card. */
+const DarkButton = styled(Button)`
+  &&& {
+    background: var(--dark-raised);
+    color: var(--white);
+    &:hover {
+      background: var(--dark-hover);
+    }
   }
 `;
 
@@ -169,7 +187,7 @@ const TabList = styled.div`
   margin-bottom: 12px;
   padding: 4px;
   border-radius: 999px;
-  background: var(--gray-btn);
+  background: var(--dark-raised);
   overflow-x: auto;
   scrollbar-width: none;
   ${media.md} {
@@ -183,14 +201,13 @@ const TabButton = styled(ResetButton)<{ $active?: boolean }>`
     padding: 0 14px;
     border-radius: 999px;
     background: ${(props) => (props.$active ? 'var(--white)' : 'transparent')};
-    box-shadow: ${(props) => (props.$active ? '0 1px 3px rgba(0, 0, 0, 0.1)' : 'none')};
-    color: ${(props) => (props.$active ? 'var(--black)' : 'var(--text)')};
+    color: ${(props) => (props.$active ? 'var(--black)' : 'var(--dark-text)')};
     font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
     cursor: pointer;
     &:hover {
-      color: var(--black);
+      color: ${(props) => (props.$active ? 'var(--black)' : 'var(--white)')};
     }
   }
 `;
@@ -198,14 +215,14 @@ const TabButton = styled(ResetButton)<{ $active?: boolean }>`
 const CodeBlock = styled.div`
   position: relative;
   border-radius: 16px;
-  background: var(--band);
+  background: var(--dark-raised);
   pre {
     margin: 0;
     max-height: 140px;
     padding: 16px 96px 16px 18px;
     overflow: auto;
     font: 13px/1.6 var(--mono);
-    color: var(--ink);
+    color: #e9e9e9;
     white-space: pre;
   }
   ${CopyButton} {
@@ -275,7 +292,7 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
           </Preview>
           <div>
             <Name>{icon.filename}</Name>
-            <Mono>{icon.category}</Mono>
+            <Category>{icon.category}</Category>
             {icon.tags.length > 0 && (
               <Tags>
                 {icon.tags.slice(0, 6).map((tag) => (
@@ -285,19 +302,23 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
             )}
           </div>
           <Downloads>
-            <Button $size="sm" disabled={!svg} onClick={() => downloadSvg(svg, icon.filename)}>
+            <Button
+              $size="sm"
+              $variant="inverted"
+              disabled={!svg}
+              onClick={() => downloadSvg(svg, icon.filename)}
+            >
               <Download color="currentColor" strokeWidth={1.5} />
               SVG
             </Button>
-            <Button
+            <DarkButton
               $size="sm"
-              $variant="secondary"
               disabled={!svg}
               onClick={() => downloadPng(svg, icon.filename, PNG_SIZE)}
             >
               <Download color="currentColor" strokeWidth={1.5} />
               PNG
-            </Button>
+            </DarkButton>
           </Downloads>
         </Summary>
         <CodeColumn>
