@@ -77,6 +77,7 @@ const Card = styled.div`
   display: grid;
   gap: 20px;
   padding: 20px;
+  border: 1px solid #dbdbdb;
   border-radius: 24px;
   /* Secondary button gray, with white surfaces inside. */
   background: var(--gray-btn);
@@ -174,8 +175,14 @@ const LightButton = styled(Button)`
   }
 `;
 
+/** On wide screens the summary sets the row height and the code fills the rest. */
 const CodeColumn = styled.div`
   min-width: 0;
+  ${media.md} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 /** Segmented tabs, like the billing toggle on pro.iconoir.com. */
@@ -213,13 +220,13 @@ const TabButton = styled(ResetButton)<{ $active?: boolean }>`
 const CodeBlock = styled.div`
   position: relative;
   border-radius: 16px;
-  background: var(--white);
+  background: #e2e2e2;
   pre {
     margin: 0;
     max-height: 140px;
     padding: 16px 96px 16px 18px;
     overflow: auto;
-    font: 13px/1.6 var(--mono);
+    font: 500 12px/1.6 var(--mono);
     color: var(--ink);
     white-space: pre;
   }
@@ -227,6 +234,17 @@ const CodeBlock = styled.div`
     position: absolute;
     top: 10px;
     right: 10px;
+  }
+  ${media.md} {
+    flex: 1;
+    align-self: stretch;
+    min-height: 0;
+    /* Out of flow, so long snippets scroll instead of growing the sheet. */
+    pre {
+      position: absolute;
+      inset: 0;
+      max-height: none;
+    }
   }
 `;
 
