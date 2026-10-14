@@ -4,12 +4,21 @@ import { media } from '../lib/responsive';
 import { Wrap } from './Layout';
 import { Display, Eyebrow, Lede } from './Typography';
 
-const Section = styled.section`
+const Section = styled.section<{ $hasVisual?: boolean }>`
   padding: 56px 0 64px;
   text-align: center;
   ${media.sm} {
     padding: 96px 0;
   }
+  /* The artwork brings its own breathing room, so start 60px higher. */
+  ${(props) =>
+    props.$hasVisual
+    && `
+      padding-top: 16px;
+      ${media.sm} {
+        padding-top: 36px;
+      }
+    `}
   ${Display} {
     max-width: 860px;
     margin: 0 auto;
@@ -46,7 +55,7 @@ export interface HeroProps {
 
 export function Hero({ visual, eyebrow, title, lede, children }: HeroProps) {
   return (
-    <Section>
+    <Section $hasVisual={!!visual}>
       <Wrap>
         {visual}
         <Eyebrow>{eyebrow}</Eyebrow>
