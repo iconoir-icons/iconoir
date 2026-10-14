@@ -24,7 +24,8 @@ export function SEO({ title, description }: SEOProps) {
       <title>{pageTitle}</title>
       <link rel="canonical" href={canonicalUrl} />
       <meta name="description" content={pageDescription} />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/favicon.png" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <meta property="og:title" content={pageTitle} />

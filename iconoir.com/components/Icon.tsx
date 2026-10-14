@@ -14,7 +14,7 @@ const Tile = styled(ResetButton)<{ $iconWidth: number; $selected?: boolean }>`
     border-radius: 16px;
     background: ${(props) => (props.$selected ? 'var(--band)' : 'transparent')};
     color: var(--black);
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: background 0.15s;
     @media (hover: hover) {
       &:hover {

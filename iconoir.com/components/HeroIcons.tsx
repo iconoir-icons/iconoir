@@ -161,8 +161,16 @@ const Selection = styled.div<{ $leaving?: boolean }>`
   animation: ${(props) => (props.$leaving ? fadeOut : popIn)}
     ${(props) => (props.$leaving ? '0.25s' : '0.55s')}
     cubic-bezier(0.34, 1.2, 0.64, 1) both;
+  /* \`scale\`, not \`transform\`, which the pop-in animation holds onto. */
+  transition: scale 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+  &:hover {
+    scale: ${(props) => (props.$leaving ? 1 : 1.1)};
+    --selection: var(--black);
+    --selection-text: var(--black);
+  }
   @media (prefers-reduced-motion: reduce) {
     animation-duration: 0.01s;
+    transition: none;
   }
 `;
 
@@ -174,6 +182,7 @@ const Box = styled.div`
   place-items: center;
   border: 1.5px solid var(--selection);
   color: var(--black);
+  transition: border-color 0.2s;
   svg {
     display: block;
   }
@@ -186,6 +195,7 @@ const Handle = styled.span`
   border: 1.5px solid var(--selection);
   border-radius: 50%;
   background: var(--white);
+  transition: border-color 0.2s;
   &:nth-of-type(1) {
     top: -${HANDLE / 2 + 1}px;
     left: -${HANDLE / 2 + 1}px;
@@ -213,6 +223,7 @@ const Label = styled.span`
   letter-spacing: 0;
   white-space: nowrap;
   color: var(--selection-text);
+  transition: color 0.2s;
 `;
 
 /** Neutral grays, a step stronger than the secondary button gray. */

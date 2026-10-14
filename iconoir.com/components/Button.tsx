@@ -55,7 +55,7 @@ export const Button = styled(ResetButton)<{
     padding: 0 24px;
     border-radius: 999px;
     corner-shape: superellipse(1.6);
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.012em;
@@ -107,7 +107,7 @@ export const CopyButton = styled(ResetButton)`
     font-family: var(--font);
     font-size: 13px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: background 0.15s;
     &:hover {
       background: var(--gray-btn);

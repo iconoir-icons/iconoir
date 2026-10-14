@@ -19,6 +19,15 @@ const Container = styled.div`
   }
   ${LargeInput} {
     padding-left: 46px;
+    border-color: transparent;
+    background: var(--gray-btn);
+    &:hover {
+      background: var(--gray-btn-hover);
+    }
+    &:focus {
+      border-color: var(--black);
+      background: var(--gray-btn);
+    }
     /* Focusing scrolls the toolbar up to sit just under the sticky nav. */
     scroll-margin-top: ${NAV_HEIGHT + 10}px;
   }

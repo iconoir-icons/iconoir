@@ -34,7 +34,7 @@ const Track = styled.div`
   flex: 1;
   min-width: 64px;
   height: 28px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 `;
 
 const TrackBackground = styled.div`

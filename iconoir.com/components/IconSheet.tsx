@@ -78,10 +78,10 @@ const Card = styled.div`
   gap: 20px;
   padding: 20px;
   border-radius: 24px;
-  /* Inverted, like the dark card on pro.iconoir.com, so it reads over the grid. */
-  background: var(--dark);
-  color: var(--white);
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.45);
+  /* Secondary button gray, with white surfaces inside. */
+  background: var(--gray-btn);
+  color: var(--black);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.25);
   animation: ${slideUp} 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
   ${media.md} {
     grid-template-columns: 320px minmax(0, 1fr);
@@ -99,11 +99,11 @@ const CloseButton = styled(ResetButton)`
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--dark-raised);
-    color: var(--white);
-    cursor: pointer;
+    background: var(--white);
+    color: var(--black);
+    cursor: var(--cursor-pointer);
     &:hover {
-      background: var(--dark-hover);
+      background: var(--gray-btn-hover);
     }
     svg {
       width: 18px;
@@ -125,7 +125,6 @@ const Preview = styled.div`
   width: 64px;
   height: 64px;
   border-radius: 14px;
-  /* Stays light so any chosen icon color, black included, remains visible. */
   background: var(--white);
   /* Thick strokes run past the 24px viewBox; let them show instead of clipping. */
   svg {
@@ -138,12 +137,8 @@ const Name = styled.div`
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--white);
+  color: var(--black);
   overflow-wrap: anywhere;
-`;
-
-const Category = styled(Mono)`
-  color: var(--dark-text);
 `;
 
 const Tags = styled.div`
@@ -154,8 +149,7 @@ const Tags = styled.div`
   ${Mono} {
     padding: 2px 7px;
     border-radius: 999px;
-    background: var(--dark-raised);
-    color: var(--dark-text);
+    background: var(--white);
     font-size: 11px;
   }
 `;
@@ -169,13 +163,13 @@ const Downloads = styled.div`
   }
 `;
 
-/** Secondary button for the dark card. */
-const DarkButton = styled(Button)`
+/** Secondary button for the gray card: white instead of gray. */
+const LightButton = styled(Button)`
   &&& {
-    background: var(--dark-raised);
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
     &:hover {
-      background: var(--dark-hover);
+      background: var(--gray-btn-hover);
     }
   }
 `;
@@ -191,7 +185,7 @@ const TabList = styled.div`
   margin-bottom: 12px;
   padding: 4px;
   border-radius: 999px;
-  background: var(--dark-raised);
+  background: var(--white);
   overflow-x: auto;
   scrollbar-width: none;
   ${media.md} {
@@ -204,14 +198,14 @@ const TabButton = styled(ResetButton)<{ $active?: boolean }>`
     height: 30px;
     padding: 0 14px;
     border-radius: 999px;
-    background: ${(props) => (props.$active ? 'var(--white)' : 'transparent')};
-    color: ${(props) => (props.$active ? 'var(--black)' : 'var(--dark-text)')};
+    background: ${(props) => (props.$active ? 'var(--black)' : 'transparent')};
+    color: ${(props) => (props.$active ? 'var(--white)' : 'var(--text)')};
     font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     &:hover {
-      color: ${(props) => (props.$active ? 'var(--black)' : 'var(--white)')};
+      color: ${(props) => (props.$active ? 'var(--white)' : 'var(--black)')};
     }
   }
 `;
@@ -219,14 +213,14 @@ const TabButton = styled(ResetButton)<{ $active?: boolean }>`
 const CodeBlock = styled.div`
   position: relative;
   border-radius: 16px;
-  background: var(--dark-raised);
+  background: var(--white);
   pre {
     margin: 0;
     max-height: 140px;
     padding: 16px 96px 16px 18px;
     overflow: auto;
     font: 13px/1.6 var(--mono);
-    color: #e9e9e9;
+    color: var(--ink);
     white-space: pre;
   }
   ${CopyButton} {
@@ -296,7 +290,7 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
           </Preview>
           <div>
             <Name>{icon.filename}</Name>
-            <Category>{icon.category}</Category>
+            <Mono>{icon.category}</Mono>
             {icon.tags.length > 0 && (
               <Tags>
                 {icon.tags.slice(0, 6).map((tag) => (
@@ -308,21 +302,20 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
           <Downloads>
             <Button
               $size="sm"
-              $variant="inverted"
               disabled={!svg}
               onClick={() => downloadSvg(svg, icon.filename)}
             >
               <Download color="currentColor" strokeWidth={1.5} />
               SVG
             </Button>
-            <DarkButton
+            <LightButton
               $size="sm"
               disabled={!svg}
               onClick={() => downloadPng(svg, icon.filename, PNG_SIZE)}
             >
               <Download color="currentColor" strokeWidth={1.5} />
               PNG
-            </DarkButton>
+            </LightButton>
           </Downloads>
         </Summary>
         <CodeColumn>

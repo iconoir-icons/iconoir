@@ -38,7 +38,7 @@ const ResetButton = styled(BaseResetButton)`
     color: var(--black);
     font-size: 13px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: background 0.15s;
     &:hover {
       background: var(--gray-btn-hover);

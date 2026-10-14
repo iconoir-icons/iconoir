@@ -13,6 +13,14 @@
 }
 
 :root {
+  /* Arrow with a soft shadow, also used over links and buttons in place of
+     the hand. The hotspot is the arrow tip. */
+  --cursor:
+    image-set(url('/cursors/default.png') 1x, url('/cursors/default@2x.png') 2x) 6 2,
+    auto;
+  --cursor-pointer:
+    image-set(url('/cursors/default.png') 1x, url('/cursors/default@2x.png') 2x) 6 2,
+    pointer;
   --black: #000000;
   --ink: #0a0a0a;
   --text: #5e5e5e;
@@ -26,8 +34,6 @@
   --gray-btn: #efefef;
   --gray-btn-hover: #e4e4e4;
   --dark: #0d0d0d;
-  --dark-raised: #262626;
-  --dark-hover: #333333;
   --dark-text: #a9a9a9;
 
   --font: InterVariable, 'Inter', system-ui, sans-serif;
@@ -59,8 +65,18 @@ html {
   scroll-behavior: smooth;
 }
 
+a[href],
+button,
+summary,
+label[for],
+select,
+[role='button'] {
+  cursor: var(--cursor-pointer);
+}
+
 body {
   margin: 0;
+  cursor: var(--cursor);
   background: var(--white);
   color: var(--ink);
   font: 400 16px/1.4 var(--font);

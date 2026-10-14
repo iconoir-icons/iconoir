@@ -40,12 +40,12 @@ const HeaderItem = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   &:first-child {
     padding-top: 0;
   }
   ${media.lg} {
-    cursor: default;
+    cursor: var(--cursor);
     pointer-events: none;
   }
 `;

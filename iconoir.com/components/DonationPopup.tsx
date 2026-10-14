@@ -45,7 +45,7 @@ const CloseButton = styled.span`
   &:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
 `;
 
