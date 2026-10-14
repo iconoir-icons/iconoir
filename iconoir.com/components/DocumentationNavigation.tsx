@@ -1,4 +1,4 @@
-import type { DocumentationItem } from '../pages/docs/[...slug]';
+import type { DocumentationItem } from '../lib/docs';
 import { NavArrowUp } from 'iconoir-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

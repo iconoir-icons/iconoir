@@ -20,13 +20,13 @@ import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
 import { Body, Eyebrow, H1 } from '../../components/Typography';
 import { GITHUB_LINK, REPO } from '../../lib/constants';
+import { getDocumentationStructure } from '../../lib/docs';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { octokit } from '../../lib/octokit';
 import { withFallback } from '../../lib/stats';
 import {
   Container,
   ContentContainer,
-  getDocumentationStructure,
   InnerContentContainer,
   NavigationContainer,
 } from './[...slug]';

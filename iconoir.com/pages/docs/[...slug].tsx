@@ -3,6 +3,7 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import type { ParsedUrlQuery } from 'node:querystring';
 import type { DocumentationNavigationProps } from '../../components/DocumentationNavigation';
 import type { HeaderProps } from '../../components/Header';
+import type { DocumentationItem, DocumentationItemProps } from '../../lib/docs';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -21,6 +22,7 @@ import { Layout, Wrap } from '../../components/Layout';
 import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
+import { getDocumentationStructure } from '../../lib/docs';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { media } from '../../lib/responsive';
 
@@ -114,92 +116,6 @@ export default function DocumentationPage({
       <Footer />
     </Layout>
   );
-}
-
-interface DocumentationItemProps {
-  suggestLibrary?: boolean;
-  noReadOnGitHub?: boolean;
-}
-
-export interface DocumentationItem extends DocumentationItemProps {
-  path: string;
-  filepath?: string;
-  childrenProps?: DocumentationItemProps;
-  children?: DocumentationItem[];
-  title: string;
-  label?: string;
-  skip?: boolean;
-}
-
-export function getDocumentationStructure(): DocumentationItem[] {
-  return [
-    {
-      path: '',
-      title: 'To Start',
-      children: [
-        { path: 'introduction', filepath: 'README.md', title: 'Introduction' },
-        {
-          path: 'contributing',
-          filepath: 'CONTRIBUTING.md',
-          title: 'How to contribute',
-        },
-        {
-          path: 'naming-convention',
-          filepath: 'NAMING_CONVENTION.md',
-          title: 'Naming Convention',
-        },
-      ],
-    },
-    {
-      path: 'packages',
-      title: 'Libraries',
-      childrenProps: { suggestLibrary: true, noReadOnGitHub: true },
-      children: [
-        {
-          path: 'iconoir-react',
-          filepath: 'packages/iconoir-react/README.md',
-          title: 'React',
-        },
-        {
-          path: 'iconoir-react-native',
-          filepath: 'packages/iconoir-react-native/README.md',
-          title: 'React Native',
-        },
-        {
-          path: 'iconoir-vue',
-          filepath: 'packages/iconoir-vue/README.md',
-          title: 'Vue',
-        },
-        {
-          path: 'iconoir-flutter',
-          filepath: 'packages/iconoir-flutter/README.md',
-          title: 'Flutter',
-        },
-        {
-          path: 'framer',
-          filepath: 'docs/framer.md',
-          title: 'Framer',
-        },
-        {
-          path: 'css',
-          filepath: 'css/README.md',
-          title: 'CSS',
-        },
-      ],
-    },
-    {
-      path: '',
-      title: 'Releases',
-      children: [
-        {
-          path: 'changelog',
-          filepath: 'CHANGELOG.md',
-          title: 'Changelog',
-          skip: true,
-        },
-      ],
-    },
-  ];
 }
 
 function structureItemsToPaths(

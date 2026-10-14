@@ -7,6 +7,7 @@ import { GITHUB_LINK, SUPPORT_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { Button } from './Button';
 import { CurrentVersion } from './CurrentVersion';
+import { DocsMenu } from './DocsMenu';
 import { NavigationItem, NavigationLink } from './NavigationItem';
 
 /** Height of the sticky nav, so sticky content below can clear it. */
@@ -117,8 +118,8 @@ const Links = styled.nav<{ $visible?: boolean }>`
     transform: none;
     opacity: 1;
     pointer-events: all;
-    /* Hovering a link fades the others back. */
-    &:has(a:hover) a:not(:hover) {
+    /* Hovering a top-level link fades the others back (not the docs menu). */
+    &:has(${NavigationLink}:hover) ${NavigationLink}:not(:hover) {
       opacity: 0.4;
     }
   }
@@ -174,13 +175,15 @@ export function Header({ currentVersion, numStars }: HeaderProps) {
           <NavigationItem href="/" onClick={closeMenu}>
             Icons
           </NavigationItem>
-          <NavigationItem
-            href="/docs/introduction"
-            activeMatch="/docs"
-            onClick={closeMenu}
-          >
-            Documentation
-          </NavigationItem>
+          <DocsMenu>
+            <NavigationItem
+              href="/docs/introduction"
+              activeMatch="/docs"
+              onClick={closeMenu}
+            >
+              Documentation
+            </NavigationItem>
+          </DocsMenu>
           <NavigationItem href="/support" onClick={closeMenu}>
             Our mission
           </NavigationItem>
