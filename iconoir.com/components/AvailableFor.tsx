@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { LIBRARY_LINKS } from '../lib/constants';
 import { media } from '../lib/responsive';
@@ -11,53 +12,42 @@ const Container = styled.div`
   }
 `;
 
-const Libraries = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-`;
-
-const Library = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  height: 44px;
-  padding: 0 18px 0 12px;
-  border-radius: 999px;
-  background: var(--gray-btn);
-  color: var(--black);
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.15s;
-  &:hover {
-    background: var(--gray-btn-hover);
+const Libraries = styled.p`
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  /* Like the header nav: hovering a library fades the others. */
+  &:has(a:hover) a:not(:hover) {
+    opacity: 0.4;
   }
 `;
 
-const LibraryLogo = styled.img`
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
+const Library = styled.a`
+  color: var(--black);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+`;
+
+const Dot = styled.span`
+  margin: 0 10px;
+  color: var(--muted);
 `;
 
 const LIBRARIES = [
-  { name: 'React', logo: '/logo-react.svg', href: LIBRARY_LINKS.React },
+  { name: 'React', href: LIBRARY_LINKS.React },
   {
     name: 'Swift',
-    logo: '/logo-swift.svg',
     href: 'https://github.com/iconoir-icons/iconoir#swift-package',
   },
-  { name: 'Flutter', logo: '/logo-flutter.svg', href: LIBRARY_LINKS.Flutter },
-  { name: 'Figma', logo: '/logo-figma.svg', href: LIBRARY_LINKS.Figma },
+  { name: 'Flutter', href: LIBRARY_LINKS.Flutter },
+  { name: 'Figma', href: LIBRARY_LINKS.Figma },
   {
     name: 'React Native',
-    logo: '/logo-react-native.svg',
     href: LIBRARY_LINKS.ReactNative,
   },
-  { name: 'Vue', logo: '/logo-vue.svg', href: LIBRARY_LINKS.Vue },
-  { name: 'Framer', logo: '/logo-framer.svg', href: LIBRARY_LINKS.Framer },
+  { name: 'Vue', href: LIBRARY_LINKS.Vue },
+  { name: 'Framer', href: LIBRARY_LINKS.Framer },
 ];
 
 export function AvailableFor() {
@@ -65,16 +55,17 @@ export function AvailableFor() {
     <Container>
       <Eyebrow>Available for</Eyebrow>
       <Libraries>
-        {LIBRARIES.map((library) => (
-          <Library
-            key={library.name}
-            href={library.href}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            <LibraryLogo src={library.logo} alt="" />
-            {library.name}
-          </Library>
+        {LIBRARIES.map((library, index) => (
+          <React.Fragment key={library.name}>
+            {index > 0 && <Dot aria-hidden>·</Dot>}
+            <Library
+              href={library.href}
+              target="_blank"
+              rel="nofollow noreferrer"
+            >
+              {library.name}
+            </Library>
+          </React.Fragment>
         ))}
       </Libraries>
     </Container>

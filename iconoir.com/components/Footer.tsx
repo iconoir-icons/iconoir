@@ -38,6 +38,10 @@ const About = styled.div`
     margin-top: 20px;
     line-height: 1.6;
   }
+  a {
+    color: var(--black);
+    text-underline-offset: 2px;
+  }
 `;
 
 const Categories = styled.div`
@@ -116,7 +120,12 @@ export function Footer() {
             </LogoContainer>
             <Mono>
               Iconoir is free and open source under the MIT license. No
-              premium options, no email sign-up.
+              premium options, no email sign-up. A passion project by
+              {' '}
+              <a href="https://lucaburgio.com" target="_blank" rel="noreferrer">
+                Luca Burgio
+              </a>
+              .
             </Mono>
           </About>
           <Categories>
