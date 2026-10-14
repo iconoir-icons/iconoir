@@ -6,13 +6,14 @@ import { media } from '../lib/responsive';
 import { CarbonCoverAd } from './CarbonCoverAd';
 import { CustomizationEditor } from './CustomizationEditor';
 import { FiltersEditor } from './FiltersEditor';
+import { NAV_HEIGHT } from './Header';
 import { IconList } from './IconList';
 import { Streamline } from './Streamline';
 import { useCustomizationPersistence } from './useCustomizationPersistence';
 
-/** Matches the `top` offset the sidebar sticks at. */
-const STICKY_TOP = 20;
-/** Room around the sidebar's content for hover effects that grow past its edges. */
+/** Matches the `top` offset the sidebar sticks at, just below the sticky nav. */
+const STICKY_TOP = NAV_HEIGHT + 8;
+/** Room around the sidebar's content for focus rings that grow past its edges. */
 const SCROLL_GUTTER = 4;
 
 const Container = styled.div`
@@ -26,31 +27,25 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex: 1;
+  min-width: 0;
   min-height: calc(100vh - 100px);
-  background: white;
-  ${media.md} {
-    background: none;
-  }
 `;
 
 const Right = styled.div`
-  position: sticky;
-  top: 20px;
-  width: 275px;
+  width: 280px;
   display: block;
-  /* Avoid painting the sidebar behind the main column (was -1; hid content in some layouts) */
-  z-index: 0;
-  margin: 0 auto;
+  margin: 0 auto 32px;
   ${media.md} {
+    position: sticky;
     z-index: 1;
     /* Sticky sidebars clip their overflow past the fold: cap the height to the
        viewport so taller content (ads + customization panel) stays reachable. */
-    max-height: calc(100vh - 40px);
+    max-height: calc(100vh - ${STICKY_TOP + 20}px);
     /* The scroll container also clips horizontally, cutting off the search
-       input's hover scale. Pad it so the scaled input fits, and offset the
-       padding with negative margins so the layout doesn't shift. */
+       input's focus ring. Pad it so the ring fits, and offset the padding with
+       negative margins so the layout doesn't shift. */
     padding: ${SCROLL_GUTTER}px;
-    margin: -${SCROLL_GUTTER}px -${SCROLL_GUTTER}px 0 ${68 - SCROLL_GUTTER}px;
+    margin: -${SCROLL_GUTTER}px -${SCROLL_GUTTER}px 0 ${40 - SCROLL_GUTTER}px;
     top: ${STICKY_TOP - SCROLL_GUTTER}px;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -60,9 +55,9 @@ const Right = styled.div`
 
 const FilterContainer = styled.div<{ $isMobile?: boolean }>`
   display: ${(props) => (props.$isMobile ? 'block' : 'none')};
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   position: sticky;
-  top: 20px;
+  top: ${STICKY_TOP}px;
   z-index: 100;
   width: 100%;
   ${media.md} {

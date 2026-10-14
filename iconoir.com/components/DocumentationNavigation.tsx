@@ -7,14 +7,13 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 
 const HeaderItemIcon = styled.div<{ $active?: boolean }>`
-  font-size: 13px;
-  transition: transform 0.25s linear;
-  transform: rotate(${(props) => (props.$active ? 180 : 0)}deg);
-  margin-right: 7px;
-  position: relative;
-  top: 6px;
+  display: flex;
+  margin-left: auto;
+  transition: transform 0.25s;
+  transform: rotate(${(props) => (props.$active ? 0 : 180)}deg);
   svg {
-    display: block;
+    width: 16px;
+    height: 16px;
   }
   ${media.lg} {
     display: none;
@@ -22,75 +21,65 @@ const HeaderItemIcon = styled.div<{ $active?: boolean }>`
 `;
 
 const ChildrenContainer = styled.div<{ $expanded?: boolean }>`
-  display: ${(props) => (props.$expanded ? 'block' : 'none')};
+  display: ${(props) => (props.$expanded ? 'flex' : 'none')};
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
   ${media.lg} {
-    display: block;
+    display: flex;
   }
 `;
 
 const HeaderItem = styled.div`
-  padding: 10px 30px;
-  font-size: 15px;
-  line-height: 19px;
-  color: var(--g0);
-  font-weight: 700;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  padding: 14px 10px 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
   cursor: pointer;
+  &:first-child {
+    padding-top: 0;
+  }
   ${media.lg} {
-    padding: 22px 45px;
     cursor: default;
     pointer-events: none;
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
   }
 `;
 
-const NavigationItem = styled.div<{ $active?: boolean }>`
-  padding: 12px 12px 12px 75px;
-  transition:
-    background 0.1s linear,
-    color 0.1s linear;
-  font-size: 16px;
-  line-height: 14.5px;
-  letter-spacing: -0.02em;
-  color: var(--g1);
+const NavigationItem = styled.a<{ $active?: boolean }>`
   display: flex;
   align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.3;
   text-decoration: none;
-  span {
-    font-weight: 400;
-  }
-  > :not(:last-child) {
-    margin-right: 14px;
-  }
-  &:hover,
-  ${(props) => (props.$active ? '&' : '&.noop')} {
-    color: var(--g0);
-    text-decoration: underline;
-  }
-  ${(props) => (props.$active ? 'span' : '&.noop')} {
-    font-weight: 500;
-  }
-  ${media.lg} {
-    padding: 12px 12px 12px 65px;
+  color: ${(props) => (props.$active ? 'var(--black)' : 'var(--text)')};
+  font-weight: ${(props) => (props.$active ? 500 : 400)};
+  background: ${(props) => (props.$active ? 'var(--gray-btn)' : 'transparent')};
+  transition:
+    background 0.15s,
+    color 0.15s;
+  &:hover {
+    color: var(--black);
+    background: var(--gray-btn);
   }
 `;
 
 const NavigationItemLabel = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 6px;
+  padding: 1px 5px;
   border-radius: 4px;
-  font-size: 11px;
-  line-height: 17.6px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
   text-transform: uppercase;
-  color: var(--g1);
-  background: var(--g5);
 `;
 
 export interface DocumentationNavigationProps {
@@ -146,10 +135,10 @@ export function DocumentationNavigation({
                   });
                 }}
               >
+                {documentationItem.title}
                 <HeaderItemIcon $active={active}>
                   <NavArrowUp />
                 </HeaderItemIcon>
-                {documentationItem.title}
               </HeaderItem>
               <ChildrenContainer $expanded={active}>
                 <DocumentationNavigation
@@ -170,7 +159,7 @@ export function DocumentationNavigation({
               legacyBehavior
               key={documentationItem.path}
             >
-              <NavigationItem as="a" $active={activePath === path}>
+              <NavigationItem $active={activePath === path}>
                 <span>{documentationItem.title}</span>
                 {documentationItem.label
                   ? (

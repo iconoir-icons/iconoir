@@ -1,40 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
-import { Text14, Text18 } from './Typography';
+import { Mono, Text15 } from './Typography';
 
-const Container = styled.div`
+const Container = styled.figure`
   display: flex;
-  align-items: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   flex-shrink: 0;
-  width: calc(100vw - 60px);
+  width: calc(100vw - 48px);
+  margin: 0;
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--band);
+  text-align: left;
   scroll-snap-align: center;
   ${media.xs} {
-    width: 428px;
+    width: 380px;
   }
+  ${media.xl} {
+    width: auto;
+    flex: 1;
+  }
+`;
+
+const Quote = styled.blockquote`
+  flex: 1;
+  margin: 0 0 28px;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--black);
+`;
+
+const Author = styled.figcaption`
+  display: flex;
+  align-items: center;
+  gap: 12px;
 `;
 
 const AuthorImage = styled.img`
-  height: 60px;
-  width: 60px;
-  margin-right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+`;
+
+const Name = styled.div`
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
 `;
 
 const Logo = styled.img`
-  height: 23px;
-  margin-top: 36px;
-`;
-
-const Header = styled(Text18)`
-  &&& {
-    font-weight: 700;
-    color: var(--black);
-  }
-`;
-
-const Body = styled(Text18)`
-  margin-top: 8px;
+  height: 20px;
+  margin-left: auto;
+  opacity: 0.8;
 `;
 
 export interface PraiseItemProps {
@@ -58,15 +77,23 @@ export function PraiseItem({
 }: PraiseItemProps) {
   return (
     <Container>
-      <AuthorImage src={imageUrl} alt={`Picture of ${name}`} />
-      <div>
-        <Header>{name}</Header>
-        <Text14>{position}</Text14>
-        <Body>{description}</Body>
+      <Quote>
+        <Text15 as="span" style={{ fontSize: 'inherit', color: 'inherit' }}>
+          “
+          {description}
+          ”
+        </Text15>
+      </Quote>
+      <Author>
+        <AuthorImage src={imageUrl} alt={`Picture of ${name}`} />
+        <div>
+          <Name>{name}</Name>
+          <Mono>{position}</Mono>
+        </div>
         <a href={logoLink} target="_blank" rel="noreferrer">
           <Logo src={logoUrl} alt={logoAlt} />
         </a>
-      </div>
+      </Author>
     </Container>
   );
 }

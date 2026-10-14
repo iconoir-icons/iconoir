@@ -1,27 +1,26 @@
-import { ArrowRight } from 'iconoir-react';
+import { ArrowUpRight } from 'iconoir-react';
 import { SUGGEST_LIBRARY_LINK } from '../lib/constants';
-import { DonateContainer, DonateHeader, DonateRight } from '../pages/support';
-import { DonateIconButton } from './ReadOnGitHub';
-import { Text18 } from './Typography';
+import { Button } from './Button';
+import { Callout } from './Callout';
 
 export function SuggestLibrary() {
   return (
-    <DonateContainer style={{ marginTop: 88 }}>
-      <div>
-        <DonateHeader>More?</DonateHeader>
-        <Text18>
-          If you would like to use Iconoir on a different library or if you want
-          to contribute to support a new library, open a feature request in our
-          official GitHub repository.
-        </Text18>
-      </div>
-      <DonateRight>
-        <a href={SUGGEST_LIBRARY_LINK} target="_blank" rel="noreferrer">
-          <DonateIconButton>
-            <ArrowRight />
-          </DonateIconButton>
-        </a>
-      </DonateRight>
-    </DonateContainer>
+    <Callout
+      title="Need another library?"
+      action={(
+        <Button
+          as="a"
+          href={SUGGEST_LIBRARY_LINK}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open a request
+          <ArrowUpRight />
+        </Button>
+      )}
+    >
+      If you would like to use Iconoir on a different library or want to help
+      support a new one, open a feature request on GitHub.
+    </Callout>
   );
 }

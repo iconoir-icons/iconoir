@@ -3,29 +3,32 @@ import styled from 'styled-components';
 
 const CarbonCoverAdContainer = styled.div`
   #carbonads {
-    margin: 24px 0 0 0;
+    margin: 16px 0 0 0;
     a {
       text-decoration: none;
     }
-    /* Match the sponsor card (Streamline PromoContainer) instead of Carbon's
+    /* Match the sponsor card (Streamline card) instead of Carbon's
        default grey box and #333 text. */
     #carbon-responsive {
-      --carbon-text-color: var(--g0);
+      --carbon-text-color: var(--black);
     }
     #carbon-responsive .carbon-responsive-wrap {
-      background-color: transparent;
-      border: 1px solid var(--g6);
-      border-radius: 12px;
+      background-color: var(--white);
+      border: none;
+      border-radius: 20px;
+      transition: box-shadow 0.15s;
       &:hover {
-        background-color: var(--g7);
+        box-shadow: 0 0 0 1.5px var(--black);
       }
     }
     .carbon-text {
+      font-family: var(--font);
       font-size: 14px;
     }
     .carbon-poweredby {
-      font-size: 12px;
-      color: var(--g4);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
     }
   }
 `;

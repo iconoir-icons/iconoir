@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { media } from '../lib/responsive';
 
 export const Table = styled.table`
   display: block;
@@ -9,23 +8,26 @@ export const Table = styled.table`
   margin: 24px 0;
   td,
   th {
-    border: solid 2px var(--g6);
-    font-size: 16px;
-    line-height: 25.6px;
-    padding: 12px 20px;
-    color: var(--g1);
-    ${media.lg} {
-      padding: 12px 30px 12px 60px;
-    }
+    padding: 14px 20px 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text);
+    text-align: left;
+    vertical-align: top;
   }
   thead td,
   thead th {
-    color: var(--g0);
-    background: var(--g7);
-    font-weight: 700;
-    text-align: left;
+    padding-top: 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--mono-ink);
   }
-  tbody tr:nth-child(even) td {
-    background: var(--g7);
+  tbody td:first-child {
+    color: var(--black);
+    font-weight: 500;
   }
 `;

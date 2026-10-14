@@ -8,7 +8,7 @@ import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useSliderState } from '@react-stately/slider';
 import React from 'react';
 import styled from 'styled-components';
-import { Text13 } from './Typography';
+import { Mono, Text14 } from './Typography';
 
 const SliderContainer = styled.div`
   position: relative;
@@ -21,44 +21,60 @@ const SliderContainer = styled.div`
 
 const SliderHeader = styled.div`
   display: flex;
+  align-items: baseline;
   align-self: stretch;
+  margin-bottom: 4px;
 `;
 
-const Output = styled(Text13)`
+const Output = styled(Mono)`
   flex: 1 0 auto;
   text-align: end;
-  margin-bottom: 6px;
+  color: var(--black);
 `;
 
 const Track = styled.div`
   position: relative;
-  height: 30px;
+  height: 28px;
   width: 100%;
+  cursor: pointer;
 `;
 
 const TrackBackground = styled.div`
   position: absolute;
-  height: 2px;
-  top: 15px;
-  background: var(--black);
+  height: 4px;
+  top: 12px;
+  border-radius: 999px;
+  background: var(--gray-btn);
   width: 100%;
+`;
+
+const TrackFill = styled.div`
+  position: absolute;
+  left: 0;
+  height: 4px;
+  top: 12px;
+  border-radius: 999px;
+  background: var(--black);
 `;
 
 const ThumbContainer = styled.div`
   position: absolute;
+  top: 4px;
   transform: translateX(-50%);
 `;
 
 const ThumbInner = styled.div`
-  width: 24px;
-  height: 24px;
-  border: solid 2px var(--black);
-  box-shadow: 0px 3px 0px 0px var(--g0);
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  cursor: pointer;
+  background: var(--white);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+  transition: scale 0.15s;
   &:hover {
-    transition: 0.2s;
-    scale: 1.2;
+    scale: 1.1;
   }
 `;
 
@@ -81,9 +97,9 @@ export function Slider(props: SliderProps) {
     <SliderContainer {...groupProps}>
       <SliderHeader>
         {props.label && (
-          <Text13 as="label" {...labelProps}>
+          <Text14 as="label" {...labelProps}>
             {props.label}
-          </Text13>
+          </Text14>
         )}
         <Output as="output" {...outputProps}>
           {state.getThumbValueLabel(0)}
@@ -91,6 +107,7 @@ export function Slider(props: SliderProps) {
       </SliderHeader>
       <Track {...trackProps} ref={trackRef}>
         <TrackBackground />
+        <TrackFill style={{ width: `${state.getThumbPercent(0) * 100}%` }} />
         <Thumb index={0} state={state} trackRef={trackRef} />
       </Track>
     </SliderContainer>
@@ -126,16 +143,9 @@ function Thumb({ state, trackRef, index }: ThumbProps) {
       <ThumbInner
         {...thumbProps}
         style={{
-          backgroundColor: isFocusVisible
-            ? 'var(--accent)'
-            : state.isThumbDragging(index)
-              ? 'var(--g6)'
-              : 'var(--white)',
-          scale: isFocusVisible
-            ? '1.0'
-            : state.isThumbDragging(index)
-              ? '1.3'
-              : '1.0',
+          outline: isFocusVisible ? '2px solid var(--black)' : undefined,
+          outlineOffset: 2,
+          scale: state.isThumbDragging(index) ? '1.15' : undefined,
         }}
       >
         <VisuallyHidden>

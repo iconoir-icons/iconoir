@@ -1,112 +1,79 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Mono } from './Typography';
 
-const PromoContainer = styled.div`
-  border-radius: 12px;
-  border: 1px solid var(--g6);
+const PromoContainer = styled.a`
+  display: block;
+  padding: 20px 20px 16px;
+  border-radius: 20px;
+  background: var(--white);
   text-align: center;
-  margin-top: 24px;
   text-decoration: none;
+  color: var(--black);
+  transition: box-shadow 0.15s;
   &:hover {
-    background-color: var(--g7);
+    box-shadow: 0 0 0 1.5px var(--black);
   }
 `;
 
-const SponsorLabel = styled.div`
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--g4);
-  margin: 10px 0;
-`;
-
-const PromoContent = styled.div``;
-
 const PromoLogo = styled.div`
-  @keyframes my-animation {
-    0% {
-      transform: scale(1);
-    }
-    45% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    55% {
-      transform: scale(1);
-    }
-    90% {
-      transform: scale(1);
-    }
-    95% {
-      transform: scale(1.2);
-    }
+  @keyframes streamline-pulse {
+    0%,
+    45%,
+    55%,
+    90%,
     100% {
       transform: scale(1);
     }
+    50%,
+    95% {
+      transform: scale(1.2);
+    }
   }
 
-  background-image: url('./streamline-ad-logo.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: 100% 100%;
   width: 32px;
   height: 32px;
+  margin: 0 auto 12px;
   border-radius: 50%;
-  margin: 14px auto;
+  background: url('./streamline-ad-logo.png') no-repeat;
+  background-size: 100% 100%;
+  animation: streamline-pulse 5s ease 5s infinite;
+`;
 
-  animation-name: my-animation;
-  animation-duration: 5s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  animation-delay: 5s;
+const PromoTitle = styled.div`
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+`;
+
+const PromoSub = styled.div`
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 16px;
 `;
 
 const PromoImage = styled.img`
   width: 70%;
 `;
 
-const PromoInfo = styled.div``;
-
-const PromoTitle = styled.h2`
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 auto;
-`;
-
-const PromoSub = styled.h2`
-  font-size: 14px;
-  margin: 0 auto 30px auto;
-`;
-
-const PromoDescription = styled.p`
-  border: 1px solid var(--g6);
-  margin: 6%;
-  border-radius: 8px;
-  font-size: 12px;
+const PromoDescription = styled.div`
+  margin: 12px 0;
   padding: 10px 0;
-  font-weight: 600;
+  border-radius: 12px;
+  background: var(--band);
+  font-size: 13px;
+  font-weight: 500;
 `;
 
 export function Streamline() {
   return (
-    <a
-      rel="sponsored"
-      href="https://bit.ly/3SNgpKo"
-      style={{ textDecoration: 'none' }}
-    >
-      <PromoContainer>
-        <PromoContent>
-          <PromoInfo>
-            <PromoLogo />
-            <PromoTitle>Expand Your Icon Collection</PromoTitle>
-            <PromoSub>with Streamline</PromoSub>
-            <PromoImage src="./streamline-ad.png" />
-            <PromoDescription>170,000 Vector Icons</PromoDescription>
-            <SponsorLabel>Our sponsor</SponsorLabel>
-          </PromoInfo>
-        </PromoContent>
-      </PromoContainer>
-    </a>
+    <PromoContainer rel="sponsored" href="https://bit.ly/3SNgpKo">
+      <PromoLogo />
+      <PromoTitle>Expand your icon collection</PromoTitle>
+      <PromoSub>with Streamline</PromoSub>
+      <PromoImage src="./streamline-ad.png" alt="" />
+      <PromoDescription>170,000 vector icons</PromoDescription>
+      <Mono style={{ color: 'var(--muted)' }}>Our sponsor</Mono>
+    </PromoContainer>
   );
 }

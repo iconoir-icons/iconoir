@@ -6,36 +6,30 @@ import { PraiseItem } from './PraiseItem';
 const NUM_PRAISE_ITEMS = 3;
 
 const Container = styled.div`
-  max-width: 100%;
-  margin: 0 -30px;
-  padding: 0 30px;
+  max-width: none;
+  margin: 40px -16px 0;
+  padding: 0 16px;
+  ${media.sm} {
+    margin: 56px -40px 0;
+    padding: 0 40px;
+  }
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scrollbar-width: none;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  > :not(:last-child) {
-    margin-right: 20px;
-  }
+  align-items: stretch;
+  gap: 12px;
   &::-webkit-scrollbar {
     display: none;
   }
-  > :last-child {
-    padding-right: 30px;
-  }
 
   ${media.xl} {
-    justify-content: center;
-    margin: 0;
+    margin: 56px 0 0;
     padding: 0;
+    gap: 16px;
     overflow-x: visible;
-    > :not(:last-child) {
-      margin-right: 48px;
-    }
-    > :last-child {
-      padding-right: 0;
-    }
   }
 `;
 
@@ -43,7 +37,7 @@ const Indicator = styled.div`
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--gray);
+  background: var(--line);
   transition: background 0.25s linear;
   &.active {
     background: var(--black);

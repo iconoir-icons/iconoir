@@ -1,171 +1,82 @@
-import styled, { css, keyframes } from 'styled-components';
-import useResizeObserver from 'use-resize-observer';
+import styled from 'styled-components';
 import { LIBRARY_LINKS } from '../lib/constants';
 import { media } from '../lib/responsive';
-import { Text14 } from './Typography';
+import { Eyebrow } from './Typography';
 
-const MobileHeader = styled(Text14)`
-  &&& {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
-    ${media.lg} {
-      display: none;
-    }
-  }
-`;
-
-const DesktopHeader = styled(Text14)`
-  &&& {
-    display: none;
-    ${media.lg} {
-      display: block;
-    }
-  }
-`;
-
-const AvailableForAnimation = keyframes`
-  5% {
-    transform: translateX(0);
-  }
-  45% {
-    transform: translateX(calc((var(--content-width) + 60px - 100vw) * -1));
-  }
-  55% {
-    transform: translateX(calc((var(--content-width) + 60px - 100vw) * -1));
-  }
-  95% {
-    transform: translateX(0);
-  }
-`;
-
-const AvailableForOuter = styled.div`
-  max-width: 100vw;
-  margin: 16px -30px 70px -30px;
-  padding: 0 30px;
-  overflow: hidden;
-  ${media.lg} {
-    margin: 80px auto;
-    padding: 0;
-  }
-`;
-
-const AvailableForContainer = styled.div<{ $contentWidth: number }>`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: max-content;
-  --content-width: ${(props) => props.$contentWidth}px;
-  ${(props) =>
-    props.$contentWidth
-    && css`
-      animation: ${AvailableForAnimation} 40s cubic-bezier(0.37, 0, 0.63, 1)
-        infinite;
-    `}
-  > :not(:last-child) {
-    margin-right: 30px;
-  }
+const Container = styled.div`
+  margin-top: 56px;
+  text-align: center;
   ${media.sm} {
-    justify-content: center;
-    animation: none;
-    width: auto;
-  }
-  ${media.md} {
-    > :not(:last-child) {
-      margin-right: 40px;
-    }
+    margin-top: 72px;
   }
 `;
 
-const AvailableForImage = styled.img`
-  height: 40px;
-  display: block;
-  transition: 0.2s;
+const Libraries = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+`;
+
+const Library = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px 0 12px;
+  border-radius: 999px;
+  background: var(--gray-btn);
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s;
   &:hover {
-    scale: 1.2;
-    transition: 0.2s;
-  }
-  ${media.lg} {
-    height: 50px;
+    background: var(--gray-btn-hover);
   }
 `;
+
+const LibraryLogo = styled.img`
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+`;
+
+const LIBRARIES = [
+  { name: 'React', logo: '/logo-react.svg', href: LIBRARY_LINKS.React },
+  {
+    name: 'Swift',
+    logo: '/logo-swift.svg',
+    href: 'https://github.com/iconoir-icons/iconoir#swift-package',
+  },
+  { name: 'Flutter', logo: '/logo-flutter.svg', href: LIBRARY_LINKS.Flutter },
+  { name: 'Figma', logo: '/logo-figma.svg', href: LIBRARY_LINKS.Figma },
+  {
+    name: 'React Native',
+    logo: '/logo-react-native.svg',
+    href: LIBRARY_LINKS.ReactNative,
+  },
+  { name: 'Vue', logo: '/logo-vue.svg', href: LIBRARY_LINKS.Vue },
+  { name: 'Framer', logo: '/logo-framer.svg', href: LIBRARY_LINKS.Framer },
+];
 
 export function AvailableFor() {
-  const { ref, width } = useResizeObserver();
-
   return (
-    <>
-      <MobileHeader>Available For</MobileHeader>
-      <AvailableForOuter>
-        <AvailableForContainer $contentWidth={width || 0} ref={ref}>
-          <DesktopHeader>Available for</DesktopHeader>
-          <a href={LIBRARY_LINKS.React} target="_blank" rel="noreferrer">
-            <AvailableForImage
-              src="/logo-react.svg"
-              alt="React Logo"
-              title="React"
-            />
-          </a>
-          <a
-            href="https://github.com/iconoir-icons/iconoir#swift-package"
+    <Container>
+      <Eyebrow>Available for</Eyebrow>
+      <Libraries>
+        {LIBRARIES.map((library) => (
+          <Library
+            key={library.name}
+            href={library.href}
             target="_blank"
             rel="nofollow noreferrer"
           >
-            <AvailableForImage
-              src="/logo-swift.svg"
-              alt="Swift Logo"
-              title="Swift"
-            />
-          </a>
-          <a
-            href={LIBRARY_LINKS.Flutter}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            <AvailableForImage
-              src="/logo-flutter.svg"
-              alt="Flutter Logo"
-              title="Flutter"
-            />
-          </a>
-          <a
-            href={LIBRARY_LINKS.Figma}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            <AvailableForImage
-              src="/logo-figma.svg"
-              alt="Figma Logo"
-              title="Figma"
-            />
-          </a>
-          <a
-            href={LIBRARY_LINKS.ReactNative}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            <AvailableForImage
-              src="/logo-react-native.svg"
-              alt="React Native Logo"
-              title="React Native"
-            />
-          </a>
-          <a href={LIBRARY_LINKS.Vue} target="_blank" rel="nofollow noreferrer">
-            <AvailableForImage src="/logo-vue.svg" alt="Vue Logo" title="Vue" />
-          </a>
-          <a
-            href={LIBRARY_LINKS.Framer}
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            <AvailableForImage
-              src="/logo-framer.svg"
-              alt="Framer Logo"
-              title="Framer"
-            />
-          </a>
-        </AvailableForContainer>
-      </AvailableForOuter>
-    </>
+            <LibraryLogo src={library.logo} alt="" />
+            {library.name}
+          </Library>
+        ))}
+      </Libraries>
+    </Container>
   );
 }

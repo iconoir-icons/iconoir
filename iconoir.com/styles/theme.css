@@ -1,49 +1,66 @@
-:root {
-  /* Colors */
-  --black-40: rgba(0, 0, 0, 0.4);
-  --black-60: rgba(0, 0, 0, 0.6);
-  --black-80: rgba(0, 0, 0, 0.8);
-  --black: #000000;
-  --darker-gray: #484848;
-  --dark-gray: #626262;
-  --pink: #ffebe4;
-  --blue: #e4f9ff;
-  --green: #e4ffe4;
-  --gray: #e7e7e7;
-  --gray-100: #cdcdd3;
-  --gray-200: #f9f9fa;
-  --g0: #1c2226;
-  --g1: #4f5d69;
-  --g4: #bcc9d2;
-  --g5: #e0e6eb;
-  --g6: #ecf0f4;
-  --g7: #f8fafd;
-  --light-gray: #f2f2f2;
-  --lighter-gray: #f9f9f9;
-  --super-light-gray: #fbfbfb;
-  --white-80: rgba(255, 255, 255, 0.8);
-  --white: #ffffff;
-  --accent: #1e5af6;
+/* Shared with pro.iconoir.com: Inter at regular weight with tight tracking,
+   IBM Plex Mono eyebrows, pill buttons, white cards with large radii on soft
+   bands, one dark card. Primary buttons are black, secondary light gray. */
 
-  --code-family: 'IBM Plex Mono', monospace;
-  --font-family: 'DM Sans', sans-serif;
+:root {
+  --black: #000000;
+  --ink: #0a0a0a;
+  --text: #5e5e5e;
+  --mono-ink: #4a4a4a;
+  --muted: #9a9a9a;
+  --line: #e7e7e7;
+  --band: #f5f5f5;
+  --side: #fbfbfb;
+  --card: #ffffff;
+  --white: #ffffff;
+  --gray-btn: #efefef;
+  --gray-btn-hover: #e4e4e4;
+  --dark: #0d0d0d;
+  --dark-text: #a9a9a9;
+
+  --font: 'Inter', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   background: var(--white);
+  color: var(--ink);
+  font: 400 16px/1.4 var(--font);
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-a {
-  color: var(--g0);
-  text-decoration: underline;
+button,
+input {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 }
 
-* {
-  font-weight: 400;
-  font-family: var(--font-family);
-  letter-spacing: -0.02em;
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--black);
+  color: var(--white);
+}
+
+::placeholder {
+  color: var(--muted);
+  opacity: 1; /* Firefox */
 }
 
 @keyframes bottomAnimation {
@@ -65,36 +82,22 @@ a {
 
 .bottom-notification {
   position: fixed;
-  bottom: 50px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-  background: var(--g0);
+  background: var(--black);
   color: var(--white);
-  border-radius: 10px;
-  padding: 15px 30px;
+  border-radius: 999px;
+  padding: 14px 24px;
   text-align: center;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.4);
   animation: 3s cubic-bezier(0.16, 1, 0.3, 1) bottomAnimation;
   z-index: 2000;
 }
 
 .carbon-img img {
   border-radius: 10px;
-}
-
-::placeholder {
-  color: var(--g1);
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: var(--g1);
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: var(--g1);
 }

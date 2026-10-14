@@ -1,25 +1,25 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Text13 } from './Typography';
 
-const Container = styled(Text13)`
-&&& {
-  color: var(--g1);
-  font-weight: 700;
-  background: var(--g5);
-  line-height: 1;
-  padding: 7px 16px;
-  border-radius: 200px;
-  display: block;
+const Container = styled.a`
+  margin-left: 8px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--gray-btn);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
   text-decoration: none;
   transition:
-    color 0.1s linear,
-    background 0.1s linear;
+    color 0.15s,
+    background 0.15s;
   &:hover {
     background: var(--black);
     color: var(--white);
   }
-}
 `;
 
 export interface CurrentVersionProps {
@@ -29,7 +29,7 @@ export interface CurrentVersionProps {
 export function CurrentVersion({ version }: CurrentVersionProps) {
   return (
     <Link href="/docs/changelog" passHref legacyBehavior>
-      <Container as="a">{version}</Container>
+      <Container title="Changelog">{version}</Container>
     </Link>
   );
 }

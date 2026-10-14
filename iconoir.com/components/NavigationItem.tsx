@@ -3,75 +3,29 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
-import { Text15 } from './Typography';
 
-const NavigationItemContainer = styled(Text15)<{
-  $text: string;
-  $isActive?: boolean;
-}>`
-  &&& {
-    font-weight: ${(props) => (props.$isActive ? '700' : '500')};
-    font-size: 18px;
-    line-height: 28px;
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 24px;
-    color: var(--black);
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 2;
-    transition: background 0.1s linear;
+const NavigationItemContainer = styled.a<{ $isActive?: boolean }>`
+  display: block;
+  padding: 16px 0;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--black);
+  border-bottom: 1px solid var(--line);
+  transition: opacity 0.15s;
 
-    &:not(:last-child) {
-      border-bottom: solid 1px var(--light-gray);
-    }
-
-    ${media.lg} {
-      font-size: 15px;
-      line-height: 20px;
-      font-weight: ${(props) => (props.$isActive ? '600' : '500')};
-      padding: 0;
-      color: var(--g0);
-      width: auto;
-      border-bottom: none !important;
-      transition: 0.2s;
-
-      /* Prevent layout shift */
-      display: inline-flex;
-      flex-direction: column;
-      &::after {
-        content: '${(props) => props.$text}';
-        height: 0;
-        visibility: hidden;
-        overflow: hidden;
-        user-select: none;
-        pointer-events: none;
-        font-weight: 600;
-      }
-
-      &::before {
-        position: absolute;
-        z-index: -1;
-        content: '';
-        display: block;
-        top: -12px;
-        bottom: -12px;
-        left: -16px;
-        right: -16px;
-        border-radius: 10px;
-        transition: background 0.1s linear;
-      }
-
-      &:hover::before {
-        background: var(--g6);
-        transition: 0.2s;
-        top: -16px;
-        bottom: -16px;
-        left: -20px;
-        right: -20px;
-      }
+  ${media.lg} {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border-bottom: none;
+    color: ${(props) => (props.$isActive ? 'var(--black)' : 'var(--text)')};
+    &:hover {
+      color: var(--black);
     }
   }
 `;
@@ -79,30 +33,28 @@ const NavigationItemContainer = styled(Text15)<{
 export interface NavigationItemProps {
   href: string;
   activeMatch?: string;
-  children: React.ReactElement | string;
-  style?: any;
+  children: React.ReactNode;
+  onClick?: () => void;
 }
 
 export function NavigationItem({
   href,
   activeMatch,
   children,
-  style,
+  onClick,
 }: NavigationItemProps) {
   const router = useRouter();
 
   return (
     <Link href={href} passHref legacyBehavior>
       <NavigationItemContainer
-        as="a"
-        style={style}
-        $text={children.toString()}
+        onClick={onClick}
         $isActive={
           activeMatch
             ? router.asPath.startsWith(activeMatch)
             : href.slice(1)
               ? router.asPath.slice(1).startsWith(href.slice(1))
-              : router.asPath === href
+              : router.asPath === href || router.asPath.startsWith('/#')
         }
       >
         {children}

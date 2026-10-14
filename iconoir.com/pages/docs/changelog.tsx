@@ -18,7 +18,7 @@ import { Header } from '../../components/Header';
 import { Layout } from '../../components/Layout';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
-import { H1 } from '../../components/Typography';
+import { Eyebrow, H1 } from '../../components/Typography';
 import { REPO } from '../../lib/constants';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { octokit } from '../../lib/octokit';
@@ -41,27 +41,26 @@ export default function Changelog({
   ...headerProps
 }: ChangelogProps) {
   return (
-    <>
-      <Layout>
-        <SEO title="Changelog" />
-        <Header {...headerProps} />
-        <Container>
-          <NavigationContainer>
-            <DocumentationNavigation {...documentationProps} />
-          </NavigationContainer>
-          <ContentContainer>
-            <InnerContentContainer>
-              <H1 style={{ marginBottom: 72 }}>Changelog</H1>
-              {entries.map((entry) => (
-                <ChangelogEntry key={entry.name} {...entry} />
-              ))}
-              <ReadOnGitHub path="../../releases" resource="the releases" />
-            </InnerContentContainer>
-          </ContentContainer>
-        </Container>
-      </Layout>
+    <Layout>
+      <SEO title="Changelog" />
+      <Header {...headerProps} />
+      <Container>
+        <NavigationContainer>
+          <DocumentationNavigation {...documentationProps} />
+        </NavigationContainer>
+        <ContentContainer>
+          <InnerContentContainer>
+            <Eyebrow>Releases</Eyebrow>
+            <H1>Changelog</H1>
+            {entries.map((entry) => (
+              <ChangelogEntry key={entry.name} {...entry} />
+            ))}
+            <ReadOnGitHub path="../../releases" resource="the releases" />
+          </InnerContentContainer>
+        </ContentContainer>
+      </Container>
       <Footer />
-    </>
+    </Layout>
   );
 }
 

@@ -1,271 +1,222 @@
 import type { NextPage } from 'next';
 import type { HeaderProps } from '../components/Header';
-import { ArrowRight, DesignNib, Discord, Flash, Globe } from 'iconoir-react';
+import { ArrowUpRight, DesignNib, Discord, Flash, Globe } from 'iconoir-react';
 import styled from 'styled-components';
-import { HeroText, HeroTextSecondary } from '.';
-import { LargeButton } from '../components/Button';
+import { Button } from '../components/Button';
+import { Callout } from '../components/Callout';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import { HeaderSecondary } from '../components/HeaderSecondary';
-import { Layout } from '../components/Layout';
+import { Actions, Hero } from '../components/Hero';
+import { Layout, Wrap } from '../components/Layout';
 import { Praise } from '../components/Praise';
 import { SEO } from '../components/SEO';
-import { Body, Heading2, Text18 } from '../components/Typography';
+import {
+  CardTitle,
+  Eyebrow,
+  Lede,
+  SectionTitle,
+  Text15,
+} from '../components/Typography';
 import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { media } from '../lib/responsive';
 
-const PillarsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+const Band = styled.section`
+  padding: 72px 0;
+  background: var(--band);
+  text-align: center;
+  ${media.sm} {
+    padding: 112px 0;
+  }
+  ${Lede} {
+    max-width: 620px;
+    margin: 16px auto 0;
+  }
+`;
+
+const Pillars = styled.div`
+  display: grid;
+  gap: 16px;
+  margin-top: 40px;
+  text-align: left;
   ${media.md} {
-    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 56px;
   }
 `;
 
 const Pillar = styled.div`
-  height: fit-content;
-  width: 80%;
-  border: 1px solid var(--g6);
-  background: var(--white);
-  border-radius: 12px;
-  display: flex-column;
-  text-align: center;
-  padding: 60px 10%;
-  margin-bottom: 20px;
+  padding: 24px 20px;
+  border-radius: 24px;
+  background: var(--card);
   ${media.md} {
-    width: 22%;
-    height: 180px;
-    padding: 60px 5%;
-    margin-bottom: 0;
-    transition: 0.2s;
-    &:hover {
-      transform: scale(1.05);
-    }
+    padding: 36px;
+  }
+  ${CardTitle} {
+    margin-bottom: 10px;
   }
 `;
 
-const PillarTitle = styled(Heading2)`
-  &&& {
-    width: 100%;
-    margin: 20px 0 0 0;
-    font-weight: 500;
-    font-size: 20px;
-  }
-`;
-
-const PillarDescription = styled(Body)`
-  &&& {
-    margin: 0;
-  }
-`;
-
-const PillarIcon = styled.span<{ $R?: string; $G?: string; $B?: string }>`
-  font-size: 18px;
-  padding: 20px 11px 6px 11px;
+const PillarIcon = styled.div`
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 28px;
+  border-radius: 14px;
+  background: var(--black);
   color: var(--white);
-  width: 100px;
-  height: 100px;
-  background: rgb(${({ $R }) => $R}, ${({ $G }) => $G}, ${({ $B }) => $B});
-  box-shadow: 2px 6px 20px
-    rgba(${({ $R }) => $R}, ${({ $G }) => $G}, ${({ $B }) => $B}, 0.5);
-  border-radius: 18px;
-`;
-
-const SupportHead = styled.div`
-  margin: 60px auto 40px auto;
-  ${media.md} {
-    margin: 100px auto 80px auto;
+  svg {
+    width: 24px;
+    height: 24px;
   }
 `;
 
-const PageContainer = styled.div`
-  max-width: 1336px;
-  margin: 75px auto 0 auto;
-  ${media.lg} {
-    margin: 110px auto 0 auto;
-  }
-`;
-
-const WideSection = styled.div`
-  width: 60%;
-  background: var(--g7);
-  border-radius: 12px;
+const Section = styled.section`
+  padding: 72px 0;
   text-align: center;
-  padding: 4% 20% 10% 20%;
-  margin-top: 60px;
-  ${media.md} {
-    padding: 80px 20%;
+  ${media.sm} {
+    padding: 112px 0;
   }
 `;
 
-const PraiseTitle = styled(Heading2)`
-  &&& {
-    margin: 100px 0 80px 0;
-    text-align: center;
-  }
-`;
-
-const DonateLeft = styled.div`
-  max-width: 800px;
-`;
-
-export const DonateRight = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-  > :not(:last-child) {
-    margin-right: 30px;
-  }
-  ${media.md} {
-    margin-top: 0;
-    margin-left: 30px;
-  }
-`;
-
-const DonateButton = styled(LargeButton)`
-  &&& {
-    padding: 0 24px;
-    height: 50px;
-  }
-`;
-
-const CallToAction = styled(LargeButton)`
-  &&& {
-    margin-top: 40px;
-    padding: 0 35px;
-    ${media.xs} {
-      padding: 0 70px;
-    }
-  }
-`;
-
-export const DonateContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border: 1px solid var(--g6);
+const Dark = styled.div`
+  padding: 64px 20px;
   border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 24px;
-  ${media.md} {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 56px;
+  background: var(--dark);
+  color: var(--white);
+  text-align: center;
+  ${media.sm} {
+    padding: 100px 40px;
+    border-radius: 24px;
   }
-`;
-export const DonateHeader = styled.div`
-  font-size: 18px;
-  color: var(--g0);
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  margin-bottom: 4px;
-  ${media.md} {
-    font-size: 22px;
+  ${SectionTitle} {
+    color: var(--white);
+  }
+  ${Lede} {
+    max-width: 620px;
+    margin: 16px auto 0;
+    color: var(--dark-text);
   }
 `;
 
-const PraiseContainer = styled.div`
-  margin: 50px 0 64px 0;
-  ${media.md} {
-    margin: 140px 0 150px 0;
-  }
-  width: 100%;
-`;
+const PILLARS = [
+  {
+    icon: <Flash />,
+    title: 'Free',
+    description:
+      'We want to give developers and designers high-quality free icons. Hassle-free.',
+  },
+  {
+    icon: <DesignNib />,
+    title: 'Complete',
+    description: 'We’re aiming at having as many unique icons as possible.',
+  },
+  {
+    icon: <Globe />,
+    title: 'Ambitious',
+    description: 'We want to help and be part of as many projects as possible.',
+  },
+];
 
 interface SupportProps extends HeaderProps {}
 
 const Support: NextPage<SupportProps> = ({ ...headerProps }) => {
   return (
-    <>
-      <Layout>
-        <SEO
-          title="Donate - Our Mission"
-          description="Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons."
-        />
-        <Header {...headerProps} />
-        <HeaderSecondary>
-          <SupportHead>
-            <HeroText>Our Goal</HeroText>
-            <HeroTextSecondary>
-              A free, complete, and open icon library.
-            </HeroTextSecondary>
-          </SupportHead>
-        </HeaderSecondary>
-        <PageContainer>
-          <PillarsContainer>
-            <Pillar>
-              <PillarIcon $R="140" $G="26" $B="245">
-                <Flash />
-              </PillarIcon>
-              <PillarTitle>Free</PillarTitle>
-              <PillarDescription>
-                We want to give to developers and users high-quality free icons.
-                Hassle-free.
-              </PillarDescription>
-            </Pillar>
-            <Pillar>
-              <PillarIcon $R="72" $G="88" $B="255">
-                <DesignNib />
-              </PillarIcon>
-              <PillarTitle>Complete</PillarTitle>
-              <PillarDescription>
-                We’re aiming at having as much unique icons as possible.
-              </PillarDescription>
-            </Pillar>
-            <Pillar>
-              <PillarIcon $R="65" $G="209" $B="255">
-                <Globe />
-              </PillarIcon>
-              <PillarTitle>Ambitious</PillarTitle>
-              <PillarDescription>
-                We want to help and be part of as many projects as possible.
-              </PillarDescription>
-            </Pillar>
-          </PillarsContainer>
-          <WideSection>
-            <Heading2>Become part of the project.</Heading2>
-            <Text18>
-              If you consider this library valuable for you and your projects,
-              support Iconoir with a donation to help us sustain costs and
-              development time.
-            </Text18>
-            <CallToAction as="a" href={SUPPORT_LINK} target="_blank">
-              <span>Donate</span>
-              <ArrowRight />
-            </CallToAction>
-          </WideSection>
-          <PraiseContainer>
-            <PraiseTitle>What our friends say</PraiseTitle>
-            <Praise />
-          </PraiseContainer>
-          <DonateContainer>
-            <DonateLeft>
-              <DonateHeader>Join us on Discord</DonateHeader>
-              <Text18>
-                Join the community and help us with your suggestions and
-                feedback.
-              </Text18>
-            </DonateLeft>
-            <DonateRight>
-              <DonateButton
-                as="a"
-                href={DISCORD_LINK}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>Join</span>
-                {' '}
-                <Discord />
-              </DonateButton>
-            </DonateRight>
-          </DonateContainer>
-        </PageContainer>
-      </Layout>
+    <Layout>
+      <SEO
+        title="Donate - Our Mission"
+        description="Our mission: A free, complete, and open icon library. Iconoir wants to give to developers and users high-quality free icons."
+      />
+      <Header {...headerProps} />
+      <Hero
+        eyebrow="Our mission"
+        title="A free, complete, and open icon library"
+        lede="Iconoir is built in the open by a small team and its contributors, and kept free by the people who use it."
+      >
+        <Actions>
+          <Button as="a" href={SUPPORT_LINK} target="_blank" rel="noreferrer">
+            Donate
+          </Button>
+          <Button
+            as="a"
+            href={DISCORD_LINK}
+            target="_blank"
+            rel="noreferrer"
+            $variant="secondary"
+          >
+            Join the Discord
+          </Button>
+        </Actions>
+      </Hero>
+      <Band>
+        <Wrap>
+          <Eyebrow>What we stand for</Eyebrow>
+          <SectionTitle>Three goals, one library</SectionTitle>
+          <Pillars>
+            {PILLARS.map((pillar, index) => (
+              <Pillar key={pillar.title}>
+                <PillarIcon>{pillar.icon}</PillarIcon>
+                <Eyebrow>
+                  {String(index + 1).padStart(2, '0')}
+                  {' · '}
+                  {pillar.title}
+                </Eyebrow>
+                <CardTitle>{pillar.title}</CardTitle>
+                <Text15>{pillar.description}</Text15>
+              </Pillar>
+            ))}
+          </Pillars>
+        </Wrap>
+      </Band>
+      <Section>
+        <Wrap>
+          <Eyebrow>Kind words</Eyebrow>
+          <SectionTitle>What our friends say</SectionTitle>
+          <Praise />
+        </Wrap>
+      </Section>
+      <Wrap>
+        <Dark>
+          <Eyebrow $dark>Support</Eyebrow>
+          <SectionTitle>Become part of the project</SectionTitle>
+          <Lede>
+            If Iconoir is valuable for you and your projects, a one-time or
+            recurring donation helps us cover costs and development time.
+          </Lede>
+          <Actions>
+            <Button
+              as="a"
+              href={SUPPORT_LINK}
+              target="_blank"
+              rel="noreferrer"
+              $variant="inverted"
+            >
+              Donate on Open Collective
+              <ArrowUpRight />
+            </Button>
+          </Actions>
+        </Dark>
+        <Callout
+          title="Join us on Discord"
+          action={(
+            <Button
+              as="a"
+              href={DISCORD_LINK}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Discord />
+              Join
+            </Button>
+          )}
+        >
+          Join the community and help us with your suggestions and feedback.
+        </Callout>
+      </Wrap>
+      <div style={{ height: 112 }} />
       <Footer />
-    </>
+    </Layout>
   );
 };
 

@@ -1,30 +1,35 @@
-import { SpockHandGesture } from 'iconoir-react';
+import { ArrowUpRight, SpockHandGesture } from 'iconoir-react';
 import styled from 'styled-components';
 import { SUGGEST_ICON_LINK } from '../lib/constants';
-import { Text18 } from './Typography';
+import { Button } from './Button';
+import { CardTitle, Text15 } from './Typography';
 
 const Container = styled.div`
-  margin-top: 90px;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding: 64px 24px;
+  border-radius: 24px;
+  background: var(--white);
   text-align: center;
+  ${Text15} {
+    max-width: 360px;
+    margin: 10px 0 28px;
+  }
 `;
 
 const IconContainer = styled.div`
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
   svg {
-    width: 60px;
-    height: 60px;
-  }
-  margin-bottom: 65px;
-  color: var(--black);
-`;
-
-const Title = styled(Text18)`
-  &&& {
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: var(--black);
+    width: 28px;
+    height: 28px;
   }
 `;
 
@@ -36,20 +41,28 @@ export function IconListEmpty({ searchTerm }: IconListEmptyProps) {
   return (
     <Container>
       <IconContainer>
-        <SpockHandGesture />
+        {/* Explicit color: the explorer's IconoirProvider would paint it black. */}
+        <SpockHandGesture color="currentColor" />
       </IconContainer>
-      <Title>
-        Unfortunately there are no icons for &apos;
+      <CardTitle>
+        No icons for &lsquo;
         {searchTerm}
-        &apos;
-      </Title>
-      <Text18 style={{ color: 'var(--black-60)' }}>
-        If you can&apos;t find the icon, you can make a
-        <br />
-        <a href={SUGGEST_ICON_LINK} target="_blank" rel="noreferrer">
-          suggestion on GitHub.
-        </a>
-      </Text18>
+        &rsquo; yet
+      </CardTitle>
+      <Text15>
+        If you can&apos;t find the icon you need, suggest it on GitHub and
+        we&apos;ll consider it for a future release.
+      </Text15>
+      <Button
+        as="a"
+        href={SUGGEST_ICON_LINK}
+        target="_blank"
+        rel="noreferrer"
+        $size="sm"
+      >
+        Suggest an icon
+        <ArrowUpRight />
+      </Button>
     </Container>
   );
 }

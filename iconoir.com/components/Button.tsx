@@ -1,85 +1,114 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ResetButton = styled.button`
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+  padding: 0;
   text-transform: none;
   -webkit-appearance: none;
+  background: none;
   border: none;
   outline: none;
 `;
 
-export const LargeButton = styled(ResetButton)`
-  &&& {
+export type ButtonVariant = 'primary' | 'secondary' | 'inverted';
+
+const VARIANTS: Record<ButtonVariant, ReturnType<typeof css>> = {
+  primary: css`
+    background: var(--black);
+    color: var(--white);
+    &:hover {
+      background: #2a2a2a;
+    }
+  `,
+  secondary: css`
+    background: var(--gray-btn);
+    color: var(--black);
+    &:hover {
+      background: var(--gray-btn-hover);
+    }
+  `,
+  // For use on the dark card.
+  inverted: css`
     background: var(--white);
-    height: 75px;
-    border-radius: 10px 50px 50px 50px;
-    border: solid 2px var(--g0);
+    color: var(--black);
+    &:hover {
+      background: var(--gray-btn);
+    }
+  `,
+};
 
-    box-shadow: 0px 8px 0px 0px var(--g0);
-
+/** Pill button from the pro.iconoir.com design system. */
+export const Button = styled(ResetButton)<{
+  $variant?: ButtonVariant;
+  $size?: 'sm' | 'md';
+  $icon?: boolean;
+}>`
+  &&& {
     display: inline-flex;
     align-items: center;
-    text-decoration: none;
-    color: var(--g0);
-    padding: 0 70px;
-    font-size: 20px;
-    line-height: 26px;
-    font-weight: 700;
-    position: relative;
+    justify-content: center;
+    gap: 8px;
+    height: 50px;
+    padding: 0 24px;
+    border-radius: 999px;
     cursor: pointer;
-    z-index: 12;
-    > :not(:last-child) {
-      margin-right: 15px;
-    }
-    * {
-      font-weight: 700;
-    }
-    transition: 0.2s;
-    &:hover {
-      box-shadow: 0px 3px 0px 0px var(--g0);
-      transform: translateY(5px);
-    }
-    &:focus::after,
-    &:hover::after {
-      inset: -7px;
-      opacity: 1;
-    }
-  }
-`;
-
-const Button = styled(LargeButton)`
-  &&&& {
-    height: 40px;
-    font-size: 13px;
-    line-height: 21px;
-    padding: 0 18px;
-    &::after {
-      border-width: 2px;
-    }
-    &:focus::after,
-    &:hover::after {
-      inset: -4px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background 0.15s,
+      transform 0.15s;
+    ${(props) => VARIANTS[props.$variant || 'primary']}
+    ${(props) =>
+      props.$size === 'sm'
+      && css`
+        height: 40px;
+        padding: 0 18px;
+        font-size: 14px;
+      `}
+    ${(props) =>
+      props.$icon
+      && css`
+        width: ${props.$size === 'sm' ? 40 : 50}px;
+        padding: 0;
+      `}
+    svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
     }
     &:active {
-      background: var(--darker-gray);
+      transform: scale(0.98);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 3px;
     }
   }
 `;
 
-export const CopyButton = styled(Button)`
-  &&&&& {
-    text-transform: uppercase;
-    background: var(--white);
+export const CopyButton = styled(ResetButton)`
+  &&& {
+    display: inline-flex;
+    align-items: center;
     height: 30px;
     padding: 0 12px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    line-height: 17.6px;
-    font-weight: 700;
+    border-radius: 999px;
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     color: var(--black);
-    font-family: var(--font-family);
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    &:hover {
+      background: var(--gray-btn);
+    }
   }
 `;

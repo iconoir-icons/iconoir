@@ -1,43 +1,31 @@
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
-import { Text15 } from './Typography';
+import { Eyebrow, Mono } from './Typography';
 
 const InnerContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: 12px;
   width: 100%;
-  * {
-    line-height: 1;
-  }
-  > :not(:last-child) {
-    margin-right: 10px;
+  ${Eyebrow} {
+    margin: 0;
+    color: var(--black);
   }
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: flex-end;
-  padding-bottom: 25px;
-  box-sizing: border-box;
+  padding-bottom: 20px;
   ${media.sm} {
-    padding-bottom: 40px;
-  }
-`;
-
-const Title = styled(Text15)`
-  &&& {
-    font-weight: 700;
-    color: var(--g0);
-    background-color: var(--g6);
-    border-radius: 8px;
-    padding: 6px 10px;
+    padding-bottom: 28px;
   }
 `;
 
 const Separator = styled.div`
   height: 1px;
   flex: 1;
-  background: var(--g6);
+  background: var(--line);
 `;
 
 export interface CategoryRowProps {
@@ -50,13 +38,13 @@ export function CategoryRow({ category, numIcons, style }: CategoryRowProps) {
   return (
     <Container style={style}>
       <InnerContainer>
-        <Title>{category}</Title>
-        <Text15>
+        <Eyebrow as="h3">{category}</Eyebrow>
+        <Mono>
           {numIcons}
           {' '}
-          Icon
+          icon
           {numIcons === 1 ? '' : 's'}
-        </Text15>
+        </Mono>
         <Separator />
       </InnerContainer>
     </Container>

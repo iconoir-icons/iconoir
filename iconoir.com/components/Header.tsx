@@ -1,201 +1,143 @@
-import { Discord, Menu, Sparks, Xmark } from 'iconoir-react';
-import { Heart } from 'iconoir-react/solid';
+import { Discord, Menu, Xmark } from 'iconoir-react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { DISCORD_LINK, SHARE_LINK } from '../lib/constants';
+import { DISCORD_LINK, SUPPORT_LINK } from '../lib/constants';
 import { media } from '../lib/responsive';
 import { AnimatedSvg } from './AnimatedSvg';
-import { ResetButton } from './Button';
+import { Button } from './Button';
 import { CurrentVersion } from './CurrentVersion';
+import { PAGE_MAX_WIDTH } from './Layout';
 import { NavigationItem } from './NavigationItem';
-import { Text15 } from './Typography';
 
-const StyledDiscord = styled(Discord)<{ $isMobile?: boolean }>`
-  display: none;
-  ${media.lg} {
-    display: flex;
-    margin: 0 0 0 16px;
-    &:hover {
-      scale: 1.1;
-      transition: 0.2s;
-      color: #7289da;
-    }
+/** Height of the sticky nav, so sticky content below can clear it. */
+export const NAV_HEIGHT = 68;
+
+const Nav = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+`;
+
+const NavInner = styled.div`
+  max-width: ${PAGE_MAX_WIDTH}px;
+  height: ${NAV_HEIGHT}px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  ${media.sm} {
+    padding: 0 40px;
+    gap: 32px;
   }
 `;
 
-export const LogoContainer = styled.div`
-  position: relative;
-  z-index: 101;
+const Brand = styled.div`
   display: inline-flex;
   align-items: center;
-  transition: 0.1s;
-  &:hover {
-    scale: 1.1;
-    transition: 0.2s;
-  }
 `;
 
-const Banner = styled(Text15)`
-  display: none;
-  ${media.lg} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-    background: var(--g5);
-    color: var(--g0);
-    font-weight: 500;
-    position: absolute;
-    width: 100%;
-    text-decoration: underline;
-    top: 0;
-  }
-  > * {
-    margin: 0 4px;
-  }
-`;
-
-const MobileMenuButton = styled(ResetButton)`
-  &&& {
-    z-index: 101;
-    color: var(--black);
-    background: transparent;
-    display: inline-block;
-    margin-left: auto;
-    cursor: pointer;
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-    ${media.lg} {
-      display: none;
-    }
-  }
-`;
-
-const MobileMenuContainer = styled.div<{ $visible?: boolean }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: white;
-  padding-top: 100px;
-  transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.25s linear;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(-100%);
-  pointer-events: none;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  ${(props) =>
-    props.$visible
-    && css`
-      pointer-events: all;
-      transform: translateY(0);
-      opacity: 1;
-    `}
-  ${media.lg} {
-    background: none;
-    padding-top: 0;
-    box-shadow: none;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    align-items: center;
-    transform: none;
-    pointer-events: all;
-    opacity: 1;
-    > :not(:last-child) {
-      margin-right: 60px;
-    }
-  }
-`;
-
-const Container = styled.div`
-  display: flex;
+export const LogoContainer = styled.a`
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  ${media.lg} {
-    margin-top: 40px;
-  }
+  text-decoration: none;
 `;
 
-const HeaderItem = styled.div`
-  flex: 1;
-  width: 33%;
+export const LogoIcon = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
-const HeaderCenter = styled(HeaderItem)`
-  padding: 0 16px;
-  > :not(:last-child) {
-    margin-right: 16px;
-  }
-`;
-
-const HeaderLeft = styled(HeaderItem)`
-  &&& {
-    justify-content: flex-start;
-  }
-`;
-
-const HeaderRight = styled(HeaderItem)`
-  &&& {
-    justify-content: flex-end;
+  color: var(--black);
+  margin-right: 4px;
+  svg {
+    width: 26px;
+    height: 26px;
+    ${media.sm} {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 
 export const Logo = styled.img`
-  height: 24px;
-  margin-top: -4px;
-  color: var(--black);
-  margin-right: 16px;
-  z-index: 101;
-`;
-export const LogoIcon = styled.div`
-  color: var(--black);
-  margin-right: 4px;
-  svg {
-    width: 36px;
-    height: 36px;
+  height: 17px;
+  margin-top: -3px;
+  ${media.sm} {
+    height: 20px;
   }
 `;
 
-const Share = styled(Text15)<{ $isMobile?: boolean }>`
-  &&& {
-    display: none;
-    ${(props) =>
-      props.$isMobile
-      && css`
-        display: flex;
-        justify-content: center;
-        padding: 12px 0;
-      `}
-    ${media.lg} {
-      display: ${(props) => (props.$isMobile ? 'none' : 'block')};
-    }
-    color: var(--black-60);
-    white-space: pre-wrap;
-    a {
-      display: inline-flex;
-      align-items: center;
-      color: unset;
-      text-decoration: unset;
-    }
-    svg,
-    span {
+const Links = styled.nav<{ $visible?: boolean }>`
+  position: absolute;
+  top: ${NAV_HEIGHT}px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px 24px;
+  background: var(--white);
+  box-shadow: 0 30px 40px -30px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s linear;
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  ${(props) =>
+    props.$visible
+    && css`
+      transform: none;
+      opacity: 1;
+      pointer-events: all;
+    `}
+  ${media.lg} {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+    margin-left: auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: all;
+  }
+`;
+
+const DiscordLink = styled.a`
+  display: none;
+  ${media.lg} {
+    display: flex;
+    color: var(--text);
+    transition: color 0.15s;
+    &:hover {
       color: var(--black);
     }
-    a:hover {
-      text-decoration: underline;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+`;
+
+const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  ${media.lg} {
+    margin-left: 0;
+  }
+`;
+
+const MenuButton = styled(Button)`
+  ${media.lg} {
+    &&& {
+      display: none;
     }
   }
 `;
@@ -206,71 +148,75 @@ export interface HeaderProps {
 
 export function Header({ currentVersion }: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
+  const closeMenu = () => setMenuVisible(false);
+  const { asPath } = useRouter();
+
+  React.useEffect(() => {
+    setMenuVisible(false);
+  }, [asPath]);
 
   return (
-    <Container>
-      <Banner>
-        <Sparks></Sparks>
-        <a
-          href="https://opencollective.com/iconoir/donate?interval=month&amount=10"
-          target="_blank"
-        >
-          Your one-time or recurring contribution does a lot to keep Iconoir
-          going.
-        </a>
-      </Banner>
-      <HeaderLeft>
-        <Link href="/">
-          <LogoContainer>
-            <LogoIcon>
-              <AnimatedSvg />
-            </LogoIcon>
-            <Logo src="/iconoir-logo.svg" alt="Iconoir Logo" />
-          </LogoContainer>
-        </Link>
-        <CurrentVersion version={currentVersion} />
-      </HeaderLeft>
-      <HeaderCenter>
-        <MobileMenuContainer $visible={menuVisible}>
-          <NavigationItem href="/">Icons</NavigationItem>
-          <NavigationItem href="/docs/introduction" activeMatch="/docs">
+    <Nav>
+      <NavInner>
+        <Brand>
+          <Link href="/" passHref legacyBehavior>
+            <LogoContainer aria-label="Iconoir home">
+              <LogoIcon>
+                <AnimatedSvg />
+              </LogoIcon>
+              <Logo src="/iconoir-logo.svg" alt="Iconoir" />
+            </LogoContainer>
+          </Link>
+          <CurrentVersion version={currentVersion} />
+        </Brand>
+        <Links $visible={menuVisible} aria-label="Main">
+          <NavigationItem href="/" onClick={closeMenu}>
+            Icons
+          </NavigationItem>
+          <NavigationItem
+            href="/docs/introduction"
+            activeMatch="/docs"
+            onClick={closeMenu}
+          >
             Documentation
           </NavigationItem>
-          <NavigationItem href="/support" style={{ marginRight: 0 }}>
-            Donate &mdash; Our Mission
+          <NavigationItem href="/support" onClick={closeMenu}>
+            Our mission
           </NavigationItem>
-          <Share $isMobile>
-            <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
-              Share with
-              {' '}
-              <Heart width="1em" height="1em" />
-              {' '}
-              on
-              {' '}
-              <span>X (Twitter)</span>
-            </a>
-          </Share>
-        </MobileMenuContainer>
-      </HeaderCenter>
-      <HeaderRight>
-        <Share>
-          <a href={SHARE_LINK} target="_blank" rel="noreferrer nofollow">
-            Share with
-            {' '}
-            <Heart width="1em" height="1em" />
-            {' '}
-            on
-            {' '}
-            <span>X (Twitter)</span>
-          </a>
-        </Share>
-        <a href={DISCORD_LINK} rel="nofollow noreferrer">
-          <StyledDiscord $isMobile />
-        </a>
-        <MobileMenuButton onClick={() => setMenuVisible((v) => !v)}>
-          {menuVisible ? <Xmark /> : <Menu />}
-        </MobileMenuButton>
-      </HeaderRight>
-    </Container>
+          {menuVisible && (
+            <NavigationItem href={DISCORD_LINK}>Discord</NavigationItem>
+          )}
+          <DiscordLink
+            href={DISCORD_LINK}
+            rel="nofollow noreferrer"
+            aria-label="Join us on Discord"
+            title="Discord"
+          >
+            <Discord />
+          </DiscordLink>
+        </Links>
+        <Actions>
+          <Button
+            as="a"
+            href={SUPPORT_LINK}
+            target="_blank"
+            rel="noreferrer"
+            $size="sm"
+          >
+            Donate
+          </Button>
+          <MenuButton
+            $variant="secondary"
+            $size="sm"
+            $icon
+            aria-label={menuVisible ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuVisible}
+            onClick={() => setMenuVisible((v) => !v)}
+          >
+            {menuVisible ? <Xmark /> : <Menu />}
+          </MenuButton>
+        </Actions>
+      </NavInner>
+    </Nav>
   );
 }

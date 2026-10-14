@@ -6,19 +6,20 @@ import styled from 'styled-components';
 import { media } from '../lib/responsive';
 import { CopyButton } from './Button';
 import { MDXRemote } from './MDXRemote';
-import { Code, Text15, Text18 } from './Typography';
+import { Code, Mono } from './Typography';
 
 const EXPAND_HEIGHT = 400;
 
 const Container = styled.div`
-  margin: 40px 0;
   display: flex;
-  align-items: stretch;
   flex-direction: column;
-  width: 100%;
+  align-items: stretch;
+  gap: 16px;
+  margin: 40px 0;
   ${media.lg} {
     flex-direction: row;
     align-items: flex-start;
+    gap: 32px;
     margin: 24px 0;
   }
 `;
@@ -26,46 +27,51 @@ const Container = styled.div`
 const ContainerLeft = styled.div`
   display: flex;
   align-items: flex-start;
-  margin-bottom: 12px;
+  gap: 12px;
   ${media.lg} {
-    margin-bottom: 0;
-    margin-right: 30px;
+    width: 140px;
+    flex: none;
+    padding-top: 22px;
   }
 `;
 
 const ContainerIcon = styled.div`
-  font-size: 18px;
+  display: flex;
   color: var(--black);
-  margin-right: 18px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
-const TitleContainer = styled.div`
-  width: 100px;
-`;
-
-const EntryTitle = styled(Text18)`
-  &&& {
-    color: var(--black);
-    font-weight: 700;
+const EntryTitle = styled.a`
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
 const ExpandContainer = styled.div`
   position: absolute;
-  bottom: 16px;
-  right: 23px;
+  bottom: 14px;
+  right: 14px;
 `;
 
 const EntryBody = styled(Code)<{ $expanded?: boolean }>`
   &&& {
     flex: 1;
+    min-width: 0;
     margin: 0;
     max-height: ${(props) => (props.$expanded ? 'none' : `${EXPAND_HEIGHT}px`)};
     position: relative;
     overflow: hidden;
-    * {
-      font-family: var(--code-family);
-    }
+    font-family: var(--font);
     ul {
       list-style: none none;
       margin: 0;
@@ -74,13 +80,26 @@ const EntryBody = styled(Code)<{ $expanded?: boolean }>`
         margin-bottom: 8px;
       }
     }
+    p,
+    li {
+      font-family: var(--font) !important;
+      font-size: 15px;
+      color: var(--text);
+    }
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
     code {
       display: inline-block;
-      background: var(--g5);
-      color: var(--black);
-      font-family: var(--font-family) !important;
       padding: 0 4px;
-      font-size: 18px;
+      border-radius: 4px;
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--mono) !important;
+      font-size: 13px;
     }
   }
 `;
@@ -117,17 +136,12 @@ export function ChangelogEntry({
         <ContainerIcon>
           <BoxIso />
         </ContainerIcon>
-        <TitleContainer>
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            style={{ textDecoration: 'none' }}
-          >
-            <EntryTitle>{name}</EntryTitle>
-          </a>
-          <Text15>{moment(created_at).format('MMM DD, YYYY')}</Text15>
-        </TitleContainer>
+        <div>
+          <EntryTitle href={url} target="_blank" rel="noreferrer">
+            {name}
+          </EntryTitle>
+          <Mono>{moment(created_at).format('MMM DD, YYYY')}</Mono>
+        </div>
       </ContainerLeft>
       <EntryBody $expanded={expanded}>
         {body ? <MDXRemote {...body} /> : 'No changelog'}

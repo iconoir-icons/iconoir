@@ -38,87 +38,66 @@ function bakeSvg(
   );
 }
 
-const Overlay = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  border: solid 2px var(--g0);
-  background: var(--white);
-  width: 8px;
-  height: 8px;
-`;
-
-const CornerBR = styled(Overlay)`
-  bottom: -6px;
-  right: -6px;
-  z-index: 999;
-`;
-
-const CornerTR = styled(Overlay)`
-  top: -6px;
-  right: -6px;
-`;
-
-const CornerBL = styled(Overlay)`
-  bottom: -6px;
-  left: -6px;
-`;
-
-const CornerTL = styled(Overlay)`
-  top: -6px;
-  left: -6px;
-`;
-
 const HoverContainer = styled.div`
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.92);
 
   transform: translateZ(0px); // Safari Fix
-  transition: opacity 0.1s linear;
+  transition: opacity 0.15s linear;
   opacity: 0;
   pointer-events: none;
 `;
 
-const HoverButton = styled(ResetButton)`
+const HoverButton = styled(ResetButton)<{ $primary?: boolean }>`
   &&& {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    border-radius: 0px;
-    transition: background 0.1s linear;
-    color: var(--g0);
-    font-size: 14px;
-    line-height: 23px;
-    font-weight: 700;
+    height: 34px;
+    border-radius: 999px;
+    background: ${(props) => (props.$primary ? 'var(--black)' : 'var(--gray-btn)')};
+    color: ${(props) => (props.$primary ? 'var(--white)' : 'var(--black)')};
+    font-size: 13px;
+    font-weight: 500;
     text-align: center;
-    flex: 1;
-    cursor: pointer;
     text-decoration: none;
-    &:hover,
+    cursor: pointer;
+    transition:
+      background 0.15s,
+      transform 0.15s;
+    &:hover {
+      background: ${(props) => (props.$primary ? '#2a2a2a' : 'var(--gray-btn-hover)')};
+    }
     &:active {
-      background: var(--g0);
-      color: var(--white);
+      transform: scale(0.98);
     }
   }
 `;
 
 const BorderContainer = styled.div<{ $iconWidth: number }>`
   width: ${(props) => props.$iconWidth}px;
-  box-sizing: border-box;
   padding-bottom: 100%;
   position: relative;
-  border: solid 1px var(--g6);
-  border-radius: 12px;
+  background: var(--white);
+  border-radius: 14px;
   margin-bottom: 10px;
+  color: var(--black);
+  transition: box-shadow 0.15s;
   @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 0 1.5px var(--black);
+    }
     &:hover ${HoverContainer} {
       opacity: 1;
       pointer-events: all;
-      border: solid 2px var(--g0);
     }
   }
 `;
@@ -129,26 +108,30 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: inherit;
 `;
 
 const IconTag = styled.div`
-  background-color: var(--g6);
   position: absolute;
-  top: 0px;
-  right: 0px;
-  border-radius: 5px 10px;
-  padding: 3px 6px;
-  letter-spacing: 0.3px;
-  font-weight: 600;
-  font-size: 11px;
-  color: var(--g0);
+  top: 8px;
+  right: 8px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
 `;
 
 const Subtitle = styled.div<{ $iconWidth: number }>`
+  font-family: var(--mono);
   font-size: 11px;
-  font-weight: 500;
-  line-height: 14.74px;
-  color: var(--black-60);
+  line-height: 15px;
+  letter-spacing: -0.01em;
+  color: var(--mono-ink);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -215,16 +198,13 @@ export function Icon({ iconWidth, icon }: IconProps) {
         >
           <IconComponent />
 
-          {icon.filename.includes('-solid') ? <IconTag>SOLID</IconTag> : ''}
+          {icon.filename.includes('-solid') ? <IconTag>Solid</IconTag> : ''}
         </IconContainer>
         {supportsClipboard
           ? (
               <HoverContainer>
-                <CornerBR />
-                <CornerTR />
-                <CornerBL />
-                <CornerTL />
                 <HoverButton
+                  $primary
                   onClick={() => {
                     if (htmlContentsRef.current) {
                       navigator.clipboard

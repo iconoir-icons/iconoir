@@ -1,43 +1,36 @@
 import styled from 'styled-components';
 import { media } from '../lib/responsive';
-import { Text15 } from './Typography';
+import { Text14 } from './Typography';
 
 const StatText = styled.div`
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 62px;
-  color: var(--g0);
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 12px;
   ${media.md} {
-    font-size: 50px;
-    line-height: 82px;
-    -webkit-text-stroke: 1.5px;
-    text-stroke: 1.5px;
+    font-size: 52px;
   }
 `;
 
 const StatContainer = styled.div`
-  text-align: center;
-  width: 45%;
-  margin-bottom: 55px;
+  padding: 24px 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
   ${media.md} {
-    width: 205px;
-    margin-bottom: 0;
+    padding: 32px 28px;
+    border-radius: 24px;
   }
 `;
 
 export const StatsContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 40px auto 5px auto;
-  flex-wrap: wrap;
-  > :not(:last-child) {
-    margin-right: 8px;
-  }
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
   ${media.md} {
-    margin: 60px auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
 `;
 
@@ -50,7 +43,7 @@ export function Stat({ value, description }: StatProps) {
   return (
     <StatContainer>
       <StatText>{value}</StatText>
-      <Text15>{description}</Text15>
+      <Text14>{description}</Text14>
     </StatContainer>
   );
 }
