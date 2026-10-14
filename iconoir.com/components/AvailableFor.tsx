@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Libraries = styled.p`
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
   /* Like the header nav: hovering a library fades the others. */
   &:has(a:hover) a:not(:hover) {

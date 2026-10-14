@@ -17,6 +17,7 @@ const Section = styled.section`
   ${Lede} {
     max-width: 620px;
     margin: 24px auto 0;
+    font-size: 16px;
   }
 `;
 
