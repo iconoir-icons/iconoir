@@ -57,11 +57,15 @@ const FooterCategoryLink = styled.a`
   width: fit-content;
   margin-bottom: 12px;
   font-size: 15px;
-  color: var(--text);
+  color: var(--black);
   text-decoration: none;
-  transition: color 0.15s;
-  &:hover {
-    color: var(--black);
+  transition: opacity 0.15s;
+`;
+
+/** Like the header nav: hovering a link fades the others in its column. */
+const FooterCategoryLinks = styled.div`
+  &:has(a:hover) a:not(:hover) {
+    opacity: 0.4;
   }
 `;
 
@@ -90,11 +94,13 @@ function FooterCategory({ category, links }: FooterCategoryProps) {
   return (
     <div>
       <Eyebrow>{category}</Eyebrow>
-      {links.map((link) => (
-        <FooterCategoryLink key={link.url} href={link.url}>
-          {link.name}
-        </FooterCategoryLink>
-      ))}
+      <FooterCategoryLinks>
+        {links.map((link) => (
+          <FooterCategoryLink key={link.url} href={link.url}>
+            {link.name}
+          </FooterCategoryLink>
+        ))}
+      </FooterCategoryLinks>
     </div>
   );
 }
