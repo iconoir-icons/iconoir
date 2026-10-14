@@ -5,7 +5,7 @@ import { Text14 } from './Typography';
 const StatText = styled.div`
   font-size: 40px;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 360;
   letter-spacing: -0.03em;
   color: var(--black);
   margin-bottom: 12px;

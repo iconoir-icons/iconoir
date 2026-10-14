@@ -50,8 +50,16 @@ export default class IconoirDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="anonymous"
           />
+          {/* Self-hosted official Inter build: Google Fonts strips the cv alternates. */}
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+            rel="preload"
+            href="/fonts/InterVariable.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
             rel="stylesheet"
           />
         </Head>

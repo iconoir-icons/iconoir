@@ -2,6 +2,16 @@
    IBM Plex Mono eyebrows, pill buttons, white cards with large radii on soft
    bands, one dark card. Primary buttons are black, secondary light gray. */
 
+/* Official Inter 4 variable build (rsms.me/inter), Latin subset with every
+   OpenType feature kept. Licensed under the SIL OFL, see Inter-LICENSE.txt. */
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+}
+
 :root {
   --black: #000000;
   --ink: #0a0a0a;
@@ -18,7 +28,7 @@
   --dark: #0d0d0d;
   --dark-text: #a9a9a9;
 
-  --font: 'Inter', system-ui, sans-serif;
+  --font: InterVariable, 'Inter', system-ui, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   color-scheme: light;
@@ -38,6 +48,10 @@ body {
   color: var(--ink);
   font: 400 16px/1.4 var(--font);
   letter-spacing: -0.01em;
+  /* Inter alternates as on mollie.com: serifed I, spurred G, compact f and t. */
+  font-feature-settings: 'cv08', 'cv10', 'cv12', 'cv13', 'dlig';
+  /* Large text switches to Inter's display cut through the opsz axis. */
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }

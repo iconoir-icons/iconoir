@@ -27,7 +27,7 @@ export const Display = styled.h1`
   margin: 0;
   font-size: 40px;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 360;
   letter-spacing: -0.04em;
   color: var(--black);
   ${media.sm} {
@@ -42,7 +42,7 @@ export const SectionTitle = styled.h2`
   margin: 0;
   font-size: 34px;
   line-height: 1.1;
-  font-weight: 400;
+  font-weight: 360;
   letter-spacing: -0.03em;
   color: var(--black);
   ${media.sm} {
