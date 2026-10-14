@@ -9,7 +9,7 @@ import {
   Planet,
   Spark,
   Star,
-} from 'iconoir-react/solid';
+} from 'iconoir-react';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
@@ -108,25 +108,13 @@ const Halo = styled.div`
   }
 `;
 
-/** Tight shadow nudged up, so the top edge reads darkest, like a rim light. */
-const Rim = styled.div`
-  color: var(--black);
-  opacity: 0.55;
-  filter: blur(2px);
-  transform: translate(
-    calc(var(--gx) * 0.25),
-    calc(-1.5px + var(--gy) * 0.25)
-  );
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-`;
-
 const Face = styled.div`
-  color: var(--white);
+  color: var(--black);
 `;
 
 /**
- * A solid icon lit from behind, after the triangle on vercel.com but inverted
- * for a white page: a white shape outlined by a grainy dark glow.
+ * An outline icon lit from behind, after the triangle on vercel.com but
+ * inverted for a white page: a black icon wrapped in a grainy dark glow.
  */
 export function HeroIcon() {
   const [{ index, previous }, setState] = React.useState<{
@@ -227,11 +215,9 @@ export function HeroIcon() {
         return (
           <Layer key={iconIndex} $leaving={iconIndex !== index}>
             <Halo>
-              <Icon />
+              {/* A heavier stroke gives the blur enough to glow from. */}
+              <Icon strokeWidth={3} />
             </Halo>
-            <Rim>
-              <Icon />
-            </Rim>
             <Face>
               <Icon />
             </Face>
