@@ -145,10 +145,17 @@ const MenuButton = styled(Button)`
 
 export interface HeaderProps {
   currentVersion: string;
+  numIcons: number;
+  numDownloads: number;
   numStars: number;
 }
 
-export function Header({ currentVersion, numStars }: HeaderProps) {
+export function Header({
+  currentVersion,
+  numIcons,
+  numDownloads,
+  numStars,
+}: HeaderProps) {
   const [menuVisible, setMenuVisible] = React.useState(false);
   const closeMenu = () => setMenuVisible(false);
   const { asPath } = useRouter();
@@ -169,7 +176,12 @@ export function Header({ currentVersion, numStars }: HeaderProps) {
               <Logo src="/iconoir-logo.svg" alt="Iconoir" />
             </LogoContainer>
           </Link>
-          <CurrentVersion version={currentVersion} />
+          <CurrentVersion
+            version={currentVersion}
+            numIcons={numIcons}
+            numDownloads={numDownloads}
+            numStars={numStars}
+          />
         </Brand>
         <Links $visible={menuVisible} aria-label="Main">
           <NavigationItem href="/" onClick={closeMenu}>

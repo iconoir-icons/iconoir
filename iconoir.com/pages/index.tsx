@@ -15,7 +15,6 @@ import { SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { media } from '../lib/responsive';
-import { getNumDownloads } from '../lib/stats';
 
 const IconsSection = styled.section`
   margin-top: 72px;
@@ -45,7 +44,12 @@ const Home: NextPage<HomeProps> = ({
       <SEO
         description="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Nativ, and Flutter libraries, Figma and Framer."
       />
-      <Header currentVersion={currentVersion} numStars={numStars} />
+      <Header
+        currentVersion={currentVersion}
+        numIcons={allIcons.length}
+        numDownloads={numDownloads}
+        numStars={numStars}
+      />
       <Hero
         visual={<HeroIcons />}
         eyebrow="Free · Open source · MIT"
@@ -121,7 +125,6 @@ export async function getStaticProps() {
     props: {
       ...(await getHeaderProps()),
       allIcons: await getAllIcons(),
-      numDownloads: await getNumDownloads(),
     },
   };
 }

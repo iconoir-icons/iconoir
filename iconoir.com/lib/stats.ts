@@ -52,13 +52,17 @@ export function getNumStars(): Promise<number> {
   return numStarsPromise;
 }
 
-/** Monthly npm downloads of iconoir-react. */
+let numDownloadsPromise: Promise<number> | undefined;
+
+/** Monthly npm downloads of iconoir-react, fetched once per build. */
 export function getNumDownloads(): Promise<number> {
-  return withFallback(
+  numDownloadsPromise ??= withFallback(
     npmDownloads('iconoir-react', 'last-month').then(
       ({ downloads }) => downloads,
     ),
     FALLBACK_NUM_DOWNLOADS,
     'NPM downloads',
   );
+
+  return numDownloadsPromise;
 }

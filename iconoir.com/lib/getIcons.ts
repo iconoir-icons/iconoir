@@ -47,3 +47,12 @@ export async function getAllIcons(): Promise<Icon[]> {
 
   return icons;
 }
+
+let numIconsPromise: Promise<number> | undefined;
+
+/** Icon count (solid variants included), computed once per build. */
+export function getNumIcons(): Promise<number> {
+  numIconsPromise ??= getAllIcons().then((icons) => icons.length);
+
+  return numIconsPromise;
+}
