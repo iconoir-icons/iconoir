@@ -69,12 +69,15 @@ const Dock = styled.div`
   position: sticky;
   bottom: 16px;
   z-index: 40;
+  display: flex;
+  justify-content: center;
   padding: 16px var(--gutter) 0;
 `;
 
 const Card = styled.div`
   position: relative;
   display: grid;
+  width: 100%;
   gap: 20px;
   padding: 20px;
   border: 1px solid #dbdbdb;
@@ -85,7 +88,10 @@ const Card = styled.div`
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.25);
   animation: ${slideUp} 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
   ${media.md} {
-    grid-template-columns: 320px minmax(0, 1fr);
+    /* Sized by the summary and the tab list; the code scrolls inside. */
+    grid-template-columns: 320px auto;
+    width: fit-content;
+    max-width: 100%;
     gap: 28px;
   }
 `;
