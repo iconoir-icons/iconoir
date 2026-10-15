@@ -1,6 +1,6 @@
 import type { Icon } from './IconList';
 import * as AllIcons from 'iconoir-react';
-import { Download, Xmark } from 'iconoir-react';
+import { Copy, Download, Xmark } from 'iconoir-react';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { media } from '../lib/responsive';
@@ -321,11 +321,24 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
             <Button
               $size="sm"
               disabled={!svg}
+              onClick={() => {
+                navigator.clipboard
+                  ?.writeText(svg)
+                  .then(() => showNotification('SVG code copied!'))
+                  .catch((err) => console.error(err));
+              }}
+            >
+              <Copy color="currentColor" strokeWidth={1.5} />
+              SVG
+            </Button>
+            <LightButton
+              $size="sm"
+              disabled={!svg}
               onClick={() => downloadSvg(svg, icon.filename)}
             >
               <Download color="currentColor" strokeWidth={1.5} />
               SVG
-            </Button>
+            </LightButton>
             <LightButton
               $size="sm"
               disabled={!svg}
