@@ -32,3 +32,4 @@ export const AUTHOR_LINKS = {
 
 /** Minimum width of an icon cell; cells sit edge to edge and stretch to fill the row. */
 export const ICON_WIDTH = 140 as const;
+export const ICON_GAP = 4 as const;

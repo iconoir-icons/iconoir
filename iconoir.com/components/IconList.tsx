@@ -9,7 +9,7 @@ import {
 } from 'react-window';
 import styled from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
-import { ICON_WIDTH } from '../lib/constants';
+import { ICON_GAP, ICON_WIDTH } from '../lib/constants';
 import { CategoryRow } from './CategoryRow';
 import { IconListEmpty } from './IconListEmpty';
 import { IconsRow } from './IconsRow';
@@ -125,7 +125,7 @@ function getItemSize(row: IconRow, iconWidth: number): number {
   if (isCategoryRow(row)) {
     return HEADER_HEIGHT;
   } else {
-    return iconWidth;
+    return iconWidth + ICON_GAP;
   }
 }
 
@@ -184,7 +184,9 @@ export function IconList({ filters, allIcons }: IconListProps) {
   const listRef = React.useRef<List<IconRow[]> | null>(null);
   const [height, setHeight] = React.useState(400);
 
-  const iconWidth = iconsPerRow ? Math.floor(width / iconsPerRow) : null;
+  const iconWidth = iconsPerRow
+    ? Math.floor((width - ICON_GAP * (iconsPerRow - 1)) / iconsPerRow)
+    : null;
 
   React.useEffect(() => {
     setHeight(window.innerHeight);

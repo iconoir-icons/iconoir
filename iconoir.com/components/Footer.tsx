@@ -16,7 +16,6 @@ import { Eyebrow, Mono } from './Typography';
 
 const Container = styled.footer`
   padding: 72px 0 40px;
-  border-top: 1px solid var(--line);
   ${media.sm} {
     padding: 96px 0 48px;
   }
@@ -64,7 +63,7 @@ const FooterCategoryLink = styled.a`
   display: block;
   width: fit-content;
   margin-bottom: 12px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--black);
   text-decoration: none;
   transition: opacity 0.15s;
