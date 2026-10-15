@@ -45,6 +45,7 @@ const HeaderItem = styled.div`
     padding-top: 0;
   }
   ${media.lg} {
+    padding: 28px 10px 8px;
     cursor: var(--cursor);
     pointer-events: none;
   }
@@ -54,20 +55,20 @@ const NavigationItem = styled.a<{ $active?: boolean }>`
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px;
+  padding: 7px 10px;
   border-radius: 8px;
   font-size: 14px;
   line-height: 1.3;
   text-decoration: none;
   color: ${(props) => (props.$active ? 'var(--black)' : 'var(--text)')};
   font-weight: ${(props) => (props.$active ? 500 : 400)};
-  background: ${(props) => (props.$active ? 'var(--gray-btn)' : 'transparent')};
+  background: ${(props) => (props.$active ? 'var(--band)' : 'transparent')};
   transition:
     background 0.15s,
     color 0.15s;
   &:hover {
     color: var(--black);
-    background: var(--gray-btn);
+    background: var(--band);
   }
 `;
 
@@ -82,6 +83,27 @@ const NavigationItemLabel = styled.span`
   text-transform: uppercase;
 `;
 
+function activeSectionTitles(
+  items: DocumentationItem[],
+  activePath: string,
+  pathPrefix?: string[],
+) {
+  const normalized = activePath.replace((pathPrefix || []).join('/'), '');
+
+  return items
+    .filter((item) => {
+      return (
+        normalized === item.path
+        || item.children?.some((child) => {
+          return activePath.startsWith(
+            [item.path, child.path].filter(Boolean).join('/'),
+          );
+        })
+      );
+    })
+    .map((item) => item.title);
+}
+
 export interface DocumentationNavigationProps {
   documentationItems: DocumentationItem[];
   pathPrefix?: string[];
@@ -93,24 +115,20 @@ export function DocumentationNavigation({
 }: DocumentationNavigationProps) {
   const router = useRouter();
   const activePath = router.asPath.replace('/docs/', '');
-  const [expandedTitles, setExpandedTitles] = React.useState<string[]>([]);
+
+  // Derived during render so the server HTML already has the active section
+  // open; an effect alone left every section collapsed until hydration.
+  const activeTitles = React.useMemo(
+    () => activeSectionTitles(documentationItems, activePath, pathPrefix),
+    [documentationItems, activePath, pathPrefix],
+  );
+
+  const [expandedTitles, setExpandedTitles] = React.useState(activeTitles);
+  const activeKey = activeTitles.join('|');
 
   React.useEffect(() => {
-    const expandedItems = documentationItems.filter((item) => {
-      const normalized = activePath.replace((pathPrefix || []).join('/'), '');
-
-      return (
-        normalized === item.path
-        || item.children?.some((child) => {
-          return activePath.startsWith(
-            [item.path, child.path].filter(Boolean).join('/'),
-          );
-        })
-      );
-    });
-
-    setExpandedTitles(expandedItems.map((item) => item.title));
-  }, [activePath, pathPrefix, documentationItems]);
+    setExpandedTitles(activeKey ? activeKey.split('|') : []);
+  }, [activeKey]);
 
   return (
     <>

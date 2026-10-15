@@ -1,5 +1,4 @@
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { BoxIso } from 'iconoir-react';
 import moment from 'moment';
 import React from 'react';
 import styled from 'styled-components';
@@ -25,22 +24,10 @@ const Container = styled.div`
 `;
 
 const ContainerLeft = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
   ${media.lg} {
     width: 140px;
     flex: none;
     padding-top: 22px;
-  }
-`;
-
-const ContainerIcon = styled.div`
-  display: flex;
-  color: var(--black);
-  svg {
-    width: 20px;
-    height: 20px;
   }
 `;
 
@@ -133,9 +120,6 @@ export function ChangelogEntry({
   return (
     <Container ref={containerRef}>
       <ContainerLeft>
-        <ContainerIcon>
-          <BoxIso />
-        </ContainerIcon>
         <div>
           <EntryTitle href={url} target="_blank" rel="noreferrer">
             {name}

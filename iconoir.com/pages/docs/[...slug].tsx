@@ -22,47 +22,56 @@ import { Layout, Wrap } from '../../components/Layout';
 import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
+import { Eyebrow } from '../../components/Typography';
 import { getDocumentationStructure } from '../../lib/docs';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { media } from '../../lib/responsive';
 
+/** Sidebar width; the right column mirrors it so the article sits centered. */
+const SIDEBAR_WIDTH = 220;
+
 export const Container = styled(Wrap)`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   padding-top: 24px;
   ${media.lg} {
-    flex-direction: row;
-    align-items: flex-start;
-    padding-top: 48px;
+    display: grid;
+    grid-template-columns: ${SIDEBAR_WIDTH}px minmax(0, 1fr) ${SIDEBAR_WIDTH}px;
+    column-gap: 48px;
+    align-items: start;
+    padding-top: 56px;
   }
 `;
 export const NavigationContainer = styled.nav`
-  margin-bottom: 32px;
-  padding: 16px 12px;
-  border-radius: 20px;
-  background: var(--side);
-  border: 1px solid var(--line);
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
   ${media.lg} {
     position: sticky;
-    top: ${NAV_HEIGHT + 24}px;
-    flex: none;
-    width: 240px;
-    margin: 0 64px 0 0;
-    max-height: calc(100vh - ${NAV_HEIGHT + 48}px);
+    top: ${NAV_HEIGHT + 32}px;
+    max-height: calc(100vh - ${NAV_HEIGHT + 64}px);
     overflow-y: auto;
+    /* Pulls the item padding back so labels line up with the page gutter. */
+    margin: 0 0 0 -10px;
+    padding-bottom: 24px;
+    border-bottom: none;
+    scrollbar-width: none;
   }
 `;
 export const ContentContainer = styled.div`
-  flex: 1;
   min-width: 0;
   padding-bottom: 72px;
   ${media.sm} {
     padding-bottom: 112px;
   }
 `;
+/** Section label above the page title; opts out of the article's div margins. */
+export const DocsEyebrow = styled(Eyebrow)`
+  && {
+    margin: 0 0 16px;
+  }
+`;
 export const InnerContentContainer = styled.article`
-  max-width: 760px;
+  max-width: 680px;
+  margin: 0 auto;
   img {
     max-width: 100%;
   }
@@ -71,6 +80,35 @@ export const InnerContentContainer = styled.article`
     > a img {
       margin: 0 5px;
     }
+  }
+  /* Tighter, reading-sized type than the marketing pages. */
+  > h1 {
+    margin: 0 0 24px;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    ${media.sm} {
+      font-size: 44px;
+    }
+  }
+  > h2 {
+    margin: 56px 0 12px;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+  > h3 {
+    margin: 36px 0 8px;
+    font-size: 18px;
+  }
+  > p,
+  > ul li,
+  > ol li {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  > ul,
+  > ol {
+    padding-left: 22px;
   }
   > h1:first-child,
   > h2:first-child {
@@ -81,6 +119,7 @@ export const InnerContentContainer = styled.article`
 interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;
   title: string;
+  sectionTitle: string | null;
   navigationItem: DocumentationItem;
   navigationProps: DocumentationNavigationProps;
 }
@@ -88,6 +127,7 @@ interface DocumentationPageProps extends HeaderProps {
 export default function DocumentationPage({
   source,
   title,
+  sectionTitle,
   navigationItem,
   navigationProps,
   ...headerProps
@@ -105,6 +145,7 @@ export default function DocumentationPage({
         </NavigationContainer>
         <ContentContainer>
           <InnerContentContainer>
+            {sectionTitle && <DocsEyebrow>{sectionTitle}</DocsEyebrow>}
             <MDXRemote {...source} />
             {!navigationItem.noReadOnGitHub && navigationItem.filepath && (
               <ReadOnGitHub path={navigationItem.filepath} />
@@ -194,16 +235,42 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   };
 }
 
+/**
+ * README extras that suit GitHub but not the site: shields.io badges and the
+ * Open Collective backers wall (with the line introducing it).
+ */
+const GITHUB_ONLY_PATTERNS = [
+  /^\[!\[[^\]]*\]\(https:\/\/img\.shields\.io\/[^)]*\)\]\([^)]*\)[ \t]*\n?/gm,
+  /^Thanks to everyone who supports the project!\s*\n/gm,
+  /^<a [^>]*><img [^>]*src="https:\/\/opencollective\.com\/[^"]*"[^>]*><\/a>[ \t]*\n?/gm,
+];
+
 function cleanSource(source: string): string {
-  return source
+  return GITHUB_ONLY_PATTERNS.reduce((s, pattern) => s.replace(pattern, ''), source)
     .replace(/src="/g, 'src="/')
     .replace(/src="\/http/g, 'src="http');
 }
 
+function sectionTitleFromSlug(
+  items: DocumentationItem[],
+  slug: string[],
+): string | null {
+  const joinedSlug = slug.filter(Boolean).join('/');
+
+  const section = items.find((item) =>
+    item.children?.some(
+      (child) => [item.path, child.path].filter(Boolean).join('/') === joinedSlug,
+    ),
+  );
+
+  return section?.title ?? null;
+}
+
 export async function getStaticProps(context: GetStaticPropsContext) {
   const items = getDocumentationStructure();
+  const slug = context.params!.slug as string[];
 
-  const navigationItem = itemFromSlug(items, context.params!.slug as string[]);
+  const navigationItem = itemFromSlug(items, slug);
   const repositoryRoot = path.join(process.cwd(), '..');
   const filepath = path.join(repositoryRoot, navigationItem.filepath!);
   const source = cleanSource(fs.readFileSync(filepath).toString());
@@ -220,6 +287,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       source: mdxSource,
       ...(await getHeaderProps()),
       title: context.params!.title?.toString() || null,
+      sectionTitle: sectionTitleFromSlug(items, slug),
       navigationItem,
       navigationProps: { documentationItems: items },
     },

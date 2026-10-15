@@ -18,7 +18,7 @@ import { Header } from '../../components/Header';
 import { Layout } from '../../components/Layout';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
-import { Body, Eyebrow, H1 } from '../../components/Typography';
+import { Body, H1 } from '../../components/Typography';
 import { GITHUB_LINK, REPO } from '../../lib/constants';
 import { getDocumentationStructure } from '../../lib/docs';
 import { getHeaderProps } from '../../lib/getHeaderProps';
@@ -27,6 +27,7 @@ import { withFallback } from '../../lib/stats';
 import {
   Container,
   ContentContainer,
+  DocsEyebrow,
   InnerContentContainer,
   NavigationContainer,
 } from './[...slug]';
@@ -53,7 +54,7 @@ export default function Changelog({
         </NavigationContainer>
         <ContentContainer>
           <InnerContentContainer>
-            <Eyebrow>Releases</Eyebrow>
+            <DocsEyebrow>Releases</DocsEyebrow>
             <H1>Changelog</H1>
             {entries.length
               ? entries.map((entry) => (
