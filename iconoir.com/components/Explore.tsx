@@ -143,6 +143,7 @@ export function Explore({ allIcons }: ExploreProps) {
   // A new search or filter can shrink the list far above the current scroll
   // position, so jump back to the start of the grid if we're past it.
   const isFirstFilters = React.useRef(true);
+
   React.useEffect(() => {
     if (isFirstFilters.current) {
       isFirstFilters.current = false;

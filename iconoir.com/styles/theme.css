@@ -15,12 +15,8 @@
 :root {
   /* Arrow with a soft shadow, also used over links and buttons in place of
      the hand. The hotspot is the arrow tip. */
-  --cursor:
-    image-set(url('/cursors/default.png') 1x, url('/cursors/default@2x.png') 2x) 6 2,
-    auto;
-  --cursor-pointer:
-    image-set(url('/cursors/default.png') 1x, url('/cursors/default@2x.png') 2x) 6 2,
-    pointer;
+  --cursor: image-set(url('/cursors/default.png') 1x, url('/cursors/default@2x.png') 2x) 6 2, auto;
+  --cursor-pointer: image-set(url('/cursors/default.png') 1x, url('/cursors/default@2x.png') 2x) 6 2, pointer;
   --black: #000000;
   --ink: #0a0a0a;
   --text: #5e5e5e;
