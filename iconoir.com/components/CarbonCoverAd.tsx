@@ -44,17 +44,24 @@ export function CarbonCoverAd() {
     if (!container)
       return;
 
-    // Clear before inject (recommended for React SPAs; avoids stale markup on remount / Strict Mode)
-    container.innerHTML = '';
+    // carbon.js inserts the ad after whatever `#_carbonads_js` exists when its
+    // JSON response arrives, and a removed script still runs once it has
+    // started loading. Strict Mode's mount → unmount → mount would therefore
+    // load two scripts that both land next to the second one. Deferring the
+    // injection lets the cleanup cancel the first mount before any script exists.
+    const timeout = window.setTimeout(() => {
+      container.innerHTML = '';
 
-    const script = document.createElement('script');
-    script.async = true;
-    script.type = 'text/javascript';
-    script.src = CARBON_SCRIPT_SRC;
-    script.id = '_carbonads_js';
-    container.appendChild(script);
+      const script = document.createElement('script');
+      script.async = true;
+      script.type = 'text/javascript';
+      script.src = CARBON_SCRIPT_SRC;
+      script.id = '_carbonads_js';
+      container.appendChild(script);
+    });
 
     return () => {
+      window.clearTimeout(timeout);
       container.innerHTML = '';
     };
   }, []);
