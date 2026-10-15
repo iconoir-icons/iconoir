@@ -90,3 +90,17 @@ export function getDocumentationStructure(): DocumentationItem[] {
 export function documentationHref(sectionPath: string, itemPath: string) {
   return `/docs/${[sectionPath, itemPath].filter(Boolean).join('/')}`;
 }
+
+/**
+ * README extras that suit GitHub but not the site: shields.io badges and the
+ * Open Collective backers wall (with the line introducing it).
+ */
+const GITHUB_ONLY_PATTERNS = [
+  /^\[!\[[^\]]*\]\(https:\/\/img\.shields\.io\/[^)]*\)\]\([^)]*\)[ \t]*\n?/gm,
+  /^Thanks to everyone who supports the project!\s*\n/gm,
+  /^<a [^>]*><img [^>]*src="https:\/\/opencollective\.com\/[^"]*"[^>]*><\/a>[ \t]*\n?/gm,
+];
+
+export function stripGitHubExtras(source: string): string {
+  return GITHUB_ONLY_PATTERNS.reduce((s, pattern) => s.replace(pattern, ''), source);
+}

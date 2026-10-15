@@ -11,7 +11,7 @@ import { HeroIcons } from '../components/HeroIcons';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { SUPPORT_LINK } from '../lib/constants';
+import { AUTHOR_LINKS, GITHUB_LINK, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { media } from '../lib/responsive';
@@ -31,6 +31,37 @@ interface HomeProps {
   numDownloads: number;
 }
 
+const DESCRIPTION = 'Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Native, Vue, and Flutter libraries, Figma and Framer.';
+
+function jsonLd(numIcons: number, version: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        'name': 'Iconoir',
+        'url': 'https://iconoir.com',
+      },
+      {
+        '@type': 'SoftwareSourceCode',
+        'name': 'Iconoir',
+        'description': `Free, open source (MIT) SVG icon library with ${numIcons} icons for React, React Native, Vue, Solid, Flutter, CSS, Figma and Framer.`,
+        'url': 'https://iconoir.com',
+        'codeRepository': GITHUB_LINK,
+        'license': 'https://opensource.org/licenses/MIT',
+        'version': version.replace(/^v/, ''),
+        'programmingLanguage': ['SVG', 'TypeScript', 'Dart', 'CSS'],
+        'keywords': 'free icons, open source icons, svg icons, react icons, vue icons, flutter icons, icon library',
+        'isAccessibleForFree': true,
+        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+        'author': [
+          { '@type': 'Person', 'name': 'Luca Burgio', 'url': AUTHOR_LINKS.Luca },
+        ],
+      },
+    ],
+  };
+}
+
 const Home: NextPage<HomeProps> = ({
   allIcons,
   currentVersion,
@@ -42,7 +73,8 @@ const Home: NextPage<HomeProps> = ({
   return (
     <Layout>
       <SEO
-        description="Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Nativ, and Flutter libraries, Figma and Framer."
+        description={DESCRIPTION}
+        jsonLd={jsonLd(allIcons.length, currentVersion)}
       />
       <Header
         currentVersion={currentVersion}

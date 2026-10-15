@@ -1,0 +1,6 @@
+# Iconoir is free and open source (MIT). Crawlers and AI agents are welcome.
+# Machine-readable entry points: /llms.txt, /llms-full.txt, /icons.json
+User-agent: *
+Allow: /
+
+Sitemap: https://iconoir.com/sitemap.xml

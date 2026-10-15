@@ -23,7 +23,7 @@ import { MDXRemote } from '../../components/MDXRemote';
 import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
 import { Eyebrow } from '../../components/Typography';
-import { getDocumentationStructure } from '../../lib/docs';
+import { getDocumentationStructure, stripGitHubExtras } from '../../lib/docs';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { media } from '../../lib/responsive';
 
@@ -235,18 +235,8 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   };
 }
 
-/**
- * README extras that suit GitHub but not the site: shields.io badges and the
- * Open Collective backers wall (with the line introducing it).
- */
-const GITHUB_ONLY_PATTERNS = [
-  /^\[!\[[^\]]*\]\(https:\/\/img\.shields\.io\/[^)]*\)\]\([^)]*\)[ \t]*\n?/gm,
-  /^Thanks to everyone who supports the project!\s*\n/gm,
-  /^<a [^>]*><img [^>]*src="https:\/\/opencollective\.com\/[^"]*"[^>]*><\/a>[ \t]*\n?/gm,
-];
-
 function cleanSource(source: string): string {
-  return GITHUB_ONLY_PATTERNS.reduce((s, pattern) => s.replace(pattern, ''), source)
+  return stripGitHubExtras(source)
     .replace(/src="/g, 'src="/')
     .replace(/src="\/http/g, 'src="http');
 }

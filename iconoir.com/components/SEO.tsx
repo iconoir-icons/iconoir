@@ -6,9 +6,11 @@ const TITLE_SUFFIX = 'Iconoir | Free Icons';
 export interface SEOProps {
   title?: string;
   description?: string;
+  /** schema.org structured data, rendered as JSON-LD. */
+  jsonLd?: object;
 }
 
-export function SEO({ title, description }: SEOProps) {
+export function SEO({ title, description, jsonLd }: SEOProps) {
   const { asPath } = useRouter();
   const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
   const pageDescription = description;
@@ -31,7 +33,7 @@ export function SEO({ title, description }: SEOProps) {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:site_name" content="Iconoir" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://iconoir.com" />
+      <meta property="og:url" content={canonicalUrl} />
       <meta
         property="og:image"
         content="https://iconoir.com/iconoir-brand.png"
@@ -42,7 +44,7 @@ export function SEO({ title, description }: SEOProps) {
 
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:domain" content="iconoir.com" />
-      <meta name="twitter:url" content="https://iconoir.com" />
+      <meta name="twitter:url" content={canonicalUrl} />
       <meta
         name="twitter:image"
         content="https://iconoir.com/iconoir-brand.png"
@@ -57,6 +59,13 @@ export function SEO({ title, description }: SEOProps) {
       />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:card" content="summary_large_image" />
+
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     </Head>
   );
 }

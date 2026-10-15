@@ -2,10 +2,11 @@
   "name": "iconoir.com",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
+    "dev": "pnpm run agent-files && next dev --turbo",
+    "build": "pnpm run agent-files && next build",
     "start": "pnpm dlx serve out",
-    "lint": "next lint"
+    "lint": "next lint",
+    "agent-files": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-agent-files.mts"
   },
   "devDependencies": {
     "@nodesecure/npm-registry-sdk": "^3.0.0",
