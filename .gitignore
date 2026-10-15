@@ -10,3 +10,6 @@ packages/iconoir-vue/src/*
 !packages/iconoir-vue/src/providerKey.ts
 
 packages/iconoir-solid-js/src/*
+
+# Local Claude Code instructions
+CLAUDE.md
