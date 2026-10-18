@@ -28,6 +28,8 @@ export interface IconListCustomizations {
 }
 export interface Icon {
   filename: string;
+  /** The icon's name in icons.csv, shared by its regular and solid variants (e.g. "arc-3d"). */
+  name: string;
   category: string;
   tags: string[];
   iconComponentName: string;

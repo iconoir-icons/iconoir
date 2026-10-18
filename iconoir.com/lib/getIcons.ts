@@ -38,6 +38,7 @@ export async function getAllIcons(): Promise<Icon[]> {
     for (const iconComponent of iconComponents) {
       icons.push({
         filename: kebabCase(iconComponent),
+        name: row.filename,
         category: row.category,
         tags: parseTags(row.tags),
         iconComponentName: iconComponent,
