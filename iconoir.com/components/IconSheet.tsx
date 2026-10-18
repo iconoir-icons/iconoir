@@ -1,6 +1,6 @@
 import type { Icon } from './IconList';
 import * as AllIcons from 'iconoir-react';
-import { Copy, Download, Xmark } from 'iconoir-react';
+import { Copy, Download, InfoCircle, Xmark } from 'iconoir-react';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { media } from '../lib/responsive';
@@ -254,6 +254,24 @@ const CodeBlock = styled.div`
   }
 `;
 
+/** Quiet link from the snippet's corner to the icon's own page on iconoir.com/icons/<name>. */
+const IconPageLink = styled.a`
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  color: var(--muted);
+  transition: color 0.15s;
+  &:hover,
+  &:focus-visible {
+    color: var(--black);
+  }
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+`;
+
 /** Off-screen copy rendered with the explorer's settings, used to build the SVG. */
 const Hidden = styled.div`
   position: absolute;
@@ -381,6 +399,13 @@ export function IconSheet({ icon, onClose }: IconSheetProps) {
             >
               Copy
             </CopyButton>
+            <IconPageLink
+              href={`/icons/${icon.name}`}
+              title={`${icon.name} icon page`}
+              aria-label={`Open the ${icon.name} icon page`}
+            >
+              <InfoCircle color="currentColor" strokeWidth={1.5} />
+            </IconPageLink>
           </CodeBlock>
         </CodeColumn>
         <Hidden ref={hiddenRef} aria-hidden>
