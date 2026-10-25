@@ -140,6 +140,7 @@ export function Footer() {
             <FooterCategory
               category="Support"
               links={[
+                { name: 'FAQ', url: '/docs/faq' },
                 { name: 'License', url: LICENSE_LINK },
                 { name: 'GitHub repository', url: GITHUB_LINK },
                 { name: 'File a request', url: ISSUE_LINK },

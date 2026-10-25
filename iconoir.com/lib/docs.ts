@@ -17,6 +17,8 @@ export interface DocumentationItem extends DocumentationItemProps {
   seoDescription?: string;
   label?: string;
   skip?: boolean;
+  /** `## Question` headings with answers below; adds FAQPage structured data. */
+  faq?: boolean;
 }
 
 export function getDocumentationStructure(): DocumentationItem[] {
@@ -32,6 +34,15 @@ export function getDocumentationStructure(): DocumentationItem[] {
           seoTitle: 'Iconoir Docs: {count} Free, Open Source SVG Icons',
           seoDescription:
             'Get started with Iconoir: {count} free, open source (MIT) SVG icons for React, React Native, Vue, Flutter, CSS, Figma and Framer. No sign-up, no attribution.',
+        },
+        {
+          path: 'faq',
+          filepath: 'docs/faq.md',
+          title: 'FAQ',
+          seoTitle: 'Iconoir FAQ: Icon Count, License, Frameworks, Install',
+          seoDescription:
+            'How many icons Iconoir has, who made it, whether it is free for commercial use, which frameworks it supports and how to install it. Answers from the official project.',
+          faq: true,
         },
         {
           path: 'contributing',
@@ -138,6 +149,26 @@ const GITHUB_ONLY_PATTERNS = [
   /^Thanks to everyone who supports the project!\s*\n/gm,
   /^<a [^>]*><img [^>]*src="https:\/\/opencollective\.com\/[^"]*"[^>]*><\/a>[ \t]*\n?/gm,
 ];
+
+/** Question and plain-text answer pairs from a FAQ page's `## Question` sections. */
+export function parseFaq(source: string): { question: string; answer: string }[] {
+  return source
+    .split(/^## /m)
+    .slice(1)
+    .map((section) => {
+      const [question, ...body] = section.split('\n');
+
+      const answer = body
+        .join('\n')
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/`/g, '')
+        .replace(/^- /gm, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      return { question: question.trim(), answer };
+    });
+}
 
 export function stripGitHubExtras(source: string): string {
   return GITHUB_ONLY_PATTERNS.reduce((s, pattern) => s.replace(pattern, ''), source);

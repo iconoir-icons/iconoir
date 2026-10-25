@@ -24,7 +24,7 @@ import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
 import { Eyebrow } from '../../components/Typography';
 import { getDocumentationStructure, stripGitHubExtras } from '../../lib/docs';
-import { DEFAULT_DOCS_DESCRIPTION, getSeoProps } from '../../lib/docsSeo';
+import { DEFAULT_DOCS_DESCRIPTION, faqJsonLd, getSeoProps } from '../../lib/docsSeo';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { media } from '../../lib/responsive';
 
@@ -121,6 +121,7 @@ interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;
   seoTitle: string | null;
   seoDescription: string | null;
+  jsonLd: object | null;
   sectionTitle: string | null;
   navigationItem: DocumentationItem;
   navigationProps: DocumentationNavigationProps;
@@ -130,6 +131,7 @@ export default function DocumentationPage({
   source,
   seoTitle,
   seoDescription,
+  jsonLd,
   sectionTitle,
   navigationItem,
   navigationProps,
@@ -141,6 +143,7 @@ export default function DocumentationPage({
         fullTitle={seoTitle ?? undefined}
         title={navigationItem.title}
         description={seoDescription ?? DEFAULT_DOCS_DESCRIPTION}
+        jsonLd={jsonLd ?? undefined}
       />
       <Header {...headerProps} />
       <Container>
@@ -281,6 +284,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       source: mdxSource,
       ...(await getHeaderProps()),
       ...(await getSeoProps(navigationItem)),
+      jsonLd: navigationItem.faq ? faqJsonLd(source) : null,
       sectionTitle: sectionTitleFromSlug(items, slug),
       navigationItem,
       navigationProps: { documentationItems: items },
