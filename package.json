@@ -3,7 +3,7 @@
   "type": "module",
   "version": "7.12.1",
   "packageManager": "pnpm@10.13.1",
-  "description": "Iconoir - The biggest open source icon library with tons of free icons.",
+  "description": "Iconoir: 1,300+ free, open source (MIT) SVG icons with solid variants, as SVG files and a CSS stylesheet. 24x24 grid, 1.5px stroke.",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -15,11 +15,16 @@
     "url": "https://github.com/iconoir-icons/iconoir.git"
   },
   "keywords": [
-    "free",
     "icons",
-    "library",
+    "icon-library",
+    "svg-icons",
+    "free-icons",
+    "open-source",
+    "iconoir",
     "svg",
-    "css"
+    "css",
+    "css-icons",
+    "icon-set"
   ],
   "exports": {
     "./icons/*.svg": "./icons/regular/*.svg",

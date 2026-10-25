@@ -1,7 +1,7 @@
 {
   "name": "@iconoir/vue",
   "version": "7.12.1",
-  "description": "Vue library for Iconoir, the biggest open source icon library with tons of free icons.",
+  "description": "Vue components for Iconoir: 1,300+ free, open source (MIT) SVG icons with solid variants. Tree-shakable, customizable size, color and stroke.",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -15,9 +15,16 @@
   },
   "keywords": [
     "icons",
+    "icon-library",
+    "svg-icons",
+    "free-icons",
+    "open-source",
+    "iconoir",
     "svg",
-    "library",
-    "vue"
+    "vue",
+    "vue3",
+    "vue-icons",
+    "vue-component"
   ],
   "sideEffects": false,
   "exports": {

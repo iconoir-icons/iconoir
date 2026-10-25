@@ -1,7 +1,7 @@
 {
   "name": "iconoir-solid-js",
   "version": "7.12.1",
-  "description": "solid-js library for Iconoir, the biggest open source icon library with tons of free icons.",
+  "description": "Solid components for Iconoir: 1,300+ free, open source (MIT) SVG icons with solid variants. Customizable size, color and stroke.",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -15,9 +15,15 @@
   },
   "keywords": [
     "icons",
+    "icon-library",
+    "svg-icons",
+    "free-icons",
+    "open-source",
+    "iconoir",
     "svg",
-    "library",
-    "solid-js"
+    "solid-js",
+    "solidjs",
+    "solid-icons"
   ],
   "sideEffects": false,
   "exports": {

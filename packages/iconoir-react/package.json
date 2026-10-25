@@ -1,7 +1,7 @@
 {
   "name": "iconoir-react",
   "version": "7.12.1",
-  "description": "React library for Iconoir, the biggest open source icon library with tons of free icons.",
+  "description": "React components for Iconoir: 1,300+ free, open source (MIT) SVG icons with solid variants. Tree-shakable, typed, customizable size, color and stroke.",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -15,9 +15,15 @@
   },
   "keywords": [
     "icons",
+    "icon-library",
+    "svg-icons",
+    "free-icons",
+    "open-source",
+    "iconoir",
     "svg",
-    "library",
-    "react"
+    "react",
+    "react-icons",
+    "react-component"
   ],
   "sideEffects": false,
   "exports": {

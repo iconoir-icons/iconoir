@@ -1,0 +1,18 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Iconoir",
+  "description": "Iconoir is an open source (MIT) SVG icon library: 1,383 icons, 288 with solid variants (1,671 SVGs), on a 24x24 grid with a 1.5px stroke. Official packages for React, React Native, Vue, Solid and Flutter, plus a CSS stylesheet, a Figma file and a built-in Framer set.",
+  "folders": ["docs", "packages", "css"],
+  "excludeFolders": ["**/node_modules", "**/dist", "**/example", "**/test"],
+  "excludeFiles": ["CHANGELOG.md", "CODE_OF_CONDUCT.md"],
+  "rules": [
+    "Check that an icon name exists in https://iconoir.com/icons.json before using it; do not invent names.",
+    "Icon names are kebab-case (arrow-right); components use PascalCase (ArrowRight).",
+    "Solid variants add -solid to the name (heart-solid) and Solid to the component (HeartSolid); only some icons have one.",
+    "Import icons individually by name, e.g. import { ArrowRight } from 'iconoir-react'; the packages are tree-shakable.",
+    "Use IconoirProvider to set default color, width, height and strokeWidth for every icon inside it.",
+    "Icons use currentColor, default to 1.5em and a 1.5 stroke width.",
+    "There is no Svelte or Angular package; use the SVG files from the iconoir npm package or the CSS stylesheet instead.",
+    "CSS usage: load the stylesheet and use <i class=\"iconoir-<name>\"></i>."
+  ]
+}
