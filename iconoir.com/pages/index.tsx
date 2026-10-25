@@ -11,7 +11,7 @@ import { HeroIcons } from '../components/HeroIcons';
 import { Layout, Wrap } from '../components/Layout';
 import { SEO } from '../components/SEO';
 import { Stat, StatsContainer } from '../components/Stats';
-import { AUTHOR_LINKS, GITHUB_LINK, SUPPORT_LINK } from '../lib/constants';
+import { AUTHOR_LINKS, GITHUB_LINK, LIBRARY_LINKS, SUPPORT_LINK } from '../lib/constants';
 import { getHeaderProps } from '../lib/getHeaderProps';
 import { getAllIcons } from '../lib/getIcons';
 import { media } from '../lib/responsive';
@@ -36,9 +36,30 @@ function jsonLd(numIcons: number, version: string) {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'Organization',
+        '@id': 'https://iconoir.com/#organization',
+        'name': 'Iconoir',
+        'url': 'https://iconoir.com',
+        'logo': 'https://iconoir.com/favicon.png',
+        'founder': { '@type': 'Person', 'name': 'Luca Burgio', 'url': AUTHOR_LINKS.Luca },
+        'sameAs': [
+          GITHUB_LINK,
+          'https://www.wikidata.org/wiki/Q110503368',
+          'https://www.npmjs.com/package/iconoir',
+          'https://www.npmjs.com/package/iconoir-react',
+          'https://www.npmjs.com/package/iconoir-react-native',
+          'https://www.npmjs.com/package/@iconoir/vue',
+          'https://www.npmjs.com/package/iconoir-solid-js',
+          'https://pub.dev/packages/iconoir_flutter',
+          LIBRARY_LINKS.Figma,
+          'https://opencollective.com/iconoir',
+        ],
+      },
+      {
         '@type': 'WebSite',
         'name': 'Iconoir',
         'url': 'https://iconoir.com',
+        'publisher': { '@id': 'https://iconoir.com/#organization' },
       },
       {
         '@type': 'SoftwareSourceCode',
@@ -52,6 +73,7 @@ function jsonLd(numIcons: number, version: string) {
         'keywords': 'free icons, open source icons, svg icons, react icons, vue icons, flutter icons, icon library',
         'isAccessibleForFree': true,
         'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+        'publisher': { '@id': 'https://iconoir.com/#organization' },
         'author': [
           { '@type': 'Person', 'name': 'Luca Burgio', 'url': AUTHOR_LINKS.Luca },
         ],

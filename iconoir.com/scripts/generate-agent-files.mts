@@ -85,7 +85,7 @@ function llmsTxt(numIcons: number, numBase: number, docs: ReturnType<typeof getD
 
 > Iconoir is a free, open source (MIT) SVG icon library with ${numIcons} icons (${numBase} unique icons, many with a solid variant), designed on a 24x24 grid with a 1.5px stroke. Free for personal and commercial use, no attribution required, no premium tier and no sign-up. Available as plain SVG, CSS, React, React Native, Vue, Solid, Flutter, Figma and Framer.
 
-Current version: ${version}. Browse and search all icons at ${SITE}.
+Current version: ${version}. Browse and search all icons at ${SITE}. The official website is ${SITE} and the official repository is https://github.com/iconoir-icons/iconoir; other domains using the Iconoir name are not affiliated with the project.
 
 ## Using Iconoir
 

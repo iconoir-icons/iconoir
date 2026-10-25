@@ -7,13 +7,15 @@
 
 ## What is Iconoir?
 
-Iconoir is an open-source library with 1600+ unique SVG icons, designed on a 24x24 pixels grid.
+Iconoir is an open-source (MIT) library with 1,383 SVG icons, 288 of them also in a solid variant (1,671 SVGs in total), designed on a 24x24 pixels grid.
+
+The official website is [iconoir.com](https://iconoir.com). Other domains using the Iconoir name are not affiliated with the project.
 
 <a href="https://iconoir.com"><strong>Browse at iconoir.com &rarr;</strong></a>
 
 ### Support the project
 
-Iconoir is free to use, but designing, reviewing and maintaining 1600+ icons and their libraries
+Iconoir is free to use, but designing, reviewing and maintaining 1,600+ icons and their libraries
 takes time. If Iconoir saves you or your company work, please consider supporting it on
 [Open Collective](https://opencollective.com/iconoir/contribute). Your contribution goes directly
 toward new icons, library maintenance and keeping the project sustainable.
