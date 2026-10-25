@@ -1,5 +1,7 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
+  "url": "https://context7.com/iconoir-icons/iconoir",
+  "public_key": "pk_oM7gFzOL8B2YcSen8TR6z",
   "projectTitle": "Iconoir",
   "description": "Iconoir is an open source (MIT) SVG icon library: 1,383 icons, 288 with solid variants (1,671 SVGs), on a 24x24 grid with a 1.5px stroke. Official packages for React, React Native, Vue, Solid and Flutter, plus a CSS stylesheet, a Figma file and a built-in Framer set.",
   "folders": ["docs", "packages", "css"],
