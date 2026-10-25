@@ -21,6 +21,7 @@ import { SEO } from '../../components/SEO';
 import { Body, H1 } from '../../components/Typography';
 import { GITHUB_LINK, REPO } from '../../lib/constants';
 import { getDocumentationStructure } from '../../lib/docs';
+import { getSeoProps } from '../../lib/docsSeo';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { octokit } from '../../lib/octokit';
 import { withFallback } from '../../lib/stats';
@@ -37,16 +38,24 @@ const RELEASES_LINK = `${GITHUB_LINK}/releases`;
 export interface ChangelogProps extends HeaderProps {
   documentationProps: DocumentationNavigationProps;
   entries: ChangelogEntryProps[];
+  seoTitle: string | null;
+  seoDescription: string | null;
 }
 
 export default function Changelog({
   documentationProps,
   entries,
+  seoTitle,
+  seoDescription,
   ...headerProps
 }: ChangelogProps) {
   return (
     <Layout>
-      <SEO title="Changelog" />
+      <SEO
+        fullTitle={seoTitle ?? undefined}
+        title="Changelog"
+        description={seoDescription ?? undefined}
+      />
       <Header {...headerProps} />
       <Container>
         <NavigationContainer>
@@ -108,9 +117,14 @@ export async function getStaticProps() {
 
   const items = getDocumentationStructure();
 
+  const changelogItem = items
+    .flatMap((item) => item.children ?? [])
+    .find((item) => item.path === 'changelog')!;
+
   return {
     props: {
       entries,
+      ...(await getSeoProps(changelogItem)),
       ...(await getHeaderProps()),
       documentationProps: { documentationItems: items },
     },

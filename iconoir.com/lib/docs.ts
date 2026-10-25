@@ -11,6 +11,10 @@ export interface DocumentationItem extends DocumentationItemProps {
   childrenProps?: DocumentationItemProps;
   children?: DocumentationItem[];
   title: string;
+  /** Full `<title>` for search results; `{count}` becomes the number of icons. */
+  seoTitle?: string;
+  /** Meta description for search results; `{count}` as in `seoTitle`. */
+  seoDescription?: string;
   label?: string;
   skip?: boolean;
 }
@@ -21,16 +25,29 @@ export function getDocumentationStructure(): DocumentationItem[] {
       path: '',
       title: 'To Start',
       children: [
-        { path: 'introduction', filepath: 'README.md', title: 'Introduction' },
+        {
+          path: 'introduction',
+          filepath: 'README.md',
+          title: 'Introduction',
+          seoTitle: 'Iconoir Docs: {count} Free, Open Source SVG Icons',
+          seoDescription:
+            'Get started with Iconoir: {count} free, open source (MIT) SVG icons for React, React Native, Vue, Flutter, CSS, Figma and Framer. No sign-up, no attribution.',
+        },
         {
           path: 'contributing',
           filepath: 'CONTRIBUTING.md',
           title: 'How to contribute',
+          seoTitle: 'Contribute to Iconoir, the Open Source Icon Library',
+          seoDescription:
+            'How to contribute to Iconoir: request new icons in a GitHub issue, report bugs, and open pull requests for features and fixes in the packages and the site.',
         },
         {
           path: 'naming-convention',
           filepath: 'NAMING_CONVENTION.md',
           title: 'Naming Convention',
+          seoTitle: 'Icon Naming Convention | Iconoir Docs',
+          seoDescription:
+            'How Iconoir names its icons: [Object]-[Modifier]-[Container], as in user-minus or minus-square, so you can guess an icon name before searching for it.',
         },
       ],
     },
@@ -43,31 +60,49 @@ export function getDocumentationStructure(): DocumentationItem[] {
           path: 'iconoir-react',
           filepath: 'packages/iconoir-react/README.md',
           title: 'React',
+          seoTitle: 'React Icons: {count} Free SVG Icon Components | Iconoir',
+          seoDescription:
+            'Install iconoir-react and use {count} free, open source (MIT) icons as React components. Set size, color and stroke width per icon or for all with IconoirProvider.',
         },
         {
           path: 'iconoir-react-native',
           filepath: 'packages/iconoir-react-native/README.md',
           title: 'React Native',
+          seoTitle: 'React Native Icons: {count} Free SVG Icons | Iconoir',
+          seoDescription:
+            'Install iconoir-react-native with react-native-svg and use {count} free, open source (MIT) icons as React Native components. Set defaults with IconoirProvider.',
         },
         {
           path: 'iconoir-vue',
           filepath: 'packages/iconoir-vue/README.md',
           title: 'Vue',
+          seoTitle: 'Vue Icons: {count} Free SVG Icon Components | Iconoir',
+          seoDescription:
+            'Install @iconoir/vue and use {count} free, open source (MIT) icons as Vue components. Set size, color and stroke width per icon or for all with IconoirProvider.',
         },
         {
           path: 'iconoir-flutter',
           filepath: 'packages/iconoir-flutter/README.md',
           title: 'Flutter',
+          seoTitle: 'Flutter Icons: {count} Free SVG Icon Widgets | Iconoir',
+          seoDescription:
+            'Add iconoir_flutter with flutter pub add and use {count} free, open source (MIT) icons as Flutter widgets, built on flutter_svg.',
         },
         {
           path: 'framer',
           filepath: 'docs/framer.md',
           title: 'Framer',
+          seoTitle: 'Free Icons in Framer: Iconoir Is Built In | Iconoir',
+          seoDescription:
+            'Iconoir is built into Framer: Insert > Graphics > Iconoir, then switch icons from the right sidebar. Free, open source icons, no plugin needed.',
         },
         {
           path: 'css',
           filepath: 'css/README.md',
           title: 'CSS',
+          seoTitle: 'CSS Icons: {count} Free Icons via CDN, No Install | Iconoir',
+          seoDescription:
+            'Add one stylesheet from the jsDelivr CDN and use {count} free, open source icons with a class: <i class="iconoir-check"></i>. No build step, no npm install.',
         },
       ],
     },
@@ -79,6 +114,9 @@ export function getDocumentationStructure(): DocumentationItem[] {
           path: 'changelog',
           filepath: 'CHANGELOG.md',
           title: 'Changelog',
+          seoTitle: 'Iconoir Changelog: Releases and New Icons',
+          seoDescription:
+            'Every Iconoir release: new icons, renamed and fixed icons, and package updates for React, React Native, Vue, Flutter and CSS.',
           skip: true,
         },
       ],

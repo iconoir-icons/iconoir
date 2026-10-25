@@ -24,6 +24,7 @@ import { ReadOnGitHub } from '../../components/ReadOnGitHub';
 import { SEO } from '../../components/SEO';
 import { Eyebrow } from '../../components/Typography';
 import { getDocumentationStructure, stripGitHubExtras } from '../../lib/docs';
+import { DEFAULT_DOCS_DESCRIPTION, getSeoProps } from '../../lib/docsSeo';
 import { getHeaderProps } from '../../lib/getHeaderProps';
 import { media } from '../../lib/responsive';
 
@@ -118,7 +119,8 @@ export const InnerContentContainer = styled.article`
 
 interface DocumentationPageProps extends HeaderProps {
   source: MDXRemoteSerializeResult;
-  title: string;
+  seoTitle: string | null;
+  seoDescription: string | null;
   sectionTitle: string | null;
   navigationItem: DocumentationItem;
   navigationProps: DocumentationNavigationProps;
@@ -126,7 +128,8 @@ interface DocumentationPageProps extends HeaderProps {
 
 export default function DocumentationPage({
   source,
-  title,
+  seoTitle,
+  seoDescription,
   sectionTitle,
   navigationItem,
   navigationProps,
@@ -135,8 +138,9 @@ export default function DocumentationPage({
   return (
     <Layout>
       <SEO
-        title={title}
-        description="Our documentation to start using our free icons on React, React Native, Vue, Figma, and more."
+        fullTitle={seoTitle ?? undefined}
+        title={navigationItem.title}
+        description={seoDescription ?? DEFAULT_DOCS_DESCRIPTION}
       />
       <Header {...headerProps} />
       <Container>
@@ -276,7 +280,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     props: {
       source: mdxSource,
       ...(await getHeaderProps()),
-      title: context.params!.title?.toString() || null,
+      ...(await getSeoProps(navigationItem)),
       sectionTitle: sectionTitleFromSlug(items, slug),
       navigationItem,
       navigationProps: { documentationItems: items },
