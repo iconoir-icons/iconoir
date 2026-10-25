@@ -122,7 +122,6 @@ export function FiltersEditor({ filters, categories, onChange }: FiltersEditorPr
           value={search}
           type="search"
           autoCapitalize="none"
-          tabIndex={1}
           onFocus={(e) => {
             if (!didScrollRef.current) {
               e.target.scrollIntoView({
