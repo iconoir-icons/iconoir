@@ -2,12 +2,13 @@ import type { Icon as IconType } from './IconList';
 import * as AllIcons from 'iconoir-react';
 import React from 'react';
 import styled from 'styled-components';
-import { ResetButton } from './Button';
 import { IconSelectionContext } from './IconSelection';
 
-const Tile = styled(ResetButton)<{ $iconWidth: number; $selected?: boolean }>`
+// A real link to the icon's page, so crawlers can follow it; a plain click opens the sheet instead.
+const Tile = styled.a<{ $iconWidth: number; $selected?: boolean }>`
   &&& {
     display: block;
+    text-decoration: none;
     width: ${(props) => props.$iconWidth}px;
     padding-bottom: 100%;
     position: relative;
@@ -77,7 +78,7 @@ export interface IconProps {
   icon: IconType;
 }
 
-/** A grid cell; clicking it opens the icon's details sheet. */
+/** A grid cell; clicking it opens the icon's details sheet, modified clicks open its page. */
 export function Icon({ iconWidth, icon }: IconProps) {
   const IconComponent = (AllIcons as any)[icon.iconComponentName];
   const { selected, select } = React.useContext(IconSelectionContext);
@@ -86,12 +87,23 @@ export function Icon({ iconWidth, icon }: IconProps) {
   return (
     <div className="icon-container">
       <Tile
-        type="button"
+        href={`/icons/${icon.name}`}
         $iconWidth={iconWidth}
         $selected={isSelected}
-        aria-pressed={isSelected}
+        aria-current={isSelected || undefined}
         aria-label={`${icon.filename} details`}
-        onClick={() => select(icon)}
+        onClick={(e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0)
+            return;
+          e.preventDefault();
+          select(icon);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === ' ') {
+            e.preventDefault();
+            select(icon);
+          }
+        }}
       >
         <IconContainer>
           <IconComponent />

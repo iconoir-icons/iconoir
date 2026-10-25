@@ -4,3 +4,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://iconoir.com/sitemap.xml
+Sitemap: https://iconoir.com/sitemap-pages.xml

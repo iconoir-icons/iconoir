@@ -31,8 +31,6 @@ interface HomeProps {
   numDownloads: number;
 }
 
-const DESCRIPTION = 'Iconoir is the biggest open source icon library that provides a massive selection of high-quality icons, available for free download. No premium options or email sign-up required, free for real. Icons available in SVG, Font, React, React Native, Vue, and Flutter libraries, Figma and Framer.';
-
 function jsonLd(numIcons: number, version: string) {
   return {
     '@context': 'https://schema.org',
@@ -68,12 +66,15 @@ const Home: NextPage<HomeProps> = ({
   numStars,
   numDownloads,
 }) => {
-  const numIcons = new Intl.NumberFormat('en-US').format(allIcons.length);
+  const formatNumber = new Intl.NumberFormat('en-US').format;
+  const numIcons = formatNumber(allIcons.length);
+  const numUniqueIcons = formatNumber(new Set(allIcons.map((icon) => icon.name)).size);
 
   return (
     <Layout>
       <SEO
-        description={DESCRIPTION}
+        fullTitle={`Iconoir: ${numIcons} Free Icons – Open Source SVG Icon Library`}
+        description={`${numUniqueIcons} free, open source SVG icons (${numIcons} with solid variants). MIT licensed, no sign-up or attribution. For React, Vue, React Native, Flutter, CSS and Figma.`}
         jsonLd={jsonLd(allIcons.length, currentVersion)}
       />
       <Header

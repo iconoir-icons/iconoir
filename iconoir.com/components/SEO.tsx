@@ -5,14 +5,16 @@ const TITLE_SUFFIX = 'Iconoir | Free Icons';
 
 export interface SEOProps {
   title?: string;
+  /** Replaces the whole `<title>`, suffix included (used by the homepage). */
+  fullTitle?: string;
   description?: string;
   /** schema.org structured data, rendered as JSON-LD. */
   jsonLd?: object;
 }
 
-export function SEO({ title, description, jsonLd }: SEOProps) {
+export function SEO({ title, fullTitle, description, jsonLd }: SEOProps) {
   const { asPath } = useRouter();
-  const pageTitle = title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX;
+  const pageTitle = fullTitle ?? (title ? `${title} | ${TITLE_SUFFIX}` : TITLE_SUFFIX);
   const pageDescription = description;
 
   const pathWithoutQuery = asPath.split(/[?#]/)[0];
