@@ -1,3 +1,11 @@
+<a id="v7.12.2"></a>
+# [v7.12.2](https://github.com/iconoir-icons/iconoir/releases/tag/v7.12.2) - 2026-11-04
+
+Release pipeline now publishes to npm via trusted publishing (OIDC) — no token. No changes to the icons.
+
+[Changes][v7.12.2]
+
+
 <a id="v7.12.1"></a>
 # [v7.12.1](https://github.com/iconoir-icons/iconoir/releases/tag/v7.12.1) - 2026-08-12
 
@@ -1765,6 +1773,7 @@ fix: changed stroke property from `black` to `currentColor`.
 [Changes][v4.2]
 
 
+[v7.12.2]: https://github.com/iconoir-icons/iconoir/compare/v7.12.1...v7.12.2
 [v7.12.1]: https://github.com/iconoir-icons/iconoir/compare/v7.12.0...v7.12.1
 [v7.12.0]: https://github.com/iconoir-icons/iconoir/compare/v7.11.1...v7.12.0
 [v7.11.1]: https://github.com/iconoir-icons/iconoir/compare/v7.11.0...v7.11.1

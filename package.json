@@ -1,7 +1,7 @@
 {
   "name": "iconoir",
   "type": "module",
-  "version": "7.12.1",
+  "version": "7.12.2",
   "packageManager": "pnpm@10.13.1",
   "description": "Iconoir: 1,300+ free, open source (MIT) SVG icons with solid variants, as SVG files and a CSS stylesheet. 24x24 grid, 1.5px stroke.",
   "license": "MIT",
