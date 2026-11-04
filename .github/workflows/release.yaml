@@ -51,6 +51,10 @@ jobs:
           git -c user.email="actions@github.com" -c user.name="GitHub Actions" tag -fa ${{ github.ref_name }} -m "${{ github.ref_name }}"
           git push -f origin ${{ github.ref_name }}
 
+      # Trusted publishing (OIDC) needs npm >= 11.5.1; Node 22 ships npm 10.
+      - name: Update npm
+        run: npm install -g npm@^11.5.1
+
       # Publish package by package, skipping the ones already on the registry, so
       # that re-pushing a tag retries only what is missing. Keep the directory
       # list in sync with bin/prepublish.js.
@@ -65,13 +69,12 @@ jobs:
               continue
             fi
             echo "Publishing $NAME@$VERSION"
-            (cd "$DIR" && pnpm publish --access public --no-git-checks) \
+            (cd "$DIR" && npm publish --access public) \
               || { echo "::error::Failed to publish $NAME@$VERSION"; FAILED=1; }
           done
           exit $FAILED
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+        # Auth via npm trusted publishing (OIDC, id-token: write above); no token.
+        # Provenance is generated automatically.
 
       - name: Setup Dart
         uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
