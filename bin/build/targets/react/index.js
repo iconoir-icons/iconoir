@@ -160,6 +160,28 @@ export default async (ctx, target) => {
         const iconJs = generateJs(jsPath, reactComponent, jsTarget.format);
 
         promises.push(iconJs);
+
+        // Per-icon declaration so deep imports (e.g. `iconoir-react/regular/Xmark`)
+        // are typed. Every icon shares the same type, so just re-export it.
+        const iconDtsPath = path.join(
+          jsTarget.path,
+          variant,
+          `${icon.pascalName}.${jsTarget.dtsExt}`,
+        );
+
+        const iconTypeImportPath = toImportPath(
+          path.relative(
+            path.join(jsTarget.path, variant),
+            path.join(jsTarget.path, `icon.${jsTarget.ext}`),
+          ),
+        );
+
+        promises.push(
+          fs.writeFile(
+            iconDtsPath,
+            generateExport('default', iconTypeImportPath),
+          ),
+        );
       }
 
       promises.push(variantIndex.generate());
